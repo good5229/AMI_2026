@@ -1,7 +1,8 @@
-import "dart:convert";
+import 'dart:convert';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/lightguard_models.dart';
 import '../sources/local_asset_source.dart';
+import '../models/region_config.dart';
 
 class ValidationEvent {
   const ValidationEvent({
@@ -51,8 +52,8 @@ class LightguardRepository {
 
   final LocalAssetSource _assetSource;
 
-  Future<LightguardData> loadData() async {
-    final seed = await _assetSource.readSeed();
+  Future<LightguardData> loadData(RegionId region) async {
+    final seed = await _assetSource.readSeedByRegion(region);
     final scenarios = await _assetSource.readScenarios();
     final validation = await _assetSource.readValidationRows();
     return LightguardData.fromSeedJson(seed, scenarios, validation);
@@ -99,13 +100,15 @@ class LightguardRepository {
 }
 
 final lightguardSourceProvider = Provider<LocalAssetSource>((_) => LocalAssetSource());
+final selectedRegionProvider = StateProvider<RegionId>((_) => RegionId.suyeong);
 final lightguardRepositoryProvider = Provider<LightguardRepository>(
   (ref) => LightguardRepository(ref.watch(lightguardSourceProvider)),
 );
 
 final lightguardDataProvider = FutureProvider.autoDispose<LightguardData>((ref) async {
   final repo = ref.watch(lightguardRepositoryProvider);
-  return repo.loadData();
+  final region = ref.watch(selectedRegionProvider);
+  return repo.loadData(region);
 });
 
 final competitionAmiEventsProvider = FutureProvider.autoDispose<List<ValidationEvent>>((ref) async {

@@ -1,8 +1,9 @@
 import 'package:flutter/services.dart' show rootBundle;
+import '../models/region_config.dart';
 
 class LocalAssetSource {
-  Future<String> readSeed() {
-    return rootBundle.loadString('assets/data/suyeong_v02_seed.json');
+  Future<String> readSeedByRegion(RegionId region) {
+    return rootBundle.loadString(region.seedAsset);
   }
 
   Future<String> readScenarios() {

@@ -5,6 +5,7 @@ import '../../core/widgets/app_scaffold.dart';
 import '../../data/models/lightguard_models.dart';
 import '../../data/repositories/lightguard_repository.dart';
 import '../../core/widgets/status_badges.dart';
+import '../../data/models/region_config.dart';
 
 class DashboardScreen extends ConsumerWidget {
   const DashboardScreen({super.key});
@@ -17,6 +18,8 @@ class DashboardScreen extends ConsumerWidget {
       loading: () => const Scaffold(body: Center(child: CircularProgressIndicator())),
       error: (err, stack) => _error(context, '데이터 로드 실패: $err'),
       data: (data) {
+        final region = ref.watch(selectedRegionProvider);
+
         final cards = [
           _MetricCard('총 분전함', '${data.objects.length}개', Icons.electrical_services),
           _MetricCard('총 가로등 수', '${data.totalLampCount}개', Icons.lightbulb_outline),
@@ -30,21 +33,31 @@ class DashboardScreen extends ConsumerWidget {
         final today = data.objects.isNotEmpty ? data.objects.first : null;
 
         return LightguardShell(
-          title: 'LightGuard Dashboard',
+          title: 'LightGuard Dashboard · ${region.label}',
           actions: [
             if (today != null)
-              Padding(
+              const Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: StatusBadge(type: BadgeType.validation, label: '검증 모드'),
+                child: const StatusBadge(type: BadgeType.validation, label: '검증 모드'),
               ),
-          ],
+            ],
           child: SingleChildScrollView(
             padding: const EdgeInsets.all(12),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Wrap(spacing: 12, runSpacing: 12, children: cards),
-                const SizedBox(height: 12),
+                children: [
+                  Wrap(spacing: 12, runSpacing: 12, children: cards),
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [
+                    _MiniPill(label: '우선점검 ${data.countByStatus(InspectionStatus.priorityInspection)}개'),
+                    _MiniPill(label: '점검권고 ${data.countByStatus(InspectionStatus.inspectionRecommended)}개'),
+                    _MiniPill(label: '관찰 ${data.countByStatus(InspectionStatus.observe)}개'),
+                    _MiniPill(label: '정상 ${data.countByStatus(InspectionStatus.normal)}개'),
+                  ],
+                ),
+                  const SizedBox(height: 12),
                 Card(
                   child: ListTile(
                     leading: const Icon(Icons.schedule),
@@ -128,6 +141,25 @@ class _MetricCard extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class _MiniPill extends StatelessWidget {
+  const _MiniPill({required this.label});
+
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border.all(color: Colors.black12),
+        borderRadius: BorderRadius.circular(999),
+      ),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+      child: Text(label, style: const TextStyle(fontSize: 12)),
     );
   }
 }

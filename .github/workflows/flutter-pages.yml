@@ -1,0 +1,32 @@
+name: deploy_flutter_web
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'lightguard_app/**'
+
+permissions:
+  contents: write
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.16.0'
+      - name: Install dependencies
+        run: flutter pub get
+        working-directory: lightguard_app
+      - name: Build web
+        run: flutter build web --release
+        working-directory: lightguard_app
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./lightguard_app/build/web

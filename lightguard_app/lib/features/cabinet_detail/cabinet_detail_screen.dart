@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/widgets/app_scaffold.dart';
 import '../../core/widgets/status_badges.dart';
-import '../../data/models/lightguard_models.dart';
 import '../../data/repositories/lightguard_repository.dart';
 
 class CabinetDetailScreen extends ConsumerWidget {
@@ -68,7 +67,7 @@ class CabinetDetailScreen extends ConsumerWidget {
                                 LineChartBarData(
                                   spots: [
                                     const FlSpot(0, 0),
-                                    const FlSpot(1, signal.maxActivation),
+                                    FlSpot(1, signal.maxActivation),
                                     const FlSpot(2, 0),
                                   ],
                                   isCurved: false,

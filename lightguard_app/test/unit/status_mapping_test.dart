@@ -7,7 +7,7 @@ void main() {
       cabinetUid: 'x',
       assetInfo: AssetInfo(
         cabinetUid: 'x', cabinetName: 'x', latitude: 0, longitude: 0,
-        fixtureCount: 1, lampCount: 1, controllerType: '', linkStatus: '', address: '', fixtures: [],
+        fixtureCount: 1, lampCount: 1, controllerType: '', linkStatus: '', address: '', fixtures: <FixtureInfo>[],
       ),
       expectedSchedule: ExpectedSchedule(
         date: '2026-01-01',
@@ -18,10 +18,16 @@ void main() {
         expectedOnWindow: {},
       ),
       expectedLoad: ExpectedLoad(ratedPowerW: 100, expectedRatedLoadKw: 0.1, lampCount: 1, fixtureRows: 1),
-      weatherContext: WeatherContext(stationName: 's', stationType: 't', distanceKmToStation: 1, forecastHourly: [], observationAt: ''),
+      weatherContext: WeatherContext(
+        stationName: 's',
+        stationType: 't',
+        distanceKmToStation: 1,
+        forecastHourly: <Map<String, dynamic>>[],
+        observationAt: '',
+      ),
       ami: AmiPayload(hasRealAmi: false, amiState: 'unlinked', virtualLinkMode: 'none', amiMeterId: null),
-      detectedSignals: [],
-      anomalyEvidence: AnomalyEvidence(ruleIds: [], payload: {}),
+      detectedSignals: <DetectedSignal>[],
+      anomalyEvidence: AnomalyEvidence(ruleIds: <String>[], payload: {}),
       inspectionPriority: InspectionPriority(score: 2, severity: 'critical', rank: 1, reason: 'x'),
     );
 
