@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:latlong2/latlong.dart';
 import 'package:go_router/go_router.dart';
+import 'package:latlong2/latlong.dart';
 import '../../core/widgets/app_scaffold.dart';
 import '../../core/widgets/status_badges.dart';
 import '../../data/models/lightguard_models.dart';
@@ -11,6 +11,7 @@ import '../../data/repositories/lightguard_repository.dart';
 
 enum _MapFilter {
   all,
+  targeted,
   normal,
   observe,
   recommended,
@@ -37,20 +38,32 @@ class _MapScreenState extends ConsumerState<MapScreen> {
       error: (e, s) => Scaffold(body: Center(child: Text('맵 데이터 로드 실패: $e'))),
       data: (data) {
         final region = ref.watch(selectedRegionProvider);
+        final targetIds = _extractTargetCabinets(data.targetMode, region.targetModeField);
 
         final allPoints = data.objects
             .where((c) => c.assetInfo.latitude != null && c.assetInfo.longitude != null)
             .toList(growable: false);
+        final targetPoints = targetIds.isEmpty
+            ? allPoints
+            : allPoints.where((c) => targetIds.contains(c.cabinetUid)).toList(growable: false);
+
         final totalCount = allPoints.length;
+        final targetCount = targetPoints.length;
         final priorityCount = allPoints.where((c) => c.status == InspectionStatus.priorityInspection).length;
         final recommendCount = allPoints.where((c) => c.status == InspectionStatus.inspectionRecommended).length;
         final observeCount = allPoints.where((c) => c.status == InspectionStatus.observe).length;
         final normalCount = allPoints.where((c) => c.status == InspectionStatus.normal).length;
         final scenarioCount = allPoints.where((c) => c.evidenceSource == EvidenceSource.scenarioInjection).length;
         final realAmiCount = allPoints.where((c) => c.evidenceSource == EvidenceSource.realCompetitionAmi).length;
+        final municipalCount = allPoints.where((c) => c.evidenceSource == EvidenceSource.realMunicipalAsset).length;
 
-        final points = switch (_filter) {
+        final supportsScenario = region == RegionId.suyeong;
+        final supportsRealAmi = region == RegionId.gangneung || region == RegionId.chungju;
+        final availableFilter = _resolveFilter(region, targetCount, scenarioCount, realAmiCount, _filter);
+
+        final points = switch (availableFilter) {
           _MapFilter.all => allPoints,
+          _MapFilter.targeted => targetPoints,
           _MapFilter.normal => allPoints.where((c) => c.status == InspectionStatus.normal).toList(growable: false),
           _MapFilter.observe => allPoints.where((c) => c.status == InspectionStatus.observe).toList(growable: false),
           _MapFilter.recommended =>
@@ -108,17 +121,31 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                 child: Card(
                   child: Padding(
                     padding: const EdgeInsets.all(10),
-                    child: Wrap(
-                      spacing: 8,
-                      runSpacing: 8,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        _buildFilterChip(_MapFilter.all, '전체 ($totalCount)'),
-                        _buildFilterChip(_MapFilter.priority, '우선점검 ($priorityCount)'),
-                        _buildFilterChip(_MapFilter.recommended, '점검권고 ($recommendCount)'),
-                        _buildFilterChip(_MapFilter.observe, '관찰 ($observeCount)'),
-                        _buildFilterChip(_MapFilter.normal, '정상 ($normalCount)'),
-                        _buildFilterChip(_MapFilter.scenario, '시나리오 ($scenarioCount)'),
-                        _buildFilterChip(_MapFilter.realAmi, '실제AMI ($realAmiCount)'),
+                        Text(
+                          region.branchLabel,
+                          style: Theme.of(context).textTheme.titleSmall,
+                        ),
+                        const SizedBox(height: 8),
+                        Wrap(
+                          spacing: 8,
+                          runSpacing: 8,
+                          children: [
+                            _buildFilterChip(availableFilter, _MapFilter.all, '전체 ($totalCount)'),
+                            if (targetCount > 0)
+                              _buildFilterChip(availableFilter, _MapFilter.targeted, '검증/연계대상 ($targetCount)'),
+                            _buildFilterChip(availableFilter, _MapFilter.priority, '우선점검 ($priorityCount)'),
+                            _buildFilterChip(availableFilter, _MapFilter.recommended, '점검권고 ($recommendCount)'),
+                            _buildFilterChip(availableFilter, _MapFilter.observe, '관찰 ($observeCount)'),
+                            _buildFilterChip(availableFilter, _MapFilter.normal, '정상 ($normalCount)'),
+                            if (supportsScenario)
+                              _buildFilterChip(availableFilter, _MapFilter.scenario, '시나리오 ($scenarioCount)'),
+                            if (supportsRealAmi && realAmiCount > 0)
+                              _buildFilterChip(availableFilter, _MapFilter.realAmi, '실제 AMI ($realAmiCount)'),
+                          ],
+                        ),
                       ],
                     ),
                   ),
@@ -133,13 +160,18 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                     padding: const EdgeInsets.all(10),
                     child: Wrap(
                       spacing: 8,
-                  children: [
+                      runSpacing: 8,
+                      children: [
                         StatusBadge(type: BadgeType.inspect, label: '우선점검 $priorityCount'),
                         StatusBadge(type: BadgeType.scenario, label: '점검권고 $recommendCount'),
                         StatusBadge(type: BadgeType.validation, label: '관찰 $observeCount'),
                         StatusBadge(type: BadgeType.normal, label: '정상 $normalCount'),
+                        if (supportsScenario)
                         StatusBadge(type: BadgeType.scenario, label: '시나리오 $scenarioCount'),
-                        StatusBadge(type: BadgeType.validation, label: '실제AMI $realAmiCount'),
+                        if (supportsRealAmi && realAmiCount > 0)
+                          StatusBadge(type: BadgeType.realAmi, label: '실제 AMI $realAmiCount'),
+                        if (!supportsScenario && municipalCount > 0)
+                          StatusBadge(type: BadgeType.validation, label: '실측 미연결 $municipalCount'),
                       ],
                     ),
                   ),
@@ -152,18 +184,40 @@ class _MapScreenState extends ConsumerState<MapScreen> {
     );
   }
 
-  Widget _buildFilterChip(_MapFilter filter, String label) {
-    final active = _filter == filter;
+  _MapFilter _resolveFilter(
+    RegionId region,
+    int targetCount,
+    int scenarioCount,
+    int realAmiCount,
+    _MapFilter requested,
+  ) {
+    if (region == RegionId.suyeong && requested == _MapFilter.realAmi) return _MapFilter.all;
+    if (region != RegionId.suyeong && requested == _MapFilter.scenario) return _MapFilter.all;
+    if (requested == _MapFilter.targeted && targetCount <= 0) return _MapFilter.all;
+    if (requested == _MapFilter.scenario && scenarioCount <= 0) return _MapFilter.all;
+    if (requested == _MapFilter.realAmi && realAmiCount <= 0) return _MapFilter.all;
+    return requested;
+  }
+
+  Widget _buildFilterChip(_MapFilter activeFilter, _MapFilter filter, String label) {
+    final selected = activeFilter == filter;
     return FilterChip(
       label: Text(label),
-      selected: active,
+      selected: selected,
       selectedColor: Colors.blue.withValues(alpha: 0.2),
-      onSelected: (selected) {
+      onSelected: (_) {
         setState(() {
           _filter = filter;
         });
       },
     );
+  }
+
+  Set<String> _extractTargetCabinets(Map<String, dynamic> targetMode, String key) {
+    final raw = targetMode[key];
+    if (raw is List) return raw.map((value) => value.toString()).toSet();
+    if (raw is String) return <String>{raw};
+    return const <String>{};
   }
 
   void _openCabinet(BuildContext context, String id) {
@@ -179,11 +233,11 @@ class _MapScreenState extends ConsumerState<MapScreen> {
       InspectionStatus.dataCheckRequired => Colors.grey,
     };
 
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        CircleAvatar(radius: 12, backgroundColor: color, foregroundColor: Colors.white, child: const Icon(Icons.bolt, size: 14)),
-      ],
+    return CircleAvatar(
+      radius: 12,
+      backgroundColor: color,
+      foregroundColor: Colors.white,
+      child: const Icon(Icons.bolt, size: 14),
     );
   }
 }

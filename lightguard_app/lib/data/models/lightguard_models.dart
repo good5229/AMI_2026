@@ -199,8 +199,7 @@ class CabinetRecord {
   }
 
   EvidenceSource get evidenceSource {
-    if (ami.virtualLinkMode == 'scenario_injection') return EvidenceSource.scenarioInjection;
-    return EvidenceSource.realCompetitionAmi;
+    return ami.source;
   }
 
   String get modeLabel {

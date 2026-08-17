@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../core/widgets/app_scaffold.dart';
 import '../../core/widgets/status_badges.dart';
 import '../../data/models/lightguard_models.dart';
+import '../../data/models/region_config.dart';
 import '../../data/repositories/lightguard_repository.dart';
 
 class InspectionListScreen extends ConsumerStatefulWidget {
@@ -14,7 +15,7 @@ class InspectionListScreen extends ConsumerStatefulWidget {
 }
 
 class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
-  String _filter = 'all';
+  _InspectionFilter _filter = _InspectionFilter.all;
 
   @override
   Widget build(BuildContext context) {
@@ -24,36 +25,56 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
       loading: () => const Scaffold(body: Center(child: CircularProgressIndicator())),
       error: (e, s) => Scaffold(body: Center(child: Text('점검 데이터 로드 실패: $e'))),
       data: (data) {
-        final rows = _filterRows(data.objects);
+        final region = ref.watch(selectedRegionProvider);
+        final targetCabinetIds = _extractTargetCabinets(data.targetMode, region.targetModeField);
+        final targetCount = data.objects.where((c) => targetCabinetIds.contains(c.cabinetUid)).length;
+        final scenarioCount = data.objects.where((c) => c.evidenceSource == EvidenceSource.scenarioInjection).length;
+        final realAmiCount = data.objects.where((c) => c.evidenceSource == EvidenceSource.realCompetitionAmi).length;
+        final supportedFilters = _supportedFilters(
+          region: region,
+          targetCount: targetCount,
+          scenarioCount: scenarioCount,
+          realAmiCount: realAmiCount,
+        );
+        final activeFilter = supportedFilters.contains(_filter) ? _filter : supportedFilters.first;
+        final rows = _filterRows(data.objects, activeFilter, targetCabinetIds);
+
         return LightguardShell(
           title: '점검 우선순위',
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: 8),
-              child: DropdownButton<String>(
-                value: _filter,
+              child: DropdownButton<_InspectionFilter>(
+                value: activeFilter,
                 underline: const SizedBox.shrink(),
-                items: const [
-                  DropdownMenuItem(value: 'all', child: Text('전체')),
-                  DropdownMenuItem(value: 'priority', child: Text('우선 점검')),
-                  DropdownMenuItem(value: 'recommended', child: Text('점검 권고')),
-                  DropdownMenuItem(value: 'observe', child: Text('관찰')),
-                  DropdownMenuItem(value: 'normal', child: Text('정상')),
-                  DropdownMenuItem(value: 'scenario', child: Text('검증 시나리오만')),
-                  DropdownMenuItem(value: 'real_ami', child: Text('실제 AMI만')),
+                items: [
+                  for (final filter in supportedFilters)
+                    DropdownMenuItem(value: filter, child: Text(_filterLabel(filter))),
                 ],
-                onChanged: (v) => setState(() => _filter = v ?? 'all'),
+                onChanged: (v) => setState(() => _filter = v ?? _InspectionFilter.all),
               ),
             ),
           ],
           child: ListView.separated(
-            itemCount: rows.length,
+            itemCount: rows.length + 1,
             separatorBuilder: (_, __) => const SizedBox(height: 8),
             itemBuilder: (context, index) {
-              final c = rows[index];
+              if (index == 0) {
+                return Card(
+                  margin: const EdgeInsets.fromLTRB(12, 12, 12, 0),
+                  child: ListTile(
+                    leading: const Icon(Icons.location_city_outlined),
+                    title: Text(region.label),
+                    subtitle: Text(region.regionalFilterHint),
+                    trailing: Text('총 ${data.objects.length}개'),
+                  ),
+                );
+              }
+
+              final c = rows[index - 1];
               final status = statusToLabel(c.status);
               return Card(
-                margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                margin: const EdgeInsets.symmetric(horizontal: 12),
                 child: ListTile(
                   title: Text(c.assetInfo.cabinetName),
                   subtitle: Text('UID: ${c.cabinetUid}\n이상 유형: ${c.anomalyEvidence.ruleIds.join(', ')}'),
@@ -75,15 +96,70 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
     );
   }
 
-  List<CabinetRecord> _filterRows(List<CabinetRecord> rows) {
-    final copy = [...rows]..sort((a, b) => a.inspectionPriority.rank.compareTo(b.inspectionPriority.rank));
-    if (_filter == 'all') return copy;
-    if (_filter == 'priority') return copy.where((r) => r.status == InspectionStatus.priorityInspection).toList();
-    if (_filter == 'recommended') return copy.where((r) => r.status == InspectionStatus.inspectionRecommended).toList();
-    if (_filter == 'observe') return copy.where((r) => r.status == InspectionStatus.observe).toList();
-    if (_filter == 'normal') return copy.where((r) => r.status == InspectionStatus.normal).toList();
-    if (_filter == 'scenario') return copy.where((r) => r.evidenceSource == EvidenceSource.scenarioInjection).toList();
-    if (_filter == 'real_ami') return copy.where((r) => r.evidenceSource == EvidenceSource.realCompetitionAmi).toList();
-    return copy;
+  List<_InspectionFilter> _supportedFilters({
+    required RegionId region,
+    required int targetCount,
+    required int scenarioCount,
+    required int realAmiCount,
+  }) {
+    final filters = <_InspectionFilter>[_InspectionFilter.all];
+    if (targetCount > 0) filters.add(_InspectionFilter.targeted);
+    if (region == RegionId.suyeong && scenarioCount > 0) filters.add(_InspectionFilter.scenario);
+    if (region != RegionId.suyeong && realAmiCount > 0) filters.add(_InspectionFilter.realAmi);
+    filters.addAll(const [
+      _InspectionFilter.priority,
+      _InspectionFilter.recommended,
+      _InspectionFilter.observe,
+      _InspectionFilter.normal,
+    ]);
+    return filters;
   }
+
+  List<CabinetRecord> _filterRows(List<CabinetRecord> rows, _InspectionFilter filter, Set<String> targetCabinetIds) {
+    final copy = [...rows]..sort((a, b) => a.inspectionPriority.rank.compareTo(b.inspectionPriority.rank));
+    return switch (filter) {
+      _InspectionFilter.all => copy,
+      _InspectionFilter.targeted =>
+        copy.where((r) => targetCabinetIds.contains(r.cabinetUid)).toList(growable: false),
+      _InspectionFilter.priority => copy.where((r) => r.status == InspectionStatus.priorityInspection).toList(),
+      _InspectionFilter.recommended => copy.where((r) => r.status == InspectionStatus.inspectionRecommended).toList(),
+      _InspectionFilter.observe => copy.where((r) => r.status == InspectionStatus.observe).toList(),
+      _InspectionFilter.normal => copy.where((r) => r.status == InspectionStatus.normal).toList(),
+      _InspectionFilter.scenario =>
+        copy.where((r) => r.evidenceSource == EvidenceSource.scenarioInjection).toList(),
+      _InspectionFilter.realAmi =>
+        copy.where((r) => r.evidenceSource == EvidenceSource.realCompetitionAmi).toList(),
+    };
+  }
+
+  String _filterLabel(_InspectionFilter filter) {
+    return switch (filter) {
+      _InspectionFilter.all => '전체',
+      _InspectionFilter.targeted => '검증/연계 대상',
+      _InspectionFilter.priority => '우선 점검',
+      _InspectionFilter.recommended => '점검 권고',
+      _InspectionFilter.observe => '관찰',
+      _InspectionFilter.normal => '정상',
+      _InspectionFilter.scenario => '시나리오',
+      _InspectionFilter.realAmi => '실제 AMI',
+    };
+  }
+
+  Set<String> _extractTargetCabinets(Map<String, dynamic> targetMode, String key) {
+    final raw = targetMode[key];
+    if (raw is List) return raw.map((value) => value.toString()).toSet();
+    if (raw is String) return <String>{raw};
+    return const <String>{};
+  }
+}
+
+enum _InspectionFilter {
+  all,
+  targeted,
+  priority,
+  recommended,
+  observe,
+  normal,
+  scenario,
+  realAmi,
 }

@@ -6,6 +6,12 @@ enum RegionId {
   chungju,
 }
 
+enum RegionDataBranch {
+  suyeongScenarioValidation,
+  gangneungControllerLinked,
+  chungjuAssetOnly,
+}
+
 extension RegionIdX on RegionId {
   String get id {
     return switch (this) {
@@ -28,6 +34,46 @@ extension RegionIdX on RegionId {
       RegionId.suyeong => 'assets/data/suyeong_v02_seed.json',
       RegionId.gangneung => 'assets/data/gangneung_v02_seed.json',
       RegionId.chungju => 'assets/data/chungju_v02_seed.json',
+    };
+  }
+
+  RegionDataBranch get branch {
+    return switch (this) {
+      RegionId.suyeong => RegionDataBranch.suyeongScenarioValidation,
+      RegionId.gangneung => RegionDataBranch.gangneungControllerLinked,
+      RegionId.chungju => RegionDataBranch.chungjuAssetOnly,
+    };
+  }
+
+  String get branchLabel {
+    return switch (this) {
+      RegionId.suyeong => '수영구 시나리오 주입 모드',
+      RegionId.gangneung => '강릉시 실시간 AMI 연동 모드',
+      RegionId.chungju => '충주시 분전함 자산 모드',
+    };
+  }
+
+  String get defaultFilterHint {
+    return switch (this) {
+      RegionId.suyeong => '검증 시나리오 중심 점검',
+      RegionId.gangneung => '실제 AMI 우선 점검',
+      RegionId.chungju => '고부하/이상 신호 중심 점검',
+    };
+  }
+
+  String get targetModeField {
+    return switch (this) {
+      RegionId.suyeong => 'target_cabinets_3_4kw_like',
+      RegionId.gangneung => 'target_cabinet_ids',
+      RegionId.chungju => 'target_cabinet_ids',
+    };
+  }
+
+  String get regionalFilterHint {
+    return switch (this) {
+      RegionId.suyeong => '수영구는 시나리오 주입 대상 분전함 중심으로 먼저 확인',
+      RegionId.gangneung => '강릉시는 Controller 연동 분전함 우선 탐색',
+      RegionId.chungju => '충주시는 분전함 자산 스탠드얼론 대상 우선',
     };
   }
 
@@ -74,4 +120,3 @@ class RegionMetadata {
     ),
   ];
 }
-

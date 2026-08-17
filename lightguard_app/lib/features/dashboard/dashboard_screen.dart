@@ -36,17 +36,21 @@ class DashboardScreen extends ConsumerWidget {
           title: 'LightGuard Dashboard · ${region.label}',
           actions: [
             if (today != null)
-              const Padding(
+              Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: const StatusBadge(type: BadgeType.validation, label: '검증 모드'),
+                child: StatusBadge(type: BadgeType.validation, label: region.branchLabel),
               ),
-            ],
+          ],
           child: SingleChildScrollView(
             padding: const EdgeInsets.all(12),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Wrap(spacing: 12, runSpacing: 12, children: cards),
+              children: [
+                Wrap(spacing: 12, runSpacing: 12, children: cards),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(4, 4, 4, 12),
+                  child: Text(region.modeDescription),
+                ),
                 Wrap(
                   spacing: 8,
                   runSpacing: 8,
@@ -57,7 +61,7 @@ class DashboardScreen extends ConsumerWidget {
                     _MiniPill(label: '정상 ${data.countByStatus(InspectionStatus.normal)}개'),
                   ],
                 ),
-                  const SizedBox(height: 12),
+                const SizedBox(height: 12),
                 Card(
                   child: ListTile(
                     leading: const Icon(Icons.schedule),

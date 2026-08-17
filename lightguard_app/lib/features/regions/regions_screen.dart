@@ -35,9 +35,16 @@ class RegionsScreen extends ConsumerWidget {
                           style: const TextStyle(fontWeight: FontWeight.w700),
                         ),
                       ),
-                      StatusBadge(type: BadgeType.validation, label: currentRegion.modeDescription),
+                      StatusBadge(type: BadgeType.validation, label: currentRegion.branchLabel),
                     ],
                   ),
+                ),
+              ),
+              const SizedBox(height: 8),
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Text(currentRegion.regionalFilterHint, style: const TextStyle(fontSize: 13)),
                 ),
               ),
               const SizedBox(height: 8),
@@ -55,6 +62,8 @@ class RegionsScreen extends ConsumerWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(meta.id.modeDescription),
+                          const SizedBox(height: 6),
+                          Text('대상 모드 키: ${meta.id.targetModeField}'),
                           const SizedBox(height: 6),
                           for (final note in meta.modeNotes) Text('• $note', style: const TextStyle(fontSize: 13)),
                         ],
