@@ -1,0 +1,29 @@
+[
+  {
+    "municipality_id": "suyeong",
+    "municipality_name": "부산광역시 수영구",
+    "asset_mode": "full_asset",
+    "data_date": "2026-01-14",
+    "fixture_rows": 4076,
+    "cabinet_count": 204,
+    "source_file": "부산광역시_수영구_가로등 현황_20260114.csv"
+  },
+  {
+    "municipality_id": "gangneung",
+    "municipality_name": "강원특별자치도 강릉시",
+    "asset_mode": "controller_linked",
+    "data_date": "2023-08-20",
+    "fixture_rows": 5667,
+    "cabinet_count": 339,
+    "source_file": "강원특별자치도 강릉시_가로등_20230818.csv; 강원특별자치도 강릉시_분전함_20230820.csv"
+  },
+  {
+    "municipality_id": "chungju",
+    "municipality_name": "충청북도 충주시",
+    "asset_mode": "minimal_asset",
+    "data_date": "2026-06-30",
+    "fixture_rows": null,
+    "cabinet_count": 871,
+    "source_file": "충청북도_충주시_가로등분전함정보_20260630.csv"
+  }
+]

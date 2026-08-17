@@ -1,0 +1,6 @@
+﻿meter_id,line,section_no,multiplier,supply_type,contract_power_kw,contract_type,usage,production,industry,rows,valid_current_rows,cadence_min,off_baseline_a,on_baseline_a,on_off_ratio,night_daily_cv_pct,energy_cadence_min,day_event_count,persistent_night_underactivation_count
+B-L-9,B,116,1.0,738 삼상4선(220/380V),19.0,610 가로등(을),08 가로등,부동산 판매 대리업,68221 부동산 중개 및 대리업,8644,8644,15,4.564,50.832,11.14,0.956,15,2,0
+B-L-12,B,116,1.0,738 삼상4선(220/380V),5.0,610 가로등(을),08 가로등,가로등,00000,8644,8601,15,4.723,8.771,1.86,2.252,15,0,0
+B-L-13,B,116,1.0,322 단상2선(220V),3.0,610 가로등(을),08 가로등,가로등,00000,8597,8597,15,0.03,8.84,294.67,0.297,60,1,0
+B-L-14,B,116,1.0,738 삼상4선(220/380V),11.0,610 가로등(을),08 가로등,가로등,00000,8643,8643,15,0.03,16.18,539.33,0.445,15,2,0
+B-L-35,B,119,1.0,322 단상2선(220V),4.0,610 가로등(을),08 가로등,,,8599,8597,15,0.05,17.16,343.2,0.56,60,1,0

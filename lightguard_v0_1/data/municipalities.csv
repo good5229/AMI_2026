@@ -1,0 +1,4 @@
+﻿municipality_id,municipality_name,asset_mode,data_date,fixture_rows,cabinet_count,source_file
+suyeong,부산광역시 수영구,full_asset,2026-01-14,4076,204,부산광역시_수영구_가로등 현황_20260114.csv
+gangneung,강원특별자치도 강릉시,controller_linked,2023-08-20,5667,339,강원특별자치도 강릉시_가로등_20230818.csv; 강원특별자치도 강릉시_분전함_20230820.csv
+chungju,충청북도 충주시,minimal_asset,2026-06-30,,871,충청북도_충주시_가로등분전함정보_20260630.csv

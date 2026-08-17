@@ -1,0 +1,6 @@
+﻿meter_id,total_rows,current_channel_missing_rows,voltage_channel_missing_rows,current_missing_rate_pct,note
+B-L-9,8644,0,0,0.0,"Rows with missing current/voltage are treated as measurement-channel gaps, not zero-current outages."
+B-L-12,8644,43,43,0.497,"Rows with missing current/voltage are treated as measurement-channel gaps, not zero-current outages."
+B-L-13,8597,0,0,0.0,"Rows with missing current/voltage are treated as measurement-channel gaps, not zero-current outages."
+B-L-14,8643,0,0,0.0,"Rows with missing current/voltage are treated as measurement-channel gaps, not zero-current outages."
+B-L-35,8599,2,2,0.023,"Rows with missing current/voltage are treated as measurement-channel gaps, not zero-current outages."

@@ -1,0 +1,41 @@
+{
+  "suyeong": {
+    "fixture_rows": 4076,
+    "unique_fixture_composite": 4076,
+    "cabinet_count": 204,
+    "lamp_count": 4239,
+    "rated_power_kw": 488.441,
+    "all_controller_type_bidirectional": true,
+    "latlon_complete_pct": 100.0
+  },
+  "gangneung": {
+    "fixture_rows": 5667,
+    "referenced_cabinets": 339,
+    "controller_rows": 786,
+    "matched_referenced_cabinets": 338,
+    "unmatched_referenced_cabinets": 1,
+    "matched_fixture_rows": 5659,
+    "fixture_join_rate_pct": 99.859
+  },
+  "chungju": {
+    "cabinet_rows": 871,
+    "lamp_pole_count": 16121,
+    "latlon_complete_pct": 100.0
+  },
+  "smart_reference": {
+    "rows": 12714,
+    "busan_rows": 23,
+    "suyeong_rows": 0
+  },
+  "ami": {
+    "streetlight_meter_count": 5,
+    "detected_daytime_events": 6,
+    "meters": [
+      "B-L-9",
+      "B-L-12",
+      "B-L-13",
+      "B-L-14",
+      "B-L-35"
+    ]
+  }
+}

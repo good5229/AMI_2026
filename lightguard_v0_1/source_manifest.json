@@ -1,0 +1,20 @@
+[
+  {
+    "file": "suyeong_v02_objects.json",
+    "size_bytes": 2935158,
+    "sha256": "808a49a60efa4857e936286dd6f9e2d536d4b90a4cd982aac1273bf9298eb954",
+    "purpose": "v0.2_output"
+  },
+  {
+    "file": "simulation_scenarios_v02.json",
+    "size_bytes": 14035,
+    "sha256": "58cb35175d6f69ec42e48e77d9c8be5d3642685cf746b200cf32e937347081b8",
+    "purpose": "v0.2_output"
+  },
+  {
+    "file": "suyeong_v02_seed.json",
+    "size_bytes": 3130870,
+    "sha256": "5a158e7007ce29d9eabd0b269db30f758bc361d1fa72a162558f4be1b1d443e9",
+    "purpose": "v0.2_output"
+  }
+]

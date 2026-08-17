@@ -1,0 +1,5 @@
+﻿station_id,station_name,latitude,longitude,station_type
+STN-8d144c6594,수영구 35.16_129.13,35.158876,129.129986,synthetic_cluster
+STN-ab13ed56b0,수영구 35.17_129.12,35.169524,129.120453,synthetic_cluster
+STN-5058817be6,수영구 35.17_129.11,35.170986,129.110425,synthetic_cluster
+STN-5362dab4f1,수영구 35.14_129.11,35.140677,129.11067,synthetic_cluster
