@@ -5,6 +5,7 @@ on:
     branches:
       - main
     paths:
+      - '.github/workflows/flutter-pages.yml'
       - 'lightguard_app/**'
 
 permissions:
