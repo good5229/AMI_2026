@@ -23,7 +23,7 @@ jobs:
         run: flutter pub get
         working-directory: lightguard_app
       - name: Build web
-        run: flutter build web --release
+        run: flutter build web --release --base-href /${{ github.event.repository.name }}/
         working-directory: lightguard_app
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
