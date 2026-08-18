@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/widgets/app_scaffold.dart';
 import '../../core/widgets/status_badges.dart';
+import '../../data/models/lightguard_models.dart';
 import '../../data/repositories/lightguard_repository.dart';
 
 class CabinetDetailScreen extends ConsumerWidget {
@@ -34,11 +35,11 @@ class CabinetDetailScreen extends ConsumerWidget {
               const SizedBox(height: 8),
               _section('Section A — 자산 정보', [
                 _kv('연결 가로등 수', '${cabinet.assetInfo.fixtureCount}개'),
-                _kv('램프 종류', 'LED'),
+                _kv('램프 정격', _fixtureLampType(cabinet)),
                 _kv('총 정격용량', '${cabinet.expectedLoad.ratedPowerW.toStringAsFixed(1)} W'),
                 _kv('주소/위치', cabinet.assetInfo.location),
                 _kv('데이터 유형', cabinet.modeLabel),
-              ]),
+              ], keySuffix: 'cabinet-section-summary-a'),
               const SizedBox(height: 8),
               _section('Section B — 예상 운전', [
                 _kv('일출', cabinet.expectedSchedule.sunrise),
@@ -50,53 +51,69 @@ class CabinetDetailScreen extends ConsumerWidget {
                 _kv('기상 기준점', cabinet.weatherContext.stationName),
               ]),
               const SizedBox(height: 8),
-              _section('Section C — AMI/시나리오 시계열', [
-                SizedBox(
-                  height: 240,
-                  child: signal == null
-                      ? const Center(child: Text('시계열 이벤트 없음'))
-                      : Padding(
-                          padding: const EdgeInsets.all(8),
-                          child: LineChart(
-                            LineChartData(
-                              minX: 0,
-                              maxX: 2,
-                              minY: 0,
-                              maxY: signal.maxActivation,
-                              lineBarsData: [
-                                LineChartBarData(
-                                  spots: [
-                                    const FlSpot(0, 0),
-                                    FlSpot(1, signal.maxActivation),
-                                    const FlSpot(2, 0),
-                                  ],
-                                  isCurved: false,
-                                  barWidth: 3,
-                                  color: Colors.blueAccent,
-                                ),
-                              ],
+              _section(
+                'Section C: 이벤트 활성도 요약 (시각화)',
+                [
+                  const Text(
+                    '현재 그래프는 탐지 이벤트의 최대 활성도만을 요약한 시각화이며, 원시 15분 AMI 시계열 자체를 의미하지 않습니다.',
+                    key: Key('section-cabinet-section-summary-c-description'),
+                    style: TextStyle(fontSize: 12, color: Colors.grey),
+                  ),
+                  SizedBox(
+                    height: 240,
+                    child: signal == null
+                        ? const Center(child: Text('시계열 이벤트 없음'))
+                        : Padding(
+                            padding: const EdgeInsets.all(8),
+                            child: LineChart(
+                              LineChartData(
+                                minX: 0,
+                                maxX: 2,
+                                minY: 0,
+                                maxY: signal.maxActivation,
+                                lineBarsData: [
+                                  LineChartBarData(
+                                    spots: [
+                                      const FlSpot(0, 0),
+                                      FlSpot(1, signal.maxActivation),
+                                      const FlSpot(2, 0),
+                                    ],
+                                    isCurved: false,
+                                    barWidth: 3,
+                                    color: Colors.blueAccent,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                ),
-                if (signal != null)
-                  _kv('탐지 유형', '${signal.eventType} / ${signal.patternConfidence}'),
-              ]),
+                  ),
+                  _kv('탐지 유형', signal == null ? '없음' : '${signal.eventType} / ${signal.patternConfidence}'),
+                ],
+                keySuffix: 'cabinet-section-summary-c',
+              ),
               const SizedBox(height: 8),
-              _section('Section D — 이상 근거', [
+              _section(
+                'Section D — 이상 근거',
+                [
                 _kv('이상 룰', cabinet.anomalyEvidence.ruleIds.join(', ')),
                 _kv('근거 요약', cabinet.anomalyEvidence.summary),
                 if (signal != null)
                   _kv('최대 activation', '${(signal.maxActivation * 100).toStringAsFixed(1)}%'),
-              ]),
+                ],
+                keySuffix: 'summary-d',
+              ),
               const SizedBox(height: 8),
-              _section('Section E — 점검 우선순위', [
+              _section(
+                'Section E — 점검 우선순위',
+                [
                 _kv('우선순위 점수', cabinet.inspectionPriority.score.toStringAsFixed(1)),
                 _kv('심각도', cabinet.inspectionPriority.severity),
                 _kv('승인 이유', cabinet.inspectionPriority.reason),
                 const SizedBox(height: 6),
                 const Text('권장 확인사항: AMI 시그널 지속시간, 분전함 제어이력, 조도 이슈 동시 점검'),
-              ]),
+                ],
+                keySuffix: 'priority',
+              ),
             ],
           ),
         );
@@ -104,8 +121,21 @@ class CabinetDetailScreen extends ConsumerWidget {
     );
   }
 
-  Widget _section(String title, List<Widget> children) {
+  String _fixtureLampType(CabinetRecord cabinet) {
+    final wattages = cabinet.assetInfo.fixtures
+        .map((fixture) => fixture.lampWatt)
+        .whereType<double>()
+        .where((value) => value > 0)
+        .toSet()
+        .toList(growable: false)
+      ..sort();
+    if (wattages.isEmpty) return '자료 미제공';
+    return wattages.map((w) => '${w.toStringAsFixed(0)}W').join(', ');
+  }
+
+  Widget _section(String title, List<Widget> children, {String? keySuffix}) {
     return Card(
+      key: Key(keySuffix == null ? 'section-$title' : 'section-$keySuffix'),
       child: Padding(
         padding: const EdgeInsets.all(12),
         child: Column(

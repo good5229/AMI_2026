@@ -29,12 +29,13 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
         final targetCabinetIds = _extractTargetCabinets(data.targetMode, region.targetModeField);
         final targetCount = data.objects.where((c) => targetCabinetIds.contains(c.cabinetUid)).length;
         final scenarioCount = data.objects.where((c) => c.evidenceSource == EvidenceSource.scenarioInjection).length;
-        final realAmiCount = data.objects.where((c) => c.evidenceSource == EvidenceSource.realCompetitionAmi).length;
+        final municipalCount = data.objects.where((c) => c.evidenceSource == EvidenceSource.realMunicipalAsset).length;
+
         final supportedFilters = _supportedFilters(
           region: region,
           targetCount: targetCount,
           scenarioCount: scenarioCount,
-          realAmiCount: realAmiCount,
+          municipalCount: municipalCount,
         );
         final activeFilter = supportedFilters.contains(_filter) ? _filter : supportedFilters.first;
         final rows = _filterRows(data.objects, activeFilter, targetCabinetIds);
@@ -44,14 +45,20 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: 8),
-              child: DropdownButton<_InspectionFilter>(
+              child: DropdownButton<dynamic>(
+                key: const Key('inspection-filter-dropdown'),
                 value: activeFilter,
                 underline: const SizedBox.shrink(),
-                items: [
-                  for (final filter in supportedFilters)
-                    DropdownMenuItem(value: filter, child: Text(_filterLabel(filter))),
+                    items: [
+                      for (final filter in supportedFilters)
+                        DropdownMenuItem<dynamic>(
+                          value: filter,
+                          key: Key('inspection-filter-item-${filter.name}'),
+                          child: Text(_filterLabel(filter)),
+                        ),
                 ],
-                onChanged: (v) => setState(() => _filter = v ?? _InspectionFilter.all),
+                onChanged: (value) =>
+                    setState(() => _filter = value is _InspectionFilter ? value : _InspectionFilter.all),
               ),
             ),
           ],
@@ -64,6 +71,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                   margin: const EdgeInsets.fromLTRB(12, 12, 12, 0),
                   child: ListTile(
                     leading: const Icon(Icons.location_city_outlined),
+                    key: const Key('inspection-region-summary'),
                     title: Text(region.label),
                     subtitle: Text(region.regionalFilterHint),
                     trailing: Text('총 ${data.objects.length}개'),
@@ -100,12 +108,12 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
     required RegionId region,
     required int targetCount,
     required int scenarioCount,
-    required int realAmiCount,
+    required int municipalCount,
   }) {
     final filters = <_InspectionFilter>[_InspectionFilter.all];
     if (targetCount > 0) filters.add(_InspectionFilter.targeted);
-    if (region == RegionId.suyeong && scenarioCount > 0) filters.add(_InspectionFilter.scenario);
-    if (region != RegionId.suyeong && realAmiCount > 0) filters.add(_InspectionFilter.realAmi);
+    if (region.supportsScenarioInjection && scenarioCount > 0) filters.add(_InspectionFilter.scenario);
+    if (!region.supportsScenarioInjection && municipalCount > 0) filters.add(_InspectionFilter.municipalAsset);
     filters.addAll(const [
       _InspectionFilter.priority,
       _InspectionFilter.recommended,
@@ -127,8 +135,8 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
       _InspectionFilter.normal => copy.where((r) => r.status == InspectionStatus.normal).toList(),
       _InspectionFilter.scenario =>
         copy.where((r) => r.evidenceSource == EvidenceSource.scenarioInjection).toList(),
-      _InspectionFilter.realAmi =>
-        copy.where((r) => r.evidenceSource == EvidenceSource.realCompetitionAmi).toList(),
+      _InspectionFilter.municipalAsset =>
+        copy.where((r) => r.evidenceSource == EvidenceSource.realMunicipalAsset).toList(),
     };
   }
 
@@ -140,8 +148,8 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
       _InspectionFilter.recommended => '점검 권고',
       _InspectionFilter.observe => '관찰',
       _InspectionFilter.normal => '정상',
-      _InspectionFilter.scenario => '시나리오',
-      _InspectionFilter.realAmi => '실제 AMI',
+      _InspectionFilter.scenario => '검증 시나리오',
+      _InspectionFilter.municipalAsset => '실측 자산',
     };
   }
 
@@ -161,5 +169,5 @@ enum _InspectionFilter {
   observe,
   normal,
   scenario,
-  realAmi,
+  municipalAsset,
 }

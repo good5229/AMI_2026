@@ -17,7 +17,7 @@ enum _MapFilter {
   recommended,
   priority,
   scenario,
-  realAmi,
+  municipalAsset,
 }
 
 class MapScreen extends ConsumerStatefulWidget {
@@ -54,12 +54,16 @@ class _MapScreenState extends ConsumerState<MapScreen> {
         final observeCount = allPoints.where((c) => c.status == InspectionStatus.observe).length;
         final normalCount = allPoints.where((c) => c.status == InspectionStatus.normal).length;
         final scenarioCount = allPoints.where((c) => c.evidenceSource == EvidenceSource.scenarioInjection).length;
-        final realAmiCount = allPoints.where((c) => c.evidenceSource == EvidenceSource.realCompetitionAmi).length;
         final municipalCount = allPoints.where((c) => c.evidenceSource == EvidenceSource.realMunicipalAsset).length;
 
-        final supportsScenario = region == RegionId.suyeong;
-        final supportsRealAmi = region == RegionId.gangneung || region == RegionId.chungju;
-        final availableFilter = _resolveFilter(region, targetCount, scenarioCount, realAmiCount, _filter);
+        final supportsScenario = region.supportsScenarioInjection;
+        final availableFilter = _resolveFilter(
+          region: region,
+          targetCount: targetCount,
+          scenarioCount: scenarioCount,
+          municipalCount: municipalCount,
+          requested: _filter,
+        );
 
         final points = switch (availableFilter) {
           _MapFilter.all => allPoints,
@@ -72,8 +76,8 @@ class _MapScreenState extends ConsumerState<MapScreen> {
             allPoints.where((c) => c.status == InspectionStatus.priorityInspection).toList(growable: false),
           _MapFilter.scenario =>
             allPoints.where((c) => c.evidenceSource == EvidenceSource.scenarioInjection).toList(growable: false),
-          _MapFilter.realAmi =>
-            allPoints.where((c) => c.evidenceSource == EvidenceSource.realCompetitionAmi).toList(growable: false),
+          _MapFilter.municipalAsset =>
+            allPoints.where((c) => c.evidenceSource == EvidenceSource.realMunicipalAsset).toList(growable: false),
         };
 
         final center = points.isNotEmpty
@@ -135,15 +139,20 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                           children: [
                             _buildFilterChip(availableFilter, _MapFilter.all, '전체 ($totalCount)'),
                             if (targetCount > 0)
-                              _buildFilterChip(availableFilter, _MapFilter.targeted, '검증/연계대상 ($targetCount)'),
+                              _buildFilterChip(
+                                availableFilter,
+                                _MapFilter.targeted,
+                                '검증/연계대상 ($targetCount)',
+                              ),
                             _buildFilterChip(availableFilter, _MapFilter.priority, '우선점검 ($priorityCount)'),
-                            _buildFilterChip(availableFilter, _MapFilter.recommended, '점검권고 ($recommendCount)'),
+                            _buildFilterChip(
+                                availableFilter, _MapFilter.recommended, '점검권고 ($recommendCount)'),
                             _buildFilterChip(availableFilter, _MapFilter.observe, '관찰 ($observeCount)'),
                             _buildFilterChip(availableFilter, _MapFilter.normal, '정상 ($normalCount)'),
                             if (supportsScenario)
-                              _buildFilterChip(availableFilter, _MapFilter.scenario, '시나리오 ($scenarioCount)'),
-                            if (supportsRealAmi && realAmiCount > 0)
-                              _buildFilterChip(availableFilter, _MapFilter.realAmi, '실제 AMI ($realAmiCount)'),
+                              _buildFilterChip(availableFilter, _MapFilter.scenario, '검증 시나리오 ($scenarioCount)'),
+                            if (!supportsScenario && municipalCount > 0)
+                              _buildFilterChip(availableFilter, _MapFilter.municipalAsset, '실측 자산 ($municipalCount)'),
                           ],
                         ),
                       ],
@@ -166,12 +175,10 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                         StatusBadge(type: BadgeType.scenario, label: '점검권고 $recommendCount'),
                         StatusBadge(type: BadgeType.validation, label: '관찰 $observeCount'),
                         StatusBadge(type: BadgeType.normal, label: '정상 $normalCount'),
-                        if (supportsScenario)
-                        StatusBadge(type: BadgeType.scenario, label: '시나리오 $scenarioCount'),
-                        if (supportsRealAmi && realAmiCount > 0)
-                          StatusBadge(type: BadgeType.realAmi, label: '실제 AMI $realAmiCount'),
+                        if (supportsScenario && scenarioCount > 0)
+                          StatusBadge(type: BadgeType.scenario, label: '시나리오 $scenarioCount'),
                         if (!supportsScenario && municipalCount > 0)
-                          StatusBadge(type: BadgeType.validation, label: '실측 미연결 $municipalCount'),
+                          StatusBadge(type: BadgeType.validation, label: '실측 자산 $municipalCount'),
                       ],
                     ),
                   ),
@@ -184,18 +191,17 @@ class _MapScreenState extends ConsumerState<MapScreen> {
     );
   }
 
-  _MapFilter _resolveFilter(
-    RegionId region,
-    int targetCount,
-    int scenarioCount,
-    int realAmiCount,
-    _MapFilter requested,
-  ) {
-    if (region == RegionId.suyeong && requested == _MapFilter.realAmi) return _MapFilter.all;
-    if (region != RegionId.suyeong && requested == _MapFilter.scenario) return _MapFilter.all;
+  _MapFilter _resolveFilter({
+    required RegionId region,
+    required int targetCount,
+    required int scenarioCount,
+    required int municipalCount,
+    required _MapFilter requested,
+  }) {
+    if (region.supportsScenarioInjection == false && requested == _MapFilter.scenario) return _MapFilter.all;
     if (requested == _MapFilter.targeted && targetCount <= 0) return _MapFilter.all;
     if (requested == _MapFilter.scenario && scenarioCount <= 0) return _MapFilter.all;
-    if (requested == _MapFilter.realAmi && realAmiCount <= 0) return _MapFilter.all;
+    if (requested == _MapFilter.municipalAsset && municipalCount <= 0) return _MapFilter.all;
     return requested;
   }
 

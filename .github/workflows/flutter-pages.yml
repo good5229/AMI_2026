@@ -7,6 +7,7 @@ on:
     paths:
       - '.github/workflows/flutter-pages.yml'
       - 'lightguard_app/**'
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -21,15 +22,23 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.16.0'
+          flutter-version: stable
       - name: Install dependencies
         run: flutter pub get
         working-directory: lightguard_app
-      - name: Build web
-        run: flutter build web --release --base-href /
+      - name: Flutter analyze
+        run: flutter analyze
         working-directory: lightguard_app
+      - name: Flutter test
+        run: flutter test --reporter expanded --disable-analytics --no-dds
+        working-directory: lightguard_app
+      - name: Build web
+        run: flutter build web --release --base-href /AMI_2026/
+        working-directory: lightguard_app
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./lightguard_app/build/web
 

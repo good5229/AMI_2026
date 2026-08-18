@@ -49,7 +49,7 @@ class LightguardData {
   static List<ValidationRow> parseValidationRows(String csv) {
     final lines = LineSplitter.split(csv).toList();
     if (lines.length <= 1) return const [];
-    final headers = _parseCsvLine(lines.first);
+    final headers = _parseCsvLine(lines.first, isHeader: true);
     final rows = <ValidationRow>[];
     for (var i = 1; i < lines.length; i++) {
       if (lines[i].trim().isEmpty) continue;
@@ -63,7 +63,7 @@ class LightguardData {
     return rows;
   }
 
-  static List<String> _parseCsvLine(String line) {
+  static List<String> _parseCsvLine(String line, {bool isHeader = false}) {
     final result = <String>[];
     final buffer = StringBuffer();
     bool inQuotes = false;
@@ -81,7 +81,11 @@ class LightguardData {
       }
     }
     result.add(buffer.toString());
-    return result.map((e) => e.trim().replaceAll(RegExp(r'^"|"$'), '')).toList(growable: false);
+    final parsed = result.map((e) => e.trim().replaceAll(RegExp(r'^"|"$'), '')).toList(growable: false);
+    if (isHeader && parsed.isNotEmpty && parsed.first.startsWith('\uFEFF')) {
+      parsed[0] = parsed.first.replaceAll('\uFEFF', '');
+    }
+    return parsed;
   }
 
   int get totalLampCount => objects.fold(0, (acc, o) => acc + o.assetInfo.lampCount);
@@ -203,7 +207,7 @@ class CabinetRecord {
   }
 
   String get modeLabel {
-    if (ami.hasRealAmi) return '실제 AMI';
+    if (ami.hasRealAmi) return '실측 자산 연동';
     if (ami.virtualLinkMode == 'scenario_injection') return '검증 시나리오';
     return '실측 없음';
   }
@@ -404,13 +408,15 @@ class AmiPayload {
 
   EvidenceSource get source {
     if (virtualLinkMode == 'scenario_injection') return EvidenceSource.scenarioInjection;
-    if (hasRealAmi) return EvidenceSource.realCompetitionAmi;
+    if (hasRealAmi && virtualLinkMode == 'none' && amiMeterId != null) {
+      return EvidenceSource.realMunicipalAsset;
+    }
     return EvidenceSource.realMunicipalAsset;
   }
 
   AmiLinkMode get linkMode {
     if (virtualLinkMode == 'scenario_injection') return AmiLinkMode.scenarioInjection;
-    if (hasRealAmi) return AmiLinkMode.real;
+    if (hasRealAmi) return AmiLinkMode.none;
     return AmiLinkMode.none;
   }
 }
