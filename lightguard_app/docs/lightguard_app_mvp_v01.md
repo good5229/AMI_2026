@@ -1,9 +1,11 @@
-# LightGuard App MVP v0.1
+# LightGuard App MVP v0.2 제출형 고도화
 
 ## 구현 범위
 - Flutter 단일 코드베이스(Web + Android 중심)
 - 수영구 204개 분전함 시연 중심 MVP
 - 실제 자산/실제 AMI/검증 시나리오를 명시적으로 분리
+- 실제 공모전 AMI 6건 및 대표 Case Study 3건
+- 지역별 capability와 실제 지자체 AMI 0건 불변식
 
 ## 구조
 - 앱 진입: `main.dart`
@@ -23,7 +25,7 @@
 
 ## 데이터 분리
 - 실제 공공자산: 자산 계층(asset_info, expected_load, expected_schedule)
-- 실제 AMI: `ami_events.csv`에서 이벤트를 읽고 "실제 AMI" badge 적용
+- 실제 공모전 AMI: `ami_events.csv`에서 이벤트를 읽고 "실제 공모전 AMI" badge 적용
 - Scenario Injection: `suyeong_v02_seed`의 `ami.virtual_link_mode == scenario_injection` 조건
 
 ## 실행법
@@ -40,7 +42,16 @@
 - Flutter 실행 바이너리가 실행 환경에 따라 제약 가능성 있음
 - 지도 타일이 실패 시 기본 목록/상세/대시보드는 별도 동작
 
+## 현재 검증 기준
+
+- 수영구 분전함 204개와 지도 좌표 204개
+- Controlled scenario 46개 중 재현 검출 46개
+- 실제 공모전 AMI 점검 후보 6건
+- 실제 지자체 AMI 매핑 0건
+- 강릉 Controller-linked / 충주 Asset-only 분기
+
 ## 다음 단계
-- 강릉/충주 데이터 실제 적용 스위치
-- 상세 필터링(날짜, 상태, 이상 유형) 강화
-- 탐지 이벤트의 시계열 원본 데이터 시각화를 위한 실제 시그널 적재
+
+- 실제 AMI meter ID와 지자체 분전함 ID 매핑
+- 정비이력 및 현장 고장 label 연계
+- 원본 event 전후 시계열을 확보한 경우에만 실제 시계열 시각화

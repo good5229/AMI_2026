@@ -25,17 +25,48 @@ class RegionsScreen extends ConsumerWidget {
               Card(
                 child: Padding(
                   padding: const EdgeInsets.all(12),
-                  child: Row(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Icon(Icons.location_city_outlined),
-                      const SizedBox(width: 10),
-                      Expanded(
-                        child: Text(
-                          '현재 표시 지역: ${currentRegion.label} (${data.objects.length}개 분전함, 유효 등주수 ${data.totalLampCount}개)',
-                          style: const TextStyle(fontWeight: FontWeight.w700),
-                        ),
+                      Row(
+                        children: [
+                          const Icon(Icons.location_city_outlined),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Text(
+                              '현재 표시 지역: ${currentRegion.label}',
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.w700),
+                            ),
+                          ),
+                        ],
                       ),
-                      StatusBadge(type: BadgeType.validation, label: currentRegion.branchLabel),
+                      const SizedBox(height: 10),
+                      Wrap(
+                        spacing: 8,
+                        runSpacing: 8,
+                        children: [
+                          StatusBadge(
+                              type: BadgeType.validation,
+                              label: currentRegion.branchLabel),
+                          const StatusBadge(
+                              type: BadgeType.validation,
+                              label: '실제 지자체 AMI 0개'),
+                          StatusBadge(
+                            type: currentRegion.supportsScenarioInjection
+                                ? BadgeType.scenario
+                                : BadgeType.validation,
+                            label: currentRegion.supportsScenarioInjection
+                                ? 'Controlled scenario'
+                                : currentRegion.supportsControllerData
+                                    ? 'Controller-linked'
+                                    : 'Asset-only',
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                          '${data.objects.length}개 분전함 · 가로등 ${data.totalLampCount}등'),
                     ],
                   ),
                 ),
@@ -44,7 +75,8 @@ class RegionsScreen extends ConsumerWidget {
               Card(
                 child: Padding(
                   padding: const EdgeInsets.all(12),
-                  child: Text(currentRegion.regionalFilterHint, style: const TextStyle(fontSize: 13)),
+                  child: Text(currentRegion.regionalFilterHint,
+                      style: const TextStyle(fontSize: 13)),
                 ),
               ),
               const SizedBox(height: 8),
@@ -52,30 +84,59 @@ class RegionsScreen extends ConsumerWidget {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 8),
                   child: Card(
-                    child: ListTile(
-                      leading: Icon(
-                        currentRegion == meta.id ? Icons.toggle_on : Icons.location_city_outlined,
-                        color: currentRegion == meta.id ? Colors.blue : Colors.grey,
-                      ),
-                      title: Text(meta.id.label, style: const TextStyle(fontWeight: FontWeight.w700)),
-                      subtitle: Column(
+                    child: Padding(
+                      padding: const EdgeInsets.all(14),
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(meta.id.modeDescription),
-                          const SizedBox(height: 6),
-                          Text('대상 모드 키: ${meta.id.targetModeField}'),
-                          const SizedBox(height: 6),
-                          for (final note in meta.modeNotes) Text('• $note', style: const TextStyle(fontSize: 13)),
+                          Row(
+                            children: [
+                              Icon(
+                                currentRegion == meta.id
+                                    ? Icons.toggle_on
+                                    : Icons.location_city_outlined,
+                                color: currentRegion == meta.id
+                                    ? Colors.blue
+                                    : Colors.grey,
+                              ),
+                              const SizedBox(width: 8),
+                              Expanded(
+                                child: Text(meta.id.label,
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.w700)),
+                              ),
+                              if (currentRegion == meta.id)
+                                const Text('현재')
+                              else
+                                ElevatedButton(
+                                  onPressed: () {
+                                    ref
+                                        .read(selectedRegionProvider.notifier)
+                                        .state = meta.id;
+                                  },
+                                  child: const Text('선택'),
+                                ),
+                            ],
+                          ),
+                          const SizedBox(height: 8),
+                          Wrap(
+                            spacing: 8,
+                            runSpacing: 8,
+                            children: [
+                              StatusBadge(
+                                  type: BadgeType.validation,
+                                  label: meta.id.modeDescription),
+                              const StatusBadge(
+                                  type: BadgeType.validation,
+                                  label: '실제 AMI 연결 없음'),
+                            ],
+                          ),
+                          const SizedBox(height: 8),
+                          for (final note in meta.modeNotes)
+                            Text('• $note',
+                                style: const TextStyle(fontSize: 13)),
                         ],
                       ),
-                      trailing: currentRegion == meta.id
-                          ? const Text('현재')
-                          : ElevatedButton(
-                              onPressed: () {
-                                ref.read(selectedRegionProvider.notifier).state = meta.id;
-                              },
-                              child: const Text('선택'),
-                            ),
                     ),
                   ),
                 ),

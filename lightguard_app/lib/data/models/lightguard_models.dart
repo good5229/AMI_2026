@@ -2,11 +2,22 @@ import 'dart:convert';
 
 enum InspectionSeverity { low, medium, high, critical }
 
-enum EvidenceSource { realMunicipalAsset, realCompetitionAmi, scenarioInjection }
+enum EvidenceSource {
+  assetOnly,
+  realMunicipalAsset,
+  realCompetitionAmi,
+  scenarioInjection
+}
 
 enum AmiLinkMode { none, real, scenarioInjection }
 
-enum InspectionStatus { normal, observe, inspectionRecommended, priorityInspection, dataCheckRequired }
+enum InspectionStatus {
+  normal,
+  observe,
+  inspectionRecommended,
+  priorityInspection,
+  dataCheckRequired
+}
 
 class LightguardData {
   const LightguardData({
@@ -27,20 +38,30 @@ class LightguardData {
   final List<ScenarioRecord> validationScenarios;
   final List<ValidationRow> validationRows;
 
-  factory LightguardData.fromSeedJson(String seedJson, String scenariosJson, String validationCsv) {
+  factory LightguardData.fromSeedJson(
+    String seedJson,
+    String scenariosJson,
+    String validationCsv, {
+    bool allowRealMunicipalAmi = false,
+  }) {
     final seed = jsonDecode(seedJson) as Map<String, dynamic>;
     final scenarios = (jsonDecode(scenariosJson) as List<dynamic>)
         .map((e) => ScenarioRecord.fromJson(e as Map<String, dynamic>))
         .toList(growable: false);
 
     return LightguardData(
-      generatedAt: DateTime.tryParse(seed['generated_at'] as String? ?? '') ?? DateTime.now(),
+      generatedAt: DateTime.tryParse(seed['generated_at'] as String? ?? '') ??
+          DateTime.now(),
       schemaVersion: seed['schema_version']?.toString() ?? '',
       municipality: seed['municipality']?.toString() ?? 'suyeong',
       objects: (seed['objects'] as List<dynamic>? ?? const [])
-          .map((e) => CabinetRecord.fromJson(e as Map<String, dynamic>))
+          .map((e) => CabinetRecord.fromJson(
+                e as Map<String, dynamic>,
+                allowRealMunicipalAmi: allowRealMunicipalAmi,
+              ))
           .toList(growable: false),
-      targetMode: (seed['target_mode'] as Map<String, dynamic>? ?? const <String, dynamic>{}),
+      targetMode: (seed['target_mode'] as Map<String, dynamic>? ??
+          const <String, dynamic>{}),
       validationScenarios: scenarios,
       validationRows: parseValidationRows(validationCsv),
     );
@@ -81,16 +102,20 @@ class LightguardData {
       }
     }
     result.add(buffer.toString());
-    final parsed = result.map((e) => e.trim().replaceAll(RegExp(r'^"|"$'), '')).toList(growable: false);
+    final parsed = result
+        .map((e) => e.trim().replaceAll(RegExp(r'^"|"$'), ''))
+        .toList(growable: false);
     if (isHeader && parsed.isNotEmpty && parsed.first.startsWith('\uFEFF')) {
       parsed[0] = parsed.first.replaceAll('\uFEFF', '');
     }
     return parsed;
   }
 
-  int get totalLampCount => objects.fold(0, (acc, o) => acc + o.assetInfo.lampCount);
+  int get totalLampCount =>
+      objects.fold(0, (acc, o) => acc + o.assetInfo.lampCount);
 
-  int get totalFixtureCount => objects.fold(0, (acc, o) => acc + o.assetInfo.fixtureCount);
+  int get totalFixtureCount =>
+      objects.fold(0, (acc, o) => acc + o.assetInfo.fixtureCount);
 
   double get totalRatedLoadKw =>
       objects.fold(0.0, (acc, o) => acc + o.expectedLoad.expectedRatedLoadKw);
@@ -120,9 +145,12 @@ class ScenarioRecord {
     return ScenarioRecord(
       scenarioId: json['scenario_id']?.toString() ?? '',
       cabinetUid: json['cabinet_uid']?.toString() ?? '',
-      targetDurationMin: int.tryParse(json['target_duration_min']?.toString() ?? '') ?? 0,
-      detectMatched: (json['detect_matched']?.toString().toLowerCase() == 'true'),
-      detectedEventCount: int.tryParse(json['detected_event_count']?.toString() ?? '') ?? 0,
+      targetDurationMin:
+          int.tryParse(json['target_duration_min']?.toString() ?? '') ?? 0,
+      detectMatched:
+          (json['detect_matched']?.toString().toLowerCase() == 'true'),
+      detectedEventCount:
+          int.tryParse(json['detected_event_count']?.toString() ?? '') ?? 0,
       targetDate: json['scenario_date']?.toString() ?? '',
     );
   }
@@ -145,8 +173,10 @@ class ValidationRow {
     return ValidationRow(
       scenarioId: json['scenario_id']?.toString() ?? '',
       cabinetUid: json['cabinet_uid']?.toString() ?? '',
-      detectMatched: (json['detect_matched']?.toString().toLowerCase() == 'true'),
-      detectedEventCount: int.tryParse(json['detected_event_count']?.toString() ?? '') ?? 0,
+      detectMatched:
+          (json['detect_matched']?.toString().toLowerCase() == 'true'),
+      detectedEventCount:
+          int.tryParse(json['detected_event_count']?.toString() ?? '') ?? 0,
     );
   }
 }
@@ -174,18 +204,29 @@ class CabinetRecord {
   final AnomalyEvidence anomalyEvidence;
   final InspectionPriority inspectionPriority;
 
-  factory CabinetRecord.fromJson(Map<String, dynamic> json) {
+  factory CabinetRecord.fromJson(
+    Map<String, dynamic> json, {
+    bool allowRealMunicipalAmi = false,
+  }) {
     return CabinetRecord(
       cabinetUid: json['cabinet_uid']?.toString() ?? '',
-      assetInfo: AssetInfo.fromJson(json['asset_info'] as Map<String, dynamic>? ?? const {}),
-      expectedSchedule: ExpectedSchedule.fromJson(json['expected_schedule'] as Map<String, dynamic>? ?? const {}),
-      expectedLoad: ExpectedLoad.fromJson(json['expected_load'] as Map<String, dynamic>? ?? const {}),
-      weatherContext: WeatherContext.fromJson(json['weather_context'] as Map<String, dynamic>? ?? const {}),
-      ami: AmiPayload.fromJson(json['ami'] as Map<String, dynamic>? ?? const {}),
+      assetInfo: AssetInfo.fromJson(
+          json['asset_info'] as Map<String, dynamic>? ?? const {}),
+      expectedSchedule: ExpectedSchedule.fromJson(
+          json['expected_schedule'] as Map<String, dynamic>? ?? const {}),
+      expectedLoad: ExpectedLoad.fromJson(
+          json['expected_load'] as Map<String, dynamic>? ?? const {}),
+      weatherContext: WeatherContext.fromJson(
+          json['weather_context'] as Map<String, dynamic>? ?? const {}),
+      ami: AmiPayload.fromJson(
+        json['ami'] as Map<String, dynamic>? ?? const {},
+        allowRealMunicipalAmi: allowRealMunicipalAmi,
+      ),
       detectedSignals: (json['detected_signals'] as List<dynamic>? ?? const [])
           .map((e) => DetectedSignal.fromJson(e as Map<String, dynamic>))
           .toList(growable: false),
-      anomalyEvidence: AnomalyEvidence.fromJson(json['anomaly_evidence'] as Map<String, dynamic>? ?? const {}),
+      anomalyEvidence: AnomalyEvidence.fromJson(
+          json['anomaly_evidence'] as Map<String, dynamic>? ?? const {}),
       inspectionPriority: InspectionPriority.fromJson(
         json['inspection_priority'] as Map<String, dynamic>? ?? const {},
       ),
@@ -193,12 +234,18 @@ class CabinetRecord {
   }
 
   InspectionStatus get status {
-    if (inspectionPriority.severity == 'critical') return InspectionStatus.priorityInspection;
-    if (inspectionPriority.severity == 'high') return InspectionStatus.inspectionRecommended;
+    if (inspectionPriority.severity == 'critical') {
+      return InspectionStatus.priorityInspection;
+    }
+    if (inspectionPriority.severity == 'high') {
+      return InspectionStatus.inspectionRecommended;
+    }
     if (inspectionPriority.severity == 'medium' && detectedSignals.isNotEmpty) {
       return InspectionStatus.inspectionRecommended;
     }
-    if (detectedSignals.isNotEmpty) return InspectionStatus.observe;
+    if (detectedSignals.isNotEmpty) {
+      return InspectionStatus.observe;
+    }
     return InspectionStatus.normal;
   }
 
@@ -207,9 +254,9 @@ class CabinetRecord {
   }
 
   String get modeLabel {
-    if (ami.hasRealAmi) return '실측 자산 연동';
+    if (ami.hasRealAmi) return '실제 지자체 AMI 연동';
     if (ami.virtualLinkMode == 'scenario_injection') return '검증 시나리오';
-    return '실측 없음';
+    return '공공자산 · AMI 미연결';
   }
 }
 
@@ -239,11 +286,15 @@ class AssetInfo {
   final List<FixtureInfo> fixtures;
 
   factory AssetInfo.fromJson(Map<String, dynamic> json) {
+    final spatial =
+        json['spatial'] as Map<String, dynamic>? ?? const <String, dynamic>{};
     return AssetInfo(
       cabinetUid: json['cabinet_uid']?.toString() ?? '',
       cabinetName: json['cabinet_name']?.toString() ?? 'Unknown Cabinet',
-      latitude: double.tryParse(json['latitude']?.toString() ?? ''),
-      longitude: double.tryParse(json['longitude']?.toString() ?? ''),
+      latitude: double.tryParse(
+          (json['latitude'] ?? spatial['latitude'])?.toString() ?? ''),
+      longitude: double.tryParse(
+          (json['longitude'] ?? spatial['longitude'])?.toString() ?? ''),
       fixtureCount: int.tryParse(json['fixture_count']?.toString() ?? '') ?? 0,
       lampCount: int.tryParse(json['lamp_count']?.toString() ?? '') ?? 0,
       controllerType: json['metadata'] is Map<String, dynamic>
@@ -323,7 +374,8 @@ class ExpectedSchedule {
       sunset: json['sunset']?.toString() ?? '',
       civilTwilightStart: json['civil_twilight_start']?.toString() ?? '',
       civilTwilightEnd: json['civil_twilight_end']?.toString() ?? '',
-      expectedOnWindow: json['expected_on_window'] as Map<String, dynamic>? ?? const {},
+      expectedOnWindow:
+          json['expected_on_window'] as Map<String, dynamic>? ?? const {},
     );
   }
 }
@@ -343,8 +395,11 @@ class ExpectedLoad {
 
   factory ExpectedLoad.fromJson(Map<String, dynamic> json) {
     return ExpectedLoad(
-      ratedPowerW: double.tryParse(json['rated_power_w']?.toString() ?? '') ?? 0.0,
-      expectedRatedLoadKw: double.tryParse(json['expected_rated_load_kW']?.toString() ?? '') ?? 0.0,
+      ratedPowerW:
+          double.tryParse(json['rated_power_w']?.toString() ?? '') ?? 0.0,
+      expectedRatedLoadKw:
+          double.tryParse(json['expected_rated_load_kW']?.toString() ?? '') ??
+              0.0,
       lampCount: int.tryParse(json['lamp_count']?.toString() ?? '') ?? 0,
       fixtureRows: int.tryParse(json['fixture_rows']?.toString() ?? '') ?? 0,
     );
@@ -377,7 +432,8 @@ class WeatherContext {
     return WeatherContext(
       stationName: json['station_name']?.toString() ?? '',
       stationType: json['station_type']?.toString() ?? '',
-      distanceKmToStation: double.tryParse(json['distance_km_to_station']?.toString() ?? ''),
+      distanceKmToStation:
+          double.tryParse(json['distance_km_to_station']?.toString() ?? ''),
       forecastHourly: hourly,
       observationAt: json['observation_at']?.toString() ?? '',
     );
@@ -397,26 +453,39 @@ class AmiPayload {
   final String virtualLinkMode;
   final String? amiMeterId;
 
-  factory AmiPayload.fromJson(Map<String, dynamic> json) {
+  factory AmiPayload.fromJson(
+    Map<String, dynamic> json, {
+    bool allowRealMunicipalAmi = false,
+  }) {
+    final hasVerifiedRealAmi =
+        allowRealMunicipalAmi && json['has_real_ami']?.toString() == 'true';
     return AmiPayload(
-      hasRealAmi: (json['has_real_ami']?.toString() == 'true'),
-      amiState: json['ami_state']?.toString() ?? 'unlinked',
+      hasRealAmi: hasVerifiedRealAmi,
+      amiState: hasVerifiedRealAmi
+          ? json['ami_state']?.toString() ?? 'linked'
+          : 'unlinked',
       virtualLinkMode: json['virtual_link_mode']?.toString() ?? 'none',
-      amiMeterId: json['ami_meter_id']?.toString(),
+      amiMeterId: hasVerifiedRealAmi ? json['ami_meter_id']?.toString() : null,
     );
   }
 
   EvidenceSource get source {
-    if (virtualLinkMode == 'scenario_injection') return EvidenceSource.scenarioInjection;
+    if (virtualLinkMode == 'scenario_injection') {
+      return EvidenceSource.scenarioInjection;
+    }
     if (hasRealAmi && virtualLinkMode == 'none' && amiMeterId != null) {
       return EvidenceSource.realMunicipalAsset;
     }
-    return EvidenceSource.realMunicipalAsset;
+    return EvidenceSource.assetOnly;
   }
 
   AmiLinkMode get linkMode {
-    if (virtualLinkMode == 'scenario_injection') return AmiLinkMode.scenarioInjection;
-    if (hasRealAmi) return AmiLinkMode.none;
+    if (virtualLinkMode == 'scenario_injection') {
+      return AmiLinkMode.scenarioInjection;
+    }
+    if (hasRealAmi) {
+      return AmiLinkMode.real;
+    }
     return AmiLinkMode.none;
   }
 }
@@ -443,8 +512,10 @@ class DetectedSignal {
       eventType: json['event_type']?.toString() ?? '',
       firstSample: json['first_sample']?.toString() ?? '',
       lastSample: json['last_sample']?.toString() ?? '',
-      estimatedDurationMin: int.tryParse(json['estimated_duration_min']?.toString() ?? '') ?? 0,
-      maxActivation: double.tryParse(json['max_activation']?.toString() ?? '') ?? 0.0,
+      estimatedDurationMin:
+          int.tryParse(json['estimated_duration_min']?.toString() ?? '') ?? 0,
+      maxActivation:
+          double.tryParse(json['max_activation']?.toString() ?? '') ?? 0.0,
       patternConfidence: json['pattern_confidence']?.toString() ?? '',
     );
   }
@@ -461,8 +532,10 @@ class AnomalyEvidence {
 
   factory AnomalyEvidence.fromJson(Map<String, dynamic> json) {
     return AnomalyEvidence(
-      ruleIds: List<String>.from(json['rule_ids'] as List<dynamic>? ?? const []),
-      payload: Map<String, dynamic>.from(json['payload'] as Map<String, dynamic>? ?? const {}),
+      ruleIds:
+          List<String>.from(json['rule_ids'] as List<dynamic>? ?? const []),
+      payload: Map<String, dynamic>.from(
+          json['payload'] as Map<String, dynamic>? ?? const {}),
     );
   }
 

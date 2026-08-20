@@ -14,6 +14,13 @@ class ValidationEvent {
     required this.durationMin,
     required this.maxActivation,
     required this.activePhases,
+    required this.peakCurrentA,
+    required this.offBaselineA,
+    required this.onBaselineA,
+    required this.patternConfidence,
+    required this.estimatedExcessKwh,
+    required this.energyMethod,
+    required this.faultStatus,
     required this.sourceMode,
     required this.payloadRaw,
   });
@@ -26,6 +33,13 @@ class ValidationEvent {
   final int durationMin;
   final double maxActivation;
   final String activePhases;
+  final double peakCurrentA;
+  final double offBaselineA;
+  final double onBaselineA;
+  final String patternConfidence;
+  final double estimatedExcessKwh;
+  final String energyMethod;
+  final String faultStatus;
   final String sourceMode;
   final String payloadRaw;
 
@@ -39,12 +53,20 @@ class ValidationEvent {
       durationMin: int.tryParse(row['estimated_duration_min'] ?? '') ?? 0,
       maxActivation: double.tryParse(row['max_activation'] ?? '') ?? 0.0,
       activePhases: row['active_phases'] ?? '',
+      peakCurrentA: double.tryParse(row['peak_current_a'] ?? '') ?? 0.0,
+      offBaselineA: double.tryParse(row['off_baseline_a'] ?? '') ?? 0.0,
+      onBaselineA: double.tryParse(row['on_baseline_a'] ?? '') ?? 0.0,
+      patternConfidence: row['pattern_confidence'] ?? '',
+      estimatedExcessKwh:
+          double.tryParse(row['estimated_excess_kwh'] ?? '') ?? 0.0,
+      energyMethod: row['energy_method'] ?? '',
+      faultStatus: row['fault_status'] ?? '',
       sourceMode: row['source_mode'] ?? '',
       payloadRaw: row.toString(),
     );
   }
 
-  String get badge => '실제 AMI';
+  String get badge => '실제 공모전 AMI';
 }
 
 class LightguardRepository {
@@ -56,14 +78,19 @@ class LightguardRepository {
     final seed = await _assetSource.readSeedByRegion(region);
     final scenarios = await _assetSource.readScenarios();
     final validation = await _assetSource.readValidationRows();
-    return LightguardData.fromSeedJson(seed, scenarios, validation);
+    return LightguardData.fromSeedJson(
+      seed,
+      scenarios,
+      validation,
+      allowRealMunicipalAmi: region.supportsRealMunicipalAmi,
+    );
   }
 
   Future<List<ValidationEvent>> loadCompetitionAmiEvents() async {
     final csv = await _assetSource.readAmiEvents();
     final rows = const LineSplitter().convert(csv);
     if (rows.isEmpty) return const <ValidationEvent>[];
-    final headers = _splitCsv(rows.first);
+    final headers = _splitCsv(rows.first, isHeader: true);
     final events = <ValidationEvent>[];
     for (var i = 1; i < rows.length; i++) {
       if (rows[i].trim().isEmpty) continue;
@@ -77,7 +104,7 @@ class LightguardRepository {
     return events;
   }
 
-  static List<String> _splitCsv(String line) {
+  static List<String> _splitCsv(String line, {bool isHeader = false}) {
     final result = <String>[];
     final b = StringBuffer();
     var inQuote = false;
@@ -95,23 +122,29 @@ class LightguardRepository {
       }
     }
     result.add(b.toString());
+    if (isHeader && result.isNotEmpty && result.first.startsWith('\uFEFF')) {
+      result[0] = result.first.replaceAll('\uFEFF', '');
+    }
     return result;
   }
 }
 
-final lightguardSourceProvider = Provider<LocalAssetSource>((_) => LocalAssetSource());
+final lightguardSourceProvider =
+    Provider<LocalAssetSource>((_) => LocalAssetSource());
 final selectedRegionProvider = StateProvider<RegionId>((_) => RegionId.suyeong);
 final lightguardRepositoryProvider = Provider<LightguardRepository>(
   (ref) => LightguardRepository(ref.watch(lightguardSourceProvider)),
 );
 
-final lightguardDataProvider = FutureProvider.autoDispose<LightguardData>((ref) async {
+final lightguardDataProvider =
+    FutureProvider.autoDispose<LightguardData>((ref) async {
   final repo = ref.watch(lightguardRepositoryProvider);
   final region = ref.watch(selectedRegionProvider);
   return repo.loadData(region);
 });
 
-final competitionAmiEventsProvider = FutureProvider.autoDispose<List<ValidationEvent>>((ref) async {
+final competitionAmiEventsProvider =
+    FutureProvider.autoDispose<List<ValidationEvent>>((ref) async {
   final repo = ref.watch(lightguardRepositoryProvider);
   return repo.loadCompetitionAmiEvents();
 });

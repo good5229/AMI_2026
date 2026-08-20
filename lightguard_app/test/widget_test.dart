@@ -15,6 +15,7 @@ import 'package:lightguard_app/features/cabinet_detail/cabinet_detail_screen.dar
 import 'package:lightguard_app/features/dashboard/dashboard_screen.dart';
 import 'package:lightguard_app/features/inspections/inspection_list_screen.dart';
 import 'package:lightguard_app/features/map/map_screen.dart';
+import 'package:lightguard_app/features/regions/regions_screen.dart';
 
 void main() {
   final data = _sampleData();
@@ -45,7 +46,7 @@ void main() {
             builder: (context, state) => const AmiValidationScreen()),
         GoRoute(
             path: AppRoute.regions,
-            builder: (context, state) => const Scaffold(body: SizedBox())),
+            builder: (context, state) => const RegionsScreen()),
       ],
     );
     return ProviderScope(
@@ -67,9 +68,14 @@ void main() {
     expect(find.text('총 분전함'), findsOneWidget);
     expect(find.text('총 가로등 수'), findsOneWidget);
     expect(find.text('총 정격용량'), findsOneWidget);
-    expect(find.textContaining('${data.objects.length}'), findsAtLeastNWidgets(1));
+    expect(
+        find.textContaining('${data.objects.length}'), findsAtLeastNWidgets(1));
     expect(find.text('기준일 기준 점등/소등'), findsOneWidget);
-    expect(find.text(RegionId.suyeong.branchLabel), findsOneWidget);
+    expect(find.text(RegionId.suyeong.branchLabel), findsAtLeastNWidgets(1));
+    expect(find.byKey(const Key('dashboard-scenario-count')), findsOneWidget);
+    expect(find.byKey(const Key('dashboard-actual-ami-count')), findsOneWidget);
+    expect(
+        find.byKey(const Key('dashboard-municipal-ami-count')), findsOneWidget);
   });
 
   testWidgets('Inspection list renders and filters by 검증 시나리오',
@@ -176,14 +182,48 @@ void main() {
     await tester.pumpWidget(buildTestApp(initialLocation: AppRoute.ami));
     await tester.pumpAndSettle();
 
-    expect(find.text('실제 AMI 검증 사례'), findsOneWidget);
-    expect(find.text('실제 AMI'), findsAtLeastNWidgets(1));
+    expect(find.text('실제 공모전 AMI Case Study'), findsOneWidget);
+    expect(find.text('실제 공모전 AMI'), findsAtLeastNWidgets(1));
+    expect(find.byKey(const Key('ami-case-B-L-35-2026-05-11')), findsOneWidget);
+    expect(find.text(AmiValidationScreen.disclaimer), findsAtLeastNWidgets(1));
     if (events.isNotEmpty) {
-      expect(find.byType(ListTile), findsAtLeastNWidgets(1));
-      expect(find.textContaining(events.first.meterId), findsAtLeastNWidgets(1));
+      expect(
+          find.textContaining(events.first.meterId), findsAtLeastNWidgets(1));
     } else {
       fail('AMI 이벤트 데이터가 비어 있어 목록 검증을 수행할 수 없습니다.');
     }
+  });
+
+  testWidgets('Dashboard remains overflow-free at 360px',
+      (WidgetTester tester) async {
+    tester.view.physicalSize = const Size(360, 800);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
+    await tester.pumpWidget(buildTestApp());
+    await tester.pumpAndSettle();
+
+    expect(tester.takeException(), isNull);
+    expect(find.text('홈'), findsOneWidget);
+  });
+
+  testWidgets('Region cards disclose modes and no municipal AMI',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(buildTestApp(initialLocation: AppRoute.regions));
+    await tester.pumpAndSettle();
+
+    expect(
+        find.text('Full Asset + Scenario Validation'), findsAtLeastNWidgets(1));
+    expect(find.text('Controller-linked Validation'), findsAtLeastNWidgets(1));
+    await tester.scrollUntilVisible(
+      find.text('Minimal Asset / Asset-only'),
+      300,
+      scrollable: find.byType(Scrollable).last,
+    );
+    await tester.pumpAndSettle();
+    expect(find.text('Minimal Asset / Asset-only'), findsAtLeastNWidgets(1));
+    expect(find.text('실제 AMI 연결 없음'), findsAtLeastNWidgets(1));
   });
 }
 
@@ -340,6 +380,13 @@ List<ValidationEvent> _sampleCompetitionEvents() {
         durationMin: 90,
         maxActivation: 0.73,
         activePhases: 'on',
+        peakCurrentA: 16.55,
+        offBaselineA: 0.05,
+        onBaselineA: 17.16,
+        patternConfidence: 'high',
+        estimatedExcessKwh: 1.847,
+        energyMethod: 'interval overlap',
+        faultStatus: 'unverified inspection candidate',
         sourceMode: 'scenario_injection',
         payloadRaw: '{"event_id":"AMI-EVT-LOCAL"}',
       ),

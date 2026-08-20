@@ -13,7 +13,7 @@ class StatusBadge extends StatelessWidget {
   Widget build(BuildContext context) {
     final color = switch (type) {
       BadgeType.normal => Colors.green,
-      BadgeType.realAmi => Colors.deepPurple,
+      BadgeType.realAmi => const Color(0xFF007C78),
       BadgeType.scenario => Colors.orange,
       BadgeType.validation => Colors.indigo,
       BadgeType.inspect => Colors.red,
@@ -28,7 +28,8 @@ class StatusBadge extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
       child: Text(
         label,
-        style: TextStyle(color: color, fontWeight: FontWeight.w700, fontSize: 12),
+        style:
+            TextStyle(color: color, fontWeight: FontWeight.w700, fontSize: 12),
       ),
     );
   }

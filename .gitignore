@@ -1,4 +1,6 @@
 .env
+.env.*
+!.env.example
 harness_docs/
 official_docs/
 
