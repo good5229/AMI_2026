@@ -1,0 +1,171 @@
+{
+  "registry_version": "v0.14-terra-a-2026-08-21",
+  "role": "TERRA A Dataset Suitability Methodologist",
+  "actual_model": "terra",
+  "status": "PRE_OUTCOME_FROZEN",
+  "source_checked_at": "2026-08-21",
+  "performance_reviewed": false,
+  "decision_rule": "Suitability is determined before and independently of performance. External physical mechanism evidence is not streetlight field accuracy or fault probability.",
+  "predecessor_freeze": {
+    "v0_13_mad_status": "NEGATIVE_NON_EVALUABLE_PREDECESSOR_EVIDENCE",
+    "author_test_samples": 5414,
+    "sc3_coverage": "5400/5414",
+    "sc3_balanced_accuracy": 0.52004485,
+    "z_score_comparator_balanced_accuracy": 0.66598258,
+    "primary_gate": "NOT_EVALUABLE_INCOMPLETE_COVERAGE",
+    "external_empirical_grade": "NO_EV_GRADE_NOT_EVALUABLE"
+  },
+  "grade_definitions": {
+    "SG-A": "All declared-mechanism requirements pass, including labels/provenance, physical and temporal provenance, applicable channel identity, sealable independent split, and explicit usable licence.",
+    "SG-B": "Strong labelled and physical provenance, with a declared limitation that narrows but does not invalidate the registered mechanism.",
+    "SG-C": "Potentially useful evidence but a partial or unknown gate blocks confirmatory execution.",
+    "SG-X": "Fundamental benchmark requirement fails; exclude from execution."
+  },
+  "records": [
+    {
+      "dataset_id": "LONDON_MET_11442_POWER_QUALITY_2026",
+      "source_url": "https://repository.londonmet.ac.uk/11442/",
+      "associated_paper": "UNKNOWN",
+      "dataset_type": "Pre-processed real industrial electrical-distribution power-quality time series derived from proprietary Neuville Grid Data measurements.",
+      "real_or_simulated": "REAL_MEASURED_DERIVED",
+      "license": "UNKNOWN",
+      "license_evidence": "No explicit data-use licence is shown on the official record.",
+      "label_provenance": "UNKNOWN: a disturbance classification label is stated, but classes, source events, and generation procedure are not documented publicly.",
+      "physical_provenance": "Upstream/downstream min/mean/max voltage statistics in kV/V and voltage THD percent are stated; phase-resolved current/channel identity is not stated.",
+      "timestamp_or_order": "PARTIAL: minute-level time-series data are stated; exported timestamp schema and continuity are not described in the metadata.",
+      "sampling": "Minute-level.",
+      "access_status": "Official record exposes separate train/test downloads; no raw manifest is recorded here.",
+      "split_status": "PARTIAL: named train/test files exist; unit, chronology, and construction are undocumented.",
+      "suitability_gates": {
+        "real_measured_signal": "PASS",
+        "explicit_labels": "PASS",
+        "label_provenance": "UNKNOWN",
+        "timestamp_or_order": "PARTIAL",
+        "physical_units": "PASS",
+        "phase_channel_identity": "FAIL",
+        "sealable_split": "PARTIAL",
+        "license": "UNKNOWN",
+        "access_evidence": "PASS"
+      },
+      "suitability_grade": "SG-C",
+      "decision": "PRIMARY_BLOCKED_PROVENANCE",
+      "allowed_scope_if_released": "Voltage/THD disturbance only; no phase-current, streetlight, or fault-probability claim.",
+      "risks": [
+        "Proprietary-origin transformations are not fully auditable.",
+        "Disturbance class semantics are unknown.",
+        "Open download does not establish a reuse licence."
+      ]
+    },
+    {
+      "dataset_id": "CODEX_VFD_2025",
+      "doi": "10.48804/N4H9HP",
+      "source_url": "https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi%3A10.48804%2FN4H9HP",
+      "associated_paper": "https://doi.org/10.1109/EMCEurope61644.2025.11176232",
+      "dataset_type": "Controlled laboratory electromagnetic-disturbance experiment on a real three-phase VFD.",
+      "real_or_simulated": "REAL_CONTROLLED_EXPERIMENT",
+      "license": "CC-BY-4.0",
+      "license_evidence": "Official KU Leuven RDR record states CC BY 4.0.",
+      "label_provenance": "PASS: binary point-level label indicates deliberate injected electromagnetic disturbance presence/absence.",
+      "physical_provenance": "Official README identifies Time(s), Phase_A(A), Phase_B(A), and Label. The two channels are identified Amperes, but they are not complete three-phase phasors.",
+      "timestamp_or_order": "PASS: README identifies Time(s) for each 2.5 MHz measurement run.",
+      "sampling": "2.5 MHz.",
+      "access_status": "Official record/API and README identify 100 runs, without recording a raw manifest here.",
+      "split_status": "No author split. A deterministic run-disjoint partition can be sealed before label use.",
+      "suitability_gates": {
+        "real_measured_signal": "PASS",
+        "explicit_labels": "PASS",
+        "label_provenance": "PASS",
+        "timestamp_or_order": "PASS",
+        "physical_units": "PASS",
+        "phase_channel_identity": "PARTIAL",
+        "sealable_split": "PASS",
+        "license": "PASS",
+        "access_evidence": "PASS"
+      },
+      "suitability_grade": "SG-B",
+      "decision": "ELIGIBLE_AFTER_PRE_OUTCOME_RUN_SEAL",
+      "allowed_scope_if_released": "Injected EMD/current-change discrimination and persistence under run-disjoint evaluation only.",
+      "risks": [
+        "Laboratory intervention is not a field-fault outcome.",
+        "Two channels do not establish complete three-phase phasor or negative-sequence quantities.",
+        "Large raw data must stay outside Git."
+      ]
+    },
+    {
+      "dataset_id": "SUSTDATAED2_2022",
+      "doi": "10.17605/OSF.IO/JCN2Q",
+      "source_url": "https://doi.org/10.17605/OSF.IO/JCN2Q",
+      "associated_paper": "https://doi.org/10.1038/s41597-022-01252-2",
+      "dataset_type": "Real single-household aggregate and appliance electrical-monitoring dataset in Portugal.",
+      "real_or_simulated": "REAL_MEASURED",
+      "license": "CC-BY-4.0",
+      "license_evidence": "Official IEEE PES SustDataED2 registry explicitly states CC BY 4.0.",
+      "label_provenance": "PASS: human review corrected false positives/false negatives in semi-automatic appliance-event labels; stated 10% criterion and 12,252 labels. Transition labels are not faults.",
+      "physical_provenance": "Actual 96-day household monitoring; 12.8 kHz calibrated voltage/current waveforms and 1 Hz active/reactive power, voltage RMS, current RMS; one aggregate single-phase service, no per-phase identity.",
+      "timestamp_or_order": "PASS: UTC transition timestamps and first-sample timestamps are documented.",
+      "sampling": "Raw voltage/current 12.8 kHz; processed 50 Hz and 1 Hz; appliance readings about 0.5 Hz.",
+      "access_status": "OSF DOI and IEEE PES registry are official access evidence; no raw manifest is recorded here.",
+      "split_status": "No author split; a chronological time-forward within-house seal is possible but is not an independent-household holdout.",
+      "suitability_gates": {
+        "real_measured_signal": "PASS",
+        "explicit_labels": "PASS",
+        "label_provenance": "PASS",
+        "timestamp_or_order": "PASS",
+        "physical_units": "PASS",
+        "phase_channel_identity": "FAIL",
+        "sealable_split": "PARTIAL",
+        "license": "PASS",
+        "access_evidence": "PASS"
+      },
+      "suitability_grade": "SG-B",
+      "decision": "ELIGIBLE_POSITIVE_CONTROL_AFTER_PRE_OUTCOME_TIME_FORWARD_SEAL",
+      "allowed_scope_if_released": "Real aggregate-load transition/change positive control with a pre-registered time-forward within-house split only; transitions are not faults.",
+      "risks": [
+        "Appliance transition ground truth is not an electrical fault label.",
+        "Single-house results cannot establish entity-disjoint transport.",
+        "No phase-current mechanism claim is available."
+      ]
+    },
+    {
+      "dataset_id": "THREEPHASEINSIGHT_ZENODO_21071610",
+      "doi": "10.5281/zenodo.21071610",
+      "source_url": "https://zenodo.org/records/21071610",
+      "associated_paper": "https://orbit.dtu.dk/en/projects/3phaseinsight/",
+      "dataset_type": "Public 3PhaseInsight data-specification report; not a raw labelled electrical dataset.",
+      "real_or_simulated": "UNDERLYING_CONTEXT_REAL_BUT_PUBLIC_ARTEFACT_IS_REPORT_ONLY",
+      "license": "UNKNOWN",
+      "license_evidence": "Zenodo record shows a public report and no stated rights field for raw Radius data.",
+      "label_provenance": "FAIL: no public outcome/event labels are released.",
+      "physical_provenance": "Report documents semantic fields for per-phase voltage, active/reactive power, and harmonic distortion, but publishes no measurement rows, calibration, or raw file manifest.",
+      "timestamp_or_order": "FAIL: no public time-series artefact is released.",
+      "sampling": "UNKNOWN for an executable public dataset.",
+      "access_status": "Public Zenodo record is report-only; no raw measurement benchmark access is established.",
+      "split_status": "FAIL: no public labelled benchmark partition exists.",
+      "suitability_gates": {
+        "real_measured_signal": "FAIL",
+        "explicit_labels": "FAIL",
+        "label_provenance": "FAIL",
+        "timestamp_or_order": "FAIL",
+        "physical_units": "PARTIAL",
+        "phase_channel_identity": "PARTIAL",
+        "sealable_split": "FAIL",
+        "license": "UNKNOWN",
+        "access_evidence": "FAIL"
+      },
+      "suitability_grade": "SG-X",
+      "decision": "EXCLUDE_REPORT_ONLY_NO_PUBLIC_LABELLED_DATA",
+      "allowed_scope_if_released": "None. It may be cited only as contextual documentation of a three-phase data model.",
+      "risks": [
+        "Report access is not raw data access.",
+        "Underlying DSO data may be sensitive.",
+        "No benchmark label or partition can be inferred."
+      ]
+    }
+  ],
+  "cross_dataset_rules": [
+    "Performance must not influence suitability or dataset routing.",
+    "London Met may transfer to CoDEx only after CoDEx independently passes its provenance gate; no London Met result can justify that transfer.",
+    "External physical mechanism evidence is not streetlight field accuracy, field recall/FPR, municipal production readiness, or actual fault probability.",
+    "Raw external files, transformed derivatives, credentials, and sensitive DSO material remain out of Git."
+  ]
+}

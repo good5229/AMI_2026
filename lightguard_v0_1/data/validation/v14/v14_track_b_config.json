@@ -1,0 +1,332 @@
+{
+  "schema_version": "v14-track-b-config-1",
+  "status": "PRE_OUTCOME_FROZEN",
+  "track": "B",
+  "dataset_id": "CODEX_VFD",
+  "purpose": "Controlled physical current-disturbance replication at measurement-run and episode level; VFD/EMI is not AMI or streetlight fault validation.",
+  "seed": 14001402,
+  "activation_gates": [
+    "official_manifest_and_readme_identify_run_ids",
+    "cc_by_4_0_reconfirmed_at_official_download_metadata",
+    "two_current_channels_have_documented_identity_and_common_sampling_basis",
+    "injection_interval_label_and_time_alignment_documented",
+    "severity_frequency_metadata_documented",
+    "file_selection_can_be_frozen_without_detector_scores"
+  ],
+  "blocked_status": "BLOCKED_PROVENANCE_OR_MANIFEST",
+  "activation_decision": "ELIGIBLE_CONTROLLED_MECHANISM_ONLY",
+  "representative_run_selection": {
+    "rule": "Pre-outcome deterministic stratified set: all 10 NC runs plus 10 runs per A/B/C severity, covering frequency classes 1/2/3 with sample ids 1/2/3 and the frequency-1 sample 4; sorted by immutable run_id. No detector score or label outcome was accessed.",
+    "strata_requirement": "The retained subset must contain at least 5 control runs and at least 5 runs in each manifest-defined low, medium, and high severity stratum. If metadata cannot support this rule, stop as BLOCKED_METADATA_UNAVAILABLE rather than choosing examples manually.",
+    "raw_data_policy": "Only selected official files may be downloaded after source, licence, size, file list, and hash method are recorded. Raw files remain outside Git.",
+    "bounded_observation": "For every selected run, fetch only the first 16777216 bytes by HTTP Range, discard an incomplete trailing row, and mark the observation PARTIAL_RUN_PREFIX. This byte bound was chosen before detector scores to avoid the 20.2 GB full download. No whole-run coverage claim is permitted."
+  },
+  "run_split": {
+    "fit": "SHA-256(run_id + ':v14-b-split') mod 5 in {0,1,2}",
+    "calibration": "SHA-256(run_id + ':v14-b-split') mod 5 == 3",
+    "confirmatory": "SHA-256(run_id + ':v14-b-split') mod 5 == 4",
+    "balance_requirement": "Each split must contain control and injection runs plus every eligible severity stratum. If not, report NOT_EVALUABLE_SPLIT_BALANCE without moving runs."
+  },
+  "physical_mechanisms": {
+    "PMC-1": "SURROGATE_ONLY_PRE_INJECTION_RUN_LOCAL_REFERENCE",
+    "PMC-2": "AVAILABLE_PENDING_MANIFEST_VERIFICATION",
+    "PMC-3": "PARTIAL_TWO_CHANNEL_CURRENT_CONTRAST_ONLY",
+    "PMC-4": "AVAILABLE_PENDING_MANIFEST_VERIFICATION",
+    "PMC-5": "AVAILABLE_PENDING_MANIFEST_VERIFICATION"
+  },
+  "baseline_and_episode_rules": {
+    "baseline": "Use only manifest-documented pre-injection control samples from the same run. If no such interval is documented, PMC-1 remains SURROGATE_ONLY and direct baseline analysis is disabled.",
+    "episode": "A labelled contiguous injection interval is one episode; no point row is an independent outcome.",
+    "matched_control": "For each confirmatory injection episode, choose the earliest eligible same-run control interval of equal duration separated by at least one episode duration, after ordering candidates by SHA-256(run_id + episode_start + ':v14-b-control:' + seed). Controls must be fixed before score calculation."
+  },
+  "candidates": [
+    "PMC-C1",
+    "PMC-C2",
+    "PMC-C3"
+  ],
+  "comparator": "Maximum absolute ordinary z-score across the same two measured current channels and the same pre-injection baseline.",
+  "threshold_quantiles": [
+    0.8,
+    0.85,
+    0.9,
+    0.95,
+    0.975,
+    0.99
+  ],
+  "calibration_selection": "Choose frozen candidate and threshold by calibration episode-level F1; ties select higher threshold then PMC-C3, PMC-C2, PMC-C1.",
+  "independent_unit": {
+    "primary": "Measurement run.",
+    "secondary": "Disturbance episode nested within run.",
+    "prohibited": "Row-level accuracy, row-level sample size, and naive row bootstrap as primary evidence.",
+    "uncertainty": "2,000 run-cluster bootstrap replicates. Fewer than 20 confirmatory runs returns INSUFFICIENT_CLUSTER_COUNT."
+  },
+  "confirmatory_metrics": {
+    "primary": [
+      "episode_recall_at_iou_0_10",
+      "control_escalation_rate",
+      "onset_time_to_detection"
+    ],
+    "secondary": [
+      "severity_response_low_medium_high",
+      "run_cluster_confidence_interval"
+    ],
+    "descriptive_only": [
+      "row_level_accuracy"
+    ]
+  },
+  "primary_gate": "At least 20 confirmatory runs, >=80% valid injection-episode/control pairing, and a documented run/episode alignment. Otherwise NOT_EVALUABLE; no alternate unit is substituted.",
+  "immutable_after_test_access": [
+    "run subset",
+    "run split",
+    "baseline rule",
+    "control rule",
+    "PMC availability",
+    "candidate set",
+    "threshold grid",
+    "metrics",
+    "uncertainty",
+    "claim boundary"
+  ],
+  "selected_runs": [
+    {
+      "run_id": "A1_1",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249675",
+      "expected_bytes": 217399861,
+      "expected_md5": "07c90504b3c888258e04be7c6af4a2d0"
+    },
+    {
+      "run_id": "A1_2",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249694",
+      "expected_bytes": 217394151,
+      "expected_md5": "75057965a7af20ff90f6738da93cc9b3"
+    },
+    {
+      "run_id": "A1_3",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249657",
+      "expected_bytes": 217400940,
+      "expected_md5": "23ebbc7f81874ef0141f0c29192b6adb"
+    },
+    {
+      "run_id": "A1_4",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249709",
+      "expected_bytes": 217405469,
+      "expected_md5": "af17420e85822667018c09b0062716bd"
+    },
+    {
+      "run_id": "A2_1",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249648",
+      "expected_bytes": 217428700,
+      "expected_md5": "43286514f5ef2aa9691b84c23e1bc6c1"
+    },
+    {
+      "run_id": "A2_2",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249707",
+      "expected_bytes": 217422759,
+      "expected_md5": "d7c6495049e064f7da769983ea5a9753"
+    },
+    {
+      "run_id": "A2_3",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249662",
+      "expected_bytes": 217425020,
+      "expected_md5": "ec8952259129cedf15ea26ea68aff4d1"
+    },
+    {
+      "run_id": "A3_1",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249656",
+      "expected_bytes": 217418254,
+      "expected_md5": "4eaf0eb850f1b66f3e9c38ab44b617dd"
+    },
+    {
+      "run_id": "A3_2",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249672",
+      "expected_bytes": 217423327,
+      "expected_md5": "fef4b1383836316e5b02e91977ecdb29"
+    },
+    {
+      "run_id": "A3_3",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249726",
+      "expected_bytes": 217422097,
+      "expected_md5": "6c06c9f5149d1fc608bf2b1651e9a836"
+    },
+    {
+      "run_id": "B1_1",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249678",
+      "expected_bytes": 217397088,
+      "expected_md5": "2d402a690805d277ead1e45301f142d2"
+    },
+    {
+      "run_id": "B1_2",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249660",
+      "expected_bytes": 217394941,
+      "expected_md5": "d973705872abaaaedbcf1062a0c4107f"
+    },
+    {
+      "run_id": "B1_3",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249710",
+      "expected_bytes": 217393902,
+      "expected_md5": "195668962c76f9a0f02f5011010a305b"
+    },
+    {
+      "run_id": "B1_4",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249645",
+      "expected_bytes": 217390382,
+      "expected_md5": "637efe4eb4769a8f1837a6a3091d3b99"
+    },
+    {
+      "run_id": "B2_1",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249666",
+      "expected_bytes": 217411945,
+      "expected_md5": "31e9feb0bba3103efeede7c44c15ee60"
+    },
+    {
+      "run_id": "B2_2",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249700",
+      "expected_bytes": 217416689,
+      "expected_md5": "790c90ff950554f5595f9d17ed0f7b23"
+    },
+    {
+      "run_id": "B2_3",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249671",
+      "expected_bytes": 217411610,
+      "expected_md5": "fb60a5c300efa808c26068b1cefda660"
+    },
+    {
+      "run_id": "B3_1",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249724",
+      "expected_bytes": 217419471,
+      "expected_md5": "0cdb775aa3873af5f5b424187fa3f3cf"
+    },
+    {
+      "run_id": "B3_2",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249647",
+      "expected_bytes": 217420280,
+      "expected_md5": "3f028ed5646553b94a79a6095dbcd77e"
+    },
+    {
+      "run_id": "B3_3",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249683",
+      "expected_bytes": 217424934,
+      "expected_md5": "55fbe177f3122bdbd72bd8a545bf2e62"
+    },
+    {
+      "run_id": "C1_1",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249667",
+      "expected_bytes": 217381963,
+      "expected_md5": "5f7a6592aeca2695d224e12af06e8243"
+    },
+    {
+      "run_id": "C1_2",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249716",
+      "expected_bytes": 217382071,
+      "expected_md5": "6b9a5c8329e82067f5c2b8141ae79a66"
+    },
+    {
+      "run_id": "C1_3",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249679",
+      "expected_bytes": 217352768,
+      "expected_md5": "bc22987afc26f6ab9d1c86d40daaf8af"
+    },
+    {
+      "run_id": "C1_4",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249641",
+      "expected_bytes": 217379511,
+      "expected_md5": "4da073dc31f8dc57f0a3d6c2a783367c"
+    },
+    {
+      "run_id": "C2_1",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249646",
+      "expected_bytes": 217383084,
+      "expected_md5": "e711c7e732ac8c1f491e3329bd67c1cf"
+    },
+    {
+      "run_id": "C2_2",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249644",
+      "expected_bytes": 217384192,
+      "expected_md5": "4fc87dd19476550064a104bdd96c2cbf"
+    },
+    {
+      "run_id": "C2_3",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249673",
+      "expected_bytes": 217381254,
+      "expected_md5": "1ab9c699178de84aaac49876fad17dc9"
+    },
+    {
+      "run_id": "C3_1",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249633",
+      "expected_bytes": 217381761,
+      "expected_md5": "8b837f0daaa6113368e803f06f13bc55"
+    },
+    {
+      "run_id": "C3_2",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249650",
+      "expected_bytes": 217375758,
+      "expected_md5": "86b48ce08ff1ecf15d6466a7fe7f60f1"
+    },
+    {
+      "run_id": "C3_3",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249652",
+      "expected_bytes": 217381324,
+      "expected_md5": "68bd3b1dbb47a3e0044c0a8c25a53d57"
+    },
+    {
+      "run_id": "NC_1",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249713",
+      "expected_bytes": 217414648,
+      "expected_md5": "a2ebc6a7534193773c734e0ec773f425"
+    },
+    {
+      "run_id": "NC_10",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249725",
+      "expected_bytes": 217410568,
+      "expected_md5": "1b7ce33996344ac5ea0a1bf212b31e76"
+    },
+    {
+      "run_id": "NC_2",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249722",
+      "expected_bytes": 217427294,
+      "expected_md5": "5aeda1c3e070a692478684448501fcb5"
+    },
+    {
+      "run_id": "NC_3",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249690",
+      "expected_bytes": 217421807,
+      "expected_md5": "0af0073a376690f9e01268373cfe53ed"
+    },
+    {
+      "run_id": "NC_4",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249642",
+      "expected_bytes": 217425987,
+      "expected_md5": "ef0fc4a45a27ebfa4044e6b7a9947b7f"
+    },
+    {
+      "run_id": "NC_5",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249676",
+      "expected_bytes": 217421404,
+      "expected_md5": "0ce55bb4975cdf688ea39a58cf2b3d8b"
+    },
+    {
+      "run_id": "NC_6",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249635",
+      "expected_bytes": 217418716,
+      "expected_md5": "77e21a6d9f1ca37d923e14235220fe93"
+    },
+    {
+      "run_id": "NC_7",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249719",
+      "expected_bytes": 217418504,
+      "expected_md5": "933ec3e813a32328a9133de6315fef6e"
+    },
+    {
+      "run_id": "NC_8",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249638",
+      "expected_bytes": 217416866,
+      "expected_md5": "d1041a39d044d0a9c478b6d27e4051b9"
+    },
+    {
+      "run_id": "NC_9",
+      "url": "https://rdr.kuleuven.be/api/access/datafile/249695",
+      "expected_bytes": 217421255,
+      "expected_md5": "4023cde7fe63bb4e6a0ecad952f81ce4"
+    }
+  ]
+}
