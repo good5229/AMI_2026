@@ -1,0 +1,423 @@
+{
+  "schema_version": "lightguard-weather-regimes-v0.4",
+  "context_source": "official",
+  "provider": "Korea Meteorological Administration (KMA)",
+  "station_id": "159",
+  "station_name": "부산",
+  "requested_start": "2026-01-01",
+  "requested_end": "2026-08-19",
+  "future_dates_excluded": true,
+  "retrieved_at": "2026-08-20T08:01:01Z",
+  "observation_count": 5544,
+  "quantiles": {
+    "cloud_q25": 0.0,
+    "cloud_q75": 9.0,
+    "radiation_q25": 0.72,
+    "radiation_q75": 2.55,
+    "humidity_q90": 87.0,
+    "visibility_q10": 1016.2
+  },
+  "regimes": [
+    {
+      "regime": "CLEAR",
+      "date": "2026-05-18",
+      "representative_hours": [
+        {
+          "timestamp": "2026-05-18 13:00",
+          "temperature": 25.6,
+          "precipitation": null,
+          "humidity": 44.0,
+          "cloud_amount": 0.0,
+          "sunshine": 1.0,
+          "solar_radiation": 3.85,
+          "visibility": 3068.0,
+          "wind_speed": 5.4,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-05-15 13:00",
+          "temperature": 23.3,
+          "precipitation": null,
+          "humidity": 55.0,
+          "cloud_amount": 0.0,
+          "sunshine": 1.0,
+          "solar_radiation": 3.82,
+          "visibility": 4031.0,
+          "wind_speed": 2.7,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-05-06 13:00",
+          "temperature": 20.7,
+          "precipitation": null,
+          "humidity": 55.0,
+          "cloud_amount": 0.0,
+          "sunshine": 1.0,
+          "solar_radiation": 3.81,
+          "visibility": 4568.0,
+          "wind_speed": 6.9,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-05-05 13:00",
+          "temperature": 20.0,
+          "precipitation": null,
+          "humidity": 43.0,
+          "cloud_amount": 0.0,
+          "sunshine": 1.0,
+          "solar_radiation": 3.79,
+          "visibility": 3874.0,
+          "wind_speed": 5.4,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-05-31 13:00",
+          "temperature": 28.2,
+          "precipitation": null,
+          "humidity": 41.0,
+          "cloud_amount": 0.0,
+          "sunshine": 1.0,
+          "solar_radiation": 3.79,
+          "visibility": 2689.0,
+          "wind_speed": 4.4,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-05-09 13:00",
+          "temperature": 21.1,
+          "precipitation": null,
+          "humidity": 39.0,
+          "cloud_amount": 0.0,
+          "sunshine": 1.0,
+          "solar_radiation": 3.78,
+          "visibility": 4199.0,
+          "wind_speed": 7.8,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        }
+      ],
+      "selection_rule": "daylight; no rain; cloud <= q25; solar radiation >= q75",
+      "source": "KMA_ASOS_HOURLY_OFFICIAL"
+    },
+    {
+      "regime": "OVERCAST",
+      "date": "2026-02-02",
+      "representative_hours": [
+        {
+          "timestamp": "2026-02-02 08:00",
+          "temperature": 1.4,
+          "precipitation": null,
+          "humidity": 49.0,
+          "cloud_amount": 10.0,
+          "sunshine": null,
+          "solar_radiation": null,
+          "visibility": 2338.0,
+          "wind_speed": null,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-08-17 18:00",
+          "temperature": 25.1,
+          "precipitation": 0.0,
+          "humidity": 88.0,
+          "cloud_amount": 10.0,
+          "sunshine": 0.0,
+          "solar_radiation": null,
+          "visibility": 2555.0,
+          "wind_speed": 5.0,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-08-18 08:00",
+          "temperature": 25.3,
+          "precipitation": 0.0,
+          "humidity": 93.0,
+          "cloud_amount": 10.0,
+          "sunshine": 0.0,
+          "solar_radiation": null,
+          "visibility": 2463.0,
+          "wind_speed": 3.4,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-08-18 10:00",
+          "temperature": 26.1,
+          "precipitation": 0.0,
+          "humidity": 91.0,
+          "cloud_amount": 10.0,
+          "sunshine": 0.0,
+          "solar_radiation": null,
+          "visibility": 1937.0,
+          "wind_speed": 3.8,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-08-18 12:00",
+          "temperature": 25.8,
+          "precipitation": 0.0,
+          "humidity": 85.0,
+          "cloud_amount": 10.0,
+          "sunshine": 0.1,
+          "solar_radiation": null,
+          "visibility": 3816.0,
+          "wind_speed": 7.7,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-08-18 13:00",
+          "temperature": 26.8,
+          "precipitation": null,
+          "humidity": 83.0,
+          "cloud_amount": 10.0,
+          "sunshine": 0.2,
+          "solar_radiation": null,
+          "visibility": 3401.0,
+          "wind_speed": 8.0,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        }
+      ],
+      "selection_rule": "daylight; no rain; cloud >= q75",
+      "source": "KMA_ASOS_HOURLY_OFFICIAL"
+    },
+    {
+      "regime": "RAIN",
+      "date": "2026-08-17",
+      "representative_hours": [
+        {
+          "timestamp": "2026-08-17 03:00",
+          "temperature": 22.7,
+          "precipitation": 27.6,
+          "humidity": 91.0,
+          "cloud_amount": 10.0,
+          "sunshine": null,
+          "solar_radiation": null,
+          "visibility": 214.0,
+          "wind_speed": 5.9,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-08-17 02:00",
+          "temperature": 22.4,
+          "precipitation": 17.5,
+          "humidity": 88.0,
+          "cloud_amount": 10.0,
+          "sunshine": null,
+          "solar_radiation": null,
+          "visibility": 269.0,
+          "wind_speed": 5.2,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-08-16 15:00",
+          "temperature": 22.9,
+          "precipitation": 16.2,
+          "humidity": 94.0,
+          "cloud_amount": 10.0,
+          "sunshine": 0.0,
+          "solar_radiation": 0.07,
+          "visibility": 116.0,
+          "wind_speed": 3.3,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-03-31 00:00",
+          "temperature": 13.8,
+          "precipitation": 15.9,
+          "humidity": 96.0,
+          "cloud_amount": 10.0,
+          "sunshine": null,
+          "solar_radiation": null,
+          "visibility": 214.0,
+          "wind_speed": 4.3,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-04-04 08:00",
+          "temperature": 14.0,
+          "precipitation": 13.7,
+          "humidity": 96.0,
+          "cloud_amount": 10.0,
+          "sunshine": 0.0,
+          "solar_radiation": 0.02,
+          "visibility": 143.0,
+          "wind_speed": 4.7,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-08-16 16:00",
+          "temperature": 22.5,
+          "precipitation": 13.7,
+          "humidity": 93.0,
+          "cloud_amount": 10.0,
+          "sunshine": 0.0,
+          "solar_radiation": 0.05,
+          "visibility": 232.0,
+          "wind_speed": 6.9,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        }
+      ],
+      "selection_rule": "precipitation > 0",
+      "source": "KMA_ASOS_HOURLY_OFFICIAL"
+    },
+    {
+      "regime": "LOW_SOLAR",
+      "date": "2026-03-02",
+      "representative_hours": [
+        {
+          "timestamp": "2026-03-02 08:00",
+          "temperature": 8.0,
+          "precipitation": null,
+          "humidity": 83.0,
+          "cloud_amount": 10.0,
+          "sunshine": 0.0,
+          "solar_radiation": 0.01,
+          "visibility": 1368.0,
+          "wind_speed": 5.4,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-01-20 08:00",
+          "temperature": -2.0,
+          "precipitation": null,
+          "humidity": 23.0,
+          "cloud_amount": 9.0,
+          "sunshine": 0.0,
+          "solar_radiation": 0.01,
+          "visibility": 4996.0,
+          "wind_speed": 5.7,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-01-15 08:00",
+          "temperature": 11.3,
+          "precipitation": null,
+          "humidity": 70.0,
+          "cloud_amount": 8.0,
+          "sunshine": 0.0,
+          "solar_radiation": 0.01,
+          "visibility": 2836.0,
+          "wind_speed": 3.7,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-01-10 08:00",
+          "temperature": 9.8,
+          "precipitation": null,
+          "humidity": 53.0,
+          "cloud_amount": 5.0,
+          "sunshine": 0.0,
+          "solar_radiation": 0.01,
+          "visibility": 1414.0,
+          "wind_speed": 5.3,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-01-05 08:00",
+          "temperature": 2.7,
+          "precipitation": null,
+          "humidity": 47.0,
+          "cloud_amount": 4.0,
+          "sunshine": 0.0,
+          "solar_radiation": 0.01,
+          "visibility": 2190.0,
+          "wind_speed": 1.8,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-01-01 18:00",
+          "temperature": -1.0,
+          "precipitation": null,
+          "humidity": 24.0,
+          "cloud_amount": 2.0,
+          "sunshine": 0.0,
+          "solar_radiation": 0.01,
+          "visibility": 5000.0,
+          "wind_speed": 3.7,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        }
+      ],
+      "selection_rule": "daylight; solar radiation <= q25",
+      "source": "KMA_ASOS_HOURLY_OFFICIAL"
+    },
+    {
+      "regime": "HIGH_HUMIDITY_OR_LOW_VISIBILITY",
+      "date": "2026-04-09",
+      "representative_hours": [
+        {
+          "timestamp": "2026-04-09 20:00",
+          "temperature": 15.1,
+          "precipitation": 10.5,
+          "humidity": 97.0,
+          "cloud_amount": 10.0,
+          "sunshine": null,
+          "solar_radiation": null,
+          "visibility": 365.0,
+          "wind_speed": 3.8,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-06-19 20:00",
+          "temperature": 23.1,
+          "precipitation": 0.0,
+          "humidity": 96.0,
+          "cloud_amount": 10.0,
+          "sunshine": 0.0,
+          "solar_radiation": 0.0,
+          "visibility": 33.0,
+          "wind_speed": 1.5,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-07-20 00:00",
+          "temperature": 25.7,
+          "precipitation": null,
+          "humidity": 96.0,
+          "cloud_amount": 10.0,
+          "sunshine": null,
+          "solar_radiation": null,
+          "visibility": 74.0,
+          "wind_speed": 2.0,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-06-19 22:00",
+          "temperature": 22.9,
+          "precipitation": 1.4,
+          "humidity": 96.0,
+          "cloud_amount": 10.0,
+          "sunshine": null,
+          "solar_radiation": null,
+          "visibility": 109.0,
+          "wind_speed": 1.8,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-06-20 03:00",
+          "temperature": 22.8,
+          "precipitation": 2.7,
+          "humidity": 96.0,
+          "cloud_amount": 10.0,
+          "sunshine": null,
+          "solar_radiation": null,
+          "visibility": 112.0,
+          "wind_speed": 5.6,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        },
+        {
+          "timestamp": "2026-06-19 23:00",
+          "temperature": 22.8,
+          "precipitation": 5.8,
+          "humidity": 96.0,
+          "cloud_amount": 10.0,
+          "sunshine": null,
+          "solar_radiation": null,
+          "visibility": 117.0,
+          "wind_speed": 1.7,
+          "source": "KMA_ASOS_HOURLY_OFFICIAL"
+        }
+      ],
+      "selection_rule": "humidity >= q90 OR visibility <= q10",
+      "source": "KMA_ASOS_HOURLY_OFFICIAL"
+    }
+  ],
+  "errors": []
+}

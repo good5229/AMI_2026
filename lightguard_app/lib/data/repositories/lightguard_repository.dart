@@ -125,6 +125,11 @@ class LightguardRepository {
     ];
   }
 
+  Future<V04ValidationSummary> loadV04ValidationSummary() async {
+    return V04ValidationSummary.fromJson(
+        await _assetSource.readV04ValidationSummary());
+  }
+
   Future<Map<String, List<AmiReplaySample>>> loadAmiReplayWindows() async {
     const files = <String>[
       'B-L-35_2026-05-11.csv',
@@ -210,6 +215,11 @@ final officialContextProvider =
 final controlledMetricsProvider =
     FutureProvider.autoDispose<List<ControlledMetric>>((ref) async {
   return ref.watch(lightguardRepositoryProvider).loadControlledMetrics();
+});
+
+final v04ValidationSummaryProvider =
+    FutureProvider.autoDispose<V04ValidationSummary>((ref) async {
+  return ref.watch(lightguardRepositoryProvider).loadV04ValidationSummary();
 });
 
 final amiReplayWindowsProvider =

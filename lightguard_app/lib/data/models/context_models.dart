@@ -72,6 +72,43 @@ class ControlledMetric {
   }
 }
 
+class V04ValidationSummary {
+  const V04ValidationSummary({
+    required this.baselineCandidateCount,
+    required this.bestCandidateCount,
+    required this.normalFpr,
+    required this.precisionAt10,
+    required this.precisionAt20,
+    required this.weatherDecision,
+  });
+
+  final int baselineCandidateCount;
+  final int bestCandidateCount;
+  final double normalFpr;
+  final double precisionAt10;
+  final double precisionAt20;
+  final String weatherDecision;
+
+  factory V04ValidationSummary.fromJson(String source) {
+    final value = jsonDecode(source) as Map<String, dynamic>;
+    final best = value['best_v04'] as Map<String, dynamic>? ?? const {};
+    return V04ValidationSummary(
+      baselineCandidateCount:
+          (value['baseline_m0_candidate_count'] as num?)?.toInt() ?? 0,
+      bestCandidateCount:
+          (best['inspection_candidate_count'] as num?)?.toInt() ?? 0,
+      normalFpr: (best['normal_fpr'] as num?)?.toDouble() ?? 0,
+      precisionAt10: (best['precision_at_10'] as num?)?.toDouble() ?? 0,
+      precisionAt20: (best['precision_at_20'] as num?)?.toDouble() ?? 0,
+      weatherDecision: value['weather_decision']?.toString() ?? 'context_only',
+    );
+  }
+
+  String get weatherLabel => weatherDecision == 'scoring_keep'
+      ? '기상 Context 반영'
+      : '기상 Context 참고정보';
+}
+
 class AmiReplaySample {
   const AmiReplaySample({
     required this.timestamp,

@@ -17,6 +17,7 @@ class AmiValidationScreen extends ConsumerWidget {
     final eventsAsync = ref.watch(competitionAmiEventsProvider);
     final metrics = ref.watch(controlledMetricsProvider).asData?.value ??
         const <ControlledMetric>[];
+    final v04Summary = ref.watch(v04ValidationSummaryProvider).asData?.value;
     final replayWindows = ref.watch(amiReplayWindowsProvider).asData?.value ??
         const <String, List<AmiReplaySample>>{};
     return eventsAsync.when(
@@ -64,7 +65,8 @@ class AmiValidationScreen extends ConsumerWidget {
                 },
               ),
               const SizedBox(height: 12),
-              _ControlledValidationSummary(metrics: metrics),
+              _ControlledValidationSummary(
+                  metrics: metrics, v04Summary: v04Summary),
               const SizedBox(height: 12),
               if (representative != null &&
                   replayWindows['B-L-35_2026-05-11.csv']?.isNotEmpty == true)
@@ -105,9 +107,13 @@ class AmiValidationScreen extends ConsumerWidget {
 }
 
 class _ControlledValidationSummary extends StatelessWidget {
-  const _ControlledValidationSummary({required this.metrics});
+  const _ControlledValidationSummary({
+    required this.metrics,
+    required this.v04Summary,
+  });
 
   final List<ControlledMetric> metrics;
+  final V04ValidationSummary? v04Summary;
 
   @override
   Widget build(BuildContext context) {
@@ -126,12 +132,21 @@ class _ControlledValidationSummary extends StatelessWidget {
             Text('Controlled Validation Summary',
                 style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 8),
-            Text('AMI-only FPR ${rate(m0?.normalFpr)}'),
-            Text('Context-aware FPR ${rate(m3?.normalFpr)}'),
-            Text('Top-20 precision ${rate(m3?.precisionAt20)}'),
+            if (v04Summary == null) ...[
+              Text('AMI-only FPR ${rate(m0?.normalFpr)}'),
+              Text('Context-aware FPR ${rate(m3?.normalFpr)}'),
+              Text('Top-20 precision ${rate(m3?.precisionAt20)}'),
+            ] else ...[
+              Text('점검 후보 ${v04Summary!.baselineCandidateCount} → ${v04Summary!.bestCandidateCount}'),
+              Text('Normal FPR ${rate(v04Summary!.normalFpr)}'),
+              Text('P@10 ${rate(v04Summary!.precisionAt10)} · P@20 ${rate(v04Summary!.precisionAt20)}'),
+              Text(v04Summary!.weatherLabel),
+            ],
             const SizedBox(height: 6),
             Text(
-              m3?.status == 'available'
+              v04Summary != null
+                  ? 'Calibration과 독립 holdout을 분리한 Controlled Validation 결과입니다.'
+                  : m3?.status == 'available'
                   ? '동일 frozen set의 M0-M3 비교 결과입니다.'
                   : '공식 KASI/KMA snapshot 미수집으로 M1-M3를 계산하지 않았습니다.',
               style: const TextStyle(fontSize: 12),
