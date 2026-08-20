@@ -1,0 +1,1 @@
+{"phase":"PRE_CONFIRMATORY","purpose":"v0.13 external benchmark code must not mutate v0.12R artifacts.","schema_version":"v12r-freeze-witness-1","v12r_reproducibility_manifest":"lightguard_v0_1/reports/v12r/reproducibility_manifest.json","v12r_reproducibility_manifest_sha256":"6fbba284f4a3aec83e869e9c22b7be3156530a814f092c4c2a6a0c69ca5f9ab1"}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "v13-feature-mapping-1",
+  "status": "PRE_OUTCOME_FROZEN",
+  "scope": "External labeled electrical anomaly mechanism validation only; not streetlight field accuracy or fault probability.",
+  "prohibited_feature_families": ["KASI solar and astronomical fields", "streetlight expected on/off state", "municipal policy or schedule", "rated load, lamp count, asset count, cabinet mapping", "synthetic streetlight fields", "labels or label-derived features"],
+  "datasets": {
+    "MAD": {
+      "source_url": "https://github.com/IISGLab/MeteringAnomalyDiagnosis",
+      "source_native_features": ["three-phase voltage", "three-phase current", "total active power", "three-phase active power", "total power factor", "three-phase power factor"],
+      "sampling_interval": "30 minutes",
+      "record_shape": "48 ordered time points per daily sample",
+      "normalization_provenance": "Repository states each variable is normalized; phase comparison requires proof of common physical scale or documented common affine transform.",
+      "lg_mappings": {
+        "LG-S1": {"source_fields": ["all available ordered source-native channels"], "availability": "At least 12 valid ordered values and positive calibration-derived robust scale.", "interpretation": "Within-record robust departure; meter-relative only with physical meter identity and prior history."},
+        "LG-S2": {"source_fields": ["all LG-S1-eligible ordered source-native channels"], "availability": "LG-S1 available and sequence order intact.", "interpretation": "Persistent temporal departure only."},
+        "LG-S3": {"source_fields": ["phase current A", "phase current B", "phase current C"], "availability": "CONDITIONALLY_UNAVAILABLE for published normalized MAD tensors until phase identity, alignment, and common-scale provenance are confirmed.", "interpretation": "Phase-current magnitude asymmetry only; never negative/zero sequence, symmetrical components, or asset fault."},
+        "LG-S4": {"source_fields": ["LG-S1 robust residuals across ordered time"], "availability": "Stable calibration reference and ordered sequence.", "interpretation": "Abrupt or structural-change sign only."},
+        "LG-S5": {"source_fields": ["LG-S1", "LG-S2", "LG-S3 when available", "LG-S4"], "availability": "At least two component scores; no imputation.", "interpretation": "Transparent multivariate electrical evidence with component values and availability flags."}
+      }
+    },
+    "REFIT_ANNOTATED_LOAD": {
+      "source_url": "https://pureportal.strath.ac.uk/en/datasets/annotated-load-anomalies-from-the-refit-dataset/",
+      "source_native_features": ["ordered electrical load measurements"],
+      "lg_mappings": {"LG-S1": "Available with ordered numeric load and calibration scale.", "LG-S2": "Available with intact sequence.", "LG-S3": "UNAVAILABLE: no three-phase mapping.", "LG-S4": "Available with stable calibration reference.", "LG-S5": "Available with two or more actual non-phase components."},
+      "interpretation_ceiling": "Real household load-anomaly mechanism only; no three-phase or streetlight inference."
+    },
+    "UCR_POWER_DEMAND": {
+      "source_url": "https://www.cs.ucr.edu/~eamonn/time_series_data_2018/",
+      "source_native_features": ["ordered benchmark time-series values"],
+      "lg_mappings": {"LG-S1": "Available with ordered numeric values and calibration scale.", "LG-S2": "Available with intact sequence.", "LG-S3": "UNAVAILABLE: no phase-current mapping.", "LG-S4": "Available with stable calibration reference.", "LG-S5": "Available with two or more actual components."},
+      "interpretation_ceiling": "Generic benchmark stress test only; not external electrical mechanism or streetlight evidence."
+    }
+  },
+  "global_contract": {"no_dataset_download": true, "no_label_access_for_mapping": true, "no_class_specific_preprocessing": true, "no_test_outcome_feature_selection": true, "no_missing_feature_synthesis": true, "phase_fail_closed": true, "claim_boundary": "External electrical anomaly mechanism validity is not streetlight field accuracy or fault probability."}
+}

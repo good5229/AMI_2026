@@ -1,0 +1,49 @@
+{
+  "schema_version": "v13-signal-core-config-1",
+  "status": "PRE_OUTCOME_FROZEN",
+  "deterministic_seed": 20260821,
+  "purpose": "Transparent external electrical anomaly mechanism evaluation, not the LightGuard H1 production detector and not streetlight field accuracy or fault probability.",
+  "input_contract": {
+    "source_native_measurements_only": true,
+    "required_non_label_fields": ["ordered_time_axis_or_source_order", "stable_sample_id", "feature_names", "missingness_mask"],
+    "forbidden_features": ["solar", "astronomical expected state", "municipal policy", "rated load", "cabinet mapping", "asset mapping", "synthetic streetlight features", "labels and label-derived fields"],
+    "missing_value_rule": "Do not impute signals; retain missingness mask and unavailable components.",
+    "phase_gate": {"required": ["phase current A", "phase current B", "phase current C", "aligned time points", "documented phase identities", "common physical scale or documented common affine transform"], "on_failure": "LG-S3 is UNAVAILABLE; do not calculate phase asymmetry, sequence components, or substitute score.", "rms_only_limit": "RMS magnitudes lack phase-angle information and cannot yield symmetrical components."}
+  },
+  "split_and_calibration": {
+    "primary_dataset": "MAD",
+    "author_test_split": "immutable confirmatory-only partition",
+    "fit_partition": "author training records excluding deterministic calibration records",
+    "calibration_partition": "sha256(sample_id + ':v13-calibration') mod 5 == 0; if immutable sample_id is unavailable, use original author-train order shuffled by deterministic_seed with 80/20 fit/calibration allocation",
+    "label_access": {"mapping": "prohibited", "preprocessing": "prohibited", "normalization": "prohibited", "threshold_selection": "calibration labels only", "candidate_selection": "calibration labels only", "test_partition": "confirmatory only after immutable configuration seal"},
+    "threshold_grid": [0.8, 0.85, 0.9, 0.95, 0.975, 0.99],
+    "threshold_selection": "Select calibration score percentile with highest binary balanced accuracy; ties choose higher threshold.",
+    "candidate_selection": "Select highest calibration binary balanced accuracy; exact ties choose SC3, then SC2, then SC1. Comparator cannot replace selected Signal Core candidate."
+  },
+  "preprocessing": {
+    "sequence_order": "Preserve source order; reject records without intact ordered sequence.",
+    "minimum_valid_time_points_per_channel": 12,
+    "robust_location": "per-record per-channel temporal median",
+    "robust_scale": "1.4826 times per-record per-channel temporal MAD",
+    "scale_floor": "calibration fifth percentile of positive channel MAD values; channel unavailable if no positive calibration scale exists",
+    "residual_clip": [-8.0, 8.0],
+    "normalization": {"fit_scope": "Fit data-derived constants on fit partition only; record-local medians/MADs use only that record's non-label measurements.", "source_normalized_data": "Retain source normalization; do not infer inverse transforms; block physical phase comparison unless common-scale provenance passes.", "component_rank_transform": "Empirical percentile ranks fitted on calibration scores only with deterministic mid-rank ties."}
+  },
+  "signal_core": {
+    "LG-S1": {"name": "meter-or-record-relative robust baseline deviation", "formula": "median_v(quantile_0.95_t(abs(r_itv)))", "mapping": "All available source-native ordered numerical channels; meter-relative wording needs physical meter identity and history.", "interpretation_ceiling": "Deviation sign only."},
+    "LG-S2": {"name": "persistence and temporal accumulation", "formula": "median_v(longest_consecutive_run_t(abs(r_itv) >= 2.0) / valid_time_points_v)", "mapping": "LG-S1 eligible channels with intact ordering.", "interpretation_ceiling": "Persistent temporal departure sign only."},
+    "LG-S3": {"name": "phase-current magnitude asymmetry", "formula": "median_t((max(I_A,I_B,I_C)-min(I_A,I_B,I_C)) / max(median(abs(I_A,I_B,I_C)), epsilon_I))", "mapping": "Only contemporaneous documented A/B/C currents on common scale.", "interpretation_ceiling": "Phase-current asymmetry only; not negative/zero sequence, symmetrical component, or asset fault."},
+    "LG-S4": {"name": "abrupt or structural change", "formula": "max_t(abs(two_sided_CUSUM(median_v(r_itv), k=0.5, h=5.0)))", "mapping": "Median robust residual across eligible channels in ordered time.", "interpretation_ceiling": "Structural-change sign only."},
+    "LG-S5": {"name": "transparent multivariate evidence combination", "formula": "equal_weight_mean(calibration_percentile_rank(LG-S1), calibration_percentile_rank(LG-S2), calibration_percentile_rank(LG-S3 if available), calibration_percentile_rank(LG-S4))", "mapping": "Available LG-S1 through LG-S4 only with per-case component and availability retention.", "minimum_components": 2, "interpretation_ceiling": "Transparent multivariate electrical evidence only."}
+  },
+  "candidates": {
+    "SC1": {"definition": "LG-S1 threshold rule", "eligibility": "LG-S1 available"},
+    "SC2": {"definition": "equal-weight mean of LG-S2 and LG-S3 calibration percentile ranks", "eligibility": "LG-S2 and LG-S3 available"},
+    "SC3": {"definition": "LG-S5 threshold rule", "eligibility": "at least two LG components; phase-specific interpretation requires LG-S3"},
+    "comparator": {"definition": "maximum absolute ordinary z-score summarized by temporal 95th percentile", "fit_scope": "fit partition only"},
+    "maximum_candidate_count": 3,
+    "prohibited": ["deep learning", "learned representation", "source-specific feature expansion", "class-specific preprocessing", "post-test candidate addition"]
+  },
+  "primary_metric": {"name": "External MAD Binary Balanced Accuracy", "dataset_scope": "MAD author-provided test split", "label_grouping": "class 0 = normal; classes 1 through 6 = anomaly", "pre_registered_success_criterion": "SC3 is eligible AND External MAD Binary Balanced Accuracy(SC3) >= 0.70 AND External MAD Binary Balanced Accuracy(SC3) - External MAD Binary Balanced Accuracy(z-score comparator) >= 0.05", "not_evaluable_rule": "If SC3 eligibility fails, report NOT_EVALUABLE; do not substitute another candidate.", "claim_boundary": "A pass supports external labeled electrical anomaly mechanism discrimination only, never LightGuard streetlight accuracy, field recall, or fault probability."},
+  "immutable_post_confirmatory_rule": {"after_test_access_prohibited_changes": ["feature mapping", "availability gate", "normalization", "preprocessing", "component definition", "candidate set", "threshold", "tie rule", "label grouping", "primary metric", "success criterion"], "failure_handling": "Report frozen result and limitation. Exploratory follow-up needs a new protocol identifier and cannot overwrite confirmatory result."}
+}

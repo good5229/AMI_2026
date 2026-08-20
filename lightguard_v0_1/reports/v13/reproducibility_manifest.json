@@ -1,0 +1,44 @@
+{
+  "claim_boundary": "External labeled electrical anomaly mechanism evidence only; never streetlight field accuracy or actual fault probability.",
+  "files": [
+    {
+      "path": "lightguard_v0_1/data/validation/v13/v12r_freeze_manifest.json",
+      "sha256": "c5adab3f20d32f1681ca1712c8022848af9bd815efc08b5ce154ac39a89c1df7"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v13/v13_raw_external_manifest.json",
+      "sha256": "69b0086a8eaf94d4c2cc50335c7cb4981cba0a389643fb8d0b45d1683488eab2"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v13/v13_preconfirmatory_config_seal.json",
+      "sha256": "b4ba489d3e0b142c808e8c68d20274a1e8f1296a834d03e433e55ff7d11cd4b8"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v13/v13_mad_threshold_seal.json",
+      "sha256": "7745a1f51d7a8f7502fb79a03712b783c53dc81370b4bb04175beccc0fb62065"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v13/v13_mad_train_results.csv",
+      "sha256": "e6c43ce2759456bb0506a987ef107be2c5b7bf9bb6cc07b6f1565787a8287b17"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v13/v13_mad_confirmatory_results.csv",
+      "sha256": "3f112202088866e44da11955a6bdd20756e0f486ccdf4940602a00b0772a04d8"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v13/v13_refit_results.csv",
+      "sha256": "172b933cb2d39a78d976fea27f21384798fdf0a8cb4fee464e29afa94a8d255d"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v13/v13_ucr_results.csv",
+      "sha256": "6bfd65d6439a5f45341864f9312aa4d107f0df3f1434a7a5d8d68eb0082a646f"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v13/v13_case_evidence_matrix.csv",
+      "sha256": "7976bc2e7c7f91dcaeeffd9c350858e28621a6b833cd3bbf0e765e27948f178e"
+    }
+  ],
+  "human_review_status": "PENDING",
+  "primary_gate": "NOT_EVALUABLE_INCOMPLETE_COVERAGE",
+  "schema_version": "lightguard.v13.reproducibility.1"
+}
