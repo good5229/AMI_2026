@@ -48,7 +48,7 @@ extension RegionIdX on RegionId {
   String get branchLabel {
     return switch (this) {
       RegionId.suyeong => '수영구 시나리오 주입 모드',
-      RegionId.gangneung => '강릉시 실시간 AMI 연동 모드',
+      RegionId.gangneung => '강릉시 제어기 연계 검증 모드',
       RegionId.chungju => '충주시 분전함 자산 모드',
     };
   }
@@ -56,7 +56,7 @@ extension RegionIdX on RegionId {
   String get defaultFilterHint {
     return switch (this) {
       RegionId.suyeong => '검증 시나리오 중심 점검',
-      RegionId.gangneung => '실제 AMI 우선 점검',
+      RegionId.gangneung => '제어기 연계 구조 검증 중심 점검',
       RegionId.chungju => '고부하/이상 신호 중심 점검',
     };
   }
@@ -72,15 +72,43 @@ extension RegionIdX on RegionId {
   String get regionalFilterHint {
     return switch (this) {
       RegionId.suyeong => '수영구는 시나리오 주입 대상 분전함 중심으로 먼저 확인',
-      RegionId.gangneung => '강릉시는 Controller 연동 분전함 우선 탐색',
+      RegionId.gangneung => '강릉시는 제어기 연계 분전함 우선 탐색',
       RegionId.chungju => '충주시는 분전함 자산 스탠드얼론 대상 우선',
     };
+  }
+
+  bool get supportsScenarioInjection {
+    return switch (this) {
+      RegionId.suyeong => true,
+      RegionId.gangneung => false,
+      RegionId.chungju => false,
+    };
+  }
+
+  bool get supportsControllerData {
+    return switch (this) {
+      RegionId.suyeong => false,
+      RegionId.gangneung => true,
+      RegionId.chungju => false,
+    };
+  }
+
+  bool get supportsRatedLoad {
+    return switch (this) {
+      RegionId.suyeong => true,
+      RegionId.gangneung => true,
+      RegionId.chungju => true,
+    };
+  }
+
+  bool get supportsRealMunicipalAmi {
+    return false;
   }
 
   String get modeDescription {
     return switch (this) {
       RegionId.suyeong => '지자체 미연결 + 시나리오 주입',
-      RegionId.gangneung => 'Controller-linked 분전함 모드',
+      RegionId.gangneung => '제어기 연계 검증 모드',
       RegionId.chungju => '분전함 중심 Asset-only 모드',
     };
   }
@@ -106,8 +134,8 @@ class RegionMetadata {
       RegionId.gangneung,
       <String>[
         '분전함·제어기 연계 가중치 적용',
-        '분전함 339개 · 가로등 분포 기반 분석',
-        'AMI 연동 후보 우선 정렬',
+        '분전함 339개 · 제어기 연계 데이터 중심 분석',
+        '강릉시 제어기 연계 구조 검증',
       ],
     ),
     RegionMetadata(

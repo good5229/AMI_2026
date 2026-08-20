@@ -3,11 +3,19 @@ import 'package:lightguard_app/data/models/lightguard_models.dart';
 
 void main() {
   test('priority severity maps to inspection status', () {
-    final record = CabinetRecord(
+    const record = CabinetRecord(
       cabinetUid: 'x',
       assetInfo: AssetInfo(
-        cabinetUid: 'x', cabinetName: 'x', latitude: 0, longitude: 0,
-        fixtureCount: 1, lampCount: 1, controllerType: '', linkStatus: '', address: '', fixtures: <FixtureInfo>[],
+        cabinetUid: 'x',
+        cabinetName: 'x',
+        latitude: 0.0,
+        longitude: 0.0,
+        fixtureCount: 1,
+        lampCount: 1,
+        controllerType: '',
+        linkStatus: '',
+        address: '',
+        fixtures: <FixtureInfo>[],
       ),
       expectedSchedule: ExpectedSchedule(
         date: '2026-01-01',
@@ -15,7 +23,7 @@ void main() {
         sunset: '18:00',
         civilTwilightStart: '06:30',
         civilTwilightEnd: '18:30',
-        expectedOnWindow: {},
+        expectedOnWindow: <String, String>{},
       ),
       expectedLoad: ExpectedLoad(ratedPowerW: 100, expectedRatedLoadKw: 0.1, lampCount: 1, fixtureRows: 1),
       weatherContext: WeatherContext(
