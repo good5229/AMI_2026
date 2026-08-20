@@ -109,6 +109,58 @@ class V04ValidationSummary {
       : '기상 Context 참고정보';
 }
 
+class V05ValidationSummary {
+  const V05ValidationSummary({
+    required this.legacyPeakConsistent,
+    required this.adjudicatedPeakConsistent,
+    required this.pastOnlyCoverage,
+    required this.missing20Coverage,
+    required this.downsample60Coverage,
+    required this.gap120Coverage,
+    required this.sensitivityClassification,
+    required this.frozenBaselineFpr,
+    required this.activationPlus20Fpr,
+  });
+
+  final int legacyPeakConsistent;
+  final int adjudicatedPeakConsistent;
+  final double pastOnlyCoverage;
+  final double missing20Coverage;
+  final double downsample60Coverage;
+  final double gap120Coverage;
+  final String sensitivityClassification;
+  final double frozenBaselineFpr;
+  final double activationPlus20Fpr;
+
+  factory V05ValidationSummary.fromJson(String source) {
+    final value = jsonDecode(source) as Map<String, dynamic>;
+    final peak = value['actual_ami_peak'] as Map<String, dynamic>;
+    final causal = value['causal_replay'] as Map<String, dynamic>;
+    final coverage = causal['canonical_candidate_coverage'] as Map<String, dynamic>;
+    final robustness = value['robustness'] as Map<String, dynamic>;
+    final sensitivity = value['sensitivity'] as Map<String, dynamic>;
+    return V05ValidationSummary(
+      legacyPeakConsistent:
+          (peak['legacy_metric_consistent'] as num).toInt(),
+      adjudicatedPeakConsistent:
+          (peak['adjudicated_metric_consistent'] as num).toInt(),
+      pastOnlyCoverage: (coverage['30d'] as num).toDouble(),
+      missing20Coverage:
+          (robustness['random_missing_20pct_coverage'] as num).toDouble(),
+      downsample60Coverage:
+          (robustness['downsample_60m_coverage'] as num).toDouble(),
+      gap120Coverage:
+          (robustness['gap_120m_coverage'] as num).toDouble(),
+      sensitivityClassification:
+          sensitivity['classification']?.toString() ?? 'unavailable',
+      frozenBaselineFpr:
+          (sensitivity['frozen_baseline_normal_fpr'] as num).toDouble(),
+      activationPlus20Fpr:
+          (sensitivity['activation_plus_20_normal_fpr'] as num).toDouble(),
+    );
+  }
+}
+
 class AmiReplaySample {
   const AmiReplaySample({
     required this.timestamp,

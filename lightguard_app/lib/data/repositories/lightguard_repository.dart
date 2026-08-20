@@ -45,21 +45,28 @@ class ValidationEvent {
   final String payloadRaw;
 
   static ValidationEvent fromCsv(Map<String, String> row) {
+    String requiredValue(String key) {
+      final value = row[key];
+      if (value == null || value.isEmpty) {
+        throw FormatException('ValidationEvent field is unavailable: $key');
+      }
+      return value;
+    }
+
     return ValidationEvent(
       eventId: row['event_id'] ?? '',
       meterId: row['meter_id'] ?? '',
       eventType: row['event_type'] ?? '',
       firstSample: row['first_sample'] ?? '',
       lastSample: row['last_sample'] ?? '',
-      durationMin: int.tryParse(row['estimated_duration_min'] ?? '') ?? 0,
-      maxActivation: double.tryParse(row['max_activation'] ?? '') ?? 0.0,
+      durationMin: int.parse(requiredValue('estimated_duration_min')),
+      maxActivation: double.parse(requiredValue('max_activation')),
       activePhases: row['active_phases'] ?? '',
-      peakCurrentA: double.tryParse(row['peak_current_a'] ?? '') ?? 0.0,
-      offBaselineA: double.tryParse(row['off_baseline_a'] ?? '') ?? 0.0,
-      onBaselineA: double.tryParse(row['on_baseline_a'] ?? '') ?? 0.0,
+      peakCurrentA: double.parse(requiredValue('peak_current_a')),
+      offBaselineA: double.parse(requiredValue('off_baseline_a')),
+      onBaselineA: double.parse(requiredValue('on_baseline_a')),
       patternConfidence: row['pattern_confidence'] ?? '',
-      estimatedExcessKwh:
-          double.tryParse(row['estimated_excess_kwh'] ?? '') ?? 0.0,
+      estimatedExcessKwh: double.parse(requiredValue('estimated_excess_kwh')),
       energyMethod: row['energy_method'] ?? '',
       faultStatus: row['fault_status'] ?? '',
       sourceMode: row['source_mode'] ?? '',
@@ -128,6 +135,11 @@ class LightguardRepository {
   Future<V04ValidationSummary> loadV04ValidationSummary() async {
     return V04ValidationSummary.fromJson(
         await _assetSource.readV04ValidationSummary());
+  }
+
+  Future<V05ValidationSummary> loadV05ValidationSummary() async {
+    return V05ValidationSummary.fromJson(
+        await _assetSource.readV05ValidationSummary());
   }
 
   Future<Map<String, List<AmiReplaySample>>> loadAmiReplayWindows() async {
@@ -220,6 +232,11 @@ final controlledMetricsProvider =
 final v04ValidationSummaryProvider =
     FutureProvider.autoDispose<V04ValidationSummary>((ref) async {
   return ref.watch(lightguardRepositoryProvider).loadV04ValidationSummary();
+});
+
+final v05ValidationSummaryProvider =
+    FutureProvider.autoDispose<V05ValidationSummary>((ref) async {
+  return ref.watch(lightguardRepositoryProvider).loadV05ValidationSummary();
 });
 
 final amiReplayWindowsProvider =

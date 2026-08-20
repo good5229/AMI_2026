@@ -18,6 +18,7 @@ class AmiValidationScreen extends ConsumerWidget {
     final metrics = ref.watch(controlledMetricsProvider).asData?.value ??
         const <ControlledMetric>[];
     final v04Summary = ref.watch(v04ValidationSummaryProvider).asData?.value;
+    final v05Summary = ref.watch(v05ValidationSummaryProvider).asData?.value;
     final replayWindows = ref.watch(amiReplayWindowsProvider).asData?.value ??
         const <String, List<AmiReplaySample>>{};
     return eventsAsync.when(
@@ -67,6 +68,10 @@ class AmiValidationScreen extends ConsumerWidget {
               const SizedBox(height: 12),
               _ControlledValidationSummary(
                   metrics: metrics, v04Summary: v04Summary),
+              if (v05Summary != null) ...[
+                const SizedBox(height: 12),
+                _V05TechnicalEvidence(summary: v05Summary),
+              ],
               const SizedBox(height: 12),
               if (representative != null &&
                   replayWindows['B-L-35_2026-05-11.csv']?.isNotEmpty == true)
@@ -103,6 +108,100 @@ class AmiValidationScreen extends ConsumerWidget {
             event.firstSample.startsWith('2026-05-20')) ||
         (event.meterId == 'B-L-14' &&
             event.firstSample.startsWith('2026-05-29'));
+  }
+}
+
+class _V05TechnicalEvidence extends StatelessWidget {
+  const _V05TechnicalEvidence({required this.summary});
+
+  final V05ValidationSummary summary;
+
+  @override
+  Widget build(BuildContext context) {
+    String ratio(double value) => '${(value * 6).round()}/6';
+    return Card(
+      key: const Key('v05-technical-evidence'),
+      color: const Color(0xFFEAF3F8),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Actual AMI · Technical Validation',
+                style: Theme.of(context).textTheme.titleMedium),
+            const SizedBox(height: 6),
+            const Text('확정 고장 label이 없는 known detector candidate 재생 결과입니다.',
+                style: TextStyle(fontSize: 12)),
+            const SizedBox(height: 12),
+            Wrap(spacing: 10, runSpacing: 10, children: [
+              _V05EvidenceTile(
+                title: 'Past-only replay',
+                value: ratio(summary.pastOnlyCoverage),
+                detail: '30일 baseline · 미래정보 미사용',
+              ),
+              _V05EvidenceTile(
+                title: 'Data missing stress',
+                value: ratio(summary.missing20Coverage),
+                detail: '고정 seed · random missing 20%',
+              ),
+              _V05EvidenceTile(
+                title: 'Sampling interval stress',
+                value: ratio(summary.downsample60Coverage),
+                detail: '15분 → 60분 downsample',
+              ),
+            ]),
+            const SizedBox(height: 10),
+            Text('Peak metric: legacy ${summary.legacyPeakConsistent}/6 · 동일 집계 정의 ${summary.adjudicatedPeakConsistent}/6'),
+            const Text('Legacy는 개별 상 최대값, adjudicated는 event 내 Σ(non-null I1·I2·I3) 최대값입니다.',
+                style: TextStyle(fontSize: 12)),
+            Text('120분 연속 gap ${ratio(summary.gap120Coverage)} · ${summary.sensitivityClassification}',
+                style: const TextStyle(fontSize: 12)),
+            Text(
+              'Activation +20% 진단: normal FPR ${(summary.frozenBaselineFpr * 100).toStringAsFixed(2)}% → ${(summary.activationPlus20Fpr * 100).toStringAsFixed(2)}% · 설정 변경 없음',
+              style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _V05EvidenceTile extends StatelessWidget {
+  const _V05EvidenceTile({
+    required this.title,
+    required this.value,
+    required this.detail,
+  });
+
+  final String title;
+  final String value;
+  final String detail;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 210,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: const Color(0xFFB8CEDB)),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(title, style: const TextStyle(fontWeight: FontWeight.w600)),
+              const SizedBox(height: 4),
+              Text(value, style: Theme.of(context).textTheme.titleLarge),
+              Text(detail, style: const TextStyle(fontSize: 11)),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
 

@@ -1,0 +1,22 @@
+{
+  "schema_version": "lightguard-v0.5-baseline-integrity",
+  "v03_frozen_sha256": "935bc5ea7d70e878f15113dc08d11dfee7ebcbb350d90d421f46a7704cf27368",
+  "v04_calibration_sha256": "8fe85425f6ca3b9bc2517a137da96d3edc22bbf387209b53efd933364496032e",
+  "v04_confirmatory_holdout_sha256": "1be716621da5b53bce11a748d9b05e63d4aa329e7d62b8f16e606b2ccff09831",
+  "frozen_weights": {
+    "activation": 0.6,
+    "duration": 0.25,
+    "load": 0.25,
+    "phase": 0.2,
+    "solar_penalty": 0.2,
+    "transient_penalty": 0.2,
+    "policy_penalty": 0.2,
+    "weather": 0.0,
+    "threshold": 0.55
+  },
+  "weather_decision": "context_only",
+  "canonical_ami_event_count": 6,
+  "canonical_ami_events_sha256": "c131fd7d635788b7ab71d50d31bff1abd91a3b492d57bae9b0a0a3ee7fed88d8",
+  "source_workbook_sha256": "c18b49022d1c7dee2117a8d65a07d71351fb1aea8538751b7032867e4081b7d0",
+  "source_workbook_tracked": false
+}

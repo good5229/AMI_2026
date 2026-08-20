@@ -1,0 +1,96 @@
+{
+  "schema_version": "lightguard-v0.5-stress-suite",
+  "deterministic_seed": 5052026,
+  "null_policy": "missing measurement remains null and becomes not-evaluable; never coerced to zero",
+  "timestamp_lattice_policy": "missingness, gaps, and downsampling preserve source timestamps and set unavailable channels to null",
+  "duplicate_policy": "exact duplicates collapse; conflicting duplicates become unavailable and are counted",
+  "stresses": [
+    {
+      "stress_id": "baseline",
+      "kind": "none",
+      "seed": 5052026
+    },
+    {
+      "stress_id": "missing_5pct",
+      "kind": "random_missingness",
+      "rate": 0.05,
+      "seed": 5052027
+    },
+    {
+      "stress_id": "missing_10pct",
+      "kind": "random_missingness",
+      "rate": 0.1,
+      "seed": 5052028
+    },
+    {
+      "stress_id": "missing_20pct",
+      "kind": "random_missingness",
+      "rate": 0.2,
+      "seed": 5052029
+    },
+    {
+      "stress_id": "gap_30m",
+      "kind": "contiguous_gap",
+      "minutes": 30,
+      "seed": 5052037
+    },
+    {
+      "stress_id": "gap_60m",
+      "kind": "contiguous_gap",
+      "minutes": 60,
+      "seed": 5052038
+    },
+    {
+      "stress_id": "gap_120m",
+      "kind": "contiguous_gap",
+      "minutes": 120,
+      "seed": 5052039
+    },
+    {
+      "stress_id": "downsample_30m",
+      "kind": "downsample",
+      "minutes": 30,
+      "seed": 5052047
+    },
+    {
+      "stress_id": "downsample_60m",
+      "kind": "downsample",
+      "minutes": 60,
+      "seed": 5052048
+    },
+    {
+      "stress_id": "drop_i1",
+      "kind": "phase_dropout",
+      "phase": "i1",
+      "seed": 5052057
+    },
+    {
+      "stress_id": "drop_i2",
+      "kind": "phase_dropout",
+      "phase": "i2",
+      "seed": 5052058
+    },
+    {
+      "stress_id": "drop_i3",
+      "kind": "phase_dropout",
+      "phase": "i3",
+      "seed": 5052059
+    },
+    {
+      "stress_id": "duplicate_timestamp",
+      "kind": "duplicate_timestamp",
+      "seed": 5052066
+    },
+    {
+      "stress_id": "duplicate_conflict",
+      "kind": "duplicate_conflict",
+      "seed": 5052067
+    },
+    {
+      "stress_id": "measurement_channel_missing",
+      "kind": "measurement_channel_missing",
+      "rate": 0.1,
+      "seed": 5052076
+    }
+  ]
+}

@@ -3,6 +3,8 @@
 !.env.example
 harness_docs/
 official_docs/
+*.sqlite
+*.sqlite3
 
 # Microsoft Office / Office 365 files
 *.doc
