@@ -38,6 +38,10 @@ class LocalAssetSource {
     return rootBundle.loadString('assets/data/context/v05_validation_summary.json');
   }
 
+  Future<String> readV06EvidenceSummary() {
+    return rootBundle.loadString('assets/data/context/v06_evidence_summary.json');
+  }
+
   Future<String> readReplayWindow(String filename) {
     return rootBundle.loadString('assets/data/ami_event_windows/$filename');
   }

@@ -1,0 +1,16 @@
+﻿stress_id,candidate_covered,candidate_total,coverage_point,wilson_95_lower,wilson_95_upper,interpretation
+baseline,6,6,1.0,0.609666,1.0,known-candidate coverage uncertainty; not field recall
+missing_5pct,6,6,1.0,0.609666,1.0,known-candidate coverage uncertainty; not field recall
+missing_10pct,6,6,1.0,0.609666,1.0,known-candidate coverage uncertainty; not field recall
+missing_20pct,5,6,0.833333,0.436497,0.969947,known-candidate coverage uncertainty; not field recall
+gap_30m,1,6,0.166667,0.030053,0.563503,known-candidate coverage uncertainty; not field recall
+gap_60m,1,6,0.166667,0.030053,0.563503,known-candidate coverage uncertainty; not field recall
+gap_120m,0,6,0.0,0.0,0.390334,known-candidate coverage uncertainty; not field recall
+downsample_30m,6,6,1.0,0.609666,1.0,known-candidate coverage uncertainty; not field recall
+downsample_60m,6,6,1.0,0.609666,1.0,known-candidate coverage uncertainty; not field recall
+drop_i1,4,6,0.666667,0.299993,0.903229,known-candidate coverage uncertainty; not field recall
+drop_i2,5,6,0.833333,0.436497,0.969947,known-candidate coverage uncertainty; not field recall
+drop_i3,6,6,1.0,0.609666,1.0,known-candidate coverage uncertainty; not field recall
+duplicate_timestamp,6,6,1.0,0.609666,1.0,known-candidate coverage uncertainty; not field recall
+duplicate_conflict,4,6,0.666667,0.299993,0.903229,known-candidate coverage uncertainty; not field recall
+measurement_channel_missing,0,6,0.0,0.0,0.390334,known-candidate coverage uncertainty; not field recall

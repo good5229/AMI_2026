@@ -1,0 +1,38 @@
+{
+  "schema_version": "lightguard-v0.6-reproducibility",
+  "seed": 6062026,
+  "bootstrap_replicates": 2000,
+  "frozen_config": {
+    "activation": 0.6,
+    "duration": 0.25,
+    "load": 0.25,
+    "phase": 0.2,
+    "solar_penalty": 0.2,
+    "transient_penalty": 0.2,
+    "policy_penalty": 0.2,
+    "weather": 0.0,
+    "threshold": 0.55
+  },
+  "commands": [
+    "python3 scripts/run_v05_all.py",
+    "python3 scripts/run_v06_evidence_hardening.py",
+    "python3 scripts/test_v06_artifacts.py"
+  ],
+  "input_hashes": {
+    "lightguard_v0_1/data/validation/v05/causal_walkforward_results.csv": "464b6ba069d996a0f1413cb9bc193b94538623dfd14e3004369b30c85cf49df9",
+    "lightguard_v0_1/reports/v05/robustness_results.csv": "a2b537e6b3a9a104b57496fda0d9af2c91f91183cb8d50fd03c8774739e3da0b",
+    "lightguard_v0_1/data/validation/v04_confirmatory_holdout.json": "5e225ec02cce405dfd11eb918069c841600dd90ebead5bba804a1fb919c2a13e"
+  },
+  "output_hashes": {
+    "lightguard_v0_1/reports/v06/coverage_uncertainty.csv": "0a7683b5d29a883d5087e6acc7e488718270f74e76a5b1c5ebacb3a48501fec5",
+    "lightguard_v0_1/data/validation/v06/stationary_bootstrap.json": "e239317a6805e513338a4313ccf89db22121939952fe8af11a1284cc76848877",
+    "lightguard_v0_1/reports/v06/factorial_design.csv": "c33756f5f269c38aaba569d96334ea3ccc908cb2dff654c0beeb8329480b6ffd",
+    "lightguard_v0_1/reports/v06/interaction_effects.csv": "6cc21f587c54ce356f20fdc479d919d6073504f1881a4b300c8061ef8edab164",
+    "lightguard_v0_1/data/validation/v06/abstention_policy.json": "2c9e100517a11d761ddcd4d7c6a03dbc48d99afeec8c6ea0d475d1aa492b664d",
+    "lightguard_v0_1/data/validation/v06/field_outcome_schema.json": "84c6dd6464e91e887a6407013e91eb960e3dbd12c46ed142b9ad9e0fcaad3592",
+    "lightguard_v0_1/data/validation/v06/v06_evidence_summary.json": "1b5dec35418bbfa25e56d1c2b99868e716714facba05c4f30743ba5ba4abcad3",
+    "lightguard_app/assets/data/context/v06_evidence_summary.json": "1b5dec35418bbfa25e56d1c2b99868e716714facba05c4f30743ba5ba4abcad3",
+    "lightguard_v0_1/reports/v06/academic_basis.md": "e83721c5fde243ae00da3d89c34b08a2fce9795f5a121e5cff1d7b779250446b",
+    "lightguard_v0_1/reports/v06/field_validation_protocol.md": "6a5436341dafe0ee6c7416a9d59e85b8606cc464f87b13847ed15875f10c5b28"
+  }
+}

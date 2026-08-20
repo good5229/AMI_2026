@@ -1,0 +1,36 @@
+{
+  "schema_version": "lightguard-v0.6-abstention-policy",
+  "default": "TECHNICAL_CANDIDATE_ONLY",
+  "rules": [
+    {
+      "condition": "available_channel_count == 0",
+      "decision": "DATA_INSUFFICIENT",
+      "reason": "no measured current channel"
+    },
+    {
+      "condition": "max_contiguous_gap_minutes >= 120",
+      "decision": "DATA_INSUFFICIENT",
+      "reason": "v0.5 stress coverage collapsed to 0/6"
+    },
+    {
+      "condition": "duplicate_conflict_count > 0",
+      "decision": "DATA_INSUFFICIENT_AT_CONFLICT",
+      "reason": "conflicting samples cannot be silently selected"
+    },
+    {
+      "condition": "sampling_interval_minutes > 60",
+      "decision": "DATA_INSUFFICIENT",
+      "reason": "outside tested resolution envelope"
+    },
+    {
+      "condition": "sampling_interval_minutes == 60",
+      "decision": "REDUCED_TEMPORAL_RESOLUTION",
+      "reason": "candidate coverage survived but interval IoU degraded"
+    }
+  ],
+  "never_do": [
+    "coerce null to zero",
+    "impute an event across an abstained gap",
+    "report abstention as a normal result"
+  ]
+}

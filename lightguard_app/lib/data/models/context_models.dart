@@ -161,6 +161,62 @@ class V05ValidationSummary {
   }
 }
 
+class V06EvidenceSummary {
+  const V06EvidenceSummary({
+    required this.coveragePoint,
+    required this.coverageLower,
+    required this.coverageUpper,
+    required this.gap120Upper,
+    required this.candidateDensityPoint,
+    required this.candidateDensityLower,
+    required this.candidateDensityUpper,
+    required this.largestInteractionTerm,
+    required this.largestInteractionEffect,
+    required this.abstentionRuleCount,
+    required this.fieldTruthAvailable,
+  });
+
+  final double coveragePoint;
+  final double coverageLower;
+  final double coverageUpper;
+  final double gap120Upper;
+  final double candidateDensityPoint;
+  final double candidateDensityLower;
+  final double candidateDensityUpper;
+  final String largestInteractionTerm;
+  final double largestInteractionEffect;
+  final int abstentionRuleCount;
+  final bool fieldTruthAvailable;
+
+  factory V06EvidenceSummary.fromJson(String source) {
+    final value = jsonDecode(source) as Map<String, dynamic>;
+    final coverage = value['known_candidate_coverage'] as Map<String, dynamic>;
+    final gap = value['gap_120m_coverage'] as Map<String, dynamic>;
+    final density = value['candidate_density'] as Map<String, dynamic>;
+    final interaction = value['interaction_diagnostic'] as Map<String, dynamic>;
+    final abstention = value['abstention'] as Map<String, dynamic>;
+    final truth = value['field_truth'] as Map<String, dynamic>;
+    return V06EvidenceSummary(
+      coveragePoint: (coverage['coverage_point'] as num).toDouble(),
+      coverageLower: (coverage['wilson_95_lower'] as num).toDouble(),
+      coverageUpper: (coverage['wilson_95_upper'] as num).toDouble(),
+      gap120Upper: (gap['wilson_95_upper'] as num).toDouble(),
+      candidateDensityPoint:
+          (density['candidate_density_point'] as num).toDouble(),
+      candidateDensityLower:
+          (density['candidate_density_95_lower'] as num).toDouble(),
+      candidateDensityUpper:
+          (density['candidate_density_95_upper'] as num).toDouble(),
+      largestInteractionTerm:
+          interaction['largest_two_factor_fpr_term']?.toString() ?? '',
+      largestInteractionEffect:
+          (interaction['largest_two_factor_fpr_effect'] as num).toDouble(),
+      abstentionRuleCount: (abstention['rule_count'] as num).toInt(),
+      fieldTruthAvailable: truth['available'] == true,
+    );
+  }
+}
+
 class AmiReplaySample {
   const AmiReplaySample({
     required this.timestamp,

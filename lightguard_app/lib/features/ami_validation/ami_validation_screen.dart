@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'v07_regional_seasonal_card.dart';
+
 import '../../core/widgets/app_scaffold.dart';
 import '../../core/widgets/status_badges.dart';
 import '../../data/models/context_models.dart';
@@ -19,6 +21,7 @@ class AmiValidationScreen extends ConsumerWidget {
         const <ControlledMetric>[];
     final v04Summary = ref.watch(v04ValidationSummaryProvider).asData?.value;
     final v05Summary = ref.watch(v05ValidationSummaryProvider).asData?.value;
+    final v06Summary = ref.watch(v06EvidenceSummaryProvider).asData?.value;
     final replayWindows = ref.watch(amiReplayWindowsProvider).asData?.value ??
         const <String, List<AmiReplaySample>>{};
     return eventsAsync.when(
@@ -72,6 +75,10 @@ class AmiValidationScreen extends ConsumerWidget {
                 const SizedBox(height: 12),
                 _V05TechnicalEvidence(summary: v05Summary),
               ],
+              if (v06Summary != null) ...[
+                const SizedBox(height: 12),
+                _V06EvidenceHardening(summary: v06Summary),
+              ],
               const SizedBox(height: 12),
               if (representative != null &&
                   replayWindows['B-L-35_2026-05-11.csv']?.isNotEmpty == true)
@@ -108,6 +115,70 @@ class AmiValidationScreen extends ConsumerWidget {
             event.firstSample.startsWith('2026-05-20')) ||
         (event.meterId == 'B-L-14' &&
             event.firstSample.startsWith('2026-05-29'));
+  }
+}
+
+class _V06EvidenceHardening extends StatelessWidget {
+  const _V06EvidenceHardening({required this.summary});
+
+  final V06EvidenceSummary summary;
+
+  @override
+  Widget build(BuildContext context) {
+    String percent(double value, [int digits = 1]) =>
+        '${(value * 100).toStringAsFixed(digits)}%';
+    return Card(
+      key: const Key('v06-evidence-hardening'),
+      color: const Color(0xFFF4F1E8),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const V07RegionalSeasonalCard(),
+            const SizedBox(height: 16),
+            Text('Evidence Hardening · Uncertainty First',
+                style: Theme.of(context).textTheme.titleMedium),
+            const SizedBox(height: 6),
+            const Text(
+              '6/6은 field recall이 아닙니다. 작은 표본의 불확실성과 판정 불가 조건을 함께 표시합니다.',
+              style: TextStyle(fontSize: 12),
+            ),
+            const SizedBox(height: 12),
+            Wrap(spacing: 10, runSpacing: 10, children: [
+              _V05EvidenceTile(
+                title: 'Known candidates',
+                value: percent(summary.coveragePoint),
+                detail:
+                    'Wilson 95% ${percent(summary.coverageLower)}–${percent(summary.coverageUpper)}',
+              ),
+              _V05EvidenceTile(
+                title: 'Daily density',
+                value: percent(summary.candidateDensityPoint, 2),
+                detail:
+                    'Stationary bootstrap ${percent(summary.candidateDensityLower, 2)}–${percent(summary.candidateDensityUpper, 2)}',
+              ),
+              _V05EvidenceTile(
+                title: 'Abstention contract',
+                value: '${summary.abstentionRuleCount} rules',
+                detail: '120분 gap은 DATA_INSUFFICIENT',
+              ),
+            ]),
+            const SizedBox(height: 10),
+            Text(
+              '2-factor FPR effect 최대: ${summary.largestInteractionTerm} · ${(summary.largestInteractionEffect * 100).toStringAsFixed(2)}%p',
+              style: const TextStyle(fontSize: 12),
+            ),
+            Text(
+              summary.fieldTruthAvailable
+                  ? 'Blinded field truth 연결됨'
+                  : 'Blinded field truth 미확보 · schema만 준비됨',
+              style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 

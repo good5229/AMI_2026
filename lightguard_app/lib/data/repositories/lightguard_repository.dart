@@ -142,6 +142,11 @@ class LightguardRepository {
         await _assetSource.readV05ValidationSummary());
   }
 
+  Future<V06EvidenceSummary> loadV06EvidenceSummary() async {
+    return V06EvidenceSummary.fromJson(
+        await _assetSource.readV06EvidenceSummary());
+  }
+
   Future<Map<String, List<AmiReplaySample>>> loadAmiReplayWindows() async {
     const files = <String>[
       'B-L-35_2026-05-11.csv',
@@ -237,6 +242,11 @@ final v04ValidationSummaryProvider =
 final v05ValidationSummaryProvider =
     FutureProvider.autoDispose<V05ValidationSummary>((ref) async {
   return ref.watch(lightguardRepositoryProvider).loadV05ValidationSummary();
+});
+
+final v06EvidenceSummaryProvider =
+    FutureProvider.autoDispose<V06EvidenceSummary>((ref) async {
+  return ref.watch(lightguardRepositoryProvider).loadV06EvidenceSummary();
 });
 
 final amiReplayWindowsProvider =

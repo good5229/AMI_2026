@@ -1,0 +1,12 @@
+{
+  "method": "stationary bootstrap over ordered daily candidate indicators within meter",
+  "seed": 6062026,
+  "replicates": 2000,
+  "expected_block_days": 7,
+  "meter_count": 5,
+  "evaluable_meter_days": 305,
+  "candidate_density_point": 0.01967213,
+  "candidate_density_95_lower": 0.00655738,
+  "candidate_density_95_upper": 0.03606557,
+  "claim_scope": "descriptive detector-candidate density; not fault prevalence"
+}

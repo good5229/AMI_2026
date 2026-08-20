@@ -1,0 +1,11 @@
+{
+  "files": {
+    "lightguard_v0_1/data/validation/v07/regional_seasonal_cases.json": "e9613557933b816d808189d4fb4ef8dba21ad14ab3905da9569cb01bcd2f8233",
+    "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json": "f2827df345c137a5d5b830104d67952b0db4366b58a3d5bfffec6b9e08202a91",
+    "lightguard_v0_1/data/validation/v07/regional_seasonal_summary.json": "70a6a157871a9d4514af87719e5f5395128772bea4c1e95772ae0267a1ef6cc6",
+    "lightguard_v0_1/reports/v07/cell_metrics.csv": "32f8273a44b7e1b592a04c9dfe3225dc65762302f0797fbcec810e21e07bd796",
+    "lightguard_v0_1/reports/v07/external_ami_boundary.md": "fd5fd9f59fd6602d9564ca883b4954e62df2b92088018ea13d2586c1c1ce0c9d",
+    "lightguard_v0_1/reports/v07/regional_seasonal_generalization.md": "6171314f7ac4e67e5ec6cdb6f9777badd624b0b14b1f6738615486d31b094f04"
+  },
+  "schema_version": "lightguard.v07-manifest.v1"
+}

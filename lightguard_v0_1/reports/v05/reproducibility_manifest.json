@@ -1,7 +1,7 @@
 {
   "schema_version": "lightguard-v0.5-reproducibility",
-  "run_timestamp": "2026-08-20T09:29:35Z",
-  "git_sha": "81d909f66cb6513039db1c6fb6a635d6b26f385c",
+  "run_timestamp": "2026-08-20T09:37:48Z",
+  "git_sha": "8b5eabdcbf5e61f30652f0ae588bfc6e4c872464",
   "python_version": "3.10.2",
   "package_versions": {
     "openpyxl": "3.1.5"
