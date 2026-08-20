@@ -48,8 +48,8 @@ extension RegionIdX on RegionId {
   String get branchLabel {
     return switch (this) {
       RegionId.suyeong => '수영구 시나리오 주입 모드',
-      RegionId.gangneung => '강릉시 제어기 연계 검증 모드',
-      RegionId.chungju => '충주시 분전함 자산 모드',
+      RegionId.gangneung => '강릉시 Controller-linked Validation',
+      RegionId.chungju => '충주시 Minimal Asset / Asset-only',
     };
   }
 
@@ -97,7 +97,7 @@ extension RegionIdX on RegionId {
     return switch (this) {
       RegionId.suyeong => true,
       RegionId.gangneung => true,
-      RegionId.chungju => true,
+      RegionId.chungju => false,
     };
   }
 
@@ -107,9 +107,9 @@ extension RegionIdX on RegionId {
 
   String get modeDescription {
     return switch (this) {
-      RegionId.suyeong => '지자체 미연결 + 시나리오 주입',
-      RegionId.gangneung => '제어기 연계 검증 모드',
-      RegionId.chungju => '분전함 중심 Asset-only 모드',
+      RegionId.suyeong => 'Full Asset + Scenario Validation',
+      RegionId.gangneung => 'Controller-linked Validation',
+      RegionId.chungju => 'Minimal Asset / Asset-only',
     };
   }
 }
@@ -127,7 +127,7 @@ class RegionMetadata {
       <String>[
         '개별 가로등/분전함 연결 가능',
         '총 정격용량, 좌표 기반 분석',
-        '분전함 204개 · 가로등 4,076개',
+        '분전함 204개 · 자산행 4,076개 · 실제 등 수 4,239등',
       ],
     ),
     RegionMetadata(
@@ -142,8 +142,8 @@ class RegionMetadata {
       RegionId.chungju,
       <String>[
         '분전함 871개 자산 스탠드얼론',
-        '가로등 수급 정보 보완 우선',
-        '예측·정상범위 임계치 중심 처리',
+        '개별 정격정보 제한',
+        '분전함·등주 중심 최소 자산 스키마',
       ],
     ),
   ];

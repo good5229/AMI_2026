@@ -13,21 +13,43 @@ class DashboardScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final dataAsync = ref.watch(lightguardDataProvider);
+    final events = ref.watch(competitionAmiEventsProvider).asData?.value ??
+        const <ValidationEvent>[];
 
     return dataAsync.when(
-      loading: () => const Scaffold(body: Center(child: CircularProgressIndicator())),
+      loading: () =>
+          const Scaffold(body: Center(child: CircularProgressIndicator())),
       error: (err, stack) => _error(context, '데이터 로드 실패: $err'),
       data: (data) {
         final region = ref.watch(selectedRegionProvider);
+        final isCompact = MediaQuery.sizeOf(context).width < 600;
+        final scenarioDetections = region.supportsScenarioInjection
+            ? data.validationRows.where((row) => row.detectMatched).length
+            : 0;
+        final realMunicipalAmiMappings =
+            data.objects.where((cabinet) => cabinet.ami.hasRealAmi).length;
+        final excessKwh = events.fold<double>(
+            0, (sum, event) => sum + event.estimatedExcessKwh);
 
         final cards = [
-          _MetricCard('총 분전함', '${data.objects.length}개', Icons.electrical_services),
-          _MetricCard('총 가로등 수', '${data.totalLampCount}개', Icons.lightbulb_outline),
-          _MetricCard('총 정격용량', '${data.totalRatedLoadKw.toStringAsFixed(1)} kW', Icons.bolt),
-          _MetricCard('정상', '${data.countByStatus(InspectionStatus.normal)}', Icons.check_circle_outline),
-          _MetricCard('관찰', '${data.countByStatus(InspectionStatus.observe)}', Icons.remove_red_eye_outlined),
-          _MetricCard('점검 권고', '${data.countByStatus(InspectionStatus.inspectionRecommended)}', Icons.warning_amber_rounded),
-          _MetricCard('우선 점검', '${data.countByStatus(InspectionStatus.priorityInspection)}', Icons.error_outline),
+          _MetricCard(
+              '총 분전함', '${data.objects.length}개', Icons.electrical_services),
+          _MetricCard(
+              '총 가로등 수', '${data.totalLampCount}개', Icons.lightbulb_outline),
+          _MetricCard('총 정격용량',
+              '${data.totalRatedLoadKw.toStringAsFixed(1)} kW', Icons.bolt),
+          _MetricCard('정상', '${data.countByStatus(InspectionStatus.normal)}',
+              Icons.check_circle_outline),
+          _MetricCard('관찰', '${data.countByStatus(InspectionStatus.observe)}',
+              Icons.remove_red_eye_outlined),
+          _MetricCard(
+              '점검 권고',
+              '${data.countByStatus(InspectionStatus.inspectionRecommended)}',
+              Icons.warning_amber_rounded),
+          _MetricCard(
+              '우선 점검',
+              '${data.countByStatus(InspectionStatus.priorityInspection)}',
+              Icons.error_outline),
         ];
 
         final today = data.objects.isNotEmpty ? data.objects.first : null;
@@ -35,10 +57,11 @@ class DashboardScreen extends ConsumerWidget {
         return LightguardShell(
           title: 'LightGuard Dashboard · ${region.label}',
           actions: [
-            if (today != null)
+            if (today != null && !isCompact)
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: StatusBadge(type: BadgeType.validation, label: region.branchLabel),
+                child: StatusBadge(
+                    type: BadgeType.validation, label: region.branchLabel),
               ),
           ],
           child: SingleChildScrollView(
@@ -46,6 +69,9 @@ class DashboardScreen extends ConsumerWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                StatusBadge(
+                    type: BadgeType.validation, label: region.branchLabel),
+                const SizedBox(height: 10),
                 Wrap(spacing: 12, runSpacing: 12, children: cards),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(4, 4, 4, 12),
@@ -55,12 +81,62 @@ class DashboardScreen extends ConsumerWidget {
                   spacing: 8,
                   runSpacing: 8,
                   children: [
-                    _MiniPill(label: '우선점검 ${data.countByStatus(InspectionStatus.priorityInspection)}개'),
-                    _MiniPill(label: '점검권고 ${data.countByStatus(InspectionStatus.inspectionRecommended)}개'),
-                    _MiniPill(label: '관찰 ${data.countByStatus(InspectionStatus.observe)}개'),
-                    _MiniPill(label: '정상 ${data.countByStatus(InspectionStatus.normal)}개'),
+                    _MiniPill(
+                        label:
+                            '우선점검 ${data.countByStatus(InspectionStatus.priorityInspection)}개'),
+                    _MiniPill(
+                        label:
+                            '점검권고 ${data.countByStatus(InspectionStatus.inspectionRecommended)}개'),
+                    _MiniPill(
+                        label:
+                            '관찰 ${data.countByStatus(InspectionStatus.observe)}개'),
+                    _MiniPill(
+                        label:
+                            '정상 ${data.countByStatus(InspectionStatus.normal)}개'),
                   ],
                 ),
+                const SizedBox(height: 12),
+                Text('검증 자산을 섞지 않고 표시합니다',
+                    style: Theme.of(context).textTheme.titleMedium),
+                const SizedBox(height: 8),
+                Wrap(
+                  spacing: 12,
+                  runSpacing: 12,
+                  children: [
+                    _EvidenceMetricCard(
+                      label: '실제 공공자산',
+                      value: '${data.objects.length}개 분전함',
+                      detail: '${region.label} 자산 데이터',
+                      icon: Icons.location_city_outlined,
+                    ),
+                    _EvidenceMetricCard(
+                      key: const Key('dashboard-scenario-count'),
+                      label: 'Scenario validation',
+                      value: '$scenarioDetections건',
+                      detail: region.supportsScenarioInjection
+                          ? 'controlled scenario 재현 검출'
+                          : '지원하지 않는 모드',
+                      icon: Icons.science_outlined,
+                    ),
+                    _EvidenceMetricCard(
+                      key: const Key('dashboard-actual-ami-count'),
+                      label: '실제 공모전 AMI',
+                      value: '${events.length}건',
+                      detail:
+                          '현장 미확인 점검 후보 · ${excessKwh.toStringAsFixed(3)} kWh',
+                      icon: Icons.bolt_outlined,
+                    ),
+                    _EvidenceMetricCard(
+                      key: const Key('dashboard-municipal-ami-count'),
+                      label: '실제 지자체 AMI 연결',
+                      value: '$realMunicipalAmiMappings개',
+                      detail: '분전함 ID 매핑 미구축',
+                      icon: Icons.link_off_outlined,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 12),
+                const _SecondCheckerCard(),
                 const SizedBox(height: 12),
                 Card(
                   child: ListTile(
@@ -108,6 +184,111 @@ class DashboardScreen extends ConsumerWidget {
       appBar: AppBar(title: const Text('LightGuard Dashboard')),
       body: Center(
         child: Text(msg),
+      ),
+    );
+  }
+}
+
+class _EvidenceMetricCard extends StatelessWidget {
+  const _EvidenceMetricCard({
+    super.key,
+    required this.label,
+    required this.value,
+    required this.detail,
+    required this.icon,
+  });
+
+  final String label;
+  final String value;
+  final String detail;
+  final IconData icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 250,
+      child: Card(
+        color: const Color(0xFFF7FAFC),
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(children: [
+                Icon(icon, size: 18),
+                const SizedBox(width: 7),
+                Expanded(child: Text(label))
+              ]),
+              const SizedBox(height: 8),
+              Text(value, style: Theme.of(context).textTheme.titleLarge),
+              const SizedBox(height: 4),
+              Text(detail, style: Theme.of(context).textTheme.bodySmall),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _SecondCheckerCard extends StatelessWidget {
+  const _SecondCheckerCard();
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      color: const Color(0xFFEAF3F8),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('기존 관제를 교체하지 않는 Second Checker',
+                style: Theme.of(context).textTheme.titleMedium),
+            const SizedBox(height: 10),
+            const Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                _FlowPill('제어상태'),
+                Text('+'),
+                _FlowPill('AMI 실제 전력'),
+                Text('+'),
+                _FlowPill('자산 기대부하'),
+                Text('+'),
+                _FlowPill('운전시간 context'),
+                Icon(Icons.arrow_forward),
+                _FlowPill('상태 불일치 · 점검 우선순위'),
+              ],
+            ),
+            const SizedBox(height: 10),
+            const Text(
+                '기존 원격제어시스템을 교체하지 않고, 이미 설치된 AMI를 실제 전력 상태를 확인하는 독립 검증 수단으로 추가합니다.'),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _FlowPill extends StatelessWidget {
+  const _FlowPill(this.label);
+
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border.all(color: const Color(0xFF9CB7C9)),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
+        child: Text(label,
+            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600)),
       ),
     );
   }
