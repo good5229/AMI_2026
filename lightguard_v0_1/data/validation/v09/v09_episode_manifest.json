@@ -1,0 +1,1434 @@
+{
+  "episodes": [
+    {
+      "cell_id": "chungju_autumn",
+      "date": "2025-10-13",
+      "episode_id": "v09-chungju-autumn-2025-10-13",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "db648a7b1a9c451d000d2fa696f96d731461752705c7e8cd3153bbffdfb64923",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:21",
+          "civil_morning": "06:08",
+          "sunrise": "06:34",
+          "sunset": "17:55"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "127",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "a5efb7fc6ee51d68a3cf1f231506192592b70b31767c9619b7969d48b621d5ed"
+      },
+      "region_id": "chungju",
+      "region_name_ko": "충주",
+      "season": "autumn",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "chungju_autumn",
+      "date": "2025-10-15",
+      "episode_id": "v09-chungju-autumn-2025-10-15",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "note": "v0.7 stores normalized official KASI values, not a raw-response hash",
+        "response_sha256": null,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "status": "official_normalized_v07_anchor",
+        "values": {
+          "civil_evening": "18:18",
+          "civil_morning": "06:10",
+          "sunrise": "06:36",
+          "sunset": "17:52"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "127",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "887938446fc7b3bf0e85899cae157ba0742f02a2b3947dc3c546d0fd1a2e6d9c"
+      },
+      "region_id": "chungju",
+      "region_name_ko": "충주",
+      "season": "autumn",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "chungju_autumn",
+      "date": "2025-10-16",
+      "episode_id": "v09-chungju-autumn-2025-10-16",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "878691c1af83cbf0786b9a66e3987a270e0b35db383fa14f1090d82c80aab096",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:17",
+          "civil_morning": "06:10",
+          "sunrise": "06:36",
+          "sunset": "17:51"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "127",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "91673935166e0560346ba61a1f283dfd95fe736f6940b5fcebd8d3818d57ab1d"
+      },
+      "region_id": "chungju",
+      "region_name_ko": "충주",
+      "season": "autumn",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "chungju_autumn",
+      "date": "2025-10-18",
+      "episode_id": "v09-chungju-autumn-2025-10-18",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "3acce7e208005b86bde9c8311a95ad013bda5c07af9cfdd2a361de67adf962e1",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:14",
+          "civil_morning": "06:12",
+          "sunrise": "06:38",
+          "sunset": "17:48"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "127",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "4e4e20562c02e4849772a162979b135cf145e611d6905026706040a286df72a3"
+      },
+      "region_id": "chungju",
+      "region_name_ko": "충주",
+      "season": "autumn",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "chungju_spring",
+      "date": "2025-04-14",
+      "episode_id": "v09-chungju-spring-2025-04-14",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "47c139d958b16153361745d037e746f60fb9a501a48ae07b5355702d2869be50",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "19:28",
+          "civil_morning": "05:29",
+          "sunrise": "05:55",
+          "sunset": "19:01"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "127",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "a0159ea0e07c7e875a4509a185d9a5f0eebc0968a867070c4c100471564bb4f9"
+      },
+      "region_id": "chungju",
+      "region_name_ko": "충주",
+      "season": "spring",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "chungju_spring",
+      "date": "2025-04-15",
+      "episode_id": "v09-chungju-spring-2025-04-15",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "note": "v0.7 stores normalized official KASI values, not a raw-response hash",
+        "response_sha256": null,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "status": "official_normalized_v07_anchor",
+        "values": {
+          "civil_evening": "19:30",
+          "civil_morning": "05:28",
+          "sunrise": "05:54",
+          "sunset": "19:03"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "127",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "909588bb08da5506aadabee556b6b96f24b693d8b4000917fb4afe6f255509ea"
+      },
+      "region_id": "chungju",
+      "region_name_ko": "충주",
+      "season": "spring",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "chungju_spring",
+      "date": "2025-04-17",
+      "episode_id": "v09-chungju-spring-2025-04-17",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "e67f3906705bf11be593d798ed52d394cc3395a07bc4572009018d3b4acbb8a3",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "19:31",
+          "civil_morning": "05:24",
+          "sunrise": "05:51",
+          "sunset": "19:04"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "127",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "fc3f7c8c5b9af2563049cfca9e97398822568e8a2bf921b9158ce28b604c10f4"
+      },
+      "region_id": "chungju",
+      "region_name_ko": "충주",
+      "season": "spring",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "chungju_spring",
+      "date": "2025-04-18",
+      "episode_id": "v09-chungju-spring-2025-04-18",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "c06676db4402d7b3a736b2a91f9b02156734b786020dd861849825fcaa53305f",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "19:32",
+          "civil_morning": "05:23",
+          "sunrise": "05:50",
+          "sunset": "19:05"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "127",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "4e4d85c1973ec37e8eeee0f0a36afa52eb2dc759a3861627b9b9720face13ab2"
+      },
+      "region_id": "chungju",
+      "region_name_ko": "충주",
+      "season": "spring",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "chungju_summer",
+      "date": "2025-07-12",
+      "episode_id": "v09-chungju-summer-2025-07-12",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "103f0920f091508e8d1d1e0afc9beb869cfde068b6779a6ff8a0aaf13693f495",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "20:19",
+          "civil_morning": "04:48",
+          "sunrise": "05:18",
+          "sunset": "19:49"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "127",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "227304081146023e1b2c77b947d26a8ae4e7a59fe973cc7803491745fb09a532"
+      },
+      "region_id": "chungju",
+      "region_name_ko": "충주",
+      "season": "summer",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "chungju_summer",
+      "date": "2025-07-14",
+      "episode_id": "v09-chungju-summer-2025-07-14",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "bfbb3f5c80dd98526af1714152dbba496b4fc01b70eb84c1ba3b33f4a8d4d560",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "20:18",
+          "civil_morning": "04:49",
+          "sunrise": "05:19",
+          "sunset": "19:48"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "127",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "591a191987746007b924aca4c8fcf6281364420032e6aa6e18abeff9da3be28a"
+      },
+      "region_id": "chungju",
+      "region_name_ko": "충주",
+      "season": "summer",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "chungju_summer",
+      "date": "2025-07-15",
+      "episode_id": "v09-chungju-summer-2025-07-15",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "note": "v0.7 stores normalized official KASI values, not a raw-response hash",
+        "response_sha256": null,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "status": "official_normalized_v07_anchor",
+        "values": {
+          "civil_evening": "20:18",
+          "civil_morning": "04:50",
+          "sunrise": "05:20",
+          "sunset": "19:48"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "127",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "7bd624953100d8f627aeb89163e3a1b62f28255cd84884453c1710df85a6b718"
+      },
+      "region_id": "chungju",
+      "region_name_ko": "충주",
+      "season": "summer",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "chungju_summer",
+      "date": "2025-07-16",
+      "episode_id": "v09-chungju-summer-2025-07-16",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "e77da97731b4f937fe315e847a861a670eb2686db8a5bd00fb9d48c455e3f848",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "20:17",
+          "civil_morning": "04:51",
+          "sunrise": "05:21",
+          "sunset": "19:47"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "127",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "5b527706a67fae0478d1e3cd4475bae87017bcc82a110c7b253e89a087975f4d"
+      },
+      "region_id": "chungju",
+      "region_name_ko": "충주",
+      "season": "summer",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "chungju_winter",
+      "date": "2025-01-12",
+      "episode_id": "v09-chungju-winter-2025-01-12",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "8170654fe7185c52f5047a0319aa653759bde547be55e26d34d9173e4a5e1c52",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:00",
+          "civil_morning": "07:13",
+          "sunrise": "07:41",
+          "sunset": "17:31"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "127",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "83cd7ab27b4e6651af5a9152288800001ed3fd483f924868130f730e812e0543"
+      },
+      "region_id": "chungju",
+      "region_name_ko": "충주",
+      "season": "winter",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "chungju_winter",
+      "date": "2025-01-14",
+      "episode_id": "v09-chungju-winter-2025-01-14",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "c161da771842f29eef95bf0ed1bbbeb56ea3d57fcb90c362c91b80a2866f53e7",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:02",
+          "civil_morning": "07:12",
+          "sunrise": "07:41",
+          "sunset": "17:33"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "127",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "02b2c84331679eebcb1d8a0abce289ad53881f39cca20314cb8fe8fa8a034e50"
+      },
+      "region_id": "chungju",
+      "region_name_ko": "충주",
+      "season": "winter",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "chungju_winter",
+      "date": "2025-01-15",
+      "episode_id": "v09-chungju-winter-2025-01-15",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "note": "v0.7 stores normalized official KASI values, not a raw-response hash",
+        "response_sha256": null,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "status": "official_normalized_v07_anchor",
+        "values": {
+          "civil_evening": "18:03",
+          "civil_morning": "07:12",
+          "sunrise": "07:41",
+          "sunset": "17:35"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "127",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "473e82c3017164bdfec7259286e01b821d5e7d2bae58878f2d65500cd0c235b5"
+      },
+      "region_id": "chungju",
+      "region_name_ko": "충주",
+      "season": "winter",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "chungju_winter",
+      "date": "2025-01-18",
+      "episode_id": "v09-chungju-winter-2025-01-18",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "a668d1b16e5920a3c90f2cb22e3906b97ea72527c0cf9756dd84743f79b57d3e",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:05",
+          "civil_morning": "07:11",
+          "sunrise": "07:39",
+          "sunset": "17:37"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "127",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "f67974162c14db2099986ecd00fad16920ce1f5f374fcd3740956a2f5ef03a92"
+      },
+      "region_id": "chungju",
+      "region_name_ko": "충주",
+      "season": "winter",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "gangneung_autumn",
+      "date": "2025-10-12",
+      "episode_id": "v09-gangneung-autumn-2025-10-12",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "64a47d52ec80d4137be691b20c1ca03d20c3b8eec76579995d34199c0a7970a2",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:18",
+          "civil_morning": "06:03",
+          "sunrise": "06:29",
+          "sunset": "17:52"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "105",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "063d6bc97cc3df84274c8e730a160b5477c16cf22474d69fb829a6ec38ca19e9"
+      },
+      "region_id": "gangneung",
+      "region_name_ko": "강릉",
+      "season": "autumn",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "gangneung_autumn",
+      "date": "2025-10-13",
+      "episode_id": "v09-gangneung-autumn-2025-10-13",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "01eaa710f9d2d316e3597c0e71c9004434d8ec0fafd52fc59e13205406bfdb3b",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:17",
+          "civil_morning": "06:04",
+          "sunrise": "06:30",
+          "sunset": "17:50"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "105",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "a5efb7fc6ee51d68a3cf1f231506192592b70b31767c9619b7969d48b621d5ed"
+      },
+      "region_id": "gangneung",
+      "region_name_ko": "강릉",
+      "season": "autumn",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "gangneung_autumn",
+      "date": "2025-10-15",
+      "episode_id": "v09-gangneung-autumn-2025-10-15",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "note": "v0.7 stores normalized official KASI values, not a raw-response hash",
+        "response_sha256": null,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "status": "official_normalized_v07_anchor",
+        "values": {
+          "civil_evening": "18:14",
+          "civil_morning": "06:06",
+          "sunrise": "06:33",
+          "sunset": "17:47"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "105",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "887938446fc7b3bf0e85899cae157ba0742f02a2b3947dc3c546d0fd1a2e6d9c"
+      },
+      "region_id": "gangneung",
+      "region_name_ko": "강릉",
+      "season": "autumn",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "gangneung_autumn",
+      "date": "2025-10-18",
+      "episode_id": "v09-gangneung-autumn-2025-10-18",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "22a2db1bee95212dd7e865a3903a9826dbc429ebcc3a1d0fc05d2d9042f7ab54",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:10",
+          "civil_morning": "06:09",
+          "sunrise": "06:35",
+          "sunset": "17:43"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "105",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "4e4e20562c02e4849772a162979b135cf145e611d6905026706040a286df72a3"
+      },
+      "region_id": "gangneung",
+      "region_name_ko": "강릉",
+      "season": "autumn",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "gangneung_spring",
+      "date": "2025-04-13",
+      "episode_id": "v09-gangneung-spring-2025-04-13",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "7f72b1c9b0723c9df4a55f2e9451d9e5049423f4b1ef823b54444a907d435283",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "19:24",
+          "civil_morning": "05:25",
+          "sunrise": "05:52",
+          "sunset": "18:57"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "105",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "471cce62f1185dfe53dbbd634572dff018e62a95f2cdeceebf07d04971ad53f7"
+      },
+      "region_id": "gangneung",
+      "region_name_ko": "강릉",
+      "season": "spring",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "gangneung_spring",
+      "date": "2025-04-15",
+      "episode_id": "v09-gangneung-spring-2025-04-15",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "note": "v0.7 stores normalized official KASI values, not a raw-response hash",
+        "response_sha256": null,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "status": "official_normalized_v07_anchor",
+        "values": {
+          "civil_evening": "19:27",
+          "civil_morning": "05:23",
+          "sunrise": "05:50",
+          "sunset": "19:00"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "105",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "909588bb08da5506aadabee556b6b96f24b693d8b4000917fb4afe6f255509ea"
+      },
+      "region_id": "gangneung",
+      "region_name_ko": "강릉",
+      "season": "spring",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "gangneung_spring",
+      "date": "2025-04-16",
+      "episode_id": "v09-gangneung-spring-2025-04-16",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "5491510be2ab47248f2263a341fc64144641831ed3206c427e1b13e355668fdf",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "19:27",
+          "civil_morning": "05:20",
+          "sunrise": "05:48",
+          "sunset": "19:00"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "105",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "f05e9aa4dfeb6f665bcac0b15bbaa442b20f7a337a587364140a98ca1ed1c34d"
+      },
+      "region_id": "gangneung",
+      "region_name_ko": "강릉",
+      "season": "spring",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "gangneung_spring",
+      "date": "2025-04-17",
+      "episode_id": "v09-gangneung-spring-2025-04-17",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "48b670e2c3e0b437cbecf19f3f5141459dddec96f094486a51dcd37e9a88c914",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "19:28",
+          "civil_morning": "05:19",
+          "sunrise": "05:46",
+          "sunset": "19:01"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "105",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "fc3f7c8c5b9af2563049cfca9e97398822568e8a2bf921b9158ce28b604c10f4"
+      },
+      "region_id": "gangneung",
+      "region_name_ko": "강릉",
+      "season": "spring",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "gangneung_summer",
+      "date": "2025-07-12",
+      "episode_id": "v09-gangneung-summer-2025-07-12",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "dde6a6933ac85822d41681bd5f8b64fde4099d873fd3101ede9987ffb2379fa0",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "20:18",
+          "civil_morning": "04:41",
+          "sunrise": "05:12",
+          "sunset": "19:47"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "105",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "227304081146023e1b2c77b947d26a8ae4e7a59fe973cc7803491745fb09a532"
+      },
+      "region_id": "gangneung",
+      "region_name_ko": "강릉",
+      "season": "summer",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "gangneung_summer",
+      "date": "2025-07-15",
+      "episode_id": "v09-gangneung-summer-2025-07-15",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "note": "v0.7 stores normalized official KASI values, not a raw-response hash",
+        "response_sha256": null,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "status": "official_normalized_v07_anchor",
+        "values": {
+          "civil_evening": "20:17",
+          "civil_morning": "04:44",
+          "sunrise": "05:15",
+          "sunset": "19:46"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "105",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "7bd624953100d8f627aeb89163e3a1b62f28255cd84884453c1710df85a6b718"
+      },
+      "region_id": "gangneung",
+      "region_name_ko": "강릉",
+      "season": "summer",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "gangneung_summer",
+      "date": "2025-07-17",
+      "episode_id": "v09-gangneung-summer-2025-07-17",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "77c5e1d4176c855288e3ce9e7d6f6ba6868069b2b3a17724899dff08f94b0b97",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "20:15",
+          "civil_morning": "04:45",
+          "sunrise": "05:15",
+          "sunset": "19:45"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "105",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "78ac1de4f01f63aef7139c9fbe7979a1e83c470dce2d7c010fa043353c6c295d"
+      },
+      "region_id": "gangneung",
+      "region_name_ko": "강릉",
+      "season": "summer",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "gangneung_summer",
+      "date": "2025-07-18",
+      "episode_id": "v09-gangneung-summer-2025-07-18",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "5cfb6729ab06575daf1d82ed10c9d43cff0a5c52ec0824afe4d876a80eb247d2",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "20:14",
+          "civil_morning": "04:46",
+          "sunrise": "05:16",
+          "sunset": "19:44"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "105",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "231d0248a9091b3d786624ad7a13d9e247d939983be2bd649016e4719180ea6e"
+      },
+      "region_id": "gangneung",
+      "region_name_ko": "강릉",
+      "season": "summer",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "gangneung_winter",
+      "date": "2025-01-13",
+      "episode_id": "v09-gangneung-winter-2025-01-13",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "33d67022e106e37d6e43dcdaa3cc786fade50d4fcae2b8be8b0287297a37ef96",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "17:55",
+          "civil_morning": "07:10",
+          "sunrise": "07:39",
+          "sunset": "17:26"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "105",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "89402537cd215778813d65ee99b12e35de43b6400f73988474625569cef7af21"
+      },
+      "region_id": "gangneung",
+      "region_name_ko": "강릉",
+      "season": "winter",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "gangneung_winter",
+      "date": "2025-01-14",
+      "episode_id": "v09-gangneung-winter-2025-01-14",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "71708b355de72f779d7e0b44221f3052378752bffb0618c4ab7f4d58bd85e810",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "17:56",
+          "civil_morning": "07:10",
+          "sunrise": "07:38",
+          "sunset": "17:27"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "105",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "02b2c84331679eebcb1d8a0abce289ad53881f39cca20314cb8fe8fa8a034e50"
+      },
+      "region_id": "gangneung",
+      "region_name_ko": "강릉",
+      "season": "winter",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "gangneung_winter",
+      "date": "2025-01-15",
+      "episode_id": "v09-gangneung-winter-2025-01-15",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "note": "v0.7 stores normalized official KASI values, not a raw-response hash",
+        "response_sha256": null,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "status": "official_normalized_v07_anchor",
+        "values": {
+          "civil_evening": "17:58",
+          "civil_morning": "07:10",
+          "sunrise": "07:39",
+          "sunset": "17:29"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "105",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "473e82c3017164bdfec7259286e01b821d5e7d2bae58878f2d65500cd0c235b5"
+      },
+      "region_id": "gangneung",
+      "region_name_ko": "강릉",
+      "season": "winter",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "gangneung_winter",
+      "date": "2025-01-18",
+      "episode_id": "v09-gangneung-winter-2025-01-18",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "7006d60524c4dca619ded26fa757bf2df368e905a8f808f9966fb94b23bed589",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:00",
+          "civil_morning": "07:09",
+          "sunrise": "07:37",
+          "sunset": "17:31"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "105",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "f67974162c14db2099986ecd00fad16920ce1f5f374fcd3740956a2f5ef03a92"
+      },
+      "region_id": "gangneung",
+      "region_name_ko": "강릉",
+      "season": "winter",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "suyeong_autumn",
+      "date": "2025-10-12",
+      "episode_id": "v09-suyeong-autumn-2025-10-12",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "665781e27634ab1d1ba6f290ceda68bbab424b7aed179dfcc33b88764961b9ea",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:18",
+          "civil_morning": "06:01",
+          "sunrise": "06:26",
+          "sunset": "17:53"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "159",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "063d6bc97cc3df84274c8e730a160b5477c16cf22474d69fb829a6ec38ca19e9"
+      },
+      "region_id": "suyeong",
+      "region_name_ko": "수영구",
+      "season": "autumn",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "suyeong_autumn",
+      "date": "2025-10-15",
+      "episode_id": "v09-suyeong-autumn-2025-10-15",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "note": "v0.7 stores normalized official KASI values, not a raw-response hash",
+        "response_sha256": null,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "status": "official_normalized_v07_anchor",
+        "values": {
+          "civil_evening": "18:14",
+          "civil_morning": "06:04",
+          "sunrise": "06:30",
+          "sunset": "17:49"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "159",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "887938446fc7b3bf0e85899cae157ba0742f02a2b3947dc3c546d0fd1a2e6d9c"
+      },
+      "region_id": "suyeong",
+      "region_name_ko": "수영구",
+      "season": "autumn",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "suyeong_autumn",
+      "date": "2025-10-17",
+      "episode_id": "v09-suyeong-autumn-2025-10-17",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "0c2e8f9f968052a0216a49cf11ee639249e1efb90041f4ffee1ba65623a62559",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:12",
+          "civil_morning": "06:05",
+          "sunrise": "06:31",
+          "sunset": "17:46"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "159",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "eb39f504ae7d817b88da54cd1203e459e8795d8183da29e003d90c1e31214e0c"
+      },
+      "region_id": "suyeong",
+      "region_name_ko": "수영구",
+      "season": "autumn",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "suyeong_autumn",
+      "date": "2025-10-18",
+      "episode_id": "v09-suyeong-autumn-2025-10-18",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "645cb2609178491956aa2b8f0430a2d872e49ffa13bbfebba76ff823a1fb4ce8",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:11",
+          "civil_morning": "06:06",
+          "sunrise": "06:32",
+          "sunset": "17:45"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "159",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "4e4e20562c02e4849772a162979b135cf145e611d6905026706040a286df72a3"
+      },
+      "region_id": "suyeong",
+      "region_name_ko": "수영구",
+      "season": "autumn",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "suyeong_spring",
+      "date": "2025-04-13",
+      "episode_id": "v09-suyeong-spring-2025-04-13",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "9a4e4ab3477a3eeeff09e34d7addb631f8e470393fa839b2af13b1ffe94b1789",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "19:20",
+          "civil_morning": "05:28",
+          "sunrise": "05:54",
+          "sunset": "18:54"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "159",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "471cce62f1185dfe53dbbd634572dff018e62a95f2cdeceebf07d04971ad53f7"
+      },
+      "region_id": "suyeong",
+      "region_name_ko": "수영구",
+      "season": "spring",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "suyeong_spring",
+      "date": "2025-04-15",
+      "episode_id": "v09-suyeong-spring-2025-04-15",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "note": "v0.7 stores normalized official KASI values, not a raw-response hash",
+        "response_sha256": null,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "status": "official_normalized_v07_anchor",
+        "values": {
+          "civil_evening": "19:22",
+          "civil_morning": "05:26",
+          "sunrise": "05:52",
+          "sunset": "18:56"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "159",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "909588bb08da5506aadabee556b6b96f24b693d8b4000917fb4afe6f255509ea"
+      },
+      "region_id": "suyeong",
+      "region_name_ko": "수영구",
+      "season": "spring",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "suyeong_spring",
+      "date": "2025-04-16",
+      "episode_id": "v09-suyeong-spring-2025-04-16",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "df27ef409572b64be0c9df4c8fc8804b55e321bc6c66af4a31b6771617286d81",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "19:22",
+          "civil_morning": "05:24",
+          "sunrise": "05:50",
+          "sunset": "18:56"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "159",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "f05e9aa4dfeb6f665bcac0b15bbaa442b20f7a337a587364140a98ca1ed1c34d"
+      },
+      "region_id": "suyeong",
+      "region_name_ko": "수영구",
+      "season": "spring",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "suyeong_spring",
+      "date": "2025-04-18",
+      "episode_id": "v09-suyeong-spring-2025-04-18",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "cd18eb96fad695b662a0ab03bb920c936b209244a2490a3a6bcb00e028597ebe",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "19:24",
+          "civil_morning": "05:21",
+          "sunrise": "05:47",
+          "sunset": "18:58"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "159",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "4e4d85c1973ec37e8eeee0f0a36afa52eb2dc759a3861627b9b9720face13ab2"
+      },
+      "region_id": "suyeong",
+      "region_name_ko": "수영구",
+      "season": "spring",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "suyeong_summer",
+      "date": "2025-07-12",
+      "episode_id": "v09-suyeong-summer-2025-07-12",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "cfdb98bfde2810497b860e2f73c56819010cc9738dd6044e903fdfbd6691dae1",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "20:08",
+          "civil_morning": "04:49",
+          "sunrise": "05:18",
+          "sunset": "19:39"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "159",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "227304081146023e1b2c77b947d26a8ae4e7a59fe973cc7803491745fb09a532"
+      },
+      "region_id": "suyeong",
+      "region_name_ko": "수영구",
+      "season": "summer",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "suyeong_summer",
+      "date": "2025-07-14",
+      "episode_id": "v09-suyeong-summer-2025-07-14",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "dd3f6d39eb80a6b64bd10e22662bf90bef7f0eca773c132f96b194e2a890e6c2",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "20:08",
+          "civil_morning": "04:50",
+          "sunrise": "05:19",
+          "sunset": "19:39"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "159",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "591a191987746007b924aca4c8fcf6281364420032e6aa6e18abeff9da3be28a"
+      },
+      "region_id": "suyeong",
+      "region_name_ko": "수영구",
+      "season": "summer",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "suyeong_summer",
+      "date": "2025-07-15",
+      "episode_id": "v09-suyeong-summer-2025-07-15",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "note": "v0.7 stores normalized official KASI values, not a raw-response hash",
+        "response_sha256": null,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "status": "official_normalized_v07_anchor",
+        "values": {
+          "civil_evening": "20:08",
+          "civil_morning": "04:51",
+          "sunrise": "05:20",
+          "sunset": "19:39"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "159",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "7bd624953100d8f627aeb89163e3a1b62f28255cd84884453c1710df85a6b718"
+      },
+      "region_id": "suyeong",
+      "region_name_ko": "수영구",
+      "season": "summer",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "suyeong_summer",
+      "date": "2025-07-17",
+      "episode_id": "v09-suyeong-summer-2025-07-17",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "aaf601206a34ada33b4eb0629be8ebf2bf3c0c43abb61456c0ea19d3cf60f9cf",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "20:06",
+          "civil_morning": "04:52",
+          "sunrise": "05:21",
+          "sunset": "19:37"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "159",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "78ac1de4f01f63aef7139c9fbe7979a1e83c470dce2d7c010fa043353c6c295d"
+      },
+      "region_id": "suyeong",
+      "region_name_ko": "수영구",
+      "season": "summer",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "suyeong_winter",
+      "date": "2025-01-12",
+      "episode_id": "v09-suyeong-winter-2025-01-12",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "4e2050fabf95b06b2a8d44f9bd081cedeae30ca3b34cff5949c5f41af380349d",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "17:59",
+          "civil_morning": "07:04",
+          "sunrise": "07:32",
+          "sunset": "17:31"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "159",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "83cd7ab27b4e6651af5a9152288800001ed3fd483f924868130f730e812e0543"
+      },
+      "region_id": "suyeong",
+      "region_name_ko": "수영구",
+      "season": "winter",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "suyeong_winter",
+      "date": "2025-01-15",
+      "episode_id": "v09-suyeong-winter-2025-01-15",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "note": "v0.7 stores normalized official KASI values, not a raw-response hash",
+        "response_sha256": null,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "status": "official_normalized_v07_anchor",
+        "values": {
+          "civil_evening": "18:02",
+          "civil_morning": "07:04",
+          "sunrise": "07:32",
+          "sunset": "17:35"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "159",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "473e82c3017164bdfec7259286e01b821d5e7d2bae58878f2d65500cd0c235b5"
+      },
+      "region_id": "suyeong",
+      "region_name_ko": "수영구",
+      "season": "winter",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "suyeong_winter",
+      "date": "2025-01-16",
+      "episode_id": "v09-suyeong-winter-2025-01-16",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "5de40a4d920a24e2c7ca0bef8121c33c1c05beb62b8c00f1ff5f20031a6e232e",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:02",
+          "civil_morning": "07:03",
+          "sunrise": "07:31",
+          "sunset": "17:35"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "159",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "e5bf9071a0d1d1e9abca4aedb9562f10d33d71ffc52b47dc0eb11e947006995c"
+      },
+      "region_id": "suyeong",
+      "region_name_ko": "수영구",
+      "season": "winter",
+      "split": "confirmatory",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    },
+    {
+      "cell_id": "suyeong_winter",
+      "date": "2025-01-17",
+      "episode_id": "v09-suyeong-winter-2025-01-17",
+      "episode_status": "ready_for_scenario_generation",
+      "kasi": {
+        "response_sha256": "cad0d786b8209746517c1b78fd73a5e517ebe0659eec1fb5d8d2e8955f3ebbf8",
+        "source_file": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:03",
+          "civil_morning": "07:03",
+          "sunrise": "07:30",
+          "sunset": "17:36"
+        }
+      },
+      "kma": {
+        "observation_count": 24,
+        "source_file": "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json",
+        "station_id": "159",
+        "status": "official_v07_cache",
+        "timestamps_sha256": "560b137d21d1500947c747ce6fb6e3b7698603db2f0bb1850362463c16a4dc59"
+      },
+      "region_id": "suyeong",
+      "region_name_ko": "수영구",
+      "season": "winter",
+      "split": "calibration",
+      "v08_eligibility": "forbidden_regression_and_failure_analysis_only"
+    }
+  ],
+  "invariants": {
+    "calendar_date_overlap": 0,
+    "calibration_episodes_per_cell": 2,
+    "confirmatory_episodes_per_cell": 2,
+    "episode_date_overlap": 0,
+    "episodes_per_region_season_cell": 4,
+    "future_2026_dates": 0,
+    "kma_station_date_overlap": 0,
+    "region_count": 3,
+    "season_count": 4
+  },
+  "purpose": "Pre-outcome, episode-separated calibration and confirmatory allocation",
+  "scenario_generation_gate": {
+    "ready_episodes": 48,
+    "reason": "All 48 episodes require verified official KMA and KASI context before scenario generation.",
+    "required_ready_episodes": 48,
+    "status": "open"
+  },
+  "schema_version": "lightguard.v09.episode-manifest.v1",
+  "source_context_year": 2025,
+  "source_urls": {
+    "kasi": "https://www.data.go.kr/data/15012688/openapi.do",
+    "kma": "https://www.data.go.kr/data/15057210/openapi.do"
+  },
+  "split_seed": 20260901,
+  "v08_policy": "v0.8 is frozen regression and failure-analysis evidence only; it cannot tune v0.9 candidates."
+}

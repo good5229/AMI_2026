@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'v07_regional_seasonal_card.dart';
 import 'v08_detector_card.dart';
+import 'v09_specificity_card.dart';
 
 import '../../core/widgets/app_scaffold.dart';
 import '../../core/widgets/status_badges.dart';
@@ -139,6 +140,8 @@ class _V06EvidenceHardening extends StatelessWidget {
             const V07RegionalSeasonalCard(),
             const SizedBox(height: 16),
             const V08DetectorCard(),
+            const SizedBox(height: 16),
+            const V09SpecificityCard(),
             const SizedBox(height: 16),
             Text('Evidence Hardening · Uncertainty First',
                 style: Theme.of(context).textTheme.titleMedium),

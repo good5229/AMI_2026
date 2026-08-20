@@ -1,0 +1,743 @@
+{
+  "acquisition_mode": "official_kasi_web_calculator_javascript",
+  "dataset": "Area sunrise/sunset and civil twilight information",
+  "endpoint": "https://astro.kasi.re.kr/life/pageView/9",
+  "episodes": [
+    {
+      "cell_id": "chungju_autumn",
+      "date": "2025-10-13",
+      "episode_id": "v09-chungju-autumn-2025-10-13",
+      "kasi": {
+        "response_sha256": "db648a7b1a9c451d000d2fa696f96d731461752705c7e8cd3153bbffdfb64923",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:21",
+          "civil_morning": "06:08",
+          "sunrise": "06:34",
+          "sunset": "17:55"
+        }
+      }
+    },
+    {
+      "cell_id": "chungju_autumn",
+      "date": "2025-10-15",
+      "episode_id": "v09-chungju-autumn-2025-10-15",
+      "kasi": {
+        "response_sha256": null,
+        "status": "carried_v07_anchor",
+        "values": {
+          "civil_evening": "18:18",
+          "civil_morning": "06:10",
+          "sunrise": "06:36",
+          "sunset": "17:52"
+        }
+      }
+    },
+    {
+      "cell_id": "chungju_autumn",
+      "date": "2025-10-16",
+      "episode_id": "v09-chungju-autumn-2025-10-16",
+      "kasi": {
+        "response_sha256": "878691c1af83cbf0786b9a66e3987a270e0b35db383fa14f1090d82c80aab096",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:17",
+          "civil_morning": "06:10",
+          "sunrise": "06:36",
+          "sunset": "17:51"
+        }
+      }
+    },
+    {
+      "cell_id": "chungju_autumn",
+      "date": "2025-10-18",
+      "episode_id": "v09-chungju-autumn-2025-10-18",
+      "kasi": {
+        "response_sha256": "3acce7e208005b86bde9c8311a95ad013bda5c07af9cfdd2a361de67adf962e1",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:14",
+          "civil_morning": "06:12",
+          "sunrise": "06:38",
+          "sunset": "17:48"
+        }
+      }
+    },
+    {
+      "cell_id": "chungju_spring",
+      "date": "2025-04-14",
+      "episode_id": "v09-chungju-spring-2025-04-14",
+      "kasi": {
+        "response_sha256": "47c139d958b16153361745d037e746f60fb9a501a48ae07b5355702d2869be50",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "19:28",
+          "civil_morning": "05:29",
+          "sunrise": "05:55",
+          "sunset": "19:01"
+        }
+      }
+    },
+    {
+      "cell_id": "chungju_spring",
+      "date": "2025-04-15",
+      "episode_id": "v09-chungju-spring-2025-04-15",
+      "kasi": {
+        "response_sha256": null,
+        "status": "carried_v07_anchor",
+        "values": {
+          "civil_evening": "19:30",
+          "civil_morning": "05:28",
+          "sunrise": "05:54",
+          "sunset": "19:03"
+        }
+      }
+    },
+    {
+      "cell_id": "chungju_spring",
+      "date": "2025-04-17",
+      "episode_id": "v09-chungju-spring-2025-04-17",
+      "kasi": {
+        "response_sha256": "e67f3906705bf11be593d798ed52d394cc3395a07bc4572009018d3b4acbb8a3",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "19:31",
+          "civil_morning": "05:24",
+          "sunrise": "05:51",
+          "sunset": "19:04"
+        }
+      }
+    },
+    {
+      "cell_id": "chungju_spring",
+      "date": "2025-04-18",
+      "episode_id": "v09-chungju-spring-2025-04-18",
+      "kasi": {
+        "response_sha256": "c06676db4402d7b3a736b2a91f9b02156734b786020dd861849825fcaa53305f",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "19:32",
+          "civil_morning": "05:23",
+          "sunrise": "05:50",
+          "sunset": "19:05"
+        }
+      }
+    },
+    {
+      "cell_id": "chungju_summer",
+      "date": "2025-07-12",
+      "episode_id": "v09-chungju-summer-2025-07-12",
+      "kasi": {
+        "response_sha256": "103f0920f091508e8d1d1e0afc9beb869cfde068b6779a6ff8a0aaf13693f495",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "20:19",
+          "civil_morning": "04:48",
+          "sunrise": "05:18",
+          "sunset": "19:49"
+        }
+      }
+    },
+    {
+      "cell_id": "chungju_summer",
+      "date": "2025-07-14",
+      "episode_id": "v09-chungju-summer-2025-07-14",
+      "kasi": {
+        "response_sha256": "bfbb3f5c80dd98526af1714152dbba496b4fc01b70eb84c1ba3b33f4a8d4d560",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "20:18",
+          "civil_morning": "04:49",
+          "sunrise": "05:19",
+          "sunset": "19:48"
+        }
+      }
+    },
+    {
+      "cell_id": "chungju_summer",
+      "date": "2025-07-15",
+      "episode_id": "v09-chungju-summer-2025-07-15",
+      "kasi": {
+        "response_sha256": null,
+        "status": "carried_v07_anchor",
+        "values": {
+          "civil_evening": "20:18",
+          "civil_morning": "04:50",
+          "sunrise": "05:20",
+          "sunset": "19:48"
+        }
+      }
+    },
+    {
+      "cell_id": "chungju_summer",
+      "date": "2025-07-16",
+      "episode_id": "v09-chungju-summer-2025-07-16",
+      "kasi": {
+        "response_sha256": "e77da97731b4f937fe315e847a861a670eb2686db8a5bd00fb9d48c455e3f848",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "20:17",
+          "civil_morning": "04:51",
+          "sunrise": "05:21",
+          "sunset": "19:47"
+        }
+      }
+    },
+    {
+      "cell_id": "chungju_winter",
+      "date": "2025-01-12",
+      "episode_id": "v09-chungju-winter-2025-01-12",
+      "kasi": {
+        "response_sha256": "8170654fe7185c52f5047a0319aa653759bde547be55e26d34d9173e4a5e1c52",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:00",
+          "civil_morning": "07:13",
+          "sunrise": "07:41",
+          "sunset": "17:31"
+        }
+      }
+    },
+    {
+      "cell_id": "chungju_winter",
+      "date": "2025-01-14",
+      "episode_id": "v09-chungju-winter-2025-01-14",
+      "kasi": {
+        "response_sha256": "c161da771842f29eef95bf0ed1bbbeb56ea3d57fcb90c362c91b80a2866f53e7",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:02",
+          "civil_morning": "07:12",
+          "sunrise": "07:41",
+          "sunset": "17:33"
+        }
+      }
+    },
+    {
+      "cell_id": "chungju_winter",
+      "date": "2025-01-15",
+      "episode_id": "v09-chungju-winter-2025-01-15",
+      "kasi": {
+        "response_sha256": null,
+        "status": "carried_v07_anchor",
+        "values": {
+          "civil_evening": "18:03",
+          "civil_morning": "07:12",
+          "sunrise": "07:41",
+          "sunset": "17:35"
+        }
+      }
+    },
+    {
+      "cell_id": "chungju_winter",
+      "date": "2025-01-18",
+      "episode_id": "v09-chungju-winter-2025-01-18",
+      "kasi": {
+        "response_sha256": "a668d1b16e5920a3c90f2cb22e3906b97ea72527c0cf9756dd84743f79b57d3e",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:05",
+          "civil_morning": "07:11",
+          "sunrise": "07:39",
+          "sunset": "17:37"
+        }
+      }
+    },
+    {
+      "cell_id": "gangneung_autumn",
+      "date": "2025-10-12",
+      "episode_id": "v09-gangneung-autumn-2025-10-12",
+      "kasi": {
+        "response_sha256": "64a47d52ec80d4137be691b20c1ca03d20c3b8eec76579995d34199c0a7970a2",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:18",
+          "civil_morning": "06:03",
+          "sunrise": "06:29",
+          "sunset": "17:52"
+        }
+      }
+    },
+    {
+      "cell_id": "gangneung_autumn",
+      "date": "2025-10-13",
+      "episode_id": "v09-gangneung-autumn-2025-10-13",
+      "kasi": {
+        "response_sha256": "01eaa710f9d2d316e3597c0e71c9004434d8ec0fafd52fc59e13205406bfdb3b",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:17",
+          "civil_morning": "06:04",
+          "sunrise": "06:30",
+          "sunset": "17:50"
+        }
+      }
+    },
+    {
+      "cell_id": "gangneung_autumn",
+      "date": "2025-10-15",
+      "episode_id": "v09-gangneung-autumn-2025-10-15",
+      "kasi": {
+        "response_sha256": null,
+        "status": "carried_v07_anchor",
+        "values": {
+          "civil_evening": "18:14",
+          "civil_morning": "06:06",
+          "sunrise": "06:33",
+          "sunset": "17:47"
+        }
+      }
+    },
+    {
+      "cell_id": "gangneung_autumn",
+      "date": "2025-10-18",
+      "episode_id": "v09-gangneung-autumn-2025-10-18",
+      "kasi": {
+        "response_sha256": "22a2db1bee95212dd7e865a3903a9826dbc429ebcc3a1d0fc05d2d9042f7ab54",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:10",
+          "civil_morning": "06:09",
+          "sunrise": "06:35",
+          "sunset": "17:43"
+        }
+      }
+    },
+    {
+      "cell_id": "gangneung_spring",
+      "date": "2025-04-13",
+      "episode_id": "v09-gangneung-spring-2025-04-13",
+      "kasi": {
+        "response_sha256": "7f72b1c9b0723c9df4a55f2e9451d9e5049423f4b1ef823b54444a907d435283",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "19:24",
+          "civil_morning": "05:25",
+          "sunrise": "05:52",
+          "sunset": "18:57"
+        }
+      }
+    },
+    {
+      "cell_id": "gangneung_spring",
+      "date": "2025-04-15",
+      "episode_id": "v09-gangneung-spring-2025-04-15",
+      "kasi": {
+        "response_sha256": null,
+        "status": "carried_v07_anchor",
+        "values": {
+          "civil_evening": "19:27",
+          "civil_morning": "05:23",
+          "sunrise": "05:50",
+          "sunset": "19:00"
+        }
+      }
+    },
+    {
+      "cell_id": "gangneung_spring",
+      "date": "2025-04-16",
+      "episode_id": "v09-gangneung-spring-2025-04-16",
+      "kasi": {
+        "response_sha256": "5491510be2ab47248f2263a341fc64144641831ed3206c427e1b13e355668fdf",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "19:27",
+          "civil_morning": "05:20",
+          "sunrise": "05:48",
+          "sunset": "19:00"
+        }
+      }
+    },
+    {
+      "cell_id": "gangneung_spring",
+      "date": "2025-04-17",
+      "episode_id": "v09-gangneung-spring-2025-04-17",
+      "kasi": {
+        "response_sha256": "48b670e2c3e0b437cbecf19f3f5141459dddec96f094486a51dcd37e9a88c914",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "19:28",
+          "civil_morning": "05:19",
+          "sunrise": "05:46",
+          "sunset": "19:01"
+        }
+      }
+    },
+    {
+      "cell_id": "gangneung_summer",
+      "date": "2025-07-12",
+      "episode_id": "v09-gangneung-summer-2025-07-12",
+      "kasi": {
+        "response_sha256": "dde6a6933ac85822d41681bd5f8b64fde4099d873fd3101ede9987ffb2379fa0",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "20:18",
+          "civil_morning": "04:41",
+          "sunrise": "05:12",
+          "sunset": "19:47"
+        }
+      }
+    },
+    {
+      "cell_id": "gangneung_summer",
+      "date": "2025-07-15",
+      "episode_id": "v09-gangneung-summer-2025-07-15",
+      "kasi": {
+        "response_sha256": null,
+        "status": "carried_v07_anchor",
+        "values": {
+          "civil_evening": "20:17",
+          "civil_morning": "04:44",
+          "sunrise": "05:15",
+          "sunset": "19:46"
+        }
+      }
+    },
+    {
+      "cell_id": "gangneung_summer",
+      "date": "2025-07-17",
+      "episode_id": "v09-gangneung-summer-2025-07-17",
+      "kasi": {
+        "response_sha256": "77c5e1d4176c855288e3ce9e7d6f6ba6868069b2b3a17724899dff08f94b0b97",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "20:15",
+          "civil_morning": "04:45",
+          "sunrise": "05:15",
+          "sunset": "19:45"
+        }
+      }
+    },
+    {
+      "cell_id": "gangneung_summer",
+      "date": "2025-07-18",
+      "episode_id": "v09-gangneung-summer-2025-07-18",
+      "kasi": {
+        "response_sha256": "5cfb6729ab06575daf1d82ed10c9d43cff0a5c52ec0824afe4d876a80eb247d2",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "20:14",
+          "civil_morning": "04:46",
+          "sunrise": "05:16",
+          "sunset": "19:44"
+        }
+      }
+    },
+    {
+      "cell_id": "gangneung_winter",
+      "date": "2025-01-13",
+      "episode_id": "v09-gangneung-winter-2025-01-13",
+      "kasi": {
+        "response_sha256": "33d67022e106e37d6e43dcdaa3cc786fade50d4fcae2b8be8b0287297a37ef96",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "17:55",
+          "civil_morning": "07:10",
+          "sunrise": "07:39",
+          "sunset": "17:26"
+        }
+      }
+    },
+    {
+      "cell_id": "gangneung_winter",
+      "date": "2025-01-14",
+      "episode_id": "v09-gangneung-winter-2025-01-14",
+      "kasi": {
+        "response_sha256": "71708b355de72f779d7e0b44221f3052378752bffb0618c4ab7f4d58bd85e810",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "17:56",
+          "civil_morning": "07:10",
+          "sunrise": "07:38",
+          "sunset": "17:27"
+        }
+      }
+    },
+    {
+      "cell_id": "gangneung_winter",
+      "date": "2025-01-15",
+      "episode_id": "v09-gangneung-winter-2025-01-15",
+      "kasi": {
+        "response_sha256": null,
+        "status": "carried_v07_anchor",
+        "values": {
+          "civil_evening": "17:58",
+          "civil_morning": "07:10",
+          "sunrise": "07:39",
+          "sunset": "17:29"
+        }
+      }
+    },
+    {
+      "cell_id": "gangneung_winter",
+      "date": "2025-01-18",
+      "episode_id": "v09-gangneung-winter-2025-01-18",
+      "kasi": {
+        "response_sha256": "7006d60524c4dca619ded26fa757bf2df368e905a8f808f9966fb94b23bed589",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:00",
+          "civil_morning": "07:09",
+          "sunrise": "07:37",
+          "sunset": "17:31"
+        }
+      }
+    },
+    {
+      "cell_id": "suyeong_autumn",
+      "date": "2025-10-12",
+      "episode_id": "v09-suyeong-autumn-2025-10-12",
+      "kasi": {
+        "response_sha256": "665781e27634ab1d1ba6f290ceda68bbab424b7aed179dfcc33b88764961b9ea",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:18",
+          "civil_morning": "06:01",
+          "sunrise": "06:26",
+          "sunset": "17:53"
+        }
+      }
+    },
+    {
+      "cell_id": "suyeong_autumn",
+      "date": "2025-10-15",
+      "episode_id": "v09-suyeong-autumn-2025-10-15",
+      "kasi": {
+        "response_sha256": null,
+        "status": "carried_v07_anchor",
+        "values": {
+          "civil_evening": "18:14",
+          "civil_morning": "06:04",
+          "sunrise": "06:30",
+          "sunset": "17:49"
+        }
+      }
+    },
+    {
+      "cell_id": "suyeong_autumn",
+      "date": "2025-10-17",
+      "episode_id": "v09-suyeong-autumn-2025-10-17",
+      "kasi": {
+        "response_sha256": "0c2e8f9f968052a0216a49cf11ee639249e1efb90041f4ffee1ba65623a62559",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:12",
+          "civil_morning": "06:05",
+          "sunrise": "06:31",
+          "sunset": "17:46"
+        }
+      }
+    },
+    {
+      "cell_id": "suyeong_autumn",
+      "date": "2025-10-18",
+      "episode_id": "v09-suyeong-autumn-2025-10-18",
+      "kasi": {
+        "response_sha256": "645cb2609178491956aa2b8f0430a2d872e49ffa13bbfebba76ff823a1fb4ce8",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:11",
+          "civil_morning": "06:06",
+          "sunrise": "06:32",
+          "sunset": "17:45"
+        }
+      }
+    },
+    {
+      "cell_id": "suyeong_spring",
+      "date": "2025-04-13",
+      "episode_id": "v09-suyeong-spring-2025-04-13",
+      "kasi": {
+        "response_sha256": "9a4e4ab3477a3eeeff09e34d7addb631f8e470393fa839b2af13b1ffe94b1789",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "19:20",
+          "civil_morning": "05:28",
+          "sunrise": "05:54",
+          "sunset": "18:54"
+        }
+      }
+    },
+    {
+      "cell_id": "suyeong_spring",
+      "date": "2025-04-15",
+      "episode_id": "v09-suyeong-spring-2025-04-15",
+      "kasi": {
+        "response_sha256": null,
+        "status": "carried_v07_anchor",
+        "values": {
+          "civil_evening": "19:22",
+          "civil_morning": "05:26",
+          "sunrise": "05:52",
+          "sunset": "18:56"
+        }
+      }
+    },
+    {
+      "cell_id": "suyeong_spring",
+      "date": "2025-04-16",
+      "episode_id": "v09-suyeong-spring-2025-04-16",
+      "kasi": {
+        "response_sha256": "df27ef409572b64be0c9df4c8fc8804b55e321bc6c66af4a31b6771617286d81",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "19:22",
+          "civil_morning": "05:24",
+          "sunrise": "05:50",
+          "sunset": "18:56"
+        }
+      }
+    },
+    {
+      "cell_id": "suyeong_spring",
+      "date": "2025-04-18",
+      "episode_id": "v09-suyeong-spring-2025-04-18",
+      "kasi": {
+        "response_sha256": "cd18eb96fad695b662a0ab03bb920c936b209244a2490a3a6bcb00e028597ebe",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "19:24",
+          "civil_morning": "05:21",
+          "sunrise": "05:47",
+          "sunset": "18:58"
+        }
+      }
+    },
+    {
+      "cell_id": "suyeong_summer",
+      "date": "2025-07-12",
+      "episode_id": "v09-suyeong-summer-2025-07-12",
+      "kasi": {
+        "response_sha256": "cfdb98bfde2810497b860e2f73c56819010cc9738dd6044e903fdfbd6691dae1",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "20:08",
+          "civil_morning": "04:49",
+          "sunrise": "05:18",
+          "sunset": "19:39"
+        }
+      }
+    },
+    {
+      "cell_id": "suyeong_summer",
+      "date": "2025-07-14",
+      "episode_id": "v09-suyeong-summer-2025-07-14",
+      "kasi": {
+        "response_sha256": "dd3f6d39eb80a6b64bd10e22662bf90bef7f0eca773c132f96b194e2a890e6c2",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "20:08",
+          "civil_morning": "04:50",
+          "sunrise": "05:19",
+          "sunset": "19:39"
+        }
+      }
+    },
+    {
+      "cell_id": "suyeong_summer",
+      "date": "2025-07-15",
+      "episode_id": "v09-suyeong-summer-2025-07-15",
+      "kasi": {
+        "response_sha256": null,
+        "status": "carried_v07_anchor",
+        "values": {
+          "civil_evening": "20:08",
+          "civil_morning": "04:51",
+          "sunrise": "05:20",
+          "sunset": "19:39"
+        }
+      }
+    },
+    {
+      "cell_id": "suyeong_summer",
+      "date": "2025-07-17",
+      "episode_id": "v09-suyeong-summer-2025-07-17",
+      "kasi": {
+        "response_sha256": "aaf601206a34ada33b4eb0629be8ebf2bf3c0c43abb61456c0ea19d3cf60f9cf",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "20:06",
+          "civil_morning": "04:52",
+          "sunrise": "05:21",
+          "sunset": "19:37"
+        }
+      }
+    },
+    {
+      "cell_id": "suyeong_winter",
+      "date": "2025-01-12",
+      "episode_id": "v09-suyeong-winter-2025-01-12",
+      "kasi": {
+        "response_sha256": "4e2050fabf95b06b2a8d44f9bd081cedeae30ca3b34cff5949c5f41af380349d",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "17:59",
+          "civil_morning": "07:04",
+          "sunrise": "07:32",
+          "sunset": "17:31"
+        }
+      }
+    },
+    {
+      "cell_id": "suyeong_winter",
+      "date": "2025-01-15",
+      "episode_id": "v09-suyeong-winter-2025-01-15",
+      "kasi": {
+        "response_sha256": null,
+        "status": "carried_v07_anchor",
+        "values": {
+          "civil_evening": "18:02",
+          "civil_morning": "07:04",
+          "sunrise": "07:32",
+          "sunset": "17:35"
+        }
+      }
+    },
+    {
+      "cell_id": "suyeong_winter",
+      "date": "2025-01-16",
+      "episode_id": "v09-suyeong-winter-2025-01-16",
+      "kasi": {
+        "response_sha256": "5de40a4d920a24e2c7ca0bef8121c33c1c05beb62b8c00f1ff5f20031a6e232e",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:02",
+          "civil_morning": "07:03",
+          "sunrise": "07:31",
+          "sunset": "17:35"
+        }
+      }
+    },
+    {
+      "cell_id": "suyeong_winter",
+      "date": "2025-01-17",
+      "episode_id": "v09-suyeong-winter-2025-01-17",
+      "kasi": {
+        "response_sha256": "cad0d786b8209746517c1b78fd73a5e517ebe0659eec1fb5d8d2e8955f3ebbf8",
+        "status": "official_kasi_web_calculator",
+        "values": {
+          "civil_evening": "18:03",
+          "civil_morning": "07:03",
+          "sunrise": "07:30",
+          "sunset": "17:36"
+        }
+      }
+    }
+  ],
+  "failures": [],
+  "provider": "Korea Astronomy and Space Science Institute (KASI)",
+  "retrieved_at": "2026-08-20T12:19:09Z",
+  "schema_version": "lightguard.v09.official-context.v1",
+  "secret_policy": "Service keys are read from process environment only and never serialized.",
+  "web_calculator_provenance": {
+    "calculator_url": "https://astro.kasi.re.kr/life/pageView/9",
+    "source_sha256": {
+      "algorithms": "c9bd222957e083e300afa25eba75a31e28c60bb274eddd277dbd082eaee84b67",
+      "delta_t": "b227db4d9cf544509532acd2c37a7ecbca20d10fda10cdf471f32dcf117079ef"
+    },
+    "source_urls": {
+      "algorithms": "https://astro.kasi.re.kr/resources/js/life/algorithms.js",
+      "delta_t": "https://astro.kasi.re.kr/resources/js/life/delta_t.js"
+    }
+  }
+}

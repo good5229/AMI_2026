@@ -1,0 +1,74 @@
+{
+  "actual_ami_is_truth": false,
+  "calibration_cases": 384,
+  "calibration_episodes": 24,
+  "claim_boundary": "Controlled generated episode-separated holdout only; not field AMI accuracy or fault truth.",
+  "confirmatory_cases": 576,
+  "confirmatory_episodes": 24,
+  "date_overlap": 0,
+  "episode_overlap": 0,
+  "kma_observation_overlap": 0,
+  "load_imputation": "none",
+  "metrics": {
+    "abstention_rate": 0.0,
+    "average_precision": 1.0,
+    "counts": {
+      "abnormal": 288,
+      "abstain": 0,
+      "fp": 0,
+      "hard_fp": 0,
+      "hard_normal": 264,
+      "normal": 288,
+      "tp": 264
+    },
+    "fpr": 0.0,
+    "fpr_wilson_95": [
+      0.0,
+      0.01316283
+    ],
+    "hard_negative_fpr": 0.0,
+    "hard_negative_fpr_wilson_95": [
+      0.0,
+      0.01434229
+    ],
+    "per_cell_recall": {
+      "chungju_autumn": 0.9166666666666666,
+      "chungju_spring": 0.9166666666666666,
+      "chungju_summer": 0.9166666666666666,
+      "chungju_winter": 0.9166666666666666,
+      "gangneung_autumn": 0.9166666666666666,
+      "gangneung_spring": 0.9166666666666666,
+      "gangneung_summer": 0.9166666666666666,
+      "gangneung_winter": 0.9166666666666666,
+      "suyeong_autumn": 0.9166666666666666,
+      "suyeong_spring": 0.9166666666666666,
+      "suyeong_summer": 0.9166666666666666,
+      "suyeong_winter": 0.9166666666666666
+    },
+    "per_type_recall": {
+      "deep_day_full_activation": 1.0,
+      "deep_day_partial_activation": 1.0,
+      "missing_load_abnormal": 1.0,
+      "missing_phase_abnormal": 1.0,
+      "moderate_load_mismatch": 1.0,
+      "phase_selective_activation": 1.0,
+      "post_sunrise_45m_weak": 0.0,
+      "post_sunrise_persistent_activation": 1.0,
+      "post_sunrise_weak_persistence": 1.0,
+      "pre_sunset_60m_weak": 1.0,
+      "pre_sunset_early_activation": 1.0,
+      "repeated_long_persistence": 1.0
+    },
+    "recall": 0.91666667,
+    "recall_wilson_95": [
+      0.87900183,
+      0.94336249
+    ],
+    "worst_cell_recall": 0.91666667
+  },
+  "promotion_passed": true,
+  "schema_version": "lightguard.v09-app-summary.v1",
+  "selected_candidate": "H1",
+  "validation_kind": "episode_separated_controlled_confirmatory_holdout",
+  "weather_weight": 0.0
+}

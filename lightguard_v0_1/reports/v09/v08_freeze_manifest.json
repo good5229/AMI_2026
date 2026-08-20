@@ -1,0 +1,9 @@
+{
+  "schema_version": "lightguard.v09-v08-freeze.v1",
+  "canonical_manifest": "lightguard_v0_1/data/validation/v09/v08_freeze_manifest.json",
+  "frozen_git_sha": "8772c2759d16ed7a6e669b940880e10cb242d1d6",
+  "v07_git_sha": "383c91e2c22d9364232c80683b6f8e4b6dc09d35",
+  "v08_calibration_sha256": "b9825d7b8d336de9421a5941d2c7f069202b3f402fa4090b2837abb7d3a38b2f",
+  "v08_confirmatory_sha256": "71a4d7099be61f073f8411acd3b0af999dd672060dde9621513e0505e32c1a1d",
+  "role": "human_readable_pointer_and_release_audit_record"
+}
