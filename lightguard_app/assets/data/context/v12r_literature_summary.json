@@ -1,0 +1,40 @@
+{
+  "canonical_cases": 6,
+  "claim_guard": "Evidence grades are not fault probabilities; literature does not replace field labels.",
+  "core_direct_or_mechanism": 16,
+  "fault_probability_available": false,
+  "gold_usable": 0,
+  "matrix_sha256": "676c33d187685677c6dc03ed3d4219781437bb0bb656a0523ea3b199c6297fe2",
+  "maximum_current_claim_level": 3,
+  "patterns": {
+    "P1": {
+      "grade": "EVIDENCE_A",
+      "label": "Expected-state/current mismatch"
+    },
+    "P2": {
+      "grade": "EVIDENCE_B",
+      "label": "Persistent meter-relative departure"
+    },
+    "P3": {
+      "grade": "EVIDENCE_B",
+      "label": "Phase-current asymmetry observation"
+    },
+    "P4": {
+      "grade": "EVIDENCE_C",
+      "label": "Historical baseline departure"
+    }
+  },
+  "proxy_high_mapped": 765,
+  "proxy_pattern_counts": {
+    "P2": 394,
+    "P3": 371
+  },
+  "quality_a": 19,
+  "quality_b": 2,
+  "review_status": "HUMAN_REVIEW_PENDING",
+  "route": "C",
+  "schema_version": "lightguard.v12r.literature-summary.1",
+  "silver_usable": 0,
+  "sources": 21,
+  "status": "PHASE_A_LITERATURE_COMPLETE"
+}

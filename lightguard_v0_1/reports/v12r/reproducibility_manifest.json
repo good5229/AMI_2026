@@ -1,0 +1,103 @@
+{
+  "files": [
+    {
+      "path": "lightguard_app/assets/data/context/v12r_literature_summary.json",
+      "sha256": "2bcb5f1bd0a59f2e51301122ca70e29daba8bb74997f20b9e7cf2887bef5389f"
+    },
+    {
+      "path": "lightguard_app/docs/v12_gold_data_acquisition_plan.md",
+      "sha256": "bb3f6fd273981ea77138451debf91851bbf11ad2fee0fcc370df4a9979ad547f"
+    },
+    {
+      "path": "lightguard_app/docs/v12r_anomaly_sign_validation.md",
+      "sha256": "53a0fbe12430b659b9d02bcbce80b0124771c0ca27e115e9d22b5c34caaffc55"
+    },
+    {
+      "path": "lightguard_app/docs/v12r_literature_grounding.md",
+      "sha256": "c4cc0cb32205acf2339d09a679ee5b99791247b1cf3ae8fb81ca90982f47a29e"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v12r/v11_freeze_manifest.json",
+      "sha256": "58e0760c84c39aed9858c343c561cc12e986288469450d76160e4f4f643ec876"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v12r/v12r_case_evidence_matrix.csv",
+      "sha256": "c37a0cc1faf799b1fa93595cc2777bc12bf265087bbd54ad79ead1e4e60418d5"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v12r/v12r_consensus_labels.csv",
+      "sha256": "667cdfb0ebff5b255a34037ecde6ca1711f7c5b868240a84a5bccff232e21054"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v12r/v12r_literature_evidence_matrix.csv",
+      "sha256": "676c33d187685677c6dc03ed3d4219781437bb0bb656a0523ea3b199c6297fe2"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v12r/v12r_reference_registry.json",
+      "sha256": "46cf3a4c98f63e420a40f715f2ffa13ee3e18dbabfe3d78b5d1a9f185c6f64b0"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v12r/v12r_review_manifest.json",
+      "sha256": "cd156bef6a1fb27da064f0b7824459008c672a9a50fdb804dfbf98417b2f73a5"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v12r/v12r_review_results.csv",
+      "sha256": "833283d7f540158f3bbc7654e6c3d1e78cc805356bc31708bced056b02f8d07e"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v12r/v12r_blind_review_packet.html",
+      "sha256": "b33fdc1c811da0bb437ff58b92a3d0578002d4f63b7ef563ac9c258ab9364b8b"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v12r/v12r_blind_review_template.csv",
+      "sha256": "d5121e71a8c5d4285cb64c38c2d5676e732a3640b45b6747cd9363ad121cf5e7"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v12r/v12r_blindness_audit.md",
+      "sha256": "36ae9ae06355a979d602fc66c4d88ece84cff5fc1645d504d1166520aed47da5"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v12r/v12r_canonical_six_evidence.md",
+      "sha256": "a5871e0cb5763fe7b075599154092f1493a8522cec819b7b34b88b0e1918371c"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v12r/v12r_claim_evidence_matrix.md",
+      "sha256": "0f9006b12ec19cac81eeec8a17857b7d2d429da1840783f4dcea603c3c30ba38"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v12r/v12r_domain_evidence_review.md",
+      "sha256": "0d0920ae130c69d2e6cfa100c5244313dd3f0cf98c682049b87dc9be01b1e493"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v12r/v12r_final_summary.md",
+      "sha256": "53a0fbe12430b659b9d02bcbce80b0124771c0ca27e115e9d22b5c34caaffc55"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v12r/v12r_human_review_analysis.md",
+      "sha256": "acffbb75f9ff3a6cb8b60a9cac88f1b215c51551a86677d8cbaf511754d06551"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v12r/v12r_independent_audit.md",
+      "sha256": "895e65ce98879755fc22dab9fba7df8e0d5fca1add10f5fbc906aa5ecc2e98d2"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v12r/v12r_literature_search_log.csv",
+      "sha256": "f05139abb1d99934bc2844ec23e2303722d01ba580f2dfca85cfadd5c1473571"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v12r/v12r_literature_search_log_terra.csv",
+      "sha256": "6b6d49a268b6b781c773317c26520a57c6e12fbd0dbb80b1453c257e48f63f9a"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v12r/v12r_literature_search_protocol.md",
+      "sha256": "1e037337258f49b9aa55f75eb227bd23388451a352dcfe8f2646e3c16c540e8d"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v12r/v12r_review_protocol.md",
+      "sha256": "bea3f33bb5a01b555e53bcd4dd8ee3998cb456e250287e02a0522ec2c40d53d1"
+    }
+  ],
+  "schema_version": "lightguard.v12r.reproducibility.1",
+  "status": "HUMAN_REVIEW_PENDING",
+  "v11_release": "b25b168250ede29b5c5bbcadab918c455d61ba74"
+}
