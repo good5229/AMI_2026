@@ -2,8 +2,8 @@
 
 ## Current Phase
 
-Checkpoint 1 and Checkpoint 2 complete. Checkpoint 3 calibration generation and
-candidate detector parameter freeze is in progress.
+Checkpoints 1 through 6 complete. Final commit, push, and requirement-by-requirement
+completion audit are in progress.
 
 ## Concrete Deliverable
 
@@ -23,12 +23,13 @@ fractional/blocked v0.8 design, and Chungju official load-data recovery decision
 
 ## Active Agents
 
-None. Wave 1 workers completed and were closed.
+None. LUNA final independent QA passed all 11 gates and was closed.
 
 ## Blockers
 
-None. Actual Gangneung/Chungju field AMI remains unavailable by known evidence,
-but does not block controlled confirmatory validation.
+No execution blocker. Actual Gangneung/Chungju cabinet-linked AMI remains
+unavailable, and shared calibration/confirmatory KMA/KASI episodes remain a
+non-critical limitation because weather was rejected and remains context-only.
 
 ## Frozen Artifacts
 
@@ -43,6 +44,5 @@ but does not block controlled confirmatory validation.
 
 ## Next Execution Step
 
-Verify deterministic calibration SHA `b9825d7b8d336de9421a5941d2c7f069202b3f402fa4090b2837abb7d3a38b2f`,
-commit candidate freeze, then materialize the confirmatory split without changing
-any parameter.
+Regenerate the final manifest including independent QA, rerun the artifact contract,
+commit and push the verified state, then perform the final stopping-rule audit.
