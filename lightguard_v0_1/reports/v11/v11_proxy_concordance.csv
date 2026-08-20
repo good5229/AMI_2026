@@ -1,0 +1,4 @@
+left_proxy,right_proxy,score_rows,left_eligible_rows,right_eligible_rows,left_signal_rows,right_signal_rows,intersection_signal_rows,union_signal_rows,jaccard_proxy_overlap,interpretation
+D1/P1 robust residual,D2/P2 causal persistence,29181,29181,29181,1281,6456,476,7261,0.06555571,"same-source proxy concordance, not independent corroboration"
+D1/P1 robust residual,D3/P3 phase pattern,29181,29181,17531,1281,443,319,1405,0.22704626,"same-source proxy concordance, not independent corroboration"
+D2/P2 causal persistence,D3/P3 phase pattern,29181,29181,17531,6456,443,134,6765,0.01980783,"same-source proxy concordance, not independent corroboration"

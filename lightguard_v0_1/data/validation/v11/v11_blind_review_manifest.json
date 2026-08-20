@@ -1,0 +1,284 @@
+{
+  "groups_available": {
+    "H1_ONLY": 0,
+    "H1_PROXY_HIGH": 6,
+    "MATCHED_RANDOM": 29181,
+    "PROXY_HIGH_ONLY": 759
+  },
+  "groups_requested": {
+    "H1_ONLY": 15,
+    "H1_PROXY_HIGH": 15,
+    "MATCHED_RANDOM": 15,
+    "PROXY_HIGH_ONLY": 15
+  },
+  "groups_selected": {
+    "H1_PROXY_HIGH": 6,
+    "MATCHED_RANDOM": 15,
+    "PROXY_HIGH_ONLY": 15
+  },
+  "hidden_from_packet": [
+    "group",
+    "H1 decision",
+    "detector score",
+    "canonical six status"
+  ],
+  "key_rows": [
+    {
+      "blind_id": "V11-R001",
+      "group": "H1_PROXY_HIGH",
+      "meter_id": "B-L-9",
+      "sample_id": "7cfaf29805310079538f1a89",
+      "timestamp": "2026-05-20 14:45:00"
+    },
+    {
+      "blind_id": "V11-R002",
+      "group": "PROXY_HIGH_ONLY",
+      "meter_id": "B-L-9",
+      "sample_id": "0271faa63b004b49c6048df8",
+      "timestamp": "2026-05-09 19:30:00"
+    },
+    {
+      "blind_id": "V11-R003",
+      "group": "PROXY_HIGH_ONLY",
+      "meter_id": "B-L-35",
+      "sample_id": "62fa9ce344b37bb4f207c5e0",
+      "timestamp": "2026-06-27 05:45:00"
+    },
+    {
+      "blind_id": "V11-R004",
+      "group": "H1_PROXY_HIGH",
+      "meter_id": "B-L-14",
+      "sample_id": "6dc41cf1d55aa9be75116d1e",
+      "timestamp": "2026-05-29 11:00:00"
+    },
+    {
+      "blind_id": "V11-R005",
+      "group": "MATCHED_RANDOM",
+      "meter_id": "B-L-9",
+      "sample_id": "9f35143acb04350eab47c027",
+      "timestamp": "2026-06-22 03:00:00"
+    },
+    {
+      "blind_id": "V11-R006",
+      "group": "PROXY_HIGH_ONLY",
+      "meter_id": "B-L-14",
+      "sample_id": "7dd4e2d2e52812edf6334e04",
+      "timestamp": "2026-06-01 05:30:00"
+    },
+    {
+      "blind_id": "V11-R007",
+      "group": "MATCHED_RANDOM",
+      "meter_id": "B-L-9",
+      "sample_id": "de4624887e255a9bb3f8562f",
+      "timestamp": "2026-06-28 18:30:00"
+    },
+    {
+      "blind_id": "V11-R008",
+      "group": "PROXY_HIGH_ONLY",
+      "meter_id": "B-L-9",
+      "sample_id": "891da4fac310cf68b1980941",
+      "timestamp": "2026-05-29 19:30:00"
+    },
+    {
+      "blind_id": "V11-R009",
+      "group": "PROXY_HIGH_ONLY",
+      "meter_id": "B-L-35",
+      "sample_id": "a081a67775d8b69caa3b1aa7",
+      "timestamp": "2026-05-19 06:00:00"
+    },
+    {
+      "blind_id": "V11-R010",
+      "group": "MATCHED_RANDOM",
+      "meter_id": "B-L-14",
+      "sample_id": "1b61ea05102b2ec09b65cc13",
+      "timestamp": "2026-06-04 21:15:00"
+    },
+    {
+      "blind_id": "V11-R011",
+      "group": "PROXY_HIGH_ONLY",
+      "meter_id": "B-L-35",
+      "sample_id": "8829f0879169ea518c20abbb",
+      "timestamp": "2026-06-30 06:00:00"
+    },
+    {
+      "blind_id": "V11-R012",
+      "group": "MATCHED_RANDOM",
+      "meter_id": "B-L-9",
+      "sample_id": "4e4917cfd65db91cddb44627",
+      "timestamp": "2026-05-28 07:00:00"
+    },
+    {
+      "blind_id": "V11-R013",
+      "group": "MATCHED_RANDOM",
+      "meter_id": "B-L-12",
+      "sample_id": "a0a8b039acd54afa5ad1300a",
+      "timestamp": "2026-05-07 13:45:00"
+    },
+    {
+      "blind_id": "V11-R014",
+      "group": "PROXY_HIGH_ONLY",
+      "meter_id": "B-L-9",
+      "sample_id": "fc9c0d451d6f63a60f9801d3",
+      "timestamp": "2026-06-02 19:30:00"
+    },
+    {
+      "blind_id": "V11-R015",
+      "group": "PROXY_HIGH_ONLY",
+      "meter_id": "B-L-13",
+      "sample_id": "004728cc75b3116a368ecf2a",
+      "timestamp": "2026-06-30 19:45:00"
+    },
+    {
+      "blind_id": "V11-R016",
+      "group": "PROXY_HIGH_ONLY",
+      "meter_id": "B-L-9",
+      "sample_id": "cc8b62b13d76c2468f71d711",
+      "timestamp": "2026-05-22 19:45:00"
+    },
+    {
+      "blind_id": "V11-R017",
+      "group": "PROXY_HIGH_ONLY",
+      "meter_id": "B-L-14",
+      "sample_id": "9651d03707d412f66413bc8d",
+      "timestamp": "2026-06-21 05:30:00"
+    },
+    {
+      "blind_id": "V11-R018",
+      "group": "PROXY_HIGH_ONLY",
+      "meter_id": "B-L-14",
+      "sample_id": "520c04d74f3274711f3a57a1",
+      "timestamp": "2026-06-21 05:45:00"
+    },
+    {
+      "blind_id": "V11-R019",
+      "group": "PROXY_HIGH_ONLY",
+      "meter_id": "B-L-14",
+      "sample_id": "20a59b1cda122545675988bc",
+      "timestamp": "2026-06-29 20:15:00"
+    },
+    {
+      "blind_id": "V11-R020",
+      "group": "MATCHED_RANDOM",
+      "meter_id": "B-L-14",
+      "sample_id": "ba641c3ccad8ad2db0ecba45",
+      "timestamp": "2026-06-13 14:00:00"
+    },
+    {
+      "blind_id": "V11-R021",
+      "group": "MATCHED_RANDOM",
+      "meter_id": "B-L-14",
+      "sample_id": "04b32659d8fd1de5fdca91f0",
+      "timestamp": "2026-06-05 17:30:00"
+    },
+    {
+      "blind_id": "V11-R022",
+      "group": "PROXY_HIGH_ONLY",
+      "meter_id": "B-L-14",
+      "sample_id": "9b4f660c12549de06d617237",
+      "timestamp": "2026-06-30 20:00:00"
+    },
+    {
+      "blind_id": "V11-R023",
+      "group": "MATCHED_RANDOM",
+      "meter_id": "B-L-12",
+      "sample_id": "ea94ac4ce51cfc65ff09be5a",
+      "timestamp": "2026-05-05 13:30:00"
+    },
+    {
+      "blind_id": "V11-R024",
+      "group": "MATCHED_RANDOM",
+      "meter_id": "B-L-9",
+      "sample_id": "6c20c0a8010748c94f70222f",
+      "timestamp": "2026-06-06 00:30:00"
+    },
+    {
+      "blind_id": "V11-R025",
+      "group": "MATCHED_RANDOM",
+      "meter_id": "B-L-9",
+      "sample_id": "208bfe29d079eb44e4306a42",
+      "timestamp": "2026-05-14 06:45:00"
+    },
+    {
+      "blind_id": "V11-R026",
+      "group": "MATCHED_RANDOM",
+      "meter_id": "B-L-13",
+      "sample_id": "3f417831f84885f9210c45a6",
+      "timestamp": "2026-05-20 00:00:00"
+    },
+    {
+      "blind_id": "V11-R027",
+      "group": "MATCHED_RANDOM",
+      "meter_id": "B-L-12",
+      "sample_id": "fe8eaa786527efc2066dbcb2",
+      "timestamp": "2026-06-19 03:45:00"
+    },
+    {
+      "blind_id": "V11-R028",
+      "group": "MATCHED_RANDOM",
+      "meter_id": "B-L-35",
+      "sample_id": "a22334f45ac6358f14df1d1a",
+      "timestamp": "2026-05-14 10:45:00"
+    },
+    {
+      "blind_id": "V11-R029",
+      "group": "H1_PROXY_HIGH",
+      "meter_id": "B-L-14",
+      "sample_id": "148c6c100a2bd7d0c3d0f6ed",
+      "timestamp": "2026-05-29 11:30:00"
+    },
+    {
+      "blind_id": "V11-R030",
+      "group": "MATCHED_RANDOM",
+      "meter_id": "B-L-13",
+      "sample_id": "f9964aac4724c54034bb0244",
+      "timestamp": "2026-05-05 02:00:00"
+    },
+    {
+      "blind_id": "V11-R031",
+      "group": "PROXY_HIGH_ONLY",
+      "meter_id": "B-L-9",
+      "sample_id": "464be705183d923ec1daec9e",
+      "timestamp": "2026-06-29 20:00:00"
+    },
+    {
+      "blind_id": "V11-R032",
+      "group": "H1_PROXY_HIGH",
+      "meter_id": "B-L-14",
+      "sample_id": "b601062862dd1952fc11aa95",
+      "timestamp": "2026-05-29 11:45:00"
+    },
+    {
+      "blind_id": "V11-R033",
+      "group": "H1_PROXY_HIGH",
+      "meter_id": "B-L-14",
+      "sample_id": "c5d72a2278b5f954a5baf416",
+      "timestamp": "2026-05-29 12:00:00"
+    },
+    {
+      "blind_id": "V11-R034",
+      "group": "PROXY_HIGH_ONLY",
+      "meter_id": "B-L-35",
+      "sample_id": "fc16e57709bd3371047f251e",
+      "timestamp": "2026-06-10 06:00:00"
+    },
+    {
+      "blind_id": "V11-R035",
+      "group": "H1_PROXY_HIGH",
+      "meter_id": "B-L-14",
+      "sample_id": "8b776800d2c72a206cf15e66",
+      "timestamp": "2026-05-29 11:15:00"
+    },
+    {
+      "blind_id": "V11-R036",
+      "group": "MATCHED_RANDOM",
+      "meter_id": "B-L-9",
+      "sample_id": "952e418fb10d49049fe1a264",
+      "timestamp": "2026-05-12 22:45:00"
+    }
+  ],
+  "packet_sha256": "9036f81019a85bba0141d63c6b5e224e82e0f4eb987f5c0100f49f7cd67b2f7e",
+  "reviewer_labels_collected": false,
+  "route": "C",
+  "schema_version": "lightguard.v11.blind-review.1",
+  "shortfall_policy": "retain actual availability; never synthesize or relabel cases to fill a stratum"
+}

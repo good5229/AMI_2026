@@ -1,0 +1,4 @@
+detector,may_june_candidates,eligible_rows,candidate_density,interpretation
+D1/P1 robust residual,1281,29181,0.04389843,proxy anomaly-sign density; not fault prevalence
+D2/P2 causal persistence,6456,29181,0.22123985,proxy anomaly-sign density; not fault prevalence
+D3/P3 phase pattern,443,17531,0.02526952,proxy anomaly-sign density; not fault prevalence

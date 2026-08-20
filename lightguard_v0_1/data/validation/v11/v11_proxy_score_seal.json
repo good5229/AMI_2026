@@ -1,0 +1,10 @@
+{
+  "freeze_path": "lightguard_v0_1/data/validation/v11/v11_proxy_detector_freeze.json",
+  "freeze_sha256": "09d7858b1c98a4380638a44c956d17f10c18858517096dc06bbb8321d9cdc454",
+  "raw_source_sha256": "c18b49022d1c7dee2117a8d65a07d71351fb1aea8538751b7032867e4081b7d0",
+  "route": "C",
+  "schema_version": "lightguard.v11.proxy-score-seal.1",
+  "score_path": "lightguard_v0_1/data/validation/v11/v11_proxy_scores_prejoin.csv",
+  "score_sha256": "f29224de1ba7f10f463930a5bc05eda17664e060ca9bbe89bda4bf59a2d5e16a",
+  "sealed_before_canonical_join": true
+}

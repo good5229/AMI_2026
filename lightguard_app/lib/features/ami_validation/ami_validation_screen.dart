@@ -5,6 +5,7 @@ import 'v07_regional_seasonal_card.dart';
 import 'v08_detector_card.dart';
 import 'v09_specificity_card.dart';
 import 'v10_real_background_card.dart';
+import 'v11_anomaly_sign_card.dart';
 
 import '../../core/widgets/app_scaffold.dart';
 import '../../core/widgets/status_badges.dart';
@@ -144,6 +145,8 @@ class _V06EvidenceHardening extends StatelessWidget {
             const SizedBox(height: 16),
             const V09SpecificityCard(),
             const V10RealBackgroundCard(),
+            const SizedBox(height: 16),
+            const V11AnomalySignCard(),
             const SizedBox(height: 16),
             Text('Evidence Hardening · Uncertainty First',
                 style: Theme.of(context).textTheme.titleMedium),
