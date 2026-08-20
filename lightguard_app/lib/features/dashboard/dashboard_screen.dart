@@ -65,11 +65,11 @@ class DashboardScreen extends ConsumerWidget {
                 Card(
                   child: ListTile(
                     leading: const Icon(Icons.schedule),
-                    title: const Text('오늘 예측 점등/소등'),
+                    title: const Text('기준일 기준 점등/소등'),
                     subtitle: Text(
                       today == null
                           ? '데이터 없음'
-                          : '점등: ${today.expectedSchedule.sunset} / 소등: ${today.expectedSchedule.sunrise}',
+                          : '${today.expectedSchedule.date.isNotEmpty ? today.expectedSchedule.date : '일자 미제공'} 기준 · 점등 ${today.expectedSchedule.sunset} / 소등 ${today.expectedSchedule.sunrise}',
                     ),
                     trailing: ElevatedButton(
                       onPressed: () => context.go('/map'),
