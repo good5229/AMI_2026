@@ -232,6 +232,7 @@ v0.9 calibration set focused on pre-sunset and hard-negative discrimination.
     targets = [
         DATA / "v07_freeze_manifest.json",
         ROOT / "lightguard_v0_1/data/validation/v08_design_matrix.csv",
+        DATA / "v08_design_matrix.csv",
         DATA / "v08_calibration_set.json",
         DATA / "v08_candidate_freeze.json",
         DATA / "v08_confirmatory_holdout.json",

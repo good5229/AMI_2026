@@ -18,6 +18,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "lightguard_v0_1/data/validation/v08_design_matrix.csv"
+REQUIRED_OUT = ROOT / "lightguard_v0_1/data/validation/v08/v08_design_matrix.csv"
 PROTOCOL = ROOT / "lightguard_v0_1/reports/v08/v08_design_protocol.md"
 
 REGIONS = ("suyeong", "gangneung", "chungju")
@@ -459,16 +460,20 @@ def main() -> None:
     matrix_sha256 = hashlib.sha256(rendered_csv).hexdigest()
     rendered_protocol = protocol_text(rows, pools, matrix_sha256).encode("utf-8")
     if args.check:
-        if not OUT.exists() or not PROTOCOL.exists():
+        if not OUT.exists() or not REQUIRED_OUT.exists() or not PROTOCOL.exists():
             raise SystemExit("v0.8 design outputs are missing; run without --check first")
         if OUT.read_bytes() != rendered_csv:
             raise SystemExit("v0.8 design matrix differs from deterministic freeze")
+        if REQUIRED_OUT.read_bytes() != rendered_csv:
+            raise SystemExit("v0.8 required-path design matrix differs from deterministic freeze")
         if PROTOCOL.read_bytes() != rendered_protocol:
             raise SystemExit("v0.8 design protocol differs from deterministic freeze")
     else:
         OUT.parent.mkdir(parents=True, exist_ok=True)
+        REQUIRED_OUT.parent.mkdir(parents=True, exist_ok=True)
         PROTOCOL.parent.mkdir(parents=True, exist_ok=True)
         OUT.write_bytes(rendered_csv)
+        REQUIRED_OUT.write_bytes(rendered_csv)
         PROTOCOL.write_bytes(rendered_protocol)
     print(f"v0.8 design: calibration=288 confirmatory=432 total=720 sha256={matrix_sha256}")
 

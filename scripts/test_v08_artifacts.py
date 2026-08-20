@@ -25,6 +25,7 @@ def csv_rows(path: Path) -> list[dict]:
 
 def main() -> None:
     calibration = load(DATA / "v08_calibration_set.json")
+    assert hashlib.sha256(DATA.joinpath("v08_design_matrix.csv").read_bytes()).hexdigest() == "9fba439a9bd22d184e6a705af559a9b43a39fb4b9498cfa3d3a50c2f5853dbb0"
     holdout = load(DATA / "v08_confirmatory_holdout.json")
     freeze = load(DATA / "v08_candidate_freeze.json")
     summary = load(DATA / "v08_confirmatory_summary.json")

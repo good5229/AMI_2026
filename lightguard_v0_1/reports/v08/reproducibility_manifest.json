@@ -8,6 +8,7 @@
     "lightguard_v0_1/data/validation/v08/v08_candidate_freeze.json": "12fdb827f3b3d553707b616425bbc9721405df7623d40c79a87169589eed2b35",
     "lightguard_v0_1/data/validation/v08/v08_confirmatory_holdout.json": "71a4d7099be61f073f8411acd3b0af999dd672060dde9621513e0505e32c1a1d",
     "lightguard_v0_1/data/validation/v08/v08_confirmatory_summary.json": "b01cd05781294dae8c6766e0c9ddbfa297066d35d8e22e7f46ebc5a2cee3efb5",
+    "lightguard_v0_1/data/validation/v08/v08_design_matrix.csv": "9fba439a9bd22d184e6a705af559a9b43a39fb4b9498cfa3d3a50c2f5853dbb0",
     "lightguard_v0_1/data/validation/v08/v08_feature_availability_cases.json": "2e6992b569c40d4f5780ecbb71f842158bc433a28cf1881c64cfc70fa9ad2d19",
     "lightguard_v0_1/data/validation/v08_design_matrix.csv": "9fba439a9bd22d184e6a705af559a9b43a39fb4b9498cfa3d3a50c2f5853dbb0",
     "lightguard_v0_1/reports/v08/v07_failure_matrix.csv": "6c6ac4aac5fa1a4e3715248edfccc6ca88a763d67bd62aaa246b358f59311701",
