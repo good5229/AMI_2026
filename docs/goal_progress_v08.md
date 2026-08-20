@@ -3,7 +3,7 @@
 ## Current Phase
 
 Checkpoint 1 and Checkpoint 2 complete. Checkpoint 3 calibration generation and
-candidate detector implementation is next.
+candidate detector parameter freeze is in progress.
 
 ## Concrete Deliverable
 
@@ -43,6 +43,6 @@ but does not block controlled confirmatory validation.
 
 ## Next Execution Step
 
-Commit the frozen Wave 1 evidence, generate the calibration set from the design
-matrix, freeze its SHA-256, and tune at most C1/C2/C3 without reading confirmatory
-outcomes.
+Verify deterministic calibration SHA `b9825d7b8d336de9421a5941d2c7f069202b3f402fa4090b2837abb7d3a38b2f`,
+commit candidate freeze, then materialize the confirmatory split without changing
+any parameter.
