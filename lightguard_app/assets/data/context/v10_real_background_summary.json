@@ -1,0 +1,38 @@
+{
+  "schema_version": "lightguard.v10.real-background-summary.1",
+  "source_mode": "anonymized_competition_ami",
+  "meters": 5,
+  "period": "2026-04-01/2026-06-30",
+  "background_pool_units": 200,
+  "constructable_pairs": 182,
+  "informative_anomaly_pairs": 149,
+  "injection_recovery_rate": 0.97315436,
+  "irr_wilson_95": [
+    0.93301275,
+    0.98951181
+  ],
+  "worst_meter_irr": 0.85714286,
+  "worst_operator_irr": 0.78947368,
+  "benign_escalation_rate": 0.0,
+  "median_score_uplift": 0.25,
+  "transport_gate": "PASS",
+  "r1_triggered": false,
+  "shadow_meter_days": 455,
+  "shadow_evaluable_meter_days": 305,
+  "shadow_inspect_count": 0,
+  "shadow_observe_count": 6,
+  "canonical_actions": {
+    "AMI-EVT-237615b73a": "data_check_required",
+    "AMI-EVT-d406cc5296": "normal",
+    "AMI-EVT-fda2dd8737": "observe",
+    "AMI-EVT-f394b2a542": "normal",
+    "AMI-EVT-4ada00d8f3": "observe",
+    "AMI-EVT-d706634ed1": "normal"
+  },
+  "actual_ami_is_truth": false,
+  "unmodified_background_is_normal_truth": false,
+  "field_fault_accuracy": false,
+  "claim": "semi-synthetic real-background counterfactual transport validation",
+  "disclaimer": "Not field fault accuracy. Anonymous AMI has no maintenance or fault truth.",
+  "context_policy": "no municipal/KMA/KASI/rated-load join"
+}

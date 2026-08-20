@@ -1,0 +1,210 @@
+{
+  "schema_version": "lightguard.v10.v09-freeze.1",
+  "frozen_at_git": {
+    "branch": "codex/context-aware-validation",
+    "sha": "38fda2a26c5f55eee7ce0317d98f18df45ff1ac2"
+  },
+  "candidate": {
+    "name": "H1",
+    "config": {
+      "stage_a_threshold": 0.525,
+      "specificity_threshold": 0.525,
+      "availability_floor": null,
+      "weather_weight": 0.0
+    },
+    "config_file_sha256": "b536f8ca68222662c717cd27a6af4c3c64a3330782b0545503df6e4aff3e6232",
+    "detector_file_sha256": "a074c07e4d782de4772b13fcd08434e08cd7389f0a235c727eaae3048078de20",
+    "weather_scoring": "disabled",
+    "load_imputation": "none",
+    "v10_track_a_retuning_permitted": false
+  },
+  "raw_ami_manifest_sha256": "e4ea819ed021b9b8da7706469837f4808e262ce198ffd47a026ed21f03ce87b5",
+  "frozen_files": [
+    {
+      "path": "docs/agent_learning_v09/luna_independent_qa.md",
+      "sha256": "49fa8519c5519ee1be6ae23dec87443dedfceb2077cc2739b7d20d293bed96d2"
+    },
+    {
+      "path": "docs/agent_learning_v09/luna_specificity_gate.md",
+      "sha256": "9328c0c96fcf062da8820c7a6a054c4252ef8698cb55ff55b3d96ee4ae7c4f31"
+    },
+    {
+      "path": "docs/agent_learning_v09/sol_orchestration.md",
+      "sha256": "36f39b97686a76c5f219ec0929fb762e1ade4b265ee44b3b296dd688d2ba21e9"
+    },
+    {
+      "path": "docs/agent_learning_v09/terra_episode_design.md",
+      "sha256": "8ce7a6be673e89c075ac918826f65f6822d4d43f94fe688e86452cec9f707628"
+    },
+    {
+      "path": "docs/agent_learning_v09/terra_hard_negative_forensics.md",
+      "sha256": "5942c1a01958780260c8b9a5ffc61485264b6482ce7270fb5685d1862e0e11f8"
+    },
+    {
+      "path": "docs/agent_learning_v09/terra_statistical_analysis.md",
+      "sha256": "c3bb6d3df03a5714906eb4bd5352dd988ff87a78403eec0235bc216054c7177f"
+    },
+    {
+      "path": "lightguard_app/assets/data/context/v09_specificity_summary.json",
+      "sha256": "47dddf2788c661321b7285b192d3c6d4711b6dc006250de549d31c13df725b0e"
+    },
+    {
+      "path": "lightguard_app/docs/v09_specificity_validation.md",
+      "sha256": "0665e814dc25e3bac6accd04e67de208ed987e0e1c0d3b5b3abc3419a25e34c9"
+    },
+    {
+      "path": "lightguard_app/lib/features/ami_validation/v09_specificity_card.dart",
+      "sha256": "1cb787df8002f5c5c031d9d54f03b431c891691a87d6c3224e34068d25f629b1"
+    },
+    {
+      "path": "lightguard_app/test/unit/v09_specificity_validation_test.dart",
+      "sha256": "e1711ca19c396f85b228d93c09419c487c04005c9ccfbede35e80e3f842497d4"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v09/v08_freeze_manifest.json",
+      "sha256": "814f040565ac6709b193cd1c020f37764981540c26183f34aed4c5a5148aa34e"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v09/v09_calibration_set.json",
+      "sha256": "715ba45deccee6e8c01ba64c603c2b491a8e9d16ef3a91901e8d97ed0494a577"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v09/v09_candidate_config.json",
+      "sha256": "b536f8ca68222662c717cd27a6af4c3c64a3330782b0545503df6e4aff3e6232"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v09/v09_confirmatory_decisions.csv",
+      "sha256": "665d8d5f7c0d0cacb57723f11f94bdcad04d667b90ace2f976b696e4bd81214a"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v09/v09_confirmatory_holdout.json",
+      "sha256": "677619ca84aba2652126849bbc7bacc5f0114b5308eb4c14c2cbc6792c411b9a"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v09/v09_confirmatory_summary.json",
+      "sha256": "24d4520faa056d532ce789cb622c4278e4da573d47dbb9018ec431feedd36e21"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v09/v09_episode_manifest.json",
+      "sha256": "518b04bd935782c3c4c9ef236676c643a0a0c7dce5d4ea78b9e807f67bbfbc0f"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v09/v09_official_context_2025.json",
+      "sha256": "12e83bd1a5e4083e258210290d74d92762d99d38f72fc7e257291465bf841d4d"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v09/reproducibility_manifest.json",
+      "sha256": "988d05e0fa02ea8597a952a318d807352ecc06ddd145a3a61ce0b37032f5ea9f"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v09/v08_false_positive_inventory.csv",
+      "sha256": "c6e20108dbcc943ca0e20df5c2a6c95fd00fd0d2bd022d27eb0e8c81968082d2"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v09/v08_false_positive_taxonomy.md",
+      "sha256": "53f25a913337d1185634d55fba206ad2c4afc8eb2fca70cda501116d7e62b2af"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v09/v08_freeze_manifest.json",
+      "sha256": "1878fc243abb25de8a658099a716918171d7fc91e3a005ba4acbc7d2432cf1d3"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v09/v09_actual_ami_regression.csv",
+      "sha256": "08933704ebbc73529756361d696d6046b6e93a7febb5b1cfb7a1f9da8e4e2bfe"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v09/v09_calibration_results.csv",
+      "sha256": "ae300a3da170544131fa193c6a6ffad4f5df13fcaac93d5579a58fd83be6f2d5"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v09/v09_confirmatory_results.csv",
+      "sha256": "746bbfeab44acbd0e98000779161f75d97073861eee7480cd7a4b7119a7584b0"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v09/v09_design_protocol.md",
+      "sha256": "6baa0d077f2717bcce34190d935bbc8280c0e53ce612ccdfb3b269090b68b919"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v09/v09_episode_bootstrap.md",
+      "sha256": "6ab99ff4d78f40d16d70f6325b0db2496e03d9d308840bed524def9b32a820e2"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v09/v09_episode_effects.csv",
+      "sha256": "2456329a8906ac0764788f7220a0e3dbf5974c74888607a1ec58cee8be6f314c"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v09/v09_final_summary.md",
+      "sha256": "b416c4f56c39d6c94d6e16a9e5539ed0e2c0d0e8acb335d09edfb8f4a3257750"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v09/v09_hard_negative_results.csv",
+      "sha256": "ed245cab3a64cd59f1f014600852e5a2d946f7294d16ea48cde5d0efa4774e1c"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v09/v09_independent_audit.md",
+      "sha256": "ce5b7861c388b5efb9f8e5ac445313e6dec438817cd3c1982b63e41d297da5aa"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v09/v09_missing_feature_results.csv",
+      "sha256": "f65212b8539f402f5ef99d33d122939d9390135363b6340ffecf7a0886fa2a89"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v09/v09_solar_boundary_analysis.csv",
+      "sha256": "e7ee3f96b4771453039b9d7259eea632b2c68798751dc9771836be6c85ed47d9"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v09/v09_specificity_gate_research.md",
+      "sha256": "6e67c32c47804f9488965aff75324ac50f2f2f31111b58254c69241571f1a8f1"
+    },
+    {
+      "path": "scripts/build_v09_episode_manifest.py",
+      "sha256": "708bd3056e55b8e7866063d1019b7282a0e6af19c65946c2a76bf1eb039aeccb"
+    },
+    {
+      "path": "scripts/build_v09_final_report.py",
+      "sha256": "6408aa1b9a53fffd248adf3a230e350660d91e49099eec14ca75e9c9d36ceb7e"
+    },
+    {
+      "path": "scripts/build_v09_scenarios.py",
+      "sha256": "beebbfc9692abab1f7cb71ab5c947833702d6457b4d168e086007e3962eacec3"
+    },
+    {
+      "path": "scripts/fetch_v09_context_episodes.py",
+      "sha256": "b2d864c90f634e5ea357f13d4cc6b07ce9ffbd4aacd6dc207e8adf8a850b2ea4"
+    },
+    {
+      "path": "scripts/run_v09_actual_ami_regression.py",
+      "sha256": "68f9492708add55db2093db8b17cc04d5684945776db5dd5a22003af03b6faa0"
+    },
+    {
+      "path": "scripts/run_v09_boundary_analysis.py",
+      "sha256": "fc5391a938bea6bf1115a86fefaff16d17ab9215417da3f54a1beae527fd5f49"
+    },
+    {
+      "path": "scripts/run_v09_calibration.py",
+      "sha256": "dc49dec7fb2b7bf29bd8e1f9845fec40d1cdab6410d244a4d1b5711f43d1bce5"
+    },
+    {
+      "path": "scripts/run_v09_confirmatory.py",
+      "sha256": "2e9dd4a2d8e22ff1f02d3ac6930a9b59db670571cacbc22b88cd2e3b79f9d1e1"
+    },
+    {
+      "path": "scripts/run_v09_episode_bootstrap.py",
+      "sha256": "992e6128d800acc108206b340ff11d88ee89e629cfc9a737504e26e168febf43"
+    },
+    {
+      "path": "scripts/test_v09_artifacts.py",
+      "sha256": "2cbe3bb9022319dab02954b9666bfb8678e6dd589e5a6ca46245ad41294d32c9"
+    },
+    {
+      "path": "scripts/v09_detector.py",
+      "sha256": "a074c07e4d782de4772b13fcd08434e08cd7389f0a235c727eaae3048078de20"
+    },
+    {
+      "path": "scripts/v09_preflight.sh",
+      "sha256": "5fcf369785ec15a5ec63b4843b2239ddbee5d4111932e488dbc35f1ecbed133c"
+    }
+  ],
+  "frozen_file_count": 46,
+  "claim_boundary": "v09_controlled_generated_evidence_is_regression_only_for_v10"
+}

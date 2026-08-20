@@ -1,0 +1,6 @@
+meter_id,pairs,informative_anomaly_pairs,irr,benign_pairs,benign_escalation_rate,median_score_uplift
+B-L-12,34,28,0.85714286,6,0.0,0.4
+B-L-13,36,29,1.0,7,0.0,0.25
+B-L-14,39,33,1.0,6,0.0,0.25
+B-L-35,36,28,1.0,8,0.0,0.25
+B-L-9,37,31,1.0,6,0.0,0.25

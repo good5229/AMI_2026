@@ -1,0 +1,16 @@
+meter_id,month,observed_days,evaluable_days,warmup_or_quality_days,median_off_baseline_a,median_on_baseline_a,median_activation_separation_a,candidate_count,inspect_count,observe_count,mean_data_coverage,interpretation
+B-L-12,2026-04,30,0,30,,,,0,0,0,1.0,descriptive_shadow_behavior_not_fault_rate
+B-L-12,2026-05,31,31,0,4.7529,8.932,4.1791,0,0,0,0.99966398,descriptive_shadow_behavior_not_fault_rate
+B-L-12,2026-06,30,30,0,4.686,8.65575,3.96975,0,0,0,1.0,descriptive_shadow_behavior_not_fault_rate
+B-L-13,2026-04,30,0,30,,,,0,0,0,0.99513889,descriptive_shadow_behavior_not_fault_rate
+B-L-13,2026-05,31,31,0,0.03,8.85,8.82,0,0,0,0.99361559,descriptive_shadow_behavior_not_fault_rate
+B-L-13,2026-06,30,30,0,0.03,8.84,8.81,0,0,0,0.99479166,descriptive_shadow_behavior_not_fault_rate
+B-L-14,2026-04,30,0,30,,,,0,0,0,0.99965278,descriptive_shadow_behavior_not_fault_rate
+B-L-14,2026-05,31,31,0,0.03,16.21,16.18,5,0,5,0.99966398,descriptive_shadow_behavior_not_fault_rate
+B-L-14,2026-06,30,30,0,0.03,16.15,16.12,0,0,0,1.0,descriptive_shadow_behavior_not_fault_rate
+B-L-35,2026-04,30,0,30,,,,0,0,0,0.99444444,descriptive_shadow_behavior_not_fault_rate
+B-L-35,2026-05,31,31,0,0.05,17.2099,17.1599,1,0,0,0.99462365,descriptive_shadow_behavior_not_fault_rate
+B-L-35,2026-06,30,30,0,0.05,17.11,17.06,0,0,0,0.99513889,descriptive_shadow_behavior_not_fault_rate
+B-L-9,2026-04,30,0,30,,,,0,0,0,1.0,descriptive_shadow_behavior_not_fault_rate
+B-L-9,2026-05,31,31,0,4.574,50.559,45.995,1,0,1,0.99966398,descriptive_shadow_behavior_not_fault_rate
+B-L-9,2026-06,30,30,0,4.57145,51.08725,46.5158,0,0,0,1.0,descriptive_shadow_behavior_not_fault_rate
