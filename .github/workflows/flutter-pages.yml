@@ -22,7 +22,8 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: stable
+          flutter-version: '3.44.0'
+          channel: stable
       - name: Install dependencies
         run: flutter pub get
         working-directory: lightguard_app
@@ -30,7 +31,7 @@ jobs:
         run: flutter analyze
         working-directory: lightguard_app
       - name: Flutter test
-        run: flutter test --reporter expanded --disable-analytics --no-dds
+        run: flutter test --reporter expanded --no-dds
         working-directory: lightguard_app
       - name: Build web
         run: flutter build web --release --base-href /AMI_2026/

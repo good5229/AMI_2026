@@ -130,53 +130,6 @@ void main() {
       find.text('분전함 상세'),
       maxAttempts: 24,
     );
-    var sectionCFinder =
-        find.byKey(const Key('section-cabinet-section-summary-c'));
-    if (sectionCFinder.evaluate().isEmpty) {
-      sectionCFinder = find.byKey(const Key('cabinet-section-summary-c'));
-    }
-    if (sectionCFinder.evaluate().isEmpty) {
-      final sectionCDescriptionFinder =
-          find.byKey(const Key('section-cabinet-section-summary-c-description'));
-      if (sectionCDescriptionFinder.evaluate().isNotEmpty) {
-        sectionCFinder = find.ancestor(
-          of: sectionCDescriptionFinder,
-          matching: find.byType(Card),
-        );
-      }
-    }
-    if (sectionCFinder.evaluate().isEmpty) {
-      sectionCFinder = find.ancestor(
-        of: find.textContaining('Section C:'),
-        matching: find.byType(Card),
-      );
-    }
-    await _pumpUntilFound(
-      tester,
-      sectionCFinder,
-      maxAttempts: 24,
-    );
-    expect(sectionCFinder, findsOneWidget);
-    await tester.ensureVisible(sectionCFinder);
-    await tester.pumpAndSettle();
-    final sectionFinder = sectionCFinder;
-    expect(
-      find.descendant(
-        of: sectionFinder,
-        matching: find.byWidgetPredicate((widget) {
-          if (widget is Text) {
-            final data = widget.data ?? '';
-            return data.contains('Section C:') || data.contains('시각화');
-          }
-          if (widget is RichText) {
-            return (widget.text.toPlainText().contains('Section C:') ||
-                widget.text.toPlainText().contains('시각화'));
-          }
-          return false;
-        }),
-      ),
-      findsAtLeastNWidgets(1),
-    );
     final sectionAFinder =
         find.byKey(const Key('section-cabinet-section-summary-a'));
     expect(sectionAFinder, findsOneWidget);
@@ -186,6 +139,33 @@ void main() {
     );
     expect(
       find.descendant(of: sectionAFinder, matching: find.text('자료 미제공')),
+      findsAtLeastNWidgets(1),
+    );
+
+    final sectionCFinder =
+        find.byKey(const Key('section-cabinet-section-summary-c'));
+    await tester.scrollUntilVisible(
+      sectionCFinder,
+      300,
+      scrollable: find.byType(Scrollable).last,
+    );
+    await tester.pumpAndSettle();
+    expect(sectionCFinder, findsOneWidget);
+    expect(
+      find.descendant(
+        of: sectionCFinder,
+        matching: find.byWidgetPredicate((widget) {
+          if (widget is Text) {
+            final data = widget.data ?? '';
+            return data.contains('Section C') || data.contains('시각화');
+          }
+          if (widget is RichText) {
+            return (widget.text.toPlainText().contains('Section C') ||
+                widget.text.toPlainText().contains('시각화'));
+          }
+          return false;
+        }),
+      ),
       findsAtLeastNWidgets(1),
     );
   });
