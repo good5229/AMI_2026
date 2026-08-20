@@ -17,4 +17,20 @@ class LocalAssetSource {
   Future<String> readAmiEvents() {
     return rootBundle.loadString('assets/data/ami_events.csv');
   }
+
+  Future<String> readKasiContext() {
+    return rootBundle.loadString('assets/data/context/kasi_solar_context_2026.json');
+  }
+
+  Future<String> readKmaContext() {
+    return rootBundle.loadString('assets/data/context/kma_asos_busan_2026.json');
+  }
+
+  Future<String> readAblationResults() {
+    return rootBundle.loadString('assets/data/context/context_ablation_results.csv');
+  }
+
+  Future<String> readReplayWindow(String filename) {
+    return rootBundle.loadString('assets/data/ami_event_windows/$filename');
+  }
 }

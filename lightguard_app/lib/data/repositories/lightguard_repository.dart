@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/lightguard_models.dart';
 import '../sources/local_asset_source.dart';
 import '../models/region_config.dart';
+import '../models/context_models.dart';
 
 class ValidationEvent {
   const ValidationEvent({
@@ -104,6 +105,58 @@ class LightguardRepository {
     return events;
   }
 
+  Future<OfficialContextBundle> loadOfficialContext() async {
+    final values = await Future.wait<String>([
+      _assetSource.readKasiContext(),
+      _assetSource.readKmaContext(),
+    ]);
+    return OfficialContextBundle.fromJson(values[0], values[1]);
+  }
+
+  Future<List<ControlledMetric>> loadControlledMetrics() async {
+    final csv = await _assetSource.readAblationResults();
+    final rows = const LineSplitter().convert(csv);
+    if (rows.length <= 1) return const <ControlledMetric>[];
+    final headers = _splitCsv(rows.first, isHeader: true);
+    return [
+      for (var i = 1; i < rows.length; i++)
+        if (rows[i].trim().isNotEmpty)
+          ControlledMetric.fromCsv(_csvMap(headers, _splitCsv(rows[i]))),
+    ];
+  }
+
+  Future<Map<String, List<AmiReplaySample>>> loadAmiReplayWindows() async {
+    const files = <String>[
+      'B-L-35_2026-05-11.csv',
+      'B-L-14_2026-05-19.csv',
+      'B-L-9_2026-05-20.csv',
+      'B-L-9_2026-05-21.csv',
+      'B-L-14_2026-05-29.csv',
+      'B-L-13_2026-06-23.csv',
+    ];
+    final result = <String, List<AmiReplaySample>>{};
+    for (final file in files) {
+      final csv = await _assetSource.readReplayWindow(file);
+      final rows = const LineSplitter().convert(csv);
+      if (rows.length <= 1) continue;
+      final headers = _splitCsv(rows.first, isHeader: true);
+      result[file] = [
+        for (var i = 1; i < rows.length; i++)
+          if (rows[i].trim().isNotEmpty)
+            AmiReplaySample.fromCsv(_csvMap(headers, _splitCsv(rows[i]))),
+      ];
+    }
+    return result;
+  }
+
+  static Map<String, String> _csvMap(
+      List<String> headers, List<String> values) {
+    return <String, String>{
+      for (var i = 0; i < headers.length; i++)
+        headers[i]: i < values.length ? values[i] : '',
+    };
+  }
+
   static List<String> _splitCsv(String line, {bool isHeader = false}) {
     final result = <String>[];
     final b = StringBuffer();
@@ -147,4 +200,19 @@ final competitionAmiEventsProvider =
     FutureProvider.autoDispose<List<ValidationEvent>>((ref) async {
   final repo = ref.watch(lightguardRepositoryProvider);
   return repo.loadCompetitionAmiEvents();
+});
+
+final officialContextProvider =
+    FutureProvider.autoDispose<OfficialContextBundle>((ref) async {
+  return ref.watch(lightguardRepositoryProvider).loadOfficialContext();
+});
+
+final controlledMetricsProvider =
+    FutureProvider.autoDispose<List<ControlledMetric>>((ref) async {
+  return ref.watch(lightguardRepositoryProvider).loadControlledMetrics();
+});
+
+final amiReplayWindowsProvider =
+    FutureProvider.autoDispose<Map<String, List<AmiReplaySample>>>((ref) async {
+  return ref.watch(lightguardRepositoryProvider).loadAmiReplayWindows();
 });

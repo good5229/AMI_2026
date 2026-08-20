@@ -1,0 +1,82 @@
+{
+  "schema_version": "lightguard-ami-replay-v0.3",
+  "source_kind": "anonymized_competition_ami",
+  "source_workbook_sha256": "c18b49022d1c7dee2117a8d65a07d71351fb1aea8538751b7032867e4081b7d0",
+  "source_sheet": "B선로 AMI DATA",
+  "extracted_at": "2026-08-20T07:24:23Z",
+  "fabrication_policy": "source rows only; no interpolation; blanks preserved",
+  "events": [
+    {
+      "file": "B-L-35_2026-05-11.csv",
+      "meter_id": "B-L-35",
+      "date": "2026-05-11",
+      "event_start": "2026-05-11 10:15:00",
+      "event_end": "2026-05-11 10:30:00",
+      "window_start": "2026-05-11 08:15:00",
+      "window_end": "2026-05-11 12:30:00",
+      "row_count": 18,
+      "source_row_min": 276000,
+      "source_row_max": 276017
+    },
+    {
+      "file": "B-L-14_2026-05-19.csv",
+      "meter_id": "B-L-14",
+      "date": "2026-05-19",
+      "event_start": "2026-05-19 14:15:00",
+      "event_end": "2026-05-19 14:30:00",
+      "window_start": "2026-05-19 12:15:00",
+      "window_end": "2026-05-19 16:30:00",
+      "row_count": 18,
+      "source_row_min": 189359,
+      "source_row_max": 189376
+    },
+    {
+      "file": "B-L-9_2026-05-20.csv",
+      "meter_id": "B-L-9",
+      "date": "2026-05-20",
+      "event_start": "2026-05-20 14:30:00",
+      "event_end": "2026-05-20 14:45:00",
+      "window_start": "2026-05-20 12:30:00",
+      "window_end": "2026-05-20 16:45:00",
+      "row_count": 18,
+      "source_row_min": 145831,
+      "source_row_max": 145848
+    },
+    {
+      "file": "B-L-9_2026-05-21.csv",
+      "meter_id": "B-L-9",
+      "date": "2026-05-21",
+      "event_start": "2026-05-21 15:00:00",
+      "event_end": "2026-05-21 15:00:00",
+      "window_start": "2026-05-21 13:00:00",
+      "window_end": "2026-05-21 17:00:00",
+      "row_count": 17,
+      "source_row_min": 145929,
+      "source_row_max": 145945
+    },
+    {
+      "file": "B-L-14_2026-05-29.csv",
+      "meter_id": "B-L-14",
+      "date": "2026-05-29",
+      "event_start": "2026-05-29 10:45:00",
+      "event_end": "2026-05-29 12:00:00",
+      "window_start": "2026-05-29 08:45:00",
+      "window_end": "2026-05-29 14:00:00",
+      "row_count": 22,
+      "source_row_min": 190305,
+      "source_row_max": 190326
+    },
+    {
+      "file": "B-L-13_2026-06-23.csv",
+      "meter_id": "B-L-13",
+      "date": "2026-06-23",
+      "event_start": "2026-06-23 10:00:00",
+      "event_end": "2026-06-23 10:00:00",
+      "window_start": "2026-06-23 08:00:00",
+      "window_end": "2026-06-23 12:00:00",
+      "row_count": 17,
+      "source_row_min": 183972,
+      "source_row_max": 183988
+    }
+  ]
+}

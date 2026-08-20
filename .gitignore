@@ -32,3 +32,7 @@ official_docs/
 *.ods
 *.odt
 ~$*
+
+# Python runtime cache
+__pycache__/
+*.pyc
