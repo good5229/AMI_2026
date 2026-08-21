@@ -1,0 +1,14 @@
+# LUNA Workflow Mapping
+
+
+- D1 official source: https://www.data.go.kr/data/15120484/fileData.do
+- scikit-learn TimeSeriesSplit: https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html
+- scikit-learn calibration: https://scikit-learn.org/stable/modules/calibration.html
+- NIST/SEMATECH handbook: https://www.itl.nist.gov/div898/handbook/
+- van Houwelingen (2007), landmarking: https://doi.org/10.1111/j.1467-9469.2006.00529.x
+- Andersen and Gill (1982), recurrent events: https://doi.org/10.1214/aos/1176345976
+- OpenAI Harness Engineering: https://openai.com/index/harness-engineering/
+- OpenAI Codex: https://openai.com/codex/
+- Codex AGENTS.md: https://github.com/openai/codex/blob/main/docs/agents_md.md
+
+Use DATA_QUALITY_REVIEW, REMOTE_REVIEW_CANDIDATE, and FIELD_INSPECTION_CANDIDATE. D3 is aggregate context, never an event feature.
