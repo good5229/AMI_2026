@@ -34,6 +34,10 @@ official_docs/
 *.ods
 *.odt
 ~$*
+*.textClipping
+
+# Oversized reproducible intermediate artifacts
+lightguard_v0_1/data/validation/v18/v18_event_feature_table.csv
 
 # Python runtime cache
 __pycache__/
