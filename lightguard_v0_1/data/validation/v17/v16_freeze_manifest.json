@@ -1,0 +1,17 @@
+{
+  "release": "v0.16",
+  "status": "FROZEN_UNMODIFIED",
+  "official_meter_count": 129,
+  "streetlight_meter_count": 5,
+  "policy_promotion": "STOPPED",
+  "files": [
+    {
+      "path": "lightguard_v0_1/data/validation/v16/v16_protocol_freeze.json",
+      "sha256": "14bae02b3f2696689918413d7733875c969149d1b024106700abe997ef88fd7f"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v16/v16_final_summary.md",
+      "sha256": "44a44723eeafa480d33d862b39afb08e20080586d38c68cb9bf05fc698ecec2b"
+    }
+  ]
+}

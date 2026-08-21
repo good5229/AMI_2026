@@ -1,0 +1,11 @@
+metric,value
+rows,101843
+unique_management_ids,40148
+date_min,2020-01-02
+date_max,2025-08-09
+duplicate_event_signatures_excluding_sequence,673
+same_asset_same_day_extra_records,848
+unresolved,0
+invalid_receipt_date,0
+invalid_resolution_date,0
+negative_resolution,4

@@ -1,0 +1,2 @@
+analysis_status,join_status,candidate_event_rows,reason
+NO_SPATIAL_JOIN,PARTIAL_JOIN,100561,Long Goal permits hotspot analysis only after VERIFIED_JOIN; semantic identity and duplicate-coordinate issues remain

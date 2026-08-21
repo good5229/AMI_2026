@@ -1,0 +1,2 @@
+join_status,fault_unique_ids,location_rows,location_unique_ids,matched_unique_ids,matched_unique_rate,unambiguous_unique_ids,ambiguous_unique_ids,unmatched_unique_ids,unambiguous_join_candidate_event_rows,spatial_analysis_status,rule
+PARTIAL_JOIN,40148,71973,63679,39974,0.9956660356680282,39837,137,174,100561,NO_SPATIAL_JOIN,exact normalized 7-digit ID; one valid coordinate required for spatial use

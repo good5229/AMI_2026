@@ -1,0 +1,112 @@
+{
+  "release": "v0.17",
+  "generated_on": "2026-08-21",
+  "evidence_axis": "MUNICIPAL_OPERATIONAL_EVIDENCE_SEPARATE_FROM_AMI",
+  "operational_need_grade": "ON-A",
+  "fault_management": {
+    "rows": 101843,
+    "unique_assets": 40148,
+    "period": [
+      "2020-01-02",
+      "2025-08-09"
+    ],
+    "routine_inspection_share": 0.9195231876515814,
+    "citizen_report_share": 0.052178352955038636,
+    "reactive_report_share": 0.07308307885667155,
+    "valid_resolution_rows": 101839,
+    "negative_resolution_rows": 4,
+    "unresolved_rows": 0,
+    "resolution": {
+      "count": 101839,
+      "mean_days": 2.6836182601950136,
+      "median_days": 0,
+      "p75_days": 1.0,
+      "p90_days": 8.0,
+      "p95_days": 16.0,
+      "same_day_rate": 0.7230235960683039,
+      "within_1d_rate": 0.7791710444917959,
+      "within_3d_rate": 0.8253714195936723,
+      "within_7d_rate": 0.8922809532693762
+    }
+  },
+  "repeat_events": {
+    "assets_with_repeats": 23815,
+    "asset_day_episodes": 100995,
+    "same_asset_same_day_extra_records": 848,
+    "median_days_to_next_record": 248,
+    "windows": {
+      "7": {
+        "window_days": 7,
+        "repeat_recorded_events": 5476,
+        "eligible_asset_day_episodes": 100659,
+        "repeat_rate": 0.05440149415352825,
+        "definition": "next distinct asset-day episode is within window; same cause unverified; full follow-up required"
+      },
+      "30": {
+        "window_days": 30,
+        "repeat_recorded_events": 10287,
+        "eligible_asset_day_episodes": 99722,
+        "repeat_rate": 0.10315677583682638,
+        "definition": "next distinct asset-day episode is within window; same cause unverified; full follow-up required"
+      },
+      "90": {
+        "window_days": 90,
+        "repeat_recorded_events": 17222,
+        "eligible_asset_day_episodes": 96751,
+        "repeat_rate": 0.17800332813097539,
+        "definition": "next distinct asset-day episode is within window; same cause unverified; full follow-up required"
+      },
+      "365": {
+        "window_days": 365,
+        "repeat_recorded_events": 33838,
+        "eligible_asset_day_episodes": 83535,
+        "repeat_rate": 0.40507571676542764,
+        "definition": "next distinct asset-day episode is within window; same cause unverified; full follow-up required"
+      }
+    }
+  },
+  "spatial_join": {
+    "status": "PARTIAL_JOIN",
+    "fault_unique_ids": 40148,
+    "location_rows": 71973,
+    "location_unique_ids": 63679,
+    "matched_unique_ids": 39974,
+    "matched_unique_rate": 0.9956660356680282,
+    "unambiguous_unique_ids": 39837,
+    "ambiguous_unique_ids": 137,
+    "unmatched_unique_ids": 174,
+    "unambiguous_join_candidate_event_rows": 100561,
+    "spatial_analysis_status": "NO_SPATIAL_JOIN"
+  },
+  "safety_inspection": {
+    "rows": 105449,
+    "period": [
+      "2004-03-16",
+      "2025-06-13"
+    ],
+    "field_action_not_no_issue": 9879,
+    "review_action_not_no_issue": 1987,
+    "section_name_overlap": 3125,
+    "section_join_status": "SECTION_LEVEL_CONTEXT_ONLY_NOT_ASSET_KEY",
+    "measurement_policy": "DESCRIPTIVE_ONLY_UNIT_AND_OFFICIAL_THRESHOLD_UNVERIFIED"
+  },
+  "maintenance": {
+    "material_rows": 614241,
+    "portal_advertised_material_rows": 145365,
+    "material_row_count_status": "MISMATCH_REQUIRES_SOURCE_CONFIRMATION",
+    "material_analysis_status": "HOLD_PROFILE_ONLY",
+    "material_quantity_total_raw_units": 1491365.0,
+    "material_quantity_invalid_rows": 3,
+    "construction_rows": 2519,
+    "cost_savings_permitted": false
+  },
+  "workflow_mapping": {
+    "DATA_QUALITY_REVIEW": "invalid/negative date, ambiguous ID, source-row mismatch review",
+    "REMOTE_MONITOR": "repeat-record and aging context for remote recheck; not automatic fault truth",
+    "FIELD_INSPECTION_CANDIDATE": "explainable queue using repeated records, age, citizen report, and safety action context"
+  },
+  "claim_boundary": {
+    "supports": "actual municipal workload, receipt routes, processing duration, repeated records, safety-action and maintenance context",
+    "does_not_support": "competition AMI fault accuracy, Daegu-to-Suyeong transfer, prevented complaints, causal savings, or cost savings"
+  }
+}

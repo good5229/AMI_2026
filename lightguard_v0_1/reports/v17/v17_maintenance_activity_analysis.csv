@@ -1,0 +1,16 @@
+source,dimension,category,count,quantity,claim_scope
+D4,row_count_audit,HOLD_PROFILE_ONLY,614241,,portal advertises 145365 rows; no detailed service-value publication
+D5,construction_status,공사완료,2510,,project context only
+D5,construction_status,공사중,6,,project context only
+D5,construction_status,접수,2,,project context only
+D5,construction_status,설계완료,1,,project context only
+D5,construction_type_code,G0001,1655,,raw code; no unverified label mapping
+D5,construction_type_code,G0009,336,,raw code; no unverified label mapping
+D5,construction_type_code,G0008,227,,raw code; no unverified label mapping
+D5,construction_type_code,G0002,98,,raw code; no unverified label mapping
+D5,construction_type_code,G0004,65,,raw code; no unverified label mapping
+D5,construction_type_code,G0007,54,,raw code; no unverified label mapping
+D5,construction_type_code,G0005,37,,raw code; no unverified label mapping
+D5,construction_type_code,G0003,22,,raw code; no unverified label mapping
+D5,construction_type_code,G0006,19,,raw code; no unverified label mapping
+D5,construction_type_code,G0010,6,,raw code; no unverified label mapping
