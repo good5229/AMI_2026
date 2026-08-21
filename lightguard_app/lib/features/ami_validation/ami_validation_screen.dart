@@ -9,6 +9,7 @@ import 'v11_anomaly_sign_card.dart';
 import 'v12r_literature_card.dart';
 import 'v13_external_validation_card.dart';
 import 'v14_physical_external_card.dart';
+import 'v15_target_mechanism_card.dart';
 
 import '../../core/widgets/app_scaffold.dart';
 import '../../core/widgets/status_badges.dart';
@@ -156,6 +157,8 @@ class _V06EvidenceHardening extends StatelessWidget {
             const V13ExternalValidationCard(),
             const SizedBox(height: 16),
             const V14PhysicalExternalCard(),
+            const SizedBox(height: 16),
+            const V15TargetMechanismCard(),
             const SizedBox(height: 16),
             Text('Evidence Hardening · Uncertainty First',
                 style: Theme.of(context).textTheme.titleMedium),

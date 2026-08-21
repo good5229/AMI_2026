@@ -1,0 +1,114 @@
+{
+  "active_runtime_components_only": true,
+  "config_sha256": "82604e46a298908865200448a4412ec627c11e240dd254211a9a8ffb1fddbe34",
+  "h1_config_sha256": "08fe075d57c70d9250baebcb6578c0b95fc9872fe45e37cdf0b4f0ba21db2dc4",
+  "holdout_sha256": "7cdb91f34b5772980be21cf79a2a2c68d86bfaa478de043254b8f93351230983",
+  "inactive_mechanism_policy": "NOT_EVALUABLE_INACTIVE_MECHANISM; never impute or ablate inactive mechanisms",
+  "no_threshold_retune": true,
+  "predecessor_freeze_sha256": "124c9370353c906474dfb27e6a248044f776a4d8ef11dc2ec8da496c08e582ea",
+  "schema_version": "lightguard.v15.ablation-config.1",
+  "status": "PRE_OUTCOME_FROZEN",
+  "variants": {
+    "A0": {
+      "alias_status": "PRIMARY",
+      "label": "Full H1",
+      "remove": [],
+      "runtime": "H1",
+      "threshold": {
+        "availability_floor": null,
+        "specificity_threshold": 0.525,
+        "stage_a_threshold": 0.525,
+        "weather_weight": 0.0
+      }
+    },
+    "A1": {
+      "active_only": true,
+      "alias_status": "PRIMARY",
+      "label": "minus persistence",
+      "remove": [
+        "persistence"
+      ],
+      "runtime": "H1",
+      "threshold": {
+        "availability_floor": null,
+        "specificity_threshold": 0.525,
+        "stage_a_threshold": 0.525,
+        "weather_weight": 0.0
+      }
+    },
+    "A2": {
+      "active_only": true,
+      "alias_status": "PRIMARY",
+      "label": "minus phase, eligible pairs only",
+      "remove": [
+        "phase"
+      ],
+      "requires_phase_gate": true,
+      "runtime": "H1",
+      "threshold": {
+        "availability_floor": null,
+        "specificity_threshold": 0.525,
+        "stage_a_threshold": 0.525,
+        "weather_weight": 0.0
+      }
+    },
+    "A3": {
+      "alias_reason": "current H1 registry has no remaining post-Stage-A action branch when specificity and contradiction are removed",
+      "alias_status": "ALIAS_OF_A4",
+      "label": "minus specificity/contradiction gate",
+      "remove": [
+        "specificity",
+        "contradiction"
+      ],
+      "runtime": "threshold_only",
+      "threshold": {
+        "availability_floor": null,
+        "specificity_threshold": 0.525,
+        "stage_a_threshold": 0.525,
+        "weather_weight": 0.0
+      }
+    },
+    "A4": {
+      "alias_status": "CANONICAL_FOR_A3_ALIAS",
+      "label": "Stage-A-only",
+      "remove": [
+        "specificity",
+        "contradiction"
+      ],
+      "runtime": "threshold_only",
+      "threshold": {
+        "availability_floor": null,
+        "specificity_threshold": 0.525,
+        "stage_a_threshold": 0.525,
+        "weather_weight": 0.0
+      }
+    },
+    "A5": {
+      "active_only": true,
+      "alias_status": "PRIMARY",
+      "label": "minus baseline-relative",
+      "remove": [
+        "baseline_relative"
+      ],
+      "runtime": "H1",
+      "threshold": {
+        "availability_floor": null,
+        "specificity_threshold": 0.525,
+        "stage_a_threshold": 0.525,
+        "weather_weight": 0.0
+      }
+    },
+    "Z1": {
+      "alias_status": "COMPARATOR",
+      "label": "robust meter-relative z",
+      "remove": [],
+      "runtime": "robust_meter_z",
+      "threshold": {
+        "availability_floor": null,
+        "specificity_threshold": 0.525,
+        "stage_a_threshold": 0.525,
+        "weather_weight": 0.0
+      }
+    }
+  }
+}

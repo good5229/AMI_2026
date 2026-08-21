@@ -1,0 +1,151 @@
+{
+  "schema_version": "lightguard.v15.active-mechanism-registry.1",
+  "audit_scope": "v0.9 frozen H1 invoked by v0.10 origin-sequential shadow replay",
+  "thresholds_changed": false,
+  "experiments_run": false,
+  "components": [
+    {
+      "component_id": "baseline_meter_relative_30d",
+      "name": "same-meter 30-day off/on current baseline",
+      "runtime_available": true,
+      "availability_reason": "baseline is called by replay_meter for each evaluable meter-day",
+      "input_fields": ["meter_id", "timestamp", "i1", "i2", "i3", "logical_date"],
+      "score_contribution": "indirect: supplies off/on baseline and separation to activation and phase; no standalone H1 weight",
+      "decision_stage": "pre-decision feature construction",
+      "actual_ami_coverage": "5/5 target meters; 305/455 meter-days evaluable",
+      "ablatable": true
+    },
+    {
+      "component_id": "daytime_active_window",
+      "name": "fixed daytime active-window gate",
+      "runtime_available": true,
+      "availability_reason": "replay_meter applies 09:00-17:00 and activation >= 0.20 before H1",
+      "input_fields": ["timestamp", "activation"],
+      "score_contribution": "gate only; excludes rows before feature_case and decide",
+      "decision_stage": "pre-decision candidate formation",
+      "actual_ami_coverage": "all five target-meter replay streams; no municipal sunrise join",
+      "ablatable": true
+    },
+    {
+      "component_id": "current_activation_evidence",
+      "name": "current-derived activation evidence",
+      "runtime_available": true,
+      "availability_reason": "feature_case computes normalized activation from measured current and same-meter baseline",
+      "input_fields": ["currents", "baseline.phase", "baseline.off", "baseline.separation"],
+      "score_contribution": "stage_a: 0.60*a + 0.60*a*d",
+      "decision_stage": "H1 stage A and score",
+      "actual_ami_coverage": "5/5 target meters have measured current; B-L-13 is single-channel",
+      "ablatable": true
+    },
+    {
+      "component_id": "duration_persistence",
+      "name": "continuous-on duration and current-derived persistence",
+      "runtime_available": true,
+      "availability_reason": "feature_case builds duration and persistence_evidence from activation values",
+      "input_fields": ["activation", "continuous_on_minutes", "timestamp"],
+      "score_contribution": "stage_a: 0.25*d + 0.60*a*d; evidence family weight 0.25",
+      "decision_stage": "H1 stage A and evidence gate",
+      "actual_ami_coverage": "7/7 v0.10 evidence cases; five anonymized target meters",
+      "ablatable": true
+    },
+    {
+      "component_id": "native_phase_selectivity",
+      "name": "native measured-channel selectivity",
+      "runtime_available": true,
+      "availability_reason": "phase_value is computed only when at least two native current channels exist",
+      "input_fields": ["i1", "i2", "i3", "baseline.phase"],
+      "score_contribution": "stage_a: 0.30*p; evidence family weight 0.15",
+      "decision_stage": "H1 stage A and evidence gate",
+      "actual_ami_coverage": "4/5 target meters have three measured current channels; 6/7 evidence cases",
+      "ablatable": true
+    },
+    {
+      "component_id": "transient_penalty",
+      "name": "short-duration/transient contradiction penalty",
+      "runtime_available": true,
+      "availability_reason": "duration <= 15 minutes sets transient and stage_a applies the penalty",
+      "input_fields": ["continuous_on_minutes"],
+      "score_contribution": "stage_a penalty -0.20; transient contradiction can reduce gate score",
+      "decision_stage": "H1 stage A and evidence gate",
+      "actual_ami_coverage": "constructable feature cases",
+      "ablatable": true
+    },
+    {
+      "component_id": "h1_evidence_gate",
+      "name": "fixed weighted evidence gate",
+      "runtime_available": true,
+      "availability_reason": "decide invokes evidence for architecture H1 and requires threshold plus at least two families",
+      "input_fields": ["solar_evidence", "persistence_evidence", "load_evidence", "phase_evidence", "policy_evidence", "contradiction fields"],
+      "score_contribution": "family weights solar 0.30, persistence 0.25, load 0.20, phase 0.15, policy 0.10; H1 does not renormalize",
+      "decision_stage": "H1 specificity gate and final action",
+      "actual_ami_coverage": "persistence 7/7 and phase 6/7 evidence cases; only current-derived families supplied",
+      "ablatable": true
+    },
+    {
+      "component_id": "shadow_quality_warmup",
+      "name": "30-day warm-up and history-quality state",
+      "runtime_available": true,
+      "availability_reason": "replay_meter marks warm-up and insufficient history/gap rows before H1",
+      "input_fields": ["timestamp", "history row count", "usable current count", "maximum history gap"],
+      "score_contribution": "state gate only; no H1 score contribution",
+      "decision_stage": "pre-decision shadow state",
+      "actual_ami_coverage": "five target-meter streams; 305/455 meter-days evaluable",
+      "ablatable": true
+    },
+    {
+      "component_id": "solar_context",
+      "name": "solar/daylight/geographic context",
+      "runtime_available": false,
+      "availability_reason": "solar_evidence is null, near_solar_boundary is false, and v0.10 marks solar unavailable",
+      "input_fields": ["solar_evidence", "near_solar_boundary", "geographic coordinates", "sunrise/sunset"],
+      "score_contribution": "none; frozen weather weight is 0.0",
+      "decision_stage": "not available as an evidence family",
+      "actual_ami_coverage": "0/5 meters and 0/7 evidence cases",
+      "ablatable": false
+    },
+    {
+      "component_id": "municipal_rated_load",
+      "name": "municipal rated-load/load-mismatch evidence",
+      "runtime_available": false,
+      "availability_reason": "load_mismatch and load_evidence are null; contract power is not joined into the H1 case",
+      "input_fields": ["rated_load", "expected_load", "load_mismatch", "load_evidence"],
+      "score_contribution": "none; no imputation",
+      "decision_stage": "not available as an evidence family",
+      "actual_ami_coverage": "0/5 meters and 0/7 evidence cases",
+      "ablatable": false
+    },
+    {
+      "component_id": "policy_context",
+      "name": "municipal policy/allowed-partial-operation context",
+      "runtime_available": false,
+      "availability_reason": "policy_evidence is null and normal_partial_policy is false; no municipal policy join",
+      "input_fields": ["policy_evidence", "normal_partial_policy", "policy_conflict"],
+      "score_contribution": "none in audited AMI runtime",
+      "decision_stage": "not available as an evidence family",
+      "actual_ami_coverage": "0/5 meters and 0/7 evidence cases",
+      "ablatable": false
+    },
+    {
+      "component_id": "cabinet_mapping",
+      "name": "municipal cabinet-to-meter mapping",
+      "runtime_available": false,
+      "availability_reason": "ami_cabinet_mappings.csv is header-only and v0.10 forbids a cabinet join",
+      "input_fields": ["meter_id", "cabinet_uid", "municipality_id", "mapping_status"],
+      "score_contribution": "none; operational metadata is not an H1 input",
+      "decision_stage": "not reached",
+      "actual_ami_coverage": "0/5 meters",
+      "ablatable": false
+    },
+    {
+      "component_id": "h3_queue_optimizer",
+      "name": "H3 inspection queue optimizer",
+      "runtime_available": false,
+      "availability_reason": "queue_score requires architecture H3 while the frozen call uses H1",
+      "input_fields": ["recurrence", "asset_criticality", "age_since_last_review", "completeness"],
+      "score_contribution": "none in H1; queue formula is not invoked",
+      "decision_stage": "inactive architecture branch",
+      "actual_ami_coverage": "0/5 meters in audited H1 path",
+      "ablatable": false
+    }
+  ]
+}

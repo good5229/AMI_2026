@@ -1,0 +1,79 @@
+{
+  "freeze_sha256": "124c9370353c906474dfb27e6a248044f776a4d8ef11dc2ec8da496c08e582ea",
+  "h1_registry": {
+    "config_sha256": "08fe075d57c70d9250baebcb6578c0b95fc9872fe45e37cdf0b4f0ba21db2dc4",
+    "detector": {
+      "config": {
+        "availability_floor": null,
+        "specificity_threshold": 0.525,
+        "stage_a_threshold": 0.525,
+        "weather_weight": 0.0
+      },
+      "config_file_sha256": "b536f8ca68222662c717cd27a6af4c3c64a3330782b0545503df6e4aff3e6232",
+      "detector_file_sha256": "a074c07e4d782de4772b13fcd08434e08cd7389f0a235c727eaae3048078de20",
+      "load_imputation": "none",
+      "name": "H1",
+      "v10_track_a_retuning_permitted": false,
+      "weather_scoring": "disabled"
+    },
+    "file_sha256": "ce2328383cd8b5ffaf946b233416a13109564180b511afb664ef7f00c7b4b453",
+    "path": "lightguard_v0_1/data/validation/v10/v09_freeze_manifest.json"
+  },
+  "predecessor_artifacts": [
+    {
+      "path": "lightguard_v0_1/reports/v10/reproducibility_manifest.json",
+      "sha256": "ef825f66085323ba72a66baf30df3ca72956b040fb8f47790d3edafc9d973c6e"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v10/v10_final_summary.md",
+      "sha256": "3e01525c826be06f4b450de7f9303ad6d908ca641d8afe916c0149f15967925d"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v11/reproducibility_manifest.json",
+      "sha256": "9221c457f3ef564164f00b174bfb9ddb12f4f459f00d905230cf74ca8e7445e8"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v11/v11_final_summary.md",
+      "sha256": "4a070ed0f2f2ed193b6f170d546e24ada01ca4d43160eaf02e268cbc2180e52b"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v13/reproducibility_manifest.json",
+      "sha256": "4194fcf900a5b1bd83e1b37076df4780c3d2c990d7227ec5a1570a2fa143726f"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v13/v13_final_summary.md",
+      "sha256": "5f0e03770636b139b97773229f77491186ae5014a2694628d35825e723c3aaf8"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v14/reproducibility_manifest.json",
+      "sha256": "a21a4acf0fa211e379d728b583268809f6689d044b7b3f5bb61fbfbf221a9aac"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v14/v14_final_summary.md",
+      "sha256": "cc69dacb94cbf2d3a93d3c36d161afdc9c682953f83c02d89b798398a2f3412e"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v12r/reproducibility_manifest.json",
+      "sha256": "6fbba284f4a3aec83e869e9c22b7be3156530a814f092c4c2a6a0c69ca5f9ab1"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v12r/v12r_final_summary.md",
+      "sha256": "53a0fbe12430b659b9d02bcbce80b0124771c0ca27e115e9d22b5c34caaffc55"
+    }
+  ],
+  "prohibitions": [
+    "no predecessor modification",
+    "no raw AMI write",
+    "no Office write",
+    "no outcome-dependent selection",
+    "no threshold retune"
+  ],
+  "raw_ami": {
+    "manifest": "lightguard_v0_1/data/validation/v10/v10_raw_ami_manifest.json",
+    "manifest_sha256": "e4ea819ed021b9b8da7706469837f4808e262ce198ffd47a026ed21f03ce87b5",
+    "raw_values_written": false,
+    "source_sha256": "c18b49022d1c7dee2117a8d65a07d71351fb1aea8538751b7032867e4081b7d0"
+  },
+  "schema_version": "lightguard.v15.predecessor-freeze.1",
+  "status": "PRE_OUTCOME_FROZEN"
+}

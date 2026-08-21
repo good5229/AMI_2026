@@ -1,0 +1,11 @@
+{
+  "audit_rows_sha256": "b9b77cf555f1897bc67612ac353c7d30ddd69c08ac0a10fe04116d3cd974cce3",
+  "audited_meter_days": 455,
+  "canonical_overlap_count": 6,
+  "eligible_meter_days": 71,
+  "future_leakage_count": 0,
+  "overlap_false_count": 249,
+  "predecessor_freeze_sha256": "124c9370353c906474dfb27e6a248044f776a4d8ef11dc2ec8da496c08e582ea",
+  "status": "PRE_OUTCOME_FROZEN",
+  "v10_pool_excluded_count": 200
+}
