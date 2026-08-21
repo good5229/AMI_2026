@@ -1,0 +1,139 @@
+{
+  "files": [
+    {
+      "path": "lightguard_app/assets/data/context/v11_proxy_detector_summary.json",
+      "sha256": "911e0d4ec887387f1eee043b902531bc79ec01ff3666fa62bc74527c290bac15"
+    },
+    {
+      "path": "lightguard_app/docs/missing_gold_fields.md",
+      "sha256": "117277fffb7707cb77b734a4e5a0d54eda3dedff0870be2627452fc59eef3c4d"
+    },
+    {
+      "path": "lightguard_app/docs/v11_anomaly_sign_validation.md",
+      "sha256": "4a070ed0f2f2ed193b6f170d546e24ada01ca4d43160eaf02e268cbc2180e52b"
+    },
+    {
+      "path": "lightguard_app/docs/v11_label_provenance.md",
+      "sha256": "1561138ccf5132212bf7754fff8dcfd34ae14f256b683f823d7df0511f40d6e3"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v11/v10_freeze_manifest.json",
+      "sha256": "afb45f9d199352c5eb2a5b13e009b8c9e468b904cd5b4063b21b287ed632d735"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v11/v11_blind_review_manifest.json",
+      "sha256": "6cf6e6cfbb15f592d2451368b4a08ffa2a78871385f3e6543271414f43e421da"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v11/v11_label_mapping_audit.csv",
+      "sha256": "2cada244864ebb96edc4f062d07599cb01ee97017a5b76358b01c469d3478bed"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v11/v11_label_source_inventory.csv",
+      "sha256": "8ac2a896921bf290cfa69a567e9f32ad0f1f14b4688fdc7a0197b6d73dece5ad"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v11/v11_proxy_artifact_manifest.json",
+      "sha256": "5069e3212344c1a7fbcb5952399c2c110ed78d5a54e7ad4aa08c643e2d96a28b"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v11/v11_proxy_canonical_six.csv",
+      "sha256": "663295547260c740a2b8ceb86ddcf282b3a71e577a18c0e863ed00688f184b75"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v11/v11_proxy_detector_freeze.json",
+      "sha256": "09d7858b1c98a4380638a44c956d17f10c18858517096dc06bbb8321d9cdc454"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v11/v11_proxy_matched_controls.csv",
+      "sha256": "59c75809f5f83ab041618562efd9d01f34f9b93137c89ab822f0b99659ec571c"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v11/v11_proxy_score_seal.json",
+      "sha256": "a866036483fa7583b759de965cbcf063158fa9a446c045382ae30b32fcffaaa9"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v11/v11_proxy_scores_prejoin.csv",
+      "sha256": "f29224de1ba7f10f463930a5bc05eda17664e060ca9bbe89bda4bf59a2d5e16a"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v11/v11_proxy_signs.csv",
+      "sha256": "5ec75b83805512404d092651fed38a7e87b14fd88aaac71b47f3c9e0a9c5d820"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v11/v11_random_controls.csv",
+      "sha256": "59c75809f5f83ab041618562efd9d01f34f9b93137c89ab822f0b99659ec571c"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v11/v11_raw_source_inventory.csv",
+      "sha256": "b2e455a838b8132c36343ac01af463a6e875461c915cb83dc6f8bc620a228e3b"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v11/v11_blind_review_labels_template.csv",
+      "sha256": "728ecf74019ffdaebaab8045768dad4e8ceae709cc4ae119045c4f25a40cc2e8"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v11/v11_blind_review_packet.html",
+      "sha256": "9036f81019a85bba0141d63c6b5e224e82e0f4eb987f5c0100f49f7cd67b2f7e"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v11/v11_canonical_six_proxy_review.csv",
+      "sha256": "8e7f891acf6e124d380254501d6ac091612ada6e98d3fc9b77701a0f70d71494"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v11/v11_final_summary.md",
+      "sha256": "4a070ed0f2f2ed193b6f170d546e24ada01ca4d43160eaf02e268cbc2180e52b"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v11/v11_full_label_audit.md",
+      "sha256": "1998f63c6ceb4d3ee1ada30bf4fa094f8d704fdf9640e54497d4408a174530c2"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v11/v11_gold_silver_proxy_summary.md",
+      "sha256": "1998f63c6ceb4d3ee1ada30bf4fa094f8d704fdf9640e54497d4408a174530c2"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v11/v11_independent_audit.md",
+      "sha256": "3e00ba6959ac2b212f7bca4106b5d80330b4e1a6d359654cd7c8fe7cc0cbc8c9"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v11/v11_independent_detector_results.csv",
+      "sha256": "ceb66235078616342229a127f8072920d676b25c8a6e9886332a33077457c9d5"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v11/v11_label_audit_summary.md",
+      "sha256": "1998f63c6ceb4d3ee1ada30bf4fa094f8d704fdf9640e54497d4408a174530c2"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v11/v11_label_mapping_audit.csv",
+      "sha256": "2cada244864ebb96edc4f062d07599cb01ee97017a5b76358b01c469d3478bed"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v11/v11_label_source_inventory.csv",
+      "sha256": "8ac2a896921bf290cfa69a567e9f32ad0f1f14b4688fdc7a0197b6d73dece5ad"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v11/v11_proxy_concordance.csv",
+      "sha256": "ae54ad768705b6b7b3b47b2eda71bda266f19cf7e64818363a5d1507b4e9df35"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v11/v11_proxy_definition_protocol.md",
+      "sha256": "dc446bebc8ab9747c4b004c2015f3fb3ded20b5f13f87ee2d36e320085ef7d2d"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v11/v11_proxy_detector_summary.md",
+      "sha256": "ca9ef6040171fd2fd257e58e1b0eb3a242814843732c34b2ad21af8f96cad94c"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v11/v11_proxy_meter_day_bootstrap.json",
+      "sha256": "3983cb1a0896dbbc0fd85cff9513befa836084bd8d81582eb6462f07e27183ea"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v11/v11_random_control_enrichment.md",
+      "sha256": "41bf7a44c9a785606aacbfd3efc5f55224f60dda705b1001877a3de99136c941"
+    }
+  ],
+  "route": "C",
+  "schema_version": "lightguard.v11.reproducibility.1",
+  "v10_release_commit_preserved": "d34d8323b3742c9116060d9548bd29c18750cb1f"
+}

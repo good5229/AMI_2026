@@ -1,0 +1,41 @@
+{
+  "asset_registry_sha256": "77d7dfe7bbb813978049ca4fcabd30e414c41b1167ed97e19e8e5b213fefe3f9",
+  "claim_boundary": "post-hoc controlled service-routing replay only",
+  "confirmation_boundary": 0.5,
+  "descriptive_endpoints": [
+    "controlled_anomaly_field_dispatch_capture",
+    "controlled_benign_field_dispatch_escalation"
+  ],
+  "freeze_sha256": "0006fe2fef98b3441aa0f900e8cd7acae4aa6f6832516ae979b5031b7f420fe5",
+  "h1_candidate": {
+    "config": {
+      "availability_floor": null,
+      "specificity_threshold": 0.525,
+      "stage_a_threshold": 0.525,
+      "weather_weight": 0.0
+    },
+    "config_file_sha256": "b536f8ca68222662c717cd27a6af4c3c64a3330782b0545503df6e4aff3e6232",
+    "detector_file_sha256": "a074c07e4d782de4772b13fcd08434e08cd7389f0a235c727eaae3048078de20",
+    "load_imputation": "none",
+    "name": "H1",
+    "v10_track_a_retuning_permitted": false,
+    "weather_scoring": "disabled"
+  },
+  "h1_threshold_retuned": false,
+  "inferential_statistics_permitted": false,
+  "policies": {
+    "P0_COLLAPSED_NON_NORMAL": "normal=no_action; every non-normal action=field_inspection_candidate, reproducing the v0.15 collapsed endpoint semantics",
+    "P1_GUARDED_LANES": "same H1 threshold; data_check_required=data_quality_review; observe/inspect requires activation+persistence >=0.5 and phase>=0.5 only when expected_phase_count=3"
+  },
+  "predecessor_sha256": {
+    "lightguard_v0_1/data/validation/v15/v14_freeze_manifest.json": "53d2c2185c01e1bbe709bba74dd50b0b1c11c483b184dc5d8b2f56b0958eadd6",
+    "lightguard_v0_1/data/validation/v15/v15_background_holdout_manifest.json": "f5a2c00f29fffa64e29b69061074771d452054321cd00d0249887ca0d50f75f6",
+    "lightguard_v0_1/data/validation/v15/v15_pair_results_manifest.json": "27f6a79ad7933f587c4cb3454c401c13438d3abce284fcf8f53f3e6687c8dce7",
+    "lightguard_v0_1/reports/v15/v15_final_summary.md": "25ad25fe4b937b5fb28ba0e937368d5e44f7ca334be261ee4e61b999b44860c2",
+    "lightguard_v0_1/reports/v15/v15_independent_audit.md": "189c470ee24b58a87898a4c9d330c187b9d332e7fff654d2493c0bd8f073cfab"
+  },
+  "prospective_noninferiority_margin": -0.1,
+  "schema_version": "lightguard.v16.protocol-freeze.1",
+  "selection_uses_outcome": false,
+  "status": "POST_HOC_EXPLORATORY_POLICY_REVISION_2"
+}

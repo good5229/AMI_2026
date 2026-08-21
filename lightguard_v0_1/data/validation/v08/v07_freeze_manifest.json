@@ -1,0 +1,31 @@
+{
+  "schema_version": "lightguard.v07-freeze.v1",
+  "baseline_role": "regression_only_not_for_v08_tuning",
+  "frozen_git_sha": "383c91e2c22d9364232c80683b6f8e4b6dc09d35",
+  "frozen_at_date": "2026-08-20",
+  "preflight": {
+    "command": "./scripts/v07_preflight.sh",
+    "status": "PASS",
+    "artifact_determinism": "PASS",
+    "artifact_contracts": ["v0.5 PASS", "v0.6 PASS", "v0.7 PASS"],
+    "flutter_analyze": "No issues found",
+    "flutter_tests": "20 passed",
+    "web_release_build": "PASS",
+    "android_release_build": "PASS",
+    "android_apk_bytes_display": "52.2MB"
+  },
+  "baseline_metrics": {
+    "validation_kind": "controlled_cross_context_invariance",
+    "scenario_count": 96,
+    "macro_recall": 0.5,
+    "macro_fpr": 0.0,
+    "actual_external_regional_ami": "unavailable"
+  },
+  "sha256": {
+    "lightguard_v0_1/data/validation/v07/regional_seasonal_context_2025.json": "f2827df345c137a5d5b830104d67952b0db4366b58a3d5bfffec6b9e08202a91",
+    "lightguard_v0_1/data/validation/v07/regional_seasonal_cases.json": "e9613557933b816d808189d4fb4ef8dba21ad14ab3905da9569cb01bcd2f8233",
+    "lightguard_v0_1/data/validation/v07/regional_seasonal_summary.json": "70a6a157871a9d4514af87719e5f5395128772bea4c1e95772ae0267a1ef6cc6",
+    "lightguard_v0_1/reports/v07/reproducibility_manifest.json": "d54743885634b5d5fd8dae06d977f1d22f03a9cd298faf76fab0e4ebacabf81d"
+  },
+  "claim_boundary": "Controlled generated scenarios only; not field performance or actual Gangneung/Chungju AMI validation."
+}

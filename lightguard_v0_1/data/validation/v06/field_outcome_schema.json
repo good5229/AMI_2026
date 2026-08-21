@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://good5229.github.io/AMI_2026/schema/field-outcome-v1.json",
+  "title": "LightGuard blinded field inspection outcome",
+  "type": "object",
+  "required": [
+    "inspection_id",
+    "cabinet_uid",
+    "inspection_started_at",
+    "inspector_blinded_to_score",
+    "outcome",
+    "evidence"
+  ],
+  "properties": {
+    "inspection_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_event_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "cabinet_uid": {
+      "type": "string",
+      "minLength": 1
+    },
+    "inspection_started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "inspector_blinded_to_score": {
+      "const": true
+    },
+    "outcome": {
+      "enum": [
+        "confirmed_fault",
+        "normal_operation",
+        "maintenance_related",
+        "unable_to_adjudicate"
+      ]
+    },
+    "fault_type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "repair_action": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "post_repair_verified": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "adjudicator": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "adjudicated_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}

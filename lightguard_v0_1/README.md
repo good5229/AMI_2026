@@ -8,7 +8,7 @@
 - 수영구는 Full Asset, 강릉은 Controller-linked, 충주는 Minimal Asset mode로 정규화합니다.
 
 ## 주요 파일
-- `lightguard_v0_1.sqlite`: 앱/백엔드가 바로 읽을 수 있는 DB
+- `lightguard_v0_1.sqlite`: 로컬에서 생성하는 앱/백엔드 통합 DB(운영 메타데이터 보호를 위해 Git 배포 제외)
 - `app_seed/*.json`: Flutter/Web 데모용 seed
 - `data/ami_events.csv`: Detector v0.1 실제 탐지 이벤트
 - `data/ami_meter_profiles.csv`: 5개 가로등 AMI baseline/profile

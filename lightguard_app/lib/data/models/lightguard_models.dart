@@ -11,6 +11,15 @@ enum EvidenceSource {
 
 enum AmiLinkMode { none, real, scenarioInjection }
 
+enum AssetSource { municipalPublicData }
+
+enum SignalSource {
+  none,
+  scenarioInjection,
+  realCompetitionAmi,
+  realMunicipalAmi,
+}
+
 enum InspectionStatus {
   normal,
   observe,
@@ -253,6 +262,10 @@ class CabinetRecord {
     return ami.source;
   }
 
+  AssetSource get assetSource => assetInfo.assetSource;
+
+  SignalSource get signalSource => ami.signalSource;
+
   String get modeLabel {
     if (ami.hasRealAmi) return '실제 지자체 AMI 연동';
     if (ami.virtualLinkMode == 'scenario_injection') return '검증 시나리오';
@@ -313,6 +326,8 @@ class AssetInfo {
   }
 
   String get location => address.isNotEmpty ? address : '$latitude, $longitude';
+
+  AssetSource get assetSource => AssetSource.municipalPublicData;
 }
 
 class FixtureInfo {
@@ -477,6 +492,16 @@ class AmiPayload {
       return EvidenceSource.realMunicipalAsset;
     }
     return EvidenceSource.assetOnly;
+  }
+
+  SignalSource get signalSource {
+    if (virtualLinkMode == 'scenario_injection') {
+      return SignalSource.scenarioInjection;
+    }
+    if (hasRealAmi && amiMeterId != null) {
+      return SignalSource.realMunicipalAmi;
+    }
+    return SignalSource.none;
   }
 
   AmiLinkMode get linkMode {

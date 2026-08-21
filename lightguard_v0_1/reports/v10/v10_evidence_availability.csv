@@ -1,0 +1,6 @@
+evidence_family,available_cases,total_cases,availability_rate,reason
+solar,0,7,0,unavailable_anonymized_context
+persistence,7,7,1.0,derived_from_current
+load,0,7,0,unavailable_anonymized_context
+phase,6,7,0.8571428571428571,derived_from_current
+policy,0,7,0,unavailable_anonymized_context

@@ -1,0 +1,177 @@
+{
+  "schema_version": "v14-track-c-config-1",
+  "status": "PRE_OUTCOME_FROZEN",
+  "track": "C",
+  "dataset_id": "SUSTDATAED2",
+  "purpose": "Real electrical state-change and persistence positive control using human-corrected appliance transitions. Transitions are not faults and no fault metric is permitted.",
+  "seed": 14001403,
+  "activation_gates": [
+    "osf_and_ieee_registry_license_version_agree",
+    "timestamp_and_sampling_alignment_documented",
+    "human_corrected_transition_label_provenance_documented",
+    "appliance_day_and_transition_identifiers_available",
+    "source_native_voltage_current_or_power_channel_mapping_documented",
+    "chronological_split_is_possible_without_outcomes"
+  ],
+  "blocked_status": "BLOCKED_PROVENANCE_OR_MANIFEST",
+  "activation_decision": "ELIGIBLE_TRANSITION_POSITIVE_CONTROL_ONLY",
+  "license_evidence": "IEEE PES Data Sharing registry lists CC BY 4.0; Nature data descriptor and OSF public release provide the measurement and label provenance. Checked before performance on 2026-08-21.",
+  "chronological_split": {
+    "ordering": "Sort unique source days by documented UTC/local timestamp; preserve all records of a day together.",
+    "fit": "Earliest 60% of days.",
+    "calibration": "Next 20% of days.",
+    "confirmatory": "Latest 20% of days.",
+    "guard_band": "Exclude the final 24 hours of fit and calibration from transition scoring to prevent boundary leakage. The guard does not move days between partitions.",
+    "failure": "If timezone, day order, or date continuity is not documented, stop as NOT_EVALUABLE_CHRONOLOGICAL_SPLIT."
+  },
+  "physical_mechanisms": {
+    "PMC-1": "PARTIAL_PENDING_APPLIANCE_DAY_CONTEXT_VERIFICATION",
+    "PMC-2": "AVAILABLE_PENDING_TRANSITION_ALIGNMENT_VERIFICATION",
+    "PMC-3": "N/A_NO_DOCUMENTED_A_B_C_CURRENT_PHASE_IDENTITY",
+    "PMC-4": "AVAILABLE_PENDING_TRANSITION_ALIGNMENT_VERIFICATION",
+    "PMC-5": "PARTIAL_NON_DUPLICATE_CHANNELS_ONLY"
+  },
+  "score_windows": {
+    "transition_window": "From 5 seconds before to 60 seconds after the documented transition onset, after resampling to the coarsest selected source-native aligned rate.",
+    "baseline_window": "The preceding 60 seconds, only when no documented transition intersects it.",
+    "event_score": "Maximum selected candidate score in the post-onset 60-second interval.",
+    "no_imputation": true
+  },
+  "matched_controls": {
+    "eligibility": "Same appliance and same source day; equal-duration window; no documented transition in the window or in a 120-second exclusion buffer; candidate selection is independent of scores.",
+    "selection": "Order eligible windows by SHA-256(appliance_id + day_id + transition_id + ':v14-c-control:' + seed) and select the first.",
+    "failure": "Unmatched events remain unmatched; if <80% of confirmatory transition clusters have valid controls, return NOT_EVALUABLE_MATCHED_CONTROL_COVERAGE."
+  },
+  "candidates": [
+    "PMC-C1",
+    "PMC-C2",
+    "PMC-C3"
+  ],
+  "comparator": "Maximum absolute first difference of the same selected source-native active-power/current channels over the same score window.",
+  "threshold_quantiles": [
+    0.8,
+    0.85,
+    0.9,
+    0.95,
+    0.975,
+    0.99
+  ],
+  "calibration_selection": "Select candidate/threshold by calibration transition coverage at the frozen 60-second window; ties select higher threshold then PMC-C3, PMC-C2, PMC-C1.",
+  "independent_unit": {
+    "primary": "Known transition cluster.",
+    "uncertainty_clusters": [
+      "source day",
+      "appliance"
+    ],
+    "prohibited": "Waveform rows and resampled observations as independent outcomes.",
+    "uncertainty": "2,000 two-way day/appliance cluster bootstrap draws; fewer than 20 eligible confirmatory transition clusters returns INSUFFICIENT_CLUSTER_COUNT."
+  },
+  "confirmatory_metrics": {
+    "primary": [
+      "median_paired_transition_score_uplift",
+      "transition_coverage",
+      "onset_time_to_detection",
+      "matched_no_transition_contrast"
+    ],
+    "secondary": [
+      "day_appliance_cluster_confidence_interval"
+    ],
+    "forbidden": [
+      "fault_accuracy",
+      "fault_recall",
+      "fault_probability",
+      "streetlight_accuracy"
+    ]
+  },
+  "primary_gate": "At least 20 eligible confirmatory transition clusters and >=80% valid matched controls. Support is positive-control-only even if all metrics favour the PMC candidate.",
+  "immutable_after_test_access": [
+    "channel map",
+    "chronological split",
+    "window lengths",
+    "control rule",
+    "PMC availability",
+    "candidate set",
+    "threshold grid",
+    "metrics",
+    "uncertainty",
+    "claim boundary"
+  ],
+  "resources": [
+    {
+      "id": "1475708700932.csv",
+      "url": "https://osf.io/download/br58d/"
+    },
+    {
+      "id": "10_Microwave.csv",
+      "url": "https://osf.io/download/rbcy6/"
+    },
+    {
+      "id": "11_Stove-Oven.csv",
+      "url": "https://osf.io/download/6h9bx/"
+    },
+    {
+      "id": "12_TV-Philips.csv",
+      "url": "https://osf.io/download/8v54u/"
+    },
+    {
+      "id": "13_TV-Sharp.csv",
+      "url": "https://osf.io/download/mwyje/"
+    },
+    {
+      "id": "14_TV-Grundig.csv",
+      "url": "https://osf.io/download/6v47y/"
+    },
+    {
+      "id": "15_TV-Samsung.csv",
+      "url": "https://osf.io/download/6uz8d/"
+    },
+    {
+      "id": "16_TV-LG.csv",
+      "url": "https://osf.io/download/7xckm/"
+    },
+    {
+      "id": "17_Toaster.csv",
+      "url": "https://osf.io/download/y5pjm/"
+    },
+    {
+      "id": "18_VaccumCleaner.csv",
+      "url": "https://osf.io/download/ue6rj/"
+    },
+    {
+      "id": "1_CoffeeMachine.csv",
+      "url": "https://osf.io/download/t32rj/"
+    },
+    {
+      "id": "2_Fridge-Freezer.csv",
+      "url": "https://osf.io/download/w65nm/"
+    },
+    {
+      "id": "3_Freezer.csv",
+      "url": "https://osf.io/download/87edj/"
+    },
+    {
+      "id": "4_HandMixer.csv",
+      "url": "https://osf.io/download/vjgnq/"
+    },
+    {
+      "id": "5_HairDryer-Straightener.csv",
+      "url": "https://osf.io/download/3rma5/"
+    },
+    {
+      "id": "6_Kettle.csv",
+      "url": "https://osf.io/download/rcevd/"
+    },
+    {
+      "id": "7_MacBook2007.csv",
+      "url": "https://osf.io/download/8tsbx/"
+    },
+    {
+      "id": "8_MacBookPro2011-1.csv",
+      "url": "https://osf.io/download/j26uz/"
+    },
+    {
+      "id": "9_MacBookPro2011-2.csv",
+      "url": "https://osf.io/download/csq5b/"
+    }
+  ]
+}

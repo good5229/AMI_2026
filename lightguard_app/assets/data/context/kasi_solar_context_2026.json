@@ -1,0 +1,52 @@
+{
+  "schema_version": "lightguard-context-v0.3",
+  "context_source": "official",
+  "provider": "Korea Astronomy and Space Science Institute (KASI)",
+  "endpoint_purpose": "location-based sunrise, sunset and civil twilight",
+  "location": {
+    "method": "arithmetic_mean_of_cabinet_coordinates",
+    "asset_count": 204,
+    "latitude": 35.16065889316176,
+    "longitude": 129.1153977335784
+  },
+  "retrieved_at": "2026-08-20T07:24:00Z",
+  "dates": [
+    {
+      "date": "2026-01-14",
+      "sunrise": "07:32",
+      "sunset": "17:33",
+      "civil_twilight_start": "07:04",
+      "civil_twilight_end": "18:01",
+      "source": "KASI_RISE_SET_OFFICIAL",
+      "retrieved_at": "2026-08-20T07:24:00Z"
+    },
+    {
+      "date": "2026-04-15",
+      "sunrise": "05:52",
+      "sunset": "18:56",
+      "civil_twilight_start": "05:26",
+      "civil_twilight_end": "19:22",
+      "source": "KASI_RISE_SET_OFFICIAL",
+      "retrieved_at": "2026-08-20T07:24:00Z"
+    },
+    {
+      "date": "2026-07-15",
+      "sunrise": "05:20",
+      "sunset": "19:39",
+      "civil_twilight_start": "04:51",
+      "civil_twilight_end": "20:08",
+      "source": "KASI_RISE_SET_OFFICIAL",
+      "retrieved_at": "2026-08-20T07:24:00Z"
+    },
+    {
+      "date": "2026-10-15",
+      "sunrise": "06:29",
+      "sunset": "17:49",
+      "civil_twilight_start": "06:04",
+      "civil_twilight_end": "18:15",
+      "source": "KASI_RISE_SET_OFFICIAL",
+      "retrieved_at": "2026-08-20T07:24:00Z"
+    }
+  ],
+  "errors": []
+}

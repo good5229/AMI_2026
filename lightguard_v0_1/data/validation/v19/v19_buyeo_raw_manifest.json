@@ -1,0 +1,42 @@
+{
+  "local_path": "official_docs/external_data/충청남도_부여군_가로보안등 유지관리 정보_20251230.csv",
+  "filename": "충청남도_부여군_가로보안등 유지관리 정보_20251230.csv",
+  "sha256": "9b42d1cee90202aec37e462718dd3b7ed3a00ae1d6a924b7d519cabc1ea3d4b0",
+  "byte_size": 558022,
+  "sheet_names": [],
+  "encoding": "utf-8-sig",
+  "rows": 3437,
+  "columns": [
+    "접수번호",
+    "접수일자",
+    "표찰번호",
+    "고장신고위치",
+    "고장상태",
+    "고장상세설명",
+    "민원인",
+    "완료일자",
+    "처리내용"
+  ],
+  "schema_fingerprint": "8eb0cae82579882dd0c3958527e20376914252959cb80cbe6919a687d9538018",
+  "parser_version": "lightguard-v019-date1",
+  "canonical_sort": "receipt_date,event_hash",
+  "date_min": "2024-12-30",
+  "date_max": "2025-12-30",
+  "completion_missing_count": 54,
+  "completion_unparseable_count": 0,
+  "exact_duplicate_rows": 0,
+  "tracked_in_git": false,
+  "official_source": "https://www.data.go.kr/data/15040580/fileData.do",
+  "privacy_fields_not_exported": [
+    "민원인",
+    "고장신고위치",
+    "고장상세설명",
+    "처리내용",
+    "접수번호",
+    "표찰번호"
+  ],
+  "action_grouping": {
+    "version": "v1",
+    "raw_text_exported": false
+  }
+}

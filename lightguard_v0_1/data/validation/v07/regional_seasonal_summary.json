@@ -1,0 +1,333 @@
+{
+  "cell_count": 12,
+  "cells": [
+    {
+      "anomaly_count": 4,
+      "cell_id": "suyeong_winter",
+      "false_positive": 0,
+      "fpr": 0.0,
+      "fpr_wilson_95": [
+        0.0,
+        0.48989084
+      ],
+      "normal_count": 4,
+      "recall": 0.5,
+      "recall_wilson_95": [
+        0.15003899,
+        0.84996101
+      ],
+      "region_id": "suyeong",
+      "season": "winter",
+      "true_positive": 2
+    },
+    {
+      "anomaly_count": 4,
+      "cell_id": "suyeong_spring",
+      "false_positive": 0,
+      "fpr": 0.0,
+      "fpr_wilson_95": [
+        0.0,
+        0.48989084
+      ],
+      "normal_count": 4,
+      "recall": 0.5,
+      "recall_wilson_95": [
+        0.15003899,
+        0.84996101
+      ],
+      "region_id": "suyeong",
+      "season": "spring",
+      "true_positive": 2
+    },
+    {
+      "anomaly_count": 4,
+      "cell_id": "suyeong_summer",
+      "false_positive": 0,
+      "fpr": 0.0,
+      "fpr_wilson_95": [
+        0.0,
+        0.48989084
+      ],
+      "normal_count": 4,
+      "recall": 0.5,
+      "recall_wilson_95": [
+        0.15003899,
+        0.84996101
+      ],
+      "region_id": "suyeong",
+      "season": "summer",
+      "true_positive": 2
+    },
+    {
+      "anomaly_count": 4,
+      "cell_id": "suyeong_autumn",
+      "false_positive": 0,
+      "fpr": 0.0,
+      "fpr_wilson_95": [
+        0.0,
+        0.48989084
+      ],
+      "normal_count": 4,
+      "recall": 0.5,
+      "recall_wilson_95": [
+        0.15003899,
+        0.84996101
+      ],
+      "region_id": "suyeong",
+      "season": "autumn",
+      "true_positive": 2
+    },
+    {
+      "anomaly_count": 4,
+      "cell_id": "gangneung_winter",
+      "false_positive": 0,
+      "fpr": 0.0,
+      "fpr_wilson_95": [
+        0.0,
+        0.48989084
+      ],
+      "normal_count": 4,
+      "recall": 0.5,
+      "recall_wilson_95": [
+        0.15003899,
+        0.84996101
+      ],
+      "region_id": "gangneung",
+      "season": "winter",
+      "true_positive": 2
+    },
+    {
+      "anomaly_count": 4,
+      "cell_id": "gangneung_spring",
+      "false_positive": 0,
+      "fpr": 0.0,
+      "fpr_wilson_95": [
+        0.0,
+        0.48989084
+      ],
+      "normal_count": 4,
+      "recall": 0.5,
+      "recall_wilson_95": [
+        0.15003899,
+        0.84996101
+      ],
+      "region_id": "gangneung",
+      "season": "spring",
+      "true_positive": 2
+    },
+    {
+      "anomaly_count": 4,
+      "cell_id": "gangneung_summer",
+      "false_positive": 0,
+      "fpr": 0.0,
+      "fpr_wilson_95": [
+        0.0,
+        0.48989084
+      ],
+      "normal_count": 4,
+      "recall": 0.5,
+      "recall_wilson_95": [
+        0.15003899,
+        0.84996101
+      ],
+      "region_id": "gangneung",
+      "season": "summer",
+      "true_positive": 2
+    },
+    {
+      "anomaly_count": 4,
+      "cell_id": "gangneung_autumn",
+      "false_positive": 0,
+      "fpr": 0.0,
+      "fpr_wilson_95": [
+        0.0,
+        0.48989084
+      ],
+      "normal_count": 4,
+      "recall": 0.5,
+      "recall_wilson_95": [
+        0.15003899,
+        0.84996101
+      ],
+      "region_id": "gangneung",
+      "season": "autumn",
+      "true_positive": 2
+    },
+    {
+      "anomaly_count": 4,
+      "cell_id": "chungju_winter",
+      "false_positive": 0,
+      "fpr": 0.0,
+      "fpr_wilson_95": [
+        0.0,
+        0.48989084
+      ],
+      "normal_count": 4,
+      "recall": 0.5,
+      "recall_wilson_95": [
+        0.15003899,
+        0.84996101
+      ],
+      "region_id": "chungju",
+      "season": "winter",
+      "true_positive": 2
+    },
+    {
+      "anomaly_count": 4,
+      "cell_id": "chungju_spring",
+      "false_positive": 0,
+      "fpr": 0.0,
+      "fpr_wilson_95": [
+        0.0,
+        0.48989084
+      ],
+      "normal_count": 4,
+      "recall": 0.5,
+      "recall_wilson_95": [
+        0.15003899,
+        0.84996101
+      ],
+      "region_id": "chungju",
+      "season": "spring",
+      "true_positive": 2
+    },
+    {
+      "anomaly_count": 4,
+      "cell_id": "chungju_summer",
+      "false_positive": 0,
+      "fpr": 0.0,
+      "fpr_wilson_95": [
+        0.0,
+        0.48989084
+      ],
+      "normal_count": 4,
+      "recall": 0.5,
+      "recall_wilson_95": [
+        0.15003899,
+        0.84996101
+      ],
+      "region_id": "chungju",
+      "season": "summer",
+      "true_positive": 2
+    },
+    {
+      "anomaly_count": 4,
+      "cell_id": "chungju_autumn",
+      "false_positive": 0,
+      "fpr": 0.0,
+      "fpr_wilson_95": [
+        0.0,
+        0.48989084
+      ],
+      "normal_count": 4,
+      "recall": 0.5,
+      "recall_wilson_95": [
+        0.15003899,
+        0.84996101
+      ],
+      "region_id": "chungju",
+      "season": "autumn",
+      "true_positive": 2
+    }
+  ],
+  "claim_boundary": "Not field or external regional AMI generalization.",
+  "context_year": 2025,
+  "external_ami_validation": {
+    "reason": "Competition AMI contains five Busan B-line meters without municipal cabinet mapping; no Gangneung or Chungju field AMI is available.",
+    "status": "unavailable"
+  },
+  "frozen_detector_config": {
+    "activation_weight": 0.6,
+    "duration_weight": 0.25,
+    "load_mismatch_weight": 0.25,
+    "near_solar_boundary_penalty": 0.2,
+    "normal_partial_policy_penalty": 0.2,
+    "phase_selectivity_weight": 0.2,
+    "threshold": 0.55,
+    "transient_penalty": 0.2,
+    "weather_weight": 0.0
+  },
+  "macro_fpr": 0.0,
+  "macro_recall": 0.5,
+  "official_context": {
+    "kasi_area_context": true,
+    "kma_hours_per_cell": 168,
+    "kma_station_ids": [
+      "159",
+      "105",
+      "127"
+    ]
+  },
+  "overall": {
+    "anomaly_count": 48,
+    "false_positive": 0,
+    "fpr": 0.0,
+    "fpr_wilson_95": [
+      0.0,
+      0.07410013
+    ],
+    "normal_count": 48,
+    "recall": 0.5,
+    "recall_wilson_95": [
+      0.36389331,
+      0.63610669
+    ],
+    "true_positive": 24
+  },
+  "region_count": 3,
+  "regional_assets": {
+    "chungju": {
+      "asset_count": 871,
+      "lamp_count_available": 821,
+      "lamp_count_coverage": 0.94259472,
+      "median_lamp_count": 17.0,
+      "median_rated_load_kw": 0.0,
+      "rated_load_available": 0,
+      "rated_load_coverage": 0.0,
+      "rated_load_status": "unavailable_no_imputation"
+    },
+    "gangneung": {
+      "asset_count": 339,
+      "lamp_count_available": 339,
+      "lamp_count_coverage": 1.0,
+      "median_lamp_count": 17.0,
+      "median_rated_load_kw": 3.15,
+      "rated_load_available": 337,
+      "rated_load_coverage": 0.99410029,
+      "rated_load_status": "observed"
+    },
+    "suyeong": {
+      "asset_count": 204,
+      "lamp_count_available": 204,
+      "lamp_count_coverage": 1.0,
+      "median_lamp_count": 18.5,
+      "median_rated_load_kw": 2.03,
+      "rated_load_available": 204,
+      "rated_load_coverage": 1.0,
+      "rated_load_status": "observed"
+    }
+  },
+  "scenario_count": 96,
+  "schema_version": "lightguard.regional-seasonal-validation.v1",
+  "season_count": 4,
+  "validation_kind": "controlled_cross_context_invariance",
+  "worst_cell": {
+    "anomaly_count": 4,
+    "cell_id": "chungju_autumn",
+    "false_positive": 0,
+    "fpr": 0.0,
+    "fpr_wilson_95": [
+      0.0,
+      0.48989084
+    ],
+    "normal_count": 4,
+    "recall": 0.5,
+    "recall_wilson_95": [
+      0.15003899,
+      0.84996101
+    ],
+    "region_id": "chungju",
+    "season": "autumn",
+    "true_positive": 2
+  }
+}

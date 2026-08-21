@@ -1,0 +1,103 @@
+{
+  "schema_version": "v14-physical-feature-mapping-1",
+  "status": "PRE_OUTCOME_FROZEN_PROVISIONAL_PROVENANCE",
+  "protocol_id": "LG-V14-PMC-1",
+  "claim_boundary": "External physical-mechanism replication only. It is not streetlight field accuracy, municipal performance, fault recall, false-positive rate, or actual fault probability.",
+  "predecessor_v13": {
+    "status": "NEGATIVE_NON_EVALUABLE_PRESERVED",
+    "mad_sc3_balanced_accuracy": 0.52004485,
+    "mad_z_score_balanced_accuracy": 0.66598258,
+    "mad_primary_gate": "NOT_EVALUABLE_INCOMPLETE_COVERAGE",
+    "mad_external_empirical_grade": "NO_EV_GRADE_NOT_EVALUABLE",
+    "lg_s1": "SURROGATE_ONLY_RECORD_RELATIVE",
+    "lg_s3": "UNAVAILABLE_NORMALIZATION_PROVENANCE",
+    "track_b": "NOT_ASSESSABLE"
+  },
+  "allowed_availability": ["AVAILABLE", "PARTIAL", "N/A", "SURROGATE_ONLY"],
+  "prohibited_inputs": [
+    "streetlight solar or astronomical fields",
+    "municipal schedules or policies",
+    "rated load, lamp count, asset count, cabinet mapping",
+    "H1, Proxy, human review, field truth, or synthetic streetlight fields",
+    "confirmatory labels or label-derived features",
+    "imputed phase, timestamp, meter, unit, or channel fields"
+  ],
+  "core": {
+    "PMC-1": {
+      "name": "historical_contextual_baseline_deviation",
+      "definition": "Robust residual from an entity-linked earlier reference with documented order and compatible physical scale.",
+      "surrogate_rule": "A record-local or run-local reference is SURROGATE_ONLY and cannot support direct historical-baseline evidence."
+    },
+    "PMC-2": {
+      "name": "persistence_temporal_accumulation",
+      "definition": "Longest above-threshold run and cumulative duration over an ordered, contiguous source-native sequence.",
+      "ceiling": "Temporal persistence sign only."
+    },
+    "PMC-3": {
+      "name": "phase_channel_asymmetry",
+      "definition": "Robust magnitude contrast among documented aligned current channels on a common physical scale.",
+      "ceiling": "Channel contrast only; never negative sequence, zero sequence, symmetrical components, or a fault type."
+    },
+    "PMC-4": {
+      "name": "abrupt_structural_change",
+      "definition": "Two-sided CUSUM of calibrated robust residuals with k=0.5 and h=5.0.",
+      "ceiling": "Change observation only; no causal attribution."
+    },
+    "PMC-5": {
+      "name": "multivariate_evidence_consistency",
+      "definition": "Equal-weight mean of calibration percentile ranks from at least two available, non-duplicate PMC scores.",
+      "ceiling": "Transparent cross-channel evidence only."
+    }
+  },
+  "datasets": {
+    "LONDON_MET_DISTRIBUTION": {
+      "provenance_gate": "PENDING_TERRA_A",
+      "source": "https://repository.londonmet.ac.uk/11442/",
+      "role": "PRIMARY_REAL_DISTRIBUTION_EXTERNAL_VALIDATION_IF_GATE_PASSES",
+      "source_native_fields_provisional": ["upstream voltage minimum/average/maximum", "downstream voltage minimum/average/maximum", "voltage THD"],
+      "availability": {
+        "PMC-1": {"status": "PARTIAL", "reason": "Historical entity linkage and timestamp retention must be verified; no record-relative substitute is direct evidence."},
+        "PMC-2": {"status": "PARTIAL", "reason": "Minute-level data are described, but contiguous ordering and gap semantics require confirmation."},
+        "PMC-3": {"status": "N/A", "reason": "No documented current phase/channel fields in reviewed metadata."},
+        "PMC-4": {"status": "PARTIAL", "reason": "Requires verified ordered series and calibration reference."},
+        "PMC-5": {"status": "PARTIAL", "reason": "Voltage and THD can contribute only after unit, duplication, and preprocessing provenance are verified."}
+      }
+    },
+    "CODEX_VFD": {
+      "provenance_gate": "PENDING_TERRA_A",
+      "source": "https://doi.org/10.48804/N4H9HP",
+      "role": "CONTROLLED_PHYSICAL_CURRENT_MECHANISM_BENCHMARK_IF_GATE_PASSES",
+      "source_native_fields_provisional": ["two directly measured current channels", "binary injected-disturbance interval", "run metadata", "severity metadata", "frequency metadata"],
+      "availability": {
+        "PMC-1": {"status": "SURROGATE_ONLY", "reason": "Pre-injection run-local current reference is not historical meter-relative context."},
+        "PMC-2": {"status": "AVAILABLE", "reason": "Ordered high-rate waveform and injection intervals are described; activation still needs manifest verification."},
+        "PMC-3": {"status": "PARTIAL", "reason": "Two named current channels may support channel contrast, not a complete three-phase or symmetrical-component claim."},
+        "PMC-4": {"status": "AVAILABLE", "reason": "Controlled interval onsets permit change-window evaluation after README verification."},
+        "PMC-5": {"status": "AVAILABLE", "reason": "At least two non-duplicate current-channel/change components can be combined transparently."}
+      }
+    },
+    "SUSTDATAED2": {
+      "provenance_gate": "PENDING_TERRA_A",
+      "source": "https://doi.org/10.1038/s41597-022-01252-2",
+      "role": "REAL_ELECTRICAL_STATE_CHANGE_POSITIVE_CONTROL_IF_GATE_PASSES",
+      "source_native_fields_provisional": ["timestamped voltage/current waveforms", "active power", "reactive power", "derived current/voltage", "human-corrected appliance ON/OFF transitions"],
+      "availability": {
+        "PMC-1": {"status": "PARTIAL", "reason": "Earlier household/appliance history may form a contextual baseline only after appliance/day keys and time continuity are verified."},
+        "PMC-2": {"status": "AVAILABLE", "reason": "Known state transitions and ordered measurements are described; a transition remains a positive control, not a fault."},
+        "PMC-3": {"status": "N/A", "reason": "No A/B/C current-phase identity is assumed from the reviewed metadata."},
+        "PMC-4": {"status": "AVAILABLE", "reason": "Known transition onsets can test structural-change response after alignment verification."},
+        "PMC-5": {"status": "PARTIAL", "reason": "Only non-duplicate voltage/current/power evidence may be combined; algebraic derivatives are not independent votes."}
+      }
+    }
+  },
+  "global_fail_closed_rules": {
+    "no_outcome_driven_suitability": true,
+    "no_test_label_access_for_selection": true,
+    "no_post_test_feature_or_threshold_change": true,
+    "no_missing_mechanism_synthesis": true,
+    "no_row_level_pseudoreplication": true,
+    "no_raw_external_data_in_git": true,
+    "sustdata_transitions_are_faults": false,
+    "external_results_are_streetlight_accuracy": false
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "B-L-9": {
+    "sampling_interval_min": 15,
+    "row_count": 8735,
+    "duplicate_timestamp_count": 0,
+    "hour24_normalization_count": 91,
+    "phase_non_missing_counts": {
+      "i1": 8735,
+      "i2": 8735,
+      "i3": 8735
+    },
+    "measured_phase_count": 3,
+    "energy_non_missing_count": 8730,
+    "energy_availability": 0.9994275901545506,
+    "canonical_candidate_count": 2,
+    "monthly": [
+      {
+        "meter_id": "B-L-9",
+        "month": "2026-04",
+        "off_baseline_a": 4.522,
+        "on_baseline_a": 50.5499,
+        "on_off_separation_a": 46.0279,
+        "night_current_cv": 0.003756,
+        "transition_off_median_minute": 375,
+        "transition_on_median_minute": 1170,
+        "candidate_count_30d_causal": 0,
+        "data_availability": 0.999653,
+        "missing_current_rows": 0,
+        "interpretation": "descriptive meter behavior; not a fault rate"
+      },
+      {
+        "meter_id": "B-L-9",
+        "month": "2026-05",
+        "off_baseline_a": 4.573,
+        "on_baseline_a": 50.71945,
+        "on_off_separation_a": 46.14645,
+        "night_current_cv": 0.006113,
+        "transition_off_median_minute": 330,
+        "transition_on_median_minute": 1200,
+        "candidate_count_30d_causal": 2,
+        "data_availability": 0.999664,
+        "missing_current_rows": 0,
+        "interpretation": "descriptive meter behavior; not a fault rate"
+      },
+      {
+        "meter_id": "B-L-9",
+        "month": "2026-06",
+        "off_baseline_a": 4.564,
+        "on_baseline_a": 51.389,
+        "on_off_separation_a": 46.825,
+        "night_current_cv": 0.0074,
+        "transition_off_median_minute": 315,
+        "transition_on_median_minute": 1215,
+        "candidate_count_30d_causal": 0,
+        "data_availability": 1.0,
+        "missing_current_rows": 0,
+        "interpretation": "descriptive meter behavior; not a fault rate"
+      }
+    ]
+  },
+  "B-L-12": {
+    "sampling_interval_min": 15,
+    "row_count": 8735,
+    "duplicate_timestamp_count": 0,
+    "hour24_normalization_count": 91,
+    "phase_non_missing_counts": {
+      "i1": 8689,
+      "i2": 8689,
+      "i3": 8689
+    },
+    "measured_phase_count": 3,
+    "energy_non_missing_count": 8734,
+    "energy_availability": 0.9998855180309101,
+    "canonical_candidate_count": 0,
+    "monthly": [
+      {
+        "meter_id": "B-L-12",
+        "month": "2026-04",
+        "off_baseline_a": 4.7859,
+        "on_baseline_a": 9.005,
+        "on_off_separation_a": 4.2191,
+        "night_current_cv": 0.008735,
+        "transition_off_median_minute": 345,
+        "transition_on_median_minute": 1170,
+        "candidate_count_30d_causal": 0,
+        "data_availability": 0.994792,
+        "missing_current_rows": 14,
+        "interpretation": "descriptive meter behavior; not a fault rate"
+      },
+      {
+        "meter_id": "B-L-12",
+        "month": "2026-05",
+        "off_baseline_a": 4.718,
+        "on_baseline_a": 8.771,
+        "on_off_separation_a": 4.053,
+        "night_current_cv": 0.013312,
+        "transition_off_median_minute": 315,
+        "transition_on_median_minute": 1200,
+        "candidate_count_30d_causal": 0,
+        "data_availability": 0.993952,
+        "missing_current_rows": 17,
+        "interpretation": "descriptive meter behavior; not a fault rate"
+      },
+      {
+        "meter_id": "B-L-12",
+        "month": "2026-06",
+        "off_baseline_a": 4.678,
+        "on_baseline_a": 8.587,
+        "on_off_separation_a": 3.909,
+        "night_current_cv": 0.005422,
+        "transition_off_median_minute": 315,
+        "transition_on_median_minute": 1215,
+        "candidate_count_30d_causal": 0,
+        "data_availability": 0.994792,
+        "missing_current_rows": 15,
+        "interpretation": "descriptive meter behavior; not a fault rate"
+      }
+    ]
+  },
+  "B-L-13": {
+    "sampling_interval_min": 15,
+    "row_count": 8688,
+    "duplicate_timestamp_count": 0,
+    "hour24_normalization_count": 91,
+    "phase_non_missing_counts": {
+      "i1": 8688,
+      "i2": 0,
+      "i3": 0
+    },
+    "measured_phase_count": 1,
+    "energy_non_missing_count": 2182,
+    "energy_availability": 0.2511510128913444,
+    "canonical_candidate_count": 1,
+    "monthly": [
+      {
+        "meter_id": "B-L-13",
+        "month": "2026-04",
+        "off_baseline_a": 0.02,
+        "on_baseline_a": 8.86,
+        "on_off_separation_a": 8.84,
+        "night_current_cv": 0.003212,
+        "transition_off_median_minute": 360,
+        "transition_on_median_minute": 1170,
+        "candidate_count_30d_causal": 0,
+        "data_availability": 0.994792,
+        "missing_current_rows": 0,
+        "interpretation": "descriptive meter behavior; not a fault rate"
+      },
+      {
+        "meter_id": "B-L-13",
+        "month": "2026-05",
+        "off_baseline_a": 0.03,
+        "on_baseline_a": 8.84,
+        "on_off_separation_a": 8.81,
+        "night_current_cv": 0.002726,
+        "transition_off_median_minute": 315,
+        "transition_on_median_minute": 1200,
+        "candidate_count_30d_causal": 0,
+        "data_availability": 0.993616,
+        "missing_current_rows": 0,
+        "interpretation": "descriptive meter behavior; not a fault rate"
+      },
+      {
+        "meter_id": "B-L-13",
+        "month": "2026-06",
+        "off_baseline_a": 0.03,
+        "on_baseline_a": 8.84,
+        "on_off_separation_a": 8.81,
+        "night_current_cv": 0.002377,
+        "transition_off_median_minute": 315,
+        "transition_on_median_minute": 1215,
+        "candidate_count_30d_causal": 1,
+        "data_availability": 0.994792,
+        "missing_current_rows": 0,
+        "interpretation": "descriptive meter behavior; not a fault rate"
+      }
+    ]
+  },
+  "B-L-14": {
+    "sampling_interval_min": 15,
+    "row_count": 8734,
+    "duplicate_timestamp_count": 0,
+    "hour24_normalization_count": 91,
+    "phase_non_missing_counts": {
+      "i1": 8734,
+      "i2": 8734,
+      "i3": 8734
+    },
+    "measured_phase_count": 3,
+    "energy_non_missing_count": 8730,
+    "energy_availability": 0.9995420196931531,
+    "canonical_candidate_count": 2,
+    "monthly": [
+      {
+        "meter_id": "B-L-14",
+        "month": "2026-04",
+        "off_baseline_a": 0.03,
+        "on_baseline_a": 16.24,
+        "on_off_separation_a": 16.21,
+        "night_current_cv": 0.004008,
+        "transition_off_median_minute": 360,
+        "transition_on_median_minute": 1170,
+        "candidate_count_30d_causal": 0,
+        "data_availability": 0.999306,
+        "missing_current_rows": 0,
+        "interpretation": "descriptive meter behavior; not a fault rate"
+      },
+      {
+        "meter_id": "B-L-14",
+        "month": "2026-05",
+        "off_baseline_a": 0.03,
+        "on_baseline_a": 16.175,
+        "on_off_separation_a": 16.145,
+        "night_current_cv": 0.003977,
+        "transition_off_median_minute": 330,
+        "transition_on_median_minute": 1200,
+        "candidate_count_30d_causal": 2,
+        "data_availability": 0.999664,
+        "missing_current_rows": 0,
+        "interpretation": "descriptive meter behavior; not a fault rate"
+      },
+      {
+        "meter_id": "B-L-14",
+        "month": "2026-06",
+        "off_baseline_a": 0.03,
+        "on_baseline_a": 16.1499,
+        "on_off_separation_a": 16.1199,
+        "night_current_cv": 0.003182,
+        "transition_off_median_minute": 315,
+        "transition_on_median_minute": 1215,
+        "candidate_count_30d_causal": 0,
+        "data_availability": 1.0,
+        "missing_current_rows": 0,
+        "interpretation": "descriptive meter behavior; not a fault rate"
+      }
+    ]
+  },
+  "B-L-35": {
+    "sampling_interval_min": 15,
+    "row_count": 8690,
+    "duplicate_timestamp_count": 0,
+    "hour24_normalization_count": 91,
+    "phase_non_missing_counts": {
+      "i1": 8688,
+      "i2": 0,
+      "i3": 0
+    },
+    "measured_phase_count": 1,
+    "energy_non_missing_count": 2184,
+    "energy_availability": 0.25132336018411966,
+    "canonical_candidate_count": 1,
+    "monthly": [
+      {
+        "meter_id": "B-L-35",
+        "month": "2026-04",
+        "off_baseline_a": 0.05,
+        "on_baseline_a": 17.26,
+        "on_off_separation_a": 17.21,
+        "night_current_cv": 0.003259,
+        "transition_off_median_minute": 375,
+        "transition_on_median_minute": 1170,
+        "candidate_count_30d_causal": 0,
+        "data_availability": 0.993403,
+        "missing_current_rows": 2,
+        "interpretation": "descriptive meter behavior; not a fault rate"
+      },
+      {
+        "meter_id": "B-L-35",
+        "month": "2026-05",
+        "off_baseline_a": 0.05,
+        "on_baseline_a": 17.14,
+        "on_off_separation_a": 17.09,
+        "night_current_cv": 0.004498,
+        "transition_off_median_minute": 345,
+        "transition_on_median_minute": 1200,
+        "candidate_count_30d_causal": 1,
+        "data_availability": 0.994624,
+        "missing_current_rows": 0,
+        "interpretation": "descriptive meter behavior; not a fault rate"
+      },
+      {
+        "meter_id": "B-L-35",
+        "month": "2026-06",
+        "off_baseline_a": 0.05,
+        "on_baseline_a": 17.1,
+        "on_off_separation_a": 17.05,
+        "night_current_cv": 0.004154,
+        "transition_off_median_minute": 330,
+        "transition_on_median_minute": 1230,
+        "candidate_count_30d_causal": 0,
+        "data_availability": 0.995139,
+        "missing_current_rows": 0,
+        "interpretation": "descriptive meter behavior; not a fault rate"
+      }
+    ]
+  }
+}

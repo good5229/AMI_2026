@@ -1,0 +1,5 @@
+dataset,candidate,status,calibration_balanced_accuracy,threshold,selected_signal_core_candidate,claim_boundary
+External MAD,SC1,ELIGIBLE,0.5388733547023119,3.196277579492502,True,"External electrical anomaly mechanism evaluation only; not LightGuard streetlight field accuracy, field recall, asset condition, or fault probability."
+External MAD,SC2,INELIGIBLE_LG_S3_UNAVAILABLE,,,False,"External electrical anomaly mechanism evaluation only; not LightGuard streetlight field accuracy, field recall, asset condition, or fault probability."
+External MAD,SC3,ELIGIBLE,0.5275523426311123,0.9577283372365338,False,"External electrical anomaly mechanism evaluation only; not LightGuard streetlight field accuracy, field recall, asset condition, or fault probability."
+External MAD,z-score comparator,ELIGIBLE,0.62906296749626,2.322094535847566,False,"External electrical anomaly mechanism evaluation only; not LightGuard streetlight field accuracy, field recall, asset condition, or fault probability."

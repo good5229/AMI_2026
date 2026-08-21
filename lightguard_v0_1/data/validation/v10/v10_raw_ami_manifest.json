@@ -1,0 +1,205 @@
+{
+  "schema_version": "lightguard.v10.raw_ami_manifest.1",
+  "availability_gate": "PASS",
+  "source": {
+    "filename": "2-2_MDMS자료(AMI 데이터)_B선로_가명화_★.xlsx",
+    "sha256": "c18b49022d1c7dee2117a8d65a07d71351fb1aea8538751b7032867e4081b7d0",
+    "byte_count": 23365753,
+    "sheet_name": "B선로 AMI DATA",
+    "source_nonempty_row_count": 280836,
+    "source_meter_count": 33,
+    "tracked_in_git": false,
+    "source_rows_copied_to_manifest": false
+  },
+  "scope": {
+    "target_meters": [
+      "B-L-9",
+      "B-L-12",
+      "B-L-13",
+      "B-L-14",
+      "B-L-35"
+    ],
+    "period_start": "2026-04-01",
+    "period_end": "2026-06-30",
+    "timestamp_semantics": "source interval end; source 24:00 normalized to next midnight",
+    "timezone": "Asia/Seoul"
+  },
+  "columns": {
+    "meter_id": {
+      "zero_based_index": 0,
+      "source_label": "순번(계기번호)"
+    },
+    "timestamp": {
+      "zero_based_index": 1,
+      "source_label": "시간"
+    },
+    "energy": [
+      {
+        "zero_based_index": 3,
+        "semantic": "receiving_active_kwh"
+      }
+    ],
+    "current": [
+      {
+        "zero_based_index": 13,
+        "semantic": "i1_ampere"
+      },
+      {
+        "zero_based_index": 14,
+        "semantic": "i2_ampere"
+      },
+      {
+        "zero_based_index": 15,
+        "semantic": "i3_ampere"
+      }
+    ]
+  },
+  "meters": [
+    {
+      "meter_id": "B-L-9",
+      "row_count": 8735,
+      "date_min": "2026-04-01",
+      "date_max": "2026-06-30",
+      "timestamp_min_interval_end": "2026-04-01 00:15:00",
+      "timestamp_max_interval_end": "2026-07-01 00:00:00",
+      "cadence_minutes_median": 15,
+      "cadence_gap_counts": {
+        "15": 8733,
+        "30": 1
+      },
+      "duplicate_timestamp_count": 0,
+      "hour24_normalization_count": 91,
+      "channel_missing_count": {
+        "i1": 0,
+        "i2": 0,
+        "i3": 0,
+        "recv_active_kwh": 5
+      },
+      "channel_missing_rate": {
+        "i1": 0.0,
+        "i2": 0.0,
+        "i3": 0.0,
+        "recv_active_kwh": 0.00057241
+      },
+      "measured_current_phase_count": 3
+    },
+    {
+      "meter_id": "B-L-12",
+      "row_count": 8735,
+      "date_min": "2026-04-01",
+      "date_max": "2026-06-30",
+      "timestamp_min_interval_end": "2026-04-01 00:15:00",
+      "timestamp_max_interval_end": "2026-07-01 00:00:00",
+      "cadence_minutes_median": 15,
+      "cadence_gap_counts": {
+        "15": 8733,
+        "30": 1
+      },
+      "duplicate_timestamp_count": 0,
+      "hour24_normalization_count": 91,
+      "channel_missing_count": {
+        "i1": 46,
+        "i2": 46,
+        "i3": 46,
+        "recv_active_kwh": 1
+      },
+      "channel_missing_rate": {
+        "i1": 0.005266171,
+        "i2": 0.005266171,
+        "i3": 0.005266171,
+        "recv_active_kwh": 0.000114482
+      },
+      "measured_current_phase_count": 3
+    },
+    {
+      "meter_id": "B-L-13",
+      "row_count": 8688,
+      "date_min": "2026-04-01",
+      "date_max": "2026-06-30",
+      "timestamp_min_interval_end": "2026-04-01 00:15:00",
+      "timestamp_max_interval_end": "2026-07-01 00:00:00",
+      "cadence_minutes_median": 15,
+      "cadence_gap_counts": {
+        "15": 8639,
+        "30": 48
+      },
+      "duplicate_timestamp_count": 0,
+      "hour24_normalization_count": 91,
+      "channel_missing_count": {
+        "i1": 0,
+        "i2": 8688,
+        "i3": 8688,
+        "recv_active_kwh": 6506
+      },
+      "channel_missing_rate": {
+        "i1": 0.0,
+        "i2": 1.0,
+        "i3": 1.0,
+        "recv_active_kwh": 0.748848987
+      },
+      "measured_current_phase_count": 1
+    },
+    {
+      "meter_id": "B-L-14",
+      "row_count": 8734,
+      "date_min": "2026-04-01",
+      "date_max": "2026-06-30",
+      "timestamp_min_interval_end": "2026-04-01 00:15:00",
+      "timestamp_max_interval_end": "2026-07-01 00:00:00",
+      "cadence_minutes_median": 15,
+      "cadence_gap_counts": {
+        "15": 8731,
+        "30": 2
+      },
+      "duplicate_timestamp_count": 0,
+      "hour24_normalization_count": 91,
+      "channel_missing_count": {
+        "i1": 0,
+        "i2": 0,
+        "i3": 0,
+        "recv_active_kwh": 4
+      },
+      "channel_missing_rate": {
+        "i1": 0.0,
+        "i2": 0.0,
+        "i3": 0.0,
+        "recv_active_kwh": 0.00045798
+      },
+      "measured_current_phase_count": 3
+    },
+    {
+      "meter_id": "B-L-35",
+      "row_count": 8690,
+      "date_min": "2026-04-01",
+      "date_max": "2026-06-30",
+      "timestamp_min_interval_end": "2026-04-01 00:15:00",
+      "timestamp_max_interval_end": "2026-07-01 00:00:00",
+      "cadence_minutes_median": 15,
+      "cadence_gap_counts": {
+        "15": 8643,
+        "30": 46
+      },
+      "duplicate_timestamp_count": 0,
+      "hour24_normalization_count": 91,
+      "channel_missing_count": {
+        "i1": 2,
+        "i2": 8690,
+        "i3": 8690,
+        "recv_active_kwh": 6506
+      },
+      "channel_missing_rate": {
+        "i1": 0.00023015,
+        "i2": 1.0,
+        "i3": 1.0,
+        "recv_active_kwh": 0.74867664
+      },
+      "measured_current_phase_count": 1
+    }
+  ],
+  "failures": [],
+  "immutability": {
+    "raw_source_modified": false,
+    "raw_source_must_remain_untracked": true,
+    "energy_reconstruction_allowed": false
+  }
+}

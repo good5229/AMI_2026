@@ -1,0 +1,2 @@
+dataset,status,metrics_published,reason,claim_boundary
+External REFIT,BLOCKED_EXTERNAL_DATA,False,Official REFIT annotation files are unavailable.,"External electrical anomaly mechanism evaluation only; not LightGuard streetlight field accuracy, field recall, asset condition, or fault probability."

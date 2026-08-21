@@ -239,7 +239,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -458,7 +459,9 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:09.975374+00:00"
+      "observation_at": "2026-08-17T22:02:09.975374+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -468,7 +471,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -752,7 +756,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -971,7 +976,9 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:09.994108+00:00"
+      "observation_at": "2026-08-17T22:02:09.994108+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -981,7 +988,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -1275,7 +1283,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -1494,7 +1503,9 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.002460+00:00"
+      "observation_at": "2026-08-17T22:02:10.002460+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -1504,7 +1515,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -1898,7 +1910,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -2117,7 +2130,9 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.010744+00:00"
+      "observation_at": "2026-08-17T22:02:10.010744+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -2127,7 +2142,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -2561,7 +2577,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -2780,7 +2797,9 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.023239+00:00"
+      "observation_at": "2026-08-17T22:02:10.023239+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -2790,7 +2809,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -3114,7 +3134,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -3333,7 +3354,9 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.053035+00:00"
+      "observation_at": "2026-08-17T22:02:10.053035+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -3343,7 +3366,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -3747,7 +3771,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -3966,7 +3991,9 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.067109+00:00"
+      "observation_at": "2026-08-17T22:02:10.067109+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -3976,7 +4003,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -4350,7 +4378,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -4569,7 +4598,9 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.074958+00:00"
+      "observation_at": "2026-08-17T22:02:10.074958+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -4579,7 +4610,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -4953,7 +4985,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -5172,7 +5205,9 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.085815+00:00"
+      "observation_at": "2026-08-17T22:02:10.085815+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -5182,7 +5217,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -5526,7 +5562,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -5745,7 +5782,9 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.093388+00:00"
+      "observation_at": "2026-08-17T22:02:10.093388+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -5755,7 +5794,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -6099,7 +6139,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -6318,7 +6359,9 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.102040+00:00"
+      "observation_at": "2026-08-17T22:02:10.102040+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -6328,7 +6371,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -6652,7 +6696,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -6871,7 +6916,9 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.111510+00:00"
+      "observation_at": "2026-08-17T22:02:10.111510+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -6881,7 +6928,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -7105,7 +7153,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -7324,7 +7373,9 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.123617+00:00"
+      "observation_at": "2026-08-17T22:02:10.123617+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -7334,7 +7385,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -7758,7 +7810,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -7977,7 +8030,9 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.139286+00:00"
+      "observation_at": "2026-08-17T22:02:10.139286+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -7987,7 +8042,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -8271,7 +8327,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -8490,7 +8547,9 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.158548+00:00"
+      "observation_at": "2026-08-17T22:02:10.158548+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -8500,7 +8559,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -8764,7 +8824,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -8983,7 +9044,9 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.174107+00:00"
+      "observation_at": "2026-08-17T22:02:10.174107+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -8993,7 +9056,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -9297,7 +9361,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -9516,7 +9581,9 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.193488+00:00"
+      "observation_at": "2026-08-17T22:02:10.193488+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -9526,7 +9593,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -9850,7 +9918,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -10069,7 +10138,9 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.202657+00:00"
+      "observation_at": "2026-08-17T22:02:10.202657+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -10079,7 +10150,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -10473,7 +10545,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -10692,7 +10765,9 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.211477+00:00"
+      "observation_at": "2026-08-17T22:02:10.211477+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -10702,7 +10777,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -10996,7 +11072,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -11215,7 +11292,9 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.251280+00:00"
+      "observation_at": "2026-08-17T22:02:10.251280+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -11225,7 +11304,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -11589,7 +11669,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -11808,7 +11889,9 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.262027+00:00"
+      "observation_at": "2026-08-17T22:02:10.262027+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -11818,7 +11901,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -12122,7 +12206,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -12341,7 +12426,9 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.308501+00:00"
+      "observation_at": "2026-08-17T22:02:10.308501+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -12351,7 +12438,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -12625,7 +12713,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -12844,7 +12933,9 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.332219+00:00"
+      "observation_at": "2026-08-17T22:02:10.332219+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -12854,7 +12945,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -12938,7 +13030,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -13157,7 +13250,9 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.348756+00:00"
+      "observation_at": "2026-08-17T22:02:10.348756+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -13167,7 +13262,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -13271,7 +13367,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -13490,7 +13587,9 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.377867+00:00"
+      "observation_at": "2026-08-17T22:02:10.377867+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -13500,7 +13599,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -14224,7 +14324,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -14443,7 +14544,9 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.404689+00:00"
+      "observation_at": "2026-08-17T22:02:10.404689+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -14453,7 +14556,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -14767,7 +14871,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -14986,7 +15091,9 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.413506+00:00"
+      "observation_at": "2026-08-17T22:02:10.413506+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -14996,7 +15103,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -15300,7 +15408,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -15519,7 +15628,9 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.425373+00:00"
+      "observation_at": "2026-08-17T22:02:10.425373+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -15529,7 +15640,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -15753,7 +15865,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -15972,7 +16085,9 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.438255+00:00"
+      "observation_at": "2026-08-17T22:02:10.438255+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -15982,7 +16097,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -16256,7 +16372,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -16475,7 +16592,9 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.451398+00:00"
+      "observation_at": "2026-08-17T22:02:10.451398+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -16485,7 +16604,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -16799,7 +16919,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -17018,7 +17139,9 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.458395+00:00"
+      "observation_at": "2026-08-17T22:02:10.458395+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -17028,7 +17151,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -17342,7 +17466,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -17561,7 +17686,9 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.465741+00:00"
+      "observation_at": "2026-08-17T22:02:10.465741+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -17571,7 +17698,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -17905,7 +18033,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -18124,7 +18253,9 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.473364+00:00"
+      "observation_at": "2026-08-17T22:02:10.473364+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -18134,7 +18265,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -18438,7 +18570,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -18657,7 +18790,9 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.481189+00:00"
+      "observation_at": "2026-08-17T22:02:10.481189+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -18667,7 +18802,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -19111,7 +19247,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -19330,7 +19467,9 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.490624+00:00"
+      "observation_at": "2026-08-17T22:02:10.490624+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -19340,7 +19479,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -19744,7 +19884,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -19963,7 +20104,9 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.497704+00:00"
+      "observation_at": "2026-08-17T22:02:10.497704+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -19973,7 +20116,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -20057,7 +20201,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -20276,7 +20421,9 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.529728+00:00"
+      "observation_at": "2026-08-17T22:02:10.529728+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -20286,7 +20433,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -20370,7 +20518,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -20589,7 +20738,9 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.538098+00:00"
+      "observation_at": "2026-08-17T22:02:10.538098+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -20599,7 +20750,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -20883,7 +21035,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -21102,7 +21255,9 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.545153+00:00"
+      "observation_at": "2026-08-17T22:02:10.545153+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -21112,7 +21267,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -21426,7 +21582,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -21645,7 +21802,9 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.553420+00:00"
+      "observation_at": "2026-08-17T22:02:10.553420+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -21655,7 +21814,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -21949,7 +22109,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -22168,7 +22329,9 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.560189+00:00"
+      "observation_at": "2026-08-17T22:02:10.560189+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -22178,7 +22341,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -22482,7 +22646,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -22701,7 +22866,9 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.567040+00:00"
+      "observation_at": "2026-08-17T22:02:10.567040+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -22711,7 +22878,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -23015,7 +23183,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -23234,7 +23403,9 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.573896+00:00"
+      "observation_at": "2026-08-17T22:02:10.573896+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -23244,7 +23415,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -23588,7 +23760,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -23807,7 +23980,9 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.614642+00:00"
+      "observation_at": "2026-08-17T22:02:10.614642+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -23817,7 +23992,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -24091,7 +24267,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -24310,7 +24487,9 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.624899+00:00"
+      "observation_at": "2026-08-17T22:02:10.624899+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -24320,7 +24499,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -24744,7 +24924,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -24963,7 +25144,9 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.631711+00:00"
+      "observation_at": "2026-08-17T22:02:10.631711+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
@@ -24973,7 +25156,8 @@
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "scenario_injection"
     },
     "detected_signals": [
       {
@@ -25057,7 +25241,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -25276,17 +25461,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:09.971902+00:00"
+      "observation_at": "2026-08-17T22:02:09.971902+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -25615,7 +25803,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -25834,17 +26023,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:09.973838+00:00"
+      "observation_at": "2026-08-17T22:02:09.973838+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -26073,7 +26265,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -26292,17 +26485,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:09.987433+00:00"
+      "observation_at": "2026-08-17T22:02:09.987433+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -26441,7 +26637,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -26660,17 +26857,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:09.989054+00:00"
+      "observation_at": "2026-08-17T22:02:09.989054+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -26809,7 +27009,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -27028,17 +27229,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:09.991082+00:00"
+      "observation_at": "2026-08-17T22:02:09.991082+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -27247,7 +27451,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -27466,17 +27671,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:09.992558+00:00"
+      "observation_at": "2026-08-17T22:02:09.992558+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -27725,7 +27933,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -27944,17 +28153,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.017815+00:00"
+      "observation_at": "2026-08-17T22:02:10.017815+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -28403,7 +28615,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -28622,17 +28835,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.019607+00:00"
+      "observation_at": "2026-08-17T22:02:10.019607+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -28881,7 +29097,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -29100,17 +29317,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.021641+00:00"
+      "observation_at": "2026-08-17T22:02:10.021641+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -29339,7 +29559,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -29558,17 +29779,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.031260+00:00"
+      "observation_at": "2026-08-17T22:02:10.031260+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -29857,7 +30081,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -30076,17 +30301,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.032763+00:00"
+      "observation_at": "2026-08-17T22:02:10.032763+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -30225,7 +30453,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -30444,17 +30673,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.034315+00:00"
+      "observation_at": "2026-08-17T22:02:10.034315+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -30573,7 +30805,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -30792,17 +31025,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.035834+00:00"
+      "observation_at": "2026-08-17T22:02:10.035834+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -30971,7 +31207,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -31190,17 +31427,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.037282+00:00"
+      "observation_at": "2026-08-17T22:02:10.037282+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -31379,7 +31619,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -31598,17 +31839,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.038980+00:00"
+      "observation_at": "2026-08-17T22:02:10.038980+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -31727,7 +31971,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -31946,17 +32191,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.042993+00:00"
+      "observation_at": "2026-08-17T22:02:10.042993+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -32085,7 +32333,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -32304,17 +32553,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.044908+00:00"
+      "observation_at": "2026-08-17T22:02:10.044908+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -32483,7 +32735,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -32702,17 +32955,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.046407+00:00"
+      "observation_at": "2026-08-17T22:02:10.046407+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -32931,7 +33187,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -33150,17 +33407,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.048021+00:00"
+      "observation_at": "2026-08-17T22:02:10.048021+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -33339,7 +33599,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -33558,17 +33819,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.049696+00:00"
+      "observation_at": "2026-08-17T22:02:10.049696+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -33707,7 +33971,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -33926,17 +34191,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.051587+00:00"
+      "observation_at": "2026-08-17T22:02:10.051587+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -34105,7 +34373,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -34324,17 +34593,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.060784+00:00"
+      "observation_at": "2026-08-17T22:02:10.060784+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -34503,7 +34775,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -34722,17 +34995,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.062390+00:00"
+      "observation_at": "2026-08-17T22:02:10.062390+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -34881,7 +35157,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -35100,17 +35377,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.063974+00:00"
+      "observation_at": "2026-08-17T22:02:10.063974+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -35239,7 +35519,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -35458,17 +35739,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.065546+00:00"
+      "observation_at": "2026-08-17T22:02:10.065546+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -35637,7 +35921,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -35856,17 +36141,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.082714+00:00"
+      "observation_at": "2026-08-17T22:02:10.082714+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -36145,7 +36433,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -36364,17 +36653,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.084260+00:00"
+      "observation_at": "2026-08-17T22:02:10.084260+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -36523,7 +36815,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -36742,17 +37035,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.100693+00:00"
+      "observation_at": "2026-08-17T22:02:10.100693+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -36931,7 +37227,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -37150,17 +37447,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.109841+00:00"
+      "observation_at": "2026-08-17T22:02:10.109841+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -37409,7 +37709,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -37628,17 +37929,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.118932+00:00"
+      "observation_at": "2026-08-17T22:02:10.118932+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -38117,7 +38421,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -38336,17 +38641,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.120694+00:00"
+      "observation_at": "2026-08-17T22:02:10.120694+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -38525,7 +38833,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -38744,17 +39053,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.122078+00:00"
+      "observation_at": "2026-08-17T22:02:10.122078+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -38893,7 +39205,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -39112,17 +39425,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.130917+00:00"
+      "observation_at": "2026-08-17T22:02:10.130917+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -39371,7 +39687,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -39590,17 +39907,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.132346+00:00"
+      "observation_at": "2026-08-17T22:02:10.132346+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -39719,7 +40039,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -39938,17 +40259,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.133816+00:00"
+      "observation_at": "2026-08-17T22:02:10.133816+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -40117,7 +40441,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -40336,17 +40661,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.135266+00:00"
+      "observation_at": "2026-08-17T22:02:10.135266+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -40455,7 +40783,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -40674,17 +41003,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.136522+00:00"
+      "observation_at": "2026-08-17T22:02:10.136522+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -41073,7 +41405,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -41292,17 +41625,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.137872+00:00"
+      "observation_at": "2026-08-17T22:02:10.137872+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -41511,7 +41847,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -41730,17 +42067,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.154738+00:00"
+      "observation_at": "2026-08-17T22:02:10.154738+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -41989,7 +42329,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -42208,17 +42549,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.156533+00:00"
+      "observation_at": "2026-08-17T22:02:10.156533+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -42387,7 +42731,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -42606,17 +42951,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.168990+00:00"
+      "observation_at": "2026-08-17T22:02:10.168990+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -42805,7 +43153,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -43024,17 +43373,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.171711+00:00"
+      "observation_at": "2026-08-17T22:02:10.171711+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -43183,7 +43535,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -43402,17 +43755,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.184677+00:00"
+      "observation_at": "2026-08-17T22:02:10.184677+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -43561,7 +43917,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -43780,17 +44137,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.186599+00:00"
+      "observation_at": "2026-08-17T22:02:10.186599+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -43919,7 +44279,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -44138,17 +44499,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.188436+00:00"
+      "observation_at": "2026-08-17T22:02:10.188436+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -44547,7 +44911,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -44766,17 +45131,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.191403+00:00"
+      "observation_at": "2026-08-17T22:02:10.191403+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -44945,7 +45313,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -45164,17 +45533,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.219051+00:00"
+      "observation_at": "2026-08-17T22:02:10.219051+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -45493,7 +45865,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -45712,17 +46085,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.221858+00:00"
+      "observation_at": "2026-08-17T22:02:10.221858+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -45961,7 +46337,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -46180,17 +46557,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.223468+00:00"
+      "observation_at": "2026-08-17T22:02:10.223468+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -46359,7 +46739,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -46578,17 +46959,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.224968+00:00"
+      "observation_at": "2026-08-17T22:02:10.224968+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -46757,7 +47141,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -46976,17 +47361,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.226525+00:00"
+      "observation_at": "2026-08-17T22:02:10.226525+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -47135,7 +47523,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -47354,17 +47743,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.228062+00:00"
+      "observation_at": "2026-08-17T22:02:10.228062+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -47413,7 +47805,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -47632,17 +48025,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.229796+00:00"
+      "observation_at": "2026-08-17T22:02:10.229796+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -47851,7 +48247,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -48070,17 +48467,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.232417+00:00"
+      "observation_at": "2026-08-17T22:02:10.232417+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -48239,7 +48639,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -48458,17 +48859,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.233920+00:00"
+      "observation_at": "2026-08-17T22:02:10.233920+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -48617,7 +49021,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -48836,17 +49241,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.235495+00:00"
+      "observation_at": "2026-08-17T22:02:10.235495+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -49055,7 +49463,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -49274,17 +49683,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.237038+00:00"
+      "observation_at": "2026-08-17T22:02:10.237038+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -49393,7 +49805,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -49612,17 +50025,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.238862+00:00"
+      "observation_at": "2026-08-17T22:02:10.238862+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -49841,7 +50257,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -50060,17 +50477,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.242023+00:00"
+      "observation_at": "2026-08-17T22:02:10.242023+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -50289,7 +50709,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -50508,17 +50929,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.243768+00:00"
+      "observation_at": "2026-08-17T22:02:10.243768+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -50737,7 +51161,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -50956,17 +51381,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.245389+00:00"
+      "observation_at": "2026-08-17T22:02:10.245389+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -51125,7 +51553,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -51344,17 +51773,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.246846+00:00"
+      "observation_at": "2026-08-17T22:02:10.246846+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -51613,7 +52045,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -51832,17 +52265,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.248617+00:00"
+      "observation_at": "2026-08-17T22:02:10.248617+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -52351,7 +52787,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -52570,17 +53007,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.271345+00:00"
+      "observation_at": "2026-08-17T22:02:10.271345+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -52959,7 +53399,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -53178,17 +53619,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.272965+00:00"
+      "observation_at": "2026-08-17T22:02:10.272965+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -53537,7 +53981,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -53756,17 +54201,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.274509+00:00"
+      "observation_at": "2026-08-17T22:02:10.274509+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -53955,7 +54403,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -54174,17 +54623,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.276026+00:00"
+      "observation_at": "2026-08-17T22:02:10.276026+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -54413,7 +54865,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -54632,17 +55085,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.277443+00:00"
+      "observation_at": "2026-08-17T22:02:10.277443+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -54871,7 +55327,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -55090,17 +55547,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.278888+00:00"
+      "observation_at": "2026-08-17T22:02:10.278888+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -55349,7 +55809,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -55568,17 +56029,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.282591+00:00"
+      "observation_at": "2026-08-17T22:02:10.282591+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -55837,7 +56301,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -56056,17 +56521,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.284715+00:00"
+      "observation_at": "2026-08-17T22:02:10.284715+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -56265,7 +56733,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -56484,17 +56953,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.286253+00:00"
+      "observation_at": "2026-08-17T22:02:10.286253+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -56673,7 +57145,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -56892,17 +57365,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.287702+00:00"
+      "observation_at": "2026-08-17T22:02:10.287702+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -57111,7 +57587,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -57330,17 +57807,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.289639+00:00"
+      "observation_at": "2026-08-17T22:02:10.289639+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -57489,7 +57969,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -57708,17 +58189,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.292851+00:00"
+      "observation_at": "2026-08-17T22:02:10.292851+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -57927,7 +58411,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -58146,17 +58631,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.294594+00:00"
+      "observation_at": "2026-08-17T22:02:10.294594+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -58305,7 +58793,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -58524,17 +59013,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.296110+00:00"
+      "observation_at": "2026-08-17T22:02:10.296110+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -58703,7 +59195,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -58922,17 +59415,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.297519+00:00"
+      "observation_at": "2026-08-17T22:02:10.297519+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -59181,7 +59677,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -59400,17 +59897,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.299607+00:00"
+      "observation_at": "2026-08-17T22:02:10.299607+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -59679,7 +60179,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -59898,17 +60399,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.302475+00:00"
+      "observation_at": "2026-08-17T22:02:10.302475+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -60167,7 +60671,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -60386,17 +60891,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.304001+00:00"
+      "observation_at": "2026-08-17T22:02:10.304001+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -60845,7 +61353,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -61064,17 +61573,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.305473+00:00"
+      "observation_at": "2026-08-17T22:02:10.305473+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -61193,7 +61705,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -61412,17 +61925,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.306966+00:00"
+      "observation_at": "2026-08-17T22:02:10.306966+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -61591,7 +62107,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -61810,17 +62327,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.317100+00:00"
+      "observation_at": "2026-08-17T22:02:10.317100+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -61959,7 +62479,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -62178,17 +62699,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.318756+00:00"
+      "observation_at": "2026-08-17T22:02:10.318756+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -62397,7 +62921,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -62616,17 +63141,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.321261+00:00"
+      "observation_at": "2026-08-17T22:02:10.321261+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -62765,7 +63293,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -62984,17 +63513,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.322952+00:00"
+      "observation_at": "2026-08-17T22:02:10.322952+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -63253,7 +63785,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -63472,17 +64005,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.324430+00:00"
+      "observation_at": "2026-08-17T22:02:10.324430+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -63771,7 +64307,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -63990,17 +64527,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.326018+00:00"
+      "observation_at": "2026-08-17T22:02:10.326018+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -64089,7 +64629,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -64308,17 +64849,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.327574+00:00"
+      "observation_at": "2026-08-17T22:02:10.327574+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -64947,7 +65491,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -65166,17 +65711,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.329306+00:00"
+      "observation_at": "2026-08-17T22:02:10.329306+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -65395,7 +65943,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -65614,17 +66163,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.339676+00:00"
+      "observation_at": "2026-08-17T22:02:10.339676+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -65963,7 +66515,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -66182,17 +66735,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.342486+00:00"
+      "observation_at": "2026-08-17T22:02:10.342486+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -66331,7 +66887,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -66550,17 +67107,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.344038+00:00"
+      "observation_at": "2026-08-17T22:02:10.344038+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -66749,7 +67309,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -66968,17 +67529,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.345583+00:00"
+      "observation_at": "2026-08-17T22:02:10.345583+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -67147,7 +67711,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -67366,17 +67931,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.347046+00:00"
+      "observation_at": "2026-08-17T22:02:10.347046+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -67465,7 +68033,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -67684,17 +68253,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.357966+00:00"
+      "observation_at": "2026-08-17T22:02:10.357966+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -67863,7 +68435,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -68082,17 +68655,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.362210+00:00"
+      "observation_at": "2026-08-17T22:02:10.362210+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -68281,7 +68857,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -68500,17 +69077,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.364524+00:00"
+      "observation_at": "2026-08-17T22:02:10.364524+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -68739,7 +69319,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -68958,17 +69539,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.366952+00:00"
+      "observation_at": "2026-08-17T22:02:10.366952+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -69127,7 +69711,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -69346,17 +69931,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.374447+00:00"
+      "observation_at": "2026-08-17T22:02:10.374447+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -69635,7 +70223,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -69854,17 +70443,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.395008+00:00"
+      "observation_at": "2026-08-17T22:02:10.395008+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -70163,7 +70755,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -70382,17 +70975,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.397752+00:00"
+      "observation_at": "2026-08-17T22:02:10.397752+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -70591,7 +71187,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -70810,17 +71407,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.401255+00:00"
+      "observation_at": "2026-08-17T22:02:10.401255+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -71279,7 +71879,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -71498,17 +72099,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.402946+00:00"
+      "observation_at": "2026-08-17T22:02:10.402946+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -71567,7 +72171,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -71786,17 +72391,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.422458+00:00"
+      "observation_at": "2026-08-17T22:02:10.422458+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -71905,7 +72513,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -72124,17 +72733,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.423925+00:00"
+      "observation_at": "2026-08-17T22:02:10.423925+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -72303,7 +72915,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -72522,17 +73135,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.433710+00:00"
+      "observation_at": "2026-08-17T22:02:10.433710+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -72731,7 +73347,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -72950,17 +73567,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.435217+00:00"
+      "observation_at": "2026-08-17T22:02:10.435217+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -73149,7 +73769,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -73368,17 +73989,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.436671+00:00"
+      "observation_at": "2026-08-17T22:02:10.436671+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -73597,7 +74221,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -73816,17 +74441,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.446031+00:00"
+      "observation_at": "2026-08-17T22:02:10.446031+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -74005,7 +74633,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -74224,17 +74853,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.447551+00:00"
+      "observation_at": "2026-08-17T22:02:10.447551+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -74463,7 +75095,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -74682,17 +75315,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.449518+00:00"
+      "observation_at": "2026-08-17T22:02:10.449518+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -74821,7 +75457,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -75040,17 +75677,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.488477+00:00"
+      "observation_at": "2026-08-17T22:02:10.488477+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -75179,7 +75819,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -75398,17 +76039,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.505175+00:00"
+      "observation_at": "2026-08-17T22:02:10.505175+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -75797,7 +76441,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -76016,17 +76661,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.506632+00:00"
+      "observation_at": "2026-08-17T22:02:10.506632+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -76175,7 +76823,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -76394,17 +77043,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.508242+00:00"
+      "observation_at": "2026-08-17T22:02:10.508242+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -76533,7 +77185,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -76752,17 +77405,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.509851+00:00"
+      "observation_at": "2026-08-17T22:02:10.509851+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -76951,7 +77607,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -77170,17 +77827,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.511527+00:00"
+      "observation_at": "2026-08-17T22:02:10.511527+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -77309,7 +77969,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -77528,17 +78189,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.512939+00:00"
+      "observation_at": "2026-08-17T22:02:10.512939+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -77837,7 +78501,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -78056,17 +78721,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.514362+00:00"
+      "observation_at": "2026-08-17T22:02:10.514362+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -78315,7 +78983,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -78534,17 +79203,20 @@
           "station_name": "수영구 35.16_129.13"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.515827+00:00"
+      "observation_at": "2026-08-17T22:02:10.515827+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -78773,7 +79445,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -78992,17 +79665,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.517389+00:00"
+      "observation_at": "2026-08-17T22:02:10.517389+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -79201,7 +79877,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -79420,17 +80097,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.519091+00:00"
+      "observation_at": "2026-08-17T22:02:10.519091+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -79719,7 +80399,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -79938,17 +80619,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.520927+00:00"
+      "observation_at": "2026-08-17T22:02:10.520927+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -80097,7 +80781,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -80316,17 +81001,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.522330+00:00"
+      "observation_at": "2026-08-17T22:02:10.522330+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -80605,7 +81293,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -80824,17 +81513,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.523752+00:00"
+      "observation_at": "2026-08-17T22:02:10.523752+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -81113,7 +81805,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -81332,17 +82025,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.525470+00:00"
+      "observation_at": "2026-08-17T22:02:10.525470+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -81531,7 +82227,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -81750,17 +82447,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.526797+00:00"
+      "observation_at": "2026-08-17T22:02:10.526797+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -81859,7 +82559,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -82078,17 +82779,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.528136+00:00"
+      "observation_at": "2026-08-17T22:02:10.528136+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -82307,7 +83011,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -82526,17 +83231,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.552032+00:00"
+      "observation_at": "2026-08-17T22:02:10.552032+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -82765,7 +83473,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -82984,17 +83693,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.580709+00:00"
+      "observation_at": "2026-08-17T22:02:10.580709+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -83153,7 +83865,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -83372,17 +84085,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.582088+00:00"
+      "observation_at": "2026-08-17T22:02:10.582088+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -83541,7 +84257,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -83760,17 +84477,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.583495+00:00"
+      "observation_at": "2026-08-17T22:02:10.583495+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -83919,7 +84639,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -84138,17 +84859,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.584909+00:00"
+      "observation_at": "2026-08-17T22:02:10.584909+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -84327,7 +85051,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -84546,17 +85271,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.586322+00:00"
+      "observation_at": "2026-08-17T22:02:10.586322+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -84705,7 +85433,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -84924,17 +85653,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.587735+00:00"
+      "observation_at": "2026-08-17T22:02:10.587735+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -85083,7 +85815,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -85302,17 +86035,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.589069+00:00"
+      "observation_at": "2026-08-17T22:02:10.589069+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -85701,7 +86437,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -85920,17 +86657,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.590819+00:00"
+      "observation_at": "2026-08-17T22:02:10.590819+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -86809,7 +87549,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -87028,17 +87769,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.592202+00:00"
+      "observation_at": "2026-08-17T22:02:10.592202+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -87697,7 +88441,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -87916,17 +88661,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.593600+00:00"
+      "observation_at": "2026-08-17T22:02:10.593600+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -88585,7 +89333,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -88804,17 +89553,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.595031+00:00"
+      "observation_at": "2026-08-17T22:02:10.595031+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -88983,7 +89735,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -89202,17 +89955,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.596388+00:00"
+      "observation_at": "2026-08-17T22:02:10.596388+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -89511,7 +90267,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -89730,17 +90487,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.597936+00:00"
+      "observation_at": "2026-08-17T22:02:10.597936+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -90169,7 +90929,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -90388,17 +91149,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.599505+00:00"
+      "observation_at": "2026-08-17T22:02:10.599505+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -91037,7 +91801,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -91256,17 +92021,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.601226+00:00"
+      "observation_at": "2026-08-17T22:02:10.601226+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -91715,7 +92483,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -91934,17 +92703,20 @@
           "station_name": "수영구 35.17_129.12"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.602620+00:00"
+      "observation_at": "2026-08-17T22:02:10.602620+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -92173,7 +92945,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -92392,17 +93165,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.604088+00:00"
+      "observation_at": "2026-08-17T22:02:10.604088+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -92661,7 +93437,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -92880,17 +93657,20 @@
           "station_name": "수영구 35.17_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.605514+00:00"
+      "observation_at": "2026-08-17T22:02:10.605514+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -93149,7 +93929,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -93368,17 +94149,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.606998+00:00"
+      "observation_at": "2026-08-17T22:02:10.606998+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -93597,7 +94381,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -93816,17 +94601,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.608656+00:00"
+      "observation_at": "2026-08-17T22:02:10.608656+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -93965,7 +94753,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -94184,17 +94973,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.610178+00:00"
+      "observation_at": "2026-08-17T22:02:10.610178+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -94413,7 +95205,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -94632,17 +95425,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.611812+00:00"
+      "observation_at": "2026-08-17T22:02:10.611812+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -94821,7 +95617,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -95040,17 +95837,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.613213+00:00"
+      "observation_at": "2026-08-17T22:02:10.613213+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -95289,7 +96089,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -95508,17 +96309,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.621981+00:00"
+      "observation_at": "2026-08-17T22:02:10.621981+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -95727,7 +96531,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -95946,17 +96751,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.623459+00:00"
+      "observation_at": "2026-08-17T22:02:10.623459+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -96335,7 +97143,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -96554,17 +97363,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.638730+00:00"
+      "observation_at": "2026-08-17T22:02:10.638730+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {
@@ -96793,7 +97605,8 @@
         "controller_type": "양방향식",
         "controller_link_status": "asset_only",
         "address": ""
-      }
+      },
+      "asset_source": "municipal_public_data"
     },
     "expected_schedule": {
       "date": "2026-01-14",
@@ -97012,17 +97825,20 @@
           "station_name": "수영구 35.14_129.11"
         }
       ],
-      "observation_at": "2026-08-17T22:02:10.640432+00:00"
+      "observation_at": "2026-08-17T22:02:10.640432+00:00",
+      "source": "synthetic_weather",
+      "context_policy": "validation_only"
     },
     "ami": {
       "has_real_ami": false,
       "ami_state": "unlinked",
-      "virtual_link_mode": "scenario_injection",
+      "virtual_link_mode": "none",
       "ami_meter_id": null,
       "mapping_visibility": {
         "reason": "수영구 실제 AMI-분전함 공식 매핑 부재",
         "created_by": "v0.2 scenario injection layer"
-      }
+      },
+      "signal_source": "none"
     },
     "detected_signals": [],
     "anomaly_evidence": {

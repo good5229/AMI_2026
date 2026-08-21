@@ -1,0 +1,15 @@
+{
+  "artifacts": {
+    "lightguard_v0_1/data/validation/v11/v11_proxy_canonical_six.csv": "663295547260c740a2b8ceb86ddcf282b3a71e577a18c0e863ed00688f184b75",
+    "lightguard_v0_1/data/validation/v11/v11_proxy_detector_freeze.json": "09d7858b1c98a4380638a44c956d17f10c18858517096dc06bbb8321d9cdc454",
+    "lightguard_v0_1/data/validation/v11/v11_proxy_matched_controls.csv": "59c75809f5f83ab041618562efd9d01f34f9b93137c89ab822f0b99659ec571c",
+    "lightguard_v0_1/data/validation/v11/v11_proxy_score_seal.json": "a866036483fa7583b759de965cbcf063158fa9a446c045382ae30b32fcffaaa9",
+    "lightguard_v0_1/data/validation/v11/v11_proxy_scores_prejoin.csv": "f29224de1ba7f10f463930a5bc05eda17664e060ca9bbe89bda4bf59a2d5e16a",
+    "lightguard_v0_1/reports/v11/v11_proxy_concordance.csv": "ae54ad768705b6b7b3b47b2eda71bda266f19cf7e64818363a5d1507b4e9df35",
+    "lightguard_v0_1/reports/v11/v11_proxy_meter_day_bootstrap.json": "3983cb1a0896dbbc0fd85cff9513befa836084bd8d81582eb6462f07e27183ea"
+  },
+  "raw_source_sha256": "c18b49022d1c7dee2117a8d65a07d71351fb1aea8538751b7032867e4081b7d0",
+  "route": "C",
+  "schema_version": "lightguard.v11.proxy-artifact-manifest.1",
+  "v10_release_commit_preserved": "d34d8323b3742c9116060d9548bd29c18750cb1f"
+}

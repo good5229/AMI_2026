@@ -1,0 +1,41 @@
+{
+  "schema_version": "lightguard.v12r.v11-freeze.1",
+  "v11_release_commit": "b25b168250ede29b5c5bbcadab918c455d61ba74",
+  "route": "C",
+  "gold_usable": 0,
+  "silver_operational_usable": 0,
+  "human_labels_collected": false,
+  "detector_retuning_permitted": false,
+  "literature_as_fault_label_permitted": false,
+  "literature_search_protocol": {
+    "path": "lightguard_v0_1/reports/v12r/v12r_literature_search_protocol.md",
+    "sha256": "1e037337258f49b9aa55f75eb227bd23388451a352dcfe8f2646e3c16c540e8d",
+    "frozen_before_screening": true
+  },
+  "files": [
+    {
+      "path": "lightguard_v0_1/data/validation/v11/v10_freeze_manifest.json",
+      "sha256": "afb45f9d199352c5eb2a5b13e009b8c9e468b904cd5b4063b21b287ed632d735"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v11/v11_proxy_score_seal.json",
+      "sha256": "a866036483fa7583b759de965cbcf063158fa9a446c045382ae30b32fcffaaa9"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v11/v11_proxy_signs.csv",
+      "sha256": "5ec75b83805512404d092651fed38a7e87b14fd88aaac71b47f3c9e0a9c5d820"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v11/v11_blind_review_manifest.json",
+      "sha256": "6cf6e6cfbb15f592d2451368b4a08ffa2a78871385f3e6543271414f43e421da"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v11/v11_final_summary.md",
+      "sha256": "4a070ed0f2f2ed193b6f170d546e24ada01ca4d43160eaf02e268cbc2180e52b"
+    },
+    {
+      "path": "scripts/v09_detector.py",
+      "sha256": "a074c07e4d782de4772b13fcd08434e08cd7389f0a235c727eaae3048078de20"
+    }
+  ]
+}

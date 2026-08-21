@@ -1,0 +1,13 @@
+cell_id,region_id,season,anomaly_count,normal_count,true_positive,false_positive,recall,fpr,recall_wilson_95,fpr_wilson_95
+suyeong_winter,suyeong,winter,4,4,2,0,0.5,0.0,"[0.15003899, 0.84996101]","[0.0, 0.48989084]"
+suyeong_spring,suyeong,spring,4,4,2,0,0.5,0.0,"[0.15003899, 0.84996101]","[0.0, 0.48989084]"
+suyeong_summer,suyeong,summer,4,4,2,0,0.5,0.0,"[0.15003899, 0.84996101]","[0.0, 0.48989084]"
+suyeong_autumn,suyeong,autumn,4,4,2,0,0.5,0.0,"[0.15003899, 0.84996101]","[0.0, 0.48989084]"
+gangneung_winter,gangneung,winter,4,4,2,0,0.5,0.0,"[0.15003899, 0.84996101]","[0.0, 0.48989084]"
+gangneung_spring,gangneung,spring,4,4,2,0,0.5,0.0,"[0.15003899, 0.84996101]","[0.0, 0.48989084]"
+gangneung_summer,gangneung,summer,4,4,2,0,0.5,0.0,"[0.15003899, 0.84996101]","[0.0, 0.48989084]"
+gangneung_autumn,gangneung,autumn,4,4,2,0,0.5,0.0,"[0.15003899, 0.84996101]","[0.0, 0.48989084]"
+chungju_winter,chungju,winter,4,4,2,0,0.5,0.0,"[0.15003899, 0.84996101]","[0.0, 0.48989084]"
+chungju_spring,chungju,spring,4,4,2,0,0.5,0.0,"[0.15003899, 0.84996101]","[0.0, 0.48989084]"
+chungju_summer,chungju,summer,4,4,2,0,0.5,0.0,"[0.15003899, 0.84996101]","[0.0, 0.48989084]"
+chungju_autumn,chungju,autumn,4,4,2,0,0.5,0.0,"[0.15003899, 0.84996101]","[0.0, 0.48989084]"

@@ -1,0 +1,59 @@
+{
+  "blind_packet_availability": {
+    "S0_NO_PROXY": {
+      "available": 21848,
+      "requested": 15,
+      "selected": 15
+    },
+    "S1_RESIDUAL": {
+      "available": 568,
+      "requested": 15,
+      "selected": 15
+    },
+    "S2_PERSISTENCE": {
+      "available": 6322,
+      "requested": 15,
+      "selected": 15
+    },
+    "S3_PHASE_PATTERN": {
+      "available": 443,
+      "requested": 15,
+      "selected": 15
+    }
+  },
+  "calibration_window": {
+    "end": "2026-04-30",
+    "start": "2026-04-01"
+  },
+  "canonical_proxy_reviewed": 6,
+  "canonical_rows_joined_after_score_seal": 6,
+  "claim_guard": "Proxy anomaly signs only. No field-outcome labels are available for this data slice.",
+  "control_selection": "deterministic meter/time/month match independent of detector scores",
+  "detectors": [
+    "D1/P1 robust meter-local time-slot residual",
+    "D2/P2 causal EWMA/CUSUM persistence",
+    "D3/P3 phase pattern (1P N/A)"
+  ],
+  "files_audited": 149,
+  "freeze_sha256": "09d7858b1c98a4380638a44c956d17f10c18858517096dc06bbb8321d9cdc454",
+  "gold_usable": 0,
+  "h1_positive_origins": 6,
+  "h1_proxy_high_agreement": 6,
+  "high_confidence_proxy_candidates": 765,
+  "high_confidence_proxy_density": 0.02621569,
+  "matched_controls": 6,
+  "paired_proxy_family_uplift": 1.33333333,
+  "review_labels_collected": false,
+  "review_packet_cases": 36,
+  "route": "C",
+  "schema_version": "lightguard.v11.proxy-detector-app-summary.1",
+  "score_rows": 29181,
+  "score_sha256": "f29224de1ba7f10f463930a5bc05eda17664e060ca9bbe89bda4bf59a2d5e16a",
+  "scoring_window": {
+    "end": "2026-06-30",
+    "start": "2026-05-01"
+  },
+  "silver_usable": 0,
+  "three_phase_eligible_rows": 17531,
+  "title": "Raw-current proxy anomaly signs"
+}

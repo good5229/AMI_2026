@@ -1,0 +1,7 @@
+receipt_channel,research_cohort,event_count,event_share,claim_boundary
+일상점검,PROACTIVE,93647,0.9195231876515814,observed receipt route; not preventable-event estimate
+민원신고,REACTIVE,5314,0.052178352955038636,observed receipt route; not preventable-event estimate
+직원신고,REACTIVE,2129,0.020904725901632906,observed receipt route; not preventable-event estimate
+시정견문,OTHER,598,0.005871783038598627,observed receipt route; not preventable-event estimate
+안전공사,OTHER,94,0.0009229893070706873,observed receipt route; not preventable-event estimate
+견문정보,OTHER,61,0.0005989611460777864,observed receipt route; not preventable-event estimate

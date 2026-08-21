@@ -1,0 +1,29 @@
+{
+  "config_sha256": "82604e46a298908865200448a4412ec627c11e240dd254211a9a8ffb1fddbe34",
+  "injection_manifest_sha256": "60fa19c20d9a7ff8ae3a8a8704ee0486d782b1b1d37c3f6ea1dda9de54658df2",
+  "pair_count": 71,
+  "pair_result_schema": [
+    "pair_id",
+    "meter_id",
+    "local_date",
+    "operator",
+    "operator_class",
+    "variant",
+    "status",
+    "control_action",
+    "injected_action",
+    "control_score",
+    "injected_score",
+    "recovered",
+    "benign_escalated",
+    "threshold_same",
+    "action_scale_comparable",
+    "source_start",
+    "target_start",
+    "claim_boundary"
+  ],
+  "raw_values_written": false,
+  "results_sha256": "bb8ffb1554b012391bcee61a1c838300b538f4d7e879d4ba36a75387defb7c84",
+  "row_count": 497,
+  "status": "OUTCOME_GENERATED"
+}

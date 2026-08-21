@@ -1,0 +1,273 @@
+{
+  "architecture_best": {
+    "H1": {
+      "config": {
+        "availability_floor": null,
+        "specificity_threshold": 0.525,
+        "stage_a_threshold": 0.525,
+        "weather_weight": 0.0
+      },
+      "metrics": {
+        "abstention_rate": 0.0,
+        "average_precision": 1.0,
+        "counts": {
+          "abnormal": 192,
+          "abstain": 0,
+          "fp": 0,
+          "hard_fp": 0,
+          "hard_normal": 168,
+          "normal": 192,
+          "tp": 192
+        },
+        "fpr": 0.0,
+        "fpr_wilson_95": [
+          0.0,
+          0.01961515
+        ],
+        "hard_negative_fpr": 0.0,
+        "hard_negative_fpr_wilson_95": [
+          0.0,
+          0.02235467
+        ],
+        "per_cell_recall": {
+          "chungju_autumn": 1.0,
+          "chungju_spring": 1.0,
+          "chungju_summer": 1.0,
+          "chungju_winter": 1.0,
+          "gangneung_autumn": 1.0,
+          "gangneung_spring": 1.0,
+          "gangneung_summer": 1.0,
+          "gangneung_winter": 1.0,
+          "suyeong_autumn": 1.0,
+          "suyeong_spring": 1.0,
+          "suyeong_summer": 1.0,
+          "suyeong_winter": 1.0
+        },
+        "per_type_recall": {
+          "deep_day_full_activation": 1.0,
+          "deep_day_partial_activation": 1.0,
+          "moderate_load_mismatch": 1.0,
+          "phase_selective_activation": 1.0,
+          "post_sunrise_persistent_activation": 1.0,
+          "post_sunrise_weak_persistence": 1.0,
+          "pre_sunset_early_activation": 1.0,
+          "repeated_long_persistence": 1.0
+        },
+        "recall": 1.0,
+        "recall_wilson_95": [
+          0.98038485,
+          1.0
+        ],
+        "worst_cell_recall": 1.0
+      }
+    },
+    "H2": {
+      "config": {
+        "availability_floor": 0.6,
+        "specificity_threshold": 0.525,
+        "stage_a_threshold": 0.525,
+        "weather_weight": 0.0
+      },
+      "metrics": {
+        "abstention_rate": 0.0625,
+        "average_precision": 1.0,
+        "counts": {
+          "abnormal": 192,
+          "abstain": 24,
+          "fp": 0,
+          "hard_fp": 0,
+          "hard_normal": 168,
+          "normal": 192,
+          "tp": 192
+        },
+        "fpr": 0.0,
+        "fpr_wilson_95": [
+          0.0,
+          0.01961515
+        ],
+        "hard_negative_fpr": 0.0,
+        "hard_negative_fpr_wilson_95": [
+          0.0,
+          0.02235467
+        ],
+        "per_cell_recall": {
+          "chungju_autumn": 1.0,
+          "chungju_spring": 1.0,
+          "chungju_summer": 1.0,
+          "chungju_winter": 1.0,
+          "gangneung_autumn": 1.0,
+          "gangneung_spring": 1.0,
+          "gangneung_summer": 1.0,
+          "gangneung_winter": 1.0,
+          "suyeong_autumn": 1.0,
+          "suyeong_spring": 1.0,
+          "suyeong_summer": 1.0,
+          "suyeong_winter": 1.0
+        },
+        "per_type_recall": {
+          "deep_day_full_activation": 1.0,
+          "deep_day_partial_activation": 1.0,
+          "moderate_load_mismatch": 1.0,
+          "phase_selective_activation": 1.0,
+          "post_sunrise_persistent_activation": 1.0,
+          "post_sunrise_weak_persistence": 1.0,
+          "pre_sunset_early_activation": 1.0,
+          "repeated_long_persistence": 1.0
+        },
+        "recall": 1.0,
+        "recall_wilson_95": [
+          0.98038485,
+          1.0
+        ],
+        "worst_cell_recall": 1.0
+      }
+    },
+    "H3": {
+      "config": {
+        "availability_floor": 0.6,
+        "specificity_threshold": 0.525,
+        "stage_a_threshold": 0.525,
+        "weather_weight": 0.0
+      },
+      "metrics": {
+        "abstention_rate": 0.0625,
+        "average_precision": 1.0,
+        "counts": {
+          "abnormal": 192,
+          "abstain": 24,
+          "fp": 0,
+          "hard_fp": 0,
+          "hard_normal": 168,
+          "normal": 192,
+          "tp": 192
+        },
+        "fpr": 0.0,
+        "fpr_wilson_95": [
+          0.0,
+          0.01961515
+        ],
+        "hard_negative_fpr": 0.0,
+        "hard_negative_fpr_wilson_95": [
+          0.0,
+          0.02235467
+        ],
+        "per_cell_recall": {
+          "chungju_autumn": 1.0,
+          "chungju_spring": 1.0,
+          "chungju_summer": 1.0,
+          "chungju_winter": 1.0,
+          "gangneung_autumn": 1.0,
+          "gangneung_spring": 1.0,
+          "gangneung_summer": 1.0,
+          "gangneung_winter": 1.0,
+          "suyeong_autumn": 1.0,
+          "suyeong_spring": 1.0,
+          "suyeong_summer": 1.0,
+          "suyeong_winter": 1.0
+        },
+        "per_type_recall": {
+          "deep_day_full_activation": 1.0,
+          "deep_day_partial_activation": 1.0,
+          "moderate_load_mismatch": 1.0,
+          "phase_selective_activation": 1.0,
+          "post_sunrise_persistent_activation": 1.0,
+          "post_sunrise_weak_persistence": 1.0,
+          "pre_sunset_early_activation": 1.0,
+          "repeated_long_persistence": 1.0
+        },
+        "recall": 1.0,
+        "recall_wilson_95": [
+          0.98038485,
+          1.0
+        ],
+        "worst_cell_recall": 1.0
+      }
+    },
+    "threshold_only": {
+      "config": {
+        "stage_a_threshold": 0.525
+      },
+      "metrics": {
+        "abstention_rate": 0.0,
+        "average_precision": 1.0,
+        "counts": {
+          "abnormal": 192,
+          "abstain": 0,
+          "fp": 72,
+          "hard_fp": 72,
+          "hard_normal": 168,
+          "normal": 192,
+          "tp": 192
+        },
+        "fpr": 0.375,
+        "fpr_wilson_95": [
+          0.30960418,
+          0.4452996
+        ],
+        "hard_negative_fpr": 0.42857143,
+        "hard_negative_fpr_wilson_95": [
+          0.35616034,
+          0.50417604
+        ],
+        "per_cell_recall": {
+          "chungju_autumn": 1.0,
+          "chungju_spring": 1.0,
+          "chungju_summer": 1.0,
+          "chungju_winter": 1.0,
+          "gangneung_autumn": 1.0,
+          "gangneung_spring": 1.0,
+          "gangneung_summer": 1.0,
+          "gangneung_winter": 1.0,
+          "suyeong_autumn": 1.0,
+          "suyeong_spring": 1.0,
+          "suyeong_summer": 1.0,
+          "suyeong_winter": 1.0
+        },
+        "per_type_recall": {
+          "deep_day_full_activation": 1.0,
+          "deep_day_partial_activation": 1.0,
+          "moderate_load_mismatch": 1.0,
+          "phase_selective_activation": 1.0,
+          "post_sunrise_persistent_activation": 1.0,
+          "post_sunrise_weak_persistence": 1.0,
+          "pre_sunset_early_activation": 1.0,
+          "repeated_long_persistence": 1.0
+        },
+        "recall": 1.0,
+        "recall_wilson_95": [
+          0.98038485,
+          1.0
+        ],
+        "worst_cell_recall": 1.0
+      }
+    }
+  },
+  "calibration_sha256": "715ba45deccee6e8c01ba64c603c2b491a8e9d16ef3a91901e8d97ed0494a577",
+  "confirmatory_seen": false,
+  "episode_manifest_sha256": "518b04bd935782c3c4c9ef236676c643a0a0c7dce5d4ea78b9e807f67bbfbc0f",
+  "load_imputation": "none",
+  "post_confirmatory_retuning_permitted": false,
+  "schema_version": "lightguard.v09-candidate-config.v1",
+  "selected_candidate": "H1",
+  "selected_config": {
+    "availability_floor": null,
+    "specificity_threshold": 0.525,
+    "stage_a_threshold": 0.525,
+    "weather_weight": 0.0
+  },
+  "selection_gates": {
+    "abstention_rate_max": 0.1,
+    "average_precision_min": 0.9,
+    "fpr_max": 0.05,
+    "hard_negative_fpr_max": 0.05,
+    "recall_min": 0.7,
+    "worst_cell_recall_min": 0.55
+  },
+  "threshold_grid": [
+    0.525,
+    0.55,
+    0.575,
+    0.6
+  ],
+  "weather_weight": 0.0
+}

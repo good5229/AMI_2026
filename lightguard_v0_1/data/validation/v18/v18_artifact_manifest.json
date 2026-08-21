@@ -1,0 +1,50 @@
+{
+  "release": "v0.18",
+  "generated_on": "2026-08-21",
+  "primary": "REPEAT_WITHIN_30D",
+  "selected_model": "B2_LOGISTIC",
+  "ou_grade": "OU-B",
+  "promotion": "LIMITED_OPERATIONAL_PRIORITY_EVIDENCE",
+  "artifacts": [
+    {
+      "path": "lightguard_v0_1/data/validation/v18/v18_event_feature_table.csv",
+      "sha256": "ced9f694afb6336cccb064e3400d091dfcb76c83cbf451dc0b2c5b0ea18c6238"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v18/v18_outcome_table.csv",
+      "sha256": "eab5e6603ca8cb0c14f2776800442ec153059e6360f8ff4b76ddca081d8705c1"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v18/v18_temporal_split.json",
+      "sha256": "14cca74d9b1b0bd8f2445b776ddba26989a22dcdb0be66400a4d8e74ee5ab77c"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v18/v18_model_config.json",
+      "sha256": "7055660db752f095f72de62ed3f73ece0128b119d5198248d9ec2fd1fb0507d4"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v18/v18_confirmatory_scores.csv",
+      "sha256": "bdf004265db03746e55ef20af9cc9b4953b9037db467a618e38a611c755adaf5"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v18/v18_queue_simulation.csv",
+      "sha256": "d8981353d077d70460331a722069c9712851fde35b254d923f7e0f66c000297b"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v18/v18_model_results.csv",
+      "sha256": "64a8196087b1d95740298542cee0ac0b9b36fe175c62b5af1cfec4957fd3521b"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v18/v18_queue_results.csv",
+      "sha256": "fd571f478f08ae034e535382c8bc8aa71a0dedb4d54dfa0a2f3bd88171350826"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v18/v18_final_summary.md",
+      "sha256": "47261e049379e523c8eca98d79acde80e479770ec78e0f30df089dc8cae65900"
+    },
+    {
+      "path": "lightguard_app/lib/features/ami_validation/v18_operational_triage_card.dart",
+      "sha256": "8e23d311ac40b3a9ec546912e9b74bac3197eef5094eef59911250a6cd31ae8d"
+    }
+  ]
+}

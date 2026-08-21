@@ -1,0 +1,51 @@
+{
+  "claim_boundary": "External physical-mechanism replication only; not streetlight field accuracy, municipal performance, fault recall, false-positive rate, asset condition, or actual fault probability.",
+  "evaluated_track_count": 2,
+  "files": [
+    {
+      "path": "lightguard_v0_1/data/validation/v14/v13_freeze_manifest.json",
+      "sha256": "9ad4c911983434fe864dadc2389f09ffd16c239f89e0bbcb65c11d226d3a091c"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v14/v14_dataset_registry.json",
+      "sha256": "6732724cd511b7534191778630539900f1b52f4f2c9cbbb3c3de5972c495712b"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v14/v14_raw_external_manifest.json",
+      "sha256": "36cf8ffde60aaaa2878284d6e9e7e99aebe08aab8dea3aa990db54001df957bc"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v14/v14_physical_feature_mapping.json",
+      "sha256": "d6c99b65043c1cd22d7de6311784da5c229f9ebe74eb1acb1779d0a0d0eea1b4"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v14/v14_case_evidence_matrix.csv",
+      "sha256": "a9201ececff67dd5c84cfbfcd7e2bb93d86959cb416705e26f80ca09bfa6965f"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v14/v14_london_results.csv",
+      "sha256": "0b824c44a080074c154cd081f0f9db41c5249f1e1d7f13d96c6d13b9e15b2ec5"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v14/v14_codex_vfd_results.csv",
+      "sha256": "f4fa55ba5dfb50aa906e843bd4e270f383b82c534c9dde143fc49e7581784888"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v14/v14_sustdata_results.csv",
+      "sha256": "0ad3e6813d298d5a6ad061ba8208b5f611492fa805b4001a4f9ed8ee0e8b8016"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v14/v14_cross_dataset_mechanism_matrix.csv",
+      "sha256": "8a3d84e40f676020bf2fd1b9a9ec42e9f0015292f9e1a8f1c0c121dab08eb162"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v14/v14_mad_predecessor_context.md",
+      "sha256": "3dc2103f0bc50b2931d252514a4287e99918f8657fbcf119445ef53ea8657bd3"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v14/v14_final_summary.md",
+      "sha256": "cc69dacb94cbf2d3a93d3c36d161afdc9c682953f83c02d89b798398a2f3412e"
+    }
+  ],
+  "schema_version": "lightguard.v14.reproducibility.1"
+}

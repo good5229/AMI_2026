@@ -1,0 +1,54 @@
+{
+  "schema_version": "v14-track-a-config-1",
+  "status": "PRE_OUTCOME_FROZEN",
+  "track": "A",
+  "dataset_id": "LONDON_MET_DISTRIBUTION",
+  "purpose": "Real distribution disturbance discrimination if physical provenance and licence gates pass; not streetlight fault evaluation.",
+  "seed": 14001401,
+  "activation_gates": [
+    "license_permits_research_use",
+    "disturbance_label_generation_and_classes_documented",
+    "physical_unit_and_preprocessing_provenance_documented",
+    "immutable_train_test_relationship_documented",
+    "ordered_time_or_source_defined_independent_block_documented",
+    "immutable_sample_or_block_identifier_available"
+  ],
+  "blocked_status": "PRIMARY_BLOCKED_PROVENANCE",
+  "activation_decision": "PRIMARY_BLOCKED_PROVENANCE",
+  "activation_reason": "The official record has no explicit dataset reuse license, label-generation contract, timestamp contract, or sufficient measurement-window provenance. This decision was frozen before performance access.",
+  "source_partition": {
+    "training": "Official Train_Data only.",
+    "confirmatory": "Official Test_Data only.",
+    "fit_calibration_rule": "Within Train_Data, canonical immutable block/sample id is assigned to calibration when SHA-256(id + ':v14-a-calibration') mod 5 == 0; all others are fit. If the source has no immutable id, use the canonical raw-row fingerprint excluding the label. If no stable fingerprint can be constructed without transformations, stop as NOT_EVALUABLE_UNIT_DEFINITION.",
+    "test_access_rule": "Test labels, scores, and class counts are not used for mapping, selection, preprocessing, thresholding, or comparator design."
+  },
+  "physical_mechanisms": {
+    "PMC-1": "PARTIAL_PENDING_TERRA_A",
+    "PMC-2": "PARTIAL_PENDING_TERRA_A",
+    "PMC-3": "N/A_NO_DOCUMENTED_CURRENT_PHASE_FIELDS",
+    "PMC-4": "PARTIAL_PENDING_TERRA_A",
+    "PMC-5": "PARTIAL_PENDING_TERRA_A"
+  },
+  "normalization": {
+    "location": "Fit-partition median by documented source channel and eligible entity/block.",
+    "scale": "max(1.4826 * MAD, fit fifth percentile of positive channel MADs).",
+    "missingness": "No imputation; unavailable component remains unavailable.",
+    "residual_clip": [-8.0, 8.0]
+  },
+  "candidates": ["PMC-C1", "PMC-C2", "PMC-C3"],
+  "comparator": "Maximum absolute ordinary z-score across the same eligible source-native channels, with mean/standard deviation fit on the fit partition only.",
+  "threshold_quantiles": [0.8, 0.85, 0.9, 0.95, 0.975, 0.99],
+  "calibration_selection": {
+    "metric": "Balanced accuracy after label semantics are verified before test access.",
+    "tie_break": "Higher threshold; then PMC-C3, PMC-C2, PMC-C1.",
+    "constraint": "No class-specific preprocessing or source-specific feature expansion."
+  },
+  "independent_unit": {
+    "definition": "Dataset-defined sample or source-defined non-overlapping time block; raw minute rows are not assumed independent.",
+    "requirement": "A block key must be documented. Otherwise numerical inference is NOT_EVALUABLE_UNIT_DEFINITION.",
+    "uncertainty": "2,000 stratified cluster bootstrap replicates at the independent-unit level; no row-level naive bootstrap; fewer than 20 confirmatory clusters is INSUFFICIENT_CLUSTER_COUNT."
+  },
+  "confirmatory_metrics": ["balanced_accuracy", "macro_recall", "macro_f1", "average_precision_if_binary_or_valid_one_vs_rest", "cluster_confidence_interval"],
+  "primary_gate": "NOT_EVALUABLE unless all activation gates and independent-unit definition pass. No performance success number is chosen before the verified label semantics are known.",
+  "immutable_after_test_access": ["source fields", "PMC availability", "normalization", "candidate set", "comparator", "split rule", "threshold grid", "metric definitions", "uncertainty rule", "claim boundary"]
+}

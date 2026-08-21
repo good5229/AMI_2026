@@ -1,0 +1,5 @@
+﻿date,status,internal_sunrise,official_sunrise,sunrise_delta_min,internal_sunset,official_sunset,sunset_delta_min,internal_civil_start,official_civil_start,civil_start_delta_min,internal_civil_end,official_civil_end,civil_end_delta_min
+2026-01-14,available,07:32,07:32,0,17:33,17:33,0,07:04,07:04,0,18:00,18:01,-1
+2026-04-15,available,05:52,05:52,0,18:55,18:56,-1,05:26,05:26,0,19:21,19:22,-1
+2026-07-15,available,05:19,05:20,-1,19:38,19:39,-1,04:50,04:51,-1,20:07,20:08,-1
+2026-10-15,available,06:28,06:29,-1,17:49,17:49,0,06:03,06:04,-1,18:15,18:15,0

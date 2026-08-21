@@ -1,0 +1,7 @@
+event_id,meter_id,action,candidate_id,truth_available
+AMI-EVT-237615b73a,B-L-35,data_check_required,bc9f30c9d34b2770,False
+AMI-EVT-d406cc5296,B-L-14,normal,,False
+AMI-EVT-fda2dd8737,B-L-9,observe,e8b6de013afe6dd2,False
+AMI-EVT-f394b2a542,B-L-9,normal,,False
+AMI-EVT-4ada00d8f3,B-L-14,observe,2cb2146732bb0650,False
+AMI-EVT-d706634ed1,B-L-13,normal,,False

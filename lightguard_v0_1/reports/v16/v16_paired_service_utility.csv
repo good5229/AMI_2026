@@ -1,0 +1,3 @@
+endpoint,comparison,pairs,p1_rate,p0_rate,paired_rd,n10,n01,analysis_status,prospective_target
+R,P1_MINUS_P0,41,0.04878049,0.26829268,-0.21951220,0,9,POST_HOC_DESCRIPTIVE_ONLY,R_RD>=-0.10
+B,P1_MINUS_P0,39,0.02564103,0.05128205,-0.02564103,0,1,POST_HOC_DESCRIPTIVE_ONLY,B_RD<=-0.10

@@ -1,0 +1,2 @@
+candidate,config_sha256,pool_pairs,constructable_pairs,informative_anomaly_pairs,injection_recovery_rate,irr_wilson_95,worst_meter_irr,worst_operator_irr,benign_pairs,benign_escalation_rate,benign_inspect_rate,median_score_uplift,positive_delta_rate,transport_gate,r1_triggered,field_accuracy_claim
+H1,b536f8ca68222662c717cd27a6af4c3c64a3330782b0545503df6e4aff3e6232,200,182,149,0.97315436,"[0.93301275, 0.98951181]",0.85714286,0.78947368,33,0.0,0.0,0.25,0.7967033,PASS,False,False

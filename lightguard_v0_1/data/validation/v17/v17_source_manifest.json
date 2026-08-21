@@ -1,0 +1,123 @@
+[
+  {
+    "source_id": "D1",
+    "provider": "대구공공시설관리공단",
+    "official_url": "https://www.data.go.kr/data/15120484/fileData.do",
+    "local_filename": "대구공공시설관리공단_가로등시스템 고장등관리_20250811.csv",
+    "download_date": "2026-08-21",
+    "sha256": "a21d87de8da61d5793fd87655efbd857be5990e7188aaec8d913c4ced788cbd0",
+    "rows": 101843,
+    "portal_advertised_rows": 101843,
+    "row_count_status": "MATCH",
+    "columns": [
+      "순번",
+      "접수일자",
+      "접수구분",
+      "관리번호",
+      "구청",
+      "가로등명",
+      "구간",
+      "처리일"
+    ],
+    "time_min": "2020-01-02",
+    "time_max": "2025-08-09",
+    "license": "공공데이터포털 이용허락범위 제한 없음",
+    "snapshot_type": "latest_local_complete_snapshot_canonical",
+    "role": "primary operational outcome"
+  },
+  {
+    "source_id": "D2",
+    "provider": "대구공공시설관리공단",
+    "official_url": "https://www.data.go.kr/data/15120529/fileData.do",
+    "local_filename": "대구공공시설관리공단_가로등위치DB_20250811.csv",
+    "download_date": "2026-08-21",
+    "sha256": "a3d440866d18d083e04d3d98de7f4c020ef4d7d45f09428bb9194c2d48e1e055",
+    "rows": 71973,
+    "portal_advertised_rows": 71973,
+    "row_count_status": "MATCH",
+    "columns": [
+      "가로등번호",
+      "위도",
+      "경도"
+    ],
+    "time_min": null,
+    "time_max": null,
+    "license": "공공데이터포털 이용허락범위 제한 없음",
+    "snapshot_type": "latest_local_complete_snapshot_canonical",
+    "role": "asset location"
+  },
+  {
+    "source_id": "D3",
+    "provider": "대구공공시설관리공단",
+    "official_url": "https://www.data.go.kr/data/15120494/fileData.do",
+    "local_filename": "대구공공시설관리공단_가로등시스템 안전점검관리_20250613.csv",
+    "download_date": "2026-08-21",
+    "sha256": "88408d5c38b51c66f60b24b83b312a496f46cf691146cdf00708baf8d8351cf9",
+    "rows": 105449,
+    "portal_advertised_rows": 105449,
+    "row_count_status": "MATCH",
+    "columns": [
+      "구간",
+      "구역",
+      "조치일",
+      "절연저항",
+      "현장조치",
+      "검토후조치",
+      "접지저항"
+    ],
+    "time_min": "2004-03-16",
+    "time_max": "2025-06-13",
+    "license": "공공데이터포털 이용허락범위 제한 없음",
+    "snapshot_type": "latest_local_complete_snapshot_canonical",
+    "role": "safety inspection context"
+  },
+  {
+    "source_id": "D4",
+    "provider": "대구공공시설관리공단",
+    "official_url": "https://www.data.go.kr/data/15120490/fileData.do",
+    "local_filename": "대구공공시설관리공단_가로등관리시스템 자재관리_20251205.csv",
+    "download_date": "2026-08-21",
+    "sha256": "669065e8352bb9312d4fbbb1ce25462049f23acd24f85e8cedab4522ee0ccda0",
+    "rows": 614241,
+    "portal_advertised_rows": 145365,
+    "row_count_status": "MISMATCH_REQUIRES_SOURCE_CONFIRMATION",
+    "columns": [
+      "순번",
+      "구분",
+      "일자",
+      "자재명",
+      "규격",
+      "출고량",
+      "수리방법",
+      "자재코드"
+    ],
+    "time_min": "2000-01-13",
+    "time_max": "2025-12-05",
+    "license": "공공데이터포털 이용허락범위 제한 없음",
+    "snapshot_type": "latest_local_complete_snapshot_canonical",
+    "role": "aggregate maintenance workload only"
+  },
+  {
+    "source_id": "D5",
+    "provider": "대구공공시설관리공단",
+    "official_url": "https://www.data.go.kr/data/15120488/fileData.do",
+    "local_filename": "대구공공시설관리공단_가로등관리시스템 가로등공사정보_20250811.csv",
+    "download_date": "2026-08-21",
+    "sha256": "c385296847591a4b40bc5a151f494a0ed6bf44b872fb8d6145acc9e2353e2b2d",
+    "rows": 2519,
+    "portal_advertised_rows": 2519,
+    "row_count_status": "MATCH",
+    "columns": [
+      "순번",
+      "공사구분",
+      "입력일",
+      "공사명",
+      "공사진행상태"
+    ],
+    "time_min": "2000-12-20",
+    "time_max": "2025-07-18",
+    "license": "공공데이터포털 이용허락범위 제한 없음",
+    "snapshot_type": "latest_local_complete_snapshot_canonical",
+    "role": "aggregate project context only"
+  }
+]

@@ -1,0 +1,196 @@
+{
+  "registry_version": "v0.13-terra-a-2026-08-21",
+  "scope": "External electrical/AMI mechanism validation only. No entry supplies streetlight field accuracy, streetlight fault recall, or fault probability.",
+  "records": [
+    {
+      "dataset_id": "MAD_METERING_ANOMALY_DIAGNOSIS_GITHUB_2025",
+      "source_url": "https://github.com/IISGLab/MeteringAnomalyDiagnosis",
+      "DOI": null,
+      "associated_primary_paper_doi": "10.3390/en17050993",
+      "frozen_repository_commit": "a83de7ec7399d71c9eb81e0284fce0526b2b9887",
+      "frozen_file_sha256": "84dff6d73d671e29b4147fd49962a41a22ea9d6bcfadb205782971af4f86a497",
+      "license": "CC-BY-ND-4.0",
+      "license_evidence_url": "https://raw.githubusercontent.com/IISGLab/MeteringAnomalyDiagnosis/main/LICENSE",
+      "domain": "Smart-grid substation; actual deployed three-phase four-wire AMI smart meters",
+      "measurement_type": "Normalized electrical multivariate daily sequences",
+      "label_type": "Seven-class metering anomaly classification: 0 normal, 1-6 opaque Abnormal-1 through Abnormal-6",
+      "label_source": "Repository claims 122 meters were manually inspected on-site or professionally labelled; 382 are normal",
+      "samples": {
+        "meters": 504,
+        "normal_meters": 382,
+        "anomalous_meters": 122,
+        "usable_daily_samples": 7733,
+        "class_counts": {
+          "0_normal": 6021,
+          "1_abnormal_1": 265,
+          "2_abnormal_2": 124,
+          "3_abnormal_3": 128,
+          "4_abnormal_4": 747,
+          "5_abnormal_5": 120,
+          "6_abnormal_6": 328
+        }
+      },
+      "train/test": {
+        "status": "author_provided_arrays",
+        "train_shape": [2319, 14, 48],
+        "test_shape": [5414, 14, 48],
+        "construction": "UNKNOWN",
+        "meter_disjointness": "UNKNOWN",
+        "author_split_eligible": true,
+        "track_a_scope": "sample-level binary 0 versus opaque 1..6 only",
+        "track_b_meter_disjoint": "NOT_ASSESSABLE"
+      },
+      "features": [
+        "phase_A_voltage",
+        "phase_B_voltage",
+        "phase_C_voltage",
+        "phase_A_current",
+        "phase_B_current",
+        "phase_C_current",
+        "total_active_power",
+        "phase_A_active_power",
+        "phase_B_active_power",
+        "phase_C_active_power",
+        "total_power_factor",
+        "phase_A_power_factor",
+        "phase_B_power_factor",
+        "phase_C_power_factor"
+      ],
+      "sampling_interval": "30 minutes; 48 points per daily sample according to current repository README",
+      "quality_grade": "DG-A",
+      "included_primary": true,
+      "included_secondary": false,
+      "eligibility": "Released only as External MAD author-split sample-level binary 0-vs-1..6; EXTERNAL_GOLD_OR_PROFESSIONAL_LABEL for smart-grid metering anomalies only",
+      "evidence_gaps": [
+        "Current repository release has no DOI and uses opaque abnormal classes.",
+        "Associated 2024 primary paper reports 15-minute/96-point, 7421-sample data and named classes; it is not release-equivalent to the current repository README.",
+        "Author split construction, meter IDs, timestamps, meter-to-sample mapping, and meter-disjointness are UNKNOWN; Track B is NOT_ASSESSABLE."
+      ],
+      "exclusion_reason": "No exclusion for narrow Track A. Track B and all class-mechanism claims are excluded because physical-meter leakage cannot be assessed. CC BY-ND 4.0 forbids sharing adapted material; raw and transformed data stay out of Git.",
+      "claim_boundary": "Track A results are External MAD author-split sample-level binary 0-vs-1..6 performance, not meter-disjoint performance, streetlight field accuracy, streetlight fault recall, class mechanism evidence, or fault probability."
+    },
+    {
+      "dataset_id": "REFIT_ANNOTATED_LOAD_ANOMALIES_2019",
+      "source_url": "https://pureportal.strath.ac.uk/en/datasets/annotated-load-anomalies-from-the-refit-dataset/",
+      "DOI": "10.15129/9729a2a0-11ce-4cce-b0d0-144c483fcb33",
+      "associated_primary_paper_url": "https://ieeexplore.ieee.org/document/8683792/",
+      "license": "CC-BY-4.0",
+      "domain": "UK domestic electrical appliance load; REFIT aggregate and submetered measurements",
+      "measurement_type": "Real electrical load measurements with appliance-level anomaly annotations",
+      "label_type": "Annotated real appliance anomaly windows; exact operational rule and counts pending primary README/paper verification",
+      "label_source": "Human-annotated by sifting REFIT data; official dataset record delegates labelling rules to ICASSP 2019 paper",
+      "samples": {
+        "houses": [1, 10, 16, 18, 20],
+        "appliance_groups": [
+          "refrigerator",
+          "freezer",
+          "fridge-freezer",
+          "dishwasher",
+          "washing machine",
+          "tumble dryer",
+          "electrical heater",
+          "microwave"
+        ],
+        "annotation_file": "REFIT_anomalies.csv",
+        "exact_label_count": "UNKNOWN"
+      },
+      "train/test": {
+        "status": "no prescribed benchmark split verified",
+        "construction": "MUST_BE_FROZEN_PRE_TEST",
+        "recommended_unit": "house-disjoint or time-forward, selected before test labels",
+        "meter_disjointness": "NOT_APPLICABLE_TO_HOUSEHOLD_METER_DOMAIN"
+      },
+      "features": [
+        "aggregate electrical load",
+        "submetered appliance load where available"
+      ],
+      "sampling_interval": "UNKNOWN in reviewed annotation record",
+      "quality_grade": "DG-B",
+      "included_primary": false,
+      "included_secondary": false,
+      "eligibility": "Potential secondary mechanism validation for LG-S1 baseline deviation and LG-S2 persistence only",
+      "evidence_gaps": [
+        "Exact annotation rule, label-window semantics, and counts are not independently verified because the linked README/manuscript endpoint was access-restricted during review.",
+        "No three-phase current channels; LG-S3 phase asymmetry is unavailable.",
+        "No verified author train/test split."
+      ],
+      "raw_availability": "BLOCKED_EXTERNAL_DATA: official file download returned 403 repeatedly",
+      "exclusion_reason": "GATED: resolve BLOCKED_EXTERNAL_DATA, acquire and freeze exact label-rule documentation and a pre-test split. Domestic appliance outcomes are not streetlight or cabinet fault labels.",
+      "claim_boundary": "If included, report only External REFIT real-load anomaly mechanism results. Do not infer streetlight fault performance."
+    },
+    {
+      "dataset_id": "UCR_ANOMALY_ARCHIVE_ITALIANPOWERDEMAND_2021",
+      "source_url": "https://www.cs.ucr.edu/~eamonn/time_series_data_2018/UCR_TimeSeriesAnomalyDatasets2021.zip",
+      "DOI": "10.1109/TKDE.2021.3112126",
+      "frozen_archive_sha256": "ac4b991c701e620ae9cc5ebd57ae45593a36cc9c0b6ed5e3c4b7e466cf4783d4",
+      "license": "UNKNOWN",
+      "domain": "UCR Time Series Anomaly Archive generic univariate temporal anomaly benchmark with Italianpowerdemand sequences",
+      "measurement_type": "Univariate temporal sequence",
+      "label_type": "Anomaly interval boundaries encoded in official filenames after the train-end position",
+      "label_source": "Official UCR Anomaly Archive file naming convention",
+      "samples": {
+        "files": [
+          "210_UCR_Anomaly_Italianpowerdemand",
+          "211_UCR_Anomaly_Italianpowerdemand",
+          "212_UCR_Anomaly_Italianpowerdemand"
+        ],
+        "values_inspected_by_terra": false
+      },
+      "train/test": {
+        "status": "author-provided train endpoint and anomaly interval boundary in filename",
+        "construction": "official anomaly archive encoding",
+        "meter_disjointness": "UNKNOWN"
+      },
+      "features": [
+        "single univariate time series"
+      ],
+      "sampling_interval": "UNKNOWN",
+      "quality_grade": "DG-C",
+      "included_primary": false,
+      "included_secondary": false,
+      "eligibility": "Optional secondary temporal stress test only after explicit licence verification",
+      "evidence_gaps": [
+        "No dataset-specific explicit licence verified in reviewed official UCR Anomaly Archive material.",
+        "No verified electrical anomaly/fault physical cause, phase channel, meter identity, or field outcome.",
+        "No phase, meter, or streetlight operational information."
+      ],
+      "exclusion_reason": "Licence UNKNOWN gates secondary execution. Even if licensed, exclude from external electrical mechanism accuracy, phase claims, Gold/professional labels, and fault claims.",
+      "claim_boundary": "Temporal anomaly stress-test performance, if permitted, is not electrical mechanism validity and never streetlight performance."
+    },
+    {
+      "dataset_id": "ZENODO_SMART_METER_ANOMALY_PSEUDO_LABELLED_2026",
+      "source_url": "https://zenodo.org/records/18670956",
+      "DOI": "10.5281/zenodo.18670956",
+      "license": "UNKNOWN",
+      "domain": "Hourly smart-meter electricity consumption from ENFIELD infrastructure",
+      "measurement_type": "Hourly consumption readings",
+      "label_type": "Pseudo-labelled anomaly target",
+      "label_source": "XGBoost and LightGBM ensemble trained on LEAD data from 200 buildings",
+      "samples": {
+        "meters": 74,
+        "duration": "one year",
+        "file_size": "32.3 MB as published record metadata"
+      },
+      "train/test": {
+        "status": "no independent ground-truth split established for this task",
+        "construction": "UNKNOWN",
+        "meter_disjointness": "UNKNOWN"
+      },
+      "features": [
+        "hourly electricity consumption"
+      ],
+      "sampling_interval": "hourly",
+      "quality_grade": "DG-D",
+      "included_primary": false,
+      "included_secondary": false,
+      "eligibility": "Weak-label stress test only if separately approved and licence verified",
+      "evidence_gaps": [
+        "Record does not supply an explicit licence in reviewed metadata.",
+        "Labels are not independently observed field or professional truth.",
+        "Generating-model training data and validation leakage controls are outside this task's verified provenance."
+      ],
+      "exclusion_reason": "EXCLUDED: pseudo-labels are prohibited from Gold, professional-label, calibration, threshold choice, and confirmatory performance; licence is UNKNOWN.",
+      "claim_boundary": "May not support any real-world anomaly accuracy, fault probability, or streetlight claim."
+    }
+  ]
+}

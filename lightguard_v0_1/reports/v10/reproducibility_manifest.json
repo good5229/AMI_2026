@@ -1,0 +1,147 @@
+{
+  "schema_version": "lightguard.v10.reproducibility.1",
+  "git_branch": "codex/context-aware-validation",
+  "git_sha": "38fda2a26c5f55eee7ce0317d98f18df45ff1ac2",
+  "python_version": "3.10.2",
+  "random_seeds": {
+    "pool_namespace": "LG-v10-POOL-20260820",
+    "bootstrap": 20261020
+  },
+  "commands": [
+    "python3 scripts/audit_v10_raw_ami.py",
+    "python3 scripts/build_v10_freeze.py",
+    "python3 scripts/build_v10_background_pool.py",
+    "python3 scripts/build_v10_counterfactual_pairs.py",
+    "python3 scripts/run_v10_h1_transport.py",
+    "python3 scripts/run_v10_shadow_replay.py",
+    "python3 scripts/analyze_v10_meter_drift.py",
+    "python3 scripts/run_v10_cluster_bootstrap.py",
+    "python3 scripts/build_v10_final_report.py"
+  ],
+  "raw_source_sha256": "c18b49022d1c7dee2117a8d65a07d71351fb1aea8538751b7032867e4081b7d0",
+  "pool_sha256": "b59120e8580ce0502ea5001b3f12d2c932b1b6fde65abb063d87e12d84049282",
+  "injection_manifest_sha256": "c998881ddbafc8eb730452c61d7ea2d797bfdfcc86bfe3cce6a2babba4b553cd",
+  "h1_config_sha256": "b536f8ca68222662c717cd27a6af4c3c64a3330782b0545503df6e4aff3e6232",
+  "files": [
+    {
+      "path": "docs/agent_learning_v10/luna_ami_physical_plausibility.md",
+      "sha256": "08b44a96e2b04e6ad49c8eaa295c7deea3ba694bc687a03c4b7c7f3430ad9535"
+    },
+    {
+      "path": "docs/agent_learning_v10/luna_independent_qa.md",
+      "sha256": "20a7de82f2d25bed46777ae8d949fe569d8f7b05de881726b27f57c3fcdcbe7f"
+    },
+    {
+      "path": "docs/agent_learning_v10/sol_orchestration.md",
+      "sha256": "d22b027e6cdcfe234c1f9f0dd7cd4d7cb842d9757c96ba042c191990a1550e62"
+    },
+    {
+      "path": "docs/agent_learning_v10/terra_causal_shadow_replay.md",
+      "sha256": "a26e71d127229e55798ff27381236e74a4b082fbe6475efa67bac058d2a83892"
+    },
+    {
+      "path": "docs/agent_learning_v10/terra_counterfactual_methodology.md",
+      "sha256": "8f966337d72376f8310b1e08e9102c0f121324ce6d8688de0c876825175a499f"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v10/v09_freeze_manifest.json",
+      "sha256": "ce2328383cd8b5ffaf946b233416a13109564180b511afb664ef7f00c7b4b453"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v10/v10_background_pool_manifest.json",
+      "sha256": "dc13d7fad779dee8fd86562c46e94607893ebf04d05b29d28a81f354543b1c68"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v10/v10_injection_manifest.json",
+      "sha256": "0bad5bd731cb7da5f5f7c8d4648be112a37f50c875e236e3e0cad6ae1e6aea94"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v10/v10_raw_ami_manifest.json",
+      "sha256": "e4ea819ed021b9b8da7706469837f4808e262ce198ffd47a026ed21f03ce87b5"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v10/v10_shadow_origin_audit.csv",
+      "sha256": "a898bb0ad5685e6908c1126b48a6e7b7297cadd9c6a2e793cc296bde0b6f1fef"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v10/v10_shadow_replay.csv",
+      "sha256": "f07f7c1c067867d3dce1663926324dbccce3b9d6ed3c30e14c9e611fde2fe99c"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v10/v10_transport_pairs.csv",
+      "sha256": "70f2f8bf34b7c95e235d4c26bb37e0dcaaafa52c076757905869e9e36d38101b"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v10/v10_b_l_12_case_study.md",
+      "sha256": "cfe3c162ab5ba7d422107121bc8d1768cfff90f3a995d32312b6694628453091"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v10/v10_b_l_12_reconciliation.md",
+      "sha256": "35c935fd96f4f6e3ed2026919400955a048c5719f00454ec4fc2682250aa522e"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v10/v10_benign_control_results.csv",
+      "sha256": "3195c146791946222902a02ca7cf835cb76da3f00b3bc34160b0a95ff2a4aa13"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v10/v10_canonical_shadow_replay.csv",
+      "sha256": "e19d7327ae2ea9d2bd0a26eb96254768144c579d99da0245ec30a1738a10d87f"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v10/v10_cluster_bootstrap.md",
+      "sha256": "c29348e836a805be92c820c3a9b7b654c75081a50975c91d96237fb82048f4c2"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v10/v10_counterfactual_protocol.md",
+      "sha256": "e9026e63accced0cb1d3a5bab4d7732bef5db47cf1ec64ee9e4fc428c8f7de0c"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v10/v10_evidence_availability.csv",
+      "sha256": "3d0cb2c3b46de689f56b13ae49b8dbfb2d4ae97add48e385670fb5594ef680b7"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v10/v10_final_summary.md",
+      "sha256": "3e01525c826be06f4b450de7f9303ad6d908ca641d8afe916c0149f15967925d"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v10/v10_frozen_h1_transport.csv",
+      "sha256": "ec252c08bf33d2f496b6d736ad38485ac3cff28a21d12fe32f91848e5c91693c"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v10/v10_frozen_h1_transport_summary.md",
+      "sha256": "224ea1ad96893362224bcade3b7fff2eeffb28d7ec2fab987e1ca25ec26b4153"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v10/v10_independent_audit.md",
+      "sha256": "f207621fcb6076a0b5893df887b75bc8a2c7b7a656a66e306d0728f504f0f0b2"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v10/v10_injection_physical_review.md",
+      "sha256": "051f558fdb4299e42e6d1ca9eb8b3daecebccc124a42138277df8b6d3b579489"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v10/v10_meter_drift.csv",
+      "sha256": "cf44f1ee7c7e576fac4d0d0f8e47cd9a3d97a018d837a394119ae5c41ed312a0"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v10/v10_meter_level_results.csv",
+      "sha256": "ab94d270f9e21816358fc4e772c1b0f6b150f08f80a4fc67ce8d6fa7504491c7"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v10/v10_operator_level_results.csv",
+      "sha256": "ada9106893e55ea37e9fd214d65a053b865a590697fe9e21da9ed51372d50503"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v10/v10_shadow_causality_audit.json",
+      "sha256": "63489c0a4ecd4dfe15050671c6b8d9f344000e91bd6557938ef83f47151cd674"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v10/v10_shadow_replay_protocol.md",
+      "sha256": "d9fdded751003b7d9fba49f89b2b6596d95fb17935fd4aec31393e2d7531bb32"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v10/v10_shadow_replay_summary.md",
+      "sha256": "1c9bcf80a472025d6cd66a2f1db27b6ab00728e7fd4b994e4f63a505e869fa0c"
+    }
+  ]
+}

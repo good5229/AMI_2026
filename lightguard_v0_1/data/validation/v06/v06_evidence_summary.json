@@ -1,0 +1,50 @@
+{
+  "schema_version": "lightguard-v0.6-evidence-hardening",
+  "claim_scope": "uncertainty and data-quality evidence; actual AMI remains unlabeled",
+  "known_candidate_coverage": {
+    "stress_id": "baseline",
+    "candidate_covered": 6,
+    "candidate_total": 6,
+    "coverage_point": 1.0,
+    "wilson_95_lower": 0.609666,
+    "wilson_95_upper": 1.0,
+    "interpretation": "known-candidate coverage uncertainty; not field recall"
+  },
+  "gap_120m_coverage": {
+    "stress_id": "gap_120m",
+    "candidate_covered": 0,
+    "candidate_total": 6,
+    "coverage_point": 0.0,
+    "wilson_95_lower": 0.0,
+    "wilson_95_upper": 0.390334,
+    "interpretation": "known-candidate coverage uncertainty; not field recall"
+  },
+  "candidate_density": {
+    "method": "stationary bootstrap over ordered daily candidate indicators within meter",
+    "seed": 6062026,
+    "replicates": 2000,
+    "expected_block_days": 7,
+    "meter_count": 5,
+    "evaluable_meter_days": 305,
+    "candidate_density_point": 0.01967213,
+    "candidate_density_95_lower": 0.00655738,
+    "candidate_density_95_upper": 0.03606557,
+    "claim_scope": "descriptive detector-candidate density; not fault prevalence"
+  },
+  "interaction_diagnostic": {
+    "design_runs": 16,
+    "largest_two_factor_fpr_term": "activation:duration",
+    "largest_two_factor_fpr_effect": 0.00316456,
+    "frozen_configuration_changed": false,
+    "promotion_policy": "diagnostic_only_no_retuning"
+  },
+  "abstention": {
+    "rule_count": 5,
+    "policy": "DATA_INSUFFICIENT is distinct from normal"
+  },
+  "field_truth": {
+    "available": false,
+    "schema_ready": true,
+    "blinded_adjudication_required": true
+  }
+}

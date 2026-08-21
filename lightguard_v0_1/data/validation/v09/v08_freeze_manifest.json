@@ -1,0 +1,47 @@
+{
+  "schema_version": "lightguard.v09-v08-freeze.v1",
+  "frozen_at_date": "2026-08-20",
+  "frozen_git_sha": "8772c2759d16ed7a6e669b940880e10cb242d1d6",
+  "branch": "codex/context-aware-validation",
+  "v08_role": "failure_analysis_and_regression_reference_only_not_v09_tuning",
+  "v07_git_sha": "383c91e2c22d9364232c80683b6f8e4b6dc09d35",
+  "v08_hashes": {
+    "calibration_set": "b9825d7b8d336de9421a5941d2c7f069202b3f402fa4090b2837abb7d3a38b2f",
+    "confirmatory_holdout": "71a4d7099be61f073f8411acd3b0af999dd672060dde9621513e0505e32c1a1d",
+    "candidate_freeze": "12fdb827f3b3d553707b616425bbc9721405df7623d40c79a87169589eed2b35"
+  },
+  "candidate_code_hashes": {
+    "C1_C2_C3_shared_detector": "90a81d0aaee200dbf85e2f8c4eda8b8f806c29d1ea210a016aab23f12efa59fc",
+    "calibration_runner": "60f74bb80b9feb96cbb1aaffba926bdf488f868771bfd951c9243a07214058c8",
+    "confirmatory_runner": "c644ca99136fcc05928f715e56868e110d14c03c1ba47bb8f50b1e2c3112f586"
+  },
+  "official_context_hashes": {
+    "regional_seasonal_context_2025": "f2827df345c137a5d5b830104d67952b0db4366b58a3d5bfffec6b9e08202a91",
+    "kasi_solar_context_2026": "d721f51364f74885bddc80f27be7682561ec8b330ecc32490805f5b5fea707cb"
+  },
+  "actual_ami_replay_hashes": {
+    "replay_manifest.json": "22f05552307016ed0fee1910cfa47ba2fa0dddf305f13c18045e661ba1a996af",
+    "B-L-13_2026-06-23.csv": "13be03d905e90ac23cc29263a2841078fa002d83ab5d3fc48db5e682e95f4cc2",
+    "B-L-14_2026-05-19.csv": "815d6707dfd29f50a6f1986ef299a287518156b6c83775c844de13f2304c23c7",
+    "B-L-14_2026-05-29.csv": "2f37bfa5b93e8bb387874a74574b92c01a5762cfa9d292b4ea61286a811613e7",
+    "B-L-35_2026-05-11.csv": "f9f5faa55fc47fd1d6192d207982ae0c6c5cc500849493662e8d91972e224ca8",
+    "B-L-9_2026-05-20.csv": "bd51ad4f9bd4c5cae4e954926a5f1d51e3b6e779f40e3f5cf274a815512de763",
+    "B-L-9_2026-05-21.csv": "e548f9f1e3af2b7520ce88bbd35971b551d3ec5b4d66616216e036864442b8e9"
+  },
+  "flutter_state": {
+    "source_summary_hash": "f2eb8b0d96330e3232bc355e137a23cbd98f3947865f9fda6d138fdf0ddf400c",
+    "unit_test_hash": "7ae3eaecf18cf4e9519c074cbdb5af884fe04f7dfa625b2de91b6474a1f976ca",
+    "v08_preflight": "PASS",
+    "analyze": "No issues found",
+    "tests": "21 passed",
+    "web_release": "PASS",
+    "android_release": "PASS"
+  },
+  "invariants": {
+    "v08_used_for_v09_tuning": false,
+    "actual_ami_has_field_truth_labels": false,
+    "weather_weight": 0.0,
+    "chungju_load_imputation": "none",
+    "post_confirmatory_retuning_permitted": false
+  }
+}

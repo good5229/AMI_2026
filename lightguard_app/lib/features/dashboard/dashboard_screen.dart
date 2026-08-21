@@ -6,6 +6,7 @@ import '../../data/models/lightguard_models.dart';
 import '../../data/repositories/lightguard_repository.dart';
 import '../../core/widgets/status_badges.dart';
 import '../../data/models/region_config.dart';
+import '../../data/models/context_models.dart';
 
 class DashboardScreen extends ConsumerWidget {
   const DashboardScreen({super.key});
@@ -15,6 +16,10 @@ class DashboardScreen extends ConsumerWidget {
     final dataAsync = ref.watch(lightguardDataProvider);
     final events = ref.watch(competitionAmiEventsProvider).asData?.value ??
         const <ValidationEvent>[];
+    final officialContext = ref.watch(officialContextProvider).asData?.value;
+    final controlledMetrics =
+        ref.watch(controlledMetricsProvider).asData?.value ??
+            const <ControlledMetric>[];
 
     return dataAsync.when(
       loading: () =>
@@ -136,6 +141,11 @@ class DashboardScreen extends ConsumerWidget {
                   ],
                 ),
                 const SizedBox(height: 12),
+                _OfficialContextCard(
+                  contextBundle: officialContext,
+                  metrics: controlledMetrics,
+                ),
+                const SizedBox(height: 12),
                 const _SecondCheckerCard(),
                 const SizedBox(height: 12),
                 Card(
@@ -187,6 +197,60 @@ class DashboardScreen extends ConsumerWidget {
       ),
     );
   }
+}
+
+class _OfficialContextCard extends StatelessWidget {
+  const _OfficialContextCard({
+    required this.contextBundle,
+    required this.metrics,
+  });
+
+  final OfficialContextBundle? contextBundle;
+  final List<ControlledMetric> metrics;
+
+  @override
+  Widget build(BuildContext context) {
+    final solar = contextBundle?.firstOfficialSolar;
+    final weather = contextBundle?.firstOfficialWeather;
+    final m0 = metrics.where((row) => row.model == 'M0').firstOrNull;
+    final m3 = metrics.where((row) => row.model == 'M3').firstOrNull;
+    return Card(
+      key: const Key('dashboard-official-context'),
+      color: const Color(0xFFF0F6F1),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('공식 Context · Controlled Validation',
+                style: Theme.of(context).textTheme.titleMedium),
+            const SizedBox(height: 10),
+            Wrap(spacing: 18, runSpacing: 8, children: [
+              Text(solar == null
+                  ? '천문 Context: KASI 미수집'
+                  : '천문 Context: KASI ${solar['date']} · ${solar['sunrise']} / ${solar['sunset']}'),
+              Text(weather == null
+                  ? '기상 Context: KMA ASOS 159 미수집'
+                  : '기상 Context: KMA ASOS 159 · ${weather['timestamp']}'),
+            ]),
+            const SizedBox(height: 8),
+            Text(
+              'AMI-only FPR ${_percent(m0?.normalFpr)} · Context-aware FPR ${_percent(m3?.normalFpr)} · Top-20 precision ${_percent(m3?.precisionAt20)}',
+            ),
+            if (m3?.status != 'available')
+              const Padding(
+                padding: EdgeInsets.only(top: 6),
+                child: Text('공식 Context 미수집으로 M1-M3는 unavailable이며 내부/합성값으로 대체하지 않습니다.',
+                    style: TextStyle(fontSize: 12, color: Color(0xFF795548))),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  String _percent(double? value) =>
+      value == null ? 'unavailable' : '${(value * 100).toStringAsFixed(1)}%';
 }
 
 class _EvidenceMetricCard extends StatelessWidget {

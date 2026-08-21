@@ -1,0 +1,7 @@
+operator,pairs,informative_anomaly_pairs,irr,benign_pairs,benign_escalation_rate,median_score_uplift
+benign_transition,33,0,,33,0.0,0.0
+daytime_partial,36,36,1.0,0,,0.25
+deep_day_full,37,37,1.0,0,,0.25
+phase_selective,19,19,0.78947368,0,,0.36032138
+post_switch_persistence,26,26,1.0,0,,0.25
+weak_long_duration,31,31,1.0,0,,0.25

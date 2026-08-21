@@ -1,0 +1,24 @@
+{
+  "schema_version": "lightguard.v11.v10-freeze.1",
+  "v10_release_commit": "d34d8323b3742c9116060d9548bd29c18750cb1f",
+  "release_commit_exists": true,
+  "frozen_h1_modified": false,
+  "files": [
+    {
+      "path": "lightguard_v0_1/data/validation/v10/v09_freeze_manifest.json",
+      "sha256": "ce2328383cd8b5ffaf946b233416a13109564180b511afb664ef7f00c7b4b453"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v10/v10_raw_ami_manifest.json",
+      "sha256": "e4ea819ed021b9b8da7706469837f4808e262ce198ffd47a026ed21f03ce87b5"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v10/v10_final_summary.md",
+      "sha256": "3e01525c826be06f4b450de7f9303ad6d908ca641d8afe916c0149f15967925d"
+    },
+    {
+      "path": "scripts/v09_detector.py",
+      "sha256": "a074c07e4d782de4772b13fcd08434e08cd7389f0a235c727eaae3048078de20"
+    }
+  ]
+}

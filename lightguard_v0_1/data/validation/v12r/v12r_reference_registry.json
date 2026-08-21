@@ -1,0 +1,254 @@
+[
+  {
+    "DOI": "10.1109/ECCE57851.2023.10101600",
+    "URL": "https://ieeexplore.ieee.org/document/10101600",
+    "citation": "IoT-based Efficient Streetlight Controlling, Monitoring and Real-time Error Detection System for Smart Cities in Bangladesh (2023)",
+    "pattern_ids": [
+      "P1"
+    ],
+    "quality_grade": "A",
+    "source_id": "C01",
+    "support_grade": "L3",
+    "year": "2023"
+  },
+  {
+    "DOI": "",
+    "URL": "https://www.energy.gov/eere/ssl/articles/way-automated-fault-detection-and-diagnostics-led-streetlighting-systems",
+    "citation": "On the Way: Automated fault detection and diagnostics for LED street lighting systems (2023)",
+    "pattern_ids": [
+      "P1"
+    ],
+    "quality_grade": "B",
+    "source_id": "C02",
+    "support_grade": "L3",
+    "year": "2023"
+  },
+  {
+    "DOI": "10.1109/TIM.2014.2361551",
+    "URL": "https://doi.org/10.1109/TIM.2014.2361551",
+    "citation": "A Low-Cost and Noninvasive System for the Measurement and Detection of Faulty Streetlights (2015)",
+    "pattern_ids": [
+      "P1"
+    ],
+    "quality_grade": "A",
+    "source_id": "C03",
+    "support_grade": "L3",
+    "year": "2015"
+  },
+  {
+    "DOI": "10.3390/en15249438",
+    "URL": "https://doi.org/10.3390/en15249438",
+    "citation": "Detection of Anomalies in the Operation of a Road Lighting System Based on Data from Smart Electricity Meters (2022)",
+    "pattern_ids": [
+      "P1"
+    ],
+    "quality_grade": "A",
+    "source_id": "C04",
+    "support_grade": "L3",
+    "year": "2022"
+  },
+  {
+    "DOI": "10.1038/s41598-025-19414-8",
+    "URL": "https://doi.org/10.1038/s41598-025-19414-8",
+    "citation": "Anomaly detection in urban lighting systems using autoencoder and transformer algorithms (2025)",
+    "pattern_ids": [
+      "P1"
+    ],
+    "quality_grade": "A",
+    "source_id": "C05",
+    "support_grade": "L3",
+    "year": "2025"
+  },
+  {
+    "DOI": "",
+    "URL": "https://dergipark.org.tr/en/pub/epstem/article/364353",
+    "citation": "Automation System Design for Fault Detection in Street Lighting (2017)",
+    "pattern_ids": [
+      "P1"
+    ],
+    "quality_grade": "B",
+    "source_id": "C06",
+    "support_grade": "L3",
+    "year": "2017"
+  },
+  {
+    "DOI": "10.3390/su131910696",
+    "URL": "https://doi.org/10.3390/su131910696",
+    "citation": "An Energy-Fraud Detection-System Capable of Distinguishing Frauds from Other Energy Flow Anomalies in an Urban Environment (2021)",
+    "pattern_ids": [
+      "P2"
+    ],
+    "quality_grade": "A",
+    "source_id": "C07",
+    "support_grade": "L2",
+    "year": "2021"
+  },
+  {
+    "DOI": "10.1109/TSG.2018.2807925",
+    "URL": "https://doi.org/10.1109/TSG.2018.2807925",
+    "citation": "Detection of Non-Technical Losses Using Smart Meter Data and Supervised Learning (2019)",
+    "pattern_ids": [
+      "P2"
+    ],
+    "quality_grade": "A",
+    "source_id": "C08",
+    "support_grade": "L2",
+    "year": "2019"
+  },
+  {
+    "DOI": "10.1109/TSG.2015.2425222",
+    "URL": "https://doi.org/10.1109/TSG.2015.2425222",
+    "citation": "Electricity Theft Detection in AMI Using Customers' Consumption Patterns (2016)",
+    "pattern_ids": [
+      "P2"
+    ],
+    "quality_grade": "A",
+    "source_id": "C09",
+    "support_grade": "L2",
+    "year": "2016"
+  },
+  {
+    "DOI": "10.1049/iet-cps.2017.0063",
+    "URL": "https://doi.org/10.1049/iet-cps.2017.0063",
+    "citation": "Entropy-based electricity theft detection in AMI network (2018)",
+    "pattern_ids": [
+      "P2"
+    ],
+    "quality_grade": "A",
+    "source_id": "C10",
+    "support_grade": "L2",
+    "year": "2018"
+  },
+  {
+    "DOI": "10.1016/j.energy.2017.07.008",
+    "URL": "https://doi.org/10.1016/j.energy.2017.07.008",
+    "citation": "Detection of non-technical losses in smart meter data based on load curve profiling and time series analysis (2017)",
+    "pattern_ids": [
+      "P2"
+    ],
+    "quality_grade": "A",
+    "source_id": "C11",
+    "support_grade": "L2",
+    "year": "2017"
+  },
+  {
+    "DOI": "10.1016/j.energy.2018.05.127",
+    "URL": "https://doi.org/10.1016/j.energy.2018.05.127",
+    "citation": "Automated load pattern learning and anomaly detection for enhancing energy management in smart buildings (2018)",
+    "pattern_ids": [
+      "P2"
+    ],
+    "quality_grade": "A",
+    "source_id": "C12",
+    "support_grade": "L2",
+    "year": "2018"
+  },
+  {
+    "DOI": "10.1109/TSG.2015.2463755",
+    "URL": "https://doi.org/10.1109/TSG.2015.2463755",
+    "citation": "A Cluster-Based Method for Calculating Baselines for Residential Loads (2016)",
+    "pattern_ids": [
+      "P2"
+    ],
+    "quality_grade": "A",
+    "source_id": "C13",
+    "support_grade": "L2",
+    "year": "2016"
+  },
+  {
+    "DOI": "",
+    "URL": "https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc323.htm",
+    "citation": "CUSUM Control Charts (n.d.)",
+    "pattern_ids": [
+      "P2"
+    ],
+    "quality_grade": "A",
+    "source_id": "C14",
+    "support_grade": "L1",
+    "year": "n.d."
+  },
+  {
+    "DOI": "",
+    "URL": "https://www.itl.nist.gov/div898/handbook/mpc/mpc.htm",
+    "citation": "NIST/SEMATECH Engineering Statistics Handbook: Measurement Process Characterization (2003)",
+    "pattern_ids": [
+      "P2"
+    ],
+    "quality_grade": "A",
+    "source_id": "C15",
+    "support_grade": "L1",
+    "year": "2003"
+  },
+  {
+    "DOI": "10.1016/j.ijepes.2017.09.008",
+    "URL": "https://doi.org/10.1016/j.ijepes.2017.09.008",
+    "citation": "Reliable stator fault detection based on the induction motor negative sequence current compensation (2018)",
+    "pattern_ids": [
+      "P3"
+    ],
+    "quality_grade": "A",
+    "source_id": "C16",
+    "support_grade": "L2",
+    "year": "2018"
+  },
+  {
+    "DOI": "10.15446/dyna.v83n198.50378",
+    "URL": "https://doi.org/10.15446/dyna.v83n198.50378",
+    "citation": "Contributions to the online fault diagnosis of interturn short circuit in three-phase induction motor by means of negative sequence components (2016)",
+    "pattern_ids": [
+      "P3"
+    ],
+    "quality_grade": "A",
+    "source_id": "C17",
+    "support_grade": "L2",
+    "year": "2016"
+  },
+  {
+    "DOI": "",
+    "URL": "https://standards.ieee.org/ieee/1159/6124/",
+    "citation": "IEEE Recommended Practice for Monitoring Electric Power Quality (2019)",
+    "pattern_ids": [
+      "P3"
+    ],
+    "quality_grade": "A",
+    "source_id": "C18",
+    "support_grade": "L2",
+    "year": "2019"
+  },
+  {
+    "DOI": "10.31449/inf.v50i2.8972",
+    "URL": "https://doi.org/10.31449/inf.v50i2.8972",
+    "citation": "Electrical Current Signature-Based Machine Learning Models for Streetlight Fault Prediction in Smart City Infrastructure (2026)",
+    "pattern_ids": [
+      "P3"
+    ],
+    "quality_grade": "A",
+    "source_id": "C19",
+    "support_grade": "L0",
+    "year": "2026"
+  },
+  {
+    "DOI": "10.1109/ISSRE62328.2024.00017",
+    "URL": "https://doi.org/10.1109/ISSRE62328.2024.00017",
+    "citation": "TimeSeriesBench: An Industrial-Grade Benchmark for Time Series Anomaly Detection Models (2024)",
+    "pattern_ids": [
+      "P4"
+    ],
+    "quality_grade": "A",
+    "source_id": "C20",
+    "support_grade": "L1",
+    "year": "2024"
+  },
+  {
+    "DOI": "10.1109/TKDE.2021.3112126",
+    "URL": "https://doi.org/10.1109/TKDE.2021.3112126",
+    "citation": "Current Time Series Anomaly Detection Benchmarks are Flawed and are Creating the Illusion of Progress (2023)",
+    "pattern_ids": [
+      "P4"
+    ],
+    "quality_grade": "A",
+    "source_id": "C21",
+    "support_grade": "L1",
+    "year": "2023"
+  }
+]

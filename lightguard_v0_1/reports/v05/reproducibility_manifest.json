@@ -1,0 +1,72 @@
+{
+  "schema_version": "lightguard-v0.5-reproducibility",
+  "run_timestamp": "2026-08-20T09:37:48Z",
+  "git_sha": "8b5eabdcbf5e61f30652f0ae588bfc6e4c872464",
+  "python_version": "3.10.2",
+  "package_versions": {
+    "openpyxl": "3.1.5"
+  },
+  "commands": [
+    "python3 scripts/run_v05_forensics.py",
+    "python3 scripts/run_v05_causal.py",
+    "python3 scripts/run_v05_robustness.py"
+  ],
+  "frozen_config": {
+    "activation": 0.6,
+    "duration": 0.25,
+    "load": 0.25,
+    "phase": 0.2,
+    "solar_penalty": 0.2,
+    "transient_penalty": 0.2,
+    "policy_penalty": 0.2,
+    "weather": 0.0,
+    "threshold": 0.55
+  },
+  "frozen_hashes": {
+    "v03": "935bc5ea7d70e878f15113dc08d11dfee7ebcbb350d90d421f46a7704cf27368",
+    "v04_calibration": "8fe85425f6ca3b9bc2517a137da96d3edc22bbf387209b53efd933364496032e",
+    "v04_holdout": "1be716621da5b53bce11a748d9b05e63d4aa329e7d62b8f16e606b2ccff09831"
+  },
+  "source_workbook_sha256": "c18b49022d1c7dee2117a8d65a07d71351fb1aea8538751b7032867e4081b7d0",
+  "input_hashes": {
+    "lightguard_v0_1/data/context/controlled_validation_frozen_2026.json": "056b93a4e382730c3194274f7d04d9879489c58407a368563f98979a7ef53e07",
+    "lightguard_v0_1/data/validation/v04_calibration_set.json": "84a1c4bb288208e99740e3e3ba3ff5d6407f52f0c3892b0d1c2fae774ac84101",
+    "lightguard_v0_1/data/validation/v04_confirmatory_holdout.json": "5e225ec02cce405dfd11eb918069c841600dd90ebead5bba804a1fb919c2a13e",
+    "lightguard_app/assets/data/ami_events.csv": "c131fd7d635788b7ab71d50d31bff1abd91a3b492d57bae9b0a0a3ee7fed88d8",
+    "lightguard_app/assets/data/ami_event_windows/replay_manifest.json": "22f05552307016ed0fee1910cfa47ba2fa0dddf305f13c18045e661ba1a996af"
+  },
+  "output_hashes": {
+    "lightguard_app/assets/data/context/v05_validation_summary.json": "74a78b168b5aff99fc7e168659e5cc2f6f6f9ed99a0500e4573deba9b9abdf6b",
+    "lightguard_app/docs/v05_real_data_robustness.md": "0ffd8b5eef00e3b8b94c0c9a2d66082c54606eb48fd77da2f4112834af362d23",
+    "lightguard_v0_1/data/validation/v05/causal_walkforward_results.csv": "464b6ba069d996a0f1413cb9bc193b94538623dfd14e3004369b30c85cf49df9",
+    "lightguard_v0_1/data/validation/v05/causal_walkforward_summary.json": "ed10cbc5bfed559953e90a062866d784f6a93f5f1d8b64aa20f4c334914c9d35",
+    "lightguard_v0_1/data/validation/v05/sensitivity_grid.json": "e47e88defe0e4604aa0c66ad53f031025106bd881c0d1b5c8a0b93a69a616de8",
+    "lightguard_v0_1/data/validation/v05/stress_suite_cases.json": "4725264ceee93e60b513bbfc5d5319e1f35f7b0caa073636a9507fc2e01d7241",
+    "lightguard_v0_1/data/validation/v05/temporal_meter_profiles.json": "8e9ed4fbd223b5828d7c85cd18a84f4e397b61801bc5fcbbbb0befaafa20bbc0",
+    "lightguard_v0_1/data/validation/v05/v05_validation_summary.json": "74a78b168b5aff99fc7e168659e5cc2f6f6f9ed99a0500e4573deba9b9abdf6b",
+    "lightguard_v0_1/reports/v05/baseline_integrity.json": "181258d54f3e1eb8846d75bbfe118336d637400629fdf9352ef63335977378cb",
+    "lightguard_v0_1/reports/v05/causal_walkforward_summary.md": "f8bcc9ea69177d6506e9365dbd3e815c1b71529d404bf48c19094bb17e5f6cf0",
+    "lightguard_v0_1/reports/v05/data_release_governance.md": "bb592ee688228ac292584e50b7cd05204f8df18c417a4fb9ceed4ae5237cf1a1",
+    "lightguard_v0_1/reports/v05/experiment_protocol.md": "091b93d0d181304807a3143b2837eddddc1dc28ec919a2ae05f44a80176f8328",
+    "lightguard_v0_1/reports/v05/final_v05_summary.md": "0ffd8b5eef00e3b8b94c0c9a2d66082c54606eb48fd77da2f4112834af362d23",
+    "lightguard_v0_1/reports/v05/independent_audit.md": "9efe40584de9039421a6f29d5898a81095fd3c2e54ecd3d0fe6f39f424cf0826",
+    "lightguard_v0_1/reports/v05/leakage_audit.md": "53eb0abf362c99da6b45b9d416b12d98428379785d978b5eaaf5cb4dc16b4c1c",
+    "lightguard_v0_1/reports/v05/meter_generalization.md": "96f9cf716e71eb5698bdab684b8339c2bc7664c8752aafffa26e5031f958aaac",
+    "lightguard_v0_1/reports/v05/operational_evidence_summary.md": "9fb5a91c8687f51a7037b0ebb5b8068f93a777f65167a671d4f525229db4b708",
+    "lightguard_v0_1/reports/v05/parameter_sensitivity.csv": "1bc3b2b3d90f9928ef01818a294911163715849d93a83b41d8b89d0f23ec7bca",
+    "lightguard_v0_1/reports/v05/parameter_sensitivity_summary.md": "fe25630678070725012540bad81db80ff016174108966451374dbf8be1d4c6cc",
+    "lightguard_v0_1/reports/v05/peak_consistency_adjudication.md": "da668771072b3edc407d6fda7f673d5552a43efd4d179c7b02e3fd37290177f3",
+    "lightguard_v0_1/reports/v05/peak_consistency_forensics.csv": "21ca1166f0a65e9c768dadc92a1227f41d35da00b00dbe4298d01cef6538bd71",
+    "lightguard_v0_1/reports/v05/robustness_results.csv": "a2b537e6b3a9a104b57496fda0d9af2c91f91183cb8d50fd03c8774739e3da0b",
+    "lightguard_v0_1/reports/v05/robustness_summary.md": "502468900f3a38c1aaf01c4c701f6be162f0487d8973d08de1bd7025b51b4261",
+    "lightguard_v0_1/reports/v05/temporal_stability.csv": "7c010620eebfffb5d687230beae9f9c77a3de7bc6edc9e181a5c2628f643a578"
+  },
+  "allowed_nondeterminism": [
+    "run_timestamp"
+  ],
+  "claim_policy": {
+    "canonical_six": "known detector candidates, not truth labels",
+    "field_accuracy": "prohibited",
+    "cost_conversion": "prohibited without Suyeong same-scope denominator"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "claim_boundary": "External physical-mechanism replication only; not streetlight field accuracy, municipal performance, fault recall, false-positive rate, asset condition, or actual fault probability.",
+  "external_empirical_grade": "NO_EV_GRADE_NOT_EVALUABLE",
+  "mad_sc3_balanced_accuracy": 0.52004485,
+  "path": "lightguard_v0_1/reports/v13/reproducibility_manifest.json",
+  "primary_gate": "NOT_EVALUABLE_INCOMPLETE_COVERAGE",
+  "schema_version": "lightguard.v14.v13-freeze.1",
+  "sha256": "4194fcf900a5b1bd83e1b37076df4780c3d2c990d7227ec5a1570a2fa143726f",
+  "status": "FROZEN_NEGATIVE_NON_EVALUABLE",
+  "z_score_balanced_accuracy": 0.66598258
+}

@@ -35,3 +35,5 @@ flutter:
     - assets/data/simulation_scenarios_v02.json
     - assets/data/simulation_validation_results_v02.csv
     - assets/data/ami_events.csv
+    - assets/data/context/
+    - assets/data/ami_event_windows/

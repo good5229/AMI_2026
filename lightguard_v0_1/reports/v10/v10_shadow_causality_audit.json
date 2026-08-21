@@ -1,0 +1,18 @@
+{
+  "schema_version": "lightguard.v10.shadow-causality-audit.1",
+  "origin_count": 43582,
+  "all_origin_causal_proofs": true,
+  "origin_hash_chain": true,
+  "history_membership_xor_serialized": true,
+  "duplicate_timestamp_count": 0,
+  "same_time_permutation": "PASS_VACUOUS_NO_DUPLICATES",
+  "prefix_end": "2026-05-31 23:59:59",
+  "prefix_origins_compared": 29206,
+  "prefix_mismatches": 0,
+  "prefix_invariance": "PASS",
+  "window_rule": "same_meter_[t-30d,t)",
+  "pre_canonical_episode_sha256": "5bff39aeabb5ad4e58fff1db00e4a3f59d1a0ea2cf8e092f5f5a9c3555c5387c",
+  "canonical_loaded_after_seal": true,
+  "canonical_artifact_sha256": "c131fd7d635788b7ab71d50d31bff1abd91a3b492d57bae9b0a0a3ee7fed88d8",
+  "external_context_join": "none"
+}

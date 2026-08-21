@@ -1,0 +1,31 @@
+{
+  "claim_boundary": "descriptive uncertainty for proxy-signal shares only; not an outcome evaluation",
+  "cluster_count": 305,
+  "cluster_unit": "meter_id x logical_date",
+  "metric_intervals": {
+    "D1/D2 joint proxy-signal share": {
+      "median": 0.01631534,
+      "p2_5": 0.01466048,
+      "p97_5": 0.01802359
+    },
+    "D1/P1 proxy-signal share": {
+      "median": 0.04392066,
+      "p2_5": 0.04151515,
+      "p97_5": 0.04608749
+    },
+    "D2/P2 proxy-signal share": {
+      "median": 0.22171961,
+      "p2_5": 0.19861535,
+      "p97_5": 0.24560336
+    },
+    "D3/P3 proxy-signal share among 3P": {
+      "median": 0.02514836,
+      "p2_5": 0.02147514,
+      "p97_5": 0.02925745
+    }
+  },
+  "replicates": 2000,
+  "route": "C",
+  "schema_version": "lightguard.v11.meter-day-cluster-bootstrap.1",
+  "seed": 202611
+}

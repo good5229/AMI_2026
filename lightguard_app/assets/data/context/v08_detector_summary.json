@@ -1,0 +1,246 @@
+{
+  "actual_external_regional_ami": "unavailable",
+  "baseline": {
+    "abstention_rate": 0.0,
+    "average_precision": 0.69913732,
+    "balanced_accuracy": 0.59490741,
+    "cell_recall_variance": 0.01463906,
+    "counts": {
+      "abstain": 0,
+      "anomalies": 216,
+      "fp": 68,
+      "normals": 216,
+      "tp": 109
+    },
+    "fpr": 0.31481481,
+    "fpr_evaluable": 0.31481481,
+    "fpr_wilson_95": [
+      0.25657163,
+      0.37952976
+    ],
+    "hard_negative_fpr": 0.17777778,
+    "ndcg_at_20": 1.0,
+    "p_at_10": 1.0,
+    "p_at_20": 1.0,
+    "per_cell_recall": {
+      "chungju_autumn": 0.3333333333333333,
+      "chungju_spring": 0.3333333333333333,
+      "chungju_summer": 0.4444444444444444,
+      "chungju_winter": 0.3888888888888889,
+      "gangneung_autumn": 0.4444444444444444,
+      "gangneung_spring": 0.5,
+      "gangneung_summer": 0.6666666666666666,
+      "gangneung_winter": 0.5555555555555556,
+      "suyeong_autumn": 0.6666666666666666,
+      "suyeong_spring": 0.6111111111111112,
+      "suyeong_summer": 0.4444444444444444,
+      "suyeong_winter": 0.6666666666666666
+    },
+    "per_type_recall": {
+      "deep_day_full_activation": 0.16666666666666666,
+      "deep_day_partial_activation": 0.5,
+      "moderate_load_mismatch": 0.25,
+      "partial_activation_long_persistence": 0.5,
+      "phase_anomaly_moderate_activation": 0.7083333333333334,
+      "phase_selective_activation": 0.5,
+      "post_sunrise_persistent_activation": 0.6111111111111112,
+      "weak_long_duration_activation": 0.75
+    },
+    "precision": 0.61581921,
+    "recall": 0.50462963,
+    "recall_evaluable": 0.50462963,
+    "recall_wilson_95": [
+      0.43845732,
+      0.57064014
+    ],
+    "weak_recall": 0.0,
+    "worst_cell_recall": 0.33333333
+  },
+  "candidate_gate": "failed_fpr_limit",
+  "chungju": {
+    "fixture_count_stratum": "unavailable_all_zero",
+    "imputation": "none",
+    "rated_load": "unavailable"
+  },
+  "claim_boundary": "Generated controlled holdout only; no actual Gangneung or Chungju AMI performance claim.",
+  "confirmatory_cases": 432,
+  "experimental_c1": {
+    "abstention_rate": 0.0,
+    "average_precision": 0.92383551,
+    "balanced_accuracy": 0.81018519,
+    "cell_recall_variance": 0.00042867,
+    "counts": {
+      "abstain": 0,
+      "anomalies": 216,
+      "fp": 24,
+      "normals": 216,
+      "tp": 158
+    },
+    "fpr": 0.11111111,
+    "fpr_evaluable": 0.11111111,
+    "fpr_wilson_95": [
+      0.07581156,
+      0.16000137
+    ],
+    "hard_negative_fpr": 0.13333333,
+    "ndcg_at_20": 1.0,
+    "p_at_10": 1.0,
+    "p_at_20": 1.0,
+    "per_cell_recall": {
+      "chungju_autumn": 0.7222222222222222,
+      "chungju_spring": 0.7222222222222222,
+      "chungju_summer": 0.7777777777777778,
+      "chungju_winter": 0.7777777777777778,
+      "gangneung_autumn": 0.7222222222222222,
+      "gangneung_spring": 0.7222222222222222,
+      "gangneung_summer": 0.7222222222222222,
+      "gangneung_winter": 0.7222222222222222,
+      "suyeong_autumn": 0.7222222222222222,
+      "suyeong_spring": 0.7222222222222222,
+      "suyeong_summer": 0.7222222222222222,
+      "suyeong_winter": 0.7222222222222222
+    },
+    "per_type_recall": {
+      "deep_day_full_activation": 0.5833333333333334,
+      "deep_day_partial_activation": 0.6666666666666666,
+      "moderate_load_mismatch": 0.5,
+      "partial_activation_long_persistence": 1.0,
+      "phase_anomaly_moderate_activation": 1.0,
+      "phase_selective_activation": 0.5,
+      "post_sunrise_persistent_activation": 0.6666666666666666,
+      "weak_long_duration_activation": 1.0
+    },
+    "precision": 0.86813187,
+    "recall": 0.73148148,
+    "recall_evaluable": 0.73148148,
+    "recall_wilson_95": [
+      0.66871275,
+      0.78616051
+    ],
+    "weak_recall": 0.19444444,
+    "worst_cell_recall": 0.72222222
+  },
+  "experimental_c2": {
+    "abstention_rate": 0.01388889,
+    "average_precision": 0.87921189,
+    "balanced_accuracy": 0.81018519,
+    "cell_recall_variance": 0.00042867,
+    "counts": {
+      "abstain": 6,
+      "anomalies": 216,
+      "fp": 24,
+      "normals": 216,
+      "tp": 158
+    },
+    "fpr": 0.11111111,
+    "fpr_evaluable": 0.11111111,
+    "fpr_wilson_95": [
+      0.07581156,
+      0.16000137
+    ],
+    "hard_negative_fpr": 0.13333333,
+    "ndcg_at_20": 0.82320979,
+    "p_at_10": 0.9,
+    "p_at_20": 0.9,
+    "per_cell_recall": {
+      "chungju_autumn": 0.7222222222222222,
+      "chungju_spring": 0.7222222222222222,
+      "chungju_summer": 0.7777777777777778,
+      "chungju_winter": 0.7777777777777778,
+      "gangneung_autumn": 0.7222222222222222,
+      "gangneung_spring": 0.7222222222222222,
+      "gangneung_summer": 0.7222222222222222,
+      "gangneung_winter": 0.7222222222222222,
+      "suyeong_autumn": 0.7222222222222222,
+      "suyeong_spring": 0.7222222222222222,
+      "suyeong_summer": 0.7222222222222222,
+      "suyeong_winter": 0.7222222222222222
+    },
+    "per_type_recall": {
+      "deep_day_full_activation": 0.5833333333333334,
+      "deep_day_partial_activation": 0.6666666666666666,
+      "moderate_load_mismatch": 0.5,
+      "partial_activation_long_persistence": 1.0,
+      "phase_anomaly_moderate_activation": 1.0,
+      "phase_selective_activation": 0.5,
+      "post_sunrise_persistent_activation": 0.6666666666666666,
+      "weak_long_duration_activation": 1.0
+    },
+    "precision": 0.86813187,
+    "recall": 0.73148148,
+    "recall_evaluable": 0.75238095,
+    "recall_wilson_95": [
+      0.66871275,
+      0.78616051
+    ],
+    "weak_recall": 0.19444444,
+    "worst_cell_recall": 0.72222222
+  },
+  "experimental_c3": {
+    "abstention_rate": 0.01851852,
+    "average_precision": 0.89396099,
+    "balanced_accuracy": 0.79861111,
+    "cell_recall_variance": 0.00177898,
+    "counts": {
+      "abstain": 8,
+      "anomalies": 216,
+      "fp": 22,
+      "normals": 216,
+      "tp": 151
+    },
+    "fpr": 0.10185185,
+    "fpr_evaluable": 0.10232558,
+    "fpr_wilson_95": [
+      0.06822738,
+      0.14939063
+    ],
+    "hard_negative_fpr": 0.12222222,
+    "ndcg_at_20": 0.85795996,
+    "p_at_10": 0.9,
+    "p_at_20": 0.95,
+    "per_cell_recall": {
+      "chungju_autumn": 0.6111111111111112,
+      "chungju_spring": 0.6111111111111112,
+      "chungju_summer": 0.7222222222222222,
+      "chungju_winter": 0.7222222222222222,
+      "gangneung_autumn": 0.7222222222222222,
+      "gangneung_spring": 0.7222222222222222,
+      "gangneung_summer": 0.7222222222222222,
+      "gangneung_winter": 0.7222222222222222,
+      "suyeong_autumn": 0.7222222222222222,
+      "suyeong_spring": 0.7222222222222222,
+      "suyeong_summer": 0.6666666666666666,
+      "suyeong_winter": 0.7222222222222222
+    },
+    "per_type_recall": {
+      "deep_day_full_activation": 0.5833333333333334,
+      "deep_day_partial_activation": 0.6666666666666666,
+      "moderate_load_mismatch": 0.5,
+      "partial_activation_long_persistence": 0.7916666666666666,
+      "phase_anomaly_moderate_activation": 1.0,
+      "phase_selective_activation": 0.5,
+      "post_sunrise_persistent_activation": 0.6111111111111112,
+      "weak_long_duration_activation": 1.0
+    },
+    "precision": 0.87283237,
+    "recall": 0.69907407,
+    "recall_evaluable": 0.72248804,
+    "recall_wilson_95": [
+      0.63486619,
+      0.75632481
+    ],
+    "weak_recall": 0.09722222,
+    "worst_cell_recall": 0.61111111
+  },
+  "feature_availability": {
+    "abstentions": 75,
+    "decision_changes": 63,
+    "imputation": "none",
+    "paired_cases": 1728
+  },
+  "holdout_sha256": "71a4d7099be61f073f8411acd3b0af999dd672060dde9621513e0505e32c1a1d",
+  "schema_version": "lightguard.v08-app-summary.v1",
+  "selected_candidate": null,
+  "validation_kind": "independent_controlled_confirmatory_holdout",
+  "weather_policy": "context_only"
+}

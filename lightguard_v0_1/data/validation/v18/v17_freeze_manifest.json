@@ -1,0 +1,22 @@
+{
+  "release": "v0.17",
+  "status": "FROZEN_UNMODIFIED",
+  "operational_need_grade": "ON-A",
+  "spatial_join": "PARTIAL_JOIN",
+  "spatial_analysis": "NO_SPATIAL_JOIN",
+  "d4": "HOLD_PROFILE_ONLY",
+  "files": [
+    {
+      "path": "lightguard_v0_1/data/validation/v17/v17_source_manifest.json",
+      "sha256": "c6a808997ff2fb4f1cca2d086787fb85de009f2f4b54ceebefca7c82f49c75bc"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v17/v17_operational_summary.json",
+      "sha256": "a57181d3473781db64389b89ce42149448d9d8ca2db39dfe533c9e366355f7b4"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v17/v17_final_summary.md",
+      "sha256": "0e487abb2fd169334ea9e078bf66ed6848e7a0cd6027b65528774a0150baa3fa"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": "lightguard-v0.5-product-evidence",
+  "validation_scope": "technical validation; actual AMI has no confirmed fault labels",
+  "actual_ami_peak": {
+    "legacy_metric_consistent": 2,
+    "legacy_metric_total": 6,
+    "legacy_metric_definition": "window-wide maximum individual phase compared with canonical aggregate peak",
+    "adjudicated_metric_consistent": 6,
+    "adjudicated_metric_total": 6,
+    "adjudicated_metric_definition": "event-label maximum of sum(non-null I1,I2,I3) compared like for like",
+    "primary_cause": "AGGREGATION_DEFINITION"
+  },
+  "causal_replay": {
+    "past_only": true,
+    "date_range": "2026-04-01/2026-06-30",
+    "meter_count": 5,
+    "baseline_windows": [
+      "7d",
+      "14d",
+      "30d",
+      "expanding"
+    ],
+    "canonical_candidate_coverage": {
+      "7d": 1.0,
+      "14d": 1.0,
+      "30d": 1.0,
+      "expanding": 1.0
+    },
+    "candidate_counts": {
+      "7d": 6,
+      "14d": 6,
+      "30d": 6,
+      "expanding": 6
+    },
+    "full_sample_future_leakage": true
+  },
+  "robustness": {
+    "deterministic_seed": 5052026,
+    "random_missing_20pct_coverage": 0.8333333333333334,
+    "downsample_30m_coverage": 1.0,
+    "downsample_60m_coverage": 1.0,
+    "gap_120m_coverage": 0.0,
+    "null_policy": "missing channel remains unavailable; never zero"
+  },
+  "sensitivity": {
+    "classification": "Knife-edge or locally sensitive",
+    "most_sensitive_parameter": "activation",
+    "most_sensitive_setting": 0.8,
+    "activation_plus_20_normal_fpr": 0.06962025316455696,
+    "frozen_baseline_normal_fpr": 0.0189873417721519,
+    "activation_plus_20_candidate_count": 56,
+    "frozen_config_changed": false
+  },
+  "operational_evidence": {
+    "cost_conversion_allowed": false,
+    "reason": "No Suyeong same-scope contract and dispatch denominator"
+  },
+  "claim_policy": {
+    "allowed": [
+      "past-only replay",
+      "known detector candidate coverage",
+      "technical robustness",
+      "ranking sensitivity"
+    ],
+    "prohibited": [
+      "field accuracy",
+      "true fault detection rate",
+      "dispatch-cost saving",
+      "actual municipal AMI accuracy"
+    ]
+  }
+}

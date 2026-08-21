@@ -1,0 +1,30 @@
+{
+  "decision_timestamp_stage": "BEFORE_BUYEO_OUTCOME_CONSTRUCTION_AND_SCORING",
+  "eligible": true,
+  "decision": "ELIGIBLE_COMMON_OPS",
+  "minimum_core_features": 6,
+  "common_features": [
+    "month",
+    "weekday",
+    "prior_30d_count",
+    "prior_90d_count",
+    "prior_365d_count",
+    "days_since_previous_event",
+    "open_prior_case_count",
+    "historical_long_resolution_count"
+  ],
+  "compatible_count": 8,
+  "blocked_features": [
+    "receipt_type",
+    "district",
+    "fault_type",
+    "complainant",
+    "location",
+    "action_text"
+  ],
+  "same_temporal_definition": true,
+  "buyeo_retuning_allowed": false,
+  "primary_outcome": "repeat_30d",
+  "right_censor_days": 30,
+  "seal": "written before enrich() constructs Buyeo outcomes"
+}

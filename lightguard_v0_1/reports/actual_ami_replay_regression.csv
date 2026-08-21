@@ -1,0 +1,7 @@
+﻿event_id,file,event_type,event_type_reproduced,interval_overlap,observed_peak_current_a,expected_peak_current_a,peak_current_consistent,active_phases,phase_selective_consistent,source_row_count,file_sha256,field_accuracy_claim,context_join
+AMI-EVT-237615b73a,B-L-35_2026-05-11.csv,daytime_full_activation,True,True,16.55,16.55,True,i1,True,18,f9f5faa55fc47fd1d6192d207982ae0c6c5cc500849493662e8d91972e224ca8,prohibited,none
+AMI-EVT-d406cc5296,B-L-14_2026-05-19.csv,daytime_partial_activation,True,True,2.94,7.08,False,"i1,i2,i3",True,18,815d6707dfd29f50a6f1986ef299a287518156b6c83775c844de13f2304c23c7,prohibited,none
+AMI-EVT-fda2dd8737,B-L-9_2026-05-20.csv,daytime_full_activation,True,True,16.429,43.158,False,"i1,i2,i3",True,18,bd51ad4f9bd4c5cae4e954926a5f1d51e3b6e779f40e3f5cf274a815512de763,prohibited,none
+AMI-EVT-f394b2a542,B-L-9_2026-05-21.csv,daytime_full_activation,True,True,18.594,48.736,False,"i1,i2,i3",True,17,e548f9f1e3af2b7520ce88bbd35971b551d3ec5b4d66616216e036864442b8e9,prohibited,none
+AMI-EVT-4ada00d8f3,B-L-14_2026-05-29.csv,daytime_phase_selective_activation,True,True,3.99,6.49,False,"i2,i3",True,22,2f37bfa5b93e8bb387874a74574b92c01a5762cfa9d292b4ea61286a811613e7,prohibited,none
+AMI-EVT-d706634ed1,B-L-13_2026-06-23.csv,daytime_partial_activation,True,True,5.9,5.9,True,i1,True,17,13be03d905e90ac23cc29263a2841078fa002d83ab5d3fc48db5e682e95f4cc2,prohibited,none

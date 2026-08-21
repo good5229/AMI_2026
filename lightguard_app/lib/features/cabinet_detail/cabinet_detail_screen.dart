@@ -13,6 +13,7 @@ class CabinetDetailScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final dataAsync = ref.watch(lightguardDataProvider);
+    final officialContext = ref.watch(officialContextProvider).asData?.value;
     return dataAsync.when(
       loading: () =>
           const Scaffold(body: Center(child: CircularProgressIndicator())),
@@ -67,6 +68,17 @@ class CabinetDetailScreen extends ConsumerWidget {
                             ?.toString() ??
                         ''),
                 _kv('기상 기준점', cabinet.weatherContext.stationName),
+                _kv('운영 기상 정책', '기상청 관측자료만 operational context'),
+                _kv(
+                    '공식 천문 Context',
+                    officialContext?.firstOfficialSolar == null
+                        ? 'KASI 미수집 · 내부 계산값으로 대체하지 않음'
+                        : 'KASI ${officialContext!.firstOfficialSolar!['date']} · 일출 ${officialContext.firstOfficialSolar!['sunrise']} / 일몰 ${officialContext.firstOfficialSolar!['sunset']}'),
+                _kv(
+                    '공식 기상 Context',
+                    officialContext?.firstOfficialWeather == null
+                        ? 'KMA ASOS 부산 159 미수집'
+                        : 'KMA ASOS 부산 159 · ${officialContext!.firstOfficialWeather!['timestamp']}'),
               ]),
               const SizedBox(height: 8),
               _section(

@@ -1,0 +1,4 @@
+dataset,file_id,quality_grade,status,metrics_published,claim_boundary
+External UCR ItalianPowerDemand,210,DG-C,WITHHELD_LICENSE_UNKNOWN,False,"Generic temporal stress only; not electrical mechanism validity, streetlight field accuracy, or fault probability."
+External UCR ItalianPowerDemand,211,DG-C,WITHHELD_LICENSE_UNKNOWN,False,"Generic temporal stress only; not electrical mechanism validity, streetlight field accuracy, or fault probability."
+External UCR ItalianPowerDemand,212,DG-C,WITHHELD_LICENSE_UNKNOWN,False,"Generic temporal stress only; not electrical mechanism validity, streetlight field accuracy, or fault probability."

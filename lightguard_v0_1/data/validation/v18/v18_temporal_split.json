@@ -1,0 +1,31 @@
+{
+  "split_basis": "receipt_date",
+  "primary_outcome": "REPEAT_WITHIN_30D",
+  "snapshot_end": "2025-08-09",
+  "development": {
+    "start": "2020-01-01",
+    "end": "2023-12-01",
+    "episodes": 71162
+  },
+  "development_embargo": {
+    "start": "2023-12-02",
+    "end": "2023-12-31"
+  },
+  "validation": {
+    "start": "2024-01-01",
+    "end": "2024-12-01",
+    "episodes": 16618
+  },
+  "validation_embargo": {
+    "start": "2024-12-02",
+    "end": "2024-12-31"
+  },
+  "confirmatory": {
+    "start": "2025-01-01",
+    "end": "2025-07-10",
+    "episodes": 9145
+  },
+  "repeat30_censoring": "receipt_date after 2025-07-10 is not evaluable",
+  "repeat90_censoring": "receipt_date after 2025-05-11 is not evaluable",
+  "confirmatory_frozen_before_scoring": true
+}

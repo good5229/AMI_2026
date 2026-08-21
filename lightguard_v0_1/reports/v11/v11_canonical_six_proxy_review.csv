@@ -1,0 +1,7 @@
+event,h1,p1,p2,p3,proxy_family_count,consensus,field_truth
+AMI-EVT-237615b73a,data_check_required,True,True,N/A,2,H1-independent anomaly-sign candidate,unavailable
+AMI-EVT-d406cc5296,normal,True,False,True,2,H1-independent anomaly-sign candidate,unavailable
+AMI-EVT-fda2dd8737,observe,True,True,False,2,H1 + Proxy High,unavailable
+AMI-EVT-f394b2a542,normal,True,False,False,1,Independent singleton/Neither,unavailable
+AMI-EVT-4ada00d8f3,observe,True,True,True,3,H1 + Proxy High,unavailable
+AMI-EVT-d706634ed1,normal,True,False,N/A,1,Independent singleton/Neither,unavailable

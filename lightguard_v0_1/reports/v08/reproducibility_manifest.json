@@ -1,0 +1,25 @@
+{
+  "files": {
+    "docs/agent_learning_v08/luna_independent_qa.md": "6edfef1638e89846fd6e4bdfd17894579a79763be558d9b902736cc71d723bc7",
+    "lightguard_app/assets/data/context/v08_detector_summary.json": "f2eb8b0d96330e3232bc355e137a23cbd98f3947865f9fda6d138fdf0ddf400c",
+    "lightguard_app/docs/v08_detector_validation.md": "816302a9dc08537a546de6faf5823d0b3064398699131b08ab50acc510afa191",
+    "lightguard_v0_1/data/validation/v08/v07_freeze_manifest.json": "57611a1e5dcf041172849dcfe365a4a3ee663c5992cd11d7411e7695bfdd6abb",
+    "lightguard_v0_1/data/validation/v08/v08_calibration_set.json": "b9825d7b8d336de9421a5941d2c7f069202b3f402fa4090b2837abb7d3a38b2f",
+    "lightguard_v0_1/data/validation/v08/v08_candidate_freeze.json": "12fdb827f3b3d553707b616425bbc9721405df7623d40c79a87169589eed2b35",
+    "lightguard_v0_1/data/validation/v08/v08_confirmatory_holdout.json": "71a4d7099be61f073f8411acd3b0af999dd672060dde9621513e0505e32c1a1d",
+    "lightguard_v0_1/data/validation/v08/v08_confirmatory_summary.json": "b01cd05781294dae8c6766e0c9ddbfa297066d35d8e22e7f46ebc5a2cee3efb5",
+    "lightguard_v0_1/data/validation/v08/v08_design_matrix.csv": "9fba439a9bd22d184e6a705af559a9b43a39fb4b9498cfa3d3a50c2f5853dbb0",
+    "lightguard_v0_1/data/validation/v08/v08_feature_availability_cases.json": "2e6992b569c40d4f5780ecbb71f842158bc433a28cf1881c64cfc70fa9ad2d19",
+    "lightguard_v0_1/data/validation/v08_design_matrix.csv": "9fba439a9bd22d184e6a705af559a9b43a39fb4b9498cfa3d3a50c2f5853dbb0",
+    "lightguard_v0_1/reports/v08/v07_failure_matrix.csv": "6c6ac4aac5fa1a4e3715248edfccc6ca88a763d67bd62aaa246b358f59311701",
+    "lightguard_v0_1/reports/v08/v08_calibration_results.csv": "e601e8fa1777e7340af797b2d4b57f21d50707ac9a65f1c07bfc4ecaf09ba73f",
+    "lightguard_v0_1/reports/v08/v08_confirmatory_results.csv": "07eea40b1e613e1b3901fd840c67e6302e46317a0fd0999f6be577323445eeff",
+    "lightguard_v0_1/reports/v08/v08_factor_effects.csv": "a3ef7bc59db6e332e7579a6d34412d55926e14d8deb09e116902a1eebff3fc33",
+    "lightguard_v0_1/reports/v08/v08_feature_availability_results.csv": "3932c684c28ff0fc7a85d5fedf09d6b356639645605234dd19f4ba01dfa58644",
+    "lightguard_v0_1/reports/v08/v08_final_summary.md": "7f04d721c21a8575851131ee12a9084f32a68da016b3e53f39d15577efd28df3",
+    "lightguard_v0_1/reports/v08/v08_independent_audit.md": "2c7970fee58d9ed929884fa9a4ab6318278496073d55cb3e67c881df4758ba42",
+    "lightguard_v0_1/reports/v08/v08_uncertainty_summary.md": "bb57f49bbd8f177fc3dd83aa960b68f3080157a4b70f0e8a821f09bbf884e49f",
+    "lightguard_v0_1/reports/v08/v08_weather_candidate_decision.md": "fb08ee6b30168fe14a2c7315d23ea2a340fc914097dd5b7b814f01806fb64007"
+  },
+  "schema_version": "lightguard.v08-manifest.v1"
+}

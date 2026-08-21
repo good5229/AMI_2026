@@ -1,0 +1,14 @@
+{
+  "selected_model": "B2_LOGISTIC",
+  "confirmatory_ap": 0.1987347617215172,
+  "top10_enrichment": 3.115766344064784,
+  "capacities": {
+    "C25": 0,
+    "C50": 62,
+    "C75": 80
+  },
+  "grade": "OU-B",
+  "decision": "LIMITED_OPERATIONAL_PRIORITY_EVIDENCE",
+  "daegu_raw_sha256": "a21d87de8da61d5793fd87655efbd857be5990e7188aaec8d913c4ced788cbd0",
+  "retuning_count": 0
+}

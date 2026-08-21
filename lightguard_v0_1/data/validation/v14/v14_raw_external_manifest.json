@@ -1,0 +1,423 @@
+{
+  "claim_boundary": "External physical-mechanism replication only; not streetlight field accuracy, municipal performance, fault recall, false-positive rate, asset condition, or actual fault probability.",
+  "codex_policy": "selected runs only; 16 MiB HTTP Range prefix; every run is partial",
+  "files": [
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/A1_1.prefix.csv",
+      "sha256": "3e4b341f08e9551f774aacc3695b16c796114355581429f4f9b5aee9b1f2a067",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249675"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/A1_2.prefix.csv",
+      "sha256": "4362ba44a7143485153732026553558cbd1eec764a7d52ff1fb25bba61726005",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249694"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/A1_3.prefix.csv",
+      "sha256": "b1a2eddd80c5d6fd494b2e4db7b2b6d43d09b904a53924755a3e07e3810cf0dc",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249657"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/A1_4.prefix.csv",
+      "sha256": "8da5a76f7c5e5b9ae3f70335374c483fd4c0863de1286ca35cb5473f021c7979",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249709"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/A2_1.prefix.csv",
+      "sha256": "4d3ac55a4daa817dd35f5f49cfb1e4b17ca0237b058663a847bdbe96fbcdf3de",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249648"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/A2_2.prefix.csv",
+      "sha256": "cbc448da6811170ce33da6d3537f42adb7d8cdadef1fbb009bda84ab36a09946",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249707"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/A2_3.prefix.csv",
+      "sha256": "4debd52a24d2f99c9597be90b8fae5e4fffc3263e96c3c7ba8fc5c6628cbdbc6",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249662"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/A3_1.prefix.csv",
+      "sha256": "5e7d6ca8e826a5e93402d0dc5ac19144573748ab66f0d226a81212055a5ad39f",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249656"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/A3_2.prefix.csv",
+      "sha256": "4e01da5756bc3e9aa739de1269e8a0021e9744533b44bd52a891805f8c864247",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249672"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/A3_3.prefix.csv",
+      "sha256": "0f965de02f85151ce8ef2c5afe2dfb97b8fd4c0d989a7d429bd7c2c9eae518dd",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249726"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/B1_1.prefix.csv",
+      "sha256": "fa41188aaf78e8fa9d6789b74c4499cf6649da9ac44b826851eda3cf01d4b20c",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249678"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/B1_2.prefix.csv",
+      "sha256": "bde662626150a3b0dad882998e5e3e6d519063402073ad26990eb5c78896ff7a",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249660"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/B1_3.prefix.csv",
+      "sha256": "bbded8df6289a6266d36caf483642a6d8fa1130b8eb2562b397e1e15b9911d88",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249710"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/B1_4.prefix.csv",
+      "sha256": "7e9475bd81839b382257f7584ae262250b3ac6357821da85754a36c379a23488",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249645"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/B2_1.prefix.csv",
+      "sha256": "5270ae6b441e4584c966c87a24d40a24e17c80e5b0eb9901a9d2b40a0eef2659",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249666"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/B2_2.prefix.csv",
+      "sha256": "612375f046947f40267bcead0f98100f3e2f5913f67a71d4f35c4bd72ec42962",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249700"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/B2_3.prefix.csv",
+      "sha256": "84c051728a5bdd060e4bb69ad797b6145d7aa71f751dd6dd83d00357575388fe",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249671"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/B3_1.prefix.csv",
+      "sha256": "f6578cbf949b58b78703c08b21b3444ca9e0ff9a8192e24085d789798d5f67d9",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249724"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/B3_2.prefix.csv",
+      "sha256": "cfe2d7272a47c1ae7846f98afe0e502a837cf5ce350e2941ede87f241f175373",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249647"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/B3_3.prefix.csv",
+      "sha256": "e1782c1b534bdc52aa7984d3f1f39054400cf2f158e37ec8dd2138a46da704a8",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249683"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/C1_1.prefix.csv",
+      "sha256": "cd8ccf15be07a05e4cfc6eb49a32de5084838066eb3d9b6960cdff39156ad9b6",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249667"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/C1_2.prefix.csv",
+      "sha256": "fd58f0280fb0284dee96bd9629812cac7f2dcad462713aa635e0bc1f042083b7",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249716"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/C1_3.prefix.csv",
+      "sha256": "0b52076f66b92896811f5a2f4a73138851bd710d6ee46708ddb7c2400328d6b5",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249679"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/C1_4.prefix.csv",
+      "sha256": "e8cc42e4d8455cdf8c7182b51f017909af1e92a3d91abb7453b2e3c76d7d0a04",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249641"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/C2_1.prefix.csv",
+      "sha256": "8755904cc3445f1820bdd2bc05052bd6f65471d3484fd81ed6dbceefcb13bdfd",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249646"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/C2_2.prefix.csv",
+      "sha256": "ddb7bd37d5d7f060671464b0f59bc22cbaccc3b6484622dffa2629738c31888b",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249644"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/C2_3.prefix.csv",
+      "sha256": "5c6dd6ce045732759e22977a8c4f48aa5888232bd772ddd6bd3a32a4abe89e94",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249673"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/C3_1.prefix.csv",
+      "sha256": "247d5a5e64463c5227fa8eab4eb1255dfbad931114d21be703ee1c4aebf0e15d",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249633"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/C3_2.prefix.csv",
+      "sha256": "be66b2538bd2c3f1b0ad10dfab503418f88f15b068885d4bb675d2e3f5108da3",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249650"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/C3_3.prefix.csv",
+      "sha256": "bec4522d76031a4a31f042f24fb6846bab882c950c0505d6f61e1f525d602e3b",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249652"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/NC_1.prefix.csv",
+      "sha256": "b26137dcd662c59025ceb8aa306f4a1d6b55b330768f7db8a38a9a0933fe5134",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249713"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/NC_10.prefix.csv",
+      "sha256": "a1c43de87db6f85604b1e4caf471eb2052bdc365d4876a6b473a66bd6ab25568",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249725"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/NC_2.prefix.csv",
+      "sha256": "4f0f6d6a45bb9ae34599d53231a0c00f2df05dfbef0b5e5ad9ebbed46074d79d",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249722"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/NC_3.prefix.csv",
+      "sha256": "af959c4c786bee680259910e539e52d89722dc253dc317e3b26802cb6b534b6b",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249690"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/NC_4.prefix.csv",
+      "sha256": "f1d8fef99ab6fd33ef5084aeb88f19cf81cb775bf88b830212faeeddacbcc283",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249642"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/NC_5.prefix.csv",
+      "sha256": "beb5709122c137ffa090d4e039e712c3e19743af2697cbd989d47374748748f8",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249676"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/NC_6.prefix.csv",
+      "sha256": "1f15f1a5ad4b1fd4886533e33240d7d9aa5240a3fde226497b7778c8969daa2a",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249635"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/NC_7.prefix.csv",
+      "sha256": "00ade246d1db031594757aab12791f399acffc3076b981afdfeb82b1ce827781",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249719"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/NC_8.prefix.csv",
+      "sha256": "853c006c30457b8f4de50f0bb9e544dd886259dc6d9882909fae0534236860fc",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249638"
+    },
+    {
+      "bytes": 16777216,
+      "partial_run": true,
+      "path": "official_docs/external_benchmarks_v14/codex_vfd/NC_9.prefix.csv",
+      "sha256": "8cd21a612f7c4970f910a4aceee9ee6c8b69f5eda735b0ea93938efaa5cb9792",
+      "source": "https://rdr.kuleuven.be/api/access/datafile/249695"
+    },
+    {
+      "bytes": 38649,
+      "partial_run": false,
+      "path": "official_docs/external_benchmarks_v14/sustdataed2/10_Microwave.csv",
+      "sha256": "b689077ff3dca2c16a429766ed1e733bde789bb127731923a5860d4402d3ad8c",
+      "source": "https://osf.io/download/rbcy6/"
+    },
+    {
+      "bytes": 8817,
+      "partial_run": false,
+      "path": "official_docs/external_benchmarks_v14/sustdataed2/11_Stove-Oven.csv",
+      "sha256": "94b6bcdca6add88ec645fc48abe157af48543d82df7476cbdd0ba7556b3d2745",
+      "source": "https://osf.io/download/6h9bx/"
+    },
+    {
+      "bytes": 2041,
+      "partial_run": false,
+      "path": "official_docs/external_benchmarks_v14/sustdataed2/12_TV-Philips.csv",
+      "sha256": "4a66e50e5e61f7a7552656a19b807c219bb7b267255c836ab70140e5ac8084fe",
+      "source": "https://osf.io/download/8v54u/"
+    },
+    {
+      "bytes": 3933,
+      "partial_run": false,
+      "path": "official_docs/external_benchmarks_v14/sustdataed2/13_TV-Sharp.csv",
+      "sha256": "3878abb1186a738151a620bcff62fb474ce4e34be6fb75142bd90c55226661dc",
+      "source": "https://osf.io/download/mwyje/"
+    },
+    {
+      "bytes": 133172613,
+      "partial_run": false,
+      "path": "official_docs/external_benchmarks_v14/sustdataed2/1475708700932.csv",
+      "sha256": "688eb3012c4ef10413e43dfbc9fcfaed0cb192e8ac17026055a29a93c5e31144",
+      "source": "https://osf.io/download/br58d/"
+    },
+    {
+      "bytes": 413,
+      "partial_run": false,
+      "path": "official_docs/external_benchmarks_v14/sustdataed2/14_TV-Grundig.csv",
+      "sha256": "e39b51a4681c7f7e19649cf083dd6fb913853588346e53ba8bdde64c22bfd7a5",
+      "source": "https://osf.io/download/6v47y/"
+    },
+    {
+      "bytes": 1821,
+      "partial_run": false,
+      "path": "official_docs/external_benchmarks_v14/sustdataed2/15_TV-Samsung.csv",
+      "sha256": "e02817bf93a879c454d5591ba11909b78d7254022a74c5c1cc080e8fd442680e",
+      "source": "https://osf.io/download/6uz8d/"
+    },
+    {
+      "bytes": 5671,
+      "partial_run": false,
+      "path": "official_docs/external_benchmarks_v14/sustdataed2/16_TV-LG.csv",
+      "sha256": "0d26f27894b561098f5dbb9d483f52fc9a05ddaaaa13cf599ab8e12c4778176d",
+      "source": "https://osf.io/download/7xckm/"
+    },
+    {
+      "bytes": 193,
+      "partial_run": false,
+      "path": "official_docs/external_benchmarks_v14/sustdataed2/17_Toaster.csv",
+      "sha256": "5894d3de9702986b6a1fd9396fb427b4ca04314dc4c1c6d4e7e6bf529af0f7af",
+      "source": "https://osf.io/download/y5pjm/"
+    },
+    {
+      "bytes": 2041,
+      "partial_run": false,
+      "path": "official_docs/external_benchmarks_v14/sustdataed2/18_VaccumCleaner.csv",
+      "sha256": "792dfbe6519f7788bfbdf32d08a33ba50b16654399f30cfc9e62532635297782",
+      "source": "https://osf.io/download/ue6rj/"
+    },
+    {
+      "bytes": 6925,
+      "partial_run": false,
+      "path": "official_docs/external_benchmarks_v14/sustdataed2/1_CoffeeMachine.csv",
+      "sha256": "7610f85a869eb6510620b5933315284990265a44ea8238f65f95e406a32ab607",
+      "source": "https://osf.io/download/t32rj/"
+    },
+    {
+      "bytes": 24173,
+      "partial_run": false,
+      "path": "official_docs/external_benchmarks_v14/sustdataed2/2_Fridge-Freezer.csv",
+      "sha256": "93fb7cf2c2cfeda83076335fe4845c9cea05c186873e7e03187f07e75fdcf813",
+      "source": "https://osf.io/download/w65nm/"
+    },
+    {
+      "bytes": 126011,
+      "partial_run": false,
+      "path": "official_docs/external_benchmarks_v14/sustdataed2/3_Freezer.csv",
+      "sha256": "e3e90cb0af78ac4f0d410742b58a6e66c14bbb81aed785d0956bc8bcc0fde0f0",
+      "source": "https://osf.io/download/87edj/"
+    },
+    {
+      "bytes": 1601,
+      "partial_run": false,
+      "path": "official_docs/external_benchmarks_v14/sustdataed2/4_HandMixer.csv",
+      "sha256": "cdc490a4f22ad41bf697c2b1b368030965b3600c4179117278d6c5634b0ddf1a",
+      "source": "https://osf.io/download/vjgnq/"
+    },
+    {
+      "bytes": 8509,
+      "partial_run": false,
+      "path": "official_docs/external_benchmarks_v14/sustdataed2/5_HairDryer-Straightener.csv",
+      "sha256": "cd9a502576c3e2f15d7125abb8b1825f5949b1c7c0898a344002e54bf9b3e81d",
+      "source": "https://osf.io/download/3rma5/"
+    },
+    {
+      "bytes": 10291,
+      "partial_run": false,
+      "path": "official_docs/external_benchmarks_v14/sustdataed2/6_Kettle.csv",
+      "sha256": "75c570d1d0c234750c56404c75b1c83e2fc4e01e1e5453ab5d04b264cc2d7304",
+      "source": "https://osf.io/download/rcevd/"
+    },
+    {
+      "bytes": 20565,
+      "partial_run": false,
+      "path": "official_docs/external_benchmarks_v14/sustdataed2/7_MacBook2007.csv",
+      "sha256": "2e7b269c2c714ef7570101f5e84a487bf683fc54b50385e9873ee4ab3397eb8a",
+      "source": "https://osf.io/download/8tsbx/"
+    },
+    {
+      "bytes": 6639,
+      "partial_run": false,
+      "path": "official_docs/external_benchmarks_v14/sustdataed2/8_MacBookPro2011-1.csv",
+      "sha256": "b2130950155af9cfe5694512f954e60fa41ce779d97d11fd1c37ff705934cb66",
+      "source": "https://osf.io/download/j26uz/"
+    },
+    {
+      "bytes": 1557,
+      "partial_run": false,
+      "path": "official_docs/external_benchmarks_v14/sustdataed2/9_MacBookPro2011-2.csv",
+      "sha256": "ebbd4916ebc28c00795aa0bc852b4b5a4ccdfcfe9dd16981818683649f8b7992",
+      "source": "https://osf.io/download/csq5b/"
+    }
+  ],
+  "network_performed": false,
+  "phase": "PRE_OUTCOME_FROZEN",
+  "schema_version": "lightguard.v14.raw-manifest.1",
+  "sustdata_policy": "first 1 Hz period plus exactly 18 label CSV files; UTC alignment required"
+}

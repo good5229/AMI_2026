@@ -3,6 +3,8 @@
 !.env.example
 harness_docs/
 official_docs/
+*.sqlite
+*.sqlite3
 
 # Microsoft Office / Office 365 files
 *.doc
@@ -32,3 +34,11 @@ official_docs/
 *.ods
 *.odt
 ~$*
+*.textClipping
+
+# Oversized reproducible intermediate artifacts
+lightguard_v0_1/data/validation/v18/v18_event_feature_table.csv
+
+# Python runtime cache
+__pycache__/
+*.pyc

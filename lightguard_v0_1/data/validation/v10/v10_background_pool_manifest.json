@@ -1,0 +1,3334 @@
+{
+  "schema_version": "lightguard.v10.background-pool.2",
+  "status": "FROZEN_BEFORE_H1_OUTCOME",
+  "namespace": "LG-v10-POOL-20260820",
+  "selection_rule": "first_40_by_sha256_within_meter_after_source_only_eligibility",
+  "raw_manifest_sha256": "e4ea819ed021b9b8da7706469837f4808e262ce198ffd47a026ed21f03ce87b5",
+  "canonical_artifact_sha256": "c131fd7d635788b7ab71d50d31bff1abd91a3b492d57bae9b0a0a3ee7fed88d8",
+  "unit_count": 200,
+  "meter_count": 5,
+  "units_per_meter": 40,
+  "detector_output_used": false,
+  "unmodified_background_truth_label": "unavailable",
+  "audit": {
+    "B-L-9": {
+      "measured_phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "eligible_before_cap": 59,
+      "selected": 40,
+      "exclusion_counts": {
+        "outside_pool_period": 30,
+        "canonical_buffer": 2,
+        "fewer_than_90_rows": 0,
+        "grid_or_duplicate": 0,
+        "fewer_than_90_usable_current_slots": 0
+      }
+    },
+    "B-L-12": {
+      "measured_phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "eligible_before_cap": 61,
+      "selected": 40,
+      "exclusion_counts": {
+        "outside_pool_period": 30,
+        "canonical_buffer": 0,
+        "fewer_than_90_rows": 0,
+        "grid_or_duplicate": 0,
+        "fewer_than_90_usable_current_slots": 0
+      }
+    },
+    "B-L-13": {
+      "measured_phases": [
+        "i1"
+      ],
+      "eligible_before_cap": 60,
+      "selected": 40,
+      "exclusion_counts": {
+        "outside_pool_period": 30,
+        "canonical_buffer": 1,
+        "fewer_than_90_rows": 0,
+        "grid_or_duplicate": 0,
+        "fewer_than_90_usable_current_slots": 0
+      }
+    },
+    "B-L-14": {
+      "measured_phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "eligible_before_cap": 59,
+      "selected": 40,
+      "exclusion_counts": {
+        "outside_pool_period": 30,
+        "canonical_buffer": 2,
+        "fewer_than_90_rows": 0,
+        "grid_or_duplicate": 0,
+        "fewer_than_90_usable_current_slots": 0
+      }
+    },
+    "B-L-35": {
+      "measured_phases": [
+        "i1"
+      ],
+      "eligible_before_cap": 60,
+      "selected": 40,
+      "exclusion_counts": {
+        "outside_pool_period": 30,
+        "canonical_buffer": 1,
+        "fewer_than_90_rows": 0,
+        "grid_or_duplicate": 0,
+        "fewer_than_90_usable_current_slots": 0
+      }
+    }
+  },
+  "units": [
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-27",
+      "unit_hash": "07596a7e3ae0d624302ee3fc276565b9bd043ab6fef17bdfe52c08938902ff0f",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "f8874b7540e1236b5858d1f9e23eb077802b8f3503e2b7982f18ee2b25046c0e",
+      "rank_within_meter": 0,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-05",
+      "unit_hash": "08979b81168fe03bbcb7a826a4eca6628b6c2fca5447bef3664fa7e980a9b4fb",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "6954cb1656ec9b1c866162f1c99f3fd13f91c11815499b3f44d2a7f84a27c12c",
+      "rank_within_meter": 1,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-04",
+      "unit_hash": "09cb44843d39782f619b3c6bd5b7b3d8ff676c4e985f8cb620457a32ecfdd180",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "f49a348e4aecbe2f43de9e544ca6ef851e1942a6616eb7a93915fca8d6eb0aac",
+      "rank_within_meter": 2,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-10",
+      "unit_hash": "0dc7c4fbc586dbbd6f8c10a6f506a398b706994d28ec56f82c0b35e5dea62090",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "579b41e91dad6c99739db19bb24bdbdbb4fc04f56ed6c18187d5c78418dca17d",
+      "rank_within_meter": 3,
+      "operator": "phase_selective",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-16",
+      "unit_hash": "0e47336cfdf9b7f63b8681620618f36823978644db26e3ae8f93520a94448708",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "c8e2ae640dcd54e4153b8baf089e92be86d6051d8b9de90c79631d4e030dd026",
+      "rank_within_meter": 4,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-30",
+      "unit_hash": "0e498bcc56581641d1959dc3f340283e041bd2e507a3971ae684750008c5b40d",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "986732822fbbb525b1c0284d8553aaa77a3379253951f3b5e87d16954e865597",
+      "rank_within_meter": 5,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-14",
+      "unit_hash": "1224504f6664ec80877d6c84d35545be7bda4d1836aea515f23cc27cf4aaefe1",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "06a5d2947b0092070b9d241198a0086975cd7204111faa4468a5c365c5370920",
+      "rank_within_meter": 6,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-05-22",
+      "unit_hash": "131be2955ee3b0faa7987e5ea3e6e071c89a28ecefbfdd113de111cfd1d917bb",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 94,
+      "source_rows_sha256": "9987988c8268db4948dcf203d91d56ec97814c64e35233318ec006d48c0c43e0",
+      "rank_within_meter": 7,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-17",
+      "unit_hash": "16dba6dd3b112ba9699bbbe42749ba96c5b4f5263199b840d4c43daa38253490",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "15fd9c2c02da99c51a29ba83f4c21818fb411ef11d630a204d108bbed835d276",
+      "rank_within_meter": 8,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-08",
+      "unit_hash": "1f7bd731581333b3b20afe467c8e1ed99dba416427427f60a3dfedabec025b7c",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "5aa2668912530616642666bd160d091e4b445279a72498f602c8353cb965dd8d",
+      "rank_within_meter": 9,
+      "operator": "phase_selective",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-05-19",
+      "unit_hash": "21b91165fc2ee7534f1b5e8c41d0b076bd6edf1fc8373f1963c6a206f8a7f160",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "77bd3cd31a0721b9feace5d5aef6f70379884c22fb9d85835f70c36275675177",
+      "rank_within_meter": 10,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-09",
+      "unit_hash": "220538d5fe043f1443cf6811a656e0c8d1c9481e07aed89dd394851ceb097a5d",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "90fb65519017606d9726e68096ecb9ebd3cbf662f5a5ace0b332fe9ebd9c7d17",
+      "rank_within_meter": 11,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-05-15",
+      "unit_hash": "232c1f9b54a18daa6e20101ce73a0f145e9f0efb1d860d33635d9e3e5680e820",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "b7b6929be9f606eb65732dc4e741ac15d5f2ad6d56a85dde2046d14157885a89",
+      "rank_within_meter": 12,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-05-17",
+      "unit_hash": "25e4bf5a1a741d68976effddb73677133093a60c31679ec14eef7e5ac41d5b6c",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "942c5968df52b1e1c2811fd6a0cf0783d86fd8c9d2243d4017db639093d31758",
+      "rank_within_meter": 13,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-05-07",
+      "unit_hash": "30ace23c2bcedc1ee9ea1f3b0b85011288a06c607c10ce72bba2599ac437c5ef",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "f3559f17c2c61f8ad6d9f231c95efddf075d3b2bfc65d5304ace72774b08456f",
+      "rank_within_meter": 14,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-05-29",
+      "unit_hash": "32166e225bf159fe132f72032142108829fef414be6542e285cd981175c3d339",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "183fb00fb8b302ae9eb89cae6adc9e7f9f432f5f5e41a3657c9d9dde21111095",
+      "rank_within_meter": 15,
+      "operator": "phase_selective",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-20",
+      "unit_hash": "34ea81c25e470a52bc5a25f61a08dd37ee88f3da62982cd1857b1b34243017db",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "98eaae539960eb2ae80a243e398cbee25b48554ed65b52586b99191a18d56f24",
+      "rank_within_meter": 16,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-05-31",
+      "unit_hash": "3ca5f39c958c495492fe842fe7923e3e902a027439f03e682b69e6382de56782",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "39db0c7bdca8a8ae56e59305669f63dbf6d80c1e8e13986531a54dd7faf42b8f",
+      "rank_within_meter": 17,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-23",
+      "unit_hash": "4412f26043f5aa564e05b564f9bb186a2ac44c257e88de9ee9c4dcefc0538b5b",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "7d95edbbd9a89dc1bcad0348ebdb9cdcbe9008b743ef2ca1c4e56a3806cc9d65",
+      "rank_within_meter": 18,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-18",
+      "unit_hash": "45e025fb53b9a66c970a0020b770917fd38fe061a8aa3521397a7592e28c76d4",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "4db25e2743bc98241996b858d6429c753c4cacd7d9314234a72e8b83f3091a07",
+      "rank_within_meter": 19,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-05-06",
+      "unit_hash": "4d9f8e2e4c6f3e4d3ec687986fd015eee00c6e189754ec2ab5f22db041937a0e",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "f0ba8f61dd4504088390e9d4e998b70e138a0e17413e102374db062a165225df",
+      "rank_within_meter": 20,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-02",
+      "unit_hash": "5a6d19aa57022dfa6b70c83917853222ca9803d908cf8b4d1dc6b58b75cecd25",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "9cd4359e43df5b1dd4159c01f8a0282bd58fb195b3a50195da79650a1e287954",
+      "rank_within_meter": 21,
+      "operator": "phase_selective",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-03",
+      "unit_hash": "5ae12856a2d70e328e410c9ef9cd31c384555ff250bc8c43d2e77c4ce4b75b98",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "233c5ea5577444397e909e0df7c6443b74ddc13c3e779b5ca35556354090456f",
+      "rank_within_meter": 22,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-28",
+      "unit_hash": "5b1bb4ab284912b2163ade10eb353197f6c7ff18e70769b9f0be9e83aa787832",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "22c3cf8dcbe8b2308cc0b1a713900495b533e8a54dfd8cb8cb8a6389dddc45cf",
+      "rank_within_meter": 23,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-05-20",
+      "unit_hash": "5eff835481ab86f5eaec7ccf079f84d092388f8fadc28b6c753742beebbfbaed",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "f16289ee50c9a62fb25907a9a8b701e5fde326d5c05a1b6f97ad61df38468ec8",
+      "rank_within_meter": 24,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-13",
+      "unit_hash": "60ac18505c60e2b4b2d9a5abfcd7bb67311b66d27d3ed05a37fcc00de6d8c210",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "43e6f460337fa164f40cae1fc776019af73e0fb81d3433d43e0682893e415170",
+      "rank_within_meter": 25,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-05-30",
+      "unit_hash": "61a1b0b76a1e0b40f418ccee7ff3b538025a75bedfcdc6d2b92e3fe153fafd7e",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "1f8ec60943f1e18fa832498264ec58d5a8ebed9e877f3c065bf7e4cc0ca0de19",
+      "rank_within_meter": 26,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-15",
+      "unit_hash": "624efe0d70c6ca0da3131c36247619250c837fc54f95092e21b92376c7d449a6",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "5747efaf69b3b02f0b2a67412152b8f1d39cbf74af74a72dd9304ea901e57f9c",
+      "rank_within_meter": 27,
+      "operator": "phase_selective",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-25",
+      "unit_hash": "68b7e4a78abd276b2de5425047f657aaf7f0cc33e6261b814fbd76a8388b1505",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "ee6f1416a34badf27e3dfe38071660ccfa3d6f654853a81cb1ce6b63ad7d0307",
+      "rank_within_meter": 28,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-29",
+      "unit_hash": "75f6fd9ec98caf4e5afc8b06d23e542b86f0eb168a4faa45bb9e89ee35ce4631",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "6345ff8d9c766a453133b47fd0abcc477f6006af8761844923857c6c753ac724",
+      "rank_within_meter": 29,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-05-26",
+      "unit_hash": "7e7f82ef464242ee676d5ec19fab47e2e005b724fd2135bb95d17e79b36ce667",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "f54327b633bd8a28013fb7f12d3eede132c9fc09e9bb8e9d3f15cf923d39ca4b",
+      "rank_within_meter": 30,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-05-05",
+      "unit_hash": "8035c5fd2d8bf3088a9bc8582ff1f56e47a99a54a4fe0f76fba452c5afcb096d",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "1ff1f66ed99ac2afa0c18dc276bf0dd21bea4a8d6d2118b1670d34f0f25f0381",
+      "rank_within_meter": 31,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-05-04",
+      "unit_hash": "85bf1bdfde870182e5bb475b458cb1d0c89fe168e73a484dbb133add59630a39",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "b7512b04a4e62943056c9cbec0aea670410c549f33780998a2cb6bd5d03488e4",
+      "rank_within_meter": 32,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-24",
+      "unit_hash": "8a394b1329b7fc155d7a5a92a7031683e9aad5ed929e45ea080e245ae1cc1e5d",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "dbe721522beb3bc4e20eac4ad074b3cbc07bfeff2cddb5b42d47bd3ac0ca43c8",
+      "rank_within_meter": 33,
+      "operator": "phase_selective",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-05-14",
+      "unit_hash": "8d03c88ecd7cb5019ddcc300496bad597265ee8a949b5cf80d96d93f9e015afe",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "2b2c9c580b3ce1380e76ab6c0e83ecb7eba7114f5e9f3285b11819295b3685a2",
+      "rank_within_meter": 34,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-11",
+      "unit_hash": "8db82c0f089f7e2e964a7b76ca700d6885ade9abfa2e90c667aa1c05eb4b118c",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "2bedba663f48939b29043153f0e25e017445be4b626279dbef40c105f0f6dcb6",
+      "rank_within_meter": 35,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-05-27",
+      "unit_hash": "8ef724d7a61c5f313a4956f6951ef770e6186c6b95bc6e3ff5bc3fe8d37a57f6",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "9e7e603a1e5b9bd0d75af3b96156af689b246f6c2bda59c09b33e1e247b1bf00",
+      "rank_within_meter": 36,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-05-16",
+      "unit_hash": "a530a18650b83ac7e538de403e4c4140b621a4775acb579ed414771105a6333c",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "ed539a081a3f3632c053b9cc7d603ebe04066026cac537d66a72ce2388bbbcb8",
+      "rank_within_meter": 37,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-06-21",
+      "unit_hash": "a6f50d8c45eac235e4480fb7e1692e91977d601c42230b6f3570766e374708ac",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "32a7f2bef189b97b92be1d42900025edc1199eb36ccc10e25bb0d4f51b93459b",
+      "rank_within_meter": 38,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-12",
+      "local_date": "2026-05-12",
+      "unit_hash": "af0077ba76ddff91bb37f9ba7c883ffe38b0afc6e5ecf7de5daaab06a4602d5a",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "95c4d910a37927dbe70eebd82fa78a2b6156423eb241cac5d63c958ed0a098c5",
+      "rank_within_meter": 39,
+      "operator": "phase_selective",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-06-10",
+      "unit_hash": "00d487811f76c7e1828369a1b43967a5acec4855447ceabb58b09dbae376000f",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "6a7172f1397427139291022cec2d6393a8b857f5a9073d232c6ceea66665b046",
+      "rank_within_meter": 0,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-06-27",
+      "unit_hash": "06bec8215543e26e8921b91c704ada5af9409ae4976e763254bccf94cf463a4a",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "4e60a5ef57cd90888a8ea18cf8cbf3ccf09065725c229f166fb5cfdac3f2ea32",
+      "rank_within_meter": 1,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-06-13",
+      "unit_hash": "0f1a9bc93713271225757a76c9ed6c50aa06bd92bb2b69f055f3a0711b46f6fa",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "b1298811dbe716c70b30285d8cde280c82715e57a5cd23482dd55d2c3842eff4",
+      "rank_within_meter": 2,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-06-29",
+      "unit_hash": "1478be6f01633a69aac83d5804f06099f5370f1adda4e811e4c10f4b44f9d047",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "ca7bb647afbd5d051dcbf6b39bc6c3445d1e30b859874bea63080fbef97b0a13",
+      "rank_within_meter": 3,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-05-18",
+      "unit_hash": "1ae66017f1cd90d43573f4ef6b9a8347410aefe98873ef07d7a6ce9a781347f7",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "98daf7972ebf209b9c1bf8438f90c4a6976c1fe5ce36d5aa15be1b61ad9f140c",
+      "rank_within_meter": 4,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-05-25",
+      "unit_hash": "1fcb601fe1c94c9ad459ee068442fec30f9d91f571459bb94c88c8ce2421e6ca",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "b42071798dffffbb2351510fcc8015710f65e010169b3c772e4f18b9db6cc95c",
+      "rank_within_meter": 5,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-05-30",
+      "unit_hash": "274c16325e61ec8b54464109b2dcbc2a3b66594ec9fcf5d15101845e963fe331",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "7f46be681f46fa9bd5670311214a5d1b78100b7596e72263e43480840aeb2cf2",
+      "rank_within_meter": 6,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-05-16",
+      "unit_hash": "2be1c6407598dfa3d0212d11f60c4ccee9f89d04fe855cca3ae8b20967725f06",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "ac2db1338c9bbf81c2856e45859a2eb6c60bb4cc6413fd2da6688e11fd85b9be",
+      "rank_within_meter": 7,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-05-06",
+      "unit_hash": "2c4cfae8b7748c22cc9c0ff30461444f9ff2e0851fbf599fe600a9e2d3c7d2b8",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "93eb776eb21e2cfd02aa214e53309305194fbd7b175427e99bb5ac60b42af755",
+      "rank_within_meter": 8,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-05-29",
+      "unit_hash": "34ec78f1f8fed972debb5f842c8c540bb6aa7fb476a8e59de00706c4ae5a7b35",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "c8ed9ba954a99adfdb6e122878747888b80c18f7f23f5bbcb4d719254921174e",
+      "rank_within_meter": 9,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-06-08",
+      "unit_hash": "363b867900e28c58e607de3af30832d99f441872f4c929d286030864f53367ab",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "f420975b8224a0a5124279f5737709da16b9b2d009a33d66411717eb0714e400",
+      "rank_within_meter": 10,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-05-17",
+      "unit_hash": "36981469e7435d06fa75b5dc0000eb12416e30ff61bd1b43c7624dc84fd7ccd7",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "5a0c84a65bc38e649595aff0f6a1e9afe0e3af392a5d967e3a8974fe800d6fae",
+      "rank_within_meter": 11,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-06-20",
+      "unit_hash": "36ecec6ef01dcbf7e8b1ea0fb252a04aa99545f395adbfdf98b8635a55472689",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "4c536a0f9aeb234410be9be28754664bcd3eae2061638bfae5140fbb8c51794e",
+      "rank_within_meter": 12,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-05-21",
+      "unit_hash": "39679dc813e667295e145513777658e18b9b3181466dfc11e72fce1868a7927d",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "451e26efe8d39e2a5d97ea49e8e02bdc15a9d8bf63b93cc8f0b7456d2262fd9b",
+      "rank_within_meter": 13,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-06-17",
+      "unit_hash": "3aa4ab21046e9ad64505d45939dcbafa08a03bf9405a2d6b9f6c00cff9397057",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "c294d225d29fade169f86e5ecab1313f2271c93ef880914a663438ecdac3824c",
+      "rank_within_meter": 14,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-05-26",
+      "unit_hash": "3b7c5178aba5a9b92ca49a74c117b9e3a306053f1f9472a4a452759434ed5caa",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "1f4e679f2f198ec9051aeaa9544f8f140bcd72a6aae13418aff0ff370779d1c6",
+      "rank_within_meter": 15,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-06-21",
+      "unit_hash": "3c82900c9e9f0bdc7ea2b806d5f7ec362de03b2be82b1bcf4280a5898c7e033c",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "ab92c507cdd9c79d79a83263774315cce01eb7f290d72fc81c7bb62359bf5f04",
+      "rank_within_meter": 16,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-05-14",
+      "unit_hash": "3f7a37e5423ecb17f6a8c36c10948ec96a327b80ecdabda00ba86992aeb37e0c",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 94,
+      "usable_current_slots": 94,
+      "source_rows_sha256": "b476cc0c530836f40d197b09aa10ed542e7c0c1c737c09ef8c76b2424ebb88d2",
+      "rank_within_meter": 17,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-05-31",
+      "unit_hash": "4698bb7955a39b1d0c28c2abc00d7e646d28c7768e22e2456a646c8b54556d29",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "914baf1d412e3ce904bcc5fc660c992328f085c6011dec31b7548d68412cc395",
+      "rank_within_meter": 18,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-05-10",
+      "unit_hash": "4846e195a6542120b6377c81736bf9b079561c8045c82c50e2ff7694ee6c2136",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "0279cedbfbf329822ee77be7570b7e2ebe2bbdb1227c5061157ffa5370f37fb7",
+      "rank_within_meter": 19,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-05-07",
+      "unit_hash": "4cd8a707585312796f2141909b1173cecddab00811a537b8ea92eaf64b68e696",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "54edbb8eae80e1cd893764b082f93dc03cefedea4210ca99ad3b652bc6b8454c",
+      "rank_within_meter": 20,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-05-13",
+      "unit_hash": "4f1c71013fb869f754dcb916fec2e6de401d7012f7fb2315bb7f4170670b01e2",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "c31e7489fe8c15eb8f63537aeebda0800cfc0f78c0603ccfdcf0b5b68248b016",
+      "rank_within_meter": 21,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-06-14",
+      "unit_hash": "59ab7c5df673211e1ba5fbc016c50b474359d70778801ae647e92d0347db0fa6",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "79d1005f8b1634f52de2a265e777d58bd01498841276a6dcce6957e66a38f989",
+      "rank_within_meter": 22,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-06-06",
+      "unit_hash": "5cd21df4399a6d4daa24b312bd94160dbab076824a10cec88d65b06ac9adf16f",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "1f79701bb95f5eb94c9052f818cde26d880728d54477b5ac72eacc3dee73020a",
+      "rank_within_meter": 23,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-05-12",
+      "unit_hash": "64328aafc33373d5a503b7654d40bdb0fdcceb0e1f875f29ddf0741e8fc669c5",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "8677c7e5816df9d2e40795094d49577a6785dbd56074029784c650407ba902fc",
+      "rank_within_meter": 24,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-05-08",
+      "unit_hash": "66fc5d274fa1482510117d9de251f95c9598e6debb9bc6b02cafd6b826182a07",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "d571b4cd72009f093571992b390d8c6151c31af9a9637f28453701f3dd640878",
+      "rank_within_meter": 25,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-06-16",
+      "unit_hash": "67fa672da4137281552f385de7bd8e5204bb3d6e7f94f41a55270ae488aee6d9",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "2772846acaec53f5f0b09538ed8afe2c77ddae98baeb052da23f73b6396d0e2a",
+      "rank_within_meter": 26,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-06-03",
+      "unit_hash": "71b738b634b8316dab554b5187821bf3f39f9dbca22b7c29b16c629ccdd0656c",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "3ee356dc5f048c8972453d5dbd5b710dd0a78a36029c5085bc7841d9aa94e00a",
+      "rank_within_meter": 27,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-06-15",
+      "unit_hash": "76913a0f4beb0d72dbc2f3a3ba30e7692981378cc28db59873d6756426476fd3",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "5c5db1f3c40931c7c0ab3778e0f6554a4a52b2c51b1f13da3a3ca846abe6e8c9",
+      "rank_within_meter": 28,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-06-30",
+      "unit_hash": "7aaa85c4620a64a3adf34d74c0199a18e4d8b72a729f7811b0fa682fda1d8670",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "ec9f9dab8699b22bb046009bd7493c595ea4b01abd4c86e3b98bda9884a02699",
+      "rank_within_meter": 29,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-06-11",
+      "unit_hash": "7d1d04e5dee5ca647518bbcff4008eb5cd6582350f74b4330fff0b07b3d639f8",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "dca2bf693c0890c906e960b68b0bf3fe36795d92d9d89ce44631d27960a72998",
+      "rank_within_meter": 30,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-05-15",
+      "unit_hash": "7de166f51d5a72a02ffc273253af91090469aee52ac9af673ca7d0ca86af63b3",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "1afbaed5119c9c0d43b46254cf90bf4fcd425b62c1f72cba52be48a5ed13f71b",
+      "rank_within_meter": 31,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-05-19",
+      "unit_hash": "821e52a75ebfb78059924964f7153a1cf1fe04453e93f111c58d0802f0a10403",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "4406e230e3aa2e2cbca9502a71d7afcb00fdb10548291e2ba8aa6fce91539baf",
+      "rank_within_meter": 32,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-05-24",
+      "unit_hash": "84d15231764bd19613b7f4136a0f31adf2860c8b2370e58edf35f294a985f45a",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "279f6e1d052635e9c7525a17b20b06d8aa5ce62c5b053d9fadc72a7f33e212e7",
+      "rank_within_meter": 33,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-06-24",
+      "unit_hash": "884671c62342c13a9d02ff7cf9413db81c97b93e8f1a5a31c4d141d7a8cc6f1c",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "873d2d7401025eaf6aeaa150132ad0cc82bb46e2bed1a42aa0a9a55515bf94b8",
+      "rank_within_meter": 34,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-05-04",
+      "unit_hash": "8961bec4e613fe1c89e93afd0d6124103822cc584c0e284cd49d063225a99366",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "40f897d582d294791cdfa3cdf2f676224ab82c1fee08a36c90d34ade853d3321",
+      "rank_within_meter": 35,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-06-05",
+      "unit_hash": "8abef6167b9074f304985f3c119494603599759fe5ff5de6f6003305b97ebac6",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "2c7361729ccebf37694f06556a9477514396141ccbaeb0d99e096900b5bc572d",
+      "rank_within_meter": 36,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-06-01",
+      "unit_hash": "8c91a18da2a252661ff74efb17680f33e5124a423eac046a1dc45b4a86381064",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "bf20929e70b833448efaf2e5b076897eb31b95179ca35d8db3e71c3c4a8e06d1",
+      "rank_within_meter": 37,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-06-04",
+      "unit_hash": "91efe81ed4e945deddd9e74e18326b085f4f43730aa26aa317cecfcf1430c0f9",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "fc4e6ffb04675702aa69a5caf02ba0bbda4df9b39d37682122a5b0243e665cc5",
+      "rank_within_meter": 38,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-13",
+      "local_date": "2026-06-07",
+      "unit_hash": "9b69f423300d1905b692d88a6230f1a3990085ff114de403e908b3a41522b8f6",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "2ab3b10d49f968ef9f117ab9fb01a80006379be747d24e10c463246ec7f086e4",
+      "rank_within_meter": 39,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-10",
+      "unit_hash": "068f62b182b90236aef6f37cf55f5b2379b5b708260c8af821e7a9d7ff1cc934",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "3cc8e2b78db262dcc96beb37ba51ffc90273b2d2d943dcaba5b5931a69e263ce",
+      "rank_within_meter": 0,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-07",
+      "unit_hash": "0dfdad70fc271a9465049d055e73f339495df93232f4e83a5a1e1f6cfa8ef8a9",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "8720a16c9398337c52c3e9aeda24d7af67431fe178ee11ef2ccbb224b716e6ae",
+      "rank_within_meter": 1,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-12",
+      "unit_hash": "13c00a935b59070e2df8e712e4d5e4e18d0766d30a50f0c60d8c12e704fa20d1",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "03edf902ef74c993c001a95621e01baa9fd8092f8d098b062be13e39e0bfd986",
+      "rank_within_meter": 2,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-05-06",
+      "unit_hash": "16ae7d1ebe437e2d96a1aafad8cec5fdb4ee9c4683398d8b5addcaca37977693",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "4dc66b5cf64a434d5d424c7871b0f270b92eb53ef843c8e0f9ea980346f7d64a",
+      "rank_within_meter": 3,
+      "operator": "phase_selective",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-05-08",
+      "unit_hash": "18b683eb80a5777ef6e3b5676ab97fd7786e80f60f4e032dc9389e63e75da58b",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "56726b710e3108f4571d42b76f19b82812b124f1ac551cec414aa133e0da7ad7",
+      "rank_within_meter": 4,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-04",
+      "unit_hash": "1b93b75d56771905a3311a5609bc294e94b1f470482eadfe7abb5b94c2dcd385",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "9be0c7075078b5107dfab23cc9caae26cde9ecb8f47752c83ca7b5c6d81c27b2",
+      "rank_within_meter": 5,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-15",
+      "unit_hash": "1e124046f5ee0347a60331f400305cc75349377d7d9b5298db14d39cc57aa901",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "4c24eaab7c42fc88be9f69ec4df89d272b516a68372ea0a220126aeba9408483",
+      "rank_within_meter": 6,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-18",
+      "unit_hash": "1ecff4d741e969586d09ba25b8332bf54dc19c7b9b2092eae63ca9ebc2cc9edb",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "7ecb6e4b3742d498a6825ceb7129aa69f13b91c14de1ff7f59e835606fc21f14",
+      "rank_within_meter": 7,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-17",
+      "unit_hash": "20320666ae925377a7a73a443493b26e81e3b24921d681815ff639db0c1ccbbf",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "7ac8a8fb8b8d26e86ac312bd09d757ebcb562a093826a0f6f0f1109b1e8cb699",
+      "rank_within_meter": 8,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-05-13",
+      "unit_hash": "23569f0c8901cbab8ce5ef4dfc2eabd72c0549c37956100baa8e1324336ceb70",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "564ebb51cf9669dbb8919c5ec67c989ff1b9374cbe01995dee50db4b0d943470",
+      "rank_within_meter": 9,
+      "operator": "phase_selective",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-05-25",
+      "unit_hash": "24e903436b60eaea0132033e96daabe851674b0a3ada65069ae0374ae53ebdba",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "5f0d97f32b1a57e0f0fd8f733848b1112f611ea1290f81ea955226ab318731de",
+      "rank_within_meter": 10,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-06",
+      "unit_hash": "2cbea0726931907d1e98d3adcf45b788b185cae6b97bd4435014e35fdc59e0bf",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "c31704e8310361bb12d7370a44d4869e2732432cddde7d2f641648f6c6f4f6f3",
+      "rank_within_meter": 11,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-05-24",
+      "unit_hash": "311b855beb26255d13622fe51c1fb41daa94cce4e97ed22dad83dfc8dce324fb",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "765e52a98766d95c7d58f77df896546f6f31103cdcdfd5aaf7ac6df2bcd7072c",
+      "rank_within_meter": 12,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-05-26",
+      "unit_hash": "355e2cd48c56fca26c7de969206617acfcbaea232bd40a09b91f893713d77cbd",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "acf0f4007ffa209d6a490bc1fbc9119546aa7c4433a3c9aaa49f73d8ae52fec0",
+      "rank_within_meter": 13,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-03",
+      "unit_hash": "3640a51be13c92f8aca2593ac09ecb674fd1a25dd12d674b6e1be1194a1fccb6",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "a31086e266aace45af5e7d735b500a87b1668e148db137addf332137da72418f",
+      "rank_within_meter": 14,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-27",
+      "unit_hash": "38dfed24ad9a547a1b75fbc074eb10c3bae7a70e21f7ad0e4f92feb4a4666aa3",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "39ec0e2742685bdd7cf433f7e2f90da8b5155f5e54102e2dfaf29108d3eba8b3",
+      "rank_within_meter": 15,
+      "operator": "phase_selective",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-23",
+      "unit_hash": "3e9aa2474a6aa98bcec48cdfc620f9b7d0e89346cc3c1c3866abdb644c52a0f0",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "1466f32989a72034b8f3586b9c9c8c537d1c63fd242a7335a2253454f474ea96",
+      "rank_within_meter": 16,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-09",
+      "unit_hash": "3ff855673560af25eb7119251331cab2085aefd4f08bd122a8c38e8a10b09ace",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "cdfbf2c02c8d182f8baafbcf9e0d9aa3b9527a0cc62edbcfe45b5ea461bec0b8",
+      "rank_within_meter": 17,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-05-20",
+      "unit_hash": "4228c5d38d05b502ab70c0292ea8266879928789752e16db3c217497a0e58163",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "a8e0d39ff6b250f95426fe972c76c4d8c96f71aebdb029e3d38956d19a1edae0",
+      "rank_within_meter": 18,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-05-18",
+      "unit_hash": "4273e1d55be3d56a24acdd2788cdd7f31954a717fc037e0c3a37e671fa00d9e3",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "db2d409363d3f53ca81e555007262707dd67c07020b3d187cb84e9a22c849a37",
+      "rank_within_meter": 19,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-16",
+      "unit_hash": "45bbf808a1edf7a64c8a0aa6d713fcc7ec54959b2ffad9eb16eea52b7fdb6426",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "c9e9b444c77be6a6c37c4cdf206ae0aeaab9b029d1b48e6a7480ca7883a9a085",
+      "rank_within_meter": 20,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-05-15",
+      "unit_hash": "46dfb901dd15ca72c475300c5a9aebfe17c594851f7d4c3bdcfe5e82bc91abb2",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "9744aa12da1c3a605703709b786befd82e4577fdbc12b97715641d66cbb6fff8",
+      "rank_within_meter": 21,
+      "operator": "phase_selective",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-20",
+      "unit_hash": "4a93dc2f80099020cb4074d83af8d814acf5a434abecfeb1752fce0c69617b8a",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "ccbfa1d3ce0b7069c82937eb8a275d8d90d4b2fc9553191231534fcb5ade3fdf",
+      "rank_within_meter": 22,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-25",
+      "unit_hash": "555b808a4c12201157c54319c874641859f84746908282ac706f95b9e2619bbf",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "666bf5cb526d08ac4dadb648c394e1badd9b03ac33498af1f9523ecd89ed0a7c",
+      "rank_within_meter": 23,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-05-27",
+      "unit_hash": "5e8e263cc2dfd1085eda9db0bc84821c6730a298a635ca2df259d6b620d62203",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "82091667d5734514bc4009d149ac743ed8ee4a929a499b51ba0eeb04165bf26c",
+      "rank_within_meter": 24,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-29",
+      "unit_hash": "645c4acb6fef0c7a9e933ba58573e95974fb501e56ba4944c334f2dce0e521cf",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "971506fa707ab672b04c729c46cd6159888a7cb908eb36656748b22e7dfbb263",
+      "rank_within_meter": 25,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-05-17",
+      "unit_hash": "65f9b05a1c683a9119b7d96c532122164c0e3a3d1c701d7f78979671e215eb40",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "0e8ada00187b18173005562c6ea81aa291b60de0505041ddfc56fd9be1b193cc",
+      "rank_within_meter": 26,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-22",
+      "unit_hash": "71e1b8a99b8260cac1fc7b0c0c8f538873e9178c376e5640f70cf1ce1585a7b7",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "b26dc34109169434d20df0b8ffd5e63eea52328a229fdaace3c7890cad27ccd6",
+      "rank_within_meter": 27,
+      "operator": "phase_selective",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-26",
+      "unit_hash": "78007a560778ee093821a2312420da6b006f3411da698bf0f143c88989bb6894",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "5641634dfc200677b330810aed256c1ca56b02d89a9291b7128670dfedccaa72",
+      "rank_within_meter": 28,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-05",
+      "unit_hash": "7f0f86e822b44d7cc4a628b84e60875feea8cf86faded7377c941a80ce35cb91",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "10ade6d701f4b14f5037582f5886a99e3c40b5b590358e6fc75c22e15e469e85",
+      "rank_within_meter": 29,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-05-12",
+      "unit_hash": "7f3135c3bb230cf2434c6515d890e56ec21be7e715a08e8c714dd7c9cfaa36e9",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "7facfd6b8555569498d96478e30f1c8e29c203a717211276043a3f0c7a6b962f",
+      "rank_within_meter": 30,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-05-02",
+      "unit_hash": "834b5bd2858dbed04072eb245b362caeea48bb1ca5e5177c9c90dd7b5d405d47",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "a1a67d40ec37d1ec8b3b36fb656afde491abafd25fa44b278b210253b2f7882d",
+      "rank_within_meter": 31,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-05-11",
+      "unit_hash": "839e0ca4c8416047e9f29833207784ab9daf3183e9c9b80aba57d29d58632580",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "ed8c59cf6ce6274884c8bf71da6b0c6671d5d78efcea2ab977e67941beefbe9f",
+      "rank_within_meter": 32,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-05-04",
+      "unit_hash": "89ae6801192f6e5ba7b3c3626f1657c9f530d2385250218b5045e23785c539e2",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "f64ec3defc8759f387fd99639c64867e320792cf8f48e1cec84d0eb61e1c5019",
+      "rank_within_meter": 33,
+      "operator": "phase_selective",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-05-07",
+      "unit_hash": "8d5c36e653244cbd1dc3d4993f3e09e99768a9534f571bb7ccfed1033ffc4c48",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "d54c9b5894569265ecba3c13f3bae18e434a4f8f579a2e74ea886d0bce3c8a53",
+      "rank_within_meter": 34,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-05-28",
+      "unit_hash": "9c49de75a3553dc87dea6481c9a18dfff5b287d76174125f4de5253c250d4370",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "c1c06d41c6e64c896c75a7e95be51625b5f3f5e18f30bf1e1e750d9995d6fee0",
+      "rank_within_meter": 35,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-05-03",
+      "unit_hash": "a299f6e34151f77f40cbb6be99967c1b03b46b82ff4a5d7ddca53ba3bba7290a",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "1158428bf93945caa490fc7e89ab001ad833027d1d807c2c77405a5371d01089",
+      "rank_within_meter": 36,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-01",
+      "unit_hash": "a52d7575032babf923df62fc7535f3ddbb8c6c860cb3e64d89d7514cc49f488e",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "eb893cf5bc28c9018782eaa54214b8e044fb7b7eb6f3537eb53bc5b683843be5",
+      "rank_within_meter": 37,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-28",
+      "unit_hash": "b97d68d79b262a5d7ce8c7184761a1d5f90a89ce841d11f4cce14057d6494957",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "a71506ac5dbd6ae3783108bac28489440a32180fa3e5e4cc27f5cff953113be3",
+      "rank_within_meter": 38,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-14",
+      "local_date": "2026-06-08",
+      "unit_hash": "c16afd47522f563fb401f152339eb74e5357bbb0dbd108d834794851034896f3",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "f683052087ad66f0aaeec491763cf0c032a2055c3c0facdb33da9589fd77a0b5",
+      "rank_within_meter": 39,
+      "operator": "phase_selective",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-17",
+      "unit_hash": "05e6892d4a753044464e7e4f4859abef4be3ac35ddc4c75c824f2f005e67003c",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "0b2f90aae3c591786ac7d2b67aa59f8a3fbda4c9d3b15af1c46e81cc44a816aa",
+      "rank_within_meter": 0,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-07",
+      "unit_hash": "062e290c69ad239ba0061c240968917421d612a6f664fc3cca5ae82b8eb8f086",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "47f5b3704e6f370ca40404e56651e9a958d89187e3412211813055a338f96f66",
+      "rank_within_meter": 1,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-05-23",
+      "unit_hash": "081383618cf556b6ac5bfbc5f0e7cfb8b084413eb3ba00bbdd4132dd10e7a149",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "fb70a6d09d64893c7a533a262acd3fc008c1a01294168ecc98d748d9faad4fe0",
+      "rank_within_meter": 2,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-12",
+      "unit_hash": "08dfde6ee16ff660fcc73071b43dbb6f77526d9a1bb1cbb02f00206b1595cd1b",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "e45fcd2afe36fd16cd0d5672bf742b3ec6c869471a4415fd6541927467d78650",
+      "rank_within_meter": 3,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-30",
+      "unit_hash": "09faffba3f8a70330fb42eb1c20405dd4c948921b157e0f7c67e29a0495e70ca",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "3eac1fea7f2bdf18a0d4424e756a823b3838cf4356e29babb51037dacec1f274",
+      "rank_within_meter": 4,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-05-14",
+      "unit_hash": "0aecd7aa74233b5176abfcf54492185a3a450cb3e1317530d3b9dcff4f669d8f",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "e1c08f143b38c836d94dfcbfcf408d734aa7125b6610d7ae0be7b0ee4b45176d",
+      "rank_within_meter": 5,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-05-22",
+      "unit_hash": "0da96b4a8a92f403e0483f2a18a04f3c0776321f261206732b3183f8da5db77a",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "9c4c34250457227030c97fe3f80ab551a161495331a618fef6249801b4e7cf0c",
+      "rank_within_meter": 6,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-05-06",
+      "unit_hash": "10dd9083fd052ad04affa15e996437651d070a5f6a3c9d983f3d24d3f3b3947b",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "a7d82f6610dde344c869c399c8b60fac718e34a0917fb498af5c3f682d2645fc",
+      "rank_within_meter": 7,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-05-12",
+      "unit_hash": "1881d77c4fbd5b4ba658a710d49c3fb4aae1562a89101045cb2fbd935e85565c",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "d464f6b048c5e36428a26a8cbcb7beb62f16c34e4613129b2f6609e0ce1d05ae",
+      "rank_within_meter": 8,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-05-05",
+      "unit_hash": "1b105395503aad999ca4893063ecd62f1f81bc1b5b7f4f685de1d146aecbdf17",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "c2871e6a580d684112821d36371cfdb0dac92d9ae0f84b1b911daf04239818bd",
+      "rank_within_meter": 9,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-29",
+      "unit_hash": "1c1ec45f9d75bcfd9cd5bd58f8cb5aa49ca9e9cdbb38c0b825a80c9adb3d3ac8",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "cb23b81b7ee6330cc0f960dd9b930382250757dd7fdb918c5bcd74450bcd2be6",
+      "rank_within_meter": 10,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-04",
+      "unit_hash": "1d1455d43c4d446c2a91748b9254f5218beca36ca0c85a7efc47861d9e543dd6",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "aec8b264cf47887a25d0a4a88de877fef70d286ef8087204105a0edad4639962",
+      "rank_within_meter": 11,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-05-13",
+      "unit_hash": "246d75f167346c04ae0e0cd185752cb035fa9cb22d7a324367ecafb325b27280",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "6b1572da69771790a8114032b99357a37863c02b24088f1a2f8219e2b5d749ca",
+      "rank_within_meter": 12,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-05-10",
+      "unit_hash": "26f265bb03a7a52be56cb79edf62a1ab6fd08d4c5bc21d2a56274ab7b5862ec1",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "c9354d2ec5fb464a098af1a3f8fbc4f5f2688acd59a72a45835e889546ccb1ce",
+      "rank_within_meter": 13,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-05-27",
+      "unit_hash": "2ca80278ed8d3393f845a4e411ef3341d25d19abdcd5ee22c93a4fda2ec97f5d",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "ceb3886d0e61f7407a054826ed7483f3640d3f2c32f543530bd55deb1e3b66bb",
+      "rank_within_meter": 14,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-10",
+      "unit_hash": "2d1598f671b17250847fcbb51f967710aea36cb30be9cb9445d58177da97b268",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "1d371687d58c8041132a88fa11d3f98fd8d06a19a8d34435bc30f827075cfd11",
+      "rank_within_meter": 15,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-05-03",
+      "unit_hash": "2d3949754f6b665e3e01d47facc4631226df190838e48a5cab9bf08b403ab64a",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "24efd5954ea9ffcd05ae824f140b28ec72e17fe8a1e714b9b0381cb7199f1c2c",
+      "rank_within_meter": 16,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-19",
+      "unit_hash": "2fa8c988d8886dc118099651ba99c3f9c01a78b9ca3e19650a543ad10d99f6d4",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "0fc1daf4e4d23f9381069dfb2a239dfe38be48f0d87a0d6338673e22f96dda07",
+      "rank_within_meter": 17,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-24",
+      "unit_hash": "31a600e4d3d7ea72050638780c76feb479ff0a2c9493dcc6c3195476c212f382",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "da517ad6103221d362f5976ef434928e1432615b79ad606596312f5e0612b13c",
+      "rank_within_meter": 18,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-06",
+      "unit_hash": "395b1c109513ce62fd01694ca0f5ad2bac95e1cbbb304cf8c9eeebd0c874e392",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "2ba83ea6f557092b100dccf13e54a6ff094c49a6456f659fc39670d3ff570800",
+      "rank_within_meter": 19,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-16",
+      "unit_hash": "4b57887f214d299a566cfab22dae4bd8fc6c29ec82a0d7650e7ca66cc7eaf07c",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "58fcadeaa5a07518e2ad597019261a724497712f8245a71392fb7737bb634d42",
+      "rank_within_meter": 20,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-23",
+      "unit_hash": "4c4b877682235b2caccef9e93f89a6075de4b77623b07add8934d98e3e7b8590",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "a3e8d27ea20f020453e2fad067b7451908fdba9eaf117b5c173d0c9249c2e8bd",
+      "rank_within_meter": 21,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-05-20",
+      "unit_hash": "5bc17b71bb6821e58d2f3d6c63424db6ce47d3a448260f75cfa81de2d9416c2b",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "07e5d1e455c65493b8e10a5f037bf4a8ed0305d8567d7c814441736b1f755d76",
+      "rank_within_meter": 22,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-20",
+      "unit_hash": "5cb0f04aca3713e1cdcc17eabc5fe7e5027105dd871e8ab055d4684203b4ff00",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "cf7064aef7eb4cee74656f9480f632c819ce61c150cc2ff40afce3db7d6c7f12",
+      "rank_within_meter": 23,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-08",
+      "unit_hash": "67867c69c0f550568febe78718975df518e450d1be601ae1f7279e59609eaef5",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "840d729b99b57829ca42ac9a894fdae7b384a076b9982a25523e65f29aac0ec2",
+      "rank_within_meter": 24,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-09",
+      "unit_hash": "6919fdb912d3019440cba8295d1334f156606c3b03a7fc21c2cabe0be71bb72b",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "a2359953f042a3a7319c6cefe7c8e38e02fe5743d729fb7f911c5ec68a5b5ca8",
+      "rank_within_meter": 25,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-14",
+      "unit_hash": "6ecfba31677d9088949e9fd9df02bba54914f03b90fde1bc6beae1f356d4092f",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "e3631e0174e95498b7286441d3285e77e02088342d323235b4be6abfae097200",
+      "rank_within_meter": 26,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-05-08",
+      "unit_hash": "6f7686729cf5e3610e7a3d183036295f42ee3cbc173bf761c58a8e629d0c106c",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "1c7e719b2c5c2f2ef72622b80ab957db2aabb493c2bb1bb5a700bb54d39bf11d",
+      "rank_within_meter": 27,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-03",
+      "unit_hash": "70a9280d3ecbf5ea0f4bf3fd8d5e84af72f6d30cfebf43f9c3b7d32c10d47c8e",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "3e31e419ddc1e8c79778d5512f4bbcd4479f94d3d36afac0f7e11834cf735ab8",
+      "rank_within_meter": 28,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-05-16",
+      "unit_hash": "70f653d46662cbf90271c2594f52f91d6307380391dbd712b00c20fd87d375e6",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "776f910efd30d4b0a0c8a20cd810fd32c2203443bf26b472bbdb36f84c000e56",
+      "rank_within_meter": 29,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-02",
+      "unit_hash": "7c907da5d623b983ce4c38ceb2e1ea459e7ce3277d674cef3f27fc51505d81ca",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "118403cb2f44379f33fbffd76eb93dd9dbb8a7084cc238abd35591cd8f3c17d8",
+      "rank_within_meter": 30,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-05-17",
+      "unit_hash": "82e7d1404a74ad5eef45c80bc390febedb37e7b2cd4fdd79ac1b53ac7456843e",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "bc10eba4525e505d1f298d8c06df869ff27949d689f31e36f5f1c22ee9674689",
+      "rank_within_meter": 31,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-05-19",
+      "unit_hash": "8856b1d4b7ed97472f4ef46517db8f096c1cc7ad84882f3038ddc99132ff0909",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "2a226285f585f0269a52d9e7237bc6a1d846c30dfafc26fff3944e9a53b42326",
+      "rank_within_meter": 32,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-18",
+      "unit_hash": "8db3826b93327557a0900bfe1c41028cfdc6402590ca6ea568f3d0375dbd11dc",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "1203b88bce293e946ca75e85e1b755337e7ebd4e918683a606264fe3475fa157",
+      "rank_within_meter": 33,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-25",
+      "unit_hash": "9111a2eac7e6f70b9e885d614ef6c594966727d483b7c744ba9bf3208022dbd4",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "48f6dd4635926e775de4684f04058b817c2862c7eaaa08db169c1f3c4610d823",
+      "rank_within_meter": 34,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-05-15",
+      "unit_hash": "91ad3bf3a0db21057ba467c91d9f650b9814bd8ed0c4df4cac17238355cc4d30",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "97455a56da5bfce52c8e3f78eab33e2aa1ba3fd8c0d8762105b67b176bc70477",
+      "rank_within_meter": 35,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-27",
+      "unit_hash": "938a643a6a256d1c0c7ee1ef6b949c8413f7b43f30b441ef646eac778d4060a6",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "49a5aff5fdbe4e305dc6150df4f3d71d5e9542dc7ad23f11203ccc347405576e",
+      "rank_within_meter": 36,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-06-28",
+      "unit_hash": "940507fd5bd42626dbbf7fb2a216d672b2aee8532f6858c269ffee69e7e8d418",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "2f2ae0b8ffa977459d239af084911cae7fcce06f12aaa978b44afb7dd921bd26",
+      "rank_within_meter": 37,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-05-31",
+      "unit_hash": "95410f9831148c44162ae12828dd02e1e415be17361949e587e6210c12fafba7",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 95,
+      "usable_current_slots": 95,
+      "source_rows_sha256": "9aad16f60ac32a5387c719476dcc9290c2c7a2fe0f3e9d79c603c6283b8f76e1",
+      "rank_within_meter": 38,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-35",
+      "local_date": "2026-05-01",
+      "unit_hash": "981184c985d0145545cb8301ae7786528554faadf70de4874135fa66a18620f2",
+      "phases": [
+        "i1"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "93e26b83d38ad737ef07d2e24410194d35b87e4149a9a62639990a464af1b2c4",
+      "rank_within_meter": 39,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-05-28",
+      "unit_hash": "14e73614a8f72eb58c5ed98c7dc82a8993b7665378400b1da8bd9abea2d72246",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "fd67e360fb4e1df5387c2a7b4b502370ef18ab8e2568c7765b35cb2cf3100f51",
+      "rank_within_meter": 0,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-20",
+      "unit_hash": "195b2f3e9d5523dfce1b1c962b9ac1de373ec9880134d53838c48dbcec6bb39c",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "657190bc3f4681ae8717b1120fd765a79f8bfc1fcdca537970642b0ff9e9358a",
+      "rank_within_meter": 1,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-15",
+      "unit_hash": "196ade6d1a2ffd5c68df5344d6438a420da0fc70670fff53c6839f82828cbabe",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "069f59a9c6555307c5e29ba63a8cde90d5ed70ae69363b356bd521f646fdd699",
+      "rank_within_meter": 2,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-05-06",
+      "unit_hash": "1ef741b08855f77b1ba44f97d5118ed2c630e72fb3a9e4c1051dc2d5cbde74bf",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "84b1f9d6509091a40c8b12e616b44f53b0924484856024dca6ab0ffe2d7e225d",
+      "rank_within_meter": 3,
+      "operator": "phase_selective",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-05-27",
+      "unit_hash": "268271200e79154d623cb543c1ee46fc4511775b29056434519cc6281c8b0b07",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "0a9aa3490f8f0ed8c03d45e65b4c89dffee6565590616f9895f12c905ded9271",
+      "rank_within_meter": 4,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-19",
+      "unit_hash": "2a20e379257b5c6681b43ddb7778d68f617bc04d84ad68ee96ceea6c54ea44c2",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "bd1b0233e1ad8b744402840af4db9e8006a772dc7741ac5528b59e8d920d370a",
+      "rank_within_meter": 5,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-05-25",
+      "unit_hash": "2e228c584dbe4e55f461f4eda9e2e5e11e85c7d20a66b42c4e364ed49d651d82",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "cdd8de823f23a4161456ad5d1b31a1ea0bf28ad90f4575fddc068150310ad3c6",
+      "rank_within_meter": 6,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-17",
+      "unit_hash": "2e433b43546fdd9fccea29442cf236d3d9d14b6a38fb43f4f3c2171496fff4db",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "efb48937cc68fbb61064cd596af7130a92177557097e62aef0ac3ba7db5abc05",
+      "rank_within_meter": 7,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-05-31",
+      "unit_hash": "32499d82225a608dbf98f239e2a9f83951f8b32ac03e0e1c007856e742f7515a",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "07fe9d057556e0c86466ca6c30e0d69bd5cdd5c19c718a402b61f90a4ea3855f",
+      "rank_within_meter": 8,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-18",
+      "unit_hash": "337a700460651e953b30f5139e72aa7d671ab8f89afc5a079e1227ec0ad76701",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "3f4edab16d588cc6db218c40fdaf58a9712f9ce6ccc3a0ef6d7d925a3dff07aa",
+      "rank_within_meter": 9,
+      "operator": "phase_selective",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-05-17",
+      "unit_hash": "39bb9462e35a40a7b6a94c6e21f44950376744e84a785dde7618bd23cec9d70b",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "2baa359e2fd3e5985e0a601f5c304ed6a1dcc80ea47821bdd2c3ab0b64326b39",
+      "rank_within_meter": 10,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-24",
+      "unit_hash": "3ea7d82b6a22dddb5c6f2327bb72ccbaac4124ad20095747aa34507679e34196",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "b4840af04e9d05937ad82ead6db45a4739866542dad392f53c477dbe279aa3bb",
+      "rank_within_meter": 11,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-14",
+      "unit_hash": "4a6f58a635d27528ff7667529b6dbcde544aa4a9c5215400042a06ef4a0cb94f",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "4babf799bb68c7e91019ec4c2cd3e69e5bd67aab42513b3bfa0e3e12b1e87673",
+      "rank_within_meter": 12,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-22",
+      "unit_hash": "4ac194590d88328935fa366614d5edf26ad8f59fd6ca7c809c56e7ff847584ce",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "77f8a36569b11c880eabb647bd695ab51e676c88ce833e5af5afbf4bfee2b4ab",
+      "rank_within_meter": 13,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-05-23",
+      "unit_hash": "4b1349df995c3bd16dbc59405334362c0e649d5bcc2c1d6485ff519a6ae0c28a",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "944fd522c0557355e2a6792c407aec6e18da70038845f850d1b2781d0fdd9c1e",
+      "rank_within_meter": 14,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-05-30",
+      "unit_hash": "55547b9fca3e0fb8dc0e6eb79ee32ad3a94cb36b04c7724e45f65f4468e9aa59",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "3be691fec0e66323f1e04bb5158bb2094b786f0315baba4f42b0591e09f8370c",
+      "rank_within_meter": 15,
+      "operator": "phase_selective",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-23",
+      "unit_hash": "616b2140e84d3cc5c340b585a7cae8be778b7543208686bce8f0a88d9652fe90",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "1cbc6889f7b765683a1fc37f6156cf61c13f8bdce8fb4001f277cc0ea3d193ca",
+      "rank_within_meter": 16,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-05-07",
+      "unit_hash": "619e221c11e9b0aa1ec38aa90b0279c68fd9db9c28d14d8f2a55d22a4421ff71",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "88e8051d66919751c6c0803c03878198576c76a332588512ea5866b22c6f428c",
+      "rank_within_meter": 17,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-05-11",
+      "unit_hash": "6762b05a1ab8b4a6d7b672c33d880d37110fbc7bebbd3e0e808013d3d4d20e91",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "2b9a7fa98ecf4ea11bce927f4137315d2504b78ac5da47f3b603b9bd21e5a7f7",
+      "rank_within_meter": 18,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-05-10",
+      "unit_hash": "6d147fa4cd40072f63a48329c1d01144715d32d8e22906d8b4b76f53f2f91483",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "49e587970f6ff34eeb109a02636df2871606642a07ffba2d59350be5e538a720",
+      "rank_within_meter": 19,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-05-12",
+      "unit_hash": "719dc32e4c8052c09b17ac67942996162c7906fcfa2fc6e5836ad31d9408a6d1",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "4dc5b03a18969e0274f86a3e9e94d4b1aa894127163fe765c9d8486b8f8b9783",
+      "rank_within_meter": 20,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-09",
+      "unit_hash": "76923a7670abdc159e40c8e61258c03a5bfb6ee98020989a020241b22c59dc10",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "4b6ed4d71d4048913bc8daa162a0a3e6a3fda3e9fb4fbe28c19ab43082c2e7fd",
+      "rank_within_meter": 21,
+      "operator": "phase_selective",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-07",
+      "unit_hash": "78ae02a8f1acaf1c91c09a547613d6a75e9f5f3e4146e50f4009f187f0206c11",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "f95ac294d0405bfca6a9351b6c32e5ae91d5e7fa45b25bfa1d1a4b0eb02b2130",
+      "rank_within_meter": 22,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-04",
+      "unit_hash": "79945bd47757b568291c3bf5a59cd5049672d73dd7014b03806d454a6d0444ef",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "098e74210690807a2a7aa4c5ab1f1ac94e4452591e9dd1193f4389f0c3c49711",
+      "rank_within_meter": 23,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-30",
+      "unit_hash": "79a08e90baad401a47609dfe61bc9e1234d1c43f65f79e229e6ef0ac458d0e46",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "8177883c1251402613d97334d2e51ee6d5a208c544686740acb2f743d0d7d095",
+      "rank_within_meter": 24,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-16",
+      "unit_hash": "88f139a4b9c925090419660e16244e97d78c9c8a3ecbf9fb8b5a5a70c3169ebe",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "9e82f7190c47ae8201dcf3d2b812aa8878799dd3065dcf9214621a3c1e061a66",
+      "rank_within_meter": 25,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-05-22",
+      "unit_hash": "8b7e5aed5ca27fbd3a409e252542336cf043d0b88282f5595da396f672e426a5",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "832e59534e4526afca6685fb4cc588e47924fb0b5786730ac8e6825857d6f2d4",
+      "rank_within_meter": 26,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-05-16",
+      "unit_hash": "8eab8d1e33d3b105c84aba3efc8bd930407fb4c3af2e344c73751eb6fa17f2c9",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "f2916a4c11b838bf17a71ad534ab49c9000123dcc9cdb64dbcf591b9b4de1992",
+      "rank_within_meter": 27,
+      "operator": "phase_selective",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-29",
+      "unit_hash": "90e2a53fc0f269c232a033b9507f60b17a344b74613aeeed5acb530c4ffb1957",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "852a288cc9415014f812e8922ff97b0629d26dc6b1e0cb3ba87b99adfc8dba27",
+      "rank_within_meter": 28,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-05-08",
+      "unit_hash": "931d58e8ba29ce0634e778d35f3ebfbca3aa1630c586aaaa11d37581877cb402",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "5b49a250556a69538dd67a6f24e2152ac6846dc137ee456abd014c43689a0721",
+      "rank_within_meter": 29,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-05-18",
+      "unit_hash": "9483cd01a780d0f755664f3c355e8bc324579262152729b10269fcee4c15fa2f",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "f1a0e41d998909382ca6983b428421b3782f0091b48dd686a5b79efa154a35dd",
+      "rank_within_meter": 30,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-08",
+      "unit_hash": "9ee72846b6a9899d16efe1803407b0a524eb2a4455186a1e3a3e746bc83719fa",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "9d19388f04fac7d3062efd28ec841a59f83dc4ec6035e5c6a38db538e2066852",
+      "rank_within_meter": 31,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-05-09",
+      "unit_hash": "a36b089aaaa18fd1ed1a69ba4512a14cfcd6c1f12e9034634c6604ed95cee850",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "2756f93da578a84644ba087f3b067d449714fa891e9d2b7d705631c1d8897fca",
+      "rank_within_meter": 32,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-06",
+      "unit_hash": "a8e2e999b22b8ce583fc6c2ecdd74ccf2dbd86ea8c0fcb031e6cbd92d1494425",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "50b76c2dbcf8bcc98b2162467e8fd77b6d4043d89d86abeb1ec66ddf0d39010d",
+      "rank_within_meter": 33,
+      "operator": "phase_selective",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-11",
+      "unit_hash": "ad707b874f170a69999c28de5fdfb5b67f39b5af01e6cebf7e2717a6dc01da8d",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "3059a48a76624c16b6ebd752794c2d691767b69bba40fa9f7404c3278e38666f",
+      "rank_within_meter": 34,
+      "operator": "weak_long_duration",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-03",
+      "unit_hash": "ae03f87681a8e786e2d0df0284de90f029d11fa5a55ce6c23d9f343115cd3dd7",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "ac7ce123eddc58b0e466e43cfe94f63c0abb97e35ab70c7fa6c4150e7acf7e5b",
+      "rank_within_meter": 35,
+      "operator": "benign_transition",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-10",
+      "unit_hash": "b137d830831a9e63a756b5b5ed49bedbb814f81348a7eae6b157d30e0a709cc3",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "9e264d84bccafb44108ad226fc67ac3d812ce7fa13662bc00035646a43ff1720",
+      "rank_within_meter": 36,
+      "operator": "deep_day_full",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-27",
+      "unit_hash": "b4b5cbcead5cf8d458e76c9bda25c46b340ee3cebc5a9b83517847586dbb7717",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "4da53188465d5ec1f128f7281be1ed9e147a92c32ac029a6618ecbdbdba5f0f3",
+      "rank_within_meter": 37,
+      "operator": "daytime_partial",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-05",
+      "unit_hash": "b6fd9f5270fcf9732837223899b61057437e0dc2f3e34cdb73490826bfa7171d",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "cc21527185e98f0972f2cda67567e87104e23ca03f98be12fb7b13b4ba475771",
+      "rank_within_meter": 38,
+      "operator": "post_switch_persistence",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    },
+    {
+      "meter_id": "B-L-9",
+      "local_date": "2026-06-26",
+      "unit_hash": "b7031c74cf9533a776d75ce746b0e6b890ab965086cf9aa69935f69b40fe7b5e",
+      "phases": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "source_row_count": 96,
+      "usable_current_slots": 96,
+      "source_rows_sha256": "a06ae74fd16d66d6f3662410a1cae5e81097f01a03ae29bfb5a42b029f4e7443",
+      "rank_within_meter": 39,
+      "operator": "phase_selective",
+      "selection_uses_h1": false,
+      "canonical_buffer_hours": 4
+    }
+  ],
+  "pool_sha256": "b59120e8580ce0502ea5001b3f12d2c932b1b6fde65abb063d87e12d84049282"
+}

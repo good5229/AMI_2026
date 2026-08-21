@@ -1,0 +1,5 @@
+window_days,repeat_recorded_events,eligible_asset_day_episodes,repeat_rate,definition
+7,5476,100659,0.05440149415352825,next distinct asset-day episode is within window; same cause unverified; full follow-up required
+30,10287,99722,0.10315677583682638,next distinct asset-day episode is within window; same cause unverified; full follow-up required
+90,17222,96751,0.17800332813097539,next distinct asset-day episode is within window; same cause unverified; full follow-up required
+365,33838,83535,0.40507571676542764,next distinct asset-day episode is within window; same cause unverified; full follow-up required
