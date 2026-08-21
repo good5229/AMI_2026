@@ -1,0 +1,31 @@
+{
+  "grade": "OG-B",
+  "concepts": [
+    {
+      "concept": "repeat burden",
+      "daegu": 0.13022074003493728,
+      "buyeo": 0.1556122448979592,
+      "replication": "REPLICATED"
+    },
+    {
+      "concept": "resolution tail >7d",
+      "daegu": 0.08790688872066617,
+      "buyeo": 0.05161290322580645,
+      "replication": "REPLICATED"
+    },
+    {
+      "concept": "reactive/report channel",
+      "daegu": "접수구분",
+      "buyeo": "민원인 raw semantics blocked",
+      "replication": "NOT_COMPARABLE"
+    },
+    {
+      "concept": "fault-type diversity",
+      "daegu": "no D1 fault field",
+      "buyeo": 9,
+      "replication": "NOT_COMPARABLE"
+    }
+  ],
+  "raw_counts_not_directly_compared": true,
+  "direct_id_join_count": 0
+}

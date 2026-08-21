@@ -1,0 +1,77 @@
+{
+  "original_labels": [
+    {
+      "fault_type": "불이 들어오지 않아요",
+      "count": 2965,
+      "share": 0.8626709339540297,
+      "resolution_median": 2,
+      "resolution_p90": 6,
+      "repeat_90d_share": 0.16415735794074793
+    },
+    {
+      "fault_type": "기타",
+      "count": 306,
+      "share": 0.08903113180098923,
+      "resolution_median": 3.0,
+      "resolution_p90": 7,
+      "repeat_90d_share": 0.15625
+    },
+    {
+      "fault_type": "농작물 피해 시간조정",
+      "count": 65,
+      "share": 0.018911841722432352,
+      "resolution_median": 2,
+      "resolution_p90": 6,
+      "repeat_90d_share": 0.27586206896551724
+    },
+    {
+      "fault_type": "불이 깜박거려요",
+      "count": 41,
+      "share": 0.0119290078556881,
+      "resolution_median": 2,
+      "resolution_p90": 6,
+      "repeat_90d_share": 0.11764705882352941
+    },
+    {
+      "fault_type": "낮에 불이 켜져 있어요",
+      "count": 25,
+      "share": 0.007273785277858598,
+      "resolution_median": 2.5,
+      "resolution_p90": 6,
+      "repeat_90d_share": 0.15384615384615385
+    },
+    {
+      "fault_type": "수면방해",
+      "count": 17,
+      "share": 0.004946173988943846,
+      "resolution_median": 2.5,
+      "resolution_p90": 8,
+      "repeat_90d_share": 0.14285714285714285
+    },
+    {
+      "fault_type": "너무 밝아요",
+      "count": 9,
+      "share": 0.002618562700029095,
+      "resolution_median": 3,
+      "resolution_p90": 3,
+      "repeat_90d_share": 0.1111111111111111
+    },
+    {
+      "fault_type": "스위치 파손",
+      "count": 6,
+      "share": 0.0017457084666860634,
+      "resolution_median": 2.0,
+      "resolution_p90": 5,
+      "repeat_90d_share": 0.0
+    },
+    {
+      "fault_type": "보안등 뚜껑이 열렸어요",
+      "count": 3,
+      "share": 0.0008728542333430317,
+      "resolution_median": 1,
+      "resolution_p90": 3,
+      "repeat_90d_share": 0.0
+    }
+  ],
+  "normalization": "NONE"
+}

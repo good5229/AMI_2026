@@ -1,0 +1,5 @@
+concept,daegu,buyeo,replication
+repeat burden,0.13022074003493728,0.1556122448979592,REPLICATED
+resolution tail >7d,0.08790688872066617,0.05161290322580645,REPLICATED
+reactive/report channel,접수구분,민원인 raw semantics blocked,NOT_COMPARABLE
+fault-type diversity,no D1 fault field,9,NOT_COMPARABLE

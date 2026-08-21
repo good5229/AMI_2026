@@ -1,0 +1,2 @@
+executed,model,buyeo_retuning_count,primary_outcome,n,positives,prevalence,average_precision,top10,reps,top10_enrichment_ci95,interpretation
+True,LOGISTIC,0,repeat_30d,3040,283,0.09309210526315789,0.14128699079270793,"{""precision"": 0.16776315789473684, ""recall"": 0.18021201413427562, ""enrichment"": 1.802120141342756, ""n"": 304}",500,"[1.3386021915372996, 2.289462163911032]",Cross-municipality operational-priority transfer only; not AMI accuracy.

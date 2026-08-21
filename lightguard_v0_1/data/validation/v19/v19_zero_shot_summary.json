@@ -1,0 +1,45 @@
+{
+  "validation_candidates": {
+    "SIMPLE_RULE": {
+      "ap": 0.35545663271948363,
+      "precision": 0.2964734010759115,
+      "recall": 0.31979368149580917,
+      "enrichment": 3.1979368149580916,
+      "n": 1673
+    },
+    "LOGISTIC": {
+      "ap": 0.3328197518474146,
+      "precision": 0.3227734608487747,
+      "recall": 0.3481624758220503,
+      "enrichment": 3.481624758220503,
+      "n": 1673
+    }
+  },
+  "external": {
+    "executed": true,
+    "model": "LOGISTIC",
+    "buyeo_retuning_count": 0,
+    "primary_outcome": "repeat_30d",
+    "n": 3040,
+    "positives": 283,
+    "prevalence": 0.09309210526315789,
+    "average_precision": 0.14128699079270793,
+    "top10": {
+      "precision": 0.16776315789473684,
+      "recall": 0.18021201413427562,
+      "enrichment": 1.802120141342756,
+      "n": 304
+    },
+    "reps": 500,
+    "top10_enrichment_ci95": [
+      1.3386021915372996,
+      2.289462163911032
+    ],
+    "interpretation": "Cross-municipality operational-priority transfer only; not AMI accuracy."
+  },
+  "seal": {
+    "training_domain": "Daegu only",
+    "external_domain": "Buyeo untouched",
+    "retuning": 0
+  }
+}

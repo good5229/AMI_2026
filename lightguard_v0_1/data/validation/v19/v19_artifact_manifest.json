@@ -1,0 +1,116 @@
+{
+  "version": "0.19",
+  "raw_sha256": "9b42d1cee90202aec37e462718dd3b7ed3a00ae1d6a924b7d519cabc1ea3d4b0",
+  "artifacts": [
+    {
+      "path": "lightguard_v0_1/data/validation/v19/optional_v19_zero_shot_scores.csv",
+      "sha256": "ed3d35ce63951f77b2e9642d739aba734e5853a05d18cc96ce226f311b4947d7"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v19/v18_freeze_manifest.json",
+      "sha256": "5e733373d00db9c36b37de0740fcd99e38895a49b3a016854e47285a3c51d9ae"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v19/v19_buyeo_clean.csv",
+      "sha256": "6f1ccd9e55ae809d7c2ba0f560bbda991e7d94ecb3a088d0cd4434fc161cf7b5"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v19/v19_buyeo_raw_manifest.json",
+      "sha256": "6ba80691f32b83de4be980b58708f2424b392a8635f86fe1f39753a02a1484c5"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v19/v19_common_feature_contract.json",
+      "sha256": "97504bf1c177ee669fee2551a20e070a271c60fad01572bedc1df3f0fd7d8bac"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v19/v19_cross_municipality_summary.json",
+      "sha256": "baf834d2ef5db8d297e354f61736dd5849c7f67b585572345de272836cc0969a"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v19/v19_fault_type_summary.json",
+      "sha256": "3760d5b72af7b8d3bd02da0f511a70c4499ae7e10317f90d289cb2770a872aaf"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v19/v19_repeat_summary.json",
+      "sha256": "eb2635ec00ed4f4373ad4e21cba05627f5b03af1875564bb4fbe6787216ba336"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v19/v19_zero_shot_summary.json",
+      "sha256": "e3bcaf9ce4591642b822eb44596d6f809b7f0dc276f76525001cbaf49bb2e9e8"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v19/optional_v19_zero_shot_results.csv",
+      "sha256": "addf108ef8696544ae77c0da7642883486eb9c4a47c587688c42d1b6c65f0e71"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v19/v19_buyeo_data_quality.md",
+      "sha256": "3ccb4b1824b19f7324b06fab0983a6ef110174117d5dea27eeb36c3bf15eba07"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v19/v19_cross_municipality_protocol.md",
+      "sha256": "fd9277fcd0945496b0b9a044c5f4999a029c431f399a3499b714c11b4203e017"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v19/v19_daegu_buyeo_comparison.csv",
+      "sha256": "37d6e383fb50221c06b424fa253083217c040e5d7753e54d3e443d6415924856"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v19/v19_daytime_lighting_analysis.md",
+      "sha256": "610b3e6a0d9594518d9ca76145e6b09f5dde8952bc0dc7195dc31ff0fd1cb6d3"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v19/v19_fault_type_analysis.csv",
+      "sha256": "dd05d0e5330d2c3accacd2a2110e5ed6cf40038ebfd905212ba3cc8378104fbd"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v19/v19_final_summary.md",
+      "sha256": "51a2b946db55a74ddc2ae46e9fbc77044c591691f0d36c227055c5710e926ea3"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v19/v19_independent_audit.md",
+      "sha256": "f51aae45a9183c29179e805b9687b9f0a27540b34cc01ed594558721b7911ac1"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v19/v19_operational_generalization.md",
+      "sha256": "8c830a5bf137db6ec8f8cbf7f48d7d0ccad7a307304bd599918bc859a3f43ce6"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v19/v19_repeat_analysis.csv",
+      "sha256": "1fb4caeeb90d8084d61187584f727e53cb4320c47c366343910965554b433c00"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v19/v19_resolution_analysis.csv",
+      "sha256": "a23be3883f9fea950c292ca24ff9be869520ec55203ea947e42c29029a6d97b8"
+    },
+    {
+      "path": "docs/agent_learning_v19/luna_buyeo_raw_audit.md",
+      "sha256": "9a2537536c3bdf9dab0bc0b8ea80c7bba25945344148f9a62a4ea604431ce2ce"
+    },
+    {
+      "path": "docs/agent_learning_v19/luna_independent_qa.md",
+      "sha256": "6a9d0eb370c023d86df6f803606a30b5fbadeba43f46ca47635278e69a44e11f"
+    },
+    {
+      "path": "docs/agent_learning_v19/sol_orchestration.md",
+      "sha256": "be38e7ea3fbaee64d77435f893146b18d945cc7ffa694d1ca16deec9b47a1a6d"
+    },
+    {
+      "path": "docs/agent_learning_v19/terra_cross_municipality_methodology.md",
+      "sha256": "a5ae040f58ccfc6423e3671608887c35d7541336199afae6f99cffe08bc437a1"
+    },
+    {
+      "path": "docs/agent_learning_v19/terra_zero_shot_transfer.md",
+      "sha256": "e2cbbb127fb66f6bea0f7283e002629054fdf312fcbc48f889972cbaea1a4bc2"
+    },
+    {
+      "path": "lightguard_app/docs/v19_independent_municipal_evidence.md",
+      "sha256": "51a2b946db55a74ddc2ae46e9fbc77044c591691f0d36c227055c5710e926ea3"
+    },
+    {
+      "path": "lightguard_app/lib/features/ami_validation/v19_buyeo_evidence_card.dart",
+      "sha256": "f9dd3a9b31f723dc7153cf8e62d4e818bb6b935e2cead7c16490f90bb60499db"
+    }
+  ],
+  "privacy_scan_required": true,
+  "status": "BUILT"
+}
