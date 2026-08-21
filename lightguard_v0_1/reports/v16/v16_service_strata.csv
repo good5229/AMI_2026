@@ -1,0 +1,17 @@
+stratum_type,stratum,rows,field_candidates,data_quality_reviews,remote_monitors
+meter_id,B-L-12,9,7,0,1
+meter_id,B-L-13,20,0,12,0
+meter_id,B-L-14,19,0,0,17
+meter_id,B-L-35,13,0,7,0
+meter_id,B-L-9,19,0,0,12
+operator,B1,9,0,4,3
+operator,B2,9,1,2,3
+operator,B3,9,1,4,1
+operator,B4,12,1,2,3
+operator,OP1,9,0,2,4
+operator,OP2,8,1,1,4
+operator,OP3,8,1,2,4
+operator,OP4,8,1,2,3
+operator,OP5,8,1,0,5
+expected_phase_count,1,33,0,19,0
+expected_phase_count,3,47,7,0,30

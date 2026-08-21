@@ -16,11 +16,11 @@ class V15TargetMechanismContract {
   const V15TargetMechanismContract._();
 
   static const title = 'v0.15 대상 도메인 메커니즘 기여 검증';
-  static const status = 'PRE_REGISTERED_NO_RESULTS';
+  static const status = 'COMPLETED_MIXED_RESULT';
   static const freeze =
       'v0.10–v0.14 freeze 보존 · H1 runtime 경로와 threshold 변경 없음';
   static const claimBoundary =
-      '현재는 결과 전 정적 계약입니다. 수치가 추가되어도 가로등 현장 정확도, real FPR/specificity, 고장 확률, 일반 anomaly 성능을 의미하지 않습니다.';
+      '71개 target-domain pair의 통제 결과이며 가로등 현장 정확도, real FPR/specificity, 고장 확률, 일반 anomaly 성능을 의미하지 않습니다.';
   static const naturalShadow =
       'Natural shadow는 truth 미확보 상태의 진단 기록이며 성능 평가가 아닙니다.';
   static const canonicalSix =
@@ -29,27 +29,27 @@ class V15TargetMechanismContract {
   static const disclosures = <V15MechanismDisclosure>[
     V15MechanismDisclosure(
       name: 'New disjoint holdout',
-      status: 'FROZEN_BEFORE_RESULTS',
-      scope: 'v0.10 pool 및 canonical-six buffer와 분리된 target-domain holdout',
+      status: '71_PAIRS_COMPLETED',
+      scope: 'v0.10 pool 및 canonical-six buffer overlap 0',
     ),
     V15MechanismDisclosure(
       name: 'Same-threshold runtime ablation',
-      status: 'PRE_REGISTERED',
-      scope: '활성 runtime mechanism만 제거하고 H1 threshold는 동일하게 유지',
+      status: 'COMPLETED',
+      scope: '활성 runtime mechanism만 제거했고 H1 threshold는 동일하게 유지',
     ),
     V15MechanismDisclosure(
       name: 'Anomaly / controlled-benign pair',
-      status: 'PAIRED_DESIGN',
-      scope: '동일 meter-day의 anomaly와 통제 benign escalation을 함께 기록',
+      status: 'MIXED_A5_RESULT',
+      scope: 'A5는 recovery 기여 신호와 controlled-benign adverse escalation을 동시에 보임',
     ),
     V15MechanismDisclosure(
       name: 'Robust-z comparator',
-      status: 'COMPARATOR_ONLY',
-      scope: 'H1 결과를 대체하거나 threshold를 재조정하지 않는 단순 비교군',
+      status: 'SECONDARY_ONLY',
+      scope: 'H1을 대체하지 않는 비교군이며 운영 우월성을 입증하지 않음',
     ),
     V15MechanismDisclosure(
       name: 'Natural shadow',
-      status: 'NO_TRUTH',
+      status: 'TRUTH_FREE_COMPLETED',
       scope: '현장 truth 없는 candidate/diagnostic trace만 표시',
     ),
     V15MechanismDisclosure(
