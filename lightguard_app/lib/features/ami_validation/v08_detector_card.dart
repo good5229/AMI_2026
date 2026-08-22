@@ -43,34 +43,34 @@ class V08DetectorCard extends ConsumerWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('v0.8 독립 통제 Holdout', style: Theme.of(context).textTheme.titleLarge),
+                Text('별도로 분리한 검증자료 평가', style: Theme.of(context).textTheme.titleLarge),
                 const SizedBox(height: 6),
-                Text('${data['confirmatory_cases']}개 시나리오 · baseline과 experimental candidate 분리'),
+                Text('${data['confirmatory_cases']}개 검증 사례 · 기존 기준과 개선 기준을 분리해 비교'),
                 const SizedBox(height: 16),
                 Wrap(
                   spacing: 12,
                   runSpacing: 12,
                   children: [
-                    _Metric(label: 'Frozen v0.4 Recall', value: _pct(baseline['recall'])),
-                    _Metric(label: 'C1 Recall', value: _pct(candidate['recall'])),
-                    _Metric(label: 'C1 FPR', value: _pct(candidate['fpr'])),
-                    _Metric(label: 'C2 보류', value: _pct(c2['abstention_rate'])),
+                    _Metric(label: '기존 기준 탐지율', value: _pct(baseline['recall'])),
+                    _Metric(label: '개선 기준 탐지율', value: _pct(candidate['recall'])),
+                    _Metric(label: '개선 기준 정상 오분류율', value: _pct(candidate['fpr'])),
+                    _Metric(label: '자료 부족 판정 보류율', value: _pct(c2['abstention_rate'])),
                   ],
                 ),
                 const SizedBox(height: 16),
                 _Notice(
                   color: Theme.of(context).colorScheme.errorContainer,
-                  text: '후보 채택 안 함 · C1/C2 FPR ${_pct(candidate['fpr'])}가 사전 한도 5.0%를 초과했습니다.',
+                  text: '개선 기준을 채택하지 않음 · 정상 오분류율 ${_pct(candidate['fpr'])}가 미리 정한 한도 5.0%를 초과했습니다.',
                 ),
                 const SizedBox(height: 8),
                 _Notice(
                   color: Theme.of(context).colorScheme.surfaceContainerHighest,
-                  text: '전체표본 기준 Wilson 95% CI · C1 Recall ${candidate['recall_wilson_95']} · FPR ${candidate['fpr_wilson_95']}',
+                  text: '전체 자료 기준 95% 예상 범위 · 개선 기준 탐지율 ${candidate['recall_wilson_95']} · 정상 오분류율 ${candidate['fpr_wilson_95']}',
                 ),
                 const SizedBox(height: 8),
                 _Notice(
                   color: Theme.of(context).colorScheme.surfaceContainerHighest,
-                  text: '보류 제외 C2 평가 · Recall ${_pct(c2['recall_evaluable'])} · FPR ${_pct(c2['fpr_evaluable'])}',
+                  text: '자료 부족으로 보류한 사례를 제외한 평가 · 탐지율 ${_pct(c2['recall_evaluable'])} · 정상 오분류율 ${_pct(c2['fpr_evaluable'])}',
                 ),
                 const SizedBox(height: 8),
                 _Notice(
@@ -78,7 +78,7 @@ class V08DetectorCard extends ConsumerWidget {
                   text: '충주 정격부하 ${chungju['rated_load']} · No imputation · weather는 context_only',
                 ),
                 const SizedBox(height: 8),
-                const Text('실제 강릉·충주 AMI 성능이 아닌 통제 시나리오 검증입니다.'),
+                const Text('실제 강릉·충주 전력계량 자료의 성능이 아니라, 조건을 정해 만든 검증 사례의 결과입니다.'),
               ],
             ),
           ),

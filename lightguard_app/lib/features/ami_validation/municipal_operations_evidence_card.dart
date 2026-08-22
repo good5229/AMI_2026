@@ -15,7 +15,7 @@ class MunicipalOperationsEvidenceCard extends StatelessWidget {
       region: '부여',
       metric: '3,437건',
       role: '유형·반복',
-      detail: '고장유형과 반복이력, 고정 운영점수 무재튜닝 평가',
+      detail: '고장유형과 반복이력 확인, 동일한 우선순위 기준 적용',
       group: _EvidenceGroup.operations,
     ),
     _RegionEvidence(
@@ -148,7 +148,7 @@ class MunicipalOperationsEvidenceCard extends StatelessWidget {
             ),
             const Divider(height: 26),
             const Text(
-              '해석 한계 · 외부 지자체 기록은 운영 필요성과 적용 구조의 근거입니다. AMI 현장 고장 정답, 민원·비용·인력 감소, 실제 처리시간 단축을 입증하지 않습니다.',
+              '해석 한계 · 외부 지자체 기록은 운영 필요성과 적용 구조를 보여주는 자료입니다. 전력계량 자료와 연결된 현장 고장 정답, 민원·비용·인력 감소 또는 실제 처리시간 단축을 입증하지는 않습니다.',
               style: TextStyle(fontSize: 12, color: Color(0xFF14513B)),
             ),
             ],

@@ -94,14 +94,14 @@ class CabinetDetailScreen extends ConsumerWidget {
                     '공식 기상 관측자료',
                     officialContext?.firstOfficialWeather == null
                         ? '기상청 ASOS 부산관측소(159) 자료 미수집'
-                        : '기상청 ASOS 부산관측소(159) · ${officialContext!.firstOfficialWeather!['timestamp']}'),
+                        : '기상청 부산 종관기상관측소(지점 159) · ${officialContext!.firstOfficialWeather!['timestamp']}'),
               ]),
               const SizedBox(height: 8),
               _section(
                 '관측 신호 요약',
                 [
                   const Text(
-                    '관측 구간에서 확인된 전력 사용 신호의 최대 수준이며 원시 15분 AMI 시계열은 아닙니다.',
+                    '관측 구간에서 확인된 전력 사용 신호의 최대 수준이며 15분 단위 원본 측정값 전체를 뜻하지는 않습니다.',
                     key: Key('section-cabinet-section-summary-c-description'),
                     style: TextStyle(fontSize: 12, color: Colors.grey),
                   ),

@@ -20,7 +20,7 @@ void main() {
     );
 
     expect(find.text('오늘의 점검 의사결정 흐름'), findsOneWidget);
-    expect(find.text('AMI 이상징후'), findsOneWidget);
+    expect(find.text('전력 사용 이상 신호'), findsOneWidget);
     expect(find.text('운영 우선순위'), findsOneWidget);
     expect(find.text('현장 확인 필요'), findsOneWidget);
     expect(find.textContaining('자동 고장판정이 아닌'), findsOneWidget);

@@ -54,9 +54,9 @@ class V07RegionalSeasonalCard extends ConsumerWidget {
                   runSpacing: 12,
                   children: [
                     _Metric(label: '검증 셀', value: '${data['cell_count']}'),
-                    _Metric(label: '시나리오', value: '${data['scenario_count']}'),
-                    _Metric(label: 'Macro Recall', value: '$recall%'),
-                    _Metric(label: 'Macro FPR', value: '$fpr%'),
+                    _Metric(label: '검증용 모의 사례', value: '${data['scenario_count']}'),
+                    _Metric(label: '지역·계절 평균 탐지율', value: '$recall%'),
+                    _Metric(label: '지역·계절 평균 정상 오분류율', value: '$fpr%'),
                   ],
                 ),
                 const SizedBox(height: 16),
@@ -77,7 +77,7 @@ class V07RegionalSeasonalCard extends ConsumerWidget {
                 ),
                 const SizedBox(height: 8),
                 const _BoundaryNotice(
-                  text: '통제 맥락 불변성 검증이며 타지역 실제 AMI 외부검증은 아직 불가',
+                  text: '동일 조건에서 지역·계절 영향을 비교한 결과이며, 다른 지역의 실제 전력계량 자료 검증은 아직 수행하지 못했습니다.',
                 ),
               ],
             ),

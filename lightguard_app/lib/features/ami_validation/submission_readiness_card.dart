@@ -23,7 +23,7 @@ class SubmissionReadinessCard extends StatelessWidget {
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
-                const Chip(label: Text('SR-A')),
+                const Chip(label: Text('제출 검수 완료')),
               ],
             ),
             const SizedBox(height: 12),
@@ -34,7 +34,7 @@ class SubmissionReadinessCard extends StatelessWidget {
               children: [
                 _FlowStep(label: '문제'),
                 Icon(Icons.arrow_forward, size: 18),
-                _FlowStep(label: 'AMI 이상징후'),
+                _FlowStep(label: '전력 사용 이상 신호'),
                 Icon(Icons.arrow_forward, size: 18),
                 _FlowStep(label: '운영 우선순위'),
                 Icon(Icons.arrow_forward, size: 18),

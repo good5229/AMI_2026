@@ -6,9 +6,9 @@ void main() {
   testWidgets('v0.19 Buyeo evidence preserves independent operational boundary', (tester) async {
     await tester.pumpWidget(const TestApp());
     expect(find.textContaining('부여군 공개데이터'), findsOneWidget);
-    expect(find.textContaining('주간점등'), findsWidgets);
-    expect(find.textContaining('직접 연결된 정답 데이터가 아닙니다'), findsOneWidget);
-    expect(find.textContaining('재튜닝 없이'), findsOneWidget);
+    expect(find.textContaining('낮 시간 점등'), findsWidgets);
+    expect(find.textContaining('직접 연결된 고장 정답이 아닙니다'), findsOneWidget);
+    expect(find.textContaining('판정 기준을 다시 조정하지 않고'), findsOneWidget);
   });
 }
 

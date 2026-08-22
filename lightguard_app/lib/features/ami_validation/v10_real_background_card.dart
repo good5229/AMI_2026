@@ -25,11 +25,11 @@ class V10RealBackgroundCard extends StatelessWidget {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Real-Background Validation',
+                  Text('실제 정상 사용자료 기반 검증',
                       style: Theme.of(context).textTheme.titleLarge),
                   const SizedBox(height: 6),
                   const Text(
-                    'Real AMI Background + Controlled Current Injection',
+                    '실제 정상 전력자료에 검증용 전류 변화를 추가한 시험',
                     style: TextStyle(fontWeight: FontWeight.w600),
                   ),
                   const SizedBox(height: 14),
@@ -40,13 +40,13 @@ class V10RealBackgroundCard extends StatelessWidget {
                       _Metric('Meters', '${data['meters']}'),
                       const _Metric('Period', '3 months'),
                       _Metric('Paired recovery', '$irr%'),
-                      _Metric('Benign escalation', '$benign%'),
+                      _Metric('정상 사례의 불필요한 우선순위 상승', '$benign%'),
                       _Metric('Gate', '${data['transport_gate']}'),
                     ],
                   ),
                   const SizedBox(height: 14),
                   const Text(
-                    'Not field fault accuracy. 익명 AMI에는 고장·정비 정답이 없으며 '
+                    '현장 고장 정확도가 아닙니다. 가명 처리된 전력계량 자료에는 고장·정비 정답이 없으며 '
                     '지자체 자산, KMA/KASI, 정격부하를 결합하지 않았습니다.',
                   ),
                 ],

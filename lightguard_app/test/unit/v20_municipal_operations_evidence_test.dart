@@ -24,7 +24,7 @@ void main() {
     expect(find.text('4,025자산'), findsOneWidget);
     expect(find.textContaining('920/981'), findsOneWidget);
     expect(find.textContaining('신호·운영·자산 계층'), findsOneWidget);
-    expect(find.textContaining('AMI 현장 고장 정답'), findsOneWidget);
+    expect(find.textContaining('전력계량 자료와 연결된 현장 고장 정답'), findsOneWidget);
     expect(find.textContaining('실제 처리시간 단축'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });

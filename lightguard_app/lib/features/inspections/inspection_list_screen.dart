@@ -118,7 +118,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                                       style: Theme.of(context)
                                           .textTheme
                                           .titleMedium),
-                                  Text('UID: ${c.cabinetUid}',
+                                  Text('관리번호: ${c.cabinetUid}',
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodySmall),
@@ -159,13 +159,13 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                                   : '${signal.estimatedDurationMin}분',
                             ),
                             _EvidenceChip(
-                              label: '예상 부하',
+                              label: '예상 전력 사용량',
                               value: c.expectedLoad.expectedRatedLoadKw > 0
                                   ? '${c.expectedLoad.expectedRatedLoadKw.toStringAsFixed(2)} kW'
                                   : '정격정보 제한',
                             ),
                             _EvidenceChip(
-                              label: '판정 신뢰도',
+                              label: '자료 일치 수준',
                               value: operationalConfidenceLabel(signal),
                             ),
                           ],

@@ -22,6 +22,7 @@ ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "official_docs" / "external_data" / "nationwide_v24"
 DATA = ROOT / "lightguard_v0_1" / "data" / "validation" / "v24"
 REPORT = ROOT / "lightguard_v0_1" / "reports" / "v24"
+APP_DATA = ROOT / "lightguard_app" / "assets" / "data" / "context"
 SEARCH_URL = "https://www.data.go.kr/tcs/dss/selectDataSetList.do"
 DETAIL = "https://www.data.go.kr/data/{dataset_id}/fileData.do"
 QUERIES = ("가로등", "보안등", "도로조명", "스마트보안등", "가로등 분전함", "가로등 유지보수")
@@ -298,6 +299,11 @@ def main() -> None:
     }
     output = DATA / "v24_nationwide_file_census.json"
     output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    APP_DATA.mkdir(parents=True, exist_ok=True)
+    (APP_DATA / "v24_nationwide_file_census.json").write_text(
+        json.dumps(result, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
 
     rows_by_region = {}
     for item in municipal_analyzable:

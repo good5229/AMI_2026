@@ -57,8 +57,8 @@ void main() {
     expect(RegionId.gangneung.supportsRealMunicipalAmi, false);
     expect(RegionId.chungju.supportsRealMunicipalAmi, false);
     expect(RegionId.gangneung.supportsControllerData, true);
-    expect(RegionId.gangneung.modeDescription, 'Controller-linked Validation');
-    expect(RegionId.chungju.modeDescription, 'Minimal Asset / Asset-only');
+    expect(RegionId.gangneung.modeDescription, '시설정보와 제어기 연결정보 제공');
+    expect(RegionId.chungju.modeDescription, '기본 시설정보 제공');
   });
 
   test('competition AMI event count and source', () {

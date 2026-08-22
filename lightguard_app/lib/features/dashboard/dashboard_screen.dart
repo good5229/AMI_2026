@@ -117,7 +117,7 @@ class DashboardScreen extends ConsumerWidget {
                     ),
                     _EvidenceMetricCard(
                       key: const Key('dashboard-actual-ami-count'),
-                      label: '공모전 제공 AMI 분석',
+                      label: '공모전 제공 전력계량 자료 분석',
                       value: '${events.length}건',
                       detail:
                           '현장 확인 전 분석 후보 · 추정 초과사용량 ${excessKwh.toStringAsFixed(3)} kWh',
@@ -125,7 +125,7 @@ class DashboardScreen extends ConsumerWidget {
                     ),
                     _EvidenceMetricCard(
                       key: const Key('dashboard-municipal-ami-count'),
-                      label: '지자체 AMI 연계 상태',
+                      label: '지자체 전력계량 자료 연결 상태',
                       value: '$realMunicipalAmiMappings개',
                       detail: '분전함 식별자 연계 정보 없음',
                       icon: Icons.link_off_outlined,
@@ -182,7 +182,7 @@ class DashboardScreen extends ConsumerWidget {
                 Card(
                   child: ListTile(
                     leading: const Icon(Icons.bug_report_outlined),
-                    title: const Text('공모전 AMI 분석 사례 보기'),
+                    title: const Text('공모전 전력계량 자료 분석 사례 보기'),
                     onTap: () => context.go('/ami-events'),
                     trailing: const Icon(Icons.chevron_right),
                   ),
@@ -300,7 +300,7 @@ class _DashboardHero extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 const Text(
-                  'AMI 분석은 고장을 확정하지 않으며 담당자의 원격확인 또는 현장점검이 최종 판단 단계입니다.',
+                  '전력 사용 분석은 고장을 확정하지 않으며 담당자의 원격확인 또는 현장점검이 최종 판단 단계입니다.',
                   style: TextStyle(color: Color(0xFFAED4CD), fontSize: 12),
                 ),
               ],
@@ -342,11 +342,11 @@ class _OfficialContextCard extends StatelessWidget {
                   : '천문자료: 한국천문연구원 ${solar['date']} · ${solar['sunrise']} / ${solar['sunset']}'),
               Text(weather == null
                   ? '기상자료: 기상청 ASOS 부산관측소(159) 자료 미수집'
-                  : '기상자료: 기상청 ASOS 부산관측소(159) · ${weather['timestamp']}'),
+                  : '기상자료: 기상청 부산 종관기상관측소(지점 159) · ${weather['timestamp']}'),
             ]),
             const SizedBox(height: 8),
             Text(
-              'AMI 단독 정상 오분류율 ${_percent(m0?.normalFpr)} · 운영정보 반영 정상 오분류율 ${_percent(m3?.normalFpr)} · 상위 20건 정밀도 ${_percent(m3?.precisionAt20)}',
+              '전력자료만 사용했을 때 정상 오분류율 ${_percent(m0?.normalFpr)} · 운영정보를 함께 사용했을 때 정상 오분류율 ${_percent(m3?.normalFpr)} · 우선 확인 20건의 일치율 ${_percent(m3?.precisionAt20)}',
             ),
             if (m3?.status != 'available')
               const Padding(
@@ -431,7 +431,7 @@ class _SecondCheckerCard extends StatelessWidget {
               children: [
                 _FlowPill('제어상태'),
                 Text('+'),
-                _FlowPill('AMI 실측 전력'),
+                _FlowPill('시간대별 실제 전력 사용량'),
                 Text('+'),
                 _FlowPill('자산 기대부하'),
                 Text('+'),
@@ -442,7 +442,7 @@ class _SecondCheckerCard extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             const Text(
-                '기존 원격제어시스템을 교체하지 않고, 이미 설치된 AMI를 실제 전력 상태를 확인하는 독립 검증 수단으로 추가합니다.'),
+                '기존 원격제어시스템을 교체하지 않고, 이미 설치된 전력계량 장치를 실제 전력 상태를 확인하는 별도 확인 수단으로 활용합니다.'),
           ],
         ),
       ),

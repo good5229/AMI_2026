@@ -65,7 +65,9 @@ class _MapScreenState extends ConsumerState<MapScreen> {
     return dataAsync.when(
       loading: () =>
           const Scaffold(body: Center(child: CircularProgressIndicator())),
-      error: (e, s) => Scaffold(body: Center(child: Text('맵 데이터 로드 실패: $e'))),
+      error: (e, s) => const Scaffold(
+        body: Center(child: Text('지도 자료를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.')),
+      ),
       data: (data) {
         final region = ref.watch(selectedRegionProvider);
         final targetIds =
@@ -251,7 +253,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                                   _buildFilterChip(
                                       availableFilter,
                                       _MapFilter.scenario,
-                                      '검증 시나리오 ($scenarioCount)'),
+                                      '검증용 모의 신호 ($scenarioCount)'),
                                 if (!supportsScenario && municipalCount > 0)
                                   _buildFilterChip(
                                       availableFilter,
@@ -279,10 +281,10 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                       children: [
                         StatusBadge(
                             type: BadgeType.inspect,
-                            label: '우선점검 $priorityCount'),
+                            label: '우선 확인 $priorityCount'),
                         StatusBadge(
                             type: BadgeType.scenario,
-                            label: '점검권고 $recommendCount'),
+                            label: '현장 확인 권고 $recommendCount'),
                         StatusBadge(
                             type: BadgeType.validation,
                             label: '관찰 $observeCount'),
@@ -291,11 +293,11 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                         if (supportsScenario && scenarioCount > 0)
                           StatusBadge(
                               type: BadgeType.scenario,
-                              label: '시나리오 $scenarioCount'),
+                              label: '검증용 모의 신호 $scenarioCount'),
                         if (!supportsScenario && municipalCount > 0)
                           StatusBadge(
                               type: BadgeType.validation,
-                              label: '실측 자산 $municipalCount'),
+                              label: '지자체 시설정보 $municipalCount'),
                         if (widget.showBaseMap)
                           const Padding(
                             padding: EdgeInsets.symmetric(

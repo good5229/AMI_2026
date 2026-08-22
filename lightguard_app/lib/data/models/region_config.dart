@@ -47,9 +47,9 @@ extension RegionIdX on RegionId {
 
   String get branchLabel {
     return switch (this) {
-      RegionId.suyeong => '수영구 시나리오 주입 모드',
-      RegionId.gangneung => '강릉시 Controller-linked Validation',
-      RegionId.chungju => '충주시 Minimal Asset / Asset-only',
+      RegionId.suyeong => '수영구 검증용 모의 신호 분석',
+      RegionId.gangneung => '강릉시 제어기 연결자료 분석',
+      RegionId.chungju => '충주시 시설물 정보 분석',
     };
   }
 
@@ -73,7 +73,7 @@ extension RegionIdX on RegionId {
     return switch (this) {
       RegionId.suyeong => '수영구는 시나리오 주입 대상 분전함 중심으로 먼저 확인',
       RegionId.gangneung => '강릉시는 제어기 연계 분전함 우선 탐색',
-      RegionId.chungju => '충주시는 분전함 자산 스탠드얼론 대상 우선',
+      RegionId.chungju => '충주시는 공개된 분전함·가로등 시설정보를 우선 확인',
     };
   }
 
@@ -107,9 +107,9 @@ extension RegionIdX on RegionId {
 
   String get modeDescription {
     return switch (this) {
-      RegionId.suyeong => 'Full Asset + Scenario Validation',
-      RegionId.gangneung => 'Controller-linked Validation',
-      RegionId.chungju => 'Minimal Asset / Asset-only',
+      RegionId.suyeong => '시설정보와 검증용 모의 신호 제공',
+      RegionId.gangneung => '시설정보와 제어기 연결정보 제공',
+      RegionId.chungju => '기본 시설정보 제공',
     };
   }
 }
@@ -141,9 +141,9 @@ class RegionMetadata {
     RegionMetadata(
       RegionId.chungju,
       <String>[
-        '분전함 871개 자산 스탠드얼론',
-        '개별 정격정보 제한',
-        '분전함·등주 중심 최소 자산 스키마',
+        '분전함 871개 시설정보 확인 가능',
+        '가로등별 설비용량 정보는 제한적',
+        '분전함·가로등 기둥 중심의 기본 시설정보',
       ],
     ),
   ];

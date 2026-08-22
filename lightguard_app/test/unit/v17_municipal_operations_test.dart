@@ -18,7 +18,7 @@ void main() {
     expect(V17MunicipalOperationsContract.safety, contains('105,449'));
     expect(V17MunicipalOperationsContract.workflow,
         contains('FIELD_INSPECTION_CANDIDATE'));
-    expect(V17MunicipalOperationsContract.boundary, contains('AMI와 직접 연결되지 않음'));
+    expect(V17MunicipalOperationsContract.boundary, contains('전력계량 자료와 직접 연결되지 않았습니다'));
     expect(V17MunicipalOperationsContract.boundary, contains('현장 정확도'));
     expect(V17MunicipalOperationsContract.boundary, contains('민원 예방'));
     expect(V17MunicipalOperationsContract.boundary, contains('비용절감'));

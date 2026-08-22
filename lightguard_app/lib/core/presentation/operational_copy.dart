@@ -54,15 +54,15 @@ String operationalEvidenceSourceLabel(CabinetRecord cabinet) {
     return '검증용 모의 신호';
   }
   if (cabinet.evidenceSource == EvidenceSource.realCompetitionAmi) {
-    return '공모전 제공 AMI 자료';
+    return '공모전 제공 전력계량 자료';
   }
   if (cabinet.signalSource == SignalSource.realMunicipalAmi) {
-    return '지자체 연계 AMI 자료';
+    return '지자체 연계 전력계량 자료';
   }
   if (cabinet.evidenceSource == EvidenceSource.realMunicipalAsset) {
     return '지자체 공공자산 정보';
   }
-  return '공공자산 정보 · AMI 미연계';
+  return '공공자산 정보 · 전력계량 자료 미연결';
 }
 
 String operationalPriorityReason(CabinetRecord cabinet) {
@@ -86,7 +86,7 @@ String operationalRecommendedAction(InspectionStatus status) => switch (status) 
       InspectionStatus.normal =>
         '현재 운전 상태를 유지하며 정기 점검 일정에 따라 확인합니다.',
       InspectionStatus.dataCheckRequired =>
-        'AMI 결측, 분전함 연결정보, 계측 시각을 먼저 확인합니다.',
+        '전력 측정값 누락 여부, 분전함 연결정보, 측정 시각을 먼저 확인합니다.',
     };
 
 String operationalEvidenceBoundary(CabinetRecord cabinet) {
@@ -94,7 +94,7 @@ String operationalEvidenceBoundary(CabinetRecord cabinet) {
     return '검증용 모의 신호를 적용한 탐지 결과이며 실제 고장 판정이나 현장점검 결과가 아닙니다.';
   }
   if (!cabinet.ami.hasRealAmi) {
-    return '실제 지자체 AMI가 연결되지 않은 자산 정보이며 현장 상태를 확정하지 않습니다.';
+    return '실제 지자체 전력계량 자료가 연결되지 않은 시설정보이며 현장 상태를 확정하지 않습니다.';
   }
-  return 'AMI 전력 신호에 따른 확인 후보이며 최종 상태는 담당자의 원격확인 또는 현장점검으로 판정합니다.';
+  return '전력 사용 신호에 따른 확인 후보이며 최종 상태는 담당자의 원격확인 또는 현장점검으로 판정합니다.';
 }

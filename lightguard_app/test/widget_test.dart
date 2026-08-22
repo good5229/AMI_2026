@@ -230,8 +230,8 @@ void main() {
     await tester.pumpWidget(buildTestApp(initialLocation: AppRoute.ami));
     await tester.pumpAndSettle();
 
-    expect(find.text('실제 공모전 AMI Case Study'), findsOneWidget);
-    expect(find.text('실제 공모전 AMI'), findsAtLeastNWidgets(1));
+    expect(find.text('공모전 전력계량 자료 분석 근거'), findsOneWidget);
+    expect(find.text('실제 공모전 전력계량 자료'), findsAtLeastNWidgets(1));
     expect(find.byKey(const Key('ami-case-B-L-35-2026-05-11')), findsOneWidget);
     expect(find.text(AmiValidationScreen.disclaimer), findsAtLeastNWidgets(1));
     if (events.isNotEmpty) {
@@ -261,17 +261,18 @@ void main() {
     await tester.pumpWidget(buildTestApp(initialLocation: AppRoute.regions));
     await tester.pumpAndSettle();
 
-    expect(
-        find.text('Full Asset + Scenario Validation'), findsAtLeastNWidgets(1));
-    expect(find.text('Controller-linked Validation'), findsAtLeastNWidgets(1));
+    expect(find.text('시설정보와 검증용 모의 신호 제공'), findsAtLeastNWidgets(1));
+    expect(find.text('시설정보와 제어기 연결정보 제공'), findsAtLeastNWidgets(1));
+    expect(find.text('기본 시설정보 제공'), findsAtLeastNWidgets(1));
+    expect(find.textContaining('지자체 전력계량 자료는 아직 직접 연결되지 않았습니다'), findsOneWidget);
     await tester.scrollUntilVisible(
-      find.text('Minimal Asset / Asset-only'),
+      find.text('전국 공개데이터 확인 지역'),
       300,
       scrollable: find.byType(Scrollable).last,
     );
-    await tester.pumpAndSettle();
-    expect(find.text('Minimal Asset / Asset-only'), findsAtLeastNWidgets(1));
-    expect(find.text('실제 AMI 연결 없음'), findsAtLeastNWidgets(1));
+    await tester.pump(const Duration(milliseconds: 500));
+    expect(find.text('시·군·구 이름 검색'), findsOneWidget);
+    expect(find.text('광역단위로 좁혀 보기'), findsOneWidget);
   });
 }
 

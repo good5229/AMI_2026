@@ -19,7 +19,7 @@ class V17MunicipalOperationsContract {
   static const workflow =
       'DATA_QUALITY_REVIEW → REMOTE_MONITOR → FIELD_INSPECTION_CANDIDATE 업무 queue에 연결';
   static const boundary =
-      '대구 운영사례는 LightGuard AMI와 직접 연결되지 않음. D4는 행 수 불일치로 보류하며 AMI 현장 정확도, 민원 예방, 처리시간 개선, 비용절감을 입증하지 않습니다.';
+      '대구 운영사례는 LightGuard 전력계량 자료와 직접 연결되지 않았습니다. 일부 자료는 행 수가 맞지 않아 사용을 보류했으며, 현장 정확도·민원 예방·처리시간 개선·비용절감을 입증하지 않습니다.';
 }
 
 class V17MunicipalOperationsCard extends StatelessWidget {

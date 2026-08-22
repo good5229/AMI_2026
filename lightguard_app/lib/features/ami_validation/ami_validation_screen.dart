@@ -24,7 +24,7 @@ class AmiValidationScreen extends ConsumerWidget {
   const AmiValidationScreen({super.key});
 
   static const disclaimer =
-      '공모전 제공 가명화 AMI에서 탐지한 점검 후보이며, 실제 현장 고장 여부는 정비 이력/현장 확인이 필요합니다.';
+      '공모전에서 제공한 가명 처리 전력계량 자료에서 찾은 확인 후보입니다. 실제 고장 여부는 정비 이력 또는 현장 확인이 필요합니다.';
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -40,7 +40,9 @@ class AmiValidationScreen extends ConsumerWidget {
       loading: () =>
           const Scaffold(body: Center(child: CircularProgressIndicator())),
       error: (error, _) =>
-          Scaffold(body: Center(child: Text('실제 공모전 AMI 데이터 로드 실패: $error'))),
+          const Scaffold(
+            body: Center(child: Text('공모전 전력계량 자료를 불러오지 못했습니다.')),
+          ),
       data: (events) {
         final featured = events.where(_isFeatured).toList(growable: false);
         final excessKwh = events.fold<double>(
@@ -50,16 +52,16 @@ class AmiValidationScreen extends ConsumerWidget {
             event.firstSample.startsWith('2026-05-11')).firstOrNull;
 
         return LightguardShell(
-          title: '실제 공모전 AMI Case Study',
+          title: '공모전 전력계량 자료 분석 근거',
           child: ListView(
             padding: const EdgeInsets.all(12),
             children: [
               _SummaryCard(eventCount: events.length, excessKwh: excessKwh),
-              Text('대표 Case Study 3건',
+              Text('대표 분석 사례 3건',
                   style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: 4),
               const Text(
-                  '원시 시계열을 임의 생성하지 않고 이벤트 CSV의 OFF baseline, 관측 peak, ON baseline을 비교합니다.'),
+                  '측정값을 임의로 만들지 않고 파일에 기록된 소등 시간대 정상값, 관측 최대값, 점등 시간대 정상값을 비교합니다.'),
               const SizedBox(height: 10),
               LayoutBuilder(
                 builder: (context, constraints) {
@@ -172,7 +174,7 @@ class _V06EvidenceHardening extends StatelessWidget {
             const SizedBox(height: 16),
             const NationwideFileCensusCard(),
             const SizedBox(height: 16),
-            Text('Evidence Hardening · Uncertainty First',
+            Text('검증 근거와 불확실성',
                 style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 6),
             const Text(
@@ -182,26 +184,26 @@ class _V06EvidenceHardening extends StatelessWidget {
             const SizedBox(height: 12),
             Wrap(spacing: 10, runSpacing: 10, children: [
               _V05EvidenceTile(
-                title: 'Known candidates',
+                title: '알려진 이상 사례 탐지',
                 value: percent(summary.coveragePoint),
                 detail:
                     'Wilson 95% ${percent(summary.coverageLower)}–${percent(summary.coverageUpper)}',
               ),
               _V05EvidenceTile(
-                title: 'Daily density',
+                title: '하루 평균 확인 후보 비율',
                 value: percent(summary.candidateDensityPoint, 2),
                 detail:
                     'Stationary bootstrap ${percent(summary.candidateDensityLower, 2)}–${percent(summary.candidateDensityUpper, 2)}',
               ),
               _V05EvidenceTile(
-                title: 'Abstention contract',
+                title: '자료 부족 시 판정 보류 기준',
                 value: '${summary.abstentionRuleCount} rules',
                 detail: '120분 gap은 DATA_INSUFFICIENT',
               ),
             ]),
             const SizedBox(height: 10),
             Text(
-              '2-factor FPR effect 최대: ${summary.largestInteractionTerm} · ${(summary.largestInteractionEffect * 100).toStringAsFixed(2)}%p',
+              '두 조건이 동시에 바뀔 때 정상 오분류율의 최대 변화: ${summary.largestInteractionTerm} · ${(summary.largestInteractionEffect * 100).toStringAsFixed(2)}%p',
               style: const TextStyle(fontSize: 12),
             ),
             Text(
@@ -233,37 +235,37 @@ class _V05TechnicalEvidence extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Actual AMI · Technical Validation',
+            Text('실제 전력계량 자료 기술 검증',
                 style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 6),
-            const Text('확정 고장 label이 없는 known detector candidate 재생 결과입니다.',
+            const Text('현장 고장 정답이 없는 상태에서, 기존에 확인된 이상 후보 구간을 다시 분석한 결과입니다.',
                 style: TextStyle(fontSize: 12)),
             const SizedBox(height: 12),
             Wrap(spacing: 10, runSpacing: 10, children: [
               _V05EvidenceTile(
-                title: 'Past-only replay',
+                title: '과거 자료만 사용한 재분석',
                 value: ratio(summary.pastOnlyCoverage),
-                detail: '30일 baseline · 미래정보 미사용',
+                detail: '과거 30일 정상 비교값 · 미래정보 미사용',
               ),
               _V05EvidenceTile(
-                title: 'Data missing stress',
+                title: '측정값 20% 누락 시험',
                 value: ratio(summary.missing20Coverage),
                 detail: '고정 seed · random missing 20%',
               ),
               _V05EvidenceTile(
-                title: 'Sampling interval stress',
+                title: '측정 간격 변경 시험',
                 value: ratio(summary.downsample60Coverage),
                 detail: '15분 → 60분 downsample',
               ),
             ]),
             const SizedBox(height: 10),
-            Text('Peak metric: legacy ${summary.legacyPeakConsistent}/6 · 동일 집계 정의 ${summary.adjudicatedPeakConsistent}/6'),
-            const Text('Legacy는 개별 상 최대값, adjudicated는 event 내 Σ(non-null I1·I2·I3) 최대값입니다.',
+            Text('최대 전류 일치: 기존 계산 ${summary.legacyPeakConsistent}/6 · 세 전류 합계 기준 ${summary.adjudicatedPeakConsistent}/6'),
+            const Text('기존 계산은 각 전류선의 최대값을, 개선 계산은 한 시점의 세 전류선 합계 최대값을 사용합니다.',
                 style: TextStyle(fontSize: 12)),
-            Text('120분 연속 gap ${ratio(summary.gap120Coverage)} · ${summary.sensitivityClassification}',
+            Text('120분 연속 측정 누락 시험 ${ratio(summary.gap120Coverage)} · ${summary.sensitivityClassification}',
                 style: const TextStyle(fontSize: 12)),
             Text(
-              'Activation +20% 진단: normal FPR ${(summary.frozenBaselineFpr * 100).toStringAsFixed(2)}% → ${(summary.activationPlus20Fpr * 100).toStringAsFixed(2)}% · 설정 변경 없음',
+              '전력 사용 수준을 20% 높인 시험: 정상 오분류율 ${(summary.frozenBaselineFpr * 100).toStringAsFixed(2)}% → ${(summary.activationPlus20Fpr * 100).toStringAsFixed(2)}% · 판정 설정 변경 없음',
               style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
             ),
           ],
@@ -334,23 +336,23 @@ class _ControlledValidationSummary extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Controlled Validation Summary',
+            Text('동일 조건 비교 검증 요약',
                 style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 8),
             if (v04Summary == null) ...[
-              Text('AMI-only FPR ${rate(m0?.normalFpr)}'),
-              Text('Context-aware FPR ${rate(m3?.normalFpr)}'),
-              Text('Top-20 precision ${rate(m3?.precisionAt20)}'),
+              Text('전력자료만 사용한 정상 오분류율 ${rate(m0?.normalFpr)}'),
+              Text('운영정보를 함께 사용한 정상 오분류율 ${rate(m3?.normalFpr)}'),
+              Text('우선 확인 20건의 일치율 ${rate(m3?.precisionAt20)}'),
             ] else ...[
               Text('점검 후보 ${v04Summary!.baselineCandidateCount} → ${v04Summary!.bestCandidateCount}'),
-              Text('Normal FPR ${rate(v04Summary!.normalFpr)}'),
-              Text('P@10 ${rate(v04Summary!.precisionAt10)} · P@20 ${rate(v04Summary!.precisionAt20)}'),
+              Text('정상 오분류율 ${rate(v04Summary!.normalFpr)}'),
+              Text('우선 확인 10건 일치율 ${rate(v04Summary!.precisionAt10)} · 20건 일치율 ${rate(v04Summary!.precisionAt20)}'),
               Text(v04Summary!.weatherLabel),
             ],
             const SizedBox(height: 6),
             Text(
               v04Summary != null
-                  ? 'Calibration과 독립 holdout을 분리한 Controlled Validation 결과입니다.'
+                  ? '판정 기준을 정하는 자료와 최종 확인 자료를 분리한 비교 검증 결과입니다.'
                   : m3?.status == 'available'
                   ? '동일 frozen set의 M0-M3 비교 결과입니다.'
                   : '공식 KASI/KMA snapshot 미수집으로 M1-M3를 계산하지 않았습니다.',
@@ -383,10 +385,10 @@ class _ActualReplayCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Anonymized Competition AMI Validation · 실제 시계열',
+            Text('가명 처리된 공모전 전력계량 자료 · 실제 시간대별 측정값',
                 style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 4),
-            Text('$windowCount개 실제 event window · ${event.meterId} 대표 구간'),
+            Text('실제 측정 구간 $windowCount개 · 계량기 ${event.meterId} 대표 구간'),
             const SizedBox(height: 12),
             SizedBox(
               height: 220,
@@ -397,14 +399,14 @@ class _ActualReplayCard extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             const Wrap(spacing: 12, runSpacing: 4, children: [
-              Text('I1', style: TextStyle(color: Color(0xFF0077B6))),
-              Text('I2', style: TextStyle(color: Color(0xFFE76F51))),
-              Text('I3', style: TextStyle(color: Color(0xFF2A9D8F))),
-              Text('Active energy', style: TextStyle(color: Color(0xFFE9C46A))),
+              Text('1번 전류선', style: TextStyle(color: Color(0xFF0077B6))),
+              Text('2번 전류선', style: TextStyle(color: Color(0xFFE76F51))),
+              Text('3번 전류선', style: TextStyle(color: Color(0xFF2A9D8F))),
+              Text('사용 전력량', style: TextStyle(color: Color(0xFFE9C46A))),
               Text('이벤트 구간 음영'),
             ]),
             const SizedBox(height: 6),
-            const Text('원본 행만 사용하며 결측과 중복 timestamp를 그대로 유지합니다.',
+            const Text('원본 측정값만 사용하며 누락값과 중복 측정 시각도 임의로 고치지 않습니다.',
                 style: TextStyle(fontSize: 12)),
           ],
         ),
@@ -521,12 +523,12 @@ class _SummaryCard extends StatelessWidget {
               runSpacing: 8,
               crossAxisAlignment: WrapCrossAlignment.center,
               children: [
-                StatusBadge(type: BadgeType.realAmi, label: '실제 공모전 AMI'),
+                StatusBadge(type: BadgeType.realAmi, label: '실제 공모전 전력계량 자료'),
                 StatusBadge(type: BadgeType.validation, label: '현장 미확인 점검 후보'),
               ],
             ),
             const SizedBox(height: 12),
-            Text('가명화 AMI에서 발견한 점검 후보 $eventCount건',
+            Text('가명 처리된 전력계량 자료에서 발견한 확인 후보 $eventCount건',
                 style: Theme.of(context).textTheme.titleLarge),
             const SizedBox(height: 6),
             Text('후보 구간 추정 초과전력량 합계 ${excessKwh.toStringAsFixed(3)} kWh'),
@@ -560,7 +562,7 @@ class _CaseStudyCard extends StatelessWidget {
                 Expanded(
                     child: Text(event.meterId,
                         style: Theme.of(context).textTheme.titleLarge)),
-                const StatusBadge(type: BadgeType.realAmi, label: '실제 공모전 AMI'),
+                const StatusBadge(type: BadgeType.realAmi, label: '실제 공모전 전력계량 자료'),
               ],
             ),
             const SizedBox(height: 6),
@@ -578,7 +580,7 @@ class _CaseStudyCard extends StatelessWidget {
                 '${event.estimatedExcessKwh.toStringAsFixed(3)} kWh'),
             _kv('Pattern confidence', event.patternConfidence),
             _kv('Fault status', '현장 미확인 점검 후보'),
-            _kv('Source mode', '가명화 공모전 AMI 검증'),
+            _kv('자료 구분', '가명 처리된 공모전 전력계량 자료 검증'),
             const SizedBox(height: 10),
             const Text(AmiValidationScreen.disclaimer,
                 style: TextStyle(fontSize: 12, color: Color(0xFF6B4D00))),
@@ -604,15 +606,15 @@ class _EvidenceBars extends StatelessWidget {
     return Column(
       children: [
         _EvidenceBar(
-            label: 'OFF baseline',
+            label: '소등 시간대 정상 비교값',
             value: event.offBaselineA,
             maxValue: maxValue),
         _EvidenceBar(
-            label: 'Observed peak',
+            label: '실제 관측 최대값',
             value: event.peakCurrentA,
             maxValue: maxValue),
         _EvidenceBar(
-            label: 'ON baseline', value: event.onBaselineA, maxValue: maxValue),
+            label: '점등 시간대 정상 비교값', value: event.onBaselineA, maxValue: maxValue),
       ],
     );
   }
@@ -688,7 +690,7 @@ class _EventSummaryCard extends StatelessWidget {
               '${event.estimatedExcessKwh.toStringAsFixed(3)} kWh'),
           _kv('Pattern confidence', event.patternConfidence),
           _kv('Fault status', '현장 미확인 점검 후보'),
-          _kv('Source mode', '가명화 공모전 AMI 검증'),
+          _kv('자료 구분', '가명 처리된 공모전 전력계량 자료 검증'),
         ],
       ),
     );

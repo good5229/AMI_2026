@@ -32,12 +32,12 @@ class V11AnomalySignCard extends StatelessWidget {
                         child: Text('v0.11 이상 징후 근거 감사',
                             style: Theme.of(context).textTheme.titleLarge),
                       ),
-                      const Chip(label: Text('Route C')),
+                      const Chip(label: Text('직접 비교 방식')),
                     ],
                   ),
                   const SizedBox(height: 8),
                   const Text(
-                    '전체 원본 감사 결과 현장확인 Gold 0건 · 운영상태 Silver 0건',
+                    '전체 원본 확인 결과 현장 고장 확정자료 0건 · 운영상태 확인자료 0건',
                     style: TextStyle(fontWeight: FontWeight.w700),
                   ),
                   const SizedBox(height: 14),
@@ -47,10 +47,10 @@ class V11AnomalySignCard extends StatelessWidget {
                     children: [
                       _Metric('감사 파일', '${data['files_audited']}'),
                       _Metric('May-Jun origins', '${data['score_rows']}'),
-                      _Metric('Proxy High',
+                      _Metric('간접 기준 높은 일치',
                           '${data['high_confidence_proxy_candidates']}'),
                       _Metric('후보 밀도', '$density%'),
-                      _Metric('H1 + Proxy High',
+                      _Metric('기본 판정과 간접 기준 동시 일치',
                           '${data['h1_proxy_high_agreement']}'),
                       _Metric('Matched uplift',
                           '+${(data['paired_proxy_family_uplift'] as num).toStringAsFixed(2)}'),
@@ -59,7 +59,7 @@ class V11AnomalySignCard extends StatelessWidget {
                   const SizedBox(height: 14),
                   const Text(
                     'April-only 기준을 고정한 뒤 May-Jun을 평가했습니다. '
-                    '동일 AMI에서 만든 세 proxy family의 합의이며 실제 고장 정확도나 고장률이 아닙니다. '
+                    '동일한 전력계량 자료에서 서로 다른 세 가지 간접 기준이 일치한 결과이며 실제 고장 정확도나 고장률이 아닙니다. '
                     '점검 판단에는 분전함 매핑과 현장 확인이 필요합니다.',
                     style: TextStyle(fontSize: 12),
                   ),

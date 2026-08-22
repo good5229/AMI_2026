@@ -9,12 +9,12 @@ void main() {
         contains('REMOTE_REVIEW_CANDIDATE'));
     expect(V18OperationalTriageContract.workflow,
         contains('FIELD_INSPECTION_CANDIDATE'));
-    expect(V18OperationalTriageContract.boundary, contains('retrospective'));
+    expect(V18OperationalTriageContract.boundary, contains('사후 모의분석'));
     expect(V18OperationalTriageContract.boundary, contains('고장 확률'));
-    expect(V18OperationalTriageContract.boundary, contains('AMI 정확도'));
+    expect(V18OperationalTriageContract.boundary, contains('전력자료 정확도'));
     expect(V18OperationalTriageContract.boundary, contains('실제 수리시간 단축'));
     expect(V18OperationalTriageContract.boundary, contains('민원 감소'));
     expect(V18OperationalTriageContract.boundary, contains('비용절감'));
-    expect(V18OperationalTriageContract.boundary, contains('대구→수영구'));
+    expect(V18OperationalTriageContract.boundary, contains('대구 결과의 수영구 직접 적용'));
   });
 }

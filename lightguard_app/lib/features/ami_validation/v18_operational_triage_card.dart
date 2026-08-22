@@ -11,7 +11,7 @@ class V18OperationalTriageContract {
   static const queue = 'C25=0 비검토 · C50=62 · C75=80 · C50 burden review difference -0.03일';
   static const workflow = 'DATA_QUALITY_REVIEW → REMOTE_REVIEW_CANDIDATE → FIELD_INSPECTION_CANDIDATE';
   static const decision = 'LIMITED_OPERATIONAL_PRIORITY_EVIDENCE';
-  static const boundary = '접수일 시작 시점의 과거 D1 이력만 사용한 retrospective simulation입니다. 고장 확률·AMI 정확도·실제 수리시간 단축·민원 감소·비용절감·대구→수영구 전이를 뜻하지 않습니다.';
+  static const boundary = '접수일 시작 시점 이전의 고장 접수 이력만 사용한 사후 모의분석입니다. 고장 확률·전력자료 정확도·실제 수리시간 단축·민원 감소·비용절감 또는 대구 결과의 수영구 직접 적용을 뜻하지 않습니다.';
 }
 
 class V18OperationalTriageCard extends StatelessWidget {
