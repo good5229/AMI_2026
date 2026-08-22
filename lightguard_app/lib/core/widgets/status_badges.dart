@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../presentation/operational_copy.dart';
 import '../../data/models/lightguard_models.dart';
 
 enum BadgeType { normal, realAmi, scenario, validation, inspect }
@@ -35,13 +36,7 @@ class StatusBadge extends StatelessWidget {
   }
 }
 
-String statusToLabel(InspectionStatus status) => switch (status) {
-      InspectionStatus.normal => '정상',
-      InspectionStatus.observe => '관찰',
-      InspectionStatus.inspectionRecommended => '점검 권고',
-      InspectionStatus.priorityInspection => '우선 점검',
-      InspectionStatus.dataCheckRequired => '데이터 확인 필요',
-    };
+String statusToLabel(InspectionStatus status) => operationalStatusLabel(status);
 
 BadgeType statusToBadge(InspectionStatus status) => switch (status) {
       InspectionStatus.normal => BadgeType.normal,

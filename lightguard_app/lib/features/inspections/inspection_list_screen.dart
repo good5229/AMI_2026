@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/widgets/app_scaffold.dart';
 import '../../core/widgets/status_badges.dart';
+import '../../core/presentation/operational_copy.dart';
 import '../../data/models/lightguard_models.dart';
 import '../../data/models/region_config.dart';
 import '../../data/repositories/lightguard_repository.dart';
@@ -54,7 +55,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
         final rows = _filterRows(data.objects, activeFilter, targetCabinetIds);
 
         return LightguardShell(
-          title: '오늘의 점검 대상',
+          title: '확인 대상 및 판정 사유',
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: 8),
@@ -96,7 +97,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
               final status = statusToLabel(c.status);
               final signal =
                   c.detectedSignals.isNotEmpty ? c.detectedSignals.first : null;
-              final source = _evidenceSourceLabel(c, region, targetCabinetIds);
+              final source = operationalEvidenceSourceLabel(c);
               return Card(
                 margin: const EdgeInsets.symmetric(horizontal: 12),
                 clipBehavior: Clip.antiAlias,
@@ -134,27 +135,25 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                           runSpacing: 8,
                           children: [
                             StatusBadge(
-                              type: source == '검증 시나리오'
+                              type: c.evidenceSource ==
+                                      EvidenceSource.scenarioInjection
                                   ? BadgeType.scenario
                                   : BadgeType.validation,
-                              label: 'Source: $source',
+                              label: '자료 구분: $source',
                             ),
                             _EvidenceChip(
-                                label: '우선순위',
+                                label: '확인 순위',
                                 value: '#${c.inspectionPriority.rank}'),
                             _EvidenceChip(
-                              label: '이상 근거',
-                              value: signal?.eventType ??
-                                  c.anomalyEvidence.ruleIds.join(', '),
+                              label: '관측 항목',
+                              value: operationalSignalTitle(signal),
                             ),
                             _EvidenceChip(
-                              label: '발생 시점',
-                              value: signal == null
-                                  ? '측정값 없음'
-                                  : '${(signal.maxActivation * 100).toStringAsFixed(1)}%',
+                              label: '신호 수준',
+                              value: operationalSignalLevel(signal),
                             ),
                             _EvidenceChip(
-                              label: '지속 시간',
+                              label: '관측 지속시간',
                               value: signal == null
                                   ? '측정값 없음'
                                   : '${signal.estimatedDurationMin}분',
@@ -166,15 +165,13 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                                   : '정격정보 제한',
                             ),
                             _EvidenceChip(
-                              label: '실측 신호',
-                              value: signal == null
-                                  ? '없음'
-                                  : signal.patternConfidence,
+                              label: '판정 신뢰도',
+                              value: operationalConfidenceLabel(signal),
                             ),
                           ],
                         ),
                         const SizedBox(height: 10),
-                        Text('판정 근거: ${c.inspectionPriority.reason}',
+                        Text('분류 사유: ${operationalPriorityReason(c)}',
                             maxLines: 3),
                       ],
                     ),
@@ -246,13 +243,13 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
   String _filterLabel(_InspectionFilter filter) {
     return switch (filter) {
       _InspectionFilter.all => '전체',
-      _InspectionFilter.targeted => '연계 데이터 있음',
-      _InspectionFilter.priority => '우선 점검',
-      _InspectionFilter.recommended => '점검 권고',
-      _InspectionFilter.observe => '관찰',
-      _InspectionFilter.normal => '정상',
-      _InspectionFilter.scenario => '검증 시나리오',
-      _InspectionFilter.municipalAsset => '실측 자산',
+      _InspectionFilter.targeted => '연계 자료 있음',
+      _InspectionFilter.priority => '우선 확인 필요',
+      _InspectionFilter.recommended => '현장 확인 권고',
+      _InspectionFilter.observe => '추적 관찰',
+      _InspectionFilter.normal => '정상 범위',
+      _InspectionFilter.scenario => '검증용 모의 신호',
+      _InspectionFilter.municipalAsset => '지자체 공공자산 정보',
     };
   }
 
@@ -264,16 +261,6 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
     return const <String>{};
   }
 
-  String _evidenceSourceLabel(
-      CabinetRecord cabinet, RegionId region, Set<String> targetCabinetIds) {
-    if (region == RegionId.suyeong &&
-        targetCabinetIds.contains(cabinet.cabinetUid)) {
-      return '검증 시나리오';
-    }
-    if (region.supportsControllerData) return '제어기 연계 검증';
-    if (region == RegionId.chungju) return 'Asset-only 자산 규칙';
-    return '공공자산 · AMI 미연결';
-  }
 }
 
 class _EvidenceChip extends StatelessWidget {

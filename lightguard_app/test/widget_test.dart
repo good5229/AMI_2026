@@ -70,8 +70,8 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('LightGuard · 운영 현황'), findsOneWidget);
-    expect(find.textContaining('오늘 먼저 확인할 우선 점검'), findsOneWidget);
-    expect(find.text('점검 대상 보기'), findsOneWidget);
+    expect(find.textContaining('오늘 우선 확인이 필요한 분전함'), findsOneWidget);
+    expect(find.text('확인 대상 및 사유 보기'), findsOneWidget);
     expect(find.text('총 분전함'), findsOneWidget);
     expect(find.text('총 가로등 수'), findsOneWidget);
     expect(find.text('총 정격용량'), findsOneWidget);
@@ -96,7 +96,7 @@ void main() {
       maxAttempts: 18,
     );
 
-    expect(find.text('오늘의 점검 대상'), findsOneWidget);
+    expect(find.text('확인 대상 및 판정 사유'), findsOneWidget);
     expect(find.text('CAB-002'), findsAtLeastNWidgets(1));
     expect(find.text('CAB-001'), findsAtLeastNWidgets(1));
 
@@ -156,6 +156,7 @@ void main() {
     );
     expect(find.byKey(const Key('cabinet-map-link')), findsOneWidget);
     expect(find.text('지도에서 위치 보기'), findsOneWidget);
+    expect(find.text('좌표'), findsNothing);
 
     final sectionCFinder =
         find.byKey(const Key('section-cabinet-section-summary-c'));
@@ -172,10 +173,10 @@ void main() {
         matching: find.byWidgetPredicate((widget) {
           if (widget is Text) {
             final data = widget.data ?? '';
-            return data.contains('Section C') || data.contains('시각화');
+            return data.contains('관측 신호 요약') || data.contains('시각화');
           }
           if (widget is RichText) {
-            return (widget.text.toPlainText().contains('Section C') ||
+            return (widget.text.toPlainText().contains('관측 신호 요약') ||
                 widget.text.toPlainText().contains('시각화'));
           }
           return false;
@@ -199,8 +200,9 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(legendFinder, findsOneWidget);
-    expect(find.textContaining('관측 활성도'), findsOneWidget);
-    expect(find.textContaining('미활성 구간'), findsOneWidget);
+    expect(find.textContaining('관측 신호 수준'), findsOneWidget);
+    expect(find.textContaining('기준 잔여 구간'), findsOneWidget);
+    expect(find.textContaining('daytime_partial_activation'), findsNothing);
   });
 
   testWidgets('Map marker recenters and opens cabinet information panel',

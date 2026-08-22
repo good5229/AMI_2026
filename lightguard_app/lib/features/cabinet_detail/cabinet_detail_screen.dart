@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/widgets/app_scaffold.dart';
 import '../../core/widgets/status_badges.dart';
+import '../../core/presentation/operational_copy.dart';
 import '../../data/models/lightguard_models.dart';
 import '../../data/repositories/lightguard_repository.dart';
 
@@ -42,20 +43,15 @@ class CabinetDetailScreen extends ConsumerWidget {
               ),
               const SizedBox(height: 8),
               _section(
-                  'Section A — 자산 정보',
+                  '자산 정보',
                   [
                     _kv('연결 가로등 수', '${cabinet.assetInfo.fixtureCount}개'),
                     _kv('램프 정격', _fixtureLampType(cabinet)),
                     _kv('총 정격용량',
                         '${cabinet.expectedLoad.ratedPowerW.toStringAsFixed(1)} W'),
-                    _kv('주소/위치', cabinet.assetInfo.location),
+                    _kv('설치 위치', cabinet.assetInfo.location),
                     if (cabinet.assetInfo.latitude != null &&
                         cabinet.assetInfo.longitude != null) ...[
-                      _kv(
-                        '좌표',
-                        '${cabinet.assetInfo.latitude!.toStringAsFixed(6)}, ${cabinet.assetInfo.longitude!.toStringAsFixed(6)}',
-                      ),
-                      const SizedBox(height: 8),
                       Align(
                         alignment: Alignment.centerLeft,
                         child: OutlinedButton.icon(
@@ -68,11 +64,11 @@ class CabinetDetailScreen extends ConsumerWidget {
                         ),
                       ),
                     ],
-                    _kv('데이터 유형', cabinet.modeLabel),
+                    _kv('자료 구분', operationalEvidenceSourceLabel(cabinet)),
                   ],
                   keySuffix: 'cabinet-section-summary-a'),
               const SizedBox(height: 8),
-              _section('Section B — 예상 운전', [
+              _section('예상 운전 기준', [
                 _kv('일출', cabinet.expectedSchedule.sunrise),
                 _kv('일몰', cabinet.expectedSchedule.sunset),
                 _kv('시민박명 시작', cabinet.expectedSchedule.civilTwilightStart),
@@ -88,24 +84,24 @@ class CabinetDetailScreen extends ConsumerWidget {
                             ?.toString() ??
                         ''),
                 _kv('기상 기준점', cabinet.weatherContext.stationName),
-                _kv('운영 기상 정책', '기상청 관측자료만 operational context'),
+                _kv('기상자료 적용 원칙', '기상청 공식 관측자료만 운전 판단의 참고정보로 사용'),
                 _kv(
-                    '공식 천문 Context',
+                    '공식 천문자료',
                     officialContext?.firstOfficialSolar == null
-                        ? 'KASI 미수집 · 내부 계산값으로 대체하지 않음'
-                        : 'KASI ${officialContext!.firstOfficialSolar!['date']} · 일출 ${officialContext.firstOfficialSolar!['sunrise']} / 일몰 ${officialContext.firstOfficialSolar!['sunset']}'),
+                        ? '한국천문연구원 자료 미수집 · 내부 추정값으로 대체하지 않음'
+                        : '한국천문연구원 ${officialContext!.firstOfficialSolar!['date']} · 일출 ${officialContext.firstOfficialSolar!['sunrise']} / 일몰 ${officialContext.firstOfficialSolar!['sunset']}'),
                 _kv(
-                    '공식 기상 Context',
+                    '공식 기상 관측자료',
                     officialContext?.firstOfficialWeather == null
-                        ? 'KMA ASOS 부산 159 미수집'
-                        : 'KMA ASOS 부산 159 · ${officialContext!.firstOfficialWeather!['timestamp']}'),
+                        ? '기상청 ASOS 부산관측소(159) 자료 미수집'
+                        : '기상청 ASOS 부산관측소(159) · ${officialContext!.firstOfficialWeather!['timestamp']}'),
               ]),
               const SizedBox(height: 8),
               _section(
-                'Section C — 이벤트 활성도 요약',
+                '관측 신호 요약',
                 [
                   const Text(
-                    '탐지 이벤트의 최대 활성도 요약이며 원시 15분 AMI 시계열이 아닙니다.',
+                    '관측 구간에서 확인된 전력 사용 신호의 최대 수준이며 원시 15분 AMI 시계열은 아닙니다.',
                     key: Key('section-cabinet-section-summary-c-description'),
                     style: TextStyle(fontSize: 12, color: Colors.grey),
                   ),
@@ -121,41 +117,39 @@ class CabinetDetailScreen extends ConsumerWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     const SizedBox(height: 8),
-                    Text(
-                        '관측 최대 activation ${(signal.maxActivation * 100).toStringAsFixed(1)}%'),
+                    Text('최대 신호 수준 · ${operationalSignalLevel(signal)}'),
                     const SizedBox(height: 10),
                     const _ActivationLegend(),
                   ],
                   _kv(
-                      '탐지 유형',
+                      '관측 항목',
                       signal == null
-                          ? '없음'
-                          : '${signal.eventType} / ${signal.patternConfidence}'),
+                          ? '우선 확인이 필요한 지속 신호 없음'
+                          : operationalSignalTitle(signal)),
                 ],
                 keySuffix: 'cabinet-section-summary-c',
               ),
               const SizedBox(height: 8),
               _section(
-                'Section D — 이상 근거',
+                '우선 확인 사유',
                 [
-                  _kv('이상 룰', cabinet.anomalyEvidence.ruleIds.join(', ')),
-                  _kv('근거 요약', cabinet.anomalyEvidence.summary),
-                  if (signal != null)
-                    _kv('최대 activation',
-                        '${(signal.maxActivation * 100).toStringAsFixed(1)}%'),
+                  _kv('관측 내용', operationalPriorityReason(cabinet)),
+                  _kv('적용 판정 기준', operationalCriteria(cabinet)),
+                  _kv('자료 구분', operationalEvidenceSourceLabel(cabinet)),
+                  _kv('판정 신뢰도', operationalConfidenceLabel(signal)),
+                  _kv('해석 범위', operationalEvidenceBoundary(cabinet)),
                 ],
                 keySuffix: 'summary-d',
               ),
               const SizedBox(height: 8),
               _section(
-                'Section E — 점검 우선순위',
+                '확인 우선순위 및 조치 안내',
                 [
-                  _kv('우선순위 점수',
-                      cabinet.inspectionPriority.score.toStringAsFixed(1)),
-                  _kv('심각도', cabinet.inspectionPriority.severity),
-                  _kv('승인 이유', cabinet.inspectionPriority.reason),
-                  const SizedBox(height: 6),
-                  const Text('권장 확인사항: AMI 시그널 지속시간, 분전함 제어이력, 조도 이슈 동시 점검'),
+                  _kv('확인 순위', '${cabinet.inspectionPriority.rank}번'),
+                  _kv('운영 상태', operationalStatusLabel(cabinet.status)),
+                  _kv('분류 사유', operationalPriorityReason(cabinet)),
+                  _kv('권장 확인 절차',
+                      operationalRecommendedAction(cabinet.status)),
                 ],
                 keySuffix: 'priority',
               ),
@@ -230,13 +224,13 @@ class _ActivationLegend extends StatelessWidget {
         children: [
           _LegendItem(
             color: Color(0xFF0F766E),
-            label: '관측 활성도',
-            detail: '이벤트에서 관측된 최대 활성 비율',
+            label: '관측 신호 수준',
+            detail: '탐지 기준 대비 확인된 최대 비율',
           ),
           _LegendItem(
             color: Color(0xFFDDE7E4),
-            label: '미활성 구간',
-            detail: '100%까지 남은 비율',
+            label: '기준 잔여 구간',
+            detail: '전체 탐지 기준에서 남은 비율',
           ),
         ],
       );

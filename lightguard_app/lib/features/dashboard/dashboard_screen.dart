@@ -39,16 +39,16 @@ class DashboardScreen extends ConsumerWidget {
 
         final cards = [
           _MetricCard(
-              '우선 점검',
+              '우선 확인 필요',
               '${data.countByStatus(InspectionStatus.priorityInspection)}',
               Icons.error_outline),
           _MetricCard(
-              '점검 권고',
+              '현장 확인 권고',
               '${data.countByStatus(InspectionStatus.inspectionRecommended)}',
               Icons.warning_amber_rounded),
-          _MetricCard('관찰', '${data.countByStatus(InspectionStatus.observe)}',
+          _MetricCard('추적 관찰', '${data.countByStatus(InspectionStatus.observe)}',
               Icons.remove_red_eye_outlined),
-          _MetricCard('정상', '${data.countByStatus(InspectionStatus.normal)}',
+          _MetricCard('정상 범위', '${data.countByStatus(InspectionStatus.normal)}',
               Icons.check_circle_outline),
           _MetricCard(
               '총 분전함', '${data.objects.length}개', Icons.electrical_services),
@@ -93,7 +93,7 @@ class DashboardScreen extends ConsumerWidget {
                 const SizedBox(height: 8),
                 Wrap(spacing: 12, runSpacing: 12, children: cards),
                 const SizedBox(height: 22),
-                Text('데이터 출처를 구분합니다',
+                Text('자료 구분 및 활용 범위',
                     style: Theme.of(context).textTheme.titleMedium),
                 const SizedBox(height: 8),
                 Wrap(
@@ -101,33 +101,33 @@ class DashboardScreen extends ConsumerWidget {
                   runSpacing: 12,
                   children: [
                     _EvidenceMetricCard(
-                      label: '실제 공공자산',
+                      label: '지자체 공공자산 정보',
                       value: '${data.objects.length}개 분전함',
                       detail: '${region.label} 자산 데이터',
                       icon: Icons.location_city_outlined,
                     ),
                     _EvidenceMetricCard(
                       key: const Key('dashboard-scenario-count'),
-                      label: 'Scenario validation',
+                      label: '검증용 모의 신호',
                       value: '$scenarioDetections건',
                       detail: region.supportsScenarioInjection
-                          ? 'controlled scenario 재현 검출'
-                          : '지원하지 않는 모드',
+                          ? '사전 정의 시나리오 탐지 결과'
+                          : '해당 지역은 모의 신호 검증 미적용',
                       icon: Icons.science_outlined,
                     ),
                     _EvidenceMetricCard(
                       key: const Key('dashboard-actual-ami-count'),
-                      label: '실제 공모전 AMI',
+                      label: '공모전 제공 AMI 분석',
                       value: '${events.length}건',
                       detail:
-                          '현장 미확인 점검 후보 · ${excessKwh.toStringAsFixed(3)} kWh',
+                          '현장 확인 전 분석 후보 · 추정 초과사용량 ${excessKwh.toStringAsFixed(3)} kWh',
                       icon: Icons.bolt_outlined,
                     ),
                     _EvidenceMetricCard(
                       key: const Key('dashboard-municipal-ami-count'),
-                      label: '실제 지자체 AMI 연결',
+                      label: '지자체 AMI 연계 상태',
                       value: '$realMunicipalAmiMappings개',
-                      detail: '분전함 ID 매핑 미구축',
+                      detail: '분전함 식별자 연계 정보 없음',
                       icon: Icons.link_off_outlined,
                     ),
                   ],
@@ -182,7 +182,7 @@ class DashboardScreen extends ConsumerWidget {
                 Card(
                   child: ListTile(
                     leading: const Icon(Icons.bug_report_outlined),
-                    title: const Text('실제 AMI 검증 사례 보기'),
+                    title: const Text('공모전 AMI 분석 사례 보기'),
                     onTap: () => context.go('/ami-events'),
                     trailing: const Icon(Icons.chevron_right),
                   ),
@@ -197,7 +197,7 @@ class DashboardScreen extends ConsumerWidget {
 
   Widget _error(BuildContext context, String msg) {
     return Scaffold(
-      appBar: AppBar(title: const Text('LightGuard Dashboard')),
+      appBar: AppBar(title: const Text('LightGuard 운영 현황')),
       body: Center(
         child: Text(msg),
       ),
@@ -262,14 +262,14 @@ class _DashboardHero extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 18),
-                Text('오늘 먼저 확인할 우선 점검 $priorityCount건',
+                Text('오늘 우선 확인이 필요한 분전함 $priorityCount건',
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.w900,
                         height: 1.18)),
                 const SizedBox(height: 8),
                 Text(
-                  '점검 권고 $recommendedCount건과 AMI 신호를 함께 확인하고, 현장 출동 전 원격 관찰 대상을 좁혀보세요.',
+                  '현장 확인 권고 $recommendedCount건의 관측 사유와 전력 신호를 확인하고, 현장 출동 전에 원격 확인 대상을 선별합니다.',
                   style: const TextStyle(
                       color: Color(0xFFD8E7E5), height: 1.5),
                 ),
@@ -285,7 +285,7 @@ class _DashboardHero extends StatelessWidget {
                         foregroundColor: AppTheme.ink,
                       ),
                       icon: const Icon(Icons.fact_check_outlined, size: 19),
-                      label: const Text('점검 대상 보기'),
+                      label: const Text('확인 대상 및 사유 보기'),
                     ),
                     OutlinedButton.icon(
                       onPressed: onMap,
@@ -300,7 +300,7 @@ class _DashboardHero extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 const Text(
-                  'AMI는 고장을 확정하지 않습니다 · 현장 확인이 최종 판정입니다',
+                  'AMI 분석은 고장을 확정하지 않으며 담당자의 원격확인 또는 현장점검이 최종 판단 단계입니다.',
                   style: TextStyle(color: Color(0xFFAED4CD), fontSize: 12),
                 ),
               ],
@@ -333,25 +333,25 @@ class _OfficialContextCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('공식 Context · Controlled Validation',
+            Text('공식 자료 기반 통제 검증',
                 style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 10),
             Wrap(spacing: 18, runSpacing: 8, children: [
               Text(solar == null
-                  ? '천문 Context: KASI 미수집'
-                  : '천문 Context: KASI ${solar['date']} · ${solar['sunrise']} / ${solar['sunset']}'),
+                  ? '천문자료: 한국천문연구원 자료 미수집'
+                  : '천문자료: 한국천문연구원 ${solar['date']} · ${solar['sunrise']} / ${solar['sunset']}'),
               Text(weather == null
-                  ? '기상 Context: KMA ASOS 159 미수집'
-                  : '기상 Context: KMA ASOS 159 · ${weather['timestamp']}'),
+                  ? '기상자료: 기상청 ASOS 부산관측소(159) 자료 미수집'
+                  : '기상자료: 기상청 ASOS 부산관측소(159) · ${weather['timestamp']}'),
             ]),
             const SizedBox(height: 8),
             Text(
-              'AMI-only FPR ${_percent(m0?.normalFpr)} · Context-aware FPR ${_percent(m3?.normalFpr)} · Top-20 precision ${_percent(m3?.precisionAt20)}',
+              'AMI 단독 정상 오분류율 ${_percent(m0?.normalFpr)} · 운영정보 반영 정상 오분류율 ${_percent(m3?.normalFpr)} · 상위 20건 정밀도 ${_percent(m3?.precisionAt20)}',
             ),
             if (m3?.status != 'available')
               const Padding(
                 padding: EdgeInsets.only(top: 6),
-                child: Text('공식 Context 미수집으로 M1-M3는 unavailable이며 내부/합성값으로 대체하지 않습니다.',
+                child: Text('공식 운전자료가 수집되지 않은 평가항목은 산출하지 않으며 내부 추정값이나 합성값으로 대체하지 않습니다.',
                     style: TextStyle(fontSize: 12, color: Color(0xFF795548))),
               ),
           ],
@@ -361,7 +361,7 @@ class _OfficialContextCard extends StatelessWidget {
   }
 
   String _percent(double? value) =>
-      value == null ? 'unavailable' : '${(value * 100).toStringAsFixed(1)}%';
+      value == null ? '자료 없음' : '${(value * 100).toStringAsFixed(1)}%';
 }
 
 class _EvidenceMetricCard extends StatelessWidget {
@@ -421,7 +421,7 @@ class _SecondCheckerCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('기존 관제를 교체하지 않는 Second Checker',
+            Text('기존 관제를 보완하는 독립 전력 확인 체계',
                 style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 10),
             const Wrap(
@@ -431,11 +431,11 @@ class _SecondCheckerCard extends StatelessWidget {
               children: [
                 _FlowPill('제어상태'),
                 Text('+'),
-                _FlowPill('AMI 실제 전력'),
+                _FlowPill('AMI 실측 전력'),
                 Text('+'),
                 _FlowPill('자산 기대부하'),
                 Text('+'),
-                _FlowPill('운전시간 context'),
+                _FlowPill('운전시간 기준'),
                 Icon(Icons.arrow_forward),
                 _FlowPill('상태 불일치 · 점검 우선순위'),
               ],
