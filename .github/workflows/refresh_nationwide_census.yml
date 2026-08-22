@@ -20,7 +20,21 @@ jobs:
       - name: Install crawler certificate dependency
         run: python -m pip install --disable-pip-version-check certifi
       - name: Refresh public-file census in the runner
-        run: python scripts/build_v24_nationwide_census.py
+        shell: bash
+        run: |
+          set -o pipefail
+          for attempt in 1 2 3; do
+            if python scripts/build_v24_nationwide_census.py; then
+              exit 0
+            fi
+            if [ "$attempt" -lt 3 ]; then
+              delay=$((attempt * 30))
+              echo "data.go.kr refresh attempt ${attempt} failed; retrying in ${delay}s"
+              sleep "$delay"
+            fi
+          done
+          echo "data.go.kr refresh failed after 3 complete attempts" >&2
+          exit 1
       - name: Validate privacy-safe artifacts
         run: ./scripts/v24_preflight.sh
       - name: Detect upstream changes
