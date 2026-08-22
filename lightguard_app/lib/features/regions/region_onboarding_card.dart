@@ -26,7 +26,7 @@ class _RegionOnboardingCardState extends State<RegionOnboardingCard> {
       child: ExpansionTile(
         leading: const Icon(Icons.upload_file_outlined),
         title: const Text('새 지역 자료 연결 준비'),
-        subtitle: const Text('CSV 파일의 첫 번째 행을 붙여 넣어 활용 가능한 항목을 미리 확인합니다.'),
+        subtitle: const Text('표 형식 파일(CSV)의 첫 번째 행을 붙여 넣어 활용 가능한 항목을 미리 확인합니다.'),
         childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
         children: [
           const Align(
@@ -42,7 +42,7 @@ class _RegionOnboardingCardState extends State<RegionOnboardingCard> {
             minLines: 2,
             maxLines: 4,
             decoration: const InputDecoration(
-              labelText: 'CSV 첫 행의 열 이름',
+              labelText: '표 형식 파일(CSV) 첫 행의 열 이름',
               hintText: '예: 관리번호, 위도, 경도, 정격용량, 접수일, 처리일',
               border: OutlineInputBorder(),
             ),

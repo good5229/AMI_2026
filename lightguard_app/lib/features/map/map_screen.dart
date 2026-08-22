@@ -303,7 +303,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                             padding: EdgeInsets.symmetric(
                                 horizontal: 4, vertical: 6),
                             child: Text(
-                              '© OpenStreetMap contributors',
+                              '지도 데이터 © OpenStreetMap 기여자',
                               style: TextStyle(
                                 fontSize: 11,
                                 fontWeight: FontWeight.w600,

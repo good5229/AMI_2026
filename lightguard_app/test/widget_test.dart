@@ -276,6 +276,11 @@ void main() {
     );
     await tester.pump(const Duration(milliseconds: 300));
     expect(find.text('상세 검증자료'), findsOneWidget);
+    await tester.tap(find.text('상세 검증자료'));
+    await tester.pumpAndSettle();
+    expect(find.text('검증 결과 요약'), findsOneWidget);
+    expect(find.text('자료가 부족할 때의 처리'), findsOneWidget);
+    expect(find.text('운영 적용 한계'), findsOneWidget);
   });
 
   testWidgets('Dashboard remains overflow-free at 360px',

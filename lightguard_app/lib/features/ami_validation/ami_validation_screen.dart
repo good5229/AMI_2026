@@ -93,7 +93,7 @@ class AmiValidationScreen extends ConsumerWidget {
               if (v06Summary != null) ...[
                 const SizedBox(height: 12),
                 _ResearchEvidenceSection(
-                  child: _V06EvidenceHardening(summary: v06Summary),
+                  child: _PlainValidationDetails(summary: v06Summary),
                 ),
               ],
               const SizedBox(height: 12),
@@ -179,7 +179,7 @@ class _ResearchEvidenceSection extends StatelessWidget {
         initiallyExpanded: false,
         leading: const Icon(Icons.science_outlined),
         title: const Text('상세 검증자료'),
-        subtitle: const Text('연구 과정과 통계 검증이 필요할 때 펼쳐 봅니다.'),
+        subtitle: const Text('검증 결과와 적용 한계를 쉬운 설명으로 확인합니다.'),
         childrenPadding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
         children: [child],
       ),
@@ -187,6 +187,61 @@ class _ResearchEvidenceSection extends StatelessWidget {
   }
 }
 
+class _PlainValidationDetails extends StatelessWidget {
+  const _PlainValidationDetails({required this.summary});
+
+  final V06EvidenceSummary summary;
+
+  @override
+  Widget build(BuildContext context) {
+    String percent(double value, [int digits = 1]) =>
+        '${(value * 100).toStringAsFixed(digits)}%';
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: const Color(0xFFF3F7F6),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: const Color(0xFFC7D8D3)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('검증 결과 요약',
+              style: Theme.of(context).textTheme.titleMedium),
+          const SizedBox(height: 10),
+          _V05EvidenceTile(
+            title: '검증용 이상 사례 탐지',
+            value: percent(summary.coveragePoint),
+            detail:
+                '표본 수를 고려한 95% 예상 범위 ${percent(summary.coverageLower)}–${percent(summary.coverageUpper)}',
+          ),
+          const SizedBox(height: 8),
+          _V05EvidenceTile(
+            title: '하루 평균 확인 후보 비율',
+            value: percent(summary.candidateDensityPoint, 2),
+            detail:
+                '시간 순서를 고려한 반복추출 95% 범위 ${percent(summary.candidateDensityLower, 2)}–${percent(summary.candidateDensityUpper, 2)}',
+          ),
+          const SizedBox(height: 12),
+          const Text('자료가 부족할 때의 처리',
+              style: TextStyle(fontWeight: FontWeight.w700)),
+          Text(
+              '측정값이 120분 이상 비면 이상 여부를 추정하지 않고 판정을 보류합니다. 현재 ${summary.abstentionRuleCount}개 보류 기준을 적용합니다.'),
+          const SizedBox(height: 12),
+          const Text('운영 적용 한계',
+              style: TextStyle(fontWeight: FontWeight.w700)),
+          const Text(
+              '이 결과는 가명 처리된 전력계량 자료와 검증용 사례를 이용한 분석입니다. 실제 고장 여부와 점검 효과는 담당자의 원격 확인, 정비 이력 또는 현장점검 결과로 확인해야 합니다.'),
+        ],
+      ),
+    );
+  }
+}
+
+// Retained for reproducibility of the internal evidence workflow. The public
+// product surface intentionally uses _PlainValidationDetails instead.
+// ignore: unused_element
 class _V06EvidenceHardening extends StatelessWidget {
   const _V06EvidenceHardening({required this.summary});
 
@@ -259,8 +314,8 @@ class _V06EvidenceHardening extends StatelessWidget {
             ),
             Text(
               summary.fieldTruthAvailable
-                  ? 'Blinded field truth 연결됨'
-                  : 'Blinded field truth 미확보 · schema만 준비됨',
+                  ? '분석 담당자에게 가려진 현장 판정자료 연결됨'
+                  : '현장 판정자료 미확보 · 자료 구조만 준비됨',
               style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
             ),
           ],
@@ -301,12 +356,12 @@ class _V05TechnicalEvidence extends StatelessWidget {
               _V05EvidenceTile(
                 title: '측정값 20% 누락 시험',
                 value: ratio(summary.missing20Coverage),
-                detail: '고정 seed · random missing 20%',
+                detail: '동일한 난수 조건 · 임의 측정 누락 20%',
               ),
               _V05EvidenceTile(
                 title: '측정 간격 변경 시험',
                 value: ratio(summary.downsample60Coverage),
-                detail: '15분 → 60분 downsample',
+                detail: '15분 측정값을 60분 간격으로 재구성',
               ),
             ]),
             const SizedBox(height: 10),
@@ -378,7 +433,7 @@ class _ControlledValidationSummary extends StatelessWidget {
     final m0 = metrics.where((row) => row.model == 'M0').firstOrNull;
     final m3 = metrics.where((row) => row.model == 'M3').firstOrNull;
     String rate(double? value) =>
-        value == null ? 'unavailable' : '${(value * 100).toStringAsFixed(1)}%';
+        value == null ? '자료 없음' : '${(value * 100).toStringAsFixed(1)}%';
     return Card(
       key: const Key('controlled-validation-summary'),
       color: const Color(0xFFF0F6F1),
@@ -405,8 +460,8 @@ class _ControlledValidationSummary extends StatelessWidget {
               v04Summary != null
                   ? '판정 기준을 정하는 자료와 최종 확인 자료를 분리한 비교 검증 결과입니다.'
                   : m3?.status == 'available'
-                  ? '동일 frozen set의 M0-M3 비교 결과입니다.'
-                  : '공식 KASI/KMA snapshot 미수집으로 M1-M3를 계산하지 않았습니다.',
+                  ? '동일한 고정 검증자료에서 전력자료 단독 방식과 운영정보 결합 방식을 비교한 결과입니다.'
+                  : '공식 천문·기상자료가 없어 운영정보 결합 방식은 계산하지 않았습니다.',
               style: const TextStyle(fontSize: 12),
             ),
           ],
