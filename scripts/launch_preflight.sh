@@ -19,8 +19,6 @@ flutter test --reporter expanded --no-dds
 
 echo "== lightguard preflight: flutter build web without service worker =="
 flutter build web --release --base-href /AMI_2026/ --pwa-strategy=none
-rm -f build/web/flutter_service_worker.js
-test ! -f build/web/flutter_service_worker.js
 
 echo "== lightguard preflight: flutter build apk --debug =="
 flutter build apk --debug
