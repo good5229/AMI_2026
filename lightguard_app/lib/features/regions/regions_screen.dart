@@ -7,7 +7,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/widgets/app_scaffold.dart';
 import '../../data/models/region_config.dart';
 import '../../data/repositories/lightguard_repository.dart';
-import 'region_onboarding_card.dart';
 
 class RegionsScreen extends ConsumerStatefulWidget {
   const RegionsScreen({super.key});
@@ -95,7 +94,6 @@ class _RegionsScreenState extends ConsumerState<RegionsScreen> {
                   ],
                 ),
                 const SizedBox(height: 22),
-                const RegionOnboardingCard(),
                 const SizedBox(height: 22),
                 Row(
                   children: [
