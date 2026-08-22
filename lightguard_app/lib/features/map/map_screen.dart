@@ -173,12 +173,6 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                           'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                       userAgentPackageName: 'kr.example.lightguard',
                     ),
-                  if (widget.showBaseMap)
-                    const RichAttributionWidget(
-                      attributions: [
-                        TextSourceAttribution('OpenStreetMap contributors'),
-                      ],
-                    ),
                   MarkerLayer(
                     key: const Key('map-marker-layer'),
                     markers: [
@@ -302,6 +296,18 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                           StatusBadge(
                               type: BadgeType.validation,
                               label: '실측 자산 $municipalCount'),
+                        if (widget.showBaseMap)
+                          const Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 4, vertical: 6),
+                            child: Text(
+                              '© OpenStreetMap contributors',
+                              style: TextStyle(
+                                fontSize: 11,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
                       ],
                     ),
                   ),
