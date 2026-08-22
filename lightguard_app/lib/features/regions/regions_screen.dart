@@ -19,6 +19,9 @@ class _RegionsScreenState extends ConsumerState<RegionsScreen> {
   late final Future<List<_RegionDatasetSummary>> _catalog = _loadCatalog();
   String _query = '';
   String _topLevel = '전체';
+  String _role = '전체';
+  String _readiness = '전체';
+  int _visibleCount = 20;
   String? _selectedCatalogRegion;
 
   @override
@@ -47,7 +50,14 @@ class _RegionsScreenState extends ConsumerState<RegionsScreen> {
                   _topLevel == '전체' || region.topLevel == _topLevel;
               final queryMatches = _query.isEmpty ||
                   region.name.toLowerCase().contains(_query.toLowerCase());
-              return topMatches && queryMatches;
+              final roleMatches =
+                  _role == '전체' || region.roles.contains(_role);
+              final readinessMatches = _readiness == '전체' ||
+                  region.readinessLabel == _readiness;
+              return topMatches &&
+                  queryMatches &&
+                  roleMatches &&
+                  readinessMatches;
             }).toList(growable: false);
 
             return ListView(
@@ -117,8 +127,10 @@ class _RegionsScreenState extends ConsumerState<RegionsScreen> {
                               prefixIcon: Icon(Icons.search),
                               border: OutlineInputBorder(),
                             ),
-                            onChanged: (value) =>
-                                setState(() => _query = value.trim()),
+                            onChanged: (value) => setState(() {
+                              _query = value.trim();
+                              _visibleCount = 20;
+                            }),
                           ),
                         ),
                         SizedBox(
@@ -138,13 +150,67 @@ class _RegionsScreenState extends ConsumerState<RegionsScreen> {
                                   child: Text(value),
                                 ),
                             ],
-                            onChanged: (value) =>
-                                setState(() => _topLevel = value ?? '전체'),
+                            onChanged: (value) => setState(() {
+                              _topLevel = value ?? '전체';
+                              _visibleCount = 20;
+                            }),
                           ),
                         ),
                       ],
                     );
                   },
+                ),
+                const SizedBox(height: 10),
+                Wrap(
+                  spacing: 12,
+                  runSpacing: 10,
+                  children: [
+                    SizedBox(
+                      width: 280,
+                      child: DropdownButtonFormField<String>(
+                        initialValue: _role,
+                        decoration: const InputDecoration(
+                          labelText: '확인 가능한 자료로 좁혀 보기',
+                          border: OutlineInputBorder(),
+                        ),
+                        items: const [
+                          DropdownMenuItem(value: '전체', child: Text('모든 자료 유형')),
+                          DropdownMenuItem(value: 'SIGNAL', child: Text('전력·점등 상태')),
+                          DropdownMenuItem(value: 'OPERATIONS', child: Text('고장 접수·처리 이력')),
+                          DropdownMenuItem(value: 'CABINET', child: Text('분전함 정보')),
+                          DropdownMenuItem(value: 'LOAD', child: Text('설비용량 정보')),
+                          DropdownMenuItem(value: 'SPATIAL', child: Text('설치 위치')),
+                          DropdownMenuItem(value: 'ASSET', child: Text('가로등 시설정보')),
+                        ],
+                        onChanged: (value) => setState(() {
+                          _role = value ?? '전체';
+                          _visibleCount = 20;
+                        }),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 280,
+                      child: DropdownButtonFormField<String>(
+                        initialValue: _readiness,
+                        decoration: const InputDecoration(
+                          labelText: '분석 준비수준으로 좁혀 보기',
+                          border: OutlineInputBorder(),
+                        ),
+                        items: const [
+                          DropdownMenuItem(value: '전체', child: Text('모든 준비수준')),
+                          DropdownMenuItem(value: '복합자료 구조 확인', child: Text('복합자료 구조 확인')),
+                          DropdownMenuItem(value: '전력 신호 구조 확인', child: Text('전력 신호 구조 확인')),
+                          DropdownMenuItem(value: '운영 이력 구조 확인', child: Text('운영 이력 구조 확인')),
+                          DropdownMenuItem(value: '시설·위치 구조 확인', child: Text('시설·위치 구조 확인')),
+                          DropdownMenuItem(value: '기본 공개정보 확인', child: Text('기본 공개정보 확인')),
+                        ],
+                        onChanged: (value) => setState(() {
+                          _readiness = value ?? '전체';
+                          _visibleCount = 20;
+                        }),
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 10),
                 if (snapshot.connectionState == ConnectionState.waiting)
@@ -159,7 +225,7 @@ class _RegionsScreenState extends ConsumerState<RegionsScreen> {
                 else if (filtered.isEmpty)
                   const _NoticeCard(text: '조건에 맞는 지역이 없습니다.')
                 else
-                  for (final region in filtered)
+                  for (final region in filtered.take(_visibleCount))
                     _CatalogRegionCard(
                       region: region,
                       expanded: _selectedCatalogRegion == region.name,
@@ -170,6 +236,17 @@ class _RegionsScreenState extends ConsumerState<RegionsScreen> {
                                 : region.name;
                       }),
                     ),
+                if (filtered.length > _visibleCount)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 4, bottom: 16),
+                    child: OutlinedButton.icon(
+                      onPressed: () => setState(() => _visibleCount += 20),
+                      icon: const Icon(Icons.expand_more),
+                      label: Text(
+                        '지역 더 보기 · ${filtered.length - _visibleCount}개 남음',
+                      ),
+                    ),
+                  ),
               ],
             );
           },
@@ -202,6 +279,13 @@ class _RegionsScreenState extends ConsumerState<RegionsScreen> {
       item.roles.addAll(
         (raw['roles'] as List<dynamic>? ?? const []).map((e) => e.toString()),
       );
+      item.sources.add(_RegionSource(
+        title: raw['title']?.toString() ?? '제목 미제공',
+        publisher: raw['publisher']?.toString(),
+        modified: raw['date_modified']?.toString(),
+        license: raw['license']?.toString(),
+        officialUrl: raw['official_url']?.toString() ?? '',
+      ));
     }
     return grouped.values
         .map((item) => item.freeze())
@@ -333,6 +417,8 @@ class _CatalogRegionCard extends StatelessWidget {
                     child: Text(region.name,
                         style: Theme.of(context).textTheme.titleMedium),
                   ),
+                  Chip(label: Text(region.readinessLabel)),
+                  const SizedBox(width: 6),
                   Text('공개파일 ${region.datasetCount}개'),
                   Icon(expanded ? Icons.expand_less : Icons.expand_more),
                 ],
@@ -348,11 +434,39 @@ class _CatalogRegionCard extends StatelessWidget {
               if (expanded) ...[
                 const Divider(height: 22),
                 Text('확인된 데이터 행: ${region.rowCount}개'),
+                Text('지역 식별키: ${region.regionKey}'),
                 const SizedBox(height: 5),
                 const Text(
                   '활용 가능성: 공개파일의 항목 구성을 LightGuard 입력 구조와 비교할 수 있습니다. 시설물 연결번호와 실제 전력자료가 확보되면 지역 맞춤 분석으로 확장할 수 있습니다.',
                   style: TextStyle(fontSize: 12, height: 1.45),
                 ),
+                const SizedBox(height: 5),
+                Text(
+                  region.missingRoleLabels.isEmpty
+                      ? '추가 필요자료: 실제 전력계량 자료와 현장 확인 결과'
+                      : '추가 필요자료: ${region.missingRoleLabels.join(' · ')} · 실제 전력계량 자료 · 현장 확인 결과',
+                  style: const TextStyle(fontSize: 12),
+                ),
+                const SizedBox(height: 8),
+                const Text('공식 데이터 출처',
+                    style: TextStyle(fontWeight: FontWeight.w700)),
+                for (final source in region.sources.take(5))
+                  Padding(
+                    padding: const EdgeInsets.only(top: 6),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(source.title,
+                            style: const TextStyle(fontSize: 12)),
+                        Text(
+                          '${source.publisher ?? '제공기관 미표기'} · 갱신일 ${source.modified ?? '미표기'} · 이용조건 ${source.license ?? '포털 상세페이지 확인'}',
+                          style: const TextStyle(fontSize: 11),
+                        ),
+                        SelectableText(source.officialUrl,
+                            style: const TextStyle(fontSize: 10)),
+                      ],
+                    ),
+                  ),
                 const SizedBox(height: 5),
                 const Text(
                   '현재 제한: 이 지역의 실시간 전력계량 자료와 현장 고장 정답은 연결되지 않았습니다.',
@@ -398,6 +512,7 @@ class _MutableRegionSummary {
   int datasetCount = 0;
   int rowCount = 0;
   final Set<String> roles = {};
+  final List<_RegionSource> sources = [];
 
   _RegionDatasetSummary freeze() => _RegionDatasetSummary(
         name: name,
@@ -405,6 +520,7 @@ class _MutableRegionSummary {
         datasetCount: datasetCount,
         rowCount: rowCount,
         roles: roles.toList()..sort(),
+        sources: sources,
       );
 }
 
@@ -415,6 +531,7 @@ class _RegionDatasetSummary {
     required this.datasetCount,
     required this.rowCount,
     required this.roles,
+    required this.sources,
   });
 
   final String name;
@@ -422,4 +539,39 @@ class _RegionDatasetSummary {
   final int datasetCount;
   final int rowCount;
   final List<String> roles;
+  final List<_RegionSource> sources;
+
+  String get regionKey => '$topLevel|$name';
+
+  String get readinessLabel {
+    if (roles.length >= 4) return '복합자료 구조 확인';
+    if (roles.contains('SIGNAL')) return '전력 신호 구조 확인';
+    if (roles.contains('OPERATIONS')) return '운영 이력 구조 확인';
+    if (roles.contains('ASSET') && roles.contains('SPATIAL')) {
+      return '시설·위치 구조 확인';
+    }
+    return '기본 공개정보 확인';
+  }
+
+  List<String> get missingRoleLabels {
+    const required = <String>{'SIGNAL', 'OPERATIONS', 'CABINET', 'LOAD', 'SPATIAL', 'ASSET'};
+    return (required.difference(roles.toSet()).map(_CatalogRegionCard._roleLabel).toList()
+      ..sort());
+  }
+}
+
+class _RegionSource {
+  const _RegionSource({
+    required this.title,
+    required this.publisher,
+    required this.modified,
+    required this.license,
+    required this.officialUrl,
+  });
+
+  final String title;
+  final String? publisher;
+  final String? modified;
+  final String? license;
+  final String officialUrl;
 }

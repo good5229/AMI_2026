@@ -143,6 +143,11 @@ def detail(dataset_id: str, fallback_title: str) -> dict:
         title = html.unescape(subject.group(1)).strip() if subject else fallback_title
         content = re.search(r'"contentUrl"\s*:\s*"([^"]+)"', text)
         encoding = re.search(r'"encodingFormat"\s*:\s*"([^"]+)"', text)
+        modified = re.search(r'"dateModified"\s*:\s*"([^"]+)"', text)
+        publisher = re.search(
+            r'"publisher"\s*:\s*\{.*?"name"\s*:\s*"([^"]+)"', text, re.S
+        )
+        license_name = re.search(r'"license"\s*:\s*"([^"]+)"', text)
         external = re.search(r"제공데이터URL기재.*?URL.*?(https?://[^<\s]+)", text, re.S)
         return {
             "dataset_id": dataset_id,
@@ -150,6 +155,9 @@ def detail(dataset_id: str, fallback_title: str) -> dict:
             "official_url": url,
             "content_url": html.unescape(content.group(1)) if content else None,
             "encoding_format": encoding.group(1).upper() if encoding else None,
+            "date_modified": modified.group(1) if modified else None,
+            "publisher": html.unescape(publisher.group(1)) if publisher else None,
+            "license": html.unescape(license_name.group(1)) if license_name else None,
             "external_url": html.unescape(external.group(1)) if external else None,
             "detail_status": "OK",
             **region_from_title(title),
@@ -252,7 +260,7 @@ def public_item(item: dict) -> dict:
         "dataset_id", "title", "official_url", "encoding_format", "region", "top_level",
         "local", "region_status", "detail_status", "acquisition_status", "raw_filename",
         "sha256", "byte_size", "encoding", "rows", "column_count", "schema_fingerprint",
-        "roles", "tracked_in_git", "municipal_scope",
+        "roles", "tracked_in_git", "municipal_scope", "date_modified", "publisher", "license",
     )
     return {key: item.get(key) for key in allowed if key in item}
 

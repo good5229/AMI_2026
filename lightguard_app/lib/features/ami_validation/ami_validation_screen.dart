@@ -17,6 +17,7 @@ import 'submission_readiness_card.dart';
 
 import '../../core/widgets/app_scaffold.dart';
 import '../../core/widgets/status_badges.dart';
+import '../../core/presentation/plain_status.dart';
 import '../../data/models/context_models.dart';
 import '../../data/repositories/lightguard_repository.dart';
 
@@ -262,7 +263,7 @@ class _V05TechnicalEvidence extends StatelessWidget {
             Text('최대 전류 일치: 기존 계산 ${summary.legacyPeakConsistent}/6 · 세 전류 합계 기준 ${summary.adjudicatedPeakConsistent}/6'),
             const Text('기존 계산은 각 전류선의 최대값을, 개선 계산은 한 시점의 세 전류선 합계 최대값을 사용합니다.',
                 style: TextStyle(fontSize: 12)),
-            Text('120분 연속 측정 누락 시험 ${ratio(summary.gap120Coverage)} · ${summary.sensitivityClassification}',
+            Text('120분 연속 측정 누락 시험 ${ratio(summary.gap120Coverage)} · ${plainSensitivityLabel(summary.sensitivityClassification)}',
                 style: const TextStyle(fontSize: 12)),
             Text(
               '전력 사용 수준을 20% 높인 시험: 정상 오분류율 ${(summary.frozenBaselineFpr * 100).toStringAsFixed(2)}% → ${(summary.activationPlus20Fpr * 100).toStringAsFixed(2)}% · 판정 설정 변경 없음',

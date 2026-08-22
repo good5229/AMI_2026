@@ -157,7 +157,10 @@
       "detail_status": "OK",
       "acquisition_status": "INVALID_FILE:EMPTY_CSV",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-11-18",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15117418",
@@ -183,7 +186,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-11-18",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15092358",
@@ -207,7 +213,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-06-11",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15123299",
@@ -221,7 +230,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15106465",
@@ -245,7 +257,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-05-14",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15067255",
@@ -259,7 +274,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15067273",
@@ -273,7 +291,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15067326",
@@ -297,7 +318,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-04-17",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15101144",
@@ -311,7 +335,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15120742",
@@ -325,7 +352,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15034889",
@@ -350,7 +380,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-07-28",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15032441",
@@ -376,7 +409,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-08-05",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15110582",
@@ -400,7 +436,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-11-13",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "3070897",
@@ -425,7 +464,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-04-09",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15038089",
@@ -449,7 +491,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-05-20",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15037316",
@@ -475,7 +520,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-01-28",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15087686",
@@ -500,7 +548,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-11-19",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "3040624",
@@ -525,7 +576,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-12-22",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15108900",
@@ -551,7 +605,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-08-18",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15108955",
@@ -578,7 +635,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-08-18",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15118521",
@@ -602,7 +662,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-05-22",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15110852",
@@ -616,7 +679,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15110863",
@@ -630,7 +696,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15110869",
@@ -644,7 +713,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15091922",
@@ -669,7 +741,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2024-10-31",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15020452",
@@ -694,7 +769,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-08-11",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15020322",
@@ -716,7 +794,10 @@
       "schema_fingerprint": "f804dccaa91612026d7bf431f5282eedf8e76470b1731f5a6b132f52b28cfebd",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-08-03",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15111805",
@@ -740,7 +821,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-06-02",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15154655",
@@ -764,7 +848,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-12-01",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15154668",
@@ -789,7 +876,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-11-27",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15063660",
@@ -815,7 +905,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-11-27",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15091554",
@@ -840,7 +933,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-11-27",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15020453",
@@ -864,7 +960,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-01-27",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15113209",
@@ -891,7 +990,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-07-20",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15129425",
@@ -916,7 +1018,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-07-03",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15064521",
@@ -930,7 +1035,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15074277",
@@ -955,7 +1063,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-02-04",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15062585",
@@ -981,7 +1092,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-04-23",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15143784",
@@ -1006,7 +1120,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-01-29",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15128238",
@@ -1034,7 +1151,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-08-06",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15157590",
@@ -1062,7 +1182,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-03-12",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15143373",
@@ -1086,7 +1209,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-07-25",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15127533",
@@ -1111,7 +1237,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-05-27",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15094995",
@@ -1125,7 +1254,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15120455",
@@ -1149,7 +1281,10 @@
         "OPERATIONS"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-08-25",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15120484",
@@ -1174,7 +1309,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-08-19",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15120488",
@@ -1196,7 +1334,10 @@
       "schema_fingerprint": "188cc571177c93ec290284e5abaacb598538d9d1c11d7b2c8c98344f3d8ef967",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-08-11",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15120490",
@@ -1220,7 +1361,10 @@
         "OPERATIONS"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-12-08",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15120494",
@@ -1244,7 +1388,10 @@
         "OPERATIONS"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-08-19",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15120529",
@@ -1269,7 +1416,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-08-19",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15081759",
@@ -1293,7 +1443,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2024-04-04",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15110054",
@@ -1318,7 +1471,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-07-23",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15110067",
@@ -1344,7 +1500,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-07-03",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15111161",
@@ -1368,7 +1527,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-05-08",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15066859",
@@ -1382,7 +1544,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15020588",
@@ -1404,7 +1569,10 @@
       "schema_fingerprint": "da5b462e424c3f8e544355835d2438e25791d1785feef4953b3fef2d063f023b",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-08-29",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15020721",
@@ -1428,7 +1596,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-08-14",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15030965",
@@ -1452,7 +1623,10 @@
         "SIGNAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-08-18",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15032302",
@@ -1474,7 +1648,10 @@
       "schema_fingerprint": "9c84071112ca7c220ade995dd953e66db3453da0dd53864061d222fa448e6c84",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-02-06",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15040060",
@@ -1498,7 +1675,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-01-23",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15096542",
@@ -1520,7 +1700,10 @@
       "schema_fingerprint": "062f78e2d4c9044019436e5252ebbb60b2af8ac90249aaa590e51da78a8e8dd8",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-11-27",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15096640",
@@ -1542,7 +1725,10 @@
       "schema_fingerprint": "22996b04ad598c24effd3a44c8f8c40b5fee8ba1518c7abf6922956f64d432e7",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-02-24",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15125649",
@@ -1566,7 +1752,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-09-16",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15026027",
@@ -1590,7 +1779,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-02-09",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15020637",
@@ -1612,7 +1804,10 @@
       "schema_fingerprint": "e9ed49cb20fcf4787f80ee29ef1c201a91e0694cc9667a420125fbf8cc2179a6",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-11-27",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15028663",
@@ -1636,7 +1831,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-02-13",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "3078639",
@@ -1661,7 +1859,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-09-09",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15020532",
@@ -1686,7 +1887,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-03-09",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15092068",
@@ -1710,7 +1914,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2024-10-21",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15097380",
@@ -1732,7 +1939,10 @@
       "schema_fingerprint": "3c8601aaba2c3d72140d1201ba1784d78ef65ecdba77ae1c7b83d5e7e244a7ce",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2024-11-08",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15097381",
@@ -1754,7 +1964,10 @@
       "schema_fingerprint": "3c8601aaba2c3d72140d1201ba1784d78ef65ecdba77ae1c7b83d5e7e244a7ce",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-09-02",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15097239",
@@ -1776,7 +1989,10 @@
       "schema_fingerprint": "943ea011a630451ec81fdcd602245ea6aa419cc59173429f4ed0a725ea396ae8",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-12-17",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "3079309",
@@ -1798,7 +2014,10 @@
       "schema_fingerprint": "c2f8c2113a53b9be09daa972a9c23b6a0829f9cf195da3b710858b2d39f0cfd1",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-06-22",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15096880",
@@ -1820,7 +2039,10 @@
       "schema_fingerprint": "bd8bb87e7c28f0e49f848e881c94fda5cccf2f6ad58e618d8b64eea7805af061",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-08-26",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "3046172",
@@ -1847,7 +2069,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-01-22",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15028785",
@@ -1869,7 +2094,10 @@
       "schema_fingerprint": "ffb5c4e26a4eab220ee9f40dc1a3b1de15a2053777d2fd0aa7b1263db91da938",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-08-18",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15096764",
@@ -1891,7 +2119,10 @@
       "schema_fingerprint": "d9297f3da21786201639b1a77447803309990773880173743bc4be49fc93e15b",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-12-12",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15097104",
@@ -1915,7 +2146,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-02-20",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15097010",
@@ -1939,7 +2173,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-01-15",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15107934",
@@ -1953,7 +2190,10 @@
       "detail_status": "OK",
       "acquisition_status": "INVALID_FILE:UNKNOWN_ENCODING",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-11-20",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15146140",
@@ -1967,7 +2207,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15128093",
@@ -1991,7 +2234,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-07-28",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15068535",
@@ -2016,7 +2262,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-08-15",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15133282",
@@ -2030,7 +2279,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15062768",
@@ -2054,7 +2306,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-11-24",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15019598",
@@ -2078,7 +2333,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-07-29",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15061221",
@@ -2092,7 +2350,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15070592",
@@ -2117,7 +2378,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-07-29",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15155293",
@@ -2131,7 +2395,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15061252",
@@ -2145,7 +2412,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15028107",
@@ -2169,7 +2439,10 @@
         "CABINET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2018-01-09",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15012092",
@@ -2194,7 +2467,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-03-06",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15012186",
@@ -2219,7 +2495,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-03-19",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15128084",
@@ -2243,7 +2522,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-04-01",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15037330",
@@ -2267,7 +2549,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-06-09",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15061249",
@@ -2281,7 +2566,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15078439",
@@ -2305,7 +2593,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-04-06",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15062578",
@@ -2329,7 +2620,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-08-06",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15109206",
@@ -2353,7 +2647,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-08-06",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15128090",
@@ -2378,7 +2675,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-08-18",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15061238",
@@ -2392,7 +2692,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15061241",
@@ -2406,7 +2709,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15128039",
@@ -2430,7 +2736,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-02-03",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15157537",
@@ -2452,7 +2761,10 @@
       "schema_fingerprint": "ded3203a62a51c795bb9dcb97efc65192fcdedac6a9e9961d10f48557fec054f",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-03-05",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15157539",
@@ -2474,7 +2786,10 @@
       "schema_fingerprint": "3b6762df9d4758bc7fff82912c0a378365a57d3d54b6df191ccba24d93a8a447",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-03-05",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15062370",
@@ -2488,7 +2803,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15039810",
@@ -2512,7 +2830,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-05-07",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15107876",
@@ -2536,7 +2857,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-06-23",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15157560",
@@ -2560,7 +2884,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-03-09",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15128038",
@@ -2574,7 +2901,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "3078204",
@@ -2588,7 +2918,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15127385",
@@ -2602,7 +2935,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15043337",
@@ -2624,7 +2960,10 @@
       "schema_fingerprint": "27a1bbd43be11d8ded4bb67847d2ec8e50051a6ef1fd6f5b54b3489a0b3dcc16",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-02-24",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15039315",
@@ -2649,7 +2988,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-08-13",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15044376",
@@ -2663,7 +3005,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15044377",
@@ -2677,7 +3022,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15044378",
@@ -2691,7 +3039,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15044379",
@@ -2705,7 +3056,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15116405",
@@ -2730,7 +3084,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-06-05",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15127415",
@@ -2756,7 +3113,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-03-11",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15127435",
@@ -2782,7 +3142,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-04-07",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15127498",
@@ -2807,7 +3170,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-04-21",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15109754",
@@ -2832,7 +3198,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-12-11",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15127428",
@@ -2857,7 +3226,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-04-28",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15103933",
@@ -2881,7 +3253,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-09-16",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15059620",
@@ -2906,7 +3281,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-06-19",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15045188",
@@ -2931,7 +3309,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-11-25",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15060169",
@@ -2956,7 +3337,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-11-03",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15086817",
@@ -2982,7 +3366,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-11-06",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15060244",
@@ -3007,7 +3394,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-08-29",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15090694",
@@ -3032,7 +3422,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-12-08",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15059623",
@@ -3057,7 +3450,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-06-01",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15118896",
@@ -3081,7 +3477,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-03-20",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15059732",
@@ -3107,7 +3506,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2023-11-16",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15059617",
@@ -3131,7 +3533,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2023-08-30",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15125540",
@@ -3155,7 +3560,10 @@
         "OPERATIONS"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-12-11",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15094102",
@@ -3181,7 +3589,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-05-15",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15094301",
@@ -3206,7 +3617,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-10-31",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15100644",
@@ -3230,7 +3644,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-04-03",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15113446",
@@ -3255,7 +3672,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-04-20",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15113447",
@@ -3280,7 +3700,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-11-26",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15110648",
@@ -3305,7 +3728,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2024-06-14",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15113472",
@@ -3331,7 +3757,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-06-02",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15124964",
@@ -3356,7 +3785,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-02-13",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15064740",
@@ -3381,7 +3813,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-07-25",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15158888",
@@ -3405,7 +3840,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-04-13",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15123961",
@@ -3429,7 +3867,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-11-18",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15033957",
@@ -3453,7 +3894,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-09-12",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15033934",
@@ -3475,7 +3919,10 @@
       "schema_fingerprint": "e0c04eb686462475a08c6f9d0bbf32eb826235e541c4badbd249c945a3dbee8b",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-11-21",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15060101",
@@ -3500,7 +3947,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-04-10",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15129941",
@@ -3524,7 +3974,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-08-08",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15129786",
@@ -3548,7 +4001,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2024-10-10",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15053772",
@@ -3562,7 +4018,10 @@
       "detail_status": "OK",
       "acquisition_status": "EXTERNAL_OR_NO_DIRECT_FILE",
       "roles": [],
-      "municipal_scope": false
+      "municipal_scope": false,
+      "date_modified": null,
+      "publisher": null,
+      "license": null
     },
     {
       "dataset_id": "15118681",
@@ -3586,7 +4045,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-12-12",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15118685",
@@ -3611,7 +4073,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-12-12",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15093862",
@@ -3636,7 +4101,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2023-06-23",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15128982",
@@ -3661,7 +4129,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-11-20",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15128958",
@@ -3687,7 +4158,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-05-27",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15128791",
@@ -3711,7 +4185,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-06-19",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15063327",
@@ -3735,7 +4212,10 @@
         "SIGNAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2024-06-25",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15088946",
@@ -3760,7 +4240,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-04-29",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15040580",
@@ -3785,7 +4268,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-01-06",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15122318",
@@ -3811,7 +4297,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-06-09",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15128860",
@@ -3838,7 +4327,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-12-09",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15060378",
@@ -3862,7 +4354,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-11-30",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15128889",
@@ -3886,7 +4381,10 @@
         "SIGNAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-03-11",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15128986",
@@ -3911,7 +4409,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-06-15",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15155408",
@@ -3933,7 +4434,10 @@
       "schema_fingerprint": "b88ed9e7d0b8b34a118f840053fe17ae5d94ebf4930ade469a742f23a1b58f93",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-11-28",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15155410",
@@ -3960,7 +4464,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-12-08",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15155411",
@@ -3985,7 +4492,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-12-01",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15130956",
@@ -4009,7 +4519,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2025-05-19",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15041822",
@@ -4035,7 +4548,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-07-13",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15042003",
@@ -4060,7 +4576,10 @@
         "ASSET"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-01-14",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15042051",
@@ -4084,7 +4603,10 @@
         "OPERATIONS"
       ],
       "tracked_in_git": false,
-      "municipal_scope": true
+      "municipal_scope": true,
+      "date_modified": "2026-07-13",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15045542",
@@ -4106,7 +4628,10 @@
       "schema_fingerprint": "f9c90c7e8057aec246b54c997c7f545e0c6bb1be501166bef0f3dcf50effabec",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": false
+      "municipal_scope": false,
+      "date_modified": "2025-07-16",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15142772",
@@ -4130,7 +4655,10 @@
         "LOAD"
       ],
       "tracked_in_git": false,
-      "municipal_scope": false
+      "municipal_scope": false,
+      "date_modified": "2026-03-27",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15117759",
@@ -4152,7 +4680,10 @@
       "schema_fingerprint": "6e0152806441c1325bb6e2e83daeb6272e482ca57c5ca65d82c0bd56f19b5ff0",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": false
+      "municipal_scope": false,
+      "date_modified": "2025-09-10",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15139426",
@@ -4176,7 +4707,10 @@
         "SPATIAL"
       ],
       "tracked_in_git": false,
-      "municipal_scope": false
+      "municipal_scope": false,
+      "date_modified": "2025-07-25",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     },
     {
       "dataset_id": "15014243",
@@ -4198,7 +4732,10 @@
       "schema_fingerprint": "f2f17a8ed4376d5ad999d424093b8e7335992ade7b5839ae6fbeafc6115d8816",
       "roles": [],
       "tracked_in_git": false,
-      "municipal_scope": false
+      "municipal_scope": false,
+      "date_modified": "2020-01-22",
+      "publisher": null,
+      "license": "https://data.go.kr/ugs/selectPortalPolicyView.do"
     }
   ]
 }

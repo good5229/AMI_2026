@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import '../../core/presentation/plain_status.dart';
 
 class V13ExternalValidationCard extends StatelessWidget {
   const V13ExternalValidationCard({super.key});
@@ -57,8 +58,8 @@ class V13ExternalValidationCard extends StatelessWidget {
                       _Metric('Primary benchmark', '${primary['dataset_id']}'),
                       _Metric('External EV grade', '${data['external_ev_grade']}'),
                       _Metric('Literature grade', '${data['literature_grade']}'),
-                      _Metric('내부 전력계량 자료', '${data['internal_ami_observation']}'),
-                      _Metric('간접 기준 일치 여부', '${data['h1_proxy_status']}'),
+                      _Metric('내부 전력계량 자료', plainStatusLabel(data['internal_ami_observation'])),
+                      _Metric('간접 기준 일치 여부', plainStatusLabel(data['h1_proxy_status'])),
                       _Metric('Human review', '${data['human_review_status']}'),
                       _Metric('Field confirmation', '${data['field_confirmation']}'),
                     ],
