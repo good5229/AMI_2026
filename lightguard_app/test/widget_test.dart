@@ -254,6 +254,8 @@ void main() {
     expect(find.textContaining('1번 전류선(i1)'), findsAtLeastNWidgets(1));
     expect(find.text('신호 형태 일치 수준'), findsAtLeastNWidgets(1));
     expect(find.text('높음'), findsAtLeastNWidgets(1));
+    expect(find.text('보통 이상'), findsAtLeastNWidgets(1));
+    expect(find.text('medium_high'), findsNothing);
     expect(find.byKey(const Key('ami-case-B-L-35-2026-05-11')), findsOneWidget);
     expect(find.text(AmiValidationScreen.disclaimer), findsAtLeastNWidgets(1));
     if (events.isNotEmpty) {

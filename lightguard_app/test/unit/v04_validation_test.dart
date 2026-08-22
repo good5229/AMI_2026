@@ -18,7 +18,7 @@ void main() {
         greaterThan(summary.bestCandidateCount));
     expect(summary.bestCandidateCount, greaterThan(0));
     expect(summary.weatherLabel,
-        anyOf('기상 Context 반영', '기상 Context 참고정보'));
+        anyOf('기상자료 반영', '기상자료 참고정보'));
   });
 
   test('calibration and confirmatory holdout metadata are separated', () {

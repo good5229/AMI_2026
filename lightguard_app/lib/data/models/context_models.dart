@@ -105,8 +105,8 @@ class V04ValidationSummary {
   }
 
   String get weatherLabel => weatherDecision == 'scoring_keep'
-      ? '기상 Context 반영'
-      : '기상 Context 참고정보';
+      ? '기상자료 반영'
+      : '기상자료 참고정보';
 }
 
 class V05ValidationSummary {

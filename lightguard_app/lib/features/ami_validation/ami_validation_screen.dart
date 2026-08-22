@@ -836,6 +836,7 @@ String _phaseLabel(String value) {
 
 String _confidenceLabel(String value) => switch (value.toLowerCase()) {
       'high' => '높음',
+      'medium_high' || 'high_medium' => '보통 이상',
       'medium' => '보통',
       'low' => '낮음',
       _ => value.isEmpty ? '평가 정보 없음' : value,
