@@ -158,6 +158,7 @@ void main() {
     expect(find.text('지도에서 위치 보기'), findsOneWidget);
     expect(find.text('좌표'), findsNothing);
     expect(find.textContaining('35.000000, 129.000000'), findsNothing);
+    expect(find.text('지도에서 위치를 확인할 수 있습니다.'), findsOneWidget);
 
     final sectionCFinder =
         find.byKey(const Key('section-cabinet-section-summary-c'));
@@ -304,6 +305,7 @@ LightguardData _sampleData() {
       _sampleCabinet(
         'CAB-002',
         fixtureName: 'CAB-002',
+        address: '35.000000, 129.000000',
         amiMeter: const AmiPayload(
           hasRealAmi: false,
           amiState: 'unlinked',
@@ -357,6 +359,7 @@ LightguardData _sampleData() {
 CabinetRecord _sampleCabinet(
   String uid, {
   required String fixtureName,
+  String address = '부산 수영구',
   required AmiPayload amiMeter,
   required String severity,
   required int rank,
@@ -375,7 +378,7 @@ CabinetRecord _sampleCabinet(
       lampCount: 10,
       controllerType: 'ctrl',
       linkStatus: 'unlinked',
-      address: '부산 수영구',
+      address: address,
       fixtures: const [],
     ),
     expectedSchedule: const ExpectedSchedule(
