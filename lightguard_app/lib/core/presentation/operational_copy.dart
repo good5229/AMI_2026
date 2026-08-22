@@ -54,7 +54,7 @@ String operationalEvidenceSourceLabel(CabinetRecord cabinet) {
     return '검증용 모의 신호';
   }
   if (cabinet.evidenceSource == EvidenceSource.realCompetitionAmi) {
-    return '공모전 제공 전력계량 자료';
+    return '가명 처리 전력계량 자료';
   }
   if (cabinet.signalSource == SignalSource.realMunicipalAmi) {
     return '지자체 연계 전력계량 자료';

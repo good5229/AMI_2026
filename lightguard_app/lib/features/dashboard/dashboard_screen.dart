@@ -117,7 +117,7 @@ class DashboardScreen extends ConsumerWidget {
                     ),
                     _EvidenceMetricCard(
                       key: const Key('dashboard-actual-ami-count'),
-                      label: '공모전 제공 전력계량 자료 분석',
+                      label: '가명 처리 전력계량 자료 분석',
                       value: '${events.length}건',
                       detail:
                           '현장 확인 전 분석 후보 · 추정 초과사용량 ${excessKwh.toStringAsFixed(3)} kWh',
@@ -182,7 +182,7 @@ class DashboardScreen extends ConsumerWidget {
                 Card(
                   child: ListTile(
                     leading: const Icon(Icons.bug_report_outlined),
-                    title: const Text('공모전 전력계량 자료 분석 사례 보기'),
+                    title: const Text('전력계량 자료 분석 사례 보기'),
                     onTap: () => context.go('/ami-events'),
                     trailing: const Icon(Icons.chevron_right),
                   ),

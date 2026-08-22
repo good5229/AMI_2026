@@ -233,7 +233,7 @@
   "claim_boundary": "Not field or external regional AMI generalization.",
   "context_year": 2025,
   "external_ami_validation": {
-    "reason": "Competition AMI contains five Busan B-line meters without municipal cabinet mapping; no Gangneung or Chungju field AMI is available.",
+    "reason": "The anonymized metering dataset contains five Busan B-line meters without municipal cabinet mapping; no Gangneung or Chungju field AMI is available.",
     "status": "unavailable"
   },
   "frozen_detector_config": {

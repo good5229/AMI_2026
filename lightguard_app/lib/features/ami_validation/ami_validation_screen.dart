@@ -10,10 +10,8 @@ import 'v12r_literature_card.dart';
 import 'v13_external_validation_card.dart';
 import 'v14_physical_external_card.dart';
 import 'v15_target_mechanism_card.dart';
-import 'v16_competition_utility_card.dart';
 import 'municipal_operations_evidence_card.dart';
 import 'nationwide_file_census_card.dart';
-import 'submission_readiness_card.dart';
 
 import '../../core/widgets/app_scaffold.dart';
 import '../../core/widgets/status_badges.dart';
@@ -25,7 +23,7 @@ class AmiValidationScreen extends ConsumerWidget {
   const AmiValidationScreen({super.key});
 
   static const disclaimer =
-      '공모전에서 제공한 가명 처리 전력계량 자료에서 찾은 확인 후보입니다. 실제 고장 여부는 정비 이력 또는 현장 확인이 필요합니다.';
+      '가명 처리된 실제 전력계량 자료에서 찾은 확인 후보입니다. 실제 고장 여부는 정비 이력 또는 현장 확인이 필요합니다.';
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -42,7 +40,7 @@ class AmiValidationScreen extends ConsumerWidget {
           const Scaffold(body: Center(child: CircularProgressIndicator())),
       error: (error, _) =>
           const Scaffold(
-            body: Center(child: Text('공모전 전력계량 자료를 불러오지 못했습니다.')),
+            body: Center(child: Text('전력계량 자료를 불러오지 못했습니다.')),
           ),
       data: (events) {
         final featured = events.where(_isFeatured).toList(growable: false);
@@ -53,7 +51,7 @@ class AmiValidationScreen extends ConsumerWidget {
             event.firstSample.startsWith('2026-05-11')).firstOrNull;
 
         return LightguardShell(
-          title: '공모전 전력계량 자료 분석 근거',
+          title: '전력계량 이상 신호 분석',
           child: ListView(
             padding: const EdgeInsets.all(12),
             children: [
@@ -220,10 +218,6 @@ class _V06EvidenceHardening extends StatelessWidget {
             const SizedBox(height: 16),
             const V15TargetMechanismCard(),
             const SizedBox(height: 16),
-            const V16CompetitionUtilityCard(),
-            const SizedBox(height: 16),
-            const SubmissionReadinessCard(),
-            const SizedBox(height: 12),
             const MunicipalOperationsEvidenceCard(),
             const SizedBox(height: 16),
             const NationwideFileCensusCard(),
@@ -439,7 +433,7 @@ class _ActualReplayCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('가명 처리된 공모전 전력계량 자료 · 실제 시간대별 측정값',
+            Text('가명 처리 전력계량 자료 · 실제 시간대별 측정값',
                 style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 4),
             Text('실제 측정 구간 $windowCount개 · 계량기 ${event.meterId} 대표 구간'),
@@ -577,7 +571,7 @@ class _SummaryCard extends StatelessWidget {
               runSpacing: 8,
               crossAxisAlignment: WrapCrossAlignment.center,
               children: [
-                StatusBadge(type: BadgeType.realAmi, label: '실제 공모전 전력계량 자료'),
+                StatusBadge(type: BadgeType.realAmi, label: '가명 처리 전력계량 자료'),
                 StatusBadge(type: BadgeType.validation, label: '현장 미확인 점검 후보'),
               ],
             ),
@@ -616,7 +610,7 @@ class _CaseStudyCard extends StatelessWidget {
                 Expanded(
                     child: Text(event.meterId,
                         style: Theme.of(context).textTheme.titleLarge)),
-                const StatusBadge(type: BadgeType.realAmi, label: '실제 공모전 전력계량 자료'),
+                const StatusBadge(type: BadgeType.realAmi, label: '가명 처리 전력계량 자료'),
               ],
             ),
             const SizedBox(height: 6),
@@ -634,7 +628,7 @@ class _CaseStudyCard extends StatelessWidget {
                 '${event.estimatedExcessKwh.toStringAsFixed(3)} kWh'),
             _kv('Pattern confidence', event.patternConfidence),
             _kv('Fault status', '현장 미확인 점검 후보'),
-            _kv('자료 구분', '가명 처리된 공모전 전력계량 자료 검증'),
+            _kv('자료 구분', '가명 처리된 실제 전력계량 자료 분석'),
             const SizedBox(height: 10),
             const Text(AmiValidationScreen.disclaimer,
                 style: TextStyle(fontSize: 12, color: Color(0xFF6B4D00))),
@@ -744,7 +738,7 @@ class _EventSummaryCard extends StatelessWidget {
               '${event.estimatedExcessKwh.toStringAsFixed(3)} kWh'),
           _kv('Pattern confidence', event.patternConfidence),
           _kv('Fault status', '현장 미확인 점검 후보'),
-          _kv('자료 구분', '가명 처리된 공모전 전력계량 자료 검증'),
+          _kv('자료 구분', '가명 처리된 실제 전력계량 자료 분석'),
         ],
       ),
     );

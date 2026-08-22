@@ -4,9 +4,9 @@ class V16CompetitionUtilityContract {
   const V16CompetitionUtilityContract._();
 
   static const status = '탐색 목표를 충족하지 못함';
-  static const title = '공모전 목적과 3단계 업무 분류 기준 비교';
+  static const title = '운영 적용 기준과 3단계 업무 분류 비교';
   static const officialObjective =
-      '사업 적합성 · 개발 용이성 · 아이디어 구체성/완성도 · 활용목적 · 유형효과 · 범용성';
+      '현장 적용성 · 데이터 연결 용이성 · 판정 근거 명확성 · 운영 활용성 · 지역 확장성';
   static const assetScope = '공식 계량기 129개 중 가로등 계량기 5개 · 단상 2개 / 삼상 3개 · 모두 분석 가능';
   static const recovery = '검증용 이상 사례 전달 차이 -21.95%p · 목표 범위인 -10%p 이내를 충족하지 못함';
   static const benign = '검증용 정상 사례 전달 차이 -2.56%p · 목표 범위인 -10%p 이하를 충족하지 못함';

@@ -248,8 +248,8 @@ void main() {
     await tester.pumpWidget(buildTestApp(initialLocation: AppRoute.ami));
     await tester.pumpAndSettle();
 
-    expect(find.text('공모전 전력계량 자료 분석 근거'), findsOneWidget);
-    expect(find.text('실제 공모전 전력계량 자료'), findsAtLeastNWidgets(1));
+    expect(find.text('전력계량 이상 신호 분석'), findsOneWidget);
+    expect(find.text('가명 처리 전력계량 자료'), findsAtLeastNWidgets(1));
     expect(find.byKey(const Key('ami-case-B-L-35-2026-05-11')), findsOneWidget);
     expect(find.text(AmiValidationScreen.disclaimer), findsAtLeastNWidgets(1));
     if (events.isNotEmpty) {

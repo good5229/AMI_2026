@@ -1,6 +1,6 @@
 {
   "schema_version": "lightguard.v10.real-background-summary.1",
-  "source_mode": "anonymized_competition_ami",
+  "source_mode": "anonymized_metering_data",
   "meters": 5,
   "period": "2026-04-01/2026-06-30",
   "background_pool_units": 200,

@@ -1,6 +1,6 @@
 {
   "schema_version": "lightguard-ami-replay-v0.3",
-  "source_kind": "anonymized_competition_ami",
+  "source_kind": "anonymized_metering_data",
   "source_workbook_sha256": "c18b49022d1c7dee2117a8d65a07d71351fb1aea8538751b7032867e4081b7d0",
   "source_sheet": "B선로 AMI DATA",
   "extracted_at": "2026-08-20T07:24:23Z",

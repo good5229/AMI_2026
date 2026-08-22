@@ -23,7 +23,7 @@ class SubmissionReadinessCard extends StatelessWidget {
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
-                const Chip(label: Text('제출 검수 완료')),
+                const Chip(label: Text('운영 흐름 검수 완료')),
               ],
             ),
             const SizedBox(height: 12),

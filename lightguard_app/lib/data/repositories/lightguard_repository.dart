@@ -74,7 +74,7 @@ class ValidationEvent {
     );
   }
 
-  String get badge => '실제 공모전 AMI';
+  String get badge => '가명 처리 전력계량 자료';
 }
 
 class LightguardRepository {

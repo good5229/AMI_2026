@@ -4,8 +4,8 @@ import 'package:lightguard_app/features/ami_validation/v16_competition_utility_c
 void main() {
   test('v0.16 exposes failed exploratory targets and claim boundary', () {
     expect(V16CompetitionUtilityContract.status, '탐색 목표를 충족하지 못함');
-    expect(V16CompetitionUtilityContract.officialObjective, contains('사업 적합성'));
-    expect(V16CompetitionUtilityContract.officialObjective, contains('범용성'));
+    expect(V16CompetitionUtilityContract.officialObjective, contains('현장 적용성'));
+    expect(V16CompetitionUtilityContract.officialObjective, contains('지역 확장성'));
     expect(V16CompetitionUtilityContract.assetScope, contains('가로등 계량기 5개'));
     expect(V16CompetitionUtilityContract.assetScope, contains('모두 분석 가능'));
     expect(V16CompetitionUtilityContract.recovery, contains('-21.95%p'));
