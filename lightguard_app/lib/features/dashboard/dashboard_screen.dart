@@ -46,7 +46,6 @@ class DashboardScreen extends ConsumerWidget {
                 _DashboardHero(
                   region: region,
                   priorityCount: data.countByStatus(InspectionStatus.priorityInspection),
-                  recommendedCount: data.countByStatus(InspectionStatus.inspectionRecommended),
                   onInspect: () => context.go('/inspections'),
                   onMap: () => context.go('/map'),
                 ),
@@ -67,10 +66,9 @@ class DashboardScreen extends ConsumerWidget {
 }
 
 class _DashboardHero extends StatelessWidget {
-  const _DashboardHero({required this.region, required this.priorityCount, required this.recommendedCount, required this.onInspect, required this.onMap});
+  const _DashboardHero({required this.region, required this.priorityCount, required this.onInspect, required this.onMap});
   final RegionId region;
   final int priorityCount;
-  final int recommendedCount;
   final VoidCallback onInspect;
   final VoidCallback onMap;
 
@@ -94,8 +92,6 @@ class _DashboardHero extends StatelessWidget {
             ]),
             const SizedBox(height: 18),
             Text('오늘 ${region.label} 우선 확인 분전함 $priorityCount개', style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.white, fontWeight: FontWeight.w900, height: 1.18)),
-            const SizedBox(height: 8),
-            Text('현장점검 검토 대상 $recommendedCount개를 포함해 출동 전 확인할 분전함을 보여줍니다.', style: const TextStyle(color: Color(0xFFD8E7E5), height: 1.5)),
             const SizedBox(height: 18),
             Wrap(spacing: 10, runSpacing: 10, children: [
               FilledButton.icon(onPressed: onInspect, style: FilledButton.styleFrom(backgroundColor: const Color(0xFFF7C948), foregroundColor: AppTheme.ink), icon: const Icon(Icons.fact_check_outlined, size: 19), label: const Text('확인 대상 보기')),

@@ -484,11 +484,6 @@ class _CabinetMapInfoCard extends StatelessWidget {
               const Divider(height: 18),
               Text(cabinet.assetInfo.location,
                   maxLines: 2, overflow: TextOverflow.ellipsis),
-              const SizedBox(height: 4),
-              Text(
-                '${cabinet.assetInfo.latitude!.toStringAsFixed(6)}, ${cabinet.assetInfo.longitude!.toStringAsFixed(6)}',
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
               const SizedBox(height: 10),
               Wrap(
                 spacing: 8,

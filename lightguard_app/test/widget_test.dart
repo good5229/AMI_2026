@@ -173,7 +173,7 @@ void main() {
     expect(find.text('지도에서 위치 보기'), findsOneWidget);
     expect(find.text('좌표'), findsNothing);
     expect(find.textContaining('35.000000, 129.000000'), findsNothing);
-    expect(find.text('지도에서 위치를 확인할 수 있습니다.'), findsOneWidget);
+    expect(find.text('지도에서 위치를 확인할 수 있습니다.'), findsNothing);
 
     final sectionCFinder =
         find.byKey(const Key('section-cabinet-section-summary-c'));
@@ -254,7 +254,7 @@ void main() {
     expect(find.byKey(const Key('map-selected-cabinet-card')), findsOneWidget);
     expect(find.text('CAB-001'), findsAtLeastNWidgets(1));
     expect(find.text('분전함 상세 보기'), findsOneWidget);
-    expect(find.textContaining('35.000000, 129.000000'), findsOneWidget);
+    expect(find.textContaining('35.000000, 129.000000'), findsNothing);
   });
 
   testWidgets(
