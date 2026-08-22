@@ -34,7 +34,9 @@ jobs:
         run: flutter test --reporter expanded --no-dds
         working-directory: lightguard_app
       - name: Build web
-        run: flutter build web --release --base-href /AMI_2026/
+        run: |
+          flutter build web --release --base-href /AMI_2026/ --pwa-strategy=none
+          test ! -f build/web/flutter_service_worker.js
         working-directory: lightguard_app
       - name: Configure Pages
         uses: actions/configure-pages@v5
