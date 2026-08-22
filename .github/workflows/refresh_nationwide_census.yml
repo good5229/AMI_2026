@@ -1,0 +1,33 @@
+name: audit_nationwide_public_data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '20 20 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install crawler certificate dependency
+        run: python -m pip install --disable-pip-version-check certifi
+      - name: Refresh public-file census in the runner
+        run: python scripts/build_v24_nationwide_census.py
+      - name: Validate privacy-safe artifacts
+        run: ./scripts/v24_preflight.sh
+      - name: Detect upstream changes
+        run: |
+          if ! git diff --quiet -- lightguard_v0_1/data/validation/v24 lightguard_v0_1/reports/v24 lightguard_app/assets/data/context/v24_nationwide_file_census.json; then
+            echo '::error::Data.go.kr 공개파일 목록 또는 메타데이터가 변경됐습니다. 검토 후 수동 갱신하세요.'
+            git diff --stat
+            exit 1
+          fi
+          echo '변경 없음: 현재 전국 공개데이터 집계가 최신입니다.'

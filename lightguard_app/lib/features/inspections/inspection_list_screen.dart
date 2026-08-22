@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../core/widgets/app_scaffold.dart';
 import '../../core/widgets/status_badges.dart';
 import '../../core/presentation/operational_copy.dart';
+import '../../core/storage/inspection_outcome_storage.dart';
 import '../../data/models/lightguard_models.dart';
 import '../../data/models/region_config.dart';
 import '../../data/repositories/lightguard_repository.dart';
@@ -18,6 +19,13 @@ class InspectionListScreen extends ConsumerStatefulWidget {
 
 class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
   _InspectionFilter _filter = _InspectionFilter.all;
+  late Map<String, Map<String, String>> _outcomes;
+
+  @override
+  void initState() {
+    super.initState();
+    _outcomes = loadInspectionOutcomes();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -173,6 +181,37 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                         const SizedBox(height: 10),
                         Text('분류 사유: ${operationalPriorityReason(c)}',
                             maxLines: 3),
+                        if (_outcomes[c.cabinetUid] case final outcome?) ...[
+                          const SizedBox(height: 8),
+                          Semantics(
+                            liveRegion: true,
+                            label: '저장된 확인 결과 ${outcome['status']}',
+                            child: Container(
+                              width: double.infinity,
+                              padding: const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFEAF4EC),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Text(
+                                '확인 결과: ${outcome['status']}\n메모: ${outcome['note']?.isEmpty == true ? '없음' : outcome['note']}',
+                              ),
+                            ),
+                          ),
+                        ],
+                        const SizedBox(height: 6),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: OutlinedButton.icon(
+                            onPressed: () => _recordOutcome(context, c),
+                            icon: const Icon(Icons.edit_note_outlined),
+                            label: Text(
+                              _outcomes.containsKey(c.cabinetUid)
+                                  ? '확인 결과 수정'
+                                  : '확인 결과 기록',
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -259,6 +298,80 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
     if (raw is List) return raw.map((value) => value.toString()).toSet();
     if (raw is String) return <String>{raw};
     return const <String>{};
+  }
+
+  Future<void> _recordOutcome(
+      BuildContext context, CabinetRecord cabinet) async {
+    final existing = _outcomes[cabinet.cabinetUid];
+    var status = existing?['status'] ?? '원격 확인 예정';
+    final noteController = TextEditingController(text: existing?['note'] ?? '');
+    final result = await showDialog<Map<String, String>>(
+      context: context,
+      builder: (context) => StatefulBuilder(
+        builder: (context, setDialogState) => AlertDialog(
+          title: Text('${cabinet.assetInfo.cabinetName} 확인 결과'),
+          content: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text('담당자가 확인한 결과를 이 브라우저에 저장합니다.'),
+                const SizedBox(height: 12),
+                DropdownButtonFormField<String>(
+                  initialValue: status,
+                  decoration: const InputDecoration(
+                    labelText: '확인 상태',
+                    border: OutlineInputBorder(),
+                  ),
+                  items: const [
+                    DropdownMenuItem(value: '원격 확인 예정', child: Text('원격 확인 예정')),
+                    DropdownMenuItem(value: '추적 관찰', child: Text('추적 관찰')),
+                    DropdownMenuItem(value: '현장점검 필요', child: Text('현장점검 필요')),
+                    DropdownMenuItem(value: '정상 확인', child: Text('정상 확인')),
+                    DropdownMenuItem(value: '고장 확인', child: Text('고장 확인')),
+                    DropdownMenuItem(value: '조치 완료', child: Text('조치 완료')),
+                  ],
+                  onChanged: (value) =>
+                      setDialogState(() => status = value ?? status),
+                ),
+                const SizedBox(height: 12),
+                TextField(
+                  controller: noteController,
+                  maxLines: 3,
+                  decoration: const InputDecoration(
+                    labelText: '확인 메모',
+                    hintText: '예: 제어기 상태 정상, 다음 운전 주기까지 관찰',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                const Text(
+                  '브라우저에만 저장되며 서버나 공공데이터 원본에는 반영되지 않습니다.',
+                  style: TextStyle(fontSize: 12),
+                ),
+              ],
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('취소'),
+            ),
+            FilledButton(
+              onPressed: () => Navigator.pop(context, {
+                'status': status,
+                'note': noteController.text.trim(),
+              }),
+              child: const Text('저장'),
+            ),
+          ],
+        ),
+      ),
+    );
+    noteController.dispose();
+    if (result == null || !mounted) return;
+    setState(() => _outcomes[cabinet.cabinetUid] = result);
+    saveInspectionOutcomes(_outcomes);
   }
 
 }

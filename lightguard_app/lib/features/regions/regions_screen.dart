@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/widgets/app_scaffold.dart';
 import '../../data/models/region_config.dart';
 import '../../data/repositories/lightguard_repository.dart';
+import 'region_onboarding_card.dart';
 
 class RegionsScreen extends ConsumerStatefulWidget {
   const RegionsScreen({super.key});
@@ -93,6 +94,8 @@ class _RegionsScreenState extends ConsumerState<RegionsScreen> {
                       ),
                   ],
                 ),
+                const SizedBox(height: 22),
+                const RegionOnboardingCard(),
                 const SizedBox(height: 22),
                 Row(
                   children: [
@@ -429,9 +432,14 @@ class _CatalogRegionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final roleLabels = region.roles.map(_roleLabel).toList(growable: false);
-    return Card(
-      margin: const EdgeInsets.only(bottom: 8),
-      child: InkWell(
+    return Semantics(
+      container: true,
+      button: true,
+      label:
+          '${region.name}, ${region.readinessLabel}, 공개파일 ${region.datasetCount}개, 자세한 정보를 보려면 선택',
+      child: Card(
+        margin: const EdgeInsets.only(bottom: 8),
+        child: InkWell(
         onTap: onTap,
         child: Padding(
           padding: const EdgeInsets.all(14),
@@ -515,6 +523,7 @@ class _CatalogRegionCard extends StatelessWidget {
               ],
             ],
           ),
+        ),
         ),
       ),
     );

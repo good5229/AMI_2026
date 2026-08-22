@@ -188,6 +188,23 @@ void main() {
     );
   });
 
+  testWidgets('Inspection outcome can be recorded for an operator',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(buildTestApp(initialLocation: AppRoute.inspections));
+    await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(
+      find.text('확인 결과 기록').first,
+      250,
+      scrollable: find.byType(Scrollable).last,
+    );
+    await tester.tap(find.text('확인 결과 기록').first);
+    await tester.pumpAndSettle();
+    expect(find.textContaining('브라우저에만 저장'), findsOneWidget);
+    await tester.tap(find.text('저장'));
+    await tester.pumpAndSettle();
+    expect(find.textContaining('확인 결과: 원격 확인 예정'), findsOneWidget);
+  });
+
   testWidgets('Cabinet detail exposes activation color legend for a signal',
       (WidgetTester tester) async {
     await tester.pumpWidget(buildTestApp(initialLocation: '/cabinet/CAB-001'));
