@@ -187,12 +187,12 @@ class CabinetDetailScreen extends ConsumerWidget {
     return Card(
       key: Key(keySuffix == null ? 'section-$title' : 'section-$keySuffix'),
       child: Padding(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(title, style: const TextStyle(fontWeight: FontWeight.w700)),
-            const Divider(),
+            Text(title, style: const TextStyle(fontWeight: FontWeight.w800)),
+            const Divider(height: 22),
             ...children,
           ],
         ),
@@ -204,19 +204,28 @@ class CabinetDetailScreen extends ConsumerWidget {
         padding: const EdgeInsets.symmetric(vertical: 3),
         child: LayoutBuilder(
           builder: (context, constraints) {
-            final labelText = Text(label,
-                style: const TextStyle(fontWeight: FontWeight.w600));
+            final labelText = Text(
+              label,
+              style: const TextStyle(
+                color: Color(0xFF5C6B73),
+                fontWeight: FontWeight.w600,
+              ),
+            );
+            final valueText = Text(
+              value,
+              style: const TextStyle(fontWeight: FontWeight.w500),
+            );
             if (constraints.maxWidth < 420) {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [labelText, const SizedBox(height: 2), Text(value)],
+                children: [labelText, const SizedBox(height: 3), valueText],
               );
             }
             return Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(width: 140, child: labelText),
-                Expanded(child: Text(value)),
+                Expanded(child: valueText),
               ],
             );
           },

@@ -485,8 +485,8 @@ class _MetricCard extends StatelessWidget {
     final cardWidth = viewportWidth < 600
         ? (viewportWidth - 36) / 2
         : 210.0;
-    final isPriority = title == '우선 점검';
-    final isRecommended = title == '점검 권고';
+    final isPriority = title == '우선 확인 필요';
+    final isRecommended = title == '현장 확인 권고';
     final accent = isPriority
         ? const Color(0xFFB42318)
         : isRecommended
@@ -494,7 +494,7 @@ class _MetricCard extends StatelessWidget {
             : AppTheme.ink;
     return SizedBox(
       width: cardWidth,
-      height: 94,
+      height: 98,
       child: Card(
         margin: EdgeInsets.zero,
         color: isPriority
@@ -503,17 +503,25 @@ class _MetricCard extends StatelessWidget {
                 ? const Color(0xFFFFF7E6)
                 : null,
         child: Padding(
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.all(14),
           child: Row(
             children: [
-              Icon(icon, color: accent),
-              const SizedBox(width: 10),
+              Container(
+                width: 34,
+                height: 34,
+                decoration: BoxDecoration(
+                  color: accent.withValues(alpha: 0.09),
+                  borderRadius: BorderRadius.circular(9),
+                ),
+                child: Icon(icon, color: accent, size: 20),
+              ),
+              const SizedBox(width: 12),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(title, style: Theme.of(context).textTheme.labelMedium),
-                    const SizedBox(height: 6),
+                    const SizedBox(height: 4),
                     Text(value,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,

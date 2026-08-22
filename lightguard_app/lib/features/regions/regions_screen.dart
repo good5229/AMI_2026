@@ -378,6 +378,7 @@ class _OperationalRegionCard extends StatelessWidget {
     return SizedBox(
       width: 330,
       child: Card(
+        color: selected ? const Color(0xFFF0F7F4) : null,
         child: Padding(
           padding: const EdgeInsets.all(14),
           child: Column(
@@ -454,9 +455,6 @@ class _CatalogRegionCard extends StatelessWidget {
                     child: Text(region.name,
                         style: Theme.of(context).textTheme.titleMedium),
                   ),
-                  Chip(label: Text(region.readinessLabel)),
-                  const SizedBox(width: 6),
-                  Text('공개파일 ${region.datasetCount}개'),
                   IconButton(
                     tooltip: compared ? '지역 비교에서 제외' : '지역 비교에 추가',
                     onPressed: onCompare,
@@ -474,6 +472,8 @@ class _CatalogRegionCard extends StatelessWidget {
                 spacing: 6,
                 runSpacing: 6,
                 children: [
+                  Chip(label: Text(region.readinessLabel)),
+                  Chip(label: Text('공개파일 ${region.datasetCount}개')),
                   for (final label in roleLabels) Chip(label: Text(label)),
                 ],
               ),

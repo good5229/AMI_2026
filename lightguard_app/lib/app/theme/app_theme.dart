@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   static const ink = Color(0xFF102A43);
-  static const canvas = Color(0xFFF4F1EA);
-  static const paper = Color(0xFFFFFDF8);
+  static const canvas = Color(0xFFF5F6F2);
+  static const paper = Color(0xFFFFFEFB);
+  static const surfaceMuted = Color(0xFFF0F3EF);
+  static const textMuted = Color(0xFF5C6B73);
   static const signal = Color(0xFF0F766E);
   static const caution = Color(0xFFD97706);
-  static const line = Color(0xFFD8D4CA);
+  static const line = Color(0xFFDDE2DD);
 
   static ThemeData light() {
     const scheme = ColorScheme.light(
@@ -65,22 +67,22 @@ class AppTheme {
       cardTheme: const CardThemeData(
         color: paper,
         surfaceTintColor: Colors.transparent,
-        elevation: 0.6,
-        shadowColor: Color(0x1A102A43),
-        margin: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        elevation: 0,
+        shadowColor: Color(0x12102A43),
+        margin: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(20)),
+          borderRadius: BorderRadius.all(Radius.circular(14)),
           side: BorderSide(color: line),
         ),
       ),
       dividerTheme: const DividerThemeData(color: line, thickness: 1),
       chipTheme: ChipThemeData(
-        backgroundColor: const Color(0xFFE7F2EF),
-        side: BorderSide.none,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        backgroundColor: surfaceMuted,
+        side: const BorderSide(color: line),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         labelStyle:
-            const TextStyle(color: ink, fontWeight: FontWeight.w700),
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+            const TextStyle(color: ink, fontWeight: FontWeight.w600),
+        padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 4),
       ),
       navigationBarTheme: NavigationBarThemeData(
         backgroundColor: paper,
@@ -119,6 +121,34 @@ class AppTheme {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           textStyle: const TextStyle(fontWeight: FontWeight.w800),
         ),
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        filled: true,
+        fillColor: paper,
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 14, vertical: 13),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: const BorderSide(color: line),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: const BorderSide(color: line),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: const BorderSide(color: signal, width: 2),
+        ),
+      ),
+      listTileTheme: const ListTileThemeData(
+        contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 2),
+        iconColor: ink,
+      ),
+      expansionTileTheme: const ExpansionTileThemeData(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+        collapsedShape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+        iconColor: signal,
+        collapsedIconColor: ink,
       ),
     );
   }

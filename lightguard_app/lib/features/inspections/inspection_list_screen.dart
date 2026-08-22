@@ -136,16 +136,19 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                                 type: statusToBadge(c.status), label: status),
                           ],
                         ),
-                          if (signal != null) ...[
+                          if (signal != null &&
+                              c.status != InspectionStatus.normal) ...[
                             const SizedBox(height: 12),
                             Container(
                             width: double.infinity,
-                            padding: const EdgeInsets.all(12),
-                            decoration: BoxDecoration(
-                              color: const Color(0xFFFFF5E8),
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(
-                                color: const Color(0xFFF2C98F),
+                            padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
+                            decoration: const BoxDecoration(
+                              color: Color(0xFFFFFAF1),
+                              border: Border(
+                                left: BorderSide(
+                                  color: Color(0xFFD97706),
+                                  width: 3,
+                                ),
                               ),
                             ),
                             child: Row(
@@ -154,7 +157,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                                 const Icon(
                                   Icons.priority_high_rounded,
                                   size: 20,
-                                  color: Color(0xFF9A4E00),
+                                  color: Color(0xFF8A5200),
                                 ),
                                 const SizedBox(width: 10),
                                 Expanded(
@@ -168,7 +171,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                                             .textTheme
                                             .labelLarge
                                             ?.copyWith(
-                                              color: const Color(0xFF7A3D00),
+                                              color: const Color(0xFF6E4600),
                                               fontWeight: FontWeight.w700,
                                             ),
                                       ),

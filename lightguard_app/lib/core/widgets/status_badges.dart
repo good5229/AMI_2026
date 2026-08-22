@@ -13,24 +13,38 @@ class StatusBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final color = switch (type) {
-      BadgeType.normal => Colors.green,
+      BadgeType.normal => const Color(0xFF347149),
       BadgeType.realAmi => const Color(0xFF007C78),
-      BadgeType.scenario => Colors.orange,
-      BadgeType.validation => Colors.indigo,
-      BadgeType.inspect => Colors.red,
+      BadgeType.scenario => const Color(0xFF9A5B00),
+      BadgeType.validation => const Color(0xFF405D73),
+      BadgeType.inspect => const Color(0xFFB42318),
     };
 
     return Container(
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.12),
-        borderRadius: BorderRadius.circular(999),
-        border: Border.all(color: color),
+        color: color.withValues(alpha: 0.08),
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: color.withValues(alpha: 0.32)),
       ),
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-      child: Text(
-        label,
-        style:
-            TextStyle(color: color, fontWeight: FontWeight.w700, fontSize: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            width: 6,
+            height: 6,
+            decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+          ),
+          const SizedBox(width: 6),
+          Text(
+            label,
+            style: TextStyle(
+              color: color,
+              fontWeight: FontWeight.w700,
+              fontSize: 12,
+            ),
+          ),
+        ],
       ),
     );
   }

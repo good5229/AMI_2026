@@ -22,7 +22,7 @@ class _RegionOnboardingCardState extends State<RegionOnboardingCard> {
     final missing = _contracts.keys.toSet().difference(_roles);
     return Card(
       key: const Key('region-onboarding-card'),
-      color: const Color(0xFFF2F6FA),
+      color: const Color(0xFFF1F6F4),
       child: ExpansionTile(
         leading: const Icon(Icons.upload_file_outlined),
         title: const Text('새 지역 자료 연결 준비'),
@@ -124,7 +124,12 @@ class _OnboardingStep extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 6),
       child: Row(
         children: [
-          CircleAvatar(radius: 11, child: Text(number)),
+          CircleAvatar(
+            radius: 11,
+            backgroundColor: const Color(0xFFDDEDE8),
+            foregroundColor: const Color(0xFF0F5D59),
+            child: Text(number),
+          ),
           const SizedBox(width: 8),
           Expanded(child: Text(text)),
         ],

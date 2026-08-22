@@ -100,6 +100,7 @@ class LightguardShell extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: NavigationBar(
+        height: 72,
         selectedIndex: _selectedIndex(tabs, location),
         destinations: [
           for (final t in tabs)
@@ -150,6 +151,10 @@ class _GlossaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       tooltip: '용어 도움말',
+      style: IconButton.styleFrom(
+        backgroundColor: AppTheme.surfaceMuted,
+        minimumSize: const Size(44, 44),
+      ),
       icon: const Icon(Icons.help_outline),
       onPressed: () => showModalBottomSheet<void>(
         context: context,

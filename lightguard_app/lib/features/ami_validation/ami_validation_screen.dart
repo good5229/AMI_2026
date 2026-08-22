@@ -754,9 +754,9 @@ class _EvidenceBar extends StatelessWidget {
                   child: FractionallySizedBox(
                     widthFactor: ratio,
                     child: ColoredBox(
-                      color: label == 'Observed peak'
-                          ? const Color(0xFFE76F51)
-                          : const Color(0xFF2A6F97),
+                      color: label == '실제 관측 최대값'
+                          ? const Color(0xFF0F766E)
+                          : const Color(0xFF9FB7B3),
                     ),
                   ),
                 ),
@@ -814,7 +814,10 @@ Widget _kv(String label, String value) {
             width: 118,
             child: Text(label,
                 style: const TextStyle(fontWeight: FontWeight.w600))),
-        Text(value.isEmpty ? '미제공' : value),
+        Text(
+          value.isEmpty ? '미제공' : value,
+          style: const TextStyle(fontWeight: FontWeight.w500),
+        ),
       ],
     ),
   );
