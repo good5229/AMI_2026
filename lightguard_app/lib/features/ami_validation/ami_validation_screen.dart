@@ -12,6 +12,7 @@ import 'v14_physical_external_card.dart';
 import 'v15_target_mechanism_card.dart';
 import 'v16_competition_utility_card.dart';
 import 'municipal_operations_evidence_card.dart';
+import 'nationwide_file_census_card.dart';
 import 'submission_readiness_card.dart';
 
 import '../../core/widgets/app_scaffold.dart';
@@ -169,6 +170,7 @@ class _V06EvidenceHardening extends StatelessWidget {
             const SizedBox(height: 12),
             const MunicipalOperationsEvidenceCard(),
             const SizedBox(height: 16),
+            const NationwideFileCensusCard(),
             const SizedBox(height: 16),
             Text('Evidence Hardening · Uncertainty First',
                 style: Theme.of(context).textTheme.titleMedium),
