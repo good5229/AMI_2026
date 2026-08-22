@@ -21,9 +21,14 @@ enum _MapFilter {
 }
 
 class MapScreen extends ConsumerStatefulWidget {
-  const MapScreen({super.key, this.focusCabinetUid});
+  const MapScreen({
+    super.key,
+    this.focusCabinetUid,
+    this.showBaseMap = true,
+  });
 
   final String? focusCabinetUid;
+  final bool showBaseMap;
 
   @override
   ConsumerState<MapScreen> createState() => _MapScreenState();
@@ -31,6 +36,28 @@ class MapScreen extends ConsumerStatefulWidget {
 
 class _MapScreenState extends ConsumerState<MapScreen> {
   _MapFilter _filter = _MapFilter.all;
+  final MapController _mapController = MapController();
+  String? _selectedCabinetUid;
+
+  @override
+  void initState() {
+    super.initState();
+    _selectedCabinetUid = widget.focusCabinetUid;
+  }
+
+  @override
+  void didUpdateWidget(covariant MapScreen oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.focusCabinetUid != widget.focusCabinetUid) {
+      _selectedCabinetUid = widget.focusCabinetUid;
+    }
+  }
+
+  @override
+  void dispose() {
+    _mapController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,11 +75,12 @@ class _MapScreenState extends ConsumerState<MapScreen> {
             .where((c) =>
                 c.assetInfo.latitude != null && c.assetInfo.longitude != null)
             .toList(growable: false);
-        final focusedCabinet = widget.focusCabinetUid == null
+        final focusedCabinet = _selectedCabinetUid == null
             ? null
             : allPoints
-                .where((c) => c.cabinetUid == widget.focusCabinetUid)
+                .where((c) => c.cabinetUid == _selectedCabinetUid)
                 .firstOrNull;
+        final isCompactMap = MediaQuery.sizeOf(context).width < 700;
         final targetPoints = targetIds.isEmpty
             ? allPoints
             : allPoints
@@ -131,6 +159,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
           child: Stack(
             children: [
               FlutterMap(
+                mapController: _mapController,
                 options: MapOptions(
                   initialCenter: center,
                   initialZoom: focusedCabinet == null ? 13 : 17,
@@ -138,11 +167,12 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                   maxZoom: 18,
                 ),
                 children: [
-                  TileLayer(
-                    urlTemplate:
-                        'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                    userAgentPackageName: 'kr.example.lightguard',
-                  ),
+                  if (widget.showBaseMap)
+                    TileLayer(
+                      urlTemplate:
+                          'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                      userAgentPackageName: 'kr.example.lightguard',
+                    ),
                   MarkerLayer(
                     key: const Key('map-marker-layer'),
                     markers: [
@@ -153,7 +183,8 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                           point: LatLng(
                               c.assetInfo.latitude!, c.assetInfo.longitude!),
                           child: GestureDetector(
-                            onTap: () => _openCabinet(context, c.cabinetUid),
+                            key: Key('map-marker-${c.cabinetUid}'),
+                            onTap: () => _selectCabinet(c),
                             child: _statusMarker(
                               c,
                               isFocused: c.cabinetUid ==
@@ -270,6 +301,19 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                   ),
                 ),
               ),
+              if (focusedCabinet != null)
+                Positioned(
+                  left: isCompactMap ? 12 : null,
+                  right: 12,
+                  bottom: 92,
+                  width: isCompactMap ? null : 360,
+                  child: _CabinetMapInfoCard(
+                    cabinet: focusedCabinet,
+                    onClose: _clearSelection,
+                    onOpenDetail: () =>
+                        _openCabinet(context, focusedCabinet.cabinetUid),
+                  ),
+                ),
             ],
           ),
         );
@@ -327,6 +371,18 @@ class _MapScreenState extends ConsumerState<MapScreen> {
     context.go('/cabinet/$id');
   }
 
+  void _selectCabinet(CabinetRecord cabinet) {
+    setState(() => _selectedCabinetUid = cabinet.cabinetUid);
+    _mapController.move(
+      LatLng(cabinet.assetInfo.latitude!, cabinet.assetInfo.longitude!),
+      17,
+    );
+  }
+
+  void _clearSelection() {
+    setState(() => _selectedCabinetUid = null);
+  }
+
   Widget _statusMarker(CabinetRecord c, {required bool isFocused}) {
     final color = switch (c.status) {
       InspectionStatus.normal => Colors.green,
@@ -360,4 +416,110 @@ class _MapScreenState extends ConsumerState<MapScreen> {
       ),
     );
   }
+}
+
+class _CabinetMapInfoCard extends StatelessWidget {
+  const _CabinetMapInfoCard({
+    required this.cabinet,
+    required this.onClose,
+    required this.onOpenDetail,
+  });
+
+  final CabinetRecord cabinet;
+  final VoidCallback onClose;
+  final VoidCallback onOpenDetail;
+
+  @override
+  Widget build(BuildContext context) => Card(
+        key: const Key('map-selected-cabinet-card'),
+        margin: EdgeInsets.zero,
+        elevation: 5,
+        child: Padding(
+          padding: const EdgeInsets.all(14),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(cabinet.assetInfo.cabinetName,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: Theme.of(context).textTheme.titleMedium),
+                        Text(cabinet.cabinetUid,
+                            style: Theme.of(context).textTheme.bodySmall),
+                      ],
+                    ),
+                  ),
+                  StatusBadge(
+                    type: statusToBadge(cabinet.status),
+                    label: statusToLabel(cabinet.status),
+                  ),
+                  IconButton(
+                    key: const Key('map-selected-cabinet-close'),
+                    tooltip: '선택 닫기',
+                    onPressed: onClose,
+                    icon: const Icon(Icons.close, size: 20),
+                  ),
+                ],
+              ),
+              const Divider(height: 18),
+              Text(cabinet.assetInfo.location,
+                  maxLines: 2, overflow: TextOverflow.ellipsis),
+              const SizedBox(height: 4),
+              Text(
+                '${cabinet.assetInfo.latitude!.toStringAsFixed(6)}, ${cabinet.assetInfo.longitude!.toStringAsFixed(6)}',
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+              const SizedBox(height: 10),
+              Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: [
+                  _MapInfoPill(
+                      label: '가로등',
+                      value: '${cabinet.assetInfo.fixtureCount}개'),
+                  _MapInfoPill(
+                    label: '정격부하',
+                    value:
+                        '${cabinet.expectedLoad.expectedRatedLoadKw.toStringAsFixed(2)} kW',
+                  ),
+                ],
+              ),
+              const SizedBox(height: 12),
+              SizedBox(
+                width: double.infinity,
+                child: FilledButton.icon(
+                  key: const Key('map-selected-cabinet-detail'),
+                  onPressed: onOpenDetail,
+                  icon: const Icon(Icons.open_in_new, size: 18),
+                  label: const Text('분전함 상세 보기'),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+}
+
+class _MapInfoPill extends StatelessWidget {
+  const _MapInfoPill({required this.label, required this.value});
+
+  final String label;
+  final String value;
+
+  @override
+  Widget build(BuildContext context) => Container(
+        padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 6),
+        decoration: BoxDecoration(
+          color: const Color(0xFFE7F2EF),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Text('$label · $value',
+            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700)),
+      );
 }

@@ -35,6 +35,7 @@ void main() {
           path: AppRoute.map,
           builder: (context, state) => MapScreen(
             focusCabinetUid: state.uri.queryParameters['cabinet'],
+            showBaseMap: false,
           ),
         ),
         GoRoute(
@@ -200,6 +201,23 @@ void main() {
     expect(legendFinder, findsOneWidget);
     expect(find.textContaining('관측 활성도'), findsOneWidget);
     expect(find.textContaining('미활성 구간'), findsOneWidget);
+  });
+
+  testWidgets('Map marker recenters and opens cabinet information panel',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(buildTestApp(initialLocation: AppRoute.map));
+    await tester.pumpAndSettle();
+
+    final markerFinder = find.byKey(const Key('map-marker-CAB-001'));
+    expect(markerFinder, findsOneWidget);
+    tester.widget<GestureDetector>(markerFinder).onTap!.call();
+    await tester.pumpAndSettle();
+
+    expect(find.byKey(const Key('map-focused-cabinet-marker')), findsOneWidget);
+    expect(find.byKey(const Key('map-selected-cabinet-card')), findsOneWidget);
+    expect(find.text('CAB-001'), findsAtLeastNWidgets(1));
+    expect(find.text('분전함 상세 보기'), findsOneWidget);
+    expect(find.textContaining('35.000000, 129.000000'), findsOneWidget);
   });
 
   testWidgets(
