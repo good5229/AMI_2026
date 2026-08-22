@@ -1,0 +1,182 @@
+{
+  "version": "0.23",
+  "decision": "MEANINGFUL_WITH_ASSET_ROLE_ONLY",
+  "claim_boundary": "Municipal asset applicability only; not AMI field-fault accuracy or operational effect.",
+  "regions": {
+    "SEONGNAM": {
+      "manifest": {
+        "filename": "seongnam_streetlight_cabinets_20260805.csv",
+        "sha256": "2d5dac17d44f1520729e67942caf1940c05947c46891dff536e021647feb0769",
+        "byte_size": 75677,
+        "encoding": "utf-8-sig",
+        "rows": 826,
+        "columns": [
+          "순번",
+          "분전함",
+          "세부주소",
+          "등주수량",
+          "등수",
+          "데이터기준일자"
+        ],
+        "schema_fingerprint": "5a80b1e422f7100aeffbe226a17d9d62b351ad66447a973733225fae1dc5d4f6",
+        "official_source": "https://www.data.go.kr/data/15032441/fileData.do",
+        "tracked_in_git": false
+      },
+      "metrics": {
+        "role": "CABINET_WORKLOAD",
+        "decision": "MEANINGFUL_ASSET_CONTRACT_EVIDENCE",
+        "records": 826,
+        "column_count": 6,
+        "exact_duplicate_rows": 0,
+        "id_coverage": 1.0,
+        "unique_ids": 769,
+        "duplicate_id_records": 57,
+        "positive_pole_count_coverage": 0.9903147699757869,
+        "positive_pole_count_sum": 23732,
+        "positive_lamp_count_coverage": 0.9915254237288136,
+        "positive_lamp_count_sum": 31597
+      }
+    },
+    "CHUNGJU": {
+      "manifest": {
+        "filename": "chungju_streetlight_cabinets_20260713.csv",
+        "sha256": "083319803dbf373dee5050deaf59943c14e257cc211c3a33fc799dd5627bc731",
+        "byte_size": 87122,
+        "encoding": "cp949",
+        "rows": 871,
+        "columns": [
+          "분전함 번호",
+          "설치위치",
+          "분전함 이름",
+          "등주수량",
+          "관리기관",
+          "위도",
+          "경도",
+          "데이터기준일자"
+        ],
+        "schema_fingerprint": "a201c9df480110ba85ff7c7ddea1311bc649da9179a01dc71330574f7192b8bf",
+        "official_source": "https://www.data.go.kr/data/15041822/fileData.do",
+        "tracked_in_git": false
+      },
+      "metrics": {
+        "role": "CABINET_SPATIAL",
+        "decision": "MEANINGFUL_ASSET_CONTRACT_EVIDENCE",
+        "records": 871,
+        "column_count": 8,
+        "exact_duplicate_rows": 0,
+        "id_coverage": 1.0,
+        "unique_ids": 871,
+        "duplicate_id_records": 0,
+        "positive_pole_count_coverage": 0.9425947187141217,
+        "positive_pole_count_sum": 16121,
+        "valid_coordinate_coverage": 1.0
+      }
+    },
+    "GUNPO": {
+      "manifest": {
+        "filename": "gunpo_urban_lighting_20251127.csv",
+        "sha256": "10284135b962c605640a2c074053586aedd60fa6efdb54b3ba39590d9464dd45",
+        "byte_size": 27868,
+        "encoding": "cp949",
+        "rows": 250,
+        "columns": [
+          "분전함이름",
+          "설치일자",
+          "설치위치",
+          "등주개수",
+          "등개수",
+          "위도",
+          "경도",
+          "데이터기준일자"
+        ],
+        "schema_fingerprint": "38ccd1a55ee3b6fddbe22d00dc87066a2f5805030437c843f87c91c7e4f01282",
+        "official_source": "https://www.data.go.kr/data/15062604/fileData.do",
+        "tracked_in_git": false
+      },
+      "metrics": {
+        "role": "CABINET_AGE_SPATIAL",
+        "decision": "MEANINGFUL_ASSET_CONTRACT_EVIDENCE",
+        "records": 250,
+        "column_count": 8,
+        "exact_duplicate_rows": 0,
+        "id_coverage": 1.0,
+        "unique_ids": 250,
+        "duplicate_id_records": 0,
+        "positive_pole_count_coverage": 0.988,
+        "positive_pole_count_sum": 5991,
+        "positive_lamp_count_coverage": 0.988,
+        "positive_lamp_count_sum": 8152,
+        "valid_coordinate_coverage": 1.0,
+        "plausible_installation_year_coverage": 0.94,
+        "installation_year_min": 2006,
+        "installation_year_max": 2025,
+        "year_1900_placeholder_count": 0
+      }
+    },
+    "TONGYEONG": {
+      "manifest": {
+        "filename": "tongyeong_streetlight_assets_20260423.csv",
+        "sha256": "62a8f8c0f1bfcd563497cfd6454eee8a5e475bce155d1474901131a14841c180",
+        "byte_size": 637287,
+        "encoding": "cp949",
+        "rows": 4025,
+        "columns": [
+          "지형지물부호",
+          "관리번호",
+          "행정읍면동",
+          "도엽번호",
+          "관리기관",
+          "도로구간번호",
+          "분전함지형지물부호",
+          "분전함관리번호",
+          "설치일자",
+          "등기구모형",
+          "등주높이",
+          "등주형식",
+          "등주재질",
+          "암길이",
+          "등기구수량",
+          "광원종류",
+          "입력근거",
+          "연결여부",
+          "경도",
+          "위도"
+        ],
+        "schema_fingerprint": "06b0dae5a88d225613ddc215a9ce98e6bc5429ba4e4e1c8821896c69f7ed2214",
+        "official_source": "https://www.data.go.kr/data/15062585/fileData.do",
+        "tracked_in_git": false
+      },
+      "metrics": {
+        "role": "ASSET_TECHNICAL_SPATIAL",
+        "decision": "MEANINGFUL_ASSET_CONTRACT_EVIDENCE",
+        "records": 4025,
+        "column_count": 20,
+        "exact_duplicate_rows": 0,
+        "id_coverage": 1.0,
+        "unique_ids": 3943,
+        "duplicate_id_records": 82,
+        "positive_lamp_count_coverage": 0.9431055900621118,
+        "positive_lamp_count_sum": 30477,
+        "valid_coordinate_coverage": 1.0,
+        "cabinet_id_coverage": 0.9995031055900621,
+        "unique_cabinet_ids": 484,
+        "plausible_installation_year_coverage": 0.29316770186335406,
+        "installation_year_min": 2002,
+        "installation_year_max": 2022,
+        "year_1900_placeholder_count": 2606
+      }
+    }
+  },
+  "evidence_architecture": {
+    "municipal_regions_total": 11,
+    "new_regions": [
+      "SEONGNAM",
+      "CHUNGJU",
+      "GUNPO",
+      "TONGYEONG"
+    ],
+    "new_predictive_tuning": 0,
+    "same_model_nationwide_claim": false,
+    "raw_values_exported": false
+  }
+}

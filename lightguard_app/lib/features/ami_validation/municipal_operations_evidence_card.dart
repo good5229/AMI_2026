@@ -53,6 +53,34 @@ class MunicipalOperationsEvidenceCard extends StatelessWidget {
       detail: '분전함·가로등·등용량 구조와 용량 완전성 99.63%',
       group: _EvidenceGroup.asset,
     ),
+    _RegionEvidence(
+      region: '성남',
+      metric: '826분전함',
+      role: '연결 규모',
+      detail: '분전함별 등주·등 수를 통한 유지관리 대상 규모 확인',
+      group: _EvidenceGroup.asset,
+    ),
+    _RegionEvidence(
+      region: '충주',
+      metric: '871분전함',
+      role: '분전함 공간계약',
+      detail: '분전함 식별자·연결 등주 수·좌표를 통한 적용 구조 확인',
+      group: _EvidenceGroup.asset,
+    ),
+    _RegionEvidence(
+      region: '군포',
+      metric: '250분전함',
+      role: '설치연도·공간계약',
+      detail: '설치일·등주/등 수·좌표를 통한 자산 구성 확인',
+      group: _EvidenceGroup.asset,
+    ),
+    _RegionEvidence(
+      region: '통영',
+      metric: '4,025자산',
+      role: '기술 자산계약',
+      detail: '개별 가로등·분전함 연결·기술 속성·좌표 구조 확인',
+      group: _EvidenceGroup.asset,
+    ),
   ];
 
   @override
@@ -72,14 +100,14 @@ class MunicipalOperationsEvidenceCard extends StatelessWidget {
               crossAxisAlignment: WrapCrossAlignment.center,
               children: [
                 const Icon(Icons.hub_outlined, color: Color(0xFF176B4D)),
-                Text('Municipal Operations Evidence',
+                Text('지자체 적용 근거',
                     style: Theme.of(context).textTheme.titleLarge),
-                const Chip(label: Text('7개 지역')),
+                const Chip(label: Text('11개 지역')),
               ],
             ),
             const SizedBox(height: 8),
             const Text(
-              '한 모델의 전국 공통 성능이 아니라, 지역별 가용 데이터에 맞춰 SIGNAL과 OPERATIONS를 분리 적용할 수 있는지를 검증했습니다.',
+              '전국에 동일한 모델 성능을 가정하지 않고, 지역별 가용 데이터에 맞춰 신호·운영·자산 계층을 분리 적용할 수 있는지 확인했습니다.',
               style: TextStyle(fontWeight: FontWeight.w600),
             ),
             const SizedBox(height: 16),

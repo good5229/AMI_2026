@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:lightguard_app/features/ami_validation/municipal_operations_evidence_card.dart';
 
 void main() {
-  testWidgets('municipal evidence presents seven-region roles and boundaries', (
+  testWidgets('municipal evidence presents eleven-region roles and boundaries', (
     tester,
   ) async {
     await tester.pumpWidget(
@@ -12,14 +12,18 @@ void main() {
       ),
     );
 
-    expect(find.text('Municipal Operations Evidence'), findsOneWidget);
-    expect(find.text('7개 지역'), findsOneWidget);
+    expect(find.text('지자체 적용 근거'), findsOneWidget);
+    expect(find.text('11개 지역'), findsOneWidget);
     expect(find.text('101,843건'), findsOneWidget);
     expect(find.text('11,892건'), findsOneWidget);
     expect(find.text('43,082자산'), findsOneWidget);
     expect(find.text('339분전함'), findsOneWidget);
+    expect(find.text('826분전함'), findsOneWidget);
+    expect(find.text('871분전함'), findsOneWidget);
+    expect(find.text('250분전함'), findsOneWidget);
+    expect(find.text('4,025자산'), findsOneWidget);
     expect(find.textContaining('920/981'), findsOneWidget);
-    expect(find.textContaining('SIGNAL과 OPERATIONS'), findsOneWidget);
+    expect(find.textContaining('신호·운영·자산 계층'), findsOneWidget);
     expect(find.textContaining('AMI 현장 고장 정답'), findsOneWidget);
     expect(find.textContaining('실제 처리시간 단축'), findsOneWidget);
     expect(tester.takeException(), isNull);
