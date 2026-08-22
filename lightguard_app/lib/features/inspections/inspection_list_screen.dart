@@ -105,8 +105,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
               final status = statusToLabel(c.status);
               final signal =
                   c.detectedSignals.isNotEmpty ? c.detectedSignals.first : null;
-              final source = operationalEvidenceSourceLabel(c);
-              return Card(
+                return Card(
                 margin: const EdgeInsets.symmetric(horizontal: 12),
                 clipBehavior: Clip.antiAlias,
                 child: InkWell(
@@ -137,81 +136,106 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                                 type: statusToBadge(c.status), label: status),
                           ],
                         ),
-                        const SizedBox(height: 10),
-                        Wrap(
-                          spacing: 8,
-                          runSpacing: 8,
-                          children: [
-                            StatusBadge(
-                              type: c.evidenceSource ==
-                                      EvidenceSource.scenarioInjection
-                                  ? BadgeType.scenario
-                                  : BadgeType.validation,
-                              label: '자료 구분: $source',
+                          const SizedBox(height: 12),
+                          Container(
+                            width: double.infinity,
+                            padding: const EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFFFF5E8),
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: const Color(0xFFF2C98F),
+                              ),
                             ),
-                            _EvidenceChip(
-                                label: '확인 순위',
-                                value: '#${c.inspectionPriority.rank}'),
-                            _EvidenceChip(
-                              label: '관측 항목',
-                              value: operationalSignalTitle(signal),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Icon(
+                                  Icons.priority_high_rounded,
+                                  size: 20,
+                                  color: Color(0xFF9A4E00),
+                                ),
+                                const SizedBox(width: 10),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        '우선 확인 사유',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .labelLarge
+                                            ?.copyWith(
+                                              color: const Color(0xFF7A3D00),
+                                              fontWeight: FontWeight.w700,
+                                            ),
+                                      ),
+                                      const SizedBox(height: 3),
+                                      Text(
+                                        operationalSignalTitle(signal),
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyMedium
+                                            ?.copyWith(
+                                              fontWeight: FontWeight.w600,
+                                              height: 1.35,
+                                            ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
-                            _EvidenceChip(
-                              label: '신호 수준',
-                              value: operationalSignalLevel(signal),
-                            ),
-                            _EvidenceChip(
-                              label: '관측 지속시간',
-                              value: signal == null
-                                  ? '측정값 없음'
-                                  : '${signal.estimatedDurationMin}분',
-                            ),
-                            _EvidenceChip(
-                              label: '예상 전력 사용량',
-                              value: c.expectedLoad.expectedRatedLoadKw > 0
-                                  ? '${c.expectedLoad.expectedRatedLoadKw.toStringAsFixed(2)} kW'
-                                  : '정격정보 제한',
-                            ),
-                            _EvidenceChip(
-                              label: '자료 일치 수준',
-                              value: operationalConfidenceLabel(signal),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 10),
-                        Text('분류 사유: ${operationalPriorityReason(c)}',
-                            maxLines: 3),
-                        if (_outcomes[c.cabinetUid] case final outcome?) ...[
-                          const SizedBox(height: 8),
-                          Semantics(
+                          ),
+                          if (_outcomes[c.cabinetUid] case final outcome?) ...[
+                            const SizedBox(height: 8),
+                            Semantics(
                             liveRegion: true,
                             label: '저장된 확인 결과 ${outcome['status']}',
-                            child: Container(
-                              width: double.infinity,
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFEAF4EC),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Text(
-                                '확인 결과: ${outcome['status']}\n메모: ${outcome['note']?.isEmpty == true ? '없음' : outcome['note']}',
+                              child: Row(
+                                children: [
+                                  const Icon(Icons.check_circle_outline,
+                                      size: 18, color: Color(0xFF347149)),
+                                  const SizedBox(width: 6),
+                                  Text(
+                                    '확인 결과 · ${outcome['status']}',
+                                    style: const TextStyle(
+                                      color: Color(0xFF28583A),
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
+                          ],
+                          const SizedBox(height: 8),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  '상세 근거 보기',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .labelLarge
+                                      ?.copyWith(fontWeight: FontWeight.w700),
+                                ),
+                              ),
+                              const Icon(Icons.chevron_right_rounded),
+                              const SizedBox(width: 8),
+                              OutlinedButton.icon(
+                                onPressed: () => _recordOutcome(context, c),
+                                icon: const Icon(Icons.edit_note_outlined),
+                                label: Text(
+                                  _outcomes.containsKey(c.cabinetUid)
+                                      ? '확인 결과 수정'
+                                      : '확인 결과 기록',
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
-                        const SizedBox(height: 6),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: OutlinedButton.icon(
-                            onPressed: () => _recordOutcome(context, c),
-                            icon: const Icon(Icons.edit_note_outlined),
-                            label: Text(
-                              _outcomes.containsKey(c.cabinetUid)
-                                  ? '확인 결과 수정'
-                                  : '확인 결과 기록',
-                            ),
-                          ),
-                        ),
                       ],
                     ),
                   ),
@@ -374,27 +398,6 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
     saveInspectionOutcomes(_outcomes);
   }
 
-}
-
-class _EvidenceChip extends StatelessWidget {
-  const _EvidenceChip({required this.label, required this.value});
-
-  final String label;
-  final String value;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      constraints: const BoxConstraints(maxWidth: 260),
-      padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 6),
-      decoration: BoxDecoration(
-        color: const Color(0xFFF2F5F7),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child:
-          Text('$label: $value', maxLines: 2, overflow: TextOverflow.ellipsis),
-    );
-  }
 }
 
 enum _InspectionFilter {

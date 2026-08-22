@@ -202,7 +202,8 @@ void main() {
     expect(find.textContaining('브라우저에만 저장'), findsOneWidget);
     await tester.tap(find.text('저장'));
     await tester.pumpAndSettle();
-    expect(find.textContaining('확인 결과: 원격 확인 예정'), findsOneWidget);
+    expect(find.textContaining('확인 결과 · 원격 확인 예정'), findsOneWidget);
+    expect(find.textContaining('메모:'), findsNothing);
   });
 
   testWidgets('Cabinet detail exposes activation color legend for a signal',
