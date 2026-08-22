@@ -64,25 +64,24 @@ void main() {
     );
   }
 
-  testWidgets('Dashboard renders 기본 카드와 기준일 점등/소등 정보',
+  testWidgets('Dashboard renders 핵심 운영 지표만 표시한다',
       (WidgetTester tester) async {
     await tester.pumpWidget(buildTestApp());
     await tester.pumpAndSettle();
 
     expect(find.text('LightGuard · 운영 현황'), findsOneWidget);
     expect(find.textContaining('오늘 우선 확인이 필요한 분전함'), findsOneWidget);
-    expect(find.text('확인 대상 및 사유 보기'), findsOneWidget);
+    expect(find.text('확인 대상 및 사유 보기'), findsNothing);
     expect(find.text('총 분전함'), findsOneWidget);
     expect(find.text('총 가로등 수'), findsOneWidget);
     expect(find.text('총 정격용량'), findsOneWidget);
     expect(
         find.textContaining('${data.objects.length}'), findsAtLeastNWidgets(1));
-    expect(find.text('기준일 기준 점등/소등'), findsOneWidget);
+    expect(find.text('기준일 기준 점등/소등'), findsNothing);
     expect(find.text(RegionId.suyeong.branchLabel), findsAtLeastNWidgets(1));
-    expect(find.byKey(const Key('dashboard-scenario-count')), findsOneWidget);
-    expect(find.byKey(const Key('dashboard-actual-ami-count')), findsOneWidget);
-    expect(
-        find.byKey(const Key('dashboard-municipal-ami-count')), findsOneWidget);
+    expect(find.text('현장 확인 권고'), findsOneWidget);
+    expect(find.text('추적 관찰'), findsOneWidget);
+    expect(find.text('정상 범위'), findsOneWidget);
   });
 
   testWidgets('Inspection list renders and filters by 검증 시나리오',
@@ -243,7 +242,7 @@ void main() {
   });
 
   testWidgets(
-      '전력계량 분석 화면이 한국어 지표와 전류선 설명을 표시한다',
+      '전력계량 분석 화면이 핵심 신호와 판정 근거를 표시한다',
       (WidgetTester tester) async {
     await tester.pumpWidget(buildTestApp(initialLocation: AppRoute.ami));
     await tester.pumpAndSettle();
@@ -257,32 +256,18 @@ void main() {
     expect(find.text('보통 이상'), findsAtLeastNWidgets(1));
     expect(find.text('medium_high'), findsNothing);
     expect(find.byKey(const Key('ami-case-B-L-35-2026-05-11')), findsOneWidget);
-    expect(find.text(AmiValidationScreen.disclaimer), findsAtLeastNWidgets(1));
     if (events.isNotEmpty) {
       expect(
           find.textContaining(events.first.meterId), findsAtLeastNWidgets(1));
     } else {
       fail('AMI 이벤트 데이터가 비어 있어 목록 검증을 수행할 수 없습니다.');
     }
-    await tester.scrollUntilVisible(
-      find.text('수치 읽는 방법'),
-      300,
-      scrollable: find.byType(Scrollable).last,
-    );
-    await tester.pump(const Duration(milliseconds: 300));
-    expect(find.text('수치 읽는 방법'), findsOneWidget);
-    await tester.scrollUntilVisible(
-      find.text('상세 검증자료'),
-      300,
-      scrollable: find.byType(Scrollable).last,
-    );
-    await tester.pump(const Duration(milliseconds: 300));
-    expect(find.text('상세 검증자료'), findsOneWidget);
-    await tester.tap(find.text('상세 검증자료'));
+    await tester.drag(find.byType(ListView), const Offset(0, -10000));
     await tester.pumpAndSettle();
-    expect(find.text('검증 결과 요약'), findsOneWidget);
-    expect(find.text('자료가 부족할 때의 처리'), findsOneWidget);
-    expect(find.text('운영 적용 한계'), findsOneWidget);
+    expect(find.text(AmiValidationScreen.disclaimer), findsOneWidget);
+    expect(find.text('상세 검증자료'), findsNothing);
+    expect(find.text('검증 결과 요약'), findsNothing);
+    expect(find.text('자료가 부족할 때의 처리'), findsNothing);
   });
 
   testWidgets('Dashboard remains overflow-free at 360px',
@@ -299,7 +284,7 @@ void main() {
     expect(find.text('현황'), findsOneWidget);
   });
 
-  testWidgets('Region cards disclose modes and no municipal AMI',
+  testWidgets('Region cards show only 실제 전환 가능한 지역',
       (WidgetTester tester) async {
     await tester.pumpWidget(buildTestApp(initialLocation: AppRoute.regions));
     await tester.pumpAndSettle();
@@ -308,14 +293,9 @@ void main() {
     expect(find.text('시설정보와 제어기 연결정보 제공'), findsAtLeastNWidgets(1));
     expect(find.text('기본 시설정보 제공'), findsAtLeastNWidgets(1));
     expect(find.textContaining('지자체 전력계량 자료는 아직 직접 연결되지 않았습니다'), findsOneWidget);
-    await tester.scrollUntilVisible(
-      find.text('전국 공개데이터 확인 지역'),
-      300,
-      scrollable: find.byType(Scrollable).last,
-    );
-    await tester.pump(const Duration(milliseconds: 500));
-    expect(find.text('시·군·구 이름 검색'), findsOneWidget);
-    expect(find.text('광역단위로 좁혀 보기'), findsOneWidget);
+    expect(find.text('전국 공개데이터 확인 지역'), findsNothing);
+    expect(find.text('시·군·구 이름 검색'), findsNothing);
+    expect(find.text('광역단위로 좁혀 보기'), findsNothing);
   });
 }
 
