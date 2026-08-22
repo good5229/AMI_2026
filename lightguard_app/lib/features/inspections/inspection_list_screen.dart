@@ -136,8 +136,9 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                                 type: statusToBadge(c.status), label: status),
                           ],
                         ),
-                          const SizedBox(height: 12),
-                          Container(
+                          if (signal != null) ...[
+                            const SizedBox(height: 12),
+                            Container(
                             width: double.infinity,
                             padding: const EdgeInsets.all(12),
                             decoration: BoxDecoration(
@@ -189,7 +190,8 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                                 ),
                               ],
                             ),
-                          ),
+                            ),
+                          ],
                           if (_outcomes[c.cabinetUid] case final outcome?) ...[
                             const SizedBox(height: 8),
                             Semantics(
