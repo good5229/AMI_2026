@@ -4,11 +4,11 @@ import 'package:lightguard_app/features/ami_validation/v18_operational_triage_ca
 void main() {
   test('v0.18 preserves retrospective operational triage boundary', () {
     expect(V18OperationalTriageContract.primary, contains('30일 반복 기록'));
-    expect(V18OperationalTriageContract.queue, contains('C25=0'));
+    expect(V18OperationalTriageContract.queue, contains('하위 기준 0건'));
     expect(V18OperationalTriageContract.workflow,
-        contains('REMOTE_REVIEW_CANDIDATE'));
+        contains('원격 확인 후보'));
     expect(V18OperationalTriageContract.workflow,
-        contains('FIELD_INSPECTION_CANDIDATE'));
+        contains('현장점검 후보'));
     expect(V18OperationalTriageContract.boundary, contains('사후 모의분석'));
     expect(V18OperationalTriageContract.boundary, contains('고장 확률'));
     expect(V18OperationalTriageContract.boundary, contains('전력자료 정확도'));

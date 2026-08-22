@@ -43,7 +43,7 @@ class SubmissionReadinessCard extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             const Text(
-              'SIGNAL · PLAUSIBILITY · OPERATIONS · PRODUCT 근거를 분리해 자동 고장판정이 아닌 점검 우선순위를 제시합니다.',
+              '전력 신호 · 물리적 타당성 · 운영 이력 · 서비스 적용 근거를 분리해 자동 고장판정이 아닌 점검 우선순위를 제시합니다.',
             ),
             const SizedBox(height: 8),
             const Text(

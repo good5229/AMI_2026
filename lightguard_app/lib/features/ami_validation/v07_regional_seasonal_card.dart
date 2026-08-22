@@ -66,7 +66,7 @@ class V07RegionalSeasonalCard extends ConsumerWidget {
                 ),
                 const SizedBox(height: 8),
                 const Text(
-                  'KMA ASOS 159·105·127과 KASI 일출·일몰을 적용했지만, '
+                  '기상청 종관기상관측(ASOS) 159·105·127 지점과 한국천문연구원 일출·일몰 자료를 적용했지만, '
                   '약한 이상 2종을 놓쳐 민감도 개선이 필요합니다.',
                 ),
                 const SizedBox(height: 12),

@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 class V18OperationalTriageContract {
   const V18OperationalTriageContract._();
 
-  static const status = 'OU-B';
-  static const title = 'v0.18 회고형 운영 우선검토 검증';
-  static const split = '개발 71,162 · 검증 16,618 · 확인 9,145 asset-day episodes';
-  static const primary = 'Primary · 30일 반복 기록 이벤트 · 확인기간 prevalence 7.3%';
-  static const prediction = 'B2_LOGISTIC · AP 0.199 · Top 10% enrichment 3.12x';
-  static const queue = 'C25=0 비검토 · C50=62 · C75=80 · C50 burden review difference -0.03일';
-  static const workflow = 'DATA_QUALITY_REVIEW → REMOTE_REVIEW_CANDIDATE → FIELD_INSPECTION_CANDIDATE';
-  static const decision = 'LIMITED_OPERATIONAL_PRIORITY_EVIDENCE';
+  static const status = '운영 우선순위 근거 제한';
+  static const title = '과거 운영기록 기반 우선검토 검증';
+  static const split = '개발 71,162건 · 검증 16,618건 · 확인 9,145건의 자산·일 단위 기록';
+  static const primary = '주요 판정 대상 · 30일 반복 기록 · 확인기간 발생 비율 7.3%';
+  static const prediction = '로지스틱 분석 · 평균 정밀도 0.199 · 상위 10% 대상의 반복 기록 밀도 3.12배';
+  static const queue = '검토 기준별 후보 수: 하위 기준 0건 · 중앙 기준 62건 · 상위 기준 80건 · 중앙 기준 업무부담 차이 -0.03일';
+  static const workflow = '자료 품질 확인 → 원격 확인 후보 → 현장점검 후보';
+  static const decision = '운영 우선순위에 참고할 수 있으나 제한적으로 해석';
   static const boundary = '접수일 시작 시점 이전의 고장 접수 이력만 사용한 사후 모의분석입니다. 고장 확률·전력자료 정확도·실제 수리시간 단축·민원 감소·비용절감 또는 대구 결과의 수영구 직접 적용을 뜻하지 않습니다.';
 }
 

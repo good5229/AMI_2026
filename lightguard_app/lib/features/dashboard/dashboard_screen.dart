@@ -341,7 +341,7 @@ class _OfficialContextCard extends StatelessWidget {
                   ? '천문자료: 한국천문연구원 자료 미수집'
                   : '천문자료: 한국천문연구원 ${solar['date']} · ${solar['sunrise']} / ${solar['sunset']}'),
               Text(weather == null
-                  ? '기상자료: 기상청 ASOS 부산관측소(159) 자료 미수집'
+                  ? '기상자료: 기상청 종관기상관측(ASOS) 부산관측소(159) 자료 미수집'
                   : '기상자료: 기상청 부산 종관기상관측소(지점 159) · ${weather['timestamp']}'),
             ]),
             const SizedBox(height: 8),

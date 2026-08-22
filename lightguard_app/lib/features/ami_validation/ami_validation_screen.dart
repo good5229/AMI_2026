@@ -153,6 +153,9 @@ class _MetricReadingGuide extends StatelessWidget {
             Text('• 탐지율: 검증용 이상 사례를 찾아낸 비율이며 높을수록 좋습니다.'),
             Text('• 정상 오분류율: 정상 상태를 이상으로 잘못 표시한 비율이며 낮을수록 좋습니다.'),
             Text('• 우선 확인 대상 일치율: 먼저 확인하도록 제시한 대상 중 검증 기준과 일치한 비율입니다.'),
+            Text('• 최대 활성 비율: 분석 구간에서 계산한 전력 사용 활성 정도를 0~100%로 표시한 값입니다.'),
+            Text('• 활성 전류선: i1·i2·i3은 계량기가 기록한 1·2·3번 전류선을 뜻합니다.'),
+            Text('• 신호 형태 일치 수준: 높음·보통·낮음으로 분석 신호의 형태 일치 정도를 표시합니다.'),
             SizedBox(height: 6),
             Text('현장 고장 정답이 없는 결과는 실제 정확도로 해석하지 않습니다.',
                 style: TextStyle(fontWeight: FontWeight.w700)),
@@ -226,7 +229,7 @@ class _V06EvidenceHardening extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 6),
             const Text(
-              '6/6은 field recall이 아닙니다. 작은 표본의 불확실성과 판정 불가 조건을 함께 표시합니다.',
+              '검증용 이상 사례 6건을 모두 찾았다는 결과는 현장 고장 탐지율이 아닙니다. 작은 표본의 불확실성과 판정 불가 조건을 함께 표시합니다.',
               style: TextStyle(fontSize: 12),
             ),
             const SizedBox(height: 12),
@@ -235,18 +238,18 @@ class _V06EvidenceHardening extends StatelessWidget {
                 title: '알려진 이상 사례 탐지',
                 value: percent(summary.coveragePoint),
                 detail:
-                    'Wilson 95% ${percent(summary.coverageLower)}–${percent(summary.coverageUpper)}',
+                    '표본 수를 고려한 95% 예상 범위 ${percent(summary.coverageLower)}–${percent(summary.coverageUpper)}',
               ),
               _V05EvidenceTile(
                 title: '하루 평균 확인 후보 비율',
                 value: percent(summary.candidateDensityPoint, 2),
                 detail:
-                    'Stationary bootstrap ${percent(summary.candidateDensityLower, 2)}–${percent(summary.candidateDensityUpper, 2)}',
+                    '시간 순서를 고려한 반복추출 95% 범위 ${percent(summary.candidateDensityLower, 2)}–${percent(summary.candidateDensityUpper, 2)}',
               ),
               _V05EvidenceTile(
                 title: '자료 부족 시 판정 보류 기준',
-                value: '${summary.abstentionRuleCount} rules',
-                detail: '120분 gap은 DATA_INSUFFICIENT',
+                value: '${summary.abstentionRuleCount}개 기준',
+                detail: '120분 이상 자료 공백은 자료 부족으로 판정 보류',
               ),
             ]),
             const SizedBox(height: 10),
@@ -621,13 +624,13 @@ class _CaseStudyCard extends StatelessWidget {
             const Divider(height: 24),
             _EvidenceBars(event: event),
             const Divider(height: 24),
-            _kv('Max activation',
+            _kv('최대 활성 비율',
                 '${(event.maxActivation * 100).toStringAsFixed(1)}%'),
-            _kv('Active phases', event.activePhases),
-            _kv('Estimated excess',
+            _kv('활성 전류선', _phaseLabel(event.activePhases)),
+            _kv('추정 초과 사용량',
                 '${event.estimatedExcessKwh.toStringAsFixed(3)} kWh'),
-            _kv('Pattern confidence', event.patternConfidence),
-            _kv('Fault status', '현장 미확인 점검 후보'),
+            _kv('신호 형태 일치 수준', _confidenceLabel(event.patternConfidence)),
+            _kv('현장 판정 상태', '현장 미확인 점검 후보'),
             _kv('자료 구분', '가명 처리된 실제 전력계량 자료 분석'),
             const SizedBox(height: 10),
             const Text(AmiValidationScreen.disclaimer,
@@ -732,12 +735,12 @@ class _EventSummaryCard extends StatelessWidget {
         childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
         expandedCrossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _kv('Event ID', event.eventId),
-          _kv('Active phases', event.activePhases),
-          _kv('Estimated excess',
+          _kv('분석 구간 식별번호', event.eventId),
+          _kv('활성 전류선', _phaseLabel(event.activePhases)),
+          _kv('추정 초과 사용량',
               '${event.estimatedExcessKwh.toStringAsFixed(3)} kWh'),
-          _kv('Pattern confidence', event.patternConfidence),
-          _kv('Fault status', '현장 미확인 점검 후보'),
+          _kv('신호 형태 일치 수준', _confidenceLabel(event.patternConfidence)),
+          _kv('현장 판정 상태', '현장 미확인 점검 후보'),
           _kv('자료 구분', '가명 처리된 실제 전력계량 자료 분석'),
         ],
       ),
@@ -761,6 +764,27 @@ Widget _kv(String label, String value) {
     ),
   );
 }
+
+String _phaseLabel(String value) {
+  if (value.trim().isEmpty) return '활성 전류선 정보 없음';
+  const labels = <String, String>{
+    'i1': '1번 전류선(i1)',
+    'i2': '2번 전류선(i2)',
+    'i3': '3번 전류선(i3)',
+  };
+  return value
+      .split(',')
+      .map((phase) => phase.trim().toLowerCase())
+      .map((phase) => labels[phase] ?? phase)
+      .join(' · ');
+}
+
+String _confidenceLabel(String value) => switch (value.toLowerCase()) {
+      'high' => '높음',
+      'medium' => '보통',
+      'low' => '낮음',
+      _ => value.isEmpty ? '평가 정보 없음' : value,
+    };
 
 String _eventLabel(String eventType) {
   return switch (eventType) {

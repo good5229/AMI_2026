@@ -267,9 +267,9 @@ class CabinetRecord {
   SignalSource get signalSource => ami.signalSource;
 
   String get modeLabel {
-    if (ami.hasRealAmi) return '실제 지자체 AMI 연동';
+    if (ami.hasRealAmi) return '실제 지자체 전력계량 자료 연동';
     if (ami.virtualLinkMode == 'scenario_injection') return '검증 시나리오';
-    return '공공자산 · AMI 미연결';
+    return '공공자산 · 전력계량 자료 미연결';
   }
 }
 

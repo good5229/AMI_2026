@@ -243,13 +243,17 @@ void main() {
   });
 
   testWidgets(
-      'AMI Validation renders competition events and Competition AMI badge',
+      '전력계량 분석 화면이 한국어 지표와 전류선 설명을 표시한다',
       (WidgetTester tester) async {
     await tester.pumpWidget(buildTestApp(initialLocation: AppRoute.ami));
     await tester.pumpAndSettle();
 
     expect(find.text('전력계량 이상 신호 분석'), findsOneWidget);
     expect(find.text('가명 처리 전력계량 자료'), findsAtLeastNWidgets(1));
+    expect(find.text('최대 활성 비율'), findsAtLeastNWidgets(1));
+    expect(find.textContaining('1번 전류선(i1)'), findsAtLeastNWidgets(1));
+    expect(find.text('신호 형태 일치 수준'), findsAtLeastNWidgets(1));
+    expect(find.text('높음'), findsAtLeastNWidgets(1));
     expect(find.byKey(const Key('ami-case-B-L-35-2026-05-11')), findsOneWidget);
     expect(find.text(AmiValidationScreen.disclaimer), findsAtLeastNWidgets(1));
     if (events.isNotEmpty) {
@@ -265,6 +269,12 @@ void main() {
     );
     await tester.pump(const Duration(milliseconds: 300));
     expect(find.text('수치 읽는 방법'), findsOneWidget);
+    await tester.scrollUntilVisible(
+      find.text('상세 검증자료'),
+      300,
+      scrollable: find.byType(Scrollable).last,
+    );
+    await tester.pump(const Duration(milliseconds: 300));
     expect(find.text('상세 검증자료'), findsOneWidget);
   });
 

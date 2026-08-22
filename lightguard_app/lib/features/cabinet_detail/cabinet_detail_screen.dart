@@ -93,7 +93,7 @@ class CabinetDetailScreen extends ConsumerWidget {
                 _kv(
                     '공식 기상 관측자료',
                     officialContext?.firstOfficialWeather == null
-                        ? '기상청 ASOS 부산관측소(159) 자료 미수집'
+                        ? '기상청 종관기상관측(ASOS) 부산관측소(159) 자료 미수집'
                         : '기상청 부산 종관기상관측소(지점 159) · ${officialContext!.firstOfficialWeather!['timestamp']}'),
               ]),
               const SizedBox(height: 8),
