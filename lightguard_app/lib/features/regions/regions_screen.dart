@@ -23,6 +23,7 @@ class _RegionsScreenState extends ConsumerState<RegionsScreen> {
   String _readiness = '전체';
   int _visibleCount = 20;
   String? _selectedCatalogRegion;
+  final Set<String> _comparisonKeys = {};
 
   @override
   Widget build(BuildContext context) {
@@ -213,6 +214,16 @@ class _RegionsScreenState extends ConsumerState<RegionsScreen> {
                   ],
                 ),
                 const SizedBox(height: 10),
+                if (_comparisonKeys.isNotEmpty) ...[
+                  _ComparisonPanel(
+                    regions: catalog
+                        .where((region) =>
+                            _comparisonKeys.contains(region.regionKey))
+                        .toList(growable: false),
+                    onClear: () => setState(_comparisonKeys.clear),
+                  ),
+                  const SizedBox(height: 10),
+                ],
                 if (snapshot.connectionState == ConnectionState.waiting)
                   const Padding(
                     padding: EdgeInsets.all(24),
@@ -229,6 +240,20 @@ class _RegionsScreenState extends ConsumerState<RegionsScreen> {
                     _CatalogRegionCard(
                       region: region,
                       expanded: _selectedCatalogRegion == region.name,
+                      compared: _comparisonKeys.contains(region.regionKey),
+                      onCompare: () => setState(() {
+                        if (_comparisonKeys.contains(region.regionKey)) {
+                          _comparisonKeys.remove(region.regionKey);
+                        } else if (_comparisonKeys.length < 3) {
+                          _comparisonKeys.add(region.regionKey);
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('지역 비교는 최대 3개까지 선택할 수 있습니다.'),
+                            ),
+                          );
+                        }
+                      }),
                       onTap: () => setState(() {
                         _selectedCatalogRegion =
                             _selectedCatalogRegion == region.name
@@ -390,11 +415,15 @@ class _CatalogRegionCard extends StatelessWidget {
   const _CatalogRegionCard({
     required this.region,
     required this.expanded,
+    required this.compared,
+    required this.onCompare,
     required this.onTap,
   });
 
   final _RegionDatasetSummary region;
   final bool expanded;
+  final bool compared;
+  final VoidCallback onCompare;
   final VoidCallback onTap;
 
   @override
@@ -420,6 +449,15 @@ class _CatalogRegionCard extends StatelessWidget {
                   Chip(label: Text(region.readinessLabel)),
                   const SizedBox(width: 6),
                   Text('공개파일 ${region.datasetCount}개'),
+                  IconButton(
+                    tooltip: compared ? '지역 비교에서 제외' : '지역 비교에 추가',
+                    onPressed: onCompare,
+                    icon: Icon(
+                      compared
+                          ? Icons.compare_arrows
+                          : Icons.add_chart_outlined,
+                    ),
+                  ),
                   Icon(expanded ? Icons.expand_less : Icons.expand_more),
                 ],
               ),
@@ -436,6 +474,8 @@ class _CatalogRegionCard extends StatelessWidget {
                 Text('확인된 데이터 행: ${region.rowCount}개'),
                 Text('지역 식별키: ${region.regionKey}'),
                 const SizedBox(height: 5),
+                const _CapabilityFlow(),
+                const SizedBox(height: 8),
                 const Text(
                   '활용 가능성: 공개파일의 항목 구성을 LightGuard 입력 구조와 비교할 수 있습니다. 시설물 연결번호와 실제 전력자료가 확보되면 지역 맞춤 분석으로 확장할 수 있습니다.',
                   style: TextStyle(fontSize: 12, height: 1.45),
@@ -489,6 +529,125 @@ class _CatalogRegionCard extends StatelessWidget {
         'ASSET' => '가로등 시설정보',
         _ => '기타 공개정보',
       };
+}
+
+class _CapabilityFlow extends StatelessWidget {
+  const _CapabilityFlow();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('지역 적용 흐름', style: TextStyle(fontWeight: FontWeight.w700)),
+        SizedBox(height: 6),
+        _FlowRow(
+          number: '1',
+          title: '현재 가능',
+          detail: '공개파일의 시설물 분포와 항목 구성을 확인할 수 있습니다.',
+        ),
+        _FlowRow(
+          number: '2',
+          title: '전력계량 자료 추가 시',
+          detail: '예상 점등시간과 실제 전력 사용을 비교해 이상 신호 후보를 찾을 수 있습니다.',
+        ),
+        _FlowRow(
+          number: '3',
+          title: '현장 확인 결과 연결 시',
+          detail: '지역별 탐지율과 정상 오분류율을 검증하고 점검 우선순위를 개선할 수 있습니다.',
+        ),
+      ],
+    );
+  }
+}
+
+class _FlowRow extends StatelessWidget {
+  const _FlowRow({required this.number, required this.title, required this.detail});
+
+  final String number;
+  final String title;
+  final String detail;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 6),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CircleAvatar(radius: 12, child: Text(number)),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Text('$title · $detail', style: const TextStyle(fontSize: 12)),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _ComparisonPanel extends StatelessWidget {
+  const _ComparisonPanel({required this.regions, required this.onClear});
+
+  final List<_RegionDatasetSummary> regions;
+  final VoidCallback onClear;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      color: const Color(0xFFFFF8E7),
+      child: Padding(
+        padding: const EdgeInsets.all(14),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Text('지역 데이터 비교',
+                      style: Theme.of(context).textTheme.titleMedium),
+                ),
+                TextButton(onPressed: onClear, child: const Text('비교 초기화')),
+              ],
+            ),
+            const Text('공개자료 규모는 지역의 관리 성과나 서비스 품질 순위가 아닙니다.',
+                style: TextStyle(fontSize: 12)),
+            const SizedBox(height: 10),
+            Wrap(
+              spacing: 10,
+              runSpacing: 10,
+              children: [
+                for (final region in regions)
+                  SizedBox(
+                    width: 280,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(region.name,
+                                style: const TextStyle(fontWeight: FontWeight.w700)),
+                            Text(region.readinessLabel),
+                            Text('공개파일 ${region.datasetCount}개 · 데이터 행 ${region.rowCount}개'),
+                            Text('확인자료: ${region.roles.map(_CatalogRegionCard._roleLabel).join(' · ')}',
+                                style: const TextStyle(fontSize: 12)),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 class _NoticeCard extends StatelessWidget {

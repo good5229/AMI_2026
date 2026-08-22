@@ -86,13 +86,17 @@ class AmiValidationScreen extends ConsumerWidget {
               const SizedBox(height: 12),
               _ControlledValidationSummary(
                   metrics: metrics, v04Summary: v04Summary),
+              const SizedBox(height: 8),
+              const _MetricReadingGuide(),
               if (v05Summary != null) ...[
                 const SizedBox(height: 12),
                 _V05TechnicalEvidence(summary: v05Summary),
               ],
               if (v06Summary != null) ...[
                 const SizedBox(height: 12),
-                _V06EvidenceHardening(summary: v06Summary),
+                _ResearchEvidenceSection(
+                  child: _V06EvidenceHardening(summary: v06Summary),
+                ),
               ],
               const SizedBox(height: 12),
               if (representative != null &&
@@ -130,6 +134,55 @@ class AmiValidationScreen extends ConsumerWidget {
             event.firstSample.startsWith('2026-05-20')) ||
         (event.meterId == 'B-L-14' &&
             event.firstSample.startsWith('2026-05-29'));
+  }
+}
+
+class _MetricReadingGuide extends StatelessWidget {
+  const _MetricReadingGuide();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Card(
+      color: Color(0xFFF5F7F8),
+      child: Padding(
+        padding: EdgeInsets.all(14),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('수치 읽는 방법',
+                style: TextStyle(fontWeight: FontWeight.w700)),
+            SizedBox(height: 6),
+            Text('• 탐지율: 검증용 이상 사례를 찾아낸 비율이며 높을수록 좋습니다.'),
+            Text('• 정상 오분류율: 정상 상태를 이상으로 잘못 표시한 비율이며 낮을수록 좋습니다.'),
+            Text('• 우선 확인 대상 일치율: 먼저 확인하도록 제시한 대상 중 검증 기준과 일치한 비율입니다.'),
+            SizedBox(height: 6),
+            Text('현장 고장 정답이 없는 결과는 실제 정확도로 해석하지 않습니다.',
+                style: TextStyle(fontWeight: FontWeight.w700)),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _ResearchEvidenceSection extends StatelessWidget {
+  const _ResearchEvidenceSection({required this.child});
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: ExpansionTile(
+        key: const Key('research-evidence-expansion'),
+        initiallyExpanded: false,
+        leading: const Icon(Icons.science_outlined),
+        title: const Text('상세 검증자료'),
+        subtitle: const Text('연구 과정과 통계 검증이 필요할 때 펼쳐 봅니다.'),
+        childrenPadding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
+        children: [child],
+      ),
+    );
   }
 }
 

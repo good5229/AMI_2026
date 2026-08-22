@@ -240,6 +240,14 @@ void main() {
     } else {
       fail('AMI 이벤트 데이터가 비어 있어 목록 검증을 수행할 수 없습니다.');
     }
+    await tester.scrollUntilVisible(
+      find.text('수치 읽는 방법'),
+      300,
+      scrollable: find.byType(Scrollable).last,
+    );
+    await tester.pump(const Duration(milliseconds: 300));
+    expect(find.text('수치 읽는 방법'), findsOneWidget);
+    expect(find.text('상세 검증자료'), findsOneWidget);
   });
 
   testWidgets('Dashboard remains overflow-free at 360px',
