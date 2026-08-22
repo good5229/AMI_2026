@@ -15,7 +15,6 @@ import 'package:lightguard_app/features/cabinet_detail/cabinet_detail_screen.dar
 import 'package:lightguard_app/features/dashboard/dashboard_screen.dart';
 import 'package:lightguard_app/features/inspections/inspection_list_screen.dart';
 import 'package:lightguard_app/features/map/map_screen.dart';
-import 'package:lightguard_app/features/regions/regions_screen.dart';
 
 void main() {
   final data = _sampleData();
@@ -49,9 +48,6 @@ void main() {
         GoRoute(
             path: AppRoute.ami,
             builder: (context, state) => const AmiValidationScreen()),
-        GoRoute(
-            path: AppRoute.regions,
-            builder: (context, state) => const RegionsScreen()),
       ],
     );
     return ProviderScope(
@@ -284,18 +280,21 @@ void main() {
     expect(find.text('현황'), findsOneWidget);
   });
 
-  testWidgets('Region cards show only 실제 전환 가능한 지역',
+  testWidgets('공통 지역 선택기로 운영 화면의 지역을 변경한다',
       (WidgetTester tester) async {
-    await tester.pumpWidget(buildTestApp(initialLocation: AppRoute.regions));
+    await tester.pumpWidget(buildTestApp());
     await tester.pumpAndSettle();
 
-    expect(find.text('시설정보와 검증용 모의 신호 제공'), findsAtLeastNWidgets(1));
-    expect(find.text('시설정보와 제어기 연결정보 제공'), findsAtLeastNWidgets(1));
-    expect(find.text('기본 시설정보 제공'), findsAtLeastNWidgets(1));
-    expect(find.textContaining('지자체 전력계량 자료는 아직 직접 연결되지 않았습니다'), findsOneWidget);
-    expect(find.text('전국 공개데이터 확인 지역'), findsNothing);
-    expect(find.text('시·군·구 이름 검색'), findsNothing);
-    expect(find.text('광역단위로 좁혀 보기'), findsNothing);
+    expect(find.byKey(const Key('global-region-selector')), findsOneWidget);
+    expect(find.text(RegionId.suyeong.label), findsAtLeastNWidgets(1));
+    expect(find.text('지역'), findsNothing);
+
+    await tester.tap(find.byKey(const Key('global-region-selector')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(RegionId.gangneung.label).last);
+    await tester.pumpAndSettle();
+
+    expect(find.text(RegionId.gangneung.branchLabel), findsAtLeastNWidgets(1));
   });
 }
 

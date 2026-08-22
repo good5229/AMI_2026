@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../app/router/app_router.dart';
 import '../../app/theme/app_theme.dart';
+import '../../data/models/region_config.dart';
+import '../../data/repositories/lightguard_repository.dart';
 
-class LightguardShell extends StatelessWidget {
+class LightguardShell extends ConsumerWidget {
   const LightguardShell({
     super.key,
     required this.title,
@@ -16,7 +19,7 @@ class LightguardShell extends StatelessWidget {
   final List<Widget>? actions;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final isWide = MediaQuery.of(context).size.width >= 900;
     final tabs = <_NavItem>[
       const _NavItem(AppRoute.dashboard, '오늘의 현황', '현황', Icons.home_outlined),
@@ -25,8 +28,6 @@ class LightguardShell extends StatelessWidget {
           AppRoute.inspections, '점검 대상', '점검', Icons.fact_check_outlined),
       const _NavItem(
           AppRoute.ami, '판정 근거', '근거', Icons.insights_outlined),
-      const _NavItem(
-          AppRoute.regions, '지역 설정', '지역', Icons.location_city_outlined),
     ];
 
     final location = GoRouterState.of(context).matchedLocation;
@@ -35,7 +36,7 @@ class LightguardShell extends StatelessWidget {
       return Scaffold(
         appBar: AppBar(
           title: Text(title, maxLines: 1, overflow: TextOverflow.ellipsis),
-          actions: [...?actions, const _GlossaryButton()],
+          actions: [const _RegionSelector(), ...?actions, const _GlossaryButton()],
           bottom: const PreferredSize(
             preferredSize: Size.fromHeight(1),
             child: Divider(height: 1),
@@ -86,7 +87,7 @@ class LightguardShell extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(title, maxLines: 1, overflow: TextOverflow.ellipsis),
-        actions: [...?actions, const _GlossaryButton()],
+        actions: [const _RegionSelector(), ...?actions, const _GlossaryButton()],
         bottom: const PreferredSize(
           preferredSize: Size.fromHeight(1),
           child: Divider(height: 1),
@@ -121,6 +122,44 @@ class LightguardShell extends StatelessWidget {
 
   static void _goto(BuildContext context, String path) {
     context.go(path);
+  }
+}
+
+class _RegionSelector extends ConsumerWidget {
+  const _RegionSelector();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final selected = ref.watch(selectedRegionProvider);
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.only(right: 8),
+        child: DropdownButtonHideUnderline(
+          child: DropdownButton<RegionId>(
+            key: const Key('global-region-selector'),
+            value: selected,
+            isDense: true,
+            borderRadius: BorderRadius.circular(12),
+            icon: const Icon(Icons.expand_more, size: 20),
+            items: [
+              for (final region in RegionId.values)
+                DropdownMenuItem<RegionId>(
+                  value: region,
+                  child: Text(
+                    region.label,
+                    style: const TextStyle(fontWeight: FontWeight.w700),
+                  ),
+                ),
+            ],
+            onChanged: (region) {
+              if (region != null && region != selected) {
+                ref.read(selectedRegionProvider.notifier).state = region;
+              }
+            },
+          ),
+        ),
+      ),
+    );
   }
 }
 

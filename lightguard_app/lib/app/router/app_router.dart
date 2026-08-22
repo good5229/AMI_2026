@@ -4,7 +4,6 @@ import '../../features/map/map_screen.dart';
 import '../../features/inspections/inspection_list_screen.dart';
 import '../../features/cabinet_detail/cabinet_detail_screen.dart';
 import '../../features/ami_validation/ami_validation_screen.dart';
-import '../../features/regions/regions_screen.dart';
 
 class AppRoute {
   static const dashboard = '/';
@@ -12,7 +11,6 @@ class AppRoute {
   static const inspections = '/inspections';
   static const cabinet = '/cabinet/:id';
   static const ami = '/ami-events';
-  static const regions = '/regions';
 }
 
 GoRouter createRouter() {
@@ -35,7 +33,7 @@ GoRouter createRouter() {
         },
       ),
       GoRoute(path: AppRoute.ami, builder: (context, state) => const AmiValidationScreen()),
-      GoRoute(path: AppRoute.regions, builder: (context, state) => const RegionsScreen()),
+      GoRoute(path: '/regions', redirect: (context, state) => AppRoute.dashboard),
     ],
   );
 }
