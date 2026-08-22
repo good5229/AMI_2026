@@ -123,21 +123,50 @@ Widget _bar(String label, double value, double maxValue, bool emphasized) {
   final ratio = maxValue <= 0 ? 0.0 : (value / maxValue).clamp(0.0, 1.0);
   return Padding(
     padding: const EdgeInsets.symmetric(vertical: 4),
-    child: Row(children: [
-      SizedBox(width: 96, child: Text(label, style: const TextStyle(fontSize: 12))),
-      Expanded(child: ClipRRect(borderRadius: BorderRadius.circular(4), child: ColoredBox(color: const Color(0xFFE4EBE8), child: SizedBox(height: 12, child: Align(alignment: Alignment.centerLeft, child: FractionallySizedBox(widthFactor: ratio, child: ColoredBox(color: emphasized ? const Color(0xFF0F766E) : const Color(0xFF9FB7B3)))))))),
-      const SizedBox(width: 8),
-      SizedBox(width: 58, child: Text('${value.toStringAsFixed(2)}A', textAlign: TextAlign.end)),
-    ]),
+    child: LayoutBuilder(builder: (context, constraints) {
+      final labelWidget = Text(label,
+          style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600));
+      final barWidget = Row(children: [
+        Expanded(child: ClipRRect(borderRadius: BorderRadius.circular(4), child: ColoredBox(color: const Color(0xFFE4EBE8), child: SizedBox(height: 12, child: Align(alignment: Alignment.centerLeft, child: FractionallySizedBox(widthFactor: ratio, child: ColoredBox(color: emphasized ? const Color(0xFF0F766E) : const Color(0xFF9FB7B3)))))))),
+        const SizedBox(width: 8),
+        SizedBox(width: 58, child: Text('${value.toStringAsFixed(2)}A', textAlign: TextAlign.end)),
+      ]);
+      if (constraints.maxWidth < 520) {
+        return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          labelWidget,
+          const SizedBox(height: 6),
+          barWidget,
+        ]);
+      }
+      return Row(children: [
+        SizedBox(width: 190, child: labelWidget),
+        const SizedBox(width: 12),
+        Expanded(child: barWidget),
+      ]);
+    }),
   );
 }
 
 Widget _kv(String label, String value) => Padding(
-  padding: const EdgeInsets.symmetric(vertical: 3),
-  child: Wrap(spacing: 8, runSpacing: 2, children: [
-    SizedBox(width: 118, child: Text(label, style: const TextStyle(fontWeight: FontWeight.w600))),
-    Text(value.isEmpty ? '미제공' : value, style: const TextStyle(fontWeight: FontWeight.w500)),
-  ]),
+  padding: const EdgeInsets.symmetric(vertical: 5),
+  child: LayoutBuilder(builder: (context, constraints) {
+    final labelWidget = Text(label,
+        style: const TextStyle(fontWeight: FontWeight.w700));
+    final valueWidget = Text(value.isEmpty ? '미제공' : value,
+        style: const TextStyle(fontWeight: FontWeight.w500));
+    if (constraints.maxWidth < 520) {
+      return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        labelWidget,
+        const SizedBox(height: 3),
+        valueWidget,
+      ]);
+    }
+    return Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Expanded(flex: 2, child: labelWidget),
+      const SizedBox(width: 12),
+      Expanded(flex: 3, child: valueWidget),
+    ]);
+  }),
 );
 
 String _phaseLabel(String value) {

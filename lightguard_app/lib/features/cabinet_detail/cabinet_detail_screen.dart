@@ -192,42 +192,99 @@ class CabinetDetailScreen extends ConsumerWidget {
           children: [
             Text(title, style: const TextStyle(fontWeight: FontWeight.w800)),
             const Divider(height: 22),
-            ...children,
+            ..._layoutSectionChildren(children),
           ],
         ),
       ),
     );
   }
 
-  Widget _kv(String label, String value) => Padding(
-        padding: const EdgeInsets.symmetric(vertical: 3),
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            final labelText = Text(
+  List<Widget> _layoutSectionChildren(List<Widget> children) {
+    final result = <Widget>[];
+    final fields = <_InfoField>[];
+
+    void flushFields() {
+      if (fields.isEmpty) return;
+      result.add(_InfoGrid(fields: List<_InfoField>.of(fields)));
+      fields.clear();
+    }
+
+    for (final child in children) {
+      if (child is _InfoField) {
+        fields.add(child);
+      } else {
+        flushFields();
+        result.add(child);
+      }
+    }
+    flushFields();
+    return result;
+  }
+
+  _InfoField _kv(String label, String value) =>
+      _InfoField(label: label, value: value);
+}
+
+class _InfoGrid extends StatelessWidget {
+  const _InfoGrid({required this.fields});
+
+  final List<_InfoField> fields;
+
+  @override
+  Widget build(BuildContext context) => LayoutBuilder(
+        builder: (context, constraints) {
+          final columns = constraints.maxWidth >= 980
+              ? 3
+              : constraints.maxWidth >= 620
+                  ? 2
+                  : 1;
+          const gap = 10.0;
+          final width =
+              (constraints.maxWidth - (columns - 1) * gap) / columns;
+          return Padding(
+            padding: const EdgeInsets.only(bottom: 8),
+            child: Wrap(
+              spacing: gap,
+              runSpacing: gap,
+              children: [
+                for (final field in fields)
+                  SizedBox(width: width, child: field),
+              ],
+            ),
+          );
+        },
+      );
+}
+
+class _InfoField extends StatelessWidget {
+  const _InfoField({required this.label, required this.value});
+
+  final String label;
+  final String value;
+
+  @override
+  Widget build(BuildContext context) => Container(
+        constraints: const BoxConstraints(minHeight: 76),
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: const Color(0xFFF5F7F6),
+          border: Border.all(color: const Color(0xFFDDE5E2)),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
               label,
               style: const TextStyle(
                 color: Color(0xFF5C6B73),
-                fontWeight: FontWeight.w600,
+                fontSize: 12,
+                fontWeight: FontWeight.w700,
               ),
-            );
-            final valueText = Text(
-              value,
-              style: const TextStyle(fontWeight: FontWeight.w500),
-            );
-            if (constraints.maxWidth < 420) {
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [labelText, const SizedBox(height: 3), valueText],
-              );
-            }
-            return Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(width: 140, child: labelText),
-                Expanded(child: valueText),
-              ],
-            );
-          },
+            ),
+            const SizedBox(height: 6),
+            Text(value, style: const TextStyle(fontWeight: FontWeight.w600)),
+          ],
         ),
       );
 }

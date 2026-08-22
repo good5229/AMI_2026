@@ -55,7 +55,25 @@ class DashboardScreen extends ConsumerWidget {
                   child: Text('${region.label} 자산 및 점검 현황', style: Theme.of(context).textTheme.titleLarge),
                 ),
                 const SizedBox(height: 8),
-                Wrap(spacing: 12, runSpacing: 12, children: cards),
+                LayoutBuilder(
+                  builder: (context, constraints) {
+                    final columns = constraints.maxWidth >= 1120
+                        ? 4
+                        : constraints.maxWidth >= 720
+                            ? 3
+                            : 2;
+                    final cardWidth =
+                        (constraints.maxWidth - (columns - 1) * 12) / columns;
+                    return Wrap(
+                      spacing: 12,
+                      runSpacing: 12,
+                      children: [
+                        for (final card in cards)
+                          SizedBox(width: cardWidth, child: card),
+                      ],
+                    );
+                  },
+                ),
               ],
             ),
           ),
@@ -115,15 +133,12 @@ class _MetricCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final viewportWidth = MediaQuery.sizeOf(context).width;
-    final width = viewportWidth < 600 ? (viewportWidth - 36) / 2 : 210.0;
     final critical = title.contains('우선 확인');
     final caution = title.contains('현장점검 검토');
     final accent = critical ? const Color(0xFFB42318) : caution ? const Color(0xFFD97706) : AppTheme.ink;
     final background = critical ? const Color(0xFFFFF1F0) : caution ? const Color(0xFFFFF7E6) : AppTheme.paper;
     return SizedBox(
-      width: width,
-      height: 98,
+      height: 112,
       child: Card(
         margin: EdgeInsets.zero,
         color: background,
@@ -136,7 +151,7 @@ class _MetricCard extends StatelessWidget {
               Container(width: 34, height: 34, decoration: BoxDecoration(color: accent.withValues(alpha: 0.09), borderRadius: BorderRadius.circular(9)), child: Icon(icon, color: accent, size: 20)),
               const SizedBox(width: 12),
               Expanded(child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(title, maxLines: 2, overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.labelMedium),
+                Text(title, maxLines: 3, overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.labelMedium),
                 const SizedBox(height: 4),
                 Row(children: [
                   Expanded(child: Text(value, maxLines: 1, overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.titleLarge?.copyWith(color: accent))),
