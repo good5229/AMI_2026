@@ -11,9 +11,8 @@ import 'v13_external_validation_card.dart';
 import 'v14_physical_external_card.dart';
 import 'v15_target_mechanism_card.dart';
 import 'v16_competition_utility_card.dart';
-import 'v17_municipal_operations_card.dart';
-import 'v18_operational_triage_card.dart';
-import 'v19_buyeo_evidence_card.dart';
+import 'municipal_operations_evidence_card.dart';
+import 'submission_readiness_card.dart';
 
 import '../../core/widgets/app_scaffold.dart';
 import '../../core/widgets/status_badges.dart';
@@ -166,10 +165,10 @@ class _V06EvidenceHardening extends StatelessWidget {
             const SizedBox(height: 16),
             const V16CompetitionUtilityCard(),
             const SizedBox(height: 16),
-            const V17MunicipalOperationsCard(),
+            const SubmissionReadinessCard(),
+            const SizedBox(height: 12),
+            const MunicipalOperationsEvidenceCard(),
             const SizedBox(height: 16),
-          const V18OperationalTriageCard(),
-          const V19BuyeoEvidenceCard(),
             const SizedBox(height: 16),
             Text('Evidence Hardening · Uncertainty First',
                 style: Theme.of(context).textTheme.titleMedium),

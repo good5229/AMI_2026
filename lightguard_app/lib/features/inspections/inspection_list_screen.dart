@@ -54,7 +54,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
         final rows = _filterRows(data.objects, activeFilter, targetCabinetIds);
 
         return LightguardShell(
-          title: '점검 우선순위',
+          title: '오늘의 점검 대상',
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: 8),
@@ -140,33 +140,33 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                               label: 'Source: $source',
                             ),
                             _EvidenceChip(
-                                label: 'Priority',
+                                label: '우선순위',
                                 value: '#${c.inspectionPriority.rank}'),
                             _EvidenceChip(
-                              label: 'Event / Rule',
+                              label: '이상 근거',
                               value: signal?.eventType ??
                                   c.anomalyEvidence.ruleIds.join(', '),
                             ),
                             _EvidenceChip(
-                              label: 'Activation',
+                              label: '발생 시점',
                               value: signal == null
                                   ? '측정값 없음'
                                   : '${(signal.maxActivation * 100).toStringAsFixed(1)}%',
                             ),
                             _EvidenceChip(
-                              label: 'Duration',
+                              label: '지속 시간',
                               value: signal == null
                                   ? '측정값 없음'
                                   : '${signal.estimatedDurationMin}분',
                             ),
                             _EvidenceChip(
-                              label: 'Expected load',
+                              label: '예상 부하',
                               value: c.expectedLoad.expectedRatedLoadKw > 0
                                   ? '${c.expectedLoad.expectedRatedLoadKw.toStringAsFixed(2)} kW'
                                   : '정격정보 제한',
                             ),
                             _EvidenceChip(
-                              label: 'Observed signal',
+                              label: '실측 신호',
                               value: signal == null
                                   ? '없음'
                                   : signal.patternConfidence,
@@ -174,7 +174,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                           ],
                         ),
                         const SizedBox(height: 10),
-                        Text('Reason: ${c.inspectionPriority.reason}',
+                        Text('판정 근거: ${c.inspectionPriority.reason}',
                             maxLines: 3),
                       ],
                     ),
@@ -246,7 +246,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
   String _filterLabel(_InspectionFilter filter) {
     return switch (filter) {
       _InspectionFilter.all => '전체',
-      _InspectionFilter.targeted => '검증/연계 대상',
+      _InspectionFilter.targeted => '연계 데이터 있음',
       _InspectionFilter.priority => '우선 점검',
       _InspectionFilter.recommended => '점검 권고',
       _InspectionFilter.observe => '관찰',

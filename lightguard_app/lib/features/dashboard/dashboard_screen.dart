@@ -149,6 +149,20 @@ class DashboardScreen extends ConsumerWidget {
                 const _SecondCheckerCard(),
                 const SizedBox(height: 12),
                 Card(
+                  color: const Color(0xFFE8F3EE),
+                  child: ListTile(
+                    leading: const Icon(Icons.public_outlined,
+                        color: Color(0xFF176B4D)),
+                    title: const Text('7개 지역 운영·확장 근거'),
+                    subtitle: const Text(
+                      '대구·부여·울산 남구·양주·미추홀·대전·강릉의 공개데이터로 운영 필요성과 지역별 적용 경로를 확인했습니다.',
+                    ),
+                    onTap: () => context.go('/ami-events'),
+                    trailing: const Icon(Icons.chevron_right),
+                  ),
+                ),
+                const SizedBox(height: 12),
+                Card(
                   child: ListTile(
                     leading: const Icon(Icons.schedule),
                     title: const Text('기준일 기준 점등/소등'),

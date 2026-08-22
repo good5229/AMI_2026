@@ -89,7 +89,7 @@ void main() {
       maxAttempts: 18,
     );
 
-    expect(find.text('점검 우선순위'), findsAtLeastNWidgets(1));
+    expect(find.text('오늘의 점검 대상'), findsOneWidget);
     expect(find.text('CAB-002'), findsAtLeastNWidgets(1));
     expect(find.text('CAB-001'), findsAtLeastNWidgets(1));
 
@@ -205,7 +205,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(tester.takeException(), isNull);
-    expect(find.text('홈'), findsOneWidget);
+    expect(find.text('현황'), findsOneWidget);
   });
 
   testWidgets('Region cards disclose modes and no municipal AMI',
