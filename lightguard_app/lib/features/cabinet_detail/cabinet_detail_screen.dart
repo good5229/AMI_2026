@@ -49,7 +49,7 @@ class CabinetDetailScreen extends ConsumerWidget {
                     _kv('램프 정격', _fixtureLampType(cabinet)),
                     _kv('총 정격용량',
                         '${cabinet.expectedLoad.ratedPowerW.toStringAsFixed(1)} W'),
-                    _kv('설치 위치', cabinet.assetInfo.location),
+                    _kv('설치 위치', _displayLocation(cabinet)),
                     if (cabinet.assetInfo.latitude != null &&
                         cabinet.assetInfo.longitude != null) ...[
                       Align(
@@ -170,6 +170,17 @@ class CabinetDetailScreen extends ConsumerWidget {
       ..sort();
     if (wattages.isEmpty) return '자료 미제공';
     return wattages.map((w) => '${w.toStringAsFixed(0)}W').join(', ');
+  }
+
+  String _displayLocation(CabinetRecord cabinet) {
+    final location = cabinet.assetInfo.location.trim();
+    final coordinateOnly = RegExp(
+      r'^-?\d+(?:\.\d+)?\s*,\s*-?\d+(?:\.\d+)?$',
+    ).hasMatch(location);
+    if (location.isEmpty || coordinateOnly) {
+      return '지도에서 위치를 확인할 수 있습니다.';
+    }
+    return location;
   }
 
   Widget _section(String title, List<Widget> children, {String? keySuffix}) {

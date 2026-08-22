@@ -157,6 +157,7 @@ void main() {
     expect(find.byKey(const Key('cabinet-map-link')), findsOneWidget);
     expect(find.text('지도에서 위치 보기'), findsOneWidget);
     expect(find.text('좌표'), findsNothing);
+    expect(find.textContaining('35.000000, 129.000000'), findsNothing);
 
     final sectionCFinder =
         find.byKey(const Key('section-cabinet-section-summary-c'));
