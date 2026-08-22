@@ -20,7 +20,12 @@ GoRouter createRouter() {
     initialLocation: AppRoute.dashboard,
     routes: [
       GoRoute(path: AppRoute.dashboard, builder: (context, state) => const DashboardScreen()),
-      GoRoute(path: AppRoute.map, builder: (context, state) => const MapScreen()),
+      GoRoute(
+        path: AppRoute.map,
+        builder: (context, state) => MapScreen(
+          focusCabinetUid: state.uri.queryParameters['cabinet'],
+        ),
+      ),
       GoRoute(path: AppRoute.inspections, builder: (context, state) => const InspectionListScreen()),
       GoRoute(
         path: AppRoute.cabinet,

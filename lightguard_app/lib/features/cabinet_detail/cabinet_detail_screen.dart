@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../../core/widgets/app_scaffold.dart';
 import '../../core/widgets/status_badges.dart';
 import '../../data/models/lightguard_models.dart';
@@ -48,6 +49,25 @@ class CabinetDetailScreen extends ConsumerWidget {
                     _kv('총 정격용량',
                         '${cabinet.expectedLoad.ratedPowerW.toStringAsFixed(1)} W'),
                     _kv('주소/위치', cabinet.assetInfo.location),
+                    if (cabinet.assetInfo.latitude != null &&
+                        cabinet.assetInfo.longitude != null) ...[
+                      _kv(
+                        '좌표',
+                        '${cabinet.assetInfo.latitude!.toStringAsFixed(6)}, ${cabinet.assetInfo.longitude!.toStringAsFixed(6)}',
+                      ),
+                      const SizedBox(height: 8),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: OutlinedButton.icon(
+                          key: const Key('cabinet-map-link'),
+                          onPressed: () => context.go(
+                            '/map?cabinet=${Uri.encodeComponent(cabinet.cabinetUid)}',
+                          ),
+                          icon: const Icon(Icons.map_outlined),
+                          label: const Text('지도에서 위치 보기'),
+                        ),
+                      ),
+                    ],
                     _kv('데이터 유형', cabinet.modeLabel),
                   ],
                   keySuffix: 'cabinet-section-summary-a'),
@@ -96,11 +116,15 @@ class CabinetDetailScreen extends ConsumerWidget {
                     LinearProgressIndicator(
                       minHeight: 18,
                       value: signal.maxActivation.clamp(0.0, 1.0),
+                      color: const Color(0xFF0F766E),
+                      backgroundColor: const Color(0xFFDDE7E4),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     const SizedBox(height: 8),
                     Text(
                         '관측 최대 activation ${(signal.maxActivation * 100).toStringAsFixed(1)}%'),
+                    const SizedBox(height: 10),
+                    const _ActivationLegend(),
                   ],
                   _kv(
                       '탐지 유형',
@@ -192,5 +216,55 @@ class CabinetDetailScreen extends ConsumerWidget {
             );
           },
         ),
+      );
+}
+
+class _ActivationLegend extends StatelessWidget {
+  const _ActivationLegend();
+
+  @override
+  Widget build(BuildContext context) => const Wrap(
+        key: Key('activation-chart-legend'),
+        spacing: 14,
+        runSpacing: 8,
+        children: [
+          _LegendItem(
+            color: Color(0xFF0F766E),
+            label: '관측 활성도',
+            detail: '이벤트에서 관측된 최대 활성 비율',
+          ),
+          _LegendItem(
+            color: Color(0xFFDDE7E4),
+            label: '미활성 구간',
+            detail: '100%까지 남은 비율',
+          ),
+        ],
+      );
+}
+
+class _LegendItem extends StatelessWidget {
+  const _LegendItem({
+    required this.color,
+    required this.label,
+    required this.detail,
+  });
+
+  final Color color;
+  final String label;
+  final String detail;
+
+  @override
+  Widget build(BuildContext context) => Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            width: 12,
+            height: 12,
+            decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+          ),
+          const SizedBox(width: 6),
+          Text('$label · $detail',
+              style: Theme.of(context).textTheme.bodySmall),
+        ],
       );
 }

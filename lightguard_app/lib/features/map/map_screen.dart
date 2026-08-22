@@ -21,7 +21,9 @@ enum _MapFilter {
 }
 
 class MapScreen extends ConsumerStatefulWidget {
-  const MapScreen({super.key});
+  const MapScreen({super.key, this.focusCabinetUid});
+
+  final String? focusCabinetUid;
 
   @override
   ConsumerState<MapScreen> createState() => _MapScreenState();
@@ -46,6 +48,11 @@ class _MapScreenState extends ConsumerState<MapScreen> {
             .where((c) =>
                 c.assetInfo.latitude != null && c.assetInfo.longitude != null)
             .toList(growable: false);
+        final focusedCabinet = widget.focusCabinetUid == null
+            ? null
+            : allPoints
+                .where((c) => c.cabinetUid == widget.focusCabinetUid)
+                .firstOrNull;
         final targetPoints = targetIds.isEmpty
             ? allPoints
             : allPoints
@@ -108,7 +115,10 @@ class _MapScreenState extends ConsumerState<MapScreen> {
               .toList(growable: false),
         };
 
-        final center = points.isNotEmpty
+        final center = focusedCabinet != null
+            ? LatLng(focusedCabinet.assetInfo.latitude!,
+                focusedCabinet.assetInfo.longitude!)
+            : points.isNotEmpty
             ? LatLng(points.first.assetInfo.latitude!,
                 points.first.assetInfo.longitude!)
             : (allPoints.isNotEmpty
@@ -123,7 +133,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
               FlutterMap(
                 options: MapOptions(
                   initialCenter: center,
-                  initialZoom: 13,
+                  initialZoom: focusedCabinet == null ? 13 : 17,
                   minZoom: 10,
                   maxZoom: 18,
                 ),
@@ -144,7 +154,11 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                               c.assetInfo.latitude!, c.assetInfo.longitude!),
                           child: GestureDetector(
                             onTap: () => _openCabinet(context, c.cabinetUid),
-                            child: _statusMarker(c),
+                            child: _statusMarker(
+                              c,
+                              isFocused: c.cabinetUid ==
+                                  focusedCabinet?.cabinetUid,
+                            ),
                           ),
                         ),
                     ],
@@ -167,6 +181,16 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                               region.branchLabel,
                               style: Theme.of(context).textTheme.titleSmall,
                             ),
+                            if (focusedCabinet != null) ...[
+                              const SizedBox(height: 4),
+                              Text(
+                                '선택 위치 · ${focusedCabinet.assetInfo.cabinetName}',
+                                key: const Key('map-focused-cabinet-label'),
+                                style: const TextStyle(
+                                    color: Color(0xFF0F766E),
+                                    fontWeight: FontWeight.w700),
+                              ),
+                            ],
                             const SizedBox(height: 8),
                             Wrap(
                               spacing: 8,
@@ -303,7 +327,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
     context.go('/cabinet/$id');
   }
 
-  Widget _statusMarker(CabinetRecord c) {
+  Widget _statusMarker(CabinetRecord c, {required bool isFocused}) {
     final color = switch (c.status) {
       InspectionStatus.normal => Colors.green,
       InspectionStatus.observe => Colors.blue,
@@ -312,11 +336,28 @@ class _MapScreenState extends ConsumerState<MapScreen> {
       InspectionStatus.dataCheckRequired => Colors.grey,
     };
 
-    return CircleAvatar(
-      radius: 12,
-      backgroundColor: color,
-      foregroundColor: Colors.white,
-      child: const Icon(Icons.bolt, size: 14),
+    return Container(
+      key: isFocused ? const Key('map-focused-cabinet-marker') : null,
+      padding: EdgeInsets.all(isFocused ? 4 : 0),
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: isFocused ? Colors.white : Colors.transparent,
+        border: isFocused
+            ? Border.all(color: const Color(0xFF102A43), width: 3)
+            : null,
+        boxShadow: isFocused
+            ? const [
+                BoxShadow(
+                    color: Color(0x40102A43), blurRadius: 10, spreadRadius: 2)
+              ]
+            : null,
+      ),
+      child: CircleAvatar(
+        radius: 12,
+        backgroundColor: color,
+        foregroundColor: Colors.white,
+        child: const Icon(Icons.bolt, size: 14),
+      ),
     );
   }
 }

@@ -32,7 +32,11 @@ void main() {
             path: AppRoute.dashboard,
             builder: (context, state) => const DashboardScreen()),
         GoRoute(
-            path: AppRoute.map, builder: (context, state) => const MapScreen()),
+          path: AppRoute.map,
+          builder: (context, state) => MapScreen(
+            focusCabinetUid: state.uri.queryParameters['cabinet'],
+          ),
+        ),
         GoRoute(
             path: AppRoute.inspections,
             builder: (context, state) => const InspectionListScreen()),
@@ -149,6 +153,8 @@ void main() {
       find.descendant(of: sectionAFinder, matching: find.text('자료 미제공')),
       findsAtLeastNWidgets(1),
     );
+    expect(find.byKey(const Key('cabinet-map-link')), findsOneWidget);
+    expect(find.text('지도에서 위치 보기'), findsOneWidget);
 
     final sectionCFinder =
         find.byKey(const Key('section-cabinet-section-summary-c'));
@@ -176,6 +182,24 @@ void main() {
       ),
       findsAtLeastNWidgets(1),
     );
+  });
+
+  testWidgets('Cabinet detail exposes activation color legend for a signal',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(buildTestApp(initialLocation: '/cabinet/CAB-001'));
+    await tester.pumpAndSettle();
+
+    final legendFinder = find.byKey(const Key('activation-chart-legend'));
+    await tester.scrollUntilVisible(
+      legendFinder,
+      300,
+      scrollable: find.byType(Scrollable).last,
+    );
+    await tester.pumpAndSettle();
+
+    expect(legendFinder, findsOneWidget);
+    expect(find.textContaining('관측 활성도'), findsOneWidget);
+    expect(find.textContaining('미활성 구간'), findsOneWidget);
   });
 
   testWidgets(
