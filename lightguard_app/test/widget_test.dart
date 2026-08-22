@@ -64,7 +64,9 @@ void main() {
     await tester.pumpWidget(buildTestApp());
     await tester.pumpAndSettle();
 
-    expect(find.text('LightGuard Dashboard · 부산 수영구'), findsOneWidget);
+    expect(find.text('LightGuard · 운영 현황'), findsOneWidget);
+    expect(find.textContaining('오늘 먼저 확인할 우선 점검'), findsOneWidget);
+    expect(find.text('점검 대상 보기'), findsOneWidget);
     expect(find.text('총 분전함'), findsOneWidget);
     expect(find.text('총 가로등 수'), findsOneWidget);
     expect(find.text('총 정격용량'), findsOneWidget);

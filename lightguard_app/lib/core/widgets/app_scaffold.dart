@@ -69,7 +69,15 @@ class LightguardShell extends StatelessWidget {
               ),
             ),
             const VerticalDivider(width: 1),
-            Expanded(child: child),
+            Expanded(
+              child: Align(
+                alignment: Alignment.topCenter,
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 1440),
+                  child: SizedBox.expand(child: child),
+                ),
+              ),
+            ),
           ],
         ),
       );
@@ -84,7 +92,13 @@ class LightguardShell extends StatelessWidget {
           child: Divider(height: 1),
         ),
       ),
-      body: child,
+      body: Align(
+        alignment: Alignment.topCenter,
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 960),
+          child: SizedBox.expand(child: child),
+        ),
+      ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: _selectedIndex(tabs, location),
         destinations: [

@@ -56,6 +56,8 @@ class AppTheme {
         centerTitle: false,
         elevation: 0,
         scrolledUnderElevation: 0,
+        toolbarHeight: 68,
+        titleSpacing: 20,
         foregroundColor: ink,
         backgroundColor: paper,
         surfaceTintColor: Colors.transparent,
@@ -63,10 +65,11 @@ class AppTheme {
       cardTheme: const CardThemeData(
         color: paper,
         surfaceTintColor: Colors.transparent,
-        elevation: 0,
+        elevation: 0.6,
+        shadowColor: Color(0x1A102A43),
         margin: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(18)),
+          borderRadius: BorderRadius.all(Radius.circular(20)),
           side: BorderSide(color: line),
         ),
       ),
@@ -100,6 +103,22 @@ class AppTheme {
         selectedLabelTextStyle:
             TextStyle(color: ink, fontWeight: FontWeight.w800),
         unselectedLabelTextStyle: TextStyle(color: Color(0xFF52606D)),
+      ),
+      filledButtonTheme: FilledButtonThemeData(
+        style: FilledButton.styleFrom(
+          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 15),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          textStyle: const TextStyle(fontWeight: FontWeight.w800),
+        ),
+      ),
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 15),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          textStyle: const TextStyle(fontWeight: FontWeight.w800),
+        ),
       ),
     );
   }
