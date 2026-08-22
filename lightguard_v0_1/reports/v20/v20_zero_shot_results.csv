@@ -1,0 +1,2 @@
+executed,model,ulsan_retuning_count,n,positives,prevalence,average_precision,top10,method,repetitions,top10_enrichment_ci95,transfer_grade,claim_boundary
+True,LOGISTIC,0,915,36,0.03934426229508197,0.1273439517155655,"{""precision"": 0.11956521739130435, ""recall"": 0.3055555555555556, ""enrichment"": 3.038949275362319, ""n"": 92}",asset_cluster_bootstrap,2000,"[1.3702159909056462, 4.27639751552795]",TM-A,Operational-priority transfer only; not AMI accuracy or confirmed field-fault truth.

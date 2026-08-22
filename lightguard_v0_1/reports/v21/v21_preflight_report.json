@@ -1,0 +1,17 @@
+{
+  "android_artifact": "lightguard_app/build/app/outputs/flutter-apk/app-release.apk",
+  "deterministic_submission_rebuild": "PASS",
+  "flutter_analyze": "PASS_NO_ISSUES",
+  "flutter_android_release_build": "PASS",
+  "flutter_pub_get": "PASS",
+  "flutter_test": "PASS",
+  "flutter_web_release_build": "PASS",
+  "forbidden_claim_scan": "PASS",
+  "metric_consistency": "PASS",
+  "predecessor_integrity": "PASS",
+  "predictive_retuning_count": 0,
+  "status": "PASS",
+  "submission_contract": "PASS",
+  "version": "0.21",
+  "web_artifact": "lightguard_app/build/web"
+}

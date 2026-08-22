@@ -1,0 +1,28 @@
+{
+  "blocked_features": [
+    "work_start_date",
+    "work_completion_date",
+    "confirmation_date",
+    "facility_category",
+    "work_text",
+    "raw_asset_id",
+    "address",
+    "coordinates"
+  ],
+  "decision": "ELIGIBLE_COMMON_OPS",
+  "decision_timestamp": "BEFORE_ULSAN_OUTCOME_CONSTRUCTION",
+  "eligible": true,
+  "features": [
+    "month",
+    "weekday",
+    "prior_30d_count",
+    "prior_90d_count",
+    "prior_365d_count",
+    "days_since_previous_event",
+    "open_prior_case_count",
+    "historical_long_resolution_count"
+  ],
+  "primary_outcome": "repeat_30d",
+  "right_censor_days": 30,
+  "ulsan_retuning_allowed": false
+}

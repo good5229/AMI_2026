@@ -1,0 +1,46 @@
+{
+  "external": {
+    "average_precision": 0.1273439517155655,
+    "claim_boundary": "Operational-priority transfer only; not AMI accuracy or confirmed field-fault truth.",
+    "executed": true,
+    "method": "asset_cluster_bootstrap",
+    "model": "LOGISTIC",
+    "n": 915,
+    "positives": 36,
+    "prevalence": 0.03934426229508197,
+    "repetitions": 2000,
+    "top10": {
+      "enrichment": 3.038949275362319,
+      "n": 92,
+      "precision": 0.11956521739130435,
+      "recall": 0.3055555555555556
+    },
+    "top10_enrichment_ci95": [
+      1.3702159909056462,
+      4.27639751552795
+    ],
+    "transfer_grade": "TM-A",
+    "ulsan_retuning_count": 0
+  },
+  "seal": {
+    "model_sha256": "437acc62c49ab714119e00d2b6a100df206d6abe9025a4f347c8a104b94c0d80",
+    "outcome_unseen_at_freeze": true,
+    "retuning_count": 0
+  },
+  "validation_candidates": {
+    "LOGISTIC": {
+      "ap": 0.3328197518474146,
+      "enrichment": 3.481624758220503,
+      "n": 1673,
+      "precision": 0.3227734608487747,
+      "recall": 0.3481624758220503
+    },
+    "SIMPLE_RULE": {
+      "ap": 0.35545663271948363,
+      "enrichment": 3.1979368149580916,
+      "n": 1673,
+      "precision": 0.2964734010759115,
+      "recall": 0.31979368149580917
+    }
+  }
+}

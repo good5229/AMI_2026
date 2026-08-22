@@ -1,0 +1,89 @@
+{
+  "artifacts": [
+    {
+      "path": "lightguard_v0_1/data/validation/v20/optional_v20_zero_shot_scores.csv",
+      "sha256": "59bfd92f43aa1c28e9bbaa8125ed8fbf20f3c1f101235030f08e4661c5c4ac23"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v20/v20_asset_spatial_summary.json",
+      "sha256": "87dcb126723a2186ca48ade54b716bb2ee5b1bbd6b543f45d5c31ec7b99f7b26"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v20/v20_feature_availability_contract.json",
+      "sha256": "1d7926fe118f25b0ffd01574376d97a39b5187ced5c7dd91369894d3411a177e"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v20/v20_frozen_common_ops_model.json",
+      "sha256": "f520eef492cbcc00c5f67d5a442c6f78625765cb08b029317719eeadc96279c1"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v20/v20_lifecycle_summary.json",
+      "sha256": "df847df58d40bdfafda95249930c1182c04e79555c10d44534dbb6cec9949301"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v20/v20_queue_replay_events.csv",
+      "sha256": "69c8a9bfddffe0e1f8687a75c13825f29e7da38d7b263b968f13e6983e416a1e"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v20/v20_queue_replay_summary.json",
+      "sha256": "bf5f78f61ab7871a9d44e86d36a7ed23589409294900f1be9cf516c0092b0ec1"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v20/v20_u1_u2_join_summary.json",
+      "sha256": "68ce1185084585cbe47276c48d3528248fbfd1b2a0c88a7dc9fb32cdfbb65727"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v20/v20_ulsan_lifecycle_clean.csv",
+      "sha256": "0ba0a635ee60cb4c6e5a58a2780b9f58ddbbc9d929d4003c23eea02d25eba15d"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v20/v20_ulsan_u1_manifest.json",
+      "sha256": "5013552d85316fdc6e235e9cbca8bfd3625df1a7f8f7b2b7e89c38ee05bef040"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v20/v20_ulsan_u2_manifest.json",
+      "sha256": "c3d9888450c3b1d1953343a52fa229238193e0b01333c7bba56ea92dc85325d1"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v20/v20_work_start_capacity.csv",
+      "sha256": "18034a8a98a711decb918b8356c9ba5a67626d8813f187c5527e6c755867a700"
+    },
+    {
+      "path": "lightguard_v0_1/data/validation/v20/v20_zero_shot_summary.json",
+      "sha256": "54d7372b9c80ad0f516df4de56432e6ecebf68f2591f43d6a6a293fafddef469"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v20/v20_final_summary.md",
+      "sha256": "1cabb91ce4717a4de7b65ba6b3bbf6925ff9a6c9559e056957aa568a83d6380e"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v20/v20_independent_audit.md",
+      "sha256": "412778052c431ef1ee21ed2a115d469c092878e626ddf2350acfc8e21e41b7a9"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v20/v20_queue_replay.md",
+      "sha256": "65cf417c93a487d75a9bab4254ea42a9947ca489b1fff429ec9865214c7a54e9"
+    },
+    {
+      "path": "lightguard_v0_1/reports/v20/v20_zero_shot_results.csv",
+      "sha256": "20f2b3f526d6ef91109fc988a5a83d8e55c3a29cceb78e5a6c3c5c61e2fa5960"
+    },
+    {
+      "path": "lightguard_app/docs/v20_ulsan_operational_transfer.md",
+      "sha256": "1cabb91ce4717a4de7b65ba6b3bbf6925ff9a6c9559e056957aa568a83d6380e"
+    },
+    {
+      "path": "lightguard_app/lib/features/ami_validation/municipal_operations_evidence_card.dart",
+      "sha256": "8827bd178c6816b1aad300988840e4e0e664094b9f22e179f32918d9b3345a89"
+    }
+  ],
+  "freeze_base": "8d3809efb628f0e496fccd0184078b7603771e97",
+  "privacy_scan_required": true,
+  "retuning_count": 0,
+  "status": "BUILT",
+  "u1_sha256": "d0e3fecb06577d53b86cba5bf294b745559c2412e3f3b8965b69cb50d497d9fb",
+  "u1_u2_join_status": "PARTIAL_VERIFIED_EXACT_ID",
+  "u2_local_status": "AVAILABLE_VERIFIED",
+  "u2_sha256": "a060cf2f289274b62ea1578704b8673920a02cfb54f2232171482384266790fb",
+  "version": "0.20"
+}

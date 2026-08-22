@@ -1,0 +1,14 @@
+{
+  "all_u2_coordinate_valid_count": 17061,
+  "claim_boundary": "Asset coverage evidence only; no historical co-temporality or AMI fault-truth claim.",
+  "map_point_exported": false,
+  "matched_coordinate_valid_event_count": 994,
+  "matched_facility_event_counts": {
+    "가로등": 345,
+    "보안등": 649
+  },
+  "raw_coordinates_exported": false,
+  "safe_matched_asset_count": 920,
+  "safe_matched_event_count": 994,
+  "scope": "AGGREGATE_ONLY"
+}

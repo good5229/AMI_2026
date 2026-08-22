@@ -173,6 +173,12 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                           'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                       userAgentPackageName: 'kr.example.lightguard',
                     ),
+                  if (widget.showBaseMap)
+                    const RichAttributionWidget(
+                      attributions: [
+                        TextSourceAttribution('OpenStreetMap contributors'),
+                      ],
+                    ),
                   MarkerLayer(
                     key: const Key('map-marker-layer'),
                     markers: [
@@ -481,7 +487,7 @@ class _CabinetMapInfoCard extends StatelessWidget {
                 runSpacing: 8,
                 children: [
                   _MapInfoPill(
-                      label: '가로등',
+                      label: '연결 가로등',
                       value: '${cabinet.assetInfo.fixtureCount}개'),
                   _MapInfoPill(
                     label: '정격부하',

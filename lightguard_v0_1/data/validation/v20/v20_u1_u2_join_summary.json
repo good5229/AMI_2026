@@ -1,0 +1,20 @@
+{
+  "ambiguous_u2_match_asset_count": 13,
+  "ambiguous_u2_match_event_count": 17,
+  "category_conflict_event_count": 0,
+  "fuzzy_join_used": false,
+  "historical_coverage": "UNKNOWN",
+  "join_method": "EXACT_NORMALIZED_ID_AND_CATEGORY",
+  "join_status": "PARTIAL_VERIFIED_EXACT_ID",
+  "matched_events_after_snapshot_count": 420,
+  "raw_identifier_exported": false,
+  "row_multiplication_count": 0,
+  "safe_asset_match_rate": 0.9378185524974516,
+  "safe_matched_asset_count": 920,
+  "safe_matched_event_count": 994,
+  "u1_event_count": 1060,
+  "u1_unique_asset_count": 981,
+  "u2_snapshot_date": "2026-03-10",
+  "unmatched_asset_count": 48,
+  "unmatched_event_count": 49
+}

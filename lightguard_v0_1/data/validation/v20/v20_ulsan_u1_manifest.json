@@ -1,0 +1,31 @@
+{
+  "canonical_event_count": 1060,
+  "columns": [
+    "관리번호",
+    "시설구분",
+    "시설종류",
+    "보수접수일",
+    "작업시작일",
+    "작업완료일",
+    "작업내용",
+    "완료확인일",
+    "진행상태"
+  ],
+  "completion_before_receipt_count": 7,
+  "dataset": "U1_EVENT",
+  "date_parse_failure_count": 0,
+  "encoding": "cp949",
+  "exact_duplicate_nonempty_rows": 4,
+  "official_source": "https://www.data.go.kr/data/15116405/fileData.do",
+  "physical_row_count": 2233,
+  "raw_identifier_exported": false,
+  "raw_work_text_exported": false,
+  "receipt_date_max": "2026-06-01",
+  "receipt_date_min": "2026-01-02",
+  "schema_fingerprint": "8332f050785dda3ac54af56701874eb8264b1b4c5b8cebb51525626dd9688110",
+  "sha256": "d0e3fecb06577d53b86cba5bf294b745559c2412e3f3b8965b69cb50d497d9fb",
+  "start_before_receipt_count": 10,
+  "structurally_empty_row_count": 1173,
+  "tracked_in_git": false,
+  "usable_unique_asset_count": 981
+}

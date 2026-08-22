@@ -1,0 +1,88 @@
+{
+  "capacity_interpretation": "NOT_EVALUABLE_AS_STAFFING_CAPACITY",
+  "causal_claim": "NOT_SUPPORTED",
+  "policies": {
+    "FIFO": {
+      "all_cases": {
+        "median": 0.0,
+        "n": 1050,
+        "over_1d_share": 0.0009523809523809524,
+        "over_3d_share": 0.0,
+        "over_7d_share": 0.0,
+        "p75": 0.0,
+        "p90": 0.0,
+        "p95": 0.0,
+        "same_day_share": 0.9971428571428571
+      },
+      "repeat_30d_cases": {
+        "median": 0.0,
+        "n": 36,
+        "over_1d_share": 0.0,
+        "over_3d_share": 0.0,
+        "over_7d_share": 0.0,
+        "p75": 0.0,
+        "p90": 0.0,
+        "p95": 0.0,
+        "same_day_share": 1.0
+      },
+      "unstarted_at_horizon": 0
+    },
+    "FROZEN_COMMON_OPS": {
+      "all_cases": {
+        "median": 0.0,
+        "n": 1050,
+        "over_1d_share": 0.0009523809523809524,
+        "over_3d_share": 0.0,
+        "over_7d_share": 0.0,
+        "p75": 0.0,
+        "p90": 0.0,
+        "p95": 0.0,
+        "same_day_share": 0.9971428571428571
+      },
+      "repeat_30d_cases": {
+        "median": 0.0,
+        "n": 36,
+        "over_1d_share": 0.0,
+        "over_3d_share": 0.0,
+        "over_7d_share": 0.0,
+        "p75": 0.0,
+        "p90": 0.0,
+        "p95": 0.0,
+        "same_day_share": 1.0
+      },
+      "unstarted_at_horizon": 0
+    },
+    "FROZEN_SIMPLE_RULE": {
+      "all_cases": {
+        "median": 0.0,
+        "n": 1050,
+        "over_1d_share": 0.0009523809523809524,
+        "over_3d_share": 0.0,
+        "over_7d_share": 0.0,
+        "p75": 0.0,
+        "p90": 0.0,
+        "p95": 0.0,
+        "same_day_share": 0.9971428571428571
+      },
+      "repeat_30d_cases": {
+        "median": 0.0,
+        "n": 36,
+        "over_1d_share": 0.0,
+        "over_3d_share": 0.0,
+        "over_7d_share": 0.0,
+        "p75": 0.0,
+        "p90": 0.0,
+        "p95": 0.0,
+        "same_day_share": 1.0
+      },
+      "unstarted_at_horizon": 0
+    }
+  },
+  "promotion_gate": {
+    "passed": false,
+    "predeclared_all_case_p90_tolerance_days": 1,
+    "repeat_case_p90_must_improve": true
+  },
+  "same_day_order": "NOT_SUPPORTED",
+  "work_start_grade": "WS-B"
+}

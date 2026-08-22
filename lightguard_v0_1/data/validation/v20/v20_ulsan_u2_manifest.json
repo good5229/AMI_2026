@@ -1,0 +1,42 @@
+{
+  "ambiguous_identifier_count": 101,
+  "canonical_asset_row_count": 17061,
+  "columns": [
+    "관리번호",
+    "시설종류",
+    "주소",
+    "등기구종류",
+    "램프종류",
+    "램프용량(W)",
+    "램프수량",
+    "등주종류",
+    "위도",
+    "경도",
+    "데이터기준일자"
+  ],
+  "conflicting_duplicate_identifier_count": 94,
+  "dataset": "U2_ASSET",
+  "duplicate_identifier_row_count": 220,
+  "encoding": "cp949",
+  "exact_duplicate_identifier_count": 7,
+  "facility_categories": {
+    "가로등": 10088,
+    "보안등": 6973
+  },
+  "invalid_or_missing_coordinate_count": 0,
+  "local_source_status": "AVAILABLE_VERIFIED",
+  "missing_identifier_count": 0,
+  "official_source": "https://www.data.go.kr/data/15127415/fileData.do",
+  "physical_row_count": 17061,
+  "raw_address_exported": false,
+  "raw_coordinate_exported": false,
+  "raw_identifier_exported": false,
+  "schema_fingerprint": "c870687db50e3eba68798313cb231623db9ad1f18a283a4d004cf0c1c1f4b910",
+  "sha256": "a060cf2f289274b62ea1578704b8673920a02cfb54f2232171482384266790fb",
+  "snapshot_dates": {
+    "2026-03-10": 17061
+  },
+  "tracked_in_git": false,
+  "unique_identifier_count": 16841,
+  "valid_coordinate_count": 17061
+}

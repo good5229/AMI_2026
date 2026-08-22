@@ -1,0 +1,292 @@
+{
+  "version": "0.22",
+  "claim_boundary": "Municipal operational/asset applicability, not AMI fault accuracy.",
+  "regions": {
+    "YANGJU": {
+      "manifest": {
+        "filename": "경기도 양주시_가로등 및 보안등 유지보수_20221102.csv",
+        "sha256": "dabf0ffafada235b08891e132e6368454dcbd81309ae310ddf1d7b52a0c5313c",
+        "byte_size": 1215468,
+        "encoding": "cp949",
+        "rows": 11892,
+        "columns": [
+          "연번",
+          "접수일자",
+          "접수매체",
+          "관리번호",
+          "신고내용",
+          "조치사항",
+          "관리기관명",
+          "데이터기준일자"
+        ],
+        "schema_fingerprint": "c66b9857b5fa798aa4cf2ea838bac68371ee9a2a9841dbc38899d4a6a169d064",
+        "missing_by_column": {
+          "연번": 0,
+          "접수일자": 0,
+          "접수매체": 0,
+          "관리번호": 0,
+          "신고내용": 0,
+          "조치사항": 0,
+          "관리기관명": 0,
+          "데이터기준일자": 0
+        },
+        "official_source": "https://www.data.go.kr/data/15087686/fileData.do",
+        "tracked_in_git": false
+      },
+      "metrics": {
+        "role": "EVENT_OPERATION",
+        "decision": "MEANINGFUL_REPEAT_AND_ACTION_EVIDENCE",
+        "events": 11892,
+        "date_min": "2020-01-02",
+        "date_max": "2022-09-30",
+        "unique_management_ids": 9409,
+        "assets_with_multiple_distinct_dates": 1711,
+        "receipt_media": {
+          "민원": 11892
+        },
+        "repeat": {
+          "30": {
+            "eligible_distinct_asset_dates": 11239,
+            "repeated": 378,
+            "share": 0.03363288548803274
+          },
+          "90": {
+            "eligible_distinct_asset_dates": 10192,
+            "repeated": 760,
+            "share": 0.07456828885400314
+          },
+          "365": {
+            "eligible_distinct_asset_dates": 7042,
+            "repeated": 1303,
+            "share": 0.18503266117580233
+          }
+        },
+        "action_text_coverage": 1.0,
+        "limitations": [
+          "처리일 부재로 처리시간 산출 불가",
+          "접수매체가 전부 민원이라 발견경로 비교 불가",
+          "자유문은 산출물에 미복제"
+        ]
+      }
+    },
+    "MICHUHOL": {
+      "manifest": {
+        "filename": "인천광역시미추홀구시설관리공단_보안등 월별 민원처리현황_20251113.csv",
+        "sha256": "86d8d5d6b4808ccf13491819a994eca7730d0ae4781c83506e9413bf15ac7b84",
+        "byte_size": 771,
+        "encoding": "cp949",
+        "rows": 36,
+        "columns": [
+          "년도",
+          "월",
+          "민원접수",
+          "민원처리",
+          "미처리(민원)",
+          "자체보수(IoT 관제)"
+        ],
+        "schema_fingerprint": "36989f990e7388f25aba47f6bcabb3bb4948acecca5fb60725d805be44f4b153",
+        "missing_by_column": {
+          "년도": 2,
+          "월": 2,
+          "민원접수": 2,
+          "민원처리": 2,
+          "미처리(민원)": 2,
+          "자체보수(IoT 관제)": 2
+        },
+        "official_source": "https://www.data.go.kr/data/15125540/fileData.do",
+        "tracked_in_git": false
+      },
+      "metrics": {
+        "role": "AGGREGATE_OPERATION",
+        "decision": "MEANINGFUL_IOT_AND_WORKLOAD_EVIDENCE",
+        "source_rows": 36,
+        "complete_months": 34,
+        "excluded_incomplete_rows": 2,
+        "period_min": "2023-01",
+        "period_max": "2025-10",
+        "complaints": 2890,
+        "processed": 2890,
+        "unprocessed": 0,
+        "iot_self_repairs": 1127,
+        "iot_share_of_recorded_work": 0.2805576300721932,
+        "monthly_complaint_cv": 0.31315547986504955,
+        "monthly_iot_cv": 0.7574423344196036,
+        "limitations": [
+          "월별 집계로 개별 사건·자산·처리시간 분석 불가",
+          "완료율은 집계 필드의 기술통계이며 LightGuard 효과가 아님"
+        ]
+      }
+    },
+    "DAEJEON": {
+      "manifest": {
+        "filename": "대전광역시_가로등 현황_20221201.csv",
+        "sha256": "5d5bdefd7247674c4401b9ddc3d8e07819bf11f87d577229b1506948605063e8",
+        "byte_size": 4951514,
+        "encoding": "cp949",
+        "rows": 43082,
+        "columns": [
+          "지형지물부호",
+          "관리번호",
+          "행정읍면동",
+          "도엽번호",
+          "도로구간번호",
+          "등기구모형",
+          "등주높이",
+          "등주형식",
+          "등주재질",
+          "암길이",
+          "등기구수량",
+          "광원종류",
+          "가로등제어기관리번호",
+          "대장초기화여부",
+          "위도",
+          "경도"
+        ],
+        "schema_fingerprint": "9529b53b6e1c9a96e3adade8467abe3f047c63bee166b2a57c4a94f3af4fec32",
+        "missing_by_column": {
+          "지형지물부호": 0,
+          "관리번호": 0,
+          "행정읍면동": 0,
+          "도엽번호": 0,
+          "도로구간번호": 0,
+          "등기구모형": 0,
+          "등주높이": 0,
+          "등주형식": 0,
+          "등주재질": 0,
+          "암길이": 0,
+          "등기구수량": 0,
+          "광원종류": 0,
+          "가로등제어기관리번호": 0,
+          "대장초기화여부": 0,
+          "위도": 0,
+          "경도": 0
+        },
+        "official_source": "https://www.data.go.kr/data/15110054/fileData.do",
+        "tracked_in_git": false
+      },
+      "metrics": {
+        "role": "ASSET_SPATIAL",
+        "decision": "MEANINGFUL_WITH_LOAD_AND_CONTROLLER_GAPS",
+        "assets": 43082,
+        "unique_management_ids": 43082,
+        "valid_coordinate_coverage": 1.0,
+        "district_counts": {
+          "대전광역시 대덕구": 5824,
+          "대전광역시 동구": 5790,
+          "대전광역시 서구": 9244,
+          "대전광역시 유성구": 17266,
+          "대전광역시 중구": 4958
+        },
+        "positive_lamp_count_coverage": 0.019033471055197065,
+        "positive_lamp_count_sum": 920,
+        "usable_controller_id_coverage": 0.4038113365210529,
+        "unique_usable_controller_ids": 1559,
+        "limitations": [
+          "정격용량 필드 부재로 예상 정격부하 산출 불가",
+          "placeholder 제어기 ID 제외 필요",
+          "공간 자산 inventory로만 사용"
+        ]
+      }
+    },
+    "GANGNEUNG": {
+      "manifest": {
+        "filename": "강원특별자치도 강릉시_가로등_20230818.csv",
+        "sha256": "1cb0fc32070750fcaacd304836b93b7d0123584777495365dd8bd8853c2695f5",
+        "byte_size": 810412,
+        "encoding": "cp949",
+        "rows": 5667,
+        "columns": [
+          "제조사코드",
+          "가로등코드",
+          "가로등순번(SEQ)",
+          "분전함코드",
+          "분전함순번(SEQ)",
+          "표찰번호",
+          "등주타입",
+          "등주종류",
+          "등구분1",
+          "등구분2",
+          "상시격등",
+          "분기1",
+          "분기2",
+          "등종류1",
+          "등종류2",
+          "등용량1",
+          "등용량2",
+          "좌표(위도)",
+          "좌표(경도)",
+          "주소"
+        ],
+        "schema_fingerprint": "ea533f29786e056e455244fecb21a1fc90ed9901c7ff921fc41e8e0d1e357722",
+        "missing_by_column": {
+          "제조사코드": 0,
+          "가로등코드": 0,
+          "가로등순번(SEQ)": 0,
+          "분전함코드": 0,
+          "분전함순번(SEQ)": 0,
+          "표찰번호": 0,
+          "등주타입": 9,
+          "등주종류": 0,
+          "등구분1": 8,
+          "등구분2": 4780,
+          "상시격등": 1,
+          "분기1": 9,
+          "분기2": 4780,
+          "등종류1": 10,
+          "등종류2": 4780,
+          "등용량1": 14,
+          "등용량2": 4782,
+          "좌표(위도)": 0,
+          "좌표(경도)": 0,
+          "주소": 0
+        },
+        "official_source": "https://www.data.go.kr/data/15117413/fileData.do",
+        "tracked_in_git": false
+      },
+      "metrics": {
+        "role": "CABINET_ASSET_LOAD",
+        "decision": "STRONG_MEANINGFUL_OBJECT_CONTRACT_EVIDENCE",
+        "assets": 5667,
+        "unique_cabinet_keys": 339,
+        "cabinet_key_coverage": 1.0,
+        "valid_coordinate_coverage": 1.0,
+        "rated_capacity_row_coverage": 0.9962943356273161,
+        "rated_capacity_entries": 6531,
+        "nominal_capacity_sum_kw_if_field_is_watts": 1251.195,
+        "fixture_type_counts": {
+          "CDM": 2685,
+          "HQI": 68,
+          "LED": 2761,
+          "MISSING": 10,
+          "경관등": 3,
+          "나트륨": 10,
+          "메탈": 118,
+          "미디어파사등": 1,
+          "바닥등": 2,
+          "삼파장": 1,
+          "써치등": 8
+        },
+        "limitations": [
+          "등용량 단위를 W로 해석한 명목합이며 실측 부하가 아님",
+          "AMI 미포함으로 detector 현장성능 검증 불가"
+        ]
+      }
+    }
+  },
+  "evidence_architecture": {
+    "OPERATIONS_5": [
+      "DAEGU",
+      "BUYEO",
+      "ULSAN_NAMGU",
+      "YANGJU",
+      "MICHUHOL"
+    ],
+    "ASSET_SIGNAL_3": [
+      "SUYEONG",
+      "DAEJEON",
+      "GANGNEUNG"
+    ],
+    "same_model_nationwide_claim": false,
+    "new_predictive_tuning": 0
+  }
+}

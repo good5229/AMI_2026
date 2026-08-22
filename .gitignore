@@ -3,6 +3,7 @@
 !.env.example
 harness_docs/
 official_docs/
+submission/
 *.sqlite
 *.sqlite3
 

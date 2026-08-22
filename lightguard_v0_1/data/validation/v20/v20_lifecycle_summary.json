@@ -1,0 +1,37 @@
+{
+  "EXECUTION_DURATION": {
+    "median": 0.0,
+    "n": 1050,
+    "over_1d_share": 0.0009523809523809524,
+    "over_3d_share": 0.0009523809523809524,
+    "over_7d_share": 0.0009523809523809524,
+    "p75": 0.0,
+    "p90": 0.0,
+    "p95": 0.0,
+    "same_day_share": 0.9952380952380953
+  },
+  "TOTAL_RESOLUTION": {
+    "median": 0,
+    "n": 1053,
+    "over_1d_share": 0.001899335232668566,
+    "over_3d_share": 0.000949667616334283,
+    "over_7d_share": 0.000949667616334283,
+    "p75": 0,
+    "p90": 0.0,
+    "p95": 0.0,
+    "same_day_share": 0.9924026590693258
+  },
+  "WAIT_TO_START": {
+    "median": 0.0,
+    "n": 1050,
+    "over_1d_share": 0.0009523809523809524,
+    "over_3d_share": 0.0,
+    "over_7d_share": 0.0,
+    "p75": 0.0,
+    "p90": 0.0,
+    "p95": 0.0,
+    "same_day_share": 0.9971428571428571
+  },
+  "same_day_order": "NOT_SUPPORTED",
+  "temporal_anomaly_quarantine_count": 11
+}
