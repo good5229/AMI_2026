@@ -63,7 +63,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
         final rows = _filterRows(data.objects, activeFilter, targetCabinetIds);
 
         return LightguardShell(
-          title: '확인 대상 및 판정 사유',
+          title: '점검 대상 분전함과 선정 사유',
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: 8),
@@ -96,7 +96,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                     key: const Key('inspection-region-summary'),
                     title: Text(region.label),
                     subtitle: Text(region.regionalFilterHint),
-                    trailing: Text('총 ${data.objects.length}개'),
+                    trailing: Text('등록 분전함 ${data.objects.length}개'),
                   ),
                 );
               }
@@ -310,12 +310,12 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
 
   String _filterLabel(_InspectionFilter filter) {
     return switch (filter) {
-      _InspectionFilter.all => '전체',
-      _InspectionFilter.targeted => '연계 자료 있음',
-      _InspectionFilter.priority => '우선 확인 필요',
-      _InspectionFilter.recommended => '현장 확인 권고',
-      _InspectionFilter.observe => '추적 관찰',
-      _InspectionFilter.normal => '정상 범위',
+      _InspectionFilter.all => '전체 분전함',
+      _InspectionFilter.targeted => '추가 연계자료가 있는 분전함',
+      _InspectionFilter.priority => '우선 확인 대상',
+      _InspectionFilter.recommended => '현장점검 검토 대상',
+      _InspectionFilter.observe => '추적 관찰 대상',
+      _InspectionFilter.normal => '특이 신호 없음',
       _InspectionFilter.scenario => '검증용 모의 신호',
       _InspectionFilter.municipalAsset => '지자체 공공자산 정보',
     };

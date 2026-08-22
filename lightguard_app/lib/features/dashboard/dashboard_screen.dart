@@ -21,13 +21,13 @@ class DashboardScreen extends ConsumerWidget {
         final region = ref.watch(selectedRegionProvider);
         final isCompact = MediaQuery.sizeOf(context).width < 600;
         final cards = <Widget>[
-          _MetricCard('우선 확인 필요', '${data.countByStatus(InspectionStatus.priorityInspection)}', Icons.error_outline),
-          _MetricCard('현장 확인 권고', '${data.countByStatus(InspectionStatus.inspectionRecommended)}', Icons.warning_amber_rounded),
-          _MetricCard('추적 관찰', '${data.countByStatus(InspectionStatus.observe)}', Icons.remove_red_eye_outlined),
-          _MetricCard('정상 범위', '${data.countByStatus(InspectionStatus.normal)}', Icons.check_circle_outline),
-          _MetricCard('총 분전함', '${data.objects.length}개', Icons.electrical_services),
-          _MetricCard('총 가로등 수', '${data.totalLampCount}개', Icons.lightbulb_outline),
-          _MetricCard('총 정격용량', '${data.totalRatedLoadKw.toStringAsFixed(1)} kW', Icons.bolt),
+          _MetricCard('${region.label} 우선 확인 분전함', '${data.countByStatus(InspectionStatus.priorityInspection)}개', Icons.error_outline),
+          _MetricCard('${region.label} 현장점검 검토 분전함', '${data.countByStatus(InspectionStatus.inspectionRecommended)}개', Icons.warning_amber_rounded),
+          _MetricCard('${region.label} 추적 관찰 분전함', '${data.countByStatus(InspectionStatus.observe)}개', Icons.remove_red_eye_outlined),
+          _MetricCard('${region.label} 특이 신호 없는 분전함', '${data.countByStatus(InspectionStatus.normal)}개', Icons.check_circle_outline),
+          _MetricCard('${region.label} 등록 분전함 수', '${data.objects.length}개', Icons.electrical_services),
+          _MetricCard('${region.label} 연결 가로등 수', '${data.totalLampCount}개', Icons.lightbulb_outline),
+          _MetricCard('${region.label} 조명 합산 정격용량', '${data.totalRatedLoadKw.toStringAsFixed(1)} kW', Icons.bolt),
         ];
         return LightguardShell(
           title: 'LightGuard · 운영 현황',
@@ -53,7 +53,7 @@ class DashboardScreen extends ConsumerWidget {
                 const SizedBox(height: 18),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 4),
-                  child: Text('자산 및 점검 현황', style: Theme.of(context).textTheme.titleLarge),
+                  child: Text('${region.label} 자산 및 점검 현황', style: Theme.of(context).textTheme.titleLarge),
                 ),
                 const SizedBox(height: 8),
                 Wrap(spacing: 12, runSpacing: 12, children: cards),
@@ -93,9 +93,9 @@ class _DashboardHero extends StatelessWidget {
               Text(region.label, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800)),
             ]),
             const SizedBox(height: 18),
-            Text('오늘 우선 확인이 필요한 분전함 $priorityCount건', style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.white, fontWeight: FontWeight.w900, height: 1.18)),
+            Text('오늘 ${region.label} 우선 확인 분전함 $priorityCount개', style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.white, fontWeight: FontWeight.w900, height: 1.18)),
             const SizedBox(height: 8),
-            Text('현장 확인 권고 $recommendedCount건을 포함해 출동 전 확인 대상을 선별합니다.', style: const TextStyle(color: Color(0xFFD8E7E5), height: 1.5)),
+            Text('현장점검 검토 대상 $recommendedCount개를 포함해 출동 전 확인할 분전함을 보여줍니다.', style: const TextStyle(color: Color(0xFFD8E7E5), height: 1.5)),
             const SizedBox(height: 18),
             Wrap(spacing: 10, runSpacing: 10, children: [
               FilledButton.icon(onPressed: onInspect, style: FilledButton.styleFrom(backgroundColor: const Color(0xFFF7C948), foregroundColor: AppTheme.ink), icon: const Icon(Icons.fact_check_outlined, size: 19), label: const Text('확인 대상 보기')),
@@ -120,8 +120,8 @@ class _MetricCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final viewportWidth = MediaQuery.sizeOf(context).width;
     final width = viewportWidth < 600 ? (viewportWidth - 36) / 2 : 210.0;
-    final critical = title == '우선 확인 필요';
-    final caution = title == '현장 확인 권고';
+    final critical = title.contains('우선 확인');
+    final caution = title.contains('현장점검 검토');
     final accent = critical ? const Color(0xFFB42318) : caution ? const Color(0xFFD97706) : AppTheme.ink;
     final background = critical ? const Color(0xFFFFF1F0) : caution ? const Color(0xFFFFF7E6) : AppTheme.paper;
     return SizedBox(

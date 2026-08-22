@@ -1,11 +1,11 @@
 import '../../data/models/lightguard_models.dart';
 
 String operationalStatusLabel(InspectionStatus status) => switch (status) {
-      InspectionStatus.normal => '정상 범위',
-      InspectionStatus.observe => '추적 관찰',
-      InspectionStatus.inspectionRecommended => '현장 확인 권고',
-      InspectionStatus.priorityInspection => '우선 확인 필요',
-      InspectionStatus.dataCheckRequired => '데이터 품질 확인 필요',
+      InspectionStatus.normal => '특이 신호 없음',
+      InspectionStatus.observe => '추적 관찰 대상',
+      InspectionStatus.inspectionRecommended => '현장점검 검토 대상',
+      InspectionStatus.priorityInspection => '우선 확인 대상',
+      InspectionStatus.dataCheckRequired => '자료 상태 확인 필요',
     };
 
 String operationalSignalTitle(DetectedSignal? signal) {

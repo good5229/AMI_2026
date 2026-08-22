@@ -6,7 +6,7 @@ import '../../data/repositories/lightguard_repository.dart';
 
 class AmiValidationScreen extends ConsumerWidget {
   const AmiValidationScreen({super.key});
-  static const disclaimer = '가명 처리된 실제 전력계량 자료에서 찾은 확인 후보입니다. 실제 고장 여부는 정비 이력 또는 현장 확인이 필요합니다.';
+  static const disclaimer = '이 화면은 지역 선택과 별도로 제공된 가명 전력계량 자료의 이상 신호를 보여줍니다. 실제 고장 여부는 정비 이력 또는 현장 확인으로 확정해야 합니다.';
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -18,7 +18,7 @@ class AmiValidationScreen extends ConsumerWidget {
         final featured = events.where(_isFeatured).toList(growable: false);
         final excessKwh = events.fold<double>(0, (sum, event) => sum + event.estimatedExcessKwh);
         return LightguardShell(
-          title: '전력계량 이상 신호 분석',
+          title: '전력계량 이상 신호 근거',
           child: ListView(
             padding: const EdgeInsets.all(12),
             children: [
@@ -29,17 +29,17 @@ class AmiValidationScreen extends ConsumerWidget {
                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                     const Wrap(spacing: 8, runSpacing: 8, children: [
                       StatusBadge(type: BadgeType.realAmi, label: '가명 처리 전력계량 자료'),
-                      StatusBadge(type: BadgeType.validation, label: '현장 미확인 점검 후보'),
+                      StatusBadge(type: BadgeType.validation, label: '고장 여부 미확인 이상 신호'),
                     ]),
                     const SizedBox(height: 12),
-                    Text('확인 후보 ${events.length}건', style: Theme.of(context).textTheme.titleLarge),
+                    Text('현장 확인 전 이상 신호 ${events.length}건', style: Theme.of(context).textTheme.titleLarge),
                     const SizedBox(height: 6),
-                    Text('추정 초과 사용량 합계 ${excessKwh.toStringAsFixed(3)} kWh'),
+                    Text('정상 비교값 대비 추정 초과 전력사용량 합계 ${excessKwh.toStringAsFixed(3)} kWh'),
                   ]),
                 ),
               ),
               const SizedBox(height: 12),
-              Text('대표 분석 사례', style: Theme.of(context).textTheme.titleLarge),
+              Text('대표 이상 신호 비교', style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: 4),
               const Text('정상 시간대와 실제 관측값의 차이를 비교합니다.'),
               const SizedBox(height: 10),
@@ -48,7 +48,7 @@ class AmiValidationScreen extends ConsumerWidget {
                 return Wrap(spacing: 12, runSpacing: 12, children: [for (final event in featured) SizedBox(width: width, child: _CaseCard(event: event))]);
               }),
               const SizedBox(height: 20),
-              Text('전체 확인 후보 ${events.length}건', style: Theme.of(context).textTheme.titleLarge),
+              Text('전체 이상 신호 ${events.length}건', style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: 8),
               for (final event in events) _EventCard(event: event),
               const SizedBox(height: 8),
@@ -87,11 +87,11 @@ class _CaseCard extends StatelessWidget {
           _bar('실제 관측 최대값', event.peakCurrentA, event.peakCurrentA, true),
           _bar('점등 시간대 정상 비교값', event.onBaselineA, event.peakCurrentA, false),
           const Divider(height: 24),
-          _kv('최대 활성 비율', '${(event.maxActivation * 100).toStringAsFixed(1)}%'),
-          _kv('활성 전류선', _phaseLabel(event.activePhases)),
-          _kv('추정 초과 사용량', '${event.estimatedExcessKwh.toStringAsFixed(3)} kWh'),
-          _kv('신호 형태 일치 수준', _confidenceLabel(event.patternConfidence)),
-          _kv('현장 판정 상태', '현장 미확인 점검 후보'),
+          _kv('탐지 기준 대비 최대 신호 비율', '${(event.maxActivation * 100).toStringAsFixed(1)}%'),
+          _kv('신호가 확인된 전류선', _phaseLabel(event.activePhases)),
+          _kv('정상 대비 추정 초과 전력사용량', '${event.estimatedExcessKwh.toStringAsFixed(3)} kWh'),
+          _kv('이상 신호 형태 일치 수준', _confidenceLabel(event.patternConfidence)),
+          _kv('고장 확인 여부', '현장 확인 전'),
         ]),
       ),
     );
@@ -106,14 +106,14 @@ class _EventCard extends StatelessWidget {
     child: ExpansionTile(
       leading: const Icon(Icons.bolt_outlined),
       title: Text('${event.meterId} · ${_eventLabel(event.eventType)}'),
-      subtitle: Text('${event.firstSample} · ${event.durationMin}분 · ${(event.maxActivation * 100).toStringAsFixed(1)}%'),
+      subtitle: Text('${event.firstSample} · 지속 ${event.durationMin}분 · 최대 신호 ${(event.maxActivation * 100).toStringAsFixed(1)}%'),
       childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
       expandedCrossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _kv('활성 전류선', _phaseLabel(event.activePhases)),
-        _kv('추정 초과 사용량', '${event.estimatedExcessKwh.toStringAsFixed(3)} kWh'),
-        _kv('신호 형태 일치 수준', _confidenceLabel(event.patternConfidence)),
-        _kv('현장 판정 상태', '현장 미확인 점검 후보'),
+        _kv('신호가 확인된 전류선', _phaseLabel(event.activePhases)),
+        _kv('정상 대비 추정 초과 전력사용량', '${event.estimatedExcessKwh.toStringAsFixed(3)} kWh'),
+        _kv('이상 신호 형태 일치 수준', _confidenceLabel(event.patternConfidence)),
+        _kv('고장 확인 여부', '현장 확인 전'),
       ],
     ),
   );

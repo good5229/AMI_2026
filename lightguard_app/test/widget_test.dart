@@ -66,18 +66,18 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('LightGuard · 운영 현황'), findsOneWidget);
-    expect(find.textContaining('오늘 우선 확인이 필요한 분전함'), findsOneWidget);
+    expect(find.textContaining('오늘 ${RegionId.suyeong.label} 우선 확인 분전함'), findsOneWidget);
     expect(find.text('확인 대상 및 사유 보기'), findsNothing);
-    expect(find.text('총 분전함'), findsOneWidget);
-    expect(find.text('총 가로등 수'), findsOneWidget);
-    expect(find.text('총 정격용량'), findsOneWidget);
+    expect(find.text('${RegionId.suyeong.label} 등록 분전함 수'), findsOneWidget);
+    expect(find.text('${RegionId.suyeong.label} 연결 가로등 수'), findsOneWidget);
+    expect(find.text('${RegionId.suyeong.label} 조명 합산 정격용량'), findsOneWidget);
     expect(
         find.textContaining('${data.objects.length}'), findsAtLeastNWidgets(1));
     expect(find.text('기준일 기준 점등/소등'), findsNothing);
     expect(find.text(RegionId.suyeong.branchLabel), findsAtLeastNWidgets(1));
-    expect(find.text('현장 확인 권고'), findsOneWidget);
-    expect(find.text('추적 관찰'), findsOneWidget);
-    expect(find.text('정상 범위'), findsOneWidget);
+    expect(find.text('${RegionId.suyeong.label} 현장점검 검토 분전함'), findsOneWidget);
+    expect(find.text('${RegionId.suyeong.label} 추적 관찰 분전함'), findsOneWidget);
+    expect(find.text('${RegionId.suyeong.label} 특이 신호 없는 분전함'), findsOneWidget);
   });
 
   testWidgets('Inspection list renders and filters by 검증 시나리오',
@@ -91,7 +91,7 @@ void main() {
       maxAttempts: 18,
     );
 
-    expect(find.text('확인 대상 및 판정 사유'), findsOneWidget);
+    expect(find.text('점검 대상 분전함과 선정 사유'), findsOneWidget);
     expect(find.text('CAB-002'), findsAtLeastNWidgets(1));
     expect(find.text('CAB-001'), findsAtLeastNWidgets(1));
 
@@ -142,7 +142,7 @@ void main() {
         find.byKey(const Key('section-cabinet-section-summary-a'));
     expect(sectionAFinder, findsOneWidget);
     expect(
-      find.descendant(of: sectionAFinder, matching: find.text('램프 정격')),
+      find.descendant(of: sectionAFinder, matching: find.text('연결 조명 규격')),
       findsOneWidget,
     );
     expect(
@@ -170,10 +170,10 @@ void main() {
         matching: find.byWidgetPredicate((widget) {
           if (widget is Text) {
             final data = widget.data ?? '';
-            return data.contains('관측 신호 요약') || data.contains('시각화');
+            return data.contains('전력 사용 이상 신호 요약') || data.contains('시각화');
           }
           if (widget is RichText) {
-            return (widget.text.toPlainText().contains('관측 신호 요약') ||
+            return (widget.text.toPlainText().contains('전력 사용 이상 신호 요약') ||
                 widget.text.toPlainText().contains('시각화'));
           }
           return false;
@@ -215,8 +215,8 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(legendFinder, findsOneWidget);
-    expect(find.textContaining('관측 신호 수준'), findsOneWidget);
-    expect(find.textContaining('기준 잔여 구간'), findsOneWidget);
+    expect(find.textContaining('탐지 기준 대비 신호 수준'), findsOneWidget);
+    expect(find.textContaining('탐지 기준까지 남은 구간'), findsOneWidget);
     expect(find.textContaining('daytime_partial_activation'), findsNothing);
   });
 
@@ -243,11 +243,11 @@ void main() {
     await tester.pumpWidget(buildTestApp(initialLocation: AppRoute.ami));
     await tester.pumpAndSettle();
 
-    expect(find.text('전력계량 이상 신호 분석'), findsOneWidget);
+    expect(find.text('전력계량 이상 신호 근거'), findsOneWidget);
     expect(find.text('가명 처리 전력계량 자료'), findsAtLeastNWidgets(1));
-    expect(find.text('최대 활성 비율'), findsAtLeastNWidgets(1));
+    expect(find.text('탐지 기준 대비 최대 신호 비율'), findsAtLeastNWidgets(1));
     expect(find.textContaining('1번 전류선(i1)'), findsAtLeastNWidgets(1));
-    expect(find.text('신호 형태 일치 수준'), findsAtLeastNWidgets(1));
+    expect(find.text('이상 신호 형태 일치 수준'), findsAtLeastNWidgets(1));
     expect(find.text('높음'), findsAtLeastNWidgets(1));
     expect(find.text('보통 이상'), findsAtLeastNWidgets(1));
     expect(find.text('medium_high'), findsNothing);

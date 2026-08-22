@@ -281,15 +281,15 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                       children: [
                         StatusBadge(
                             type: BadgeType.inspect,
-                            label: '우선 확인 $priorityCount'),
+                            label: '우선 확인 분전함 $priorityCount개'),
                         StatusBadge(
                             type: BadgeType.scenario,
-                            label: '현장 확인 권고 $recommendCount'),
+                            label: '현장점검 검토 분전함 $recommendCount개'),
                         StatusBadge(
                             type: BadgeType.validation,
-                            label: '관찰 $observeCount'),
+                            label: '추적 관찰 분전함 $observeCount개'),
                         StatusBadge(
-                            type: BadgeType.normal, label: '정상 $normalCount'),
+                            type: BadgeType.normal, label: '특이 신호 없는 분전함 $normalCount개'),
                         if (supportsScenario && scenarioCount > 0)
                           StatusBadge(
                               type: BadgeType.scenario,
@@ -495,10 +495,10 @@ class _CabinetMapInfoCard extends StatelessWidget {
                 runSpacing: 8,
                 children: [
                   _MapInfoPill(
-                      label: '연결 가로등',
+                      label: '연결 가로등 수',
                       value: '${cabinet.assetInfo.fixtureCount}개'),
                   _MapInfoPill(
-                    label: '정격부하',
+                    label: '분전함 조명 합산 정격용량',
                     value:
                         '${cabinet.expectedLoad.expectedRatedLoadKw.toStringAsFixed(2)} kW',
                   ),

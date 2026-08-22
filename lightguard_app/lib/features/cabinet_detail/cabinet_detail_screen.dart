@@ -46,8 +46,8 @@ class CabinetDetailScreen extends ConsumerWidget {
                   '자산 정보',
                   [
                     _kv('연결 가로등 수', '${cabinet.assetInfo.fixtureCount}개'),
-                    _kv('램프 정격', _fixtureLampType(cabinet)),
-                    _kv('총 정격용량',
+                    _kv('연결 조명 규격', _fixtureLampType(cabinet)),
+                    _kv('연결 조명 합산 정격용량',
                         '${cabinet.expectedLoad.ratedPowerW.toStringAsFixed(1)} W'),
                     _kv('설치 위치', _displayLocation(cabinet)),
                     if (cabinet.assetInfo.latitude != null &&
@@ -68,7 +68,7 @@ class CabinetDetailScreen extends ConsumerWidget {
                   ],
                   keySuffix: 'cabinet-section-summary-a'),
               const SizedBox(height: 8),
-              _section('예상 운전 기준', [
+              _section('예상 점등·소등 기준', [
                 _kv('일출', cabinet.expectedSchedule.sunrise),
                 _kv('일몰', cabinet.expectedSchedule.sunset),
                 _kv('시민박명 시작', cabinet.expectedSchedule.civilTwilightStart),
@@ -98,7 +98,7 @@ class CabinetDetailScreen extends ConsumerWidget {
               ]),
               const SizedBox(height: 8),
               _section(
-                '관측 신호 요약',
+                '전력 사용 이상 신호 요약',
                 [
                   const Text(
                     '관측 구간에서 확인된 전력 사용 신호의 최대 수준이며 15분 단위 원본 측정값 전체를 뜻하지는 않습니다.',
@@ -117,21 +117,21 @@ class CabinetDetailScreen extends ConsumerWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     const SizedBox(height: 8),
-                    Text('최대 신호 수준 · ${operationalSignalLevel(signal)}'),
+                    Text('탐지 기준 대비 최대 신호 수준 · ${operationalSignalLevel(signal)}'),
                     const SizedBox(height: 10),
                     const _ActivationLegend(),
                   ],
                   _kv(
-                      '관측 항목',
+                      '확인된 이상 신호',
                       signal == null
-                          ? '우선 확인이 필요한 지속 신호 없음'
+                          ? '지속적으로 확인된 이상 신호 없음'
                           : operationalSignalTitle(signal)),
                 ],
                 keySuffix: 'cabinet-section-summary-c',
               ),
               const SizedBox(height: 8),
               _section(
-                '우선 확인 사유',
+                '점검 우선순위 선정 사유',
                 [
                   _kv('관측 내용', operationalPriorityReason(cabinet)),
                   _kv('적용 판정 기준', operationalCriteria(cabinet)),
@@ -244,13 +244,13 @@ class _ActivationLegend extends StatelessWidget {
         children: [
           _LegendItem(
             color: Color(0xFF0F766E),
-            label: '관측 신호 수준',
+            label: '탐지 기준 대비 신호 수준',
             detail: '탐지 기준 대비 확인된 최대 비율',
           ),
           _LegendItem(
             color: Color(0xFFDDE7E4),
-            label: '기준 잔여 구간',
-            detail: '전체 탐지 기준에서 남은 비율',
+            label: '탐지 기준까지 남은 구간',
+            detail: '전체 탐지 기준에서 아직 충족되지 않은 비율',
           ),
         ],
       );
