@@ -21,8 +21,8 @@ class DashboardScreen extends ConsumerWidget {
         final region = ref.watch(selectedRegionProvider);
         final isCompact = MediaQuery.sizeOf(context).width < 600;
         final cards = <Widget>[
-          _MetricCard('${region.label} 우선 확인 분전함', '${data.countByStatus(InspectionStatus.priorityInspection)}개', Icons.error_outline),
-          _MetricCard('${region.label} 현장점검 검토 분전함', '${data.countByStatus(InspectionStatus.inspectionRecommended)}개', Icons.warning_amber_rounded),
+          _MetricCard('${region.label} 우선 확인 분전함', '${data.countByStatus(InspectionStatus.priorityInspection)}개', Icons.error_outline, key: const Key('dashboard-priority-card'), onTap: () => context.go('/inspections?filter=priority')),
+          _MetricCard('${region.label} 현장점검 검토 분전함', '${data.countByStatus(InspectionStatus.inspectionRecommended)}개', Icons.warning_amber_rounded, key: const Key('dashboard-recommended-card'), onTap: () => context.go('/inspections?filter=recommended')),
           _MetricCard('${region.label} 추적 관찰 분전함', '${data.countByStatus(InspectionStatus.observe)}개', Icons.remove_red_eye_outlined),
           _MetricCard('${region.label} 특이 신호 없는 분전함', '${data.countByStatus(InspectionStatus.normal)}개', Icons.check_circle_outline),
           _MetricCard('${region.label} 등록 분전함 수', '${data.objects.length}개', Icons.electrical_services),
@@ -111,10 +111,11 @@ class _DashboardHero extends StatelessWidget {
 }
 
 class _MetricCard extends StatelessWidget {
-  const _MetricCard(this.title, this.value, this.icon);
+  const _MetricCard(this.title, this.value, this.icon, {this.onTap, super.key});
   final String title;
   final String value;
   final IconData icon;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -130,17 +131,24 @@ class _MetricCard extends StatelessWidget {
       child: Card(
         margin: EdgeInsets.zero,
         color: background,
-        child: Padding(
-          padding: const EdgeInsets.all(14),
-          child: Row(children: [
-            Container(width: 34, height: 34, decoration: BoxDecoration(color: accent.withValues(alpha: 0.09), borderRadius: BorderRadius.circular(9)), child: Icon(icon, color: accent, size: 20)),
-            const SizedBox(width: 12),
-            Expanded(child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text(title, maxLines: 2, overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.labelMedium),
-              const SizedBox(height: 4),
-              Text(value, maxLines: 1, overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.titleLarge?.copyWith(color: accent)),
-            ])),
-          ]),
+        child: InkWell(
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(12),
+          child: Padding(
+            padding: const EdgeInsets.all(14),
+            child: Row(children: [
+              Container(width: 34, height: 34, decoration: BoxDecoration(color: accent.withValues(alpha: 0.09), borderRadius: BorderRadius.circular(9)), child: Icon(icon, color: accent, size: 20)),
+              const SizedBox(width: 12),
+              Expanded(child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Text(title, maxLines: 2, overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.labelMedium),
+                const SizedBox(height: 4),
+                Row(children: [
+                  Expanded(child: Text(value, maxLines: 1, overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.titleLarge?.copyWith(color: accent))),
+                  if (onTap != null) Icon(Icons.arrow_forward_rounded, size: 18, color: accent),
+                ]),
+              ])),
+            ]),
+          ),
         ),
       ),
     );

@@ -24,7 +24,12 @@ GoRouter createRouter() {
           focusCabinetUid: state.uri.queryParameters['cabinet'],
         ),
       ),
-      GoRoute(path: AppRoute.inspections, builder: (context, state) => const InspectionListScreen()),
+      GoRoute(
+        path: AppRoute.inspections,
+        builder: (context, state) => InspectionListScreen(
+          initialFilter: state.uri.queryParameters['filter'],
+        ),
+      ),
       GoRoute(
         path: AppRoute.cabinet,
         builder: (context, state) {

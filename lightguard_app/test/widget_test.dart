@@ -39,7 +39,9 @@ void main() {
         ),
         GoRoute(
             path: AppRoute.inspections,
-            builder: (context, state) => const InspectionListScreen()),
+            builder: (context, state) => InspectionListScreen(
+                  initialFilter: state.uri.queryParameters['filter'],
+                )),
         GoRoute(
           path: AppRoute.cabinet,
           builder: (context, state) =>
@@ -127,6 +129,24 @@ void main() {
         findsAtLeastNWidgets(1),
       );
     }
+  });
+
+  testWidgets('현황 상태 카드가 해당 점검 목록과 선정 사유로 이동한다',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(buildTestApp());
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.byKey(const Key('dashboard-priority-card')));
+    await tester.pumpAndSettle();
+    expect(find.text('점검 대상 분전함과 선정 사유'), findsOneWidget);
+    expect(find.textContaining('우선 확인 대상 ·'), findsOneWidget);
+
+    await tester.pumpWidget(buildTestApp());
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('dashboard-recommended-card')));
+    await tester.pumpAndSettle();
+    expect(find.text('점검 대상 분전함과 선정 사유'), findsOneWidget);
+    expect(find.textContaining('현장점검 검토 대상 ·'), findsOneWidget);
   });
 
   testWidgets('Cabinet detail renders 해설 문구 and raw data safe label',

@@ -10,7 +10,9 @@ import '../../data/models/region_config.dart';
 import '../../data/repositories/lightguard_repository.dart';
 
 class InspectionListScreen extends ConsumerStatefulWidget {
-  const InspectionListScreen({super.key});
+  const InspectionListScreen({super.key, this.initialFilter});
+
+  final String? initialFilter;
 
   @override
   ConsumerState<InspectionListScreen> createState() =>
@@ -18,12 +20,17 @@ class InspectionListScreen extends ConsumerStatefulWidget {
 }
 
 class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
-  _InspectionFilter _filter = _InspectionFilter.all;
+  late _InspectionFilter _filter;
   late Map<String, Map<String, String>> _outcomes;
 
   @override
   void initState() {
     super.initState();
+    _filter = switch (widget.initialFilter) {
+      'priority' => _InspectionFilter.priority,
+      'recommended' => _InspectionFilter.recommended,
+      _ => _InspectionFilter.all,
+    };
     _outcomes = loadInspectionOutcomes();
   }
 
@@ -95,8 +102,8 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                     leading: const Icon(Icons.location_city_outlined),
                     key: const Key('inspection-region-summary'),
                     title: Text(region.label),
-                    subtitle: Text(region.regionalFilterHint),
-                    trailing: Text('등록 분전함 ${data.objects.length}개'),
+                    subtitle: Text('${_filterLabel(activeFilter)} · ${rows.length}개 표시'),
+                    trailing: Text('전체 ${data.objects.length}개'),
                   ),
                 );
               }
