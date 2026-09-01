@@ -5,5 +5,5 @@ abstract final class V24CensusSummary {
   static const representedTopLevelCount = 16;
   static const currentTopLevelCount = 16;
   static const analyzableRegionCount = 88;
-  static const municipalDatasetCount = 127;
+  static const municipalDatasetCount = 126;
 }

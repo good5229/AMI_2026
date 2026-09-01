@@ -3,19 +3,19 @@
 ## Census result
 
 - Unique file candidates: 181
-- Downloaded analyzable CSV datasets: 129
-- Municipal-scope analyzable CSV datasets: 127
+- Downloaded analyzable CSV datasets: 128
+- Municipal-scope analyzable CSV datasets: 126
 - Analyzable region labels: 88
 - Represented top-level regions: 16 / 16
 
 ## Role counts
 
 - SIGNAL: 9
-- OPERATIONS: 9
+- OPERATIONS: 8
 - CABINET: 28
 - LOAD: 18
 - SPATIAL: 80
-- ASSET: 88
+- ASSET: 87
 
 ## Analyzable regions
 
@@ -43,7 +43,7 @@
 - 경상북도 구미시: 2 dataset(s), 1,928 rows, ASSET, CABINET, LOAD, SIGNAL, SPATIAL
 - 경상북도 김천시: 1 dataset(s), 6,673 rows, ASSET
 - 경상북도 영천시: 1 dataset(s), 277 rows, CABINET, SPATIAL
-- 대구광역시: 5 dataset(s), 914,862 rows, ASSET, OPERATIONS, SPATIAL
+- 대구광역시: 4 dataset(s), 821,479 rows, ASSET, OPERATIONS, SPATIAL
 - 대전광역시: 3 dataset(s), 44,707 rows, ASSET, CABINET, SPATIAL
 - 대전광역시 유성구: 1 dataset(s), 61 rows, ASSET
 - 부산광역시 강서구: 1 dataset(s), 14 rows, ASSET
@@ -79,7 +79,7 @@
 - 인천광역시 미추홀구: 2 dataset(s), 5,670 rows, ASSET, CABINET, SPATIAL
 - 인천광역시 서해구: 2 dataset(s), 2,744 rows, ASSET, SPATIAL
 - 인천광역시 연수구: 2 dataset(s), 2,879 rows, ASSET, SPATIAL
-- 인천광역시 영종구: 1 dataset(s), 15,753 rows, ASSET, CABINET, SPATIAL
+- 인천광역시 영종구: 1 dataset(s), 12,422 rows, ASSET, CABINET, SPATIAL
 - 인천광역시 옹진군: 1 dataset(s), 167 rows, SPATIAL
 - 전남광주통합특별시 곡성군: 1 dataset(s), 162 rows, ASSET, SPATIAL
 - 전남광주통합특별시 광산구: 1 dataset(s), 1,139 rows, ASSET, CABINET, SPATIAL
