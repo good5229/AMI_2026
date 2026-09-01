@@ -39,7 +39,7 @@ jobs:
         run: ./scripts/v24_preflight.sh
       - name: Detect upstream changes
         run: |
-          if ! git diff --quiet -- lightguard_v0_1/data/validation/v24 lightguard_v0_1/reports/v24 lightguard_app/assets/data/context/v24_nationwide_file_census.json; then
+          if ! git diff --quiet -- lightguard_v0_1/data/validation/v24 lightguard_v0_1/reports/v24 lightguard_app/assets/data/context/v24_nationwide_file_census.json lightguard_app/lib/generated/v24_census_summary.dart; then
             echo '::error::Data.go.kr 공개파일 목록 또는 메타데이터가 변경됐습니다. 검토 후 수동 갱신하세요.'
             git diff --stat
             exit 1

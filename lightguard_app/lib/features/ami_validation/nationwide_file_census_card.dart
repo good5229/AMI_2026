@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
+import '../../generated/v24_census_summary.dart';
 
 class NationwideFileCensusCard extends StatelessWidget {
   const NationwideFileCensusCard({super.key});
-
-  static const topLevelCoverage = 16;
-  static const analyzableRegionCount = 83;
-  static const municipalDatasetCount = 125;
 
   @override
   Widget build(BuildContext context) {
@@ -60,15 +57,16 @@ class NationwideFileCensusCard extends StatelessWidget {
               runSpacing: 10,
               children: [
                 _CensusMetric(
-                  value: '16 / 16',
+                  value:
+                      '${V24CensusSummary.representedTopLevelCount} / ${V24CensusSummary.currentTopLevelCount}',
                   label: '현재 광역단위 포함',
                 ),
                 _CensusMetric(
-                  value: '83개',
+                  value: '${V24CensusSummary.analyzableRegionCount}개',
                   label: '분석 가능 지역 라벨',
                 ),
                 _CensusMetric(
-                  value: '125개',
+                  value: '${V24CensusSummary.municipalDatasetCount}개',
                   label: '지자체 범위 데이터셋',
                 ),
               ],
