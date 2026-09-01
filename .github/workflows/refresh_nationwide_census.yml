@@ -20,11 +20,13 @@ jobs:
       - name: Install crawler certificate dependency
         run: python -m pip install --disable-pip-version-check certifi
       - name: Refresh public-file census in the runner
+        id: refresh
         shell: bash
         run: |
           set -o pipefail
           for attempt in 1 2 3; do
             if python scripts/build_v24_nationwide_census.py; then
+              echo 'refreshed=true' >> "$GITHUB_OUTPUT"
               exit 0
             fi
             if [ "$attempt" -lt 3 ]; then
@@ -33,11 +35,17 @@ jobs:
               sleep "$delay"
             fi
           done
-          echo "data.go.kr refresh failed after 3 complete attempts" >&2
-          exit 1
+          echo 'refreshed=false' >> "$GITHUB_OUTPUT"
+          echo '::warning::Data.go.kr가 3회 모두 응답하지 않아 감사를 보류합니다. 마지막 수동 검수 스냅샷을 유지합니다.'
+          echo '### 전국 공개데이터 감사 보류' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Data.go.kr 연결이 3회 모두 실패했습니다.' >> "$GITHUB_STEP_SUMMARY"
+          echo '- 저장소의 마지막 수동 검수 스냅샷은 변경하지 않았습니다.' >> "$GITHUB_STEP_SUMMARY"
+          echo '- 다음 예약 실행에서 다시 감사를 시도합니다.' >> "$GITHUB_STEP_SUMMARY"
       - name: Validate privacy-safe artifacts
+        if: steps.refresh.outputs.refreshed == 'true'
         run: ./scripts/v24_preflight.sh
       - name: Detect upstream changes
+        if: steps.refresh.outputs.refreshed == 'true'
         run: |
           if ! git diff --quiet -- lightguard_v0_1/data/validation/v24 lightguard_v0_1/reports/v24 lightguard_app/assets/data/context/v24_nationwide_file_census.json lightguard_app/lib/generated/v24_census_summary.dart; then
             echo '::error::Data.go.kr 공개파일 목록 또는 메타데이터가 변경됐습니다. 검토 후 수동 갱신하세요.'
@@ -45,3 +53,6 @@ jobs:
             exit 1
           fi
           echo '변경 없음: 현재 전국 공개데이터 집계가 최신입니다.'
+      - name: Preserve last reviewed snapshot when source is unavailable
+        if: steps.refresh.outputs.refreshed != 'true'
+        run: echo 'Data.go.kr 연결 실패로 감사를 보류했으며 추적 산출물은 변경하지 않았습니다.'
