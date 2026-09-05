@@ -2,9 +2,9 @@
 
 ## Census result
 
-- Unique file candidates: 181
-- Downloaded analyzable CSV datasets: 128
-- Municipal-scope analyzable CSV datasets: 126
+- Unique file candidates: 182
+- Downloaded analyzable CSV datasets: 129
+- Municipal-scope analyzable CSV datasets: 127
 - Analyzable region labels: 88
 - Represented top-level regions: 16 / 16
 
@@ -13,9 +13,9 @@
 - SIGNAL: 9
 - OPERATIONS: 8
 - CABINET: 28
-- LOAD: 18
-- SPATIAL: 80
-- ASSET: 87
+- LOAD: 19
+- SPATIAL: 81
+- ASSET: 88
 
 ## Analyzable regions
 
@@ -59,7 +59,7 @@
 - 부산광역시 중구: 1 dataset(s), 61 rows, ASSET
 - 서울특별시 강동구: 1 dataset(s), 7,299 rows, SPATIAL
 - 서울특별시 강북구: 1 dataset(s), 184 rows, ASSET, CABINET
-- 서울특별시 관악구: 1 dataset(s), 35 rows, ASSET
+- 서울특별시 관악구: 2 dataset(s), 14,024 rows, ASSET, LOAD, SPATIAL
 - 서울특별시 광진구: 2 dataset(s), 2,765 rows, ASSET, SPATIAL
 - 서울특별시 도봉구: 1 dataset(s), 1 rows, CABINET
 - 서울특별시 동대문구: 3 dataset(s), 34,623 rows, ASSET, SPATIAL
