@@ -5,7 +5,7 @@ import 'dart:html';
 
 const _storageKey = 'lightguard.inspection_outcomes.v1';
 
-Map<String, Map<String, String>> loadInspectionOutcomes() {
+Future<Map<String, Map<String, String>>> loadInspectionOutcomes() async {
   final raw = window.localStorage[_storageKey];
   if (raw == null || raw.isEmpty) return {};
   try {
@@ -21,6 +21,7 @@ Map<String, Map<String, String>> loadInspectionOutcomes() {
   }
 }
 
-void saveInspectionOutcomes(Map<String, Map<String, String>> outcomes) {
+Future<void> saveInspectionOutcomes(
+    Map<String, Map<String, String>> outcomes) async {
   window.localStorage[_storageKey] = jsonEncode(outcomes);
 }

@@ -2,11 +2,13 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:lightguard_app/app/router/app_router.dart';
+import 'package:lightguard_app/core/storage/inspection_outcome_storage.dart';
 import 'package:lightguard_app/data/models/lightguard_models.dart';
 import 'package:lightguard_app/data/repositories/lightguard_repository.dart';
 import 'package:lightguard_app/data/models/region_config.dart';
@@ -58,17 +60,23 @@ void main() {
         lightguardDataProvider.overrideWith((_) async => data),
         competitionAmiEventsProvider.overrideWith((_) async => events),
       ],
-      child: MaterialApp.router(routerConfig: router),
+      child: MaterialApp.router(
+        routerConfig: router,
+        locale: const Locale('ko'),
+        supportedLocales: const [Locale('ko')],
+        localizationsDelegates: GlobalMaterialLocalizations.delegates,
+      ),
     );
   }
 
-  testWidgets('Dashboard renders 핵심 운영 지표만 표시한다',
-      (WidgetTester tester) async {
+  testWidgets('Dashboard renders 핵심 운영 지표만 표시한다', (WidgetTester tester) async {
     await tester.pumpWidget(buildTestApp());
     await tester.pumpAndSettle();
 
     expect(find.text('LightGuard · 운영 현황'), findsOneWidget);
-    expect(find.textContaining('오늘 ${RegionId.suyeong.label} 우선 확인 분전함'), findsOneWidget);
+    expect(find.textContaining('${RegionId.suyeong.label} 우선 확인 분전함'),
+        findsAtLeastNWidgets(1));
+    expect(find.text('오늘 확인할 후보'), findsNothing);
     expect(find.text('확인 대상 및 사유 보기'), findsNothing);
     expect(find.text('${RegionId.suyeong.label} 등록 분전함 수'), findsOneWidget);
     expect(find.text('${RegionId.suyeong.label} 연결 가로등 수'), findsOneWidget);
@@ -84,9 +92,14 @@ void main() {
 
   testWidgets('Inspection list renders and filters by 검증 시나리오',
       (WidgetTester tester) async {
-    await tester
-        .pumpWidget(buildTestApp(initialLocation: AppRoute.inspections));
+    await tester.pumpWidget(
+        buildTestApp(initialLocation: '${AppRoute.inspections}?filter=all'));
     await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(
+      find.text('CAB-001'),
+      250,
+      scrollable: find.byType(Scrollable).last,
+    );
     await _pumpUntilFound(
       tester,
       find.text('CAB-001'),
@@ -109,7 +122,8 @@ void main() {
       await tester.pumpAndSettle();
       final scenarioItemFinder =
           find.byKey(const Key('inspection-filter-item-scenario'));
-      final scenarioTextFinder = find.text('검증 시나리오');
+      final scenarioTextFinder =
+          find.byKey(const Key('inspection-filter-item-scenario'));
       if (scenarioItemFinder.evaluate().isNotEmpty) {
         await tester.tap(scenarioItemFinder);
       } else if (scenarioTextFinder.evaluate().isNotEmpty) {
@@ -131,11 +145,34 @@ void main() {
     }
   });
 
-  testWidgets('현황 상태 카드가 해당 점검 목록과 선정 사유로 이동한다',
-      (WidgetTester tester) async {
+  testWidgets('지역 기록 집계에 운영상 예외 결과를 포함한다', (WidgetTester tester) async {
+    final previousOutcomes = (await loadInspectionOutcomes()).map(
+      (uid, outcome) => MapEntry(uid, Map<String, String>.from(outcome)),
+    );
+    addTearDown(() => saveInspectionOutcomes(previousOutcomes));
+    await saveInspectionOutcomes({
+      'CAB-001': {
+        'status': '운영상 예외',
+        'outcomeCode': 'operational_exception',
+        'stage': 'field_review',
+      },
+    });
+    await tester.pumpWidget(
+        buildTestApp(initialLocation: '${AppRoute.inspections}?filter=all'));
+    await tester.pumpAndSettle();
+
+    expect(
+      find.text('정상 0 · 고장 관찰 0 · 운영상 예외 1 · 자료 문제 0 · 조치 완료 0'),
+      findsOneWidget,
+    );
+  });
+
+  testWidgets('현황 상태 카드가 해당 점검 목록과 선정 사유로 이동한다', (WidgetTester tester) async {
     await tester.pumpWidget(buildTestApp());
     await tester.pumpAndSettle();
 
+    await tester
+        .ensureVisible(find.byKey(const Key('dashboard-priority-card')));
     await tester.tap(find.byKey(const Key('dashboard-priority-card')));
     await tester.pumpAndSettle();
     expect(find.text('점검 대상 분전함과 선정 사유'), findsOneWidget);
@@ -143,6 +180,8 @@ void main() {
 
     await tester.pumpWidget(buildTestApp());
     await tester.pumpAndSettle();
+    await tester
+        .ensureVisible(find.byKey(const Key('dashboard-recommended-card')));
     await tester.tap(find.byKey(const Key('dashboard-recommended-card')));
     await tester.pumpAndSettle();
     expect(find.text('점검 대상 분전함과 선정 사유'), findsOneWidget);
@@ -158,8 +197,17 @@ void main() {
       find.text('분전함 상세'),
       maxAttempts: 24,
     );
+    expect(find.byKey(const Key('cabinet-map-link')), findsOneWidget);
+    expect(find.text('지도에서 위치 보기'), findsOneWidget);
+    expect(find.textContaining('좌표 · 35.000000, 129.000000'), findsOneWidget);
     final sectionAFinder =
         find.byKey(const Key('section-cabinet-section-summary-a'));
+    await tester.scrollUntilVisible(
+      sectionAFinder,
+      250,
+      scrollable: find.byType(Scrollable).last,
+    );
+    await tester.pumpAndSettle();
     expect(sectionAFinder, findsOneWidget);
     expect(
       find.descendant(of: sectionAFinder, matching: find.text('연결 조명 규격')),
@@ -169,10 +217,6 @@ void main() {
       find.descendant(of: sectionAFinder, matching: find.text('자료 미제공')),
       findsAtLeastNWidgets(1),
     );
-    expect(find.byKey(const Key('cabinet-map-link')), findsOneWidget);
-    expect(find.text('지도에서 위치 보기'), findsOneWidget);
-    expect(find.text('좌표'), findsNothing);
-    expect(find.textContaining('35.000000, 129.000000'), findsNothing);
     expect(find.text('지도에서 위치를 확인할 수 있습니다.'), findsNothing);
 
     final sectionCFinder =
@@ -205,19 +249,99 @@ void main() {
 
   testWidgets('Inspection outcome can be recorded for an operator',
       (WidgetTester tester) async {
-    await tester.pumpWidget(buildTestApp(initialLocation: AppRoute.inspections));
+    await tester
+        .pumpWidget(buildTestApp(initialLocation: AppRoute.inspections));
     await tester.pumpAndSettle();
+    final targetCard = find
+        .ancestor(
+          of: find.text('CAB-002'),
+          matching: find.byType(Card),
+        )
+        .first;
     await tester.scrollUntilVisible(
-      find.text('확인 결과 기록').first,
+      targetCard,
       250,
       scrollable: find.byType(Scrollable).last,
     );
-    await tester.tap(find.text('확인 결과 기록').first);
+    final recordButton = find.ancestor(
+      of: find.descendant(
+        of: targetCard,
+        matching: find.text('확인 결과 기록'),
+      ),
+      matching: find.byType(OutlinedButton),
+    );
+    await tester.ensureVisible(recordButton);
+    await tester.drag(find.byType(ListView).last, const Offset(0, -160));
     await tester.pumpAndSettle();
-    expect(find.textContaining('브라우저에만 저장'), findsOneWidget);
+    await tester.tap(recordButton);
+    await tester.pumpAndSettle();
+    expect(find.text('담당자 기록은 이 기기에만 저장되며 서버 동기화는 없습니다.'), findsOneWidget);
+    await tester.tap(find.byType(DropdownButtonFormField<String>).last);
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('정상').last);
+    await tester.pumpAndSettle();
+    await tester.enterText(
+        find.widgetWithText(TextField, '담당자 (선택)'), '현장 담당자');
+    final today = DateTime.now();
+    final dueDate =
+        '${today.year.toString().padLeft(4, '0')}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}';
+    await tester.tap(find.text('기한 선택 (선택)'));
+    await tester.pumpAndSettle();
+    final dateDialog = find.byType(DatePickerDialog);
+    await tester.tap(find.descendant(
+        of: dateDialog, matching: find.text('${today.day}').last));
+    await tester.pumpAndSettle();
+    await tester
+        .tap(find.descendant(of: dateDialog, matching: find.text('확인').last));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('저장'));
     await tester.pumpAndSettle();
-    expect(find.textContaining('확인 결과 · 원격 확인 예정'), findsOneWidget);
+    await tester.drag(find.byType(ListView).last, const Offset(0, 10000));
+    await tester.pumpAndSettle();
+    final savedCases = await loadInspectionOutcomes();
+    expect(
+        savedCases.values
+            .where((record) => record['outcomeCode'] == 'normal')
+            .length,
+        1);
+    expect(savedCases.keys.single, 'CAB-002');
+    final seededCase = Map<String, String>.from(savedCases['CAB-002']!)
+      ..['dueDate'] = dueDate;
+    await saveInspectionOutcomes({'CAB-002': seededCase});
+    expect(find.textContaining('1건 기록 · 전체 3개 분전함'), findsOneWidget);
+    expect(find.text('CAB-002'), findsNothing);
+    await tester.tap(find.byKey(const Key('inspection-filter-dropdown')));
+    await tester.pumpAndSettle();
+    final allFilterItem = find.byKey(const Key('inspection-filter-item-all'));
+    final allFilterRect = tester.getRect(allFilterItem);
+    await tester
+        .tapAt(Offset(allFilterRect.left + 24, allFilterRect.center.dy));
+    await tester.pumpAndSettle();
+    expect(find.text('CAB-002'), findsAtLeastNWidgets(1));
+    await tester.tap(find.text('CAB-002').first);
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('field-primary-result')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byType(DropdownButtonFormField<String>).first);
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('고장 관찰').last);
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('기기에 저장'));
+    await tester.pumpAndSettle();
+    await tester.binding.handlePopRoute();
+    await tester.pumpAndSettle();
+    expect(find.text('기한 $dueDate'), findsOneWidget);
+    expect(find.text('담당 현장 담당자'), findsOneWidget);
+    expect(find.textContaining('운영자 기록 · 고장 관찰'), findsOneWidget);
+    final roundTrip = await loadInspectionOutcomes();
+    expect(roundTrip['CAB-002']?['assignee'], '현장 담당자');
+    expect(roundTrip['CAB-002']?['dueDate'], dueDate);
+    expect(roundTrip['CAB-002']?['outcomeCode'], 'fault_observed');
+    await tester.pumpWidget(buildTestApp());
+    await tester.pump();
+    await _pumpUntilFound(tester, find.textContaining('기기 기록 결과 1건'),
+        maxAttempts: 8);
+    expect(find.textContaining('기기 기록 결과 1건'), findsOneWidget);
     expect(find.textContaining('메모:'), findsNothing);
   });
 
@@ -257,9 +381,7 @@ void main() {
     expect(find.textContaining('35.000000, 129.000000'), findsNothing);
   });
 
-  testWidgets(
-      '전력계량 분석 화면이 핵심 신호와 판정 근거를 표시한다',
-      (WidgetTester tester) async {
+  testWidgets('전력계량 분석 화면이 핵심 신호와 판정 근거를 표시한다', (WidgetTester tester) async {
     await tester.pumpWidget(buildTestApp(initialLocation: AppRoute.ami));
     await tester.pumpAndSettle();
 
@@ -300,8 +422,81 @@ void main() {
     expect(find.text('현황'), findsOneWidget);
   });
 
-  testWidgets('공통 지역 선택기로 운영 화면의 지역을 변경한다',
-      (WidgetTester tester) async {
+  for (final width in [360.0, 412.0, 1024.0]) {
+    testWidgets(
+        'field workflow adapts at ${width.toInt()}px and text scale 1.3',
+        (WidgetTester tester) async {
+      tester.view.physicalSize = Size(width, 900);
+      tester.view.devicePixelRatio = 1;
+      tester.platformDispatcher.textScaleFactorTestValue = 1.3;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
+
+      for (final route in [
+        AppRoute.dashboard,
+        AppRoute.inspections,
+        '/cabinet/CAB-001',
+        AppRoute.map,
+      ]) {
+        await tester.pumpWidget(buildTestApp(initialLocation: route));
+        await tester.pumpAndSettle();
+        expect(tester.takeException(), isNull,
+            reason: '$route overflowed at $width px');
+        if (route == AppRoute.dashboard) {
+          expect(find.text(width < 600 ? 'LightGuard' : 'LightGuard · 운영 현황'),
+              findsOneWidget);
+          expect(find.textContaining('자료 생성 기준'), findsOneWidget);
+          expect(find.byKey(const Key('today-action-queue')), findsOneWidget);
+        }
+        if (route == AppRoute.inspections) {
+          expect(find.text(width < 600 ? '점검 대상' : '점검 대상 분전함과 선정 사유'),
+              findsOneWidget);
+        }
+        if (route == '/cabinet/CAB-001') {
+          expect(find.byKey(const Key('field-primary-result')), findsOneWidget);
+        }
+        for (final type in [
+          FilledButton,
+          OutlinedButton,
+          TextButton,
+          IconButton,
+          ActionChip,
+          DropdownButton,
+          DropdownButtonFormField<String>,
+          InkWell,
+          GestureDetector
+        ]) {
+          for (final element in find.byType(type).evaluate()) {
+            var implementationOfButton = false;
+            element.visitAncestorElements((ancestor) {
+              if (ancestor.widget is ButtonStyleButton) {
+                implementationOfButton = true;
+                return false;
+              }
+              if (ancestor.widget is RawChip ||
+                  ancestor.widget is DropdownButton) {
+                implementationOfButton = true;
+                return false;
+              }
+              return true;
+            });
+            if (implementationOfButton) continue;
+            final rect = tester.getRect(find.byElementPredicate(
+                (candidate) => identical(candidate, element)));
+            expect(rect.width, greaterThanOrEqualTo(48),
+                reason:
+                    '$type narrower than 48dp at $width px on $route: $rect');
+            expect(rect.height, greaterThanOrEqualTo(48),
+                reason:
+                    '$type shorter than 48dp at $width px on $route: $rect');
+          }
+        }
+      }
+    });
+  }
+
+  testWidgets('공통 지역 선택기로 운영 화면의 지역을 변경한다', (WidgetTester tester) async {
     await tester.pumpWidget(buildTestApp());
     await tester.pumpAndSettle();
 

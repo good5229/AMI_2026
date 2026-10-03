@@ -38,6 +38,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
   _MapFilter _filter = _MapFilter.all;
   final MapController _mapController = MapController();
   String? _selectedCabinetUid;
+  bool _tileFailure = false;
 
   @override
   void initState() {
@@ -83,6 +84,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                 .where((c) => c.cabinetUid == _selectedCabinetUid)
                 .firstOrNull;
         final isCompactMap = MediaQuery.sizeOf(context).width < 700;
+        final isDesktopMap = MediaQuery.sizeOf(context).width >= 1024;
         final targetPoints = targetIds.isEmpty
             ? allPoints
             : allPoints
@@ -149,17 +151,20 @@ class _MapScreenState extends ConsumerState<MapScreen> {
             ? LatLng(focusedCabinet.assetInfo.latitude!,
                 focusedCabinet.assetInfo.longitude!)
             : points.isNotEmpty
-            ? LatLng(points.first.assetInfo.latitude!,
-                points.first.assetInfo.longitude!)
-            : (allPoints.isNotEmpty
-                ? LatLng(allPoints.first.assetInfo.latitude!,
-                    allPoints.first.assetInfo.longitude!)
-                : const LatLng(35.16, 129.12));
+                ? LatLng(points.first.assetInfo.latitude!,
+                    points.first.assetInfo.longitude!)
+                : (allPoints.isNotEmpty
+                    ? LatLng(allPoints.first.assetInfo.latitude!,
+                        allPoints.first.assetInfo.longitude!)
+                    : const LatLng(35.16, 129.12));
 
         return LightguardShell(
           title: '${region.label} 지도',
-          child: Stack(
+          child: Row(
             children: [
+              Expanded(
+                child: Stack(
+                  children: [
               FlutterMap(
                 mapController: _mapController,
                 options: MapOptions(
@@ -167,6 +172,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                   initialZoom: focusedCabinet == null ? 13 : 17,
                   minZoom: 10,
                   maxZoom: 18,
+                  backgroundColor: const Color(0xFFE8EFED),
                 ),
                 children: [
                   if (widget.showBaseMap)
@@ -174,14 +180,19 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                       urlTemplate:
                           'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                       userAgentPackageName: 'kr.example.lightguard',
+                      errorTileCallback: (tile, error, stackTrace) {
+                        if (mounted && !_tileFailure) {
+                          setState(() => _tileFailure = true);
+                        }
+                      },
                     ),
                   MarkerLayer(
                     key: const Key('map-marker-layer'),
                     markers: [
                       for (final c in points)
                         Marker(
-                          width: 44,
-                          height: 44,
+                          width: 48,
+                          height: 48,
                           point: LatLng(
                               c.assetInfo.latitude!, c.assetInfo.longitude!),
                           child: GestureDetector(
@@ -189,8 +200,8 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                             onTap: () => _selectCabinet(c),
                             child: _statusMarker(
                               c,
-                              isFocused: c.cabinetUid ==
-                                  focusedCabinet?.cabinetUid,
+                              isFocused:
+                                  c.cabinetUid == focusedCabinet?.cabinetUid,
                             ),
                           ),
                         ),
@@ -198,6 +209,21 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                   ),
                 ],
               ),
+              if (_tileFailure && widget.showBaseMap)
+                const Positioned(
+                  top: 204,
+                  left: 12,
+                  right: 12,
+                  child: Card(
+                    color: Color(0xFFFFF4D6),
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        '지도 배경에 연결할 수 없습니다. 자산 목록과 좌표는 계속 사용할 수 있습니다.',
+                      ),
+                    ),
+                  ),
+                ),
               SafeArea(
                 child: Align(
                   alignment: Alignment.topCenter,
@@ -210,10 +236,21 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              region.branchLabel,
-                              style: Theme.of(context).textTheme.titleSmall,
-                            ),
+                            Row(children: [
+                              Expanded(
+                                child: Text(region.branchLabel,
+                                    style:
+                                        Theme.of(context).textTheme.titleSmall),
+                              ),
+                              if (!isDesktopMap)
+                                TextButton.icon(
+                                  key: const Key('map-asset-list-button'),
+                                  onPressed: () => _showAssetList(
+                                      context, points, focusedCabinet),
+                                  icon: const Icon(Icons.list_alt),
+                                  label: Text('자산 목록 ${points.length}'),
+                                ),
+                            ]),
                             if (focusedCabinet != null) ...[
                               const SizedBox(height: 4),
                               Text(
@@ -289,7 +326,8 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                             type: BadgeType.validation,
                             label: '추적 관찰 분전함 $observeCount개'),
                         StatusBadge(
-                            type: BadgeType.normal, label: '특이 신호 없는 분전함 $normalCount개'),
+                            type: BadgeType.normal,
+                            label: '특이 신호 없는 분전함 $normalCount개'),
                         if (supportsScenario && scenarioCount > 0)
                           StatusBadge(
                               type: BadgeType.scenario,
@@ -315,7 +353,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                   ),
                 ),
               ),
-              if (focusedCabinet != null)
+              if (focusedCabinet != null && !isDesktopMap)
                 Positioned(
                   left: isCompactMap ? 12 : null,
                   right: 12,
@@ -326,6 +364,20 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                     onClose: _clearSelection,
                     onOpenDetail: () =>
                         _openCabinet(context, focusedCabinet.cabinetUid),
+                  ),
+                ),
+                  ],
+                ),
+              ),
+              if (isDesktopMap)
+                SizedBox(
+                  width: 360,
+                  child: _MapAssetList(
+                    points: points,
+                    selectedUid: focusedCabinet?.cabinetUid,
+                    onSelect: _selectCabinet,
+                    onOpenDetail: (cabinet) =>
+                        _openCabinet(context, cabinet.cabinetUid),
                   ),
                 ),
             ],
@@ -397,6 +449,31 @@ class _MapScreenState extends ConsumerState<MapScreen> {
     setState(() => _selectedCabinetUid = null);
   }
 
+  void _showAssetList(BuildContext screenContext, List<CabinetRecord> points,
+      CabinetRecord? focusedCabinet) {
+    showModalBottomSheet<void>(
+      context: screenContext,
+      isScrollControlled: true,
+      builder: (modalContext) => SafeArea(
+        child: SizedBox(
+          height: MediaQuery.sizeOf(modalContext).height * 0.78,
+          child: _MapAssetList(
+            points: points,
+            selectedUid: focusedCabinet?.cabinetUid,
+            onSelect: (cabinet) {
+              _selectCabinet(cabinet);
+              Navigator.pop(modalContext);
+            },
+            onOpenDetail: (cabinet) {
+              Navigator.pop(modalContext);
+              _openCabinet(screenContext, cabinet.cabinetUid);
+            },
+          ),
+        ),
+      ),
+    );
+  }
+
   Widget _statusMarker(CabinetRecord c, {required bool isFocused}) {
     final color = switch (c.status) {
       InspectionStatus.normal => Colors.green,
@@ -430,6 +507,71 @@ class _MapScreenState extends ConsumerState<MapScreen> {
       ),
     );
   }
+}
+
+class _MapAssetList extends StatelessWidget {
+  const _MapAssetList({
+    required this.points,
+    required this.selectedUid,
+    required this.onSelect,
+    required this.onOpenDetail,
+  });
+
+  final List<CabinetRecord> points;
+  final String? selectedUid;
+  final ValueChanged<CabinetRecord> onSelect;
+  final ValueChanged<CabinetRecord> onOpenDetail;
+
+  @override
+  Widget build(BuildContext context) => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
+            child: Text('자산 위치 목록 · ${points.length}개',
+                style: Theme.of(context).textTheme.titleMedium),
+          ),
+          const Divider(height: 1),
+          Expanded(
+            child: ListView.builder(
+              itemCount: points.length,
+              itemBuilder: (context, index) {
+                final cabinet = points[index];
+                return ListTile(
+                  selected: cabinet.cabinetUid == selectedUid,
+                  key: Key('map-asset-${cabinet.cabinetUid}'),
+                  onTap: () => onSelect(cabinet),
+                  title: Text(cabinet.assetInfo.cabinetName,
+                      maxLines: 1, overflow: TextOverflow.ellipsis),
+                  subtitle: Text(
+                    '${cabinet.cabinetUid} · ${cabinet.assetInfo.latitude!.toStringAsFixed(6)}, ${cabinet.assetInfo.longitude!.toStringAsFixed(6)}',
+                  ),
+                  trailing: StatusBadge(
+                      type: statusToBadge(cabinet.status),
+                      label: statusToLabel(cabinet.status)),
+                );
+              },
+            ),
+          ),
+          if (selectedUid != null)
+            Padding(
+              padding: const EdgeInsets.all(12),
+              child: SizedBox(
+                width: double.infinity,
+                child: FilledButton.icon(
+                  onPressed: () {
+                    final selected = points
+                        .where((cabinet) => cabinet.cabinetUid == selectedUid)
+                        .firstOrNull;
+                    if (selected != null) onOpenDetail(selected);
+                  },
+                  icon: const Icon(Icons.open_in_new),
+                  label: const Text('선택 자산 상세 보기'),
+                ),
+              ),
+            ),
+        ],
+      );
 }
 
 class _CabinetMapInfoCard extends StatelessWidget {

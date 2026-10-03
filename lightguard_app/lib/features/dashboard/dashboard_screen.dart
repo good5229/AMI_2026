@@ -4,6 +4,8 @@ import 'package:go_router/go_router.dart';
 import '../../app/theme/app_theme.dart';
 import '../../core/widgets/app_scaffold.dart';
 import '../../core/widgets/status_badges.dart';
+import '../../core/presentation/operational_copy.dart';
+import '../../core/storage/inspection_outcome_storage.dart';
 import '../../data/models/lightguard_models.dart';
 import '../../data/models/region_config.dart';
 import '../../data/repositories/lightguard_repository.dart';
@@ -15,67 +17,236 @@ class DashboardScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final dataAsync = ref.watch(lightguardDataProvider);
     return dataAsync.when(
-      loading: () => const Scaffold(body: Center(child: CircularProgressIndicator())),
-      error: (error, _) => Scaffold(body: Center(child: Text('운영 자료를 불러오지 못했습니다: $error'))),
+      loading: () =>
+          const Scaffold(body: Center(child: CircularProgressIndicator())),
+      error: (error, _) =>
+          Scaffold(body: Center(child: Text('운영 자료를 불러오지 못했습니다: $error'))),
       data: (data) {
         final region = ref.watch(selectedRegionProvider);
         final isCompact = MediaQuery.sizeOf(context).width < 600;
         final cards = <Widget>[
-          _MetricCard('${region.label} 우선 확인 분전함', '${data.countByStatus(InspectionStatus.priorityInspection)}개', Icons.error_outline, key: const Key('dashboard-priority-card'), onTap: () => context.go('/inspections?filter=priority')),
-          _MetricCard('${region.label} 현장점검 검토 분전함', '${data.countByStatus(InspectionStatus.inspectionRecommended)}개', Icons.warning_amber_rounded, key: const Key('dashboard-recommended-card'), onTap: () => context.go('/inspections?filter=recommended')),
-          _MetricCard('${region.label} 추적 관찰 분전함', '${data.countByStatus(InspectionStatus.observe)}개', Icons.remove_red_eye_outlined),
-          _MetricCard('${region.label} 특이 신호 없는 분전함', '${data.countByStatus(InspectionStatus.normal)}개', Icons.check_circle_outline),
-          _MetricCard('${region.label} 등록 분전함 수', '${data.objects.length}개', Icons.electrical_services),
-          _MetricCard('${region.label} 연결 가로등 수', '${data.totalLampCount}개', Icons.lightbulb_outline),
-          _MetricCard('${region.label} 조명 합산 정격용량', '${data.totalRatedLoadKw.toStringAsFixed(1)} kW', Icons.bolt),
+          _MetricCard(
+              '${region.label} 우선 확인 분전함',
+              '${data.countByStatus(InspectionStatus.priorityInspection)}개',
+              Icons.error_outline,
+              key: const Key('dashboard-priority-card'),
+              onTap: () => context.go('/inspections?filter=priority')),
+          _MetricCard(
+              '${region.label} 현장점검 검토 분전함',
+              '${data.countByStatus(InspectionStatus.inspectionRecommended)}개',
+              Icons.warning_amber_rounded,
+              key: const Key('dashboard-recommended-card'),
+              onTap: () => context.go('/inspections?filter=recommended')),
+          _MetricCard(
+              '${region.label} 추적 관찰 분전함',
+              '${data.countByStatus(InspectionStatus.observe)}개',
+              Icons.remove_red_eye_outlined),
+          _MetricCard(
+              '${region.label} 특이 신호 없는 분전함',
+              '${data.countByStatus(InspectionStatus.normal)}개',
+              Icons.check_circle_outline),
+          _MetricCard('${region.label} 등록 분전함 수', '${data.objects.length}개',
+              Icons.electrical_services),
+          _MetricCard('${region.label} 연결 가로등 수', '${data.totalLampCount}개',
+              Icons.lightbulb_outline),
+          _MetricCard('${region.label} 조명 합산 정격용량',
+              '${data.totalRatedLoadKw.toStringAsFixed(1)} kW', Icons.bolt),
         ];
+        final hero = _DashboardHero(
+          region: region,
+          priorityCount:
+              data.countByStatus(InspectionStatus.priorityInspection),
+          onInspect: () => context.go('/inspections'),
+          onMap: () => context.go('/map'),
+        );
+        final queue = _TodayQueue(data: data);
+        final metricHeading = Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 4),
+          child: Text('${region.label} 자산 및 점검 현황',
+              style: Theme.of(context).textTheme.titleLarge),
+        );
+        final metricGrid = LayoutBuilder(
+          builder: (context, constraints) {
+            final columns = constraints.maxWidth >= 1120
+                ? 4
+                : constraints.maxWidth >= 720
+                    ? 3
+                    : constraints.maxWidth >= 600
+                        ? 2
+                        : 1;
+            final cardWidth =
+                (constraints.maxWidth - (columns - 1) * 12) / columns;
+            return Wrap(
+              spacing: 12,
+              runSpacing: 12,
+              children: [
+                for (final card in cards)
+                  SizedBox(width: cardWidth, child: card),
+              ],
+            );
+          },
+        );
         return LightguardShell(
           title: 'LightGuard · 운영 현황',
+          compactTitle: 'LightGuard',
           actions: [
             if (!isCompact)
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: StatusBadge(type: BadgeType.validation, label: region.branchLabel),
+                child: StatusBadge(
+                    type: BadgeType.validation, label: region.branchLabel),
               ),
           ],
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.all(12),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _DashboardHero(
-                  region: region,
-                  priorityCount: data.countByStatus(InspectionStatus.priorityInspection),
-                  onInspect: () => context.go('/inspections'),
-                  onMap: () => context.go('/map'),
+          child: LayoutBuilder(builder: (context, _) {
+            if (MediaQuery.sizeOf(context).width >= 1024) {
+              return SingleChildScrollView(
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      flex: 7,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [hero, const SizedBox(height: 8), queue],
+                      ),
+                    ),
+                    const SizedBox(width: 20),
+                    Expanded(
+                      flex: 5,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          metricHeading,
+                          const SizedBox(height: 10),
+                          metricGrid,
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-                const SizedBox(height: 18),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 4),
-                  child: Text('${region.label} 자산 및 점검 현황', style: Theme.of(context).textTheme.titleLarge),
+              );
+            }
+            return SingleChildScrollView(
+              padding: const EdgeInsets.all(12),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  hero,
+                  const SizedBox(height: 8),
+                  queue,
+                  const SizedBox(height: 18),
+                  metricHeading,
+                  const SizedBox(height: 8),
+                  metricGrid,
+                ],
+              ),
+            );
+          }),
+        );
+      },
+    );
+  }
+}
+
+class _TodayQueue extends StatefulWidget {
+  const _TodayQueue({required this.data});
+  final LightguardData data;
+
+  @override
+  State<_TodayQueue> createState() => _TodayQueueState();
+}
+
+class _TodayQueueState extends State<_TodayQueue> {
+  late Future<Map<String, Map<String, String>>> _outcomes;
+
+  @override
+  void initState() {
+    super.initState();
+    _outcomes = loadInspectionOutcomes();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<Map<String, Map<String, String>>>(
+      future: _outcomes,
+      builder: (context, snapshot) {
+        final allOutcomes =
+            snapshot.data ?? const <String, Map<String, String>>{};
+        final outcomes = inspectionOutcomesForCases(allOutcomes,
+            widget.data.objects.map((cabinet) => cabinet.cabinetUid));
+        final candidates = widget.data.objects
+            .where((cabinet) => cabinet.status != InspectionStatus.normal)
+            .where((cabinet) {
+          final code = outcomes[cabinet.cabinetUid]?['outcomeCode'];
+          return code == null || code.isEmpty;
+        }).toList()
+          ..sort((a, b) =>
+              a.inspectionPriority.rank.compareTo(b.inspectionPriority.rank));
+        final items = candidates.take(3).toList();
+        final stamp = widget.data.generatedAt;
+        final date =
+            '${stamp.year.toString().padLeft(4, '0')}-${stamp.month.toString().padLeft(2, '0')}-${stamp.day.toString().padLeft(2, '0')}';
+        return Card(
+          key: const Key('today-action-queue'),
+          margin: EdgeInsets.zero,
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text('우선 확인 후보', style: Theme.of(context).textTheme.titleLarge),
+              const SizedBox(height: 4),
+              Text('자료 생성 기준 $date · 고정 제공 자료, 실시간 갱신 아님',
+                  style: Theme.of(context).textTheme.bodySmall),
+              const SizedBox(height: 4),
+              Text(
+                  '기기 기록 결과 ${outcomes.values.where((o) => (o['outcomeCode'] ?? '').isNotEmpty).length}건 · 전체 ${widget.data.objects.length}개 분전함 · 기기 내 기록만 포함',
+                  style: Theme.of(context).textTheme.bodySmall),
+              const Divider(height: 20),
+              if (items.isEmpty) const Text('현재 등록된 확인 후보가 없습니다.'),
+              for (final cabinet in items) ...[
+                InkWell(
+                  onTap: () => context.go('/cabinet/${cabinet.cabinetUid}'),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 9),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Expanded(
+                                  child: Text(
+                                      '${cabinet.assetInfo.cabinetName} · ${cabinet.cabinetUid}',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleMedium)),
+                              const Icon(Icons.chevron_right)
+                            ],
+                          ),
+                          const SizedBox(height: 3),
+                          Text(operationalPriorityReason(cabinet),
+                              softWrap: true),
+                          const SizedBox(height: 3),
+                          Text(
+                              '다음 조치 · ${operationalRecommendedAction(cabinet.status)}',
+                              softWrap: true,
+                              style: Theme.of(context).textTheme.bodySmall),
+                          Text('자산 · ${operationalAssetSourceLabel(cabinet)}',
+                              style: Theme.of(context).textTheme.labelSmall),
+                          Text('신호 · ${operationalSignalSourceLabel(cabinet)}',
+                              style: Theme.of(context).textTheme.labelSmall),
+                        ]),
+                  ),
                 ),
-                const SizedBox(height: 8),
-                LayoutBuilder(
-                  builder: (context, constraints) {
-                    final columns = constraints.maxWidth >= 1120
-                        ? 4
-                        : constraints.maxWidth >= 720
-                            ? 3
-                            : 2;
-                    final cardWidth =
-                        (constraints.maxWidth - (columns - 1) * 12) / columns;
-                    return Wrap(
-                      spacing: 12,
-                      runSpacing: 12,
-                      children: [
-                        for (final card in cards)
-                          SizedBox(width: cardWidth, child: card),
-                      ],
-                    );
-                  },
-                ),
+                if (cabinet != items.last) const Divider(height: 1),
               ],
-            ),
+              const SizedBox(height: 8),
+              SizedBox(
+                  width: double.infinity,
+                  child: FilledButton(
+                      onPressed: () => context.go('/inspections'),
+                      child: const Text('전체 확인 대상 열기'))),
+            ]),
           ),
         );
       },
@@ -84,7 +255,11 @@ class DashboardScreen extends ConsumerWidget {
 }
 
 class _DashboardHero extends StatelessWidget {
-  const _DashboardHero({required this.region, required this.priorityCount, required this.onInspect, required this.onMap});
+  const _DashboardHero(
+      {required this.region,
+      required this.priorityCount,
+      required this.onInspect,
+      required this.onMap});
   final RegionId region;
   final int priorityCount;
   final VoidCallback onInspect;
@@ -92,36 +267,59 @@ class _DashboardHero extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Card(
-    clipBehavior: Clip.antiAlias,
-    margin: const EdgeInsets.fromLTRB(0, 4, 0, 8),
-    child: DecoratedBox(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Color(0xFF102A43), Color(0xFF0F5D59)]),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(22),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(children: [
-              const Icon(Icons.bolt_rounded, color: Color(0xFFF7C948), size: 20),
-              const SizedBox(width: 8),
-              Text(region.label, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800)),
-            ]),
-            const SizedBox(height: 18),
-            Text('오늘 ${region.label} 우선 확인 분전함 $priorityCount개', style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.white, fontWeight: FontWeight.w900, height: 1.18)),
-            const SizedBox(height: 18),
-            Wrap(spacing: 10, runSpacing: 10, children: [
-              FilledButton.icon(onPressed: onInspect, style: FilledButton.styleFrom(backgroundColor: const Color(0xFFF7C948), foregroundColor: AppTheme.ink), icon: const Icon(Icons.fact_check_outlined, size: 19), label: const Text('확인 대상 보기')),
-              OutlinedButton.icon(onPressed: onMap, style: OutlinedButton.styleFrom(foregroundColor: Colors.white, side: const BorderSide(color: Color(0xFF8EC5BB))), icon: const Icon(Icons.map_outlined, size: 19), label: const Text('현장 지도')),
-            ]),
-            const SizedBox(height: 14),
-            const Text('이상 신호는 고장 확정이 아니며 원격 확인 또는 현장점검이 필요합니다.', style: TextStyle(color: Color(0xFFAED4CD), fontSize: 12)),
-          ],
+        clipBehavior: Clip.antiAlias,
+        margin: const EdgeInsets.fromLTRB(0, 4, 0, 8),
+        child: DecoratedBox(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Color(0xFF102A43), Color(0xFF0F5D59)]),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(22),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(children: [
+                  const Icon(Icons.bolt_rounded,
+                      color: Color(0xFFF7C948), size: 20),
+                  const SizedBox(width: 8),
+                  Text(region.label,
+                      style: const TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.w800)),
+                ]),
+                const SizedBox(height: 18),
+                Text('${region.label} 우선 확인 분전함 $priorityCount개',
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w900,
+                        height: 1.18)),
+                const SizedBox(height: 18),
+                Wrap(spacing: 10, runSpacing: 10, children: [
+                  FilledButton.icon(
+                      onPressed: onInspect,
+                      style: FilledButton.styleFrom(
+                          backgroundColor: const Color(0xFFF7C948),
+                          foregroundColor: AppTheme.ink),
+                      icon: const Icon(Icons.fact_check_outlined, size: 19),
+                      label: const Text('확인 대상 보기')),
+                  OutlinedButton.icon(
+                      onPressed: onMap,
+                      style: OutlinedButton.styleFrom(
+                          foregroundColor: Colors.white,
+                          side: const BorderSide(color: Color(0xFF8EC5BB))),
+                      icon: const Icon(Icons.map_outlined, size: 19),
+                      label: const Text('현장 지도')),
+                ]),
+                const SizedBox(height: 14),
+                const Text('이상 신호는 고장 확정이 아니며 원격 확인 또는 현장점검이 필요합니다.',
+                    style: TextStyle(color: Color(0xFFAED4CD), fontSize: 12)),
+              ],
+            ),
+          ),
         ),
-      ),
-    ),
-  );
+      );
 }
 
 class _MetricCard extends StatelessWidget {
@@ -135,10 +333,18 @@ class _MetricCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final critical = title.contains('우선 확인');
     final caution = title.contains('현장점검 검토');
-    final accent = critical ? const Color(0xFFB42318) : caution ? const Color(0xFFD97706) : AppTheme.ink;
-    final background = critical ? const Color(0xFFFFF1F0) : caution ? const Color(0xFFFFF7E6) : AppTheme.paper;
-    return SizedBox(
-      height: 112,
+    final accent = critical
+        ? const Color(0xFFB42318)
+        : caution
+            ? const Color(0xFFD97706)
+            : AppTheme.ink;
+    final background = critical
+        ? const Color(0xFFFFF1F0)
+        : caution
+            ? const Color(0xFFFFF7E6)
+            : AppTheme.paper;
+    return ConstrainedBox(
+      constraints: const BoxConstraints(minHeight: 112),
       child: Card(
         margin: EdgeInsets.zero,
         color: background,
@@ -148,16 +354,38 @@ class _MetricCard extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(14),
             child: Row(children: [
-              Container(width: 34, height: 34, decoration: BoxDecoration(color: accent.withValues(alpha: 0.09), borderRadius: BorderRadius.circular(9)), child: Icon(icon, color: accent, size: 20)),
+              Container(
+                  width: 34,
+                  height: 34,
+                  decoration: BoxDecoration(
+                      color: accent.withValues(alpha: 0.09),
+                      borderRadius: BorderRadius.circular(9)),
+                  child: Icon(icon, color: accent, size: 20)),
               const SizedBox(width: 12),
-              Expanded(child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(title, maxLines: 3, overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.labelMedium),
-                const SizedBox(height: 4),
-                Row(children: [
-                  Expanded(child: Text(value, maxLines: 1, overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.titleLarge?.copyWith(color: accent))),
-                  if (onTap != null) Icon(Icons.arrow_forward_rounded, size: 18, color: accent),
-                ]),
-              ])),
+              Expanded(
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                    Text(title,
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
+                        style: Theme.of(context).textTheme.labelMedium),
+                    const SizedBox(height: 4),
+                    Row(children: [
+                      Expanded(
+                          child: Text(value,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleLarge
+                                  ?.copyWith(color: accent))),
+                      if (onTap != null)
+                        Icon(Icons.arrow_forward_rounded,
+                            size: 18, color: accent),
+                    ]),
+                  ])),
             ]),
           ),
         ),

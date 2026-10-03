@@ -65,6 +65,19 @@ String operationalEvidenceSourceLabel(CabinetRecord cabinet) {
   return '공공자산 정보 · 전력계량 자료 미연결';
 }
 
+String operationalAssetSourceLabel(CabinetRecord cabinet) =>
+    switch (cabinet.assetSource) {
+      AssetSource.municipalPublicData => '지자체 공공자산 자료',
+    };
+
+String operationalSignalSourceLabel(CabinetRecord cabinet) =>
+    switch (cabinet.signalSource) {
+      SignalSource.scenarioInjection => '검증용 모의 전력 신호',
+      SignalSource.realCompetitionAmi => '가명 처리 AMI 전력 신호',
+      SignalSource.realMunicipalAmi => '지자체 연계 AMI 전력 신호',
+      SignalSource.none => '전력 신호 미연결',
+    };
+
 String operationalPriorityReason(CabinetRecord cabinet) {
   final signal = cabinet.detectedSignals.firstOrNull;
   if (signal == null) {
@@ -76,15 +89,14 @@ String operationalPriorityReason(CabinetRecord cabinet) {
       '${operationalSignalLevel(signal)}이며 전체 대상 중 확인 순위 ${cabinet.inspectionPriority.rank}번으로 분류했습니다.';
 }
 
-String operationalRecommendedAction(InspectionStatus status) => switch (status) {
+String operationalRecommendedAction(InspectionStatus status) =>
+    switch (status) {
       InspectionStatus.priorityInspection =>
         '제어기 상태와 전력 신호의 지속 여부를 먼저 원격 확인하고, 신호가 계속되면 현장점검 여부를 결정합니다.',
       InspectionStatus.inspectionRecommended =>
         '최근 제어이력과 동일 시간대 전력 신호를 확인한 뒤 현장점검 필요 여부를 판단합니다.',
-      InspectionStatus.observe =>
-        '다음 운전 주기까지 동일 신호가 반복되는지 원격으로 관찰합니다.',
-      InspectionStatus.normal =>
-        '현재 운전 상태를 유지하며 정기 점검 일정에 따라 확인합니다.',
+      InspectionStatus.observe => '다음 운전 주기까지 동일 신호가 반복되는지 원격으로 관찰합니다.',
+      InspectionStatus.normal => '현재 운전 상태를 유지하며 정기 점검 일정에 따라 확인합니다.',
       InspectionStatus.dataCheckRequired =>
         '전력 측정값 누락 여부, 분전함 연결정보, 측정 시각을 먼저 확인합니다.',
     };

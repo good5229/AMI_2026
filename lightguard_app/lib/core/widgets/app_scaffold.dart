@@ -12,22 +12,27 @@ class LightguardShell extends ConsumerWidget {
     required this.title,
     required this.child,
     this.actions,
+    this.bottomAction,
+    this.compactTitle,
   });
 
   final String title;
   final Widget child;
   final List<Widget>? actions;
+  final Widget? bottomAction;
+  final String? compactTitle;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isWide = MediaQuery.of(context).size.width >= 900;
+    final isWide = MediaQuery.of(context).size.width >= 1024;
+    final isCompact = MediaQuery.sizeOf(context).width < 600;
+    final appBarTitle = isCompact ? (compactTitle ?? title) : title;
     final tabs = <_NavItem>[
       const _NavItem(AppRoute.dashboard, '오늘의 현황', '현황', Icons.home_outlined),
       const _NavItem(AppRoute.map, '현장 지도', '지도', Icons.map_outlined),
       const _NavItem(
           AppRoute.inspections, '점검 대상', '점검', Icons.fact_check_outlined),
-      const _NavItem(
-          AppRoute.ami, '판정 근거', '근거', Icons.insights_outlined),
+      const _NavItem(AppRoute.ami, '판정 근거', '근거', Icons.insights_outlined),
     ];
 
     final location = GoRouterState.of(context).matchedLocation;
@@ -35,8 +40,13 @@ class LightguardShell extends ConsumerWidget {
     if (isWide) {
       return Scaffold(
         appBar: AppBar(
-          title: Text(title, maxLines: 1, overflow: TextOverflow.ellipsis),
-          actions: [const _RegionSelector(), ...?actions, const _GlossaryButton()],
+          title:
+              Text(appBarTitle, maxLines: 1, overflow: TextOverflow.ellipsis),
+          actions: [
+            const _RegionSelector(),
+            ...?actions,
+            const _GlossaryButton()
+          ],
           bottom: const PreferredSize(
             preferredSize: Size.fromHeight(1),
             child: Divider(height: 1),
@@ -81,13 +91,29 @@ class LightguardShell extends ConsumerWidget {
             ),
           ],
         ),
+        bottomNavigationBar: bottomAction == null
+            ? null
+            : SafeArea(
+                top: false,
+                child: Material(
+                  color: AppTheme.paper,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+                    child: bottomAction!,
+                  ),
+                ),
+              ),
       );
     }
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(title, maxLines: 1, overflow: TextOverflow.ellipsis),
-        actions: [const _RegionSelector(), ...?actions, const _GlossaryButton()],
+        title: Text(appBarTitle, maxLines: 1, overflow: TextOverflow.ellipsis),
+        actions: [
+          const _RegionSelector(),
+          ...?actions,
+          const _GlossaryButton()
+        ],
         bottom: const PreferredSize(
           preferredSize: Size.fromHeight(1),
           child: Divider(height: 1),
@@ -100,14 +126,31 @@ class LightguardShell extends ConsumerWidget {
           child: SizedBox.expand(child: child),
         ),
       ),
-      bottomNavigationBar: NavigationBar(
-        height: 72,
-        selectedIndex: _selectedIndex(tabs, location),
-        destinations: [
-          for (final t in tabs)
-            NavigationDestination(icon: Icon(t.icon), label: t.mobileLabel),
+      bottomNavigationBar: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (bottomAction != null)
+            SafeArea(
+              top: false,
+              bottom: false,
+              child: Material(
+                color: AppTheme.paper,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+                  child: bottomAction!,
+                ),
+              ),
+            ),
+          NavigationBar(
+            height: 72,
+            selectedIndex: _selectedIndex(tabs, location),
+            destinations: [
+              for (final t in tabs)
+                NavigationDestination(icon: Icon(t.icon), label: t.mobileLabel),
+            ],
+            onDestinationSelected: (index) => _goto(context, tabs[index].path),
+          ),
         ],
-        onDestinationSelected: (index) => _goto(context, tabs[index].path),
       ),
     );
   }
@@ -138,7 +181,7 @@ class _RegionSelector extends ConsumerWidget {
           child: DropdownButton<RegionId>(
             key: const Key('global-region-selector'),
             value: selected,
-            isDense: true,
+            isDense: false,
             borderRadius: BorderRadius.circular(12),
             icon: const Icon(Icons.expand_more, size: 20),
             items: [
@@ -192,7 +235,7 @@ class _GlossaryButton extends StatelessWidget {
       tooltip: '용어 도움말',
       style: IconButton.styleFrom(
         backgroundColor: AppTheme.surfaceMuted,
-        minimumSize: const Size(44, 44),
+        minimumSize: const Size(48, 48),
       ),
       icon: const Icon(Icons.help_outline),
       onPressed: () => showModalBottomSheet<void>(
