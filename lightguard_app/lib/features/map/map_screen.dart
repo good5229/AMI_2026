@@ -67,7 +67,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
       loading: () =>
           const Scaffold(body: Center(child: CircularProgressIndicator())),
       error: (e, s) => const Scaffold(
-        body: Center(child: Text('지도 자료를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.')),
+        body: Center(child: Text('지도 자료 로드 실패')),
       ),
       data: (data) {
         final region = ref.watch(selectedRegionProvider);
@@ -219,7 +219,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                     child: Padding(
                       padding: EdgeInsets.all(12),
                       child: Text(
-                        '지도 배경에 연결할 수 없습니다. 자산 목록과 좌표는 계속 사용할 수 있습니다.',
+                        '지도 연결 실패 · 목록·좌표 사용 가능',
                       ),
                     ),
                   ),
@@ -272,16 +272,16 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                                   _buildFilterChip(
                                     availableFilter,
                                     _MapFilter.targeted,
-                                    '검증/연계대상 ($targetCount)',
+                                    '연계대상 ($targetCount)',
                                   ),
                                 _buildFilterChip(
                                     availableFilter,
                                     _MapFilter.priority,
-                                    '우선점검 ($priorityCount)'),
+                                    '우선 ($priorityCount)'),
                                 _buildFilterChip(
                                     availableFilter,
                                     _MapFilter.recommended,
-                                    '점검권고 ($recommendCount)'),
+                                    '검토 ($recommendCount)'),
                                 _buildFilterChip(availableFilter,
                                     _MapFilter.observe, '관찰 ($observeCount)'),
                                 _buildFilterChip(availableFilter,
@@ -290,12 +290,12 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                                   _buildFilterChip(
                                       availableFilter,
                                       _MapFilter.scenario,
-                                      '검증용 모의 신호 ($scenarioCount)'),
+                                      '모의 ($scenarioCount)'),
                                 if (!supportsScenario && municipalCount > 0)
                                   _buildFilterChip(
                                       availableFilter,
                                       _MapFilter.municipalAsset,
-                                      '실측 자산 ($municipalCount)'),
+                                      '공공자산 ($municipalCount)'),
                               ],
                             ),
                           ],
@@ -318,24 +318,24 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                       children: [
                         StatusBadge(
                             type: BadgeType.inspect,
-                            label: '우선 확인 분전함 $priorityCount개'),
+                            label: '우선 확인 $priorityCount'),
                         StatusBadge(
                             type: BadgeType.scenario,
-                            label: '현장점검 검토 분전함 $recommendCount개'),
+                            label: '점검 검토 $recommendCount'),
                         StatusBadge(
                             type: BadgeType.validation,
-                            label: '추적 관찰 분전함 $observeCount개'),
+                            label: '관찰 $observeCount'),
                         StatusBadge(
                             type: BadgeType.normal,
-                            label: '특이 신호 없는 분전함 $normalCount개'),
+                            label: '정상 범위 $normalCount'),
                         if (supportsScenario && scenarioCount > 0)
                           StatusBadge(
                               type: BadgeType.scenario,
-                              label: '검증용 모의 신호 $scenarioCount'),
+                              label: '모의 신호 $scenarioCount'),
                         if (!supportsScenario && municipalCount > 0)
                           StatusBadge(
                               type: BadgeType.validation,
-                              label: '지자체 시설정보 $municipalCount'),
+                              label: '공공자산 $municipalCount'),
                         if (widget.showBaseMap)
                           const Padding(
                             padding: EdgeInsets.symmetric(
@@ -528,7 +528,7 @@ class _MapAssetList extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
-            child: Text('자산 위치 목록 · ${points.length}개',
+            child: Text('자산 ${points.length}개',
                 style: Theme.of(context).textTheme.titleMedium),
           ),
           const Divider(height: 1),
@@ -632,10 +632,10 @@ class _CabinetMapInfoCard extends StatelessWidget {
                 runSpacing: 8,
                 children: [
                   _MapInfoPill(
-                      label: '연결 가로등 수',
+                    label: '가로등',
                       value: '${cabinet.assetInfo.fixtureCount}개'),
                   _MapInfoPill(
-                    label: '분전함 조명 합산 정격용량',
+                    label: '정격용량',
                     value:
                         '${cabinet.expectedLoad.expectedRatedLoadKw.toStringAsFixed(2)} kW',
                   ),

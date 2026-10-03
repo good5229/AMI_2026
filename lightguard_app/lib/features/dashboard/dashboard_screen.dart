@@ -26,30 +26,30 @@ class DashboardScreen extends ConsumerWidget {
         final isCompact = MediaQuery.sizeOf(context).width < 600;
         final cards = <Widget>[
           _MetricCard(
-              '${region.label} 우선 확인 분전함',
+              '우선 확인',
               '${data.countByStatus(InspectionStatus.priorityInspection)}개',
               Icons.error_outline,
               key: const Key('dashboard-priority-card'),
               onTap: () => context.go('/inspections?filter=priority')),
           _MetricCard(
-              '${region.label} 현장점검 검토 분전함',
+              '점검 검토',
               '${data.countByStatus(InspectionStatus.inspectionRecommended)}개',
               Icons.warning_amber_rounded,
               key: const Key('dashboard-recommended-card'),
               onTap: () => context.go('/inspections?filter=recommended')),
           _MetricCard(
-              '${region.label} 추적 관찰 분전함',
+              '관찰',
               '${data.countByStatus(InspectionStatus.observe)}개',
               Icons.remove_red_eye_outlined),
           _MetricCard(
-              '${region.label} 특이 신호 없는 분전함',
+              '정상 범위',
               '${data.countByStatus(InspectionStatus.normal)}개',
               Icons.check_circle_outline),
-          _MetricCard('${region.label} 등록 분전함 수', '${data.objects.length}개',
+          _MetricCard('등록 자산', '${data.objects.length}개',
               Icons.electrical_services),
-          _MetricCard('${region.label} 연결 가로등 수', '${data.totalLampCount}개',
+          _MetricCard('연결 가로등', '${data.totalLampCount}개',
               Icons.lightbulb_outline),
-          _MetricCard('${region.label} 조명 합산 정격용량',
+          _MetricCard('정격용량',
               '${data.totalRatedLoadKw.toStringAsFixed(1)} kW', Icons.bolt),
         ];
         final hero = _DashboardHero(
@@ -62,7 +62,7 @@ class DashboardScreen extends ConsumerWidget {
         final queue = _TodayQueue(data: data);
         final metricHeading = Padding(
           padding: const EdgeInsets.symmetric(horizontal: 4),
-          child: Text('${region.label} 자산 및 점검 현황',
+          child: Text('자산·점검 요약',
               style: Theme.of(context).textTheme.titleLarge),
         );
         final metricGrid = LayoutBuilder(
@@ -194,16 +194,16 @@ class _TodayQueueState extends State<_TodayQueue> {
             padding: const EdgeInsets.all(16),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text('우선 확인 후보', style: Theme.of(context).textTheme.titleLarge),
+              Text('오늘의 확인', style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: 4),
-              Text('자료 생성 기준 $date · 고정 제공 자료, 실시간 갱신 아님',
+              Text('기준 $date · 고정 자료',
                   style: Theme.of(context).textTheme.bodySmall),
               const SizedBox(height: 4),
               Text(
-                  '기기 기록 결과 ${outcomes.values.where((o) => (o['outcomeCode'] ?? '').isNotEmpty).length}건 · 전체 ${widget.data.objects.length}개 분전함 · 기기 내 기록만 포함',
+                  '기록 ${outcomes.values.where((o) => (o['outcomeCode'] ?? '').isNotEmpty).length} / 전체 ${widget.data.objects.length} · 기기 저장',
                   style: Theme.of(context).textTheme.bodySmall),
               const Divider(height: 20),
-              if (items.isEmpty) const Text('현재 등록된 확인 후보가 없습니다.'),
+              if (items.isEmpty) const Text('확인 후보 없음'),
               for (final cabinet in items) ...[
                 InkWell(
                   onTap: () => context.go('/cabinet/${cabinet.cabinetUid}'),
@@ -231,9 +231,7 @@ class _TodayQueueState extends State<_TodayQueue> {
                               '다음 조치 · ${operationalRecommendedAction(cabinet.status)}',
                               softWrap: true,
                               style: Theme.of(context).textTheme.bodySmall),
-                          Text('자산 · ${operationalAssetSourceLabel(cabinet)}',
-                              style: Theme.of(context).textTheme.labelSmall),
-                          Text('신호 · ${operationalSignalSourceLabel(cabinet)}',
+                          Text('자료 · ${operationalEvidenceSourceLabel(cabinet)}',
                               style: Theme.of(context).textTheme.labelSmall),
                         ]),
                   ),
@@ -290,7 +288,7 @@ class _DashboardHero extends StatelessWidget {
                           color: Colors.white, fontWeight: FontWeight.w800)),
                 ]),
                 const SizedBox(height: 18),
-                Text('${region.label} 우선 확인 분전함 $priorityCount개',
+                Text('우선 확인 $priorityCount개',
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.w900,
@@ -313,7 +311,7 @@ class _DashboardHero extends StatelessWidget {
                       label: const Text('현장 지도')),
                 ]),
                 const SizedBox(height: 14),
-                const Text('이상 신호는 고장 확정이 아니며 원격 확인 또는 현장점검이 필요합니다.',
+                const Text('후보 신호 · 원격/현장 확인 필요',
                     style: TextStyle(color: Color(0xFFAED4CD), fontSize: 12)),
               ],
             ),
@@ -332,7 +330,7 @@ class _MetricCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final critical = title.contains('우선 확인');
-    final caution = title.contains('현장점검 검토');
+    final caution = title.contains('점검 검토');
     final accent = critical
         ? const Color(0xFFB42318)
         : caution

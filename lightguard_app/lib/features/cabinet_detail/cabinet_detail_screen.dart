@@ -51,10 +51,10 @@ class _CabinetDetailScreenState extends ConsumerState<CabinetDetailScreen> {
                 '${operationalSignalTitle(item)} (${item.estimatedDurationMin}분)')
             .join(' / ');
         final evidenceSummary = cabinet.detectedSignals.isEmpty
-            ? '관측 · 등록된 신호 없음\n불확실 · 연결된 정비 이력 없음. 현장 상태 확인 자료도 없음.'
-            : '관측 · $observations\n반증·불확실 · 별도 현장 확인 및 정비 이력 없음.';
+            ? '신호 없음 · 현장/정비 기록 없음'
+            : '$observations · 현장/정비 기록 없음';
         return LightguardShell(
-          title: '분전함 상세',
+          title: '분전함',
           bottomAction: SizedBox(
             width: double.infinity,
             child: FilledButton.icon(
@@ -87,10 +87,6 @@ class _CabinetDetailScreenState extends ConsumerState<CabinetDetailScreen> {
                         const SizedBox(height: 6),
                         Text('자산 ID · ${cabinet.cabinetUid}',
                             style: Theme.of(context).textTheme.labelLarge),
-                        Text('자산 자료 · ${operationalAssetSourceLabel(cabinet)}'),
-                        Text(
-                            '전력 신호 자료 · ${operationalSignalSourceLabel(cabinet)}'),
-                        Text('자료 생성 기준 · ${_datasetDate(data.generatedAt)}'),
                         if (_displayLocation(cabinet) case final location?)
                           Text('주소 · $location'),
                         if (_displayLocation(cabinet) == null &&
@@ -108,20 +104,17 @@ class _CabinetDetailScreenState extends ConsumerState<CabinetDetailScreen> {
                               label: const Text('지도에서 위치 보기')),
                         if (cabinet.assetInfo.latitude == null ||
                             cabinet.assetInfo.longitude == null)
-                          const Text('등록된 좌표가 없어 지도 위치를 표시할 수 없습니다.'),
+                          const Text('좌표 없음'),
                         const Text(
-                            '지도 타일은 네트워크가 필요할 수 있습니다. 현장 기록은 연결 없이 이 기기에 저장됩니다.',
+                            '지도: 온라인 · 기록: 기기 저장',
                             style: TextStyle(fontSize: 12)),
                         const Divider(),
-                        Text(operationalPriorityReason(cabinet),
-                            style: Theme.of(context).textTheme.bodyMedium),
-                        const SizedBox(height: 8),
                         Text(
-                            '10초 요약 · ${cabinet.detectedSignals.isEmpty ? '등록된 탐지 신호 없음. 실제 정상 운전을 뜻하지 않습니다.' : operationalSignalTitle(signal)}',
+                            '핵심 신호 · ${cabinet.detectedSignals.isEmpty ? '탐지 없음' : operationalSignalTitle(signal)}',
                             style: Theme.of(context).textTheme.titleSmall),
                         const SizedBox(height: 6),
                         const Text(
-                            '확인 순서 · 1) 제어기 운전 상태 확인  2) 같은 시간대 자료 비교  3) 신호가 지속되면 현장 점검'),
+                            '확인 · 제어기 → 동시간대 자료 → 지속 시 현장'),
                         const SizedBox(height: 6),
                         Text(evidenceSummary,
                             style: Theme.of(context).textTheme.bodySmall),
@@ -131,7 +124,7 @@ class _CabinetDetailScreenState extends ConsumerState<CabinetDetailScreen> {
                         const SizedBox(height: 12),
                         if (savedOutcome != null)
                           Text(
-                              '운영자 기록 · ${_outcomeLabel(savedOutcome['outcomeCode'] ?? savedOutcome['status'] ?? '')} · ${savedOutcome['updatedAt'] ?? ''}'),
+                              '기록 · ${_outcomeLabel(savedOutcome['outcomeCode'] ?? savedOutcome['status'] ?? '')} · ${savedOutcome['updatedAt'] ?? ''}'),
                       ]),
                 ),
               ),
@@ -139,19 +132,20 @@ class _CabinetDetailScreenState extends ConsumerState<CabinetDetailScreen> {
               _section(
                   '자산 정보',
                   [
-                    _kv('연결 가로등 수', '${cabinet.assetInfo.fixtureCount}개'),
-                    _kv('연결 조명 규격', _fixtureLampType(cabinet)),
-                    _kv('연결 조명 합산 정격용량',
+                    _kv('가로등', '${cabinet.assetInfo.fixtureCount}개'),
+                    _kv('조명 규격', _fixtureLampType(cabinet)),
+                    _kv('정격용량',
                         '${cabinet.expectedLoad.ratedPowerW.toStringAsFixed(1)} W'),
                     if (_displayLocation(cabinet) case final location?)
                       _kv('설치 위치', location),
                     _kv('자산 자료 출처', operationalAssetSourceLabel(cabinet)),
                     _kv('전력 신호 출처', operationalSignalSourceLabel(cabinet)),
-                    _kv('정비 이력', '연결되지 않음 · 운영자 기록은 정비 원본 이력이 아닙니다.'),
+                    _kv('정비 이력', '미연결'),
                   ],
-                  keySuffix: 'cabinet-section-summary-a'),
+                  keySuffix: 'cabinet-section-summary-a',
+                  collapsed: true),
               const SizedBox(height: 8),
-              _section('예상 점등·소등 기준', [
+              _section('운전 기준', [
                 _kv('일출', cabinet.expectedSchedule.sunrise),
                 _kv('일몰', cabinet.expectedSchedule.sunset),
                 _kv('시민박명 시작', cabinet.expectedSchedule.civilTwilightStart),
@@ -167,24 +161,24 @@ class _CabinetDetailScreenState extends ConsumerState<CabinetDetailScreen> {
                             ?.toString() ??
                         ''),
                 _kv('기상 기준점', cabinet.weatherContext.stationName),
-                _kv('기상자료 적용 원칙', '기상청 공식 관측자료만 운전 판단의 참고정보로 사용'),
+                _kv('기상자료', '공식 관측자료 참고'),
                 _kv(
                     '공식 천문자료',
                     officialContext?.firstOfficialSolar == null
-                        ? '한국천문연구원 자료 미수집 · 내부 추정값으로 대체하지 않음'
+                        ? '미수집 · 추정값 미사용'
                         : '한국천문연구원 ${officialContext!.firstOfficialSolar!['date']} · 일출 ${officialContext.firstOfficialSolar!['sunrise']} / 일몰 ${officialContext.firstOfficialSolar!['sunset']}'),
                 _kv(
                     '공식 기상 관측자료',
                     officialContext?.firstOfficialWeather == null
-                        ? '기상청 종관기상관측(ASOS) 부산관측소(159) 자료 미수집'
+                        ? '부산 ASOS(159) 미수집'
                         : '기상청 부산 종관기상관측소(지점 159) · ${officialContext!.firstOfficialWeather!['timestamp']}'),
-              ]),
+              ], collapsed: true),
               const SizedBox(height: 8),
               _section(
-                '전력 사용 이상 신호 요약',
+                '전력 신호',
                 [
                   const Text(
-                    '관측 구간에서 확인된 전력 사용 신호의 최대 수준이며 15분 단위 원본 측정값 전체를 뜻하지는 않습니다.',
+                    '관측 구간 최대치 · 전체 원본 아님',
                     key: Key('section-cabinet-section-summary-c-description'),
                     style: TextStyle(fontSize: 12, color: Colors.grey),
                   ),
@@ -201,46 +195,34 @@ class _CabinetDetailScreenState extends ConsumerState<CabinetDetailScreen> {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                        '탐지 기준 대비 최대 신호 수준 · ${operationalSignalLevel(signal)}'),
+                        '신호 수준 · ${operationalSignalLevel(signal)}'),
                     const SizedBox(height: 10),
                     const _ActivationLegend(),
                   ],
                   _kv(
-                      '확인된 이상 신호',
+                      '신호',
                       signal == null
-                          ? '지속적으로 확인된 이상 신호 없음'
+                          ? '지속 신호 없음'
                           : operationalSignalTitle(signal)),
                 ],
                 keySuffix: 'cabinet-section-summary-c',
               ),
               const SizedBox(height: 8),
               _section(
-                '점검 우선순위 선정 사유',
+                '판단 근거',
                 [
                   _kv('관측 내용', operationalPriorityReason(cabinet)),
                   _kv('적용 판정 기준', operationalCriteria(cabinet)),
-                  _kv('자산 자료 출처', operationalAssetSourceLabel(cabinet)),
-                  _kv('전력 신호 출처', operationalSignalSourceLabel(cabinet)),
                   _kv(
                       '기록 시각',
                       signal == null
                           ? '신호 시각 자료 없음'
                           : '${signal.firstSample} ~ ${signal.lastSample}'),
-                  _kv('판정 신뢰도', operationalConfidenceLabel(signal)),
-                  _kv('해석 범위', operationalEvidenceBoundary(cabinet)),
+                  _kv('신뢰도', operationalConfidenceLabel(signal)),
+                  _kv('범위', operationalEvidenceBoundary(cabinet)),
                 ],
                 keySuffix: 'summary-d',
-              ),
-              const SizedBox(height: 8),
-              _section(
-                '확인 우선순위 및 조치 안내',
-                [
-                  _kv('확인 순위', '${cabinet.inspectionPriority.rank}번'),
-                  _kv('운영 상태', operationalStatusLabel(cabinet.status)),
-                  _kv('분류 사유', operationalPriorityReason(cabinet)),
-                  _kv('권장 확인 절차', operationalRecommendedAction(cabinet.status)),
-                ],
-                keySuffix: 'priority',
+                collapsed: true,
               ),
             ],
           ),
@@ -267,7 +249,7 @@ class _CabinetDetailScreenState extends ConsumerState<CabinetDetailScreen> {
                       Text('현장 확인 결과',
                           style: Theme.of(context).textTheme.titleLarge),
                       const SizedBox(height: 8),
-                      const Text('결과는 운영자 기록입니다. 자동 확인이나 정비 이력이 아닙니다.'),
+                      const Text('운영자 기록 · 기기 저장'),
                       const SizedBox(height: 8),
                       DropdownButtonFormField<String>(
                           initialValue: result,
@@ -346,9 +328,6 @@ class _CabinetDetailScreenState extends ConsumerState<CabinetDetailScreen> {
     return wattages.map((w) => '${w.toStringAsFixed(0)}W').join(', ');
   }
 
-  String _datasetDate(DateTime timestamp) =>
-      '${timestamp.year.toString().padLeft(4, '0')}-${timestamp.month.toString().padLeft(2, '0')}-${timestamp.day.toString().padLeft(2, '0')} (자료 생성 기준)';
-
   String? _displayLocation(CabinetRecord cabinet) {
     final location = cabinet.assetInfo.location.trim();
     final coordinateOnly = RegExp(
@@ -358,9 +337,22 @@ class _CabinetDetailScreenState extends ConsumerState<CabinetDetailScreen> {
     return location;
   }
 
-  Widget _section(String title, List<Widget> children, {String? keySuffix}) {
+  Widget _section(String title, List<Widget> children,
+      {String? keySuffix, bool collapsed = false}) {
+    final key = Key(keySuffix == null ? 'section-$title' : 'section-$keySuffix');
+    if (collapsed) {
+      return Card(
+        key: key,
+        child: ExpansionTile(
+          title: Text(title,
+              style: const TextStyle(fontWeight: FontWeight.w800)),
+          childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+          children: _layoutSectionChildren(children),
+        ),
+      );
+    }
     return Card(
-      key: Key(keySuffix == null ? 'section-$title' : 'section-$keySuffix'),
+      key: key,
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -475,13 +467,13 @@ class _ActivationLegend extends StatelessWidget {
         children: [
           _LegendItem(
             color: Color(0xFF0F766E),
-            label: '탐지 기준 대비 신호 수준',
-            detail: '탐지 기준 대비 확인된 최대 비율',
+            label: '신호 수준',
+            detail: '관측 최대치',
           ),
           _LegendItem(
             color: Color(0xFFDDE7E4),
-            label: '탐지 기준까지 남은 구간',
-            detail: '전체 탐지 기준에서 아직 충족되지 않은 비율',
+            label: '남은 구간',
+            detail: '기준 미충족',
           ),
         ],
       );

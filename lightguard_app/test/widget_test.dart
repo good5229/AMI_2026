@@ -74,20 +74,19 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('LightGuard · 운영 현황'), findsOneWidget);
-    expect(find.textContaining('${RegionId.suyeong.label} 우선 확인 분전함'),
-        findsAtLeastNWidgets(1));
+    expect(find.text('우선 확인'), findsAtLeastNWidgets(1));
     expect(find.text('오늘 확인할 후보'), findsNothing);
     expect(find.text('확인 대상 및 사유 보기'), findsNothing);
-    expect(find.text('${RegionId.suyeong.label} 등록 분전함 수'), findsOneWidget);
-    expect(find.text('${RegionId.suyeong.label} 연결 가로등 수'), findsOneWidget);
-    expect(find.text('${RegionId.suyeong.label} 조명 합산 정격용량'), findsOneWidget);
+    expect(find.text('등록 자산'), findsOneWidget);
+    expect(find.text('연결 가로등'), findsOneWidget);
+    expect(find.text('정격용량'), findsOneWidget);
     expect(
         find.textContaining('${data.objects.length}'), findsAtLeastNWidgets(1));
     expect(find.text('기준일 기준 점등/소등'), findsNothing);
     expect(find.text(RegionId.suyeong.branchLabel), findsAtLeastNWidgets(1));
-    expect(find.text('${RegionId.suyeong.label} 현장점검 검토 분전함'), findsOneWidget);
-    expect(find.text('${RegionId.suyeong.label} 추적 관찰 분전함'), findsOneWidget);
-    expect(find.text('${RegionId.suyeong.label} 특이 신호 없는 분전함'), findsOneWidget);
+    expect(find.text('점검 검토'), findsOneWidget);
+    expect(find.text('관찰'), findsOneWidget);
+    expect(find.text('정상 범위'), findsOneWidget);
   });
 
   testWidgets('Inspection list renders and filters by 검증 시나리오',
@@ -106,7 +105,7 @@ void main() {
       maxAttempts: 18,
     );
 
-    expect(find.text('점검 대상 분전함과 선정 사유'), findsOneWidget);
+    expect(find.text('점검 대상'), findsOneWidget);
     expect(find.text('CAB-002'), findsAtLeastNWidgets(1));
     expect(find.text('CAB-001'), findsAtLeastNWidgets(1));
 
@@ -175,8 +174,8 @@ void main() {
         .ensureVisible(find.byKey(const Key('dashboard-priority-card')));
     await tester.tap(find.byKey(const Key('dashboard-priority-card')));
     await tester.pumpAndSettle();
-    expect(find.text('점검 대상 분전함과 선정 사유'), findsOneWidget);
-    expect(find.textContaining('우선 확인 대상 ·'), findsOneWidget);
+    expect(find.text('점검 대상'), findsOneWidget);
+    expect(find.textContaining('우선 확인 ·'), findsOneWidget);
 
     await tester.pumpWidget(buildTestApp());
     await tester.pumpAndSettle();
@@ -184,8 +183,8 @@ void main() {
         .ensureVisible(find.byKey(const Key('dashboard-recommended-card')));
     await tester.tap(find.byKey(const Key('dashboard-recommended-card')));
     await tester.pumpAndSettle();
-    expect(find.text('점검 대상 분전함과 선정 사유'), findsOneWidget);
-    expect(find.textContaining('현장점검 검토 대상 ·'), findsOneWidget);
+    expect(find.text('점검 대상'), findsOneWidget);
+    expect(find.textContaining('점검 검토 ·'), findsOneWidget);
   });
 
   testWidgets('Cabinet detail renders 해설 문구 and raw data safe label',
@@ -194,7 +193,7 @@ void main() {
     await tester.pumpAndSettle();
     await _pumpUntilFound(
       tester,
-      find.text('분전함 상세'),
+      find.text('분전함'),
       maxAttempts: 24,
     );
     expect(find.byKey(const Key('cabinet-map-link')), findsOneWidget);
@@ -209,8 +208,10 @@ void main() {
     );
     await tester.pumpAndSettle();
     expect(sectionAFinder, findsOneWidget);
+    await tester.tap(find.text('자산 정보'));
+    await tester.pumpAndSettle();
     expect(
-      find.descendant(of: sectionAFinder, matching: find.text('연결 조명 규격')),
+      find.descendant(of: sectionAFinder, matching: find.text('조명 규격')),
       findsOneWidget,
     );
     expect(
@@ -234,7 +235,7 @@ void main() {
         matching: find.byWidgetPredicate((widget) {
           if (widget is Text) {
             final data = widget.data ?? '';
-            return data.contains('전력 사용 이상 신호 요약') || data.contains('시각화');
+            return data.contains('전력 신호') || data.contains('시각화');
           }
           if (widget is RichText) {
             return (widget.text.toPlainText().contains('전력 사용 이상 신호 요약') ||
@@ -275,7 +276,7 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(recordButton);
     await tester.pumpAndSettle();
-    expect(find.text('담당자 기록은 이 기기에만 저장되며 서버 동기화는 없습니다.'), findsOneWidget);
+    expect(find.text('기기 저장 · 서버 동기화 없음'), findsOneWidget);
     await tester.tap(find.byType(DropdownButtonFormField<String>).last);
     await tester.pumpAndSettle();
     await tester.tap(find.text('정상').last);
@@ -308,7 +309,7 @@ void main() {
     final seededCase = Map<String, String>.from(savedCases['CAB-002']!)
       ..['dueDate'] = dueDate;
     await saveInspectionOutcomes({'CAB-002': seededCase});
-    expect(find.textContaining('1건 기록 · 전체 3개 분전함'), findsOneWidget);
+    expect(find.textContaining('1 / 3건'), findsOneWidget);
     expect(find.text('CAB-002'), findsNothing);
     await tester.tap(find.byKey(const Key('inspection-filter-dropdown')));
     await tester.pumpAndSettle();
@@ -332,7 +333,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('기한 $dueDate'), findsOneWidget);
     expect(find.text('담당 현장 담당자'), findsOneWidget);
-    expect(find.textContaining('운영자 기록 · 고장 관찰'), findsOneWidget);
+    expect(find.text('기록 · 고장 관찰'), findsOneWidget);
     final roundTrip = await loadInspectionOutcomes();
     expect(roundTrip['CAB-002']?['assignee'], '현장 담당자');
     expect(roundTrip['CAB-002']?['dueDate'], dueDate);
@@ -341,7 +342,7 @@ void main() {
     await tester.pump();
     await _pumpUntilFound(tester, find.textContaining('기기 기록 결과 1건'),
         maxAttempts: 8);
-    expect(find.textContaining('기기 기록 결과 1건'), findsOneWidget);
+    expect(find.textContaining('기록 1 / 전체 3'), findsOneWidget);
     expect(find.textContaining('메모:'), findsNothing);
   });
 
@@ -359,8 +360,8 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(legendFinder, findsOneWidget);
-    expect(find.textContaining('탐지 기준 대비 신호 수준'), findsOneWidget);
-    expect(find.textContaining('탐지 기준까지 남은 구간'), findsOneWidget);
+    expect(find.textContaining('신호 수준'), findsAtLeastNWidgets(1));
+    expect(find.textContaining('남은 구간'), findsOneWidget);
     expect(find.textContaining('daytime_partial_activation'), findsNothing);
   });
 
@@ -446,12 +447,11 @@ void main() {
         if (route == AppRoute.dashboard) {
           expect(find.text(width < 600 ? 'LightGuard' : 'LightGuard · 운영 현황'),
               findsOneWidget);
-          expect(find.textContaining('자료 생성 기준'), findsOneWidget);
+          expect(find.textContaining('고정 자료'), findsOneWidget);
           expect(find.byKey(const Key('today-action-queue')), findsOneWidget);
         }
         if (route == AppRoute.inspections) {
-          expect(find.text(width < 600 ? '점검 대상' : '점검 대상 분전함과 선정 사유'),
-              findsOneWidget);
+          expect(find.text('점검 대상'), findsAtLeastNWidgets(1));
         }
         if (route == '/cabinet/CAB-001') {
           expect(find.byKey(const Key('field-primary-result')), findsOneWidget);

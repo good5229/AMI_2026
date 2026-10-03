@@ -113,8 +113,8 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                         Text(region.label,
                             style: Theme.of(context).textTheme.titleMedium),
                         const SizedBox(height: 4),
-                        Text('자료 기준 ${_datasetDate(data.generatedAt)}'),
-                        Text('${rows.length}개 표시 · 전체 ${data.objects.length}개'),
+                        Text('기준 ${_datasetDate(data.generatedAt)}'),
+                        Text('${rows.length} / ${data.objects.length}개'),
                         const SizedBox(height: 10),
                         DropdownButton<_InspectionFilter>(
                           key: const Key('inspection-filter-dropdown'),
@@ -149,11 +149,11 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('이 기기에서 기록한 결과',
+                        Text('기기 기록',
                             style: Theme.of(context).textTheme.titleSmall),
                         const SizedBox(height: 4),
                         Text(
-                            '${impact.length}건 기록 · 전체 ${data.objects.length}개 분전함'),
+                            '${impact.length} / ${data.objects.length}건'),
                         if (impact.isNotEmpty) ...[
                           const SizedBox(height: 4),
                           Text(
@@ -192,7 +192,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                               _InspectionFilter.completed),
                         ]),
                         const SizedBox(height: 4),
-                        const Text('기기에만 저장 · 서버 동기화 없음',
+                        const Text('기기 저장 · 동기화 없음',
                             style: TextStyle(fontSize: 12)),
                       ],
                     ),
@@ -225,7 +225,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                             children: [
                               Text(c.assetInfo.cabinetName,
                                   style: Theme.of(context).textTheme.titleMedium),
-                              Text('관리번호: ${c.cabinetUid}',
+                              Text('ID · ${c.cabinetUid}',
                                   style: Theme.of(context).textTheme.bodySmall),
                             ],
                           ),
@@ -237,8 +237,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                     ),
                     const SizedBox(height: 6),
                     Wrap(spacing: 6, runSpacing: 4, children: [
-                      _smallTag('자산 · ${operationalAssetSourceLabel(c)}'),
-                      _smallTag('신호 · ${operationalSignalSourceLabel(c)}'),
+                      _smallTag('자료 · ${operationalEvidenceSourceLabel(c)}'),
                       if (_outcomes[c.cabinetUid]?['stage'] case final stage?)
                         _smallTag(_stageLabel(stage)),
                       if (_outcomes[c.cabinetUid]?['dueDate'] case final due?)
@@ -262,7 +261,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                           ),
                         ),
                         child: Text(
-                          '우선 확인 사유 · ${operationalSignalTitle(signal)}',
+                          '신호 · ${operationalSignalTitle(signal)}',
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
@@ -278,7 +277,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                         liveRegion: true,
                         label: '저장된 확인 결과 ${outcome['status']}',
                         child: Text(
-                          '운영자 기록 · ${outcome['status']} · ${outcome['updatedAt'] ?? ''}',
+                          '기록 · ${outcome['status']} · ${outcome['updatedAt'] ?? ''}',
                           softWrap: true,
                           style: const TextStyle(
                               color: Color(0xFF28583A),
@@ -313,7 +312,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
         }
 
         return LightguardShell(
-          title: '점검 대상 분전함과 선정 사유',
+          title: '점검 대상',
           compactTitle: '점검 대상',
           child: isDesktop
               ? Row(
@@ -356,7 +355,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                         contentPadding: EdgeInsets.zero,
                         title: Text(region.label),
                         subtitle: Text(
-                            '자료 기준 ${_datasetDate(data.generatedAt)} · ${rows.length}개 표시'),
+                            '기준 ${_datasetDate(data.generatedAt)} · ${rows.length}개'),
                         trailing: Text('전체 ${data.objects.length}개'),
                       ),
                       SizedBox(
@@ -398,11 +397,11 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('이 기기에서 기록한 결과',
+                          Text('기기 기록',
                               style: Theme.of(context).textTheme.titleSmall),
                           const SizedBox(height: 4),
                           Text(
-                              '${impact.length}건 기록 · 전체 ${data.objects.length}개 분전함 · 기기 내 기록만 포함'),
+                              '${impact.length} / ${data.objects.length}건 · 기기 저장'),
                           if (impact.isNotEmpty)
                             Text(
                                 '정상 ${impact.where((o) => o['outcomeCode'] == 'normal').length} · 고장 관찰 ${impact.where((o) => o['outcomeCode'] == 'fault_observed').length} · 운영상 예외 ${impact.where((o) => o['outcomeCode'] == 'operational_exception').length} · 자료 문제 ${impact.where((o) => o['outcomeCode'] == 'data_issue').length} · 조치 완료 ${impact.where((o) => o['outcomeCode'] == 'action_completed').length}'),
@@ -438,7 +437,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                                 _InspectionFilter.completed),
                           ]),
                           const SizedBox(height: 4),
-                          const Text('기기에만 저장 · 서버 동기화 없음',
+                          const Text('기기 저장 · 동기화 없음',
                               style: TextStyle(fontSize: 12)),
                         ]),
                   ),
@@ -469,7 +468,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                                       style: Theme.of(context)
                                           .textTheme
                                           .titleMedium),
-                                  Text('관리번호: ${c.cabinetUid}',
+                                  Text('ID · ${c.cabinetUid}',
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodySmall),
@@ -482,8 +481,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                         ),
                         const SizedBox(height: 6),
                         Wrap(spacing: 6, runSpacing: 4, children: [
-                          _smallTag('자산 · ${operationalAssetSourceLabel(c)}'),
-                          _smallTag('신호 · ${operationalSignalSourceLabel(c)}'),
+                          _smallTag('자료 · ${operationalEvidenceSourceLabel(c)}'),
                           if (_outcomes[c.cabinetUid]?['stage']
                               case final stage?)
                             _smallTag(_stageLabel(stage)),
@@ -570,7 +568,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
                                 const SizedBox(width: 6),
                                 Expanded(
                                   child: Text(
-                                    '운영자 기록 · ${outcome['status']} · ${outcome['updatedAt'] ?? ''}',
+                                    '기록 · ${outcome['status']} · ${outcome['updatedAt'] ?? ''}',
                                     softWrap: true,
                                     style: const TextStyle(
                                       color: Color(0xFF28583A),
@@ -716,20 +714,20 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
 
   String _filterLabel(_InspectionFilter filter) {
     return switch (filter) {
-      _InspectionFilter.all => '전체 분전함',
-      _InspectionFilter.active => '진행 중 확인 후보',
-      _InspectionFilter.targeted => '추가 연계자료가 있는 분전함',
-      _InspectionFilter.priority => '우선 확인 대상',
-      _InspectionFilter.recommended => '현장점검 검토 대상',
-      _InspectionFilter.observe => '추적 관찰 대상',
-      _InspectionFilter.normal => '특이 신호 없음',
-      _InspectionFilter.scenario => '검증용 모의 신호',
-      _InspectionFilter.municipalAsset => '지자체 공공자산 정보',
+      _InspectionFilter.all => '전체',
+      _InspectionFilter.active => '진행 중',
+      _InspectionFilter.targeted => '연계자료 있음',
+      _InspectionFilter.priority => '우선 확인',
+      _InspectionFilter.recommended => '점검 검토',
+      _InspectionFilter.observe => '관찰',
+      _InspectionFilter.normal => '정상 범위',
+      _InspectionFilter.scenario => '모의 신호',
+      _InspectionFilter.municipalAsset => '공공자산',
       _InspectionFilter.overdue => '기한 초과',
       _InspectionFilter.remoteReview => '원격 확인',
       _InspectionFilter.fieldReview => '현장 확인',
       _InspectionFilter.dataReview => '자료 확인',
-      _InspectionFilter.completed => '결과 기록 완료',
+      _InspectionFilter.completed => '기록 완료',
     };
   }
 
@@ -814,21 +812,21 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
   String _nextAction(CabinetRecord cabinet, Map<String, String>? outcome) {
     if (outcome?['outcomeCode'] != null &&
         outcome!['outcomeCode']!.isNotEmpty) {
-      return '기록 결과: ${_outcomeLabel(outcome['outcomeCode']!)} · 운영자 기록';
+      return '기록 · ${_outcomeLabel(outcome['outcomeCode']!)}';
     }
     return switch (outcome?['stage']) {
-      'remote_review' => '다음 조치: 제어기 운전 상태와 같은 시간대 신호를 원격 확인하세요.',
-      'field_review' => '다음 조치: 현장에서 제어기·배선·등기구 상태를 확인하고 결과를 기록하세요.',
-      'data_review' => '다음 조치: 측정값 누락, 자산 연결정보와 측정 시각을 확인하세요.',
-      'observation' => '다음 조치: 다음 운전 주기에 같은 신호가 반복되는지 확인하세요.',
+      'remote_review' => '조치 · 제어기·동시간대 신호 원격 확인',
+      'field_review' => '조치 · 제어기·배선·등기구 현장 확인',
+      'data_review' => '조치 · 측정값·연결·시각 확인',
+      'observation' => '조치 · 다음 주기 재확인',
       _ => cabinet.detectedSignals.isEmpty
-          ? '다음 조치: 연결 정보와 점검 이력을 확인하세요. 정비 이력 미연결.'
-          : '다음 조치: 제어기 운전 상태를 원격 확인하세요.',
+          ? '조치 · 연결·점검 이력 확인'
+          : '조치 · 제어기 원격 확인',
     };
   }
 
   String _datasetDate(DateTime timestamp) =>
-      '${timestamp.year.toString().padLeft(4, '0')}-${timestamp.month.toString().padLeft(2, '0')}-${timestamp.day.toString().padLeft(2, '0')} (자료 생성 기준)';
+      '${timestamp.year.toString().padLeft(4, '0')}-${timestamp.month.toString().padLeft(2, '0')}-${timestamp.day.toString().padLeft(2, '0')}';
 }
 
 enum _InspectionFilter {
@@ -884,7 +882,7 @@ class _InspectionOutcomeDialogState extends State<_InspectionOutcomeDialog> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text('담당자 기록은 이 기기에만 저장되며 서버 동기화는 없습니다.'),
+              const Text('기기 저장 · 서버 동기화 없음'),
               const SizedBox(height: 12),
               DropdownButtonFormField<String>(
                 initialValue: _stage,
@@ -950,7 +948,7 @@ class _InspectionOutcomeDialogState extends State<_InspectionOutcomeDialog> {
                 ),
               ),
               const SizedBox(height: 8),
-              const Text('기록은 자산·AMI·정비 원본을 수정하지 않습니다.',
+              const Text('원본 자료 변경 없음',
                   style: TextStyle(fontSize: 12)),
             ],
           ),
