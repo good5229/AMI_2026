@@ -91,11 +91,254 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
             .where(
                 (o) => o['outcomeCode'] != null && o['outcomeCode']!.isNotEmpty)
             .length;
+        final isDesktop = MediaQuery.sizeOf(context).width >= 1024;
+        final impact = regionOutcomes.values
+            .where((o) => (o['outcomeCode'] ?? '').isNotEmpty)
+            .toList();
+        final desktopSummaryPane = SizedBox(
+          width: 286,
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.fromLTRB(16, 16, 0, 24),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Card(
+                  key: const Key('inspection-region-summary'),
+                  margin: EdgeInsets.zero,
+                  child: Padding(
+                    padding: const EdgeInsets.all(14),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(region.label,
+                            style: Theme.of(context).textTheme.titleMedium),
+                        const SizedBox(height: 4),
+                        Text('자료 기준 ${_datasetDate(data.generatedAt)}'),
+                        Text('${rows.length}개 표시 · 전체 ${data.objects.length}개'),
+                        const SizedBox(height: 10),
+                        DropdownButton<_InspectionFilter>(
+                          key: const Key('inspection-filter-dropdown'),
+                          isExpanded: true,
+                          value: activeFilter,
+                          underline: const SizedBox.shrink(),
+                          items: [
+                            for (final filter in supportedFilters)
+                              DropdownMenuItem<_InspectionFilter>(
+                                value: filter,
+                                key: Key(
+                                    'inspection-filter-item-${filter.name}'),
+                                child: Text(
+                                  '${_filterLabel(filter)} · ${_filterRows(data.objects, filter, targetCabinetIds).length}',
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                          ],
+                          onChanged: (value) => setState(() =>
+                              _filter = value ?? _InspectionFilter.active),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Card(
+                  key: const Key('local-observed-impact'),
+                  margin: EdgeInsets.zero,
+                  child: Padding(
+                    padding: const EdgeInsets.all(14),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('이 기기에서 기록한 결과',
+                            style: Theme.of(context).textTheme.titleSmall),
+                        const SizedBox(height: 4),
+                        Text(
+                            '${impact.length}건 기록 · 전체 ${data.objects.length}개 분전함'),
+                        if (impact.isNotEmpty) ...[
+                          const SizedBox(height: 4),
+                          Text(
+                            '정상 ${impact.where((o) => o['outcomeCode'] == 'normal').length} · 고장 ${impact.where((o) => o['outcomeCode'] == 'fault_observed').length} · 예외 ${impact.where((o) => o['outcomeCode'] == 'operational_exception').length} · 자료 문제 ${impact.where((o) => o['outcomeCode'] == 'data_issue').length} · 조치 ${impact.where((o) => o['outcomeCode'] == 'action_completed').length}',
+                          ),
+                        ],
+                        const SizedBox(height: 10),
+                        Wrap(spacing: 6, runSpacing: 6, children: [
+                          _queueCount('기한 초과', overdueCount,
+                              _InspectionFilter.overdue),
+                          _queueCount(
+                              '원격 확인',
+                              regionOutcomes.values
+                                  .where((o) =>
+                                      o['stage'] == 'remote_review' &&
+                                      (o['outcomeCode'] ?? '').isEmpty)
+                                  .length,
+                              _InspectionFilter.remoteReview),
+                          _queueCount(
+                              '현장 확인',
+                              regionOutcomes.values
+                                  .where((o) =>
+                                      o['stage'] == 'field_review' &&
+                                      (o['outcomeCode'] ?? '').isEmpty)
+                                  .length,
+                              _InspectionFilter.fieldReview),
+                          _queueCount(
+                              '자료 확인',
+                              regionOutcomes.values
+                                  .where((o) =>
+                                      o['stage'] == 'data_review' &&
+                                      (o['outcomeCode'] ?? '').isEmpty)
+                                  .length,
+                              _InspectionFilter.dataReview),
+                          _queueCount('완료', completedCount,
+                              _InspectionFilter.completed),
+                        ]),
+                        const SizedBox(height: 4),
+                        const Text('기기에만 저장 · 서버 동기화 없음',
+                            style: TextStyle(fontSize: 12)),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+
+        Widget workCard(CabinetRecord c) {
+          final status = statusToLabel(c.status);
+          final signal =
+              c.detectedSignals.isNotEmpty ? c.detectedSignals.first : null;
+          return Card(
+            margin: EdgeInsets.zero,
+            clipBehavior: Clip.antiAlias,
+            child: InkWell(
+              onTap: () => _openCabinet(c.cabinetUid),
+              child: Padding(
+                padding: const EdgeInsets.all(14),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(c.assetInfo.cabinetName,
+                                  style: Theme.of(context).textTheme.titleMedium),
+                              Text('관리번호: ${c.cabinetUid}',
+                                  style: Theme.of(context).textTheme.bodySmall),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                        StatusBadge(
+                            type: statusToBadge(c.status), label: status),
+                      ],
+                    ),
+                    const SizedBox(height: 6),
+                    Wrap(spacing: 6, runSpacing: 4, children: [
+                      _smallTag('자산 · ${operationalAssetSourceLabel(c)}'),
+                      _smallTag('신호 · ${operationalSignalSourceLabel(c)}'),
+                      if (_outcomes[c.cabinetUid]?['stage'] case final stage?)
+                        _smallTag(_stageLabel(stage)),
+                      if (_outcomes[c.cabinetUid]?['dueDate'] case final due?)
+                        _smallTag('기한 $due'),
+                      if ((_outcomes[c.cabinetUid]?['assignee'] ?? '').isNotEmpty)
+                        _smallTag('담당 ${_outcomes[c.cabinetUid]!['assignee']}'),
+                    ]),
+                    const SizedBox(height: 8),
+                    Text(_nextAction(c, _outcomes[c.cabinetUid]),
+                        style: Theme.of(context).textTheme.bodyMedium),
+                    if (signal != null && c.status != InspectionStatus.normal) ...[
+                      const SizedBox(height: 10),
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
+                        decoration: const BoxDecoration(
+                          color: Color(0xFFFFFAF1),
+                          border: Border(
+                            left: BorderSide(
+                                color: Color(0xFFD97706), width: 3),
+                          ),
+                        ),
+                        child: Text(
+                          '우선 확인 사유 · ${operationalSignalTitle(signal)}',
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                fontWeight: FontWeight.w600,
+                                height: 1.35,
+                              ),
+                        ),
+                      ),
+                    ],
+                    if (_outcomes[c.cabinetUid] case final outcome?) ...[
+                      const SizedBox(height: 8),
+                      Semantics(
+                        liveRegion: true,
+                        label: '저장된 확인 결과 ${outcome['status']}',
+                        child: Text(
+                          '운영자 기록 · ${outcome['status']} · ${outcome['updatedAt'] ?? ''}',
+                          softWrap: true,
+                          style: const TextStyle(
+                              color: Color(0xFF28583A),
+                              fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                    ],
+                    const SizedBox(height: 8),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text('상세 근거 보기',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .labelLarge
+                                  ?.copyWith(fontWeight: FontWeight.w700)),
+                        ),
+                        OutlinedButton.icon(
+                          onPressed: () => _recordOutcome(context, c),
+                          icon: const Icon(Icons.edit_note_outlined),
+                          label: Text(_outcomes.containsKey(c.cabinetUid)
+                              ? '결과 수정'
+                              : '결과 기록'),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        }
 
         return LightguardShell(
           title: '점검 대상 분전함과 선정 사유',
           compactTitle: '점검 대상',
-          child: ListView.separated(
+          child: isDesktop
+              ? Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    desktopSummaryPane,
+                    const VerticalDivider(width: 1),
+                    Expanded(
+                      child: Center(
+                        child: ConstrainedBox(
+                          constraints: const BoxConstraints(maxWidth: 860),
+                          child: ListView.separated(
+                            padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
+                            itemCount: rows.length,
+                            separatorBuilder: (_, __) =>
+                                const SizedBox(height: 10),
+                            itemBuilder: (context, index) =>
+                                workCard(rows[index]),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+              : ListView.separated(
             padding: EdgeInsets.only(
                 bottom: MediaQuery.paddingOf(context).bottom + 96),
             itemCount: rows.length + 2,
