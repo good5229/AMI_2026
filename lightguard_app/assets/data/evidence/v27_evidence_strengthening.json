@@ -1,0 +1,443 @@
+{
+  "version": "0.27",
+  "generated_on": "2026-10-03",
+  "title": "근거와 적용 준비",
+  "positioning": [
+    "확인된 근거, 현재 한계, 다음 현장연계 조건을 같은 순서로 제시합니다.",
+    "통제 검증·운영 필요성·공개데이터 범위는 서로 다른 증거이며 합산해 정확도로 표현하지 않습니다."
+  ],
+  "ordered_stages": [
+    {
+      "order": 1,
+      "id": "technical",
+      "title": "기술 근거",
+      "status": "CONTROLLED_SUPPORTED_FIELD_UNLABELED",
+      "status_label": "통제 검증 완료 · 현장 정답 미연결",
+      "summary": "통제 시나리오 재현성과 가명 AMI 이상 신호는 확인됐지만, 실제 고장 정답과 연결된 현장 정확도는 아직 평가할 수 없습니다.",
+      "metrics": [
+        {
+          "label": "가명 AMI 범위",
+          "value": "5개 계량기 · 6건 후보",
+          "qualification": "6건 모두 현장 정답이 없는 점검 후보입니다.",
+          "fact_keys": [
+            "ami_meter_count",
+            "ami_candidate_count"
+          ]
+        },
+        {
+          "label": "후보 추정 초과사용량",
+          "value": "3.994 kWh",
+          "qualification": "후보별 추정치 합계이며 실현 절감량이 아닙니다.",
+          "fact_keys": [
+            "ami_excess_kwh"
+          ]
+        },
+        {
+          "label": "통제 시나리오 재현",
+          "value": "46/46",
+          "qualification": "합성·통제 조건의 탐지 재현 결과입니다.",
+          "fact_keys": [
+            "controlled_matched",
+            "controlled_total"
+          ]
+        },
+        {
+          "label": "기준선 대비 R 기여",
+          "value": "RD +0.2222 · Holm p=0.0391",
+          "qualification": "반사실 코퍼스의 기제 제거 비교입니다.",
+          "fact_keys": [
+            "v15_r_rd",
+            "v15_r_holm_p"
+          ]
+        },
+        {
+          "label": "양성 대조군 B 불리한 차이",
+          "value": "RD +0.6000 · Holm p=0.00000475",
+          "qualification": "full 모델의 B 경보가 A5 비교군보다 많은 불리한 결과이며 좋은 성능 주장이 아닙니다.",
+          "fact_keys": [
+            "v15_b_rd",
+            "v15_b_holm_p"
+          ]
+        }
+      ],
+      "boundary": [
+        "허용: 통제 조건에서의 재현성과 반사실 기제 근거.",
+        "금지: 실제 고장 정확도, 오탐률 또는 고장 확률로 해석."
+      ],
+      "allowed_interpretation": [
+        "controlled reproducibility",
+        "counterfactual mechanism evidence"
+      ],
+      "prohibited_interpretation": [
+        "field fault accuracy",
+        "confirmed fault probability"
+      ],
+      "sources": [
+        {
+          "path": "lightguard_v0_1/data/data_summary.json",
+          "sha256": "40c12ff3ea857b88fb9d54f884ae143353182e2b6e4252d6e8bec06d2e8a00d0",
+          "role": "AMI 범위"
+        },
+        {
+          "path": "lightguard_v0_1/data/ami_events.csv",
+          "sha256": "c131fd7d635788b7ab71d50d31bff1abd91a3b492d57bae9b0a0a3ee7fed88d8",
+          "role": "가명 AMI 후보와 추정 초과사용량"
+        },
+        {
+          "path": "lightguard_v0_1/data/simulation_validation_results_v02.csv",
+          "sha256": "6c0a61a6418e897aea9f1ceb758aeeb4810e891f7e4db2e9051d4b36520c385f",
+          "role": "통제 시나리오 재현"
+        },
+        {
+          "path": "lightguard_v0_1/reports/v15/v15_full_vs_ablation_results.csv",
+          "sha256": "1bf4dddf6a77a17c5c4a61f773ea6e1f8be380e798410294fa7204f6b707b170",
+          "role": "반사실 기제 제거 비교"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "id": "operations",
+      "title": "운영 필요성",
+      "status": "MULTI_MUNICIPAL_OPERATIONAL_SUPPORT",
+      "status_label": "3개 지자체 운영 수요 확인",
+      "summary": "대구·부여·울산의 실제 유지관리 기록은 점검 우선순위화 수요와 지역 간 운영 신호를 보여주지만 AMI 고장 정확도 근거는 아닙니다.",
+      "metrics": [
+        {
+          "label": "대구 유지관리",
+          "value": "101,843건 · top 10% 3.12배",
+          "qualification": "확증 구간의 운영 우선순위 enrichment입니다.",
+          "fact_keys": [
+            "daegu_rows",
+            "daegu_enrichment"
+          ]
+        },
+        {
+          "label": "부여 유지관리",
+          "value": "3,437건 · top 10% 1.8021배",
+          "qualification": "대구 모델 무재조정 외부 전이 결과입니다.",
+          "fact_keys": [
+            "buyeo_rows",
+            "buyeo_enrichment"
+          ]
+        },
+        {
+          "label": "울산 유지관리",
+          "value": "1,060건 · top 10% 3.0389배",
+          "qualification": "운영 우선순위 전이이며 현장 고장 정답이 아닙니다.",
+          "fact_keys": [
+            "ulsan_rows",
+            "ulsan_enrichment"
+          ]
+        },
+        {
+          "label": "울산 안전 결합",
+          "value": "920/981 자산",
+          "qualification": "정규화된 정확 ID·범주 결합만 사용했습니다.",
+          "fact_keys": [
+            "ulsan_safe_assets",
+            "ulsan_total_assets"
+          ]
+        }
+      ],
+      "boundary": [
+        "허용: 유지관리 업무량과 점검 우선순위화 필요성.",
+        "금지: 운영 기록의 enrichment를 AMI 정확도나 예방 효과로 전환."
+      ],
+      "allowed_interpretation": [
+        "operational workload",
+        "priority transfer"
+      ],
+      "prohibited_interpretation": [
+        "AMI accuracy",
+        "prevented complaints",
+        "causal savings"
+      ],
+      "sources": [
+        {
+          "path": "lightguard_v0_1/data/validation/v17/v17_operational_summary.json",
+          "sha256": "a57181d3473781db64389b89ce42149448d9d8ca2db39dfe533c9e366355f7b4",
+          "role": "대구 운영 규모"
+        },
+        {
+          "path": "lightguard_v0_1/reports/v18/v18_topk_enrichment.csv",
+          "sha256": "3ee39081b846b64471ecce3f642663505aa3441ad9d3e35b004a9238bae862c2",
+          "role": "대구 확증 우선순위"
+        },
+        {
+          "path": "lightguard_v0_1/data/validation/v19/v19_buyeo_raw_manifest.json",
+          "sha256": "6ba80691f32b83de4be980b58708f2424b392a8635f86fe1f39753a02a1484c5",
+          "role": "부여 원천 규모"
+        },
+        {
+          "path": "lightguard_v0_1/data/validation/v19/v19_zero_shot_summary.json",
+          "sha256": "e3bcaf9ce4591642b822eb44596d6f809b7f0dc276f76525001cbaf49bb2e9e8",
+          "role": "부여 외부 전이"
+        },
+        {
+          "path": "lightguard_v0_1/data/validation/v20/v20_u1_u2_join_summary.json",
+          "sha256": "68ce1185084585cbe47276c48d3528248fbfd1b2a0c88a7dc9fb32cdfbb65727",
+          "role": "울산 안전 결합"
+        },
+        {
+          "path": "lightguard_v0_1/data/validation/v20/v20_zero_shot_summary.json",
+          "sha256": "54d7372b9c80ad0f516df4de56432e6ecebf68f2591f43d6a6a293fafddef469",
+          "role": "울산 외부 전이"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "id": "external_context",
+      "title": "공개데이터 외부 맥락",
+      "status": "CONTEXT_ONLY_UNLINKED",
+      "status_label": "참고 맥락 · 실제 AMI 미연결",
+      "summary": "KASI·KMA 자료는 위치가 있는 지자체·통제 시나리오의 외부 맥락만 설명합니다. 익명 AMI에는 위치·분전함 매핑이 없어 직접 보정하지 않았습니다.",
+      "metrics": [
+        {
+          "label": "KASI 일출·일몰 맥락",
+          "value": "4개 기준일",
+          "qualification": "좌표가 있는 수영구 분전함 중심점 기준입니다.",
+          "fact_keys": [
+            "kasi_dates"
+          ]
+        },
+        {
+          "label": "KMA ASOS 맥락",
+          "value": "72개 관측 · 3/4일",
+          "qualification": "부산 159 지점의 부분 가용 자료입니다.",
+          "fact_keys": [
+            "kma_observations",
+            "kma_available_dates"
+          ]
+        },
+        {
+          "label": "탐지기 기상 가중치",
+          "value": "0.0",
+          "qualification": "기상자료는 탐지 점수에 사용되지 않았습니다.",
+          "fact_keys": [
+            "weather_weight"
+          ]
+        },
+        {
+          "label": "M2→M3 집계지표 차이",
+          "value": "0개",
+          "qualification": "후보 수와 top-k 집계지표 6개가 동일합니다. 개별 후보 순서는 평가하지 않았습니다.",
+          "fact_keys": [
+            "context_aggregate_differences"
+          ]
+        },
+        {
+          "label": "실제 AMI 결합 상태",
+          "value": "UNLINKED",
+          "qualification": "위치·분전함 매핑 데이터 행이 0개입니다.",
+          "fact_keys": [
+            "mapping_rows"
+          ]
+        }
+      ],
+      "boundary": [
+        "허용: 일출·일몰과 기상 조건의 설명용 맥락.",
+        "금지: 실제 AMI 기상 보정, 오탐 감소 또는 순위 개선 주장."
+      ],
+      "allowed_interpretation": [
+        "context for mapped municipal or controlled scenarios"
+      ],
+      "prohibited_interpretation": [
+        "weather-corrected actual AMI",
+        "weather-driven rank improvement"
+      ],
+      "sources": [
+        {
+          "path": "lightguard_app/assets/data/context/kasi_solar_context_2026.json",
+          "sha256": "d721f51364f74885bddc80f27be7682561ec8b330ecc32490805f5b5fea707cb",
+          "role": "공식 천문 맥락"
+        },
+        {
+          "path": "lightguard_app/assets/data/context/kma_asos_busan_2026.json",
+          "sha256": "b294ce620179f100bdcc9b747a587370d74fb1efa9c46338ba35e0038ec67cb9",
+          "role": "부분 기상 맥락"
+        },
+        {
+          "path": "lightguard_app/assets/data/context/v07_regional_seasonal_summary.json",
+          "sha256": "5b17dc7caf9d98bac0c5d28e53c46acf2f1d14170dcb3564255b30c5b4e0bca3",
+          "role": "동결 탐지기 기상 가중치"
+        },
+        {
+          "path": "lightguard_app/assets/data/context/context_ablation_results.csv",
+          "sha256": "a4c1c863dc120efaf31ebb2f7f998212535bf0c7623a97a12eea060a439df62c",
+          "role": "M2/M3 비교"
+        },
+        {
+          "path": "lightguard_v0_1/data/ami_cabinet_mappings.csv",
+          "sha256": "b52e876a18051865ffda49f85ee71955be02276b7bf4faca1076b55443efb7da",
+          "role": "실제 AMI 결합 가능성"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "id": "generalizability",
+      "title": "지역 일반화 가능성",
+      "status": "COVERAGE_SUPPORTED_PERFORMANCE_UNPROVEN",
+      "status_label": "데이터 구조 범위 확인 · 성능 일반화 미입증",
+      "summary": "여러 지역의 자산·분전함·좌표 구조와 전국 파일 범위는 확인됐습니다. 이는 적용 후보 범위이지 지역별 동일 성능의 증거는 아닙니다.",
+      "metrics": [
+        {
+          "label": "수영구",
+          "value": "등기구 4,076 · 분전함 204 · 좌표 100%",
+          "qualification": "지역 내부 자산 구조 요약입니다.",
+          "fact_keys": [
+            "suyeong_fixtures",
+            "suyeong_cabinets",
+            "suyeong_coordinate_pct"
+          ]
+        },
+        {
+          "label": "강릉시",
+          "value": "등기구 결합 5,659/5,667 · 99.859%",
+          "qualification": "참조 분전함 기반 결합률입니다.",
+          "fact_keys": [
+            "gangneung_matched_fixtures",
+            "gangneung_fixtures",
+            "gangneung_join_pct"
+          ]
+        },
+        {
+          "label": "충주시",
+          "value": "분전함 871 · 등주 16,121 · 좌표 100%",
+          "qualification": "자산·좌표 가용성 요약입니다.",
+          "fact_keys": [
+            "chungju_cabinets",
+            "chungju_poles",
+            "chungju_coordinate_pct"
+          ]
+        },
+        {
+          "label": "전국 공개파일 범위",
+          "value": "지자체 범위 데이터셋 127개 · 지역 라벨 88개 · 광역 16개",
+          "qualification": "분석 가능한 파일의 구조적 범위이며 지자체 수가 아닙니다.",
+          "fact_keys": [
+            "municipal_datasets",
+            "region_labels",
+            "top_level_regions"
+          ]
+        }
+      ],
+      "boundary": [
+        "허용: 자산·공간 데이터의 구조적 가용성과 적용 후보 지역.",
+        "금지: 전국 AMI 정확도 또는 모든 지역의 동일 데이터 품질 주장."
+      ],
+      "allowed_interpretation": [
+        "structural data coverage",
+        "candidate deployment regions"
+      ],
+      "prohibited_interpretation": [
+        "nationwide AMI performance",
+        "uniform municipal quality"
+      ],
+      "sources": [
+        {
+          "path": "lightguard_v0_1/data/data_summary.json",
+          "sha256": "40c12ff3ea857b88fb9d54f884ae143353182e2b6e4252d6e8bec06d2e8a00d0",
+          "role": "수영·강릉·충주 구조 요약"
+        },
+        {
+          "path": "lightguard_v0_1/data/validation/v24/v24_nationwide_file_census.json",
+          "sha256": "1abcdfe164d5c7d7681a5ef47d9dda0bd8fc20ddd48ac5c973941a14873ef449",
+          "role": "전국 공개파일 범위"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "id": "field_linkage",
+      "title": "향후 현장효과 데이터 연계",
+      "status": "NOT_EVALUABLE",
+      "status_label": "연계 계약 준비 · 효과 미평가",
+      "summary": "식별자·유효기간·노출·현장 결과를 연결하는 계약은 정의했지만, 실제 연결 데이터가 없어 현장 효과 지표는 평가할 수 없습니다.",
+      "metrics": [
+        {
+          "label": "현재 매핑 행",
+          "value": "0개",
+          "qualification": "실제 AMI meter_id와 분전함의 검증된 연결이 없습니다.",
+          "fact_keys": [
+            "mapping_rows"
+          ]
+        },
+        {
+          "label": "현장 고장 정확도",
+          "value": "NOT_EVALUABLE",
+          "qualification": "판정된 현장 결과가 연결되기 전까지 미평가입니다.",
+          "fact_keys": []
+        },
+        {
+          "label": "실현 절감 효과",
+          "value": "NOT_EVALUABLE",
+          "qualification": "dispatch 노출과 반사실 기준선이 연결되기 전까지 미평가입니다.",
+          "fact_keys": []
+        }
+      ],
+      "join_chain": [
+        "meter_id",
+        "cabinet_id",
+        "asset_id",
+        "work_order_id",
+        "field_outcome_id"
+      ],
+      "required_data": [
+        "식별자별 유효 시작·종료시각과 Asia/Seoul 기준시각",
+        "점등 일정·제어기 명령·계량 구간",
+        "shadow 추천과 실제 dispatch를 구분하는 노출 로그",
+        "작업지시·현장 판정·판정자·판정 규칙",
+        "개인정보를 제거한 가명키와 접근 통제"
+      ],
+      "effect_metrics": [
+        {
+          "id": "field_fault_precision",
+          "status": "NOT_EVALUABLE"
+        },
+        {
+          "id": "field_fault_recall",
+          "status": "NOT_EVALUABLE"
+        },
+        {
+          "id": "realized_kwh_savings",
+          "status": "NOT_EVALUABLE"
+        },
+        {
+          "id": "complaint_reduction",
+          "status": "NOT_EVALUABLE"
+        },
+        {
+          "id": "cost_savings",
+          "status": "NOT_EVALUABLE"
+        }
+      ],
+      "boundary": [
+        "허용: 필요한 데이터 계약과 향후 평가 게이트.",
+        "금지: 연결 전 현장 정확도·절감·민원감소·비용효과 주장."
+      ],
+      "allowed_interpretation": [
+        "data readiness plan",
+        "future evaluation gate"
+      ],
+      "prohibited_interpretation": [
+        "current field effect",
+        "realized savings"
+      ],
+      "sources": [
+        {
+          "path": "lightguard_v0_1/data/ami_cabinet_mappings.csv",
+          "sha256": "b52e876a18051865ffda49f85ee71955be02276b7bf4faca1076b55443efb7da",
+          "role": "현재 meter-cabinet 매핑 상태"
+        }
+      ]
+    }
+  ],
+  "claim_boundaries": [
+    "가명 AMI 6건은 실제 고장 정답이 없는 점검 후보입니다.",
+    "공개 기상·천문 자료는 실제 AMI와 미연결이며 탐지 점수 가중치는 0입니다.",
+    "현장 정확도와 실현 절감 효과는 연결 데이터가 생기기 전까지 NOT_EVALUABLE입니다."
+  ]
+}
