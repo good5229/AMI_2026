@@ -101,6 +101,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
             .length;
         final observeCount =
             allPoints.where((c) => c.status == InspectionStatus.observe).length;
+        final unobservedCount = allPoints.where((c) => c.status == InspectionStatus.dataCheckRequired).length;
         final normalCount =
             allPoints.where((c) => c.status == InspectionStatus.normal).length;
         final scenarioCount = allPoints
@@ -268,6 +269,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                               children: [
                                 _buildFilterChip(availableFilter,
                                     _MapFilter.all, '전체 ($totalCount)'),
+                                Text('미관측 $unobservedCount · AMI 미연결'),
                                 if (targetCount > 0)
                                   _buildFilterChip(
                                     availableFilter,
@@ -316,16 +318,17 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                       spacing: 8,
                       runSpacing: 8,
                       children: [
-                        StatusBadge(
+                        if (unobservedCount > 0) StatusBadge(type: BadgeType.validation, label: '미관측 $unobservedCount'),
+                        if (priorityCount > 0) StatusBadge(
                             type: BadgeType.inspect,
                             label: '우선 확인 $priorityCount'),
-                        StatusBadge(
+                        if (recommendCount > 0) StatusBadge(
                             type: BadgeType.scenario,
                             label: '점검 검토 $recommendCount'),
-                        StatusBadge(
+                        if (observeCount > 0) StatusBadge(
                             type: BadgeType.validation,
                             label: '관찰 $observeCount'),
-                        StatusBadge(
+                        if (normalCount > 0) StatusBadge(
                             type: BadgeType.normal,
                             label: '정상 범위 $normalCount'),
                         if (supportsScenario && scenarioCount > 0)

@@ -22,7 +22,7 @@ void main() {
     expect(
       sample.objects.any((cabinet) =>
           cabinet.evidenceSource == EvidenceSource.scenarioInjection),
-      true,
+      false,
     );
     expect(
       sample.objects.every((cabinet) =>
@@ -34,18 +34,22 @@ void main() {
       true,
     );
 
-    final targets = sample.targetMode['target_cabinet_ids'];
-    final targetList = targets is List
-        ? targets
-        : sample.targetMode['target_cabinets_3_4kw_like'];
-    expect(targetList is List, true);
-    expect((targetList! as List).length, 46);
+    expect(sample.targetMode, isEmpty);
+    expect(sample.objects.every((c) => c.detectedSignals.isEmpty), true);
+    expect(sample.objects.every((c) => c.status == InspectionStatus.dataCheckRequired), true);
   });
 
   test('all region capabilities preserve zero real municipal AMI mappings', () {
     final gangneung = _lightguardDataFrom('gangneung_v02_seed.json');
     final chungju = _lightguardDataFrom('chungju_v02_seed.json');
 
+    for (final data in [sample, gangneung, chungju]) {
+      expect(data.objects.every((c) => c.detectedSignals.isEmpty), true);
+      expect(data.objects.every((c) => c.status == InspectionStatus.dataCheckRequired), true);
+      expect(data.objects.every((c) => c.inspectionPriority.rank == 0), true);
+      expect(data.objects.every((c) => c.anomalyEvidence.ruleIds.isEmpty), true);
+      expect(data.objects.every((c) => c.weatherContext.forecastHourly.isEmpty), true);
+    }
     expect(gangneung.objects.length, 339);
     expect(chungju.objects.length, 871);
     expect(

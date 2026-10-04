@@ -8,6 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:lightguard_app/app/router/app_router.dart';
+import 'package:lightguard_app/app/theme/app_theme.dart';
 import 'package:lightguard_app/core/storage/inspection_outcome_storage.dart';
 import 'package:lightguard_app/data/models/lightguard_models.dart';
 import 'package:lightguard_app/data/repositories/lightguard_repository.dart';
@@ -61,6 +62,7 @@ void main() {
         competitionAmiEventsProvider.overrideWith((_) async => events),
       ],
       child: MaterialApp.router(
+        theme: AppTheme.light(),
         routerConfig: router,
         locale: const Locale('ko'),
         supportedLocales: const [Locale('ko')],
@@ -69,79 +71,27 @@ void main() {
     );
   }
 
-  testWidgets('Dashboard renders 핵심 운영 지표만 표시한다', (WidgetTester tester) async {
+  testWidgets('지역 대시보드는 미관측과 자산 현황을 표시한다', (tester) async {
     await tester.pumpWidget(buildTestApp());
     await tester.pumpAndSettle();
-
-    expect(find.text('LightGuard · 운영 현황'), findsOneWidget);
-    expect(find.text('우선 확인'), findsAtLeastNWidgets(1));
-    expect(find.text('오늘 확인할 후보'), findsNothing);
-    expect(find.text('확인 대상 및 사유 보기'), findsNothing);
-    expect(find.text('등록 자산'), findsOneWidget);
-    expect(find.text('연결 가로등'), findsOneWidget);
-    expect(find.text('정격용량'), findsOneWidget);
-    expect(
-        find.textContaining('${data.objects.length}'), findsAtLeastNWidgets(1));
-    expect(find.text('기준일 기준 점등/소등'), findsNothing);
-    expect(find.text(RegionId.suyeong.branchLabel), findsAtLeastNWidgets(1));
-    expect(find.text('점검 검토'), findsOneWidget);
-    expect(find.text('관찰'), findsOneWidget);
-    expect(find.text('정상 범위'), findsOneWidget);
+    expect(find.text('전력 상태 미관측'), findsOneWidget);
+    expect(find.text('실제 AMI 기록 분석'), findsOneWidget);
+    expect(find.text('등록 분전함'), findsOneWidget);
+    expect(find.text('우선 확인'), findsNothing);
+    expect(find.text('정상 범위'), findsNothing);
+    expect(find.text('미관측'), findsOneWidget);
   });
 
-  testWidgets('Inspection list renders and filters by 검증 시나리오',
-      (WidgetTester tester) async {
-    await tester.pumpWidget(
-        buildTestApp(initialLocation: '${AppRoute.inspections}?filter=all'));
+  testWidgets('자산 목록은 모의 신호 필터 없이 자산을 조회한다', (tester) async {
+    await tester.pumpWidget(buildTestApp(initialLocation: '${AppRoute.inspections}?filter=all'));
     await tester.pumpAndSettle();
-    await tester.scrollUntilVisible(
-      find.text('CAB-001'),
-      250,
-      scrollable: find.byType(Scrollable).last,
-    );
-    await _pumpUntilFound(
-      tester,
-      find.text('CAB-001'),
-      maxAttempts: 18,
-    );
-
-    expect(find.text('점검 대상'), findsOneWidget);
-    expect(find.text('CAB-002'), findsAtLeastNWidgets(1));
+    await tester.scrollUntilVisible(find.text('CAB-001'), 250, scrollable: find.byType(Scrollable).last);
     expect(find.text('CAB-001'), findsAtLeastNWidgets(1));
-
-    var dropdownFinder = find.byKey(const Key('inspection-filter-dropdown'));
-    if (dropdownFinder.evaluate().isEmpty) {
-      dropdownFinder = find.byType(DropdownButton<dynamic>);
-      if (dropdownFinder.evaluate().isEmpty) {
-        dropdownFinder = find.byType(DropdownButton);
-      }
-    }
-    if (dropdownFinder.evaluate().isNotEmpty) {
-      await tester.tap(dropdownFinder);
-      await tester.pumpAndSettle();
-      final scenarioItemFinder =
-          find.byKey(const Key('inspection-filter-item-scenario'));
-      final scenarioTextFinder =
-          find.byKey(const Key('inspection-filter-item-scenario'));
-      if (scenarioItemFinder.evaluate().isNotEmpty) {
-        await tester.tap(scenarioItemFinder);
-      } else if (scenarioTextFinder.evaluate().isNotEmpty) {
-        await tester.tap(scenarioTextFinder);
-      }
-      await tester.pumpAndSettle();
-      await _pumpUntilFound(
-        tester,
-        find.text('CAB-001'),
-        maxAttempts: 18,
-      );
-
-      expect(find.text('CAB-001'), findsAtLeastNWidgets(1));
-    } else {
-      expect(
-        find.text('CAB-001'),
-        findsAtLeastNWidgets(1),
-      );
-    }
+    expect(find.text('미관측'), findsAtLeastNWidgets(1));
+    await tester.ensureVisible(find.byKey(const Key('inspection-filter-dropdown')));
+    await tester.tap(find.byKey(const Key('inspection-filter-dropdown')));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('inspection-filter-item-scenario')), findsNothing);
   });
 
   testWidgets('지역 기록 집계에 운영상 예외 결과를 포함한다', (WidgetTester tester) async {
@@ -166,25 +116,14 @@ void main() {
     );
   });
 
-  testWidgets('현황 상태 카드가 해당 점검 목록과 선정 사유로 이동한다', (WidgetTester tester) async {
+  testWidgets('자산 현황에서 전체 점검 기록으로 이동한다', (tester) async {
     await tester.pumpWidget(buildTestApp());
     await tester.pumpAndSettle();
-
-    await tester
-        .ensureVisible(find.byKey(const Key('dashboard-priority-card')));
-    await tester.tap(find.byKey(const Key('dashboard-priority-card')));
+    final link = find.text('자산·점검 기록 열기');
+    await tester.scrollUntilVisible(link, 250, scrollable: find.byType(Scrollable).last);
+    await tester.tap(link);
     await tester.pumpAndSettle();
-    expect(find.text('점검 대상'), findsOneWidget);
-    expect(find.textContaining('우선 확인 ·'), findsOneWidget);
-
-    await tester.pumpWidget(buildTestApp());
-    await tester.pumpAndSettle();
-    await tester
-        .ensureVisible(find.byKey(const Key('dashboard-recommended-card')));
-    await tester.tap(find.byKey(const Key('dashboard-recommended-card')));
-    await tester.pumpAndSettle();
-    expect(find.text('점검 대상'), findsOneWidget);
-    expect(find.textContaining('점검 검토 ·'), findsOneWidget);
+    expect(find.text('자산·점검 기록'), findsAtLeastNWidgets(1));
   });
 
   testWidgets('Cabinet detail renders 해설 문구 and raw data safe label',
@@ -253,6 +192,7 @@ void main() {
     await tester
         .pumpWidget(buildTestApp(initialLocation: AppRoute.inspections));
     await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(find.text('CAB-002'), 250, scrollable: find.byType(Scrollable).last);
     final targetCard = find
         .ancestor(
           of: find.text('CAB-002'),
@@ -310,15 +250,11 @@ void main() {
       ..['dueDate'] = dueDate;
     await saveInspectionOutcomes({'CAB-002': seededCase});
     expect(find.textContaining('1 / 3건'), findsOneWidget);
-    expect(find.text('CAB-002'), findsNothing);
-    await tester.tap(find.byKey(const Key('inspection-filter-dropdown')));
-    await tester.pumpAndSettle();
-    final allFilterItem = find.byKey(const Key('inspection-filter-item-all'));
-    final allFilterRect = tester.getRect(allFilterItem);
-    await tester
-        .tapAt(Offset(allFilterRect.left + 24, allFilterRect.center.dy));
-    await tester.pumpAndSettle();
+    // The default is now all assets; completion must not hide a registered asset.
+    await tester.scrollUntilVisible(find.text('CAB-002'), 250, scrollable: find.byType(Scrollable).last);
     expect(find.text('CAB-002'), findsAtLeastNWidgets(1));
+    // All assets is already selected. Open the saved asset directly rather
+    // than looking for an off-screen, lazily constructed filter header.
     await tester.tap(find.text('CAB-002').first);
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('field-primary-result')));
@@ -331,6 +267,8 @@ void main() {
     await tester.pumpAndSettle();
     await tester.binding.handlePopRoute();
     await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(find.text('CAB-002'), 250,
+        scrollable: find.byType(Scrollable).last);
     expect(find.text('기한 $dueDate'), findsOneWidget);
     expect(find.text('담당 현장 담당자'), findsOneWidget);
     expect(find.text('기록 · 고장 관찰'), findsOneWidget);
@@ -340,29 +278,19 @@ void main() {
     expect(roundTrip['CAB-002']?['outcomeCode'], 'fault_observed');
     await tester.pumpWidget(buildTestApp());
     await tester.pump();
-    await _pumpUntilFound(tester, find.textContaining('기기 기록 결과 1건'),
+    await _pumpUntilFound(tester, find.textContaining('결과 입력 1건'),
         maxAttempts: 8);
-    expect(find.textContaining('기록 1 / 전체 3'), findsOneWidget);
+    await tester.scrollUntilVisible(find.textContaining('결과 입력 1건'), 250, scrollable: find.byType(Scrollable).last);
+    expect(find.textContaining('결과 입력 1건'), findsOneWidget);
     expect(find.textContaining('메모:'), findsNothing);
   });
 
-  testWidgets('Cabinet detail exposes activation color legend for a signal',
-      (WidgetTester tester) async {
+  testWidgets('모의 신호를 가진 객체도 상세 화면에서 전력값을 표시하지 않는다', (tester) async {
     await tester.pumpWidget(buildTestApp(initialLocation: '/cabinet/CAB-001'));
     await tester.pumpAndSettle();
-
-    final legendFinder = find.byKey(const Key('activation-chart-legend'));
-    await tester.scrollUntilVisible(
-      legendFinder,
-      300,
-      scrollable: find.byType(Scrollable).last,
-    );
-    await tester.pumpAndSettle();
-
-    expect(legendFinder, findsOneWidget);
-    expect(find.textContaining('신호 수준'), findsAtLeastNWidgets(1));
-    expect(find.textContaining('남은 구간'), findsOneWidget);
-    expect(find.textContaining('daytime_partial_activation'), findsNothing);
+    await tester.scrollUntilVisible(find.byKey(const Key('section-cabinet-section-summary-c')), 250, scrollable: find.byType(Scrollable).last);
+    expect(find.byKey(const Key('activation-chart-legend')), findsNothing);
+    expect(find.text('AMI 미연결 · 현재 상태 판단 불가'), findsAtLeastNWidgets(1));
   });
 
   testWidgets('Map marker recenters and opens cabinet information panel',
@@ -386,13 +314,17 @@ void main() {
     await tester.pumpWidget(buildTestApp(initialLocation: AppRoute.ami));
     await tester.pumpAndSettle();
 
-    expect(find.text('전력계량 이상 신호 근거'), findsOneWidget);
+    expect(find.text('근거와 적용 준비'), findsAtLeastNWidgets(1));
+    await tester.scrollUntilVisible(find.text('가명 처리 전력계량 자료'), 350,
+        scrollable: find.byType(Scrollable).last, maxScrolls: 80);
     expect(find.text('가명 처리 전력계량 자료'), findsAtLeastNWidgets(1));
+    await tester.scrollUntilVisible(
+        find.byKey(const Key('ami-case-B-L-35-2026-05-11')), 300,
+        scrollable: find.byType(Scrollable).last, maxScrolls: 80);
     expect(find.text('탐지 기준 대비 최대 신호 비율'), findsAtLeastNWidgets(1));
     expect(find.textContaining('1번 전류선(i1)'), findsAtLeastNWidgets(1));
     expect(find.text('이상 신호 형태 일치 수준'), findsAtLeastNWidgets(1));
     expect(find.text('높음'), findsAtLeastNWidgets(1));
-    expect(find.text('보통 이상'), findsAtLeastNWidgets(1));
     expect(find.text('medium_high'), findsNothing);
     expect(find.byKey(const Key('ami-case-B-L-35-2026-05-11')), findsOneWidget);
     if (events.isNotEmpty) {
@@ -401,6 +333,9 @@ void main() {
     } else {
       fail('AMI 이벤트 데이터가 비어 있어 목록 검증을 수행할 수 없습니다.');
     }
+    await tester.scrollUntilVisible(find.text('보통 이상').first, 300,
+        scrollable: find.byType(Scrollable).last, maxScrolls: 80);
+    expect(find.text('보통 이상'), findsAtLeastNWidgets(1));
     await tester.drag(find.byType(ListView), const Offset(0, -10000));
     await tester.pumpAndSettle();
     expect(find.text(AmiValidationScreen.disclaimer), findsOneWidget);
@@ -420,7 +355,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(tester.takeException(), isNull);
-    expect(find.text('현황'), findsOneWidget);
+    expect(find.text('자산'), findsOneWidget);
   });
 
   for (final width in [360.0, 412.0, 1024.0]) {
@@ -445,13 +380,11 @@ void main() {
         expect(tester.takeException(), isNull,
             reason: '$route overflowed at $width px');
         if (route == AppRoute.dashboard) {
-          expect(find.text(width < 600 ? 'LightGuard' : 'LightGuard · 운영 현황'),
-              findsOneWidget);
-          expect(find.textContaining('고정 자료'), findsOneWidget);
-          expect(find.byKey(const Key('today-action-queue')), findsOneWidget);
+          expect(find.text('지역 자산'), findsAtLeastNWidgets(1));
+          expect(find.text('전력 상태 미관측'), findsOneWidget);
         }
         if (route == AppRoute.inspections) {
-          expect(find.text('점검 대상'), findsAtLeastNWidgets(1));
+          expect(find.text('자산·점검 기록'), findsAtLeastNWidgets(1));
         }
         if (route == '/cabinet/CAB-001') {
           expect(find.byKey(const Key('field-primary-result')), findsOneWidget);
@@ -509,7 +442,7 @@ void main() {
     await tester.tap(find.text(RegionId.gangneung.label).last);
     await tester.pumpAndSettle();
 
-    expect(find.text(RegionId.gangneung.branchLabel), findsAtLeastNWidgets(1));
+    expect(find.text(RegionId.gangneung.label), findsAtLeastNWidgets(1));
   });
 }
 

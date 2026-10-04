@@ -69,8 +69,9 @@ class LightguardData {
                 allowRealMunicipalAmi: allowRealMunicipalAmi,
               ))
           .toList(growable: false),
-      targetMode: (seed['target_mode'] as Map<String, dynamic>? ??
-          const <String, dynamic>{}),
+      targetMode: allowRealMunicipalAmi
+          ? (seed['target_mode'] as Map<String, dynamic>? ?? const {})
+          : const {},
       validationScenarios: scenarios,
       validationRows: parseValidationRows(validationCsv),
     );
@@ -198,10 +199,10 @@ class CabinetRecord {
     required this.expectedLoad,
     required this.weatherContext,
     required this.ami,
-    required this.detectedSignals,
+    required List<DetectedSignal> detectedSignals,
     required this.anomalyEvidence,
     required this.inspectionPriority,
-  });
+  }) : _detectedSignals = detectedSignals;
 
   final String cabinetUid;
   final AssetInfo assetInfo;
@@ -209,7 +210,9 @@ class CabinetRecord {
   final ExpectedLoad expectedLoad;
   final WeatherContext weatherContext;
   final AmiPayload ami;
-  final List<DetectedSignal> detectedSignals;
+  final List<DetectedSignal> _detectedSignals;
+  List<DetectedSignal> get detectedSignals =>
+      signalSource == SignalSource.realMunicipalAmi ? _detectedSignals : const [];
   final AnomalyEvidence anomalyEvidence;
   final InspectionPriority inspectionPriority;
 
@@ -217,32 +220,43 @@ class CabinetRecord {
     Map<String, dynamic> json, {
     bool allowRealMunicipalAmi = false,
   }) {
+    // Municipal operation requires an authorized AMI mapping. Legacy and
+    // scenario fields remain in the source files for reproducibility only.
+    final ami = AmiPayload.fromJson(
+      json['ami'] as Map<String, dynamic>? ?? const {},
+      allowRealMunicipalAmi: allowRealMunicipalAmi,
+    );
+    final measured = ami.hasRealAmi &&
+        ami.virtualLinkMode == 'none' && (ami.amiMeterId?.isNotEmpty ?? false);
     return CabinetRecord(
       cabinetUid: json['cabinet_uid']?.toString() ?? '',
       assetInfo: AssetInfo.fromJson(
           json['asset_info'] as Map<String, dynamic>? ?? const {}),
       expectedSchedule: ExpectedSchedule.fromJson(
-          json['expected_schedule'] as Map<String, dynamic>? ?? const {}),
+          measured ? json['expected_schedule'] as Map<String, dynamic>? ?? const {} : const {}),
       expectedLoad: ExpectedLoad.fromJson(
           json['expected_load'] as Map<String, dynamic>? ?? const {}),
       weatherContext: WeatherContext.fromJson(
-          json['weather_context'] as Map<String, dynamic>? ?? const {}),
-      ami: AmiPayload.fromJson(
-        json['ami'] as Map<String, dynamic>? ?? const {},
-        allowRealMunicipalAmi: allowRealMunicipalAmi,
+          measured ? json['weather_context'] as Map<String, dynamic>? ?? const {} : const {}),
+      ami: measured ? ami : const AmiPayload(
+        hasRealAmi: false, amiState: 'unlinked',
+        virtualLinkMode: 'none', amiMeterId: null,
       ),
-      detectedSignals: (json['detected_signals'] as List<dynamic>? ?? const [])
+      detectedSignals: (measured ? json['detected_signals'] as List<dynamic>? ?? const <dynamic>[] : const <dynamic>[])
           .map((e) => DetectedSignal.fromJson(e as Map<String, dynamic>))
           .toList(growable: false),
       anomalyEvidence: AnomalyEvidence.fromJson(
-          json['anomaly_evidence'] as Map<String, dynamic>? ?? const {}),
+          measured ? json['anomaly_evidence'] as Map<String, dynamic>? ?? const {} : const {}),
       inspectionPriority: InspectionPriority.fromJson(
-        json['inspection_priority'] as Map<String, dynamic>? ?? const {},
+        measured ? json['inspection_priority'] as Map<String, dynamic>? ?? const {} : const {},
       ),
     );
   }
 
   InspectionStatus get status {
+    if (signalSource != SignalSource.realMunicipalAmi) {
+      return InspectionStatus.dataCheckRequired;
+    }
     if (inspectionPriority.severity == 'critical') {
       return InspectionStatus.priorityInspection;
     }

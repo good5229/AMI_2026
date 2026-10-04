@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:lightguard_app/data/models/lightguard_models.dart';
 
 void main() {
-  test('source semantics are fixed at 204 municipal / 46 scenario / 158 none', () {
+  test('204 public assets remain unobserved while raw scenarios are preserved', () {
     final seed = File('assets/data/suyeong_v02_seed.json').readAsStringSync();
     final scenarios =
         File('assets/data/simulation_scenarios_v02.json').readAsStringSync();
@@ -14,8 +14,12 @@ void main() {
     final data = LightguardData.fromSeedJson(seed, scenarios, validation);
     expect(data.objects.length, 204);
     expect(data.objects.every((row) => row.assetSource == AssetSource.municipalPublicData), true);
-    expect(data.objects.where((row) => row.signalSource == SignalSource.scenarioInjection).length, 46);
-    expect(data.objects.where((row) => row.signalSource == SignalSource.none).length, 158);
+    final raw = jsonDecode(seed) as Map<String, dynamic>;
+    final rawObjects = raw['objects'] as List<dynamic>;
+    expect(rawObjects.where((row) => row['ami']['virtual_link_mode'] == 'scenario_injection').length, 46);
+    expect(data.objects.where((row) => row.signalSource == SignalSource.scenarioInjection), isEmpty);
+    expect(data.objects.where((row) => row.signalSource == SignalSource.none).length, 204);
+    expect(data.objects.every((row) => row.status == InspectionStatus.dataCheckRequired), isTrue);
     expect(data.objects.where((row) => row.signalSource == SignalSource.realMunicipalAmi), isEmpty);
   });
 

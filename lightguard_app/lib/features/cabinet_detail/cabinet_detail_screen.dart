@@ -32,7 +32,6 @@ class _CabinetDetailScreenState extends ConsumerState<CabinetDetailScreen> {
   @override
   Widget build(BuildContext context) {
     final dataAsync = ref.watch(lightguardDataProvider);
-    final officialContext = ref.watch(officialContextProvider).asData?.value;
     return dataAsync.when(
       loading: () =>
           const Scaffold(body: Center(child: CircularProgressIndicator())),
@@ -51,7 +50,7 @@ class _CabinetDetailScreenState extends ConsumerState<CabinetDetailScreen> {
                 '${operationalSignalTitle(item)} (${item.estimatedDurationMin}분)')
             .join(' / ');
         final evidenceSummary = cabinet.detectedSignals.isEmpty
-            ? '신호 없음 · 현장/정비 기록 없음'
+            ? 'AMI 미연결 · 자동 고장 판정 없음'
             : '$observations · 현장/정비 기록 없음';
         return LightguardShell(
           title: '분전함',
@@ -110,7 +109,7 @@ class _CabinetDetailScreenState extends ConsumerState<CabinetDetailScreen> {
                             style: TextStyle(fontSize: 12)),
                         const Divider(),
                         Text(
-                            '핵심 신호 · ${cabinet.detectedSignals.isEmpty ? '탐지 없음' : operationalSignalTitle(signal)}',
+                            '핵심 신호 · ${cabinet.detectedSignals.isEmpty ? '미관측' : operationalSignalTitle(signal)}',
                             style: Theme.of(context).textTheme.titleSmall),
                         const SizedBox(height: 6),
                         const Text(
@@ -145,46 +144,22 @@ class _CabinetDetailScreenState extends ConsumerState<CabinetDetailScreen> {
                   keySuffix: 'cabinet-section-summary-a',
                   collapsed: true),
               const SizedBox(height: 8),
-              _section('운전 기준', [
-                _kv('일출', cabinet.expectedSchedule.sunrise),
-                _kv('일몰', cabinet.expectedSchedule.sunset),
-                _kv('시민박명 시작', cabinet.expectedSchedule.civilTwilightStart),
-                _kv('시민박명 종료', cabinet.expectedSchedule.civilTwilightEnd),
-                _kv(
-                    '예상 점등시간',
-                    cabinet.expectedSchedule.expectedOnWindow['on_start']
-                            ?.toString() ??
-                        ''),
-                _kv(
-                    '예상 소등시간',
-                    cabinet.expectedSchedule.expectedOnWindow['on_end']
-                            ?.toString() ??
-                        ''),
-                _kv('기상 기준점', cabinet.weatherContext.stationName),
-                _kv('기상자료', '공식 관측자료 참고'),
-                _kv(
-                    '공식 천문자료',
-                    officialContext?.firstOfficialSolar == null
-                        ? '미수집 · 추정값 미사용'
-                        : '한국천문연구원 ${officialContext!.firstOfficialSolar!['date']} · 일출 ${officialContext.firstOfficialSolar!['sunrise']} / 일몰 ${officialContext.firstOfficialSolar!['sunset']}'),
-                _kv(
-                    '공식 기상 관측자료',
-                    officialContext?.firstOfficialWeather == null
-                        ? '부산 ASOS(159) 미수집'
-                        : '기상청 부산 종관기상관측소(지점 159) · ${officialContext!.firstOfficialWeather!['timestamp']}'),
+              _section('관측 상태', [
+                const Text('AMI 미연결 · 현재 전력 상태 판단 불가'),
+                const Text('공식 계량기·분전함 연결표와 해당 계량기 측정자료가 필요합니다.'),
               ], collapsed: true),
               const SizedBox(height: 8),
               _section(
                 '전력 신호',
                 [
                   const Text(
-                    '관측 구간 최대치 · 전체 원본 아님',
+                    '연결된 계량기 관측이 있을 때만 표시',
                     key: Key('section-cabinet-section-summary-c-description'),
                     style: TextStyle(fontSize: 12, color: Colors.grey),
                   ),
                   const SizedBox(height: 16),
                   if (signal == null)
-                    const Text('탐지 이벤트 없음')
+                    const Text('AMI 미연결 · 현재 상태 판단 불가')
                   else ...[
                     LinearProgressIndicator(
                       minHeight: 18,
@@ -202,7 +177,7 @@ class _CabinetDetailScreenState extends ConsumerState<CabinetDetailScreen> {
                   _kv(
                       '신호',
                       signal == null
-                          ? '지속 신호 없음'
+                          ? '관측 자료 없음'
                           : operationalSignalTitle(signal)),
                 ],
                 keySuffix: 'cabinet-section-summary-c',

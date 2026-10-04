@@ -30,7 +30,7 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
       'priority' => _InspectionFilter.priority,
       'recommended' => _InspectionFilter.recommended,
       'all' => _InspectionFilter.all,
-      _ => _InspectionFilter.active,
+      _ => _InspectionFilter.all,
     };
     _outcomes = {};
     loadInspectionOutcomes().then((saved) {
@@ -312,8 +312,8 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
         }
 
         return LightguardShell(
-          title: '점검 대상',
-          compactTitle: '점검 대상',
+          title: '자산·점검 기록',
+          compactTitle: '자산·점검 기록',
           child: isDesktop
               ? Row(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -650,15 +650,20 @@ class _InspectionListScreenState extends ConsumerState<InspectionListScreen> {
 
   List<CabinetRecord> _filterRows(List<CabinetRecord> rows,
       _InspectionFilter filter, Set<String> targetCabinetIds) {
-    final copy = [...rows]..sort((a, b) =>
-        a.inspectionPriority.rank.compareTo(b.inspectionPriority.rank));
+    final copy = [...rows]..sort((a, b) {
+      if (!a.ami.hasRealAmi || !b.ami.hasRealAmi) {
+        return a.cabinetUid.compareTo(b.cabinetUid);
+      }
+      return a.inspectionPriority.rank.compareTo(b.inspectionPriority.rank);
+    });
     final current = DateTime.now();
     final today = DateTime(current.year, current.month, current.day);
     return switch (filter) {
       _InspectionFilter.all => copy,
       _InspectionFilter.active => copy.where((r) {
           final code = _outcomes[r.cabinetUid]?['outcomeCode'];
-          return r.status != InspectionStatus.normal &&
+          return (r.ami.hasRealAmi && r.status != InspectionStatus.normal ||
+                  (_outcomes[r.cabinetUid]?['stage'] ?? '').isNotEmpty) &&
               (code == null || code.isEmpty);
         }).toList(),
       _InspectionFilter.targeted => copy

@@ -5,7 +5,7 @@ String operationalStatusLabel(InspectionStatus status) => switch (status) {
       InspectionStatus.observe => '관찰',
       InspectionStatus.inspectionRecommended => '점검 검토',
       InspectionStatus.priorityInspection => '우선 확인',
-      InspectionStatus.dataCheckRequired => '자료 확인',
+      InspectionStatus.dataCheckRequired => '미관측',
     };
 
 String operationalSignalTitle(DetectedSignal? signal) {
@@ -13,7 +13,7 @@ String operationalSignalTitle(DetectedSignal? signal) {
     'daytime_partial_activation' => '주간 부분 점등',
     'daytime_phase_selective_activation' => '주간 상별 점등',
     'partial_dimming' => '정격 대비 부하 감소',
-    null || '' => '지속 신호 없음',
+    null || '' => '관측 자료 없음',
     _ => '운전 기준 이탈',
   };
 }
@@ -80,6 +80,9 @@ String operationalSignalSourceLabel(CabinetRecord cabinet) =>
 
 String operationalPriorityReason(CabinetRecord cabinet) {
   final signal = cabinet.detectedSignals.firstOrNull;
+  if (cabinet.signalSource == SignalSource.none) {
+    return 'AMI 미연결 · 현재 상태 판단 불가';
+  }
   if (signal == null) {
     return cabinet.status == InspectionStatus.normal
         ? '지속 신호 없음'
@@ -98,7 +101,7 @@ String operationalRecommendedAction(InspectionStatus status) =>
       InspectionStatus.observe => '다음 주기 재확인',
       InspectionStatus.normal => '정기 점검 유지',
       InspectionStatus.dataCheckRequired =>
-        '측정값·연결·시각 확인',
+        '계량기 연결자료 확보 또는 직접 점검',
     };
 
 String operationalEvidenceBoundary(CabinetRecord cabinet) {

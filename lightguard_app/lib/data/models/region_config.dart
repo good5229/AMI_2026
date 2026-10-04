@@ -47,17 +47,17 @@ extension RegionIdX on RegionId {
 
   String get branchLabel {
     return switch (this) {
-      RegionId.suyeong => '수영구 검증용 모의 신호 분석',
-      RegionId.gangneung => '강릉시 제어기 연결자료 분석',
-      RegionId.chungju => '충주시 시설물 정보 분석',
+      RegionId.suyeong => '수영구 공개 자산 · AMI 미연결',
+      RegionId.gangneung => '강릉시 공개 자산 · AMI 미연결',
+      RegionId.chungju => '충주시 공개 자산 · AMI 미연결',
     };
   }
 
   String get defaultFilterHint {
     return switch (this) {
-      RegionId.suyeong => '검증 시나리오 중심 점검',
+      RegionId.suyeong => '공개 자산 조회',
       RegionId.gangneung => '제어기 연계 구조 검증 중심 점검',
-      RegionId.chungju => '고부하/이상 신호 중심 점검',
+      RegionId.chungju => '공개 자산 조회',
     };
   }
 
@@ -71,7 +71,7 @@ extension RegionIdX on RegionId {
 
   String get regionalFilterHint {
     return switch (this) {
-      RegionId.suyeong => '수영구는 시나리오 주입 대상 분전함 중심으로 먼저 확인',
+      RegionId.suyeong => '수영구 공개 분전함 정보 조회',
       RegionId.gangneung => '강릉시는 제어기 연계 분전함 우선 탐색',
       RegionId.chungju => '충주시는 공개된 분전함·가로등 시설정보를 우선 확인',
     };
@@ -79,7 +79,7 @@ extension RegionIdX on RegionId {
 
   bool get supportsScenarioInjection {
     return switch (this) {
-      RegionId.suyeong => true,
+      RegionId.suyeong => false,
       RegionId.gangneung => false,
       RegionId.chungju => false,
     };
@@ -107,7 +107,7 @@ extension RegionIdX on RegionId {
 
   String get modeDescription {
     return switch (this) {
-      RegionId.suyeong => '시설정보와 검증용 모의 신호 제공',
+      RegionId.suyeong => '시설정보 제공 · 전력 상태 미관측',
       RegionId.gangneung => '시설정보와 제어기 연결정보 제공',
       RegionId.chungju => '기본 시설정보 제공',
     };

@@ -124,3 +124,30 @@ https://github.com/good5229/AMI_2026/settings/pages 의 빌드 소스는 GitHub 
 - Claim registry: `../lightguard_v0_1/data/submission/v21_claim_registry.json`
 - Metric registry: `../lightguard_v0_1/data/submission/v21_metric_registry.json`
 - 전체 제출 preflight: `../scripts/v21_preflight.sh`
+
+## 2026-10-04: actual AMI presentation mode
+
+The default route is now `ami-events`: replay of the supplied anonymized AMI
+candidate windows, with original timestamps and missing values preserved. This
+is historical replay, not live ingestion, a newly evaluated detector, or field
+fault confirmation. Analysis-review records use `ami-review:` keys in the
+existing v1 local store and do not count as municipal field outcomes.
+
+Municipal assets without authorized real AMI mapping are `미관측`, not normal.
+Legacy/mock signals, anomaly evidence, automatic priorities, synthetic weather,
+and expected schedules are excluded from those operational records. Source
+files are retained for reproducibility. Asset lookup and user-entered assignment,
+due-date and field-result workflows remain available. The prior evidence screen
+is retained separately at `/evidence` as a technical archive, not the default demo.
+
+The presentation source comparison reproduced 110 sample rows and six candidate
+peak/duration summaries (`presentation_build/ami_source_verification.json`).
+That establishes source consistency only, not field accuracy or energy savings.
+The maintenance-model endpoint is 30-day repeat receipt, evaluated separately
+from AMI. Public asset transformation does not establish live municipal linkage.
+
+Final validation: static analysis and all 52 Flutter tests pass, including
+360/412/1024px AMI replay with 1.3 text scaling and preservation of existing
+field records when saving analysis reviews. Publishing uses the existing GitHub
+Pages workflow; presentation files remain in the local output/presentations
+folder and are not emailed or uploaded as part of the web deployment.

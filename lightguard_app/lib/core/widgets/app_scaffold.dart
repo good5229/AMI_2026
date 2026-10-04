@@ -28,11 +28,11 @@ class LightguardShell extends ConsumerWidget {
     final isCompact = MediaQuery.sizeOf(context).width < 600;
     final appBarTitle = isCompact ? (compactTitle ?? title) : title;
     final tabs = <_NavItem>[
-      const _NavItem(AppRoute.dashboard, '오늘의 현황', '현황', Icons.home_outlined),
+      const _NavItem(AppRoute.ami, 'AMI 기록 분석', 'AMI', Icons.insights_outlined),
+      const _NavItem(AppRoute.dashboard, '지역 자산', '자산', Icons.home_outlined),
       const _NavItem(AppRoute.map, '현장 지도', '지도', Icons.map_outlined),
       const _NavItem(
-          AppRoute.inspections, '점검 대상', '점검', Icons.fact_check_outlined),
-      const _NavItem(AppRoute.ami, '판정 근거', '근거', Icons.insights_outlined),
+          AppRoute.inspections, '자산·점검 기록', '기록', Icons.fact_check_outlined),
     ];
 
     final location = GoRouterState.of(context).matchedLocation;
@@ -43,7 +43,8 @@ class LightguardShell extends ConsumerWidget {
           title:
               Text(appBarTitle, maxLines: 1, overflow: TextOverflow.ellipsis),
           actions: [
-            const _RegionSelector(),
+            if (!GoRouterState.of(context).matchedLocation.startsWith('/ami') &&
+                GoRouterState.of(context).matchedLocation != '/evidence') const _RegionSelector(),
             ...?actions,
             const _GlossaryButton()
           ],
@@ -110,7 +111,8 @@ class LightguardShell extends ConsumerWidget {
       appBar: AppBar(
         title: Text(appBarTitle, maxLines: 1, overflow: TextOverflow.ellipsis),
         actions: [
-          const _RegionSelector(),
+          if (!GoRouterState.of(context).matchedLocation.startsWith('/ami') &&
+                GoRouterState.of(context).matchedLocation != '/evidence') const _RegionSelector(),
           ...?actions,
           const _GlossaryButton()
         ],

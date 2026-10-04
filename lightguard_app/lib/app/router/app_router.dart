@@ -4,6 +4,7 @@ import '../../features/map/map_screen.dart';
 import '../../features/inspections/inspection_list_screen.dart';
 import '../../features/cabinet_detail/cabinet_detail_screen.dart';
 import '../../features/ami_validation/ami_validation_screen.dart';
+import '../../features/ami_validation/ami_replay_screen.dart';
 
 class AppRoute {
   static const dashboard = '/';
@@ -15,7 +16,7 @@ class AppRoute {
 
 GoRouter createRouter() {
   return GoRouter(
-    initialLocation: AppRoute.dashboard,
+    initialLocation: AppRoute.ami,
     routes: [
       GoRoute(path: AppRoute.dashboard, builder: (context, state) => const DashboardScreen()),
       GoRoute(
@@ -37,7 +38,8 @@ GoRouter createRouter() {
           return CabinetDetailScreen(cabinetUid: id);
         },
       ),
-      GoRoute(path: AppRoute.ami, builder: (context, state) => const AmiValidationScreen()),
+      GoRoute(path: AppRoute.ami, builder: (context, state) => const AmiReplayScreen()),
+      GoRoute(path: '/evidence', builder: (context, state) => const AmiValidationScreen()),
       GoRoute(path: '/regions', redirect: (context, state) => AppRoute.dashboard),
     ],
   );

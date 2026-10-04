@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:lightguard_app/data/models/lightguard_models.dart';
 
 void main() {
-  test('priority severity maps to inspection status', () {
+  test('unlinked AMI remains unobserved even with a legacy critical priority', () {
     const record = CabinetRecord(
       cabinetUid: 'x',
       assetInfo: AssetInfo(
@@ -39,6 +39,6 @@ void main() {
       inspectionPriority: InspectionPriority(score: 2, severity: 'critical', rank: 1, reason: 'x'),
     );
 
-    expect(record.status, InspectionStatus.priorityInspection);
+    expect(record.status, InspectionStatus.dataCheckRequired);
   });
 }

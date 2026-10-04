@@ -37,3 +37,4 @@ flutter:
     - assets/data/ami_events.csv
     - assets/data/context/
     - assets/data/ami_event_windows/
+    - assets/data/evidence/
